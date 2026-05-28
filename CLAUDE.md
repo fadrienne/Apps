@@ -4,6 +4,40 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-APPS (previously named SHORE) is a newly initialized repository. No language, framework, build system, or application code has been set up yet.
+APPS is a monorepo housing multiple applications.
 
-As the project evolves, this file should be updated to document build commands, test workflows, architecture decisions, and conventions.
+## Apps
+
+### notebooklm/
+Python project using [notebooklm-py](https://github.com/teng-lin/notebooklm-py) — an unofficial Python library for automating Google NotebookLM.
+
+**Setup:**
+```bash
+pip install -r notebooklm/requirements.txt
+playwright install chromium
+```
+
+**Authentication (one-time):**
+```bash
+notebooklm login
+```
+
+**Run example:**
+```bash
+cd notebooklm && python src/main.py
+```
+
+**CLI quick-reference:**
+```bash
+notebooklm notebooks list
+notebooklm create "My Notebook"
+notebooklm source add url <url> -n <notebook-id>
+notebooklm ask "Summarize this" -n <notebook-id>
+notebooklm generate audio -n <notebook-id> --wait
+notebooklm artifact download <id> -n <notebook-id>
+```
+
+For CI/CD, set `NOTEBOOKLM_AUTH_JSON` to the JSON from `notebooklm auth export`.
+
+### thrive-hub/
+(existing app — see its own README for details)
