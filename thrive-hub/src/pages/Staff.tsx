@@ -9,9 +9,9 @@ export default function Staff() {
     <div className="flex flex-col h-full">
       <Header title="Staff" subtitle="Team performance and availability" />
 
-      <div className="flex-1 overflow-y-auto p-6 space-y-5">
+      <div className="flex-1 overflow-y-auto p-4 md:p-6 space-y-4 md:space-y-5">
         {/* Summary */}
-        <div className="grid grid-cols-2 xl:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 xl:grid-cols-4 gap-3 md:gap-4">
           <div className="bg-white rounded-xl border border-gray-200 p-4">
             <p className="text-2xl font-bold text-gray-900">{staff.length}</p>
             <p className="text-sm text-gray-500 mt-0.5">Total Staff</p>

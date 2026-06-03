@@ -32,7 +32,7 @@ export default function Bookings() {
     <div className="flex flex-col h-full">
       <Header title="Bookings" subtitle="Manage and track all appointments" />
 
-      <div className="flex-1 overflow-y-auto p-6 space-y-5">
+      <div className="flex-1 overflow-y-auto p-4 md:p-6 space-y-4 md:space-y-5">
         {/* Summary */}
         <div className="grid grid-cols-2 xl:grid-cols-4 gap-4">
           {(Object.entries(statusCounts) as [string, number][]).map(([status, count]) => (
@@ -84,7 +84,8 @@ export default function Bookings() {
 
         {/* Table */}
         <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-          <table className="w-full text-sm">
+          <div className="overflow-x-auto">
+          <table className="w-full text-sm min-w-[700px]">
             <thead className="bg-gray-50 border-b border-gray-200">
               <tr>
                 <th className="text-left px-5 py-3 text-xs font-medium text-gray-500">ID</th>
@@ -119,6 +120,7 @@ export default function Bookings() {
               )}
             </tbody>
           </table>
+          </div>
         </div>
       </div>
     </div>

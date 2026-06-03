@@ -22,9 +22,9 @@ export default function Dashboard() {
         subtitle="Welcome back — here's what's happening at Thrive Hub today."
       />
 
-      <div className="flex-1 overflow-y-auto p-6 space-y-6">
+      <div className="flex-1 overflow-y-auto p-4 md:p-6 space-y-4 md:space-y-6">
         {/* KPI Cards */}
-        <div className="grid grid-cols-2 xl:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3 md:gap-4">
           <MetricCard
             label="Total Members"
             value={315}
@@ -62,7 +62,7 @@ export default function Dashboard() {
         </div>
 
         {/* Revenue + Member Growth charts */}
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-3 md:gap-4">
           {/* Revenue Chart */}
           <div className="xl:col-span-2 bg-white rounded-xl border border-gray-200 p-5">
             <div className="flex items-center justify-between mb-4">
@@ -70,7 +70,7 @@ export default function Dashboard() {
                 <h2 className="text-sm font-semibold text-gray-900">Revenue Overview</h2>
                 <p className="text-xs text-gray-500 mt-0.5">Last 7 months</p>
               </div>
-              <div className="flex items-center gap-4 text-xs">
+              <div className="hidden sm:flex items-center gap-3 text-xs">
                 <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-brand-500 inline-block" />Revenue</span>
                 <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-gray-300 inline-block" />Expenses</span>
                 <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-blue-400 inline-block" />Profit</span>
@@ -138,7 +138,7 @@ export default function Dashboard() {
         </div>
 
         {/* Member Growth + Today's Bookings */}
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-3 md:gap-4">
           {/* Member Growth */}
           <div className="xl:col-span-2 bg-white rounded-xl border border-gray-200 p-5">
             <div className="mb-4">

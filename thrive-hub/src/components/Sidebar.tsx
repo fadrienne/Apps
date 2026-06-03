@@ -1,14 +1,9 @@
 import { NavLink } from 'react-router-dom';
 import {
-  LayoutDashboard,
-  Users,
-  CalendarDays,
-  Dumbbell,
-  UserCheck,
-  BarChart3,
-  Settings,
-  Zap,
+  LayoutDashboard, Users, CalendarDays, Dumbbell,
+  UserCheck, BarChart3, Settings, Zap,
 } from 'lucide-react';
+import { useSidebar } from '../context/SidebarContext';
 
 const navItems = [
   { to: '/', icon: LayoutDashboard, label: 'Dashboard' },
@@ -20,8 +15,14 @@ const navItems = [
 ];
 
 export default function Sidebar() {
+  const { isOpen, close } = useSidebar();
+
   return (
-    <aside className="fixed inset-y-0 left-0 w-60 bg-gray-900 flex flex-col z-20">
+    <aside
+      className={`fixed inset-y-0 left-0 w-60 bg-gray-900 flex flex-col z-20
+        transition-transform duration-300 ease-in-out
+        ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`}
+    >
       <div className="flex items-center gap-2.5 px-6 py-5 border-b border-gray-800">
         <div className="w-8 h-8 rounded-lg bg-brand-500 flex items-center justify-center flex-shrink-0">
           <Zap size={16} className="text-white" />
@@ -38,6 +39,7 @@ export default function Sidebar() {
             key={to}
             to={to}
             end={to === '/'}
+            onClick={close}
             className={({ isActive }) =>
               `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                 isActive
@@ -55,6 +57,7 @@ export default function Sidebar() {
       <div className="px-3 py-4 border-t border-gray-800">
         <NavLink
           to="/settings"
+          onClick={close}
           className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-800 transition-colors"
         >
           <Settings size={18} />

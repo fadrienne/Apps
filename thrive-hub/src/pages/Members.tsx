@@ -36,7 +36,7 @@ export default function Members() {
     <div className="flex flex-col h-full">
       <Header title="Members" subtitle={`${counts.total} total members`} />
 
-      <div className="flex-1 overflow-y-auto p-6 space-y-5">
+      <div className="flex-1 overflow-y-auto p-4 md:p-6 space-y-4 md:space-y-5">
         {/* Summary pills */}
         <div className="flex gap-3 flex-wrap">
           {[
@@ -53,7 +53,7 @@ export default function Members() {
 
         {/* Filters + Actions */}
         <div className="flex items-center justify-between gap-3 flex-wrap">
-          <div className="flex items-center gap-3 flex-wrap">
+          <div className="flex items-center gap-2 flex-wrap">
             <div className="relative">
               <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
               <input
@@ -93,7 +93,8 @@ export default function Members() {
 
         {/* Table */}
         <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-          <table className="w-full text-sm">
+          <div className="overflow-x-auto">
+          <table className="w-full text-sm min-w-[640px]">
             <thead className="bg-gray-50 border-b border-gray-200">
               <tr>
                 <th className="text-left px-5 py-3 text-xs font-medium text-gray-500">Member</th>
@@ -138,6 +139,7 @@ export default function Members() {
               )}
             </tbody>
           </table>
+          </div>
         </div>
       </div>
     </div>
