@@ -10,18 +10,22 @@ import Reports from './pages/Reports';
 import Settings from './pages/Settings';
 
 function Layout() {
-  const { isOpen, close } = useSidebar();
+  const { isOpen, isDesktop, close } = useSidebar();
+
   return (
     <div className="flex h-screen overflow-hidden">
       {/* Mobile overlay backdrop */}
-      {isOpen && (
+      {!isDesktop && isOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-10 md:hidden"
+          className="fixed inset-0 bg-black/50 z-10"
           onClick={close}
         />
       )}
       <Sidebar />
-      <main className="flex-1 ml-0 md:ml-60 flex flex-col overflow-hidden">
+      <main
+        className="flex-1 flex flex-col overflow-hidden"
+        style={{ marginLeft: isDesktop ? '240px' : 0 }}
+      >
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/members" element={<Members />} />

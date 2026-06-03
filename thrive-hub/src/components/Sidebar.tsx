@@ -15,13 +15,16 @@ const navItems = [
 ];
 
 export default function Sidebar() {
-  const { isOpen, close } = useSidebar();
+  const { isOpen, isDesktop, close } = useSidebar();
+  const visible = isDesktop || isOpen;
 
   return (
     <aside
-      className={`fixed inset-y-0 left-0 w-60 bg-gray-900 flex flex-col z-20
-        transition-transform duration-300 ease-in-out
-        ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`}
+      className="fixed inset-y-0 left-0 w-60 bg-gray-900 flex flex-col z-20"
+      style={{
+        transform: visible ? 'translateX(0)' : 'translateX(-100%)',
+        transition: 'transform 300ms ease-in-out',
+      }}
     >
       <div className="flex items-center gap-2.5 px-6 py-5 border-b border-gray-800">
         <div className="w-8 h-8 rounded-lg bg-brand-500 flex items-center justify-center flex-shrink-0">
