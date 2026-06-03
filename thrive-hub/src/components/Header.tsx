@@ -1,4 +1,4 @@
-import { Bell, Search, Menu } from 'lucide-react';
+import { Bell, Menu } from 'lucide-react';
 import { useSidebar } from '../context/SidebarContext';
 
 interface HeaderProps {
@@ -10,42 +10,31 @@ export default function Header({ title, subtitle }: HeaderProps) {
   const { toggle, isDesktop } = useSidebar();
 
   return (
-    <header className="flex items-center justify-between px-4 py-3 bg-white border-b border-gray-200 gap-3 flex-shrink-0">
-      <div className="flex items-center gap-3 min-w-0">
+    <header style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 16px', background: 'white', borderBottom: '1px solid #e5e7eb', flexShrink: 0, gap: 12 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 12, minWidth: 0 }}>
         {!isDesktop && (
           <button
             onClick={toggle}
-            className="p-2 -ml-1 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition-colors flex-shrink-0"
+            style={{ padding: 8, background: 'none', border: 'none', cursor: 'pointer', color: '#6b7280', borderRadius: 8, flexShrink: 0 }}
             aria-label="Open menu"
           >
-            <Menu size={20} />
+            <Menu size={22} />
           </button>
         )}
-        <div className="min-w-0">
-          <h1 className="text-lg font-semibold text-gray-900 truncate">{title}</h1>
+        <div style={{ minWidth: 0 }}>
+          <h1 style={{ fontSize: 18, fontWeight: 600, color: '#111827', margin: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{title}</h1>
           {subtitle && isDesktop && (
-            <p className="text-sm text-gray-500 mt-0.5 truncate">{subtitle}</p>
+            <p style={{ fontSize: 13, color: '#6b7280', margin: 0 }}>{subtitle}</p>
           )}
         </div>
       </div>
-
-      <div className="flex items-center gap-2 flex-shrink-0">
-        {isDesktop && (
-          <div className="relative">
-            <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-            <input
-              type="text"
-              placeholder="Search…"
-              className="pl-9 pr-4 py-2 text-sm bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent w-48"
-            />
-          </div>
-        )}
-        <button className="relative p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-lg transition-colors">
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0 }}>
+        <button style={{ position: 'relative', padding: 8, background: 'none', border: 'none', cursor: 'pointer', color: '#6b7280', borderRadius: 8 }}>
           <Bell size={18} />
-          <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full" />
+          <span style={{ position: 'absolute', top: 6, right: 6, width: 8, height: 8, background: '#ef4444', borderRadius: '50%' }} />
         </button>
-        <div className="w-8 h-8 rounded-full bg-brand-500 flex items-center justify-center flex-shrink-0">
-          <span className="text-white text-xs font-semibold">TH</span>
+        <div style={{ width: 32, height: 32, borderRadius: '50%', background: '#22c55e', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <span style={{ color: 'white', fontSize: 12, fontWeight: 600 }}>TH</span>
         </div>
       </div>
     </header>

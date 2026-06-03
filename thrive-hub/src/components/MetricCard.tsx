@@ -12,17 +12,9 @@ interface MetricCardProps {
 }
 
 export default function MetricCard({
-  label,
-  value,
-  change,
-  icon: Icon,
-  iconBg,
-  iconColor,
-  prefix = '',
-  suffix = '',
+  label, value, change, icon: Icon, iconBg, iconColor, prefix = '', suffix = '',
 }: MetricCardProps) {
   const isPositive = change >= 0;
-
   return (
     <div className="bg-white rounded-xl border border-gray-200 p-5 flex flex-col gap-4">
       <div className="flex items-center justify-between">
@@ -31,17 +23,12 @@ export default function MetricCard({
           <Icon size={18} className={iconColor} />
         </div>
       </div>
-
       <div>
         <p className="text-2xl font-bold text-gray-900">
           {prefix}{typeof value === 'number' ? value.toLocaleString() : value}{suffix}
         </p>
         <div className="flex items-center gap-1 mt-1">
-          {isPositive ? (
-            <TrendingUp size={14} className="text-green-500" />
-          ) : (
-            <TrendingDown size={14} className="text-red-500" />
-          )}
+          {isPositive ? <TrendingUp size={14} className="text-green-500" /> : <TrendingDown size={14} className="text-red-500" />}
           <span className={`text-xs font-medium ${isPositive ? 'text-green-600' : 'text-red-600'}`}>
             {isPositive ? '+' : ''}{change}%
           </span>

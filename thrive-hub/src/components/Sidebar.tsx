@@ -17,51 +17,64 @@ const navItems = [
 export default function Sidebar() {
   const { isOpen, isDesktop, close } = useSidebar();
   const visible = isDesktop || isOpen;
+  const w = isDesktop ? 240 : 240;
 
   return (
     <aside
-      className="fixed inset-y-0 left-0 w-60 bg-gray-900 flex flex-col z-20"
       style={{
+        position: 'fixed',
+        top: 0, left: 0, bottom: 0,
+        width: w,
+        background: '#111827',
+        display: 'flex',
+        flexDirection: 'column',
+        zIndex: 20,
         transform: visible ? 'translateX(0)' : 'translateX(-100%)',
         transition: 'transform 300ms ease-in-out',
       }}
     >
-      <div className="flex items-center gap-2.5 px-6 py-5 border-b border-gray-800">
-        <div className="w-8 h-8 rounded-lg bg-brand-500 flex items-center justify-center flex-shrink-0">
-          <Zap size={16} className="text-white" />
+      <div style={{ padding: '20px 24px', borderBottom: '1px solid #1f2937', display: 'flex', alignItems: 'center', gap: 10 }}>
+        <div style={{ width: 32, height: 32, borderRadius: 8, background: '#22c55e', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+          <Zap size={16} color="white" />
         </div>
         <div>
-          <p className="text-white font-semibold text-sm leading-tight">Thrive Hub</p>
-          <p className="text-gray-500 text-xs">Business Suite</p>
+          <p style={{ color: 'white', fontWeight: 600, fontSize: 14, margin: 0 }}>Thrive Hub</p>
+          <p style={{ color: '#6b7280', fontSize: 12, margin: 0 }}>Business Suite</p>
         </div>
       </div>
 
-      <nav className="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto">
+      <nav style={{ flex: 1, padding: '12px 8px', overflowY: 'auto' }}>
         {navItems.map(({ to, icon: Icon, label }) => (
           <NavLink
             key={to}
             to={to}
             end={to === '/'}
             onClick={close}
-            className={({ isActive }) =>
-              `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                isActive
-                  ? 'bg-brand-600 text-white'
-                  : 'text-gray-400 hover:text-white hover:bg-gray-800'
-              }`
-            }
+            style={({ isActive }) => ({
+              display: 'flex',
+              alignItems: 'center',
+              gap: 12,
+              padding: '10px 12px',
+              borderRadius: 8,
+              marginBottom: 2,
+              background: isActive ? '#16a34a' : 'transparent',
+              color: isActive ? 'white' : '#9ca3af',
+              textDecoration: 'none',
+              fontSize: 14,
+              fontWeight: 500,
+            })}
           >
-            <Icon size={18} />
+            <Icon size={18} style={{ flexShrink: 0 }} />
             {label}
           </NavLink>
         ))}
       </nav>
 
-      <div className="px-3 py-4 border-t border-gray-800">
+      <div style={{ padding: '12px 8px', borderTop: '1px solid #1f2937' }}>
         <NavLink
           to="/settings"
           onClick={close}
-          className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-800 transition-colors"
+          style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '10px 12px', borderRadius: 8, color: '#9ca3af', textDecoration: 'none', fontSize: 14 }}
         >
           <Settings size={18} />
           Settings
