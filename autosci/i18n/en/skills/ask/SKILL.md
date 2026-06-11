@@ -36,7 +36,7 @@ argument-hint: <question>
 - `wiki/concepts/*.md` — concept pages relevant to the question
 - `wiki/methods/*.md` — method pages relevant to the question
 - `wiki/topics/*.md` — topic pages relevant to the question
-- `wiki/people/*.md` — if the question involves specific researchers
+- `wiki/authors/*.md` — if the question involves specific researchers
 - `wiki/ideas/*.md` — if the question involves research ideas or failed ideas
 - `wiki/experiments/*.md` — if the question involves experiment results
 - `wiki/Summary/*.md` — if the question involves domain-wide landscape

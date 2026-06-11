@@ -43,7 +43,7 @@ argument-hint: <paper-plan-path> [--review] [--sections <section-numbers>]
 - `wiki/sources/*.md` — Method, Results, Related (as citation content and baseline reference)
 - `wiki/concepts/*.md` — Definition, Intuition, Variants, Comparison (supports Method writing)
 - `wiki/topics/*.md` — Overview, Timeline, SOTA tracker, Open problems (supports Introduction context)
-- `wiki/people/*.md` — author names and institutions (citation formatting)
+- `wiki/authors/*.md` — author names and institutions (citation formatting)
 - `wiki/graph/edges.jsonl` — relationship graph (build argumentative logic chain)
 - `wiki/graph/open_questions.md` — known limitations (write Limitations and Future Work)
 - `.claude/skills/shared-references/academic-writing.md` — writing standards

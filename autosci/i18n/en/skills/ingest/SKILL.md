@@ -37,7 +37,7 @@ Open `runtime/schema/entities.yaml` for frontmatter field definitions and `runti
 - `wiki/sources/*.md` to detect an already-ingested paper
 - `wiki/concepts/*.md` and `wiki/foundations/*.md` for dedup matches
 - `wiki/methods/*.md` for dedup matches against existing reusable methods
-- `wiki/people/*.md` for existing authors
+- `wiki/authors/*.md` for existing authors
 - `wiki/topics/*.md` to place the paper under existing topics
 - `wiki/graph/open_questions.md` to notice when the paper addresses a known gap
 
@@ -46,7 +46,7 @@ Open `runtime/schema/entities.yaml` for frontmatter field definitions and `runti
 - `wiki/sources/{slug}.md` — CREATE
 - `wiki/concepts/{slug}.md` — CREATE (new) or EDIT (append `key_papers`, aliases, variants)
 - `wiki/methods/{slug}.md` — CREATE (new, only when the method is named, reusable, and citable across papers) or EDIT (append `source_papers`)
-- `wiki/people/{slug}.md` — CREATE (importance ≥ 4 only) or EDIT (append into `## Recent work`)
+- `wiki/authors/{slug}.md` — CREATE (importance ≥ 4 only) or EDIT (append into `## Recent work`)
 - `wiki/topics/{slug}.md` — EDIT only (no CREATE from `/ingest`)
 - `wiki/graph/edges.jsonl` — APPEND via tool
 - `wiki/graph/citations.jsonl` — APPEND via tool
@@ -162,7 +162,7 @@ Follow `references/dedup-policy.md`. In short:
 2. For each candidate method (named, reusable technique that other papers could cite), check `wiki/methods/` for an existing entry by name + tags. There is no `find-similar-method` tool — do a directory scan and a manual title/alias compare against `runtime/schema/entities.yaml`'s `methods.name` field.
 3. Prefer merging into the top result. Create a new page only when no acceptable candidate exists and the paper's importance justifies it. The `## Method` body section on the paper page is **always** filled (it is this paper's own method narrative); a separate `wiki/methods/{slug}.md` is only created when the technique is namable, reusable, and likely to be referenced by other papers.
 4. For each entity you write or edit, write the reverse link in the same turn. The obligation matrix lives in `references/cross-references.md`.
-5. Create a `wiki/people/{slug}.md` only for papers with importance ≥ 4. Otherwise append the paper's `[[paper-slug]]` to existing author pages' `## Recent work` only. People entities use `research_areas` (list_str) and a `type.kind` enum (`researcher` / `team` / `organization`); only assign `type.kind = team` or `organization` when the byline itself names the team or organization (do not infer it from a researcher's affiliation).
+5. Create a `wiki/authors/{slug}.md` only for papers with importance ≥ 4. Otherwise append the paper's `[[paper-slug]]` to existing author pages' `## Recent work` only. People entities use `research_areas` (list_str) and a `type.kind` enum (`researcher` / `team` / `organization`); only assign `type.kind = team` or `organization` when the byline itself names the team or organization (do not infer it from a researcher's affiliation).
 6. When creating a `wiki/concepts/{slug}.md` and the concept clearly belongs under an existing topic (e.g. all "self-improving coding agents" subtopics), set `parent_topic: <topic-slug>` (bare slug, NOT `[[wikilink]]` — `parent_topic` is `link`-typed, not `list_link`). The reverse `## Concepts` body section on the topic page must be appended in the same turn.
 7. When creating or editing a `wiki/methods/{slug}.md`, populate `realizes_concepts: [[c1], [c2], ...]` for any concept this method instantiates (typically the concept(s) introduced by the same paper). The reverse `## Realized by` body section on each concept page must be appended in the same turn.
 

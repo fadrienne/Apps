@@ -43,7 +43,7 @@ argument-hint: <paper-plan-path> [--review] [--sections <section-numbers>]
 - `wiki/sources/*.md` — Method、Results、Related（作为引用内容和 baseline 参考）
 - `wiki/concepts/*.md` — Definition、Intuition、Variants、Comparison（支持 Method 撰写）
 - `wiki/topics/*.md` — Overview、Timeline、SOTA tracker、Open problems（支持 Introduction 上下文）
-- `wiki/people/*.md` — 人名和机构（引用格式）
+- `wiki/authors/*.md` — 人名和机构（引用格式）
 - `wiki/graph/edges.jsonl` — 关系图（构建论证逻辑链）
 - `wiki/graph/open_questions.md` — 已知局限（写 Limitations 和 Future Work）
 - `.claude/skills/shared-references/academic-writing.md` — 写作规范

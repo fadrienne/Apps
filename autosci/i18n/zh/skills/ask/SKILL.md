@@ -35,7 +35,7 @@ argument-hint: <question>
 - `wiki/concepts/*.md` — 与问题相关的概念页面
 - `wiki/methods/*.md` — 与问题相关的 method 页面
 - `wiki/topics/*.md` — 与问题相关的 topic 页面
-- `wiki/people/*.md` — 若问题涉及特定研究者
+- `wiki/authors/*.md` — 若问题涉及特定研究者
 - `wiki/ideas/*.md` — 若问题涉及研究想法或 failed ideas
 - `wiki/experiments/*.md` — 若问题涉及实验结果
 - `wiki/Summary/*.md` — 若问题涉及领域全景
