@@ -76,7 +76,7 @@ python3 tools/lint.py --wiki-dir wiki/ --fix --dry-run --json
    - papers: title, slug, tags, importance
    - concepts: title, tags, maturity, key_papers
    - topics: title, tags
-   - people: name
+   - people: title
    - methods: name, slug, type, tags
    - Summary: title, scope, key_topics
    - ideas: title, slug, status, origin, tags, priority

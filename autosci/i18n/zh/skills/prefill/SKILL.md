@@ -78,7 +78,7 @@ domain: "{domain}"
 status: mainstream         # 已被取代的方法填 historical
 aliases: []                # 列出 LLM 有把握的常见别名
 first_introduced: "{Wikipedia summary 中能提取的年份，否则留空}"
-date_updated: "{今天}"
+last_updated: "{今天}"
 source_url: "{Wikipedia URL，404 时留空}"
 ---
 

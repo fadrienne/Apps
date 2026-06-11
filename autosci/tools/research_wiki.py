@@ -1282,7 +1282,7 @@ def compile_context(wiki_root: str, purpose: str,
             items: list[tuple[int, str]] = []
             for f in sorted(methods_dir.glob("*.md")):
                 fm = _parse_frontmatter(f)
-                title = fm.get("name", fm.get("title", f.stem))
+                title = fm.get("title", fm.get("name", f.stem))
                 mtype = fm.get("type", "other")
                 connectivity = edge_counts.get(f"methods/{f.stem}", 0)
                 items.append((connectivity,
@@ -1383,7 +1383,7 @@ def compile_context(wiki_root: str, purpose: str,
                 continue
             for f in sorted(edir.glob("*.md")):
                 fm = _parse_frontmatter(f)
-                date_str = (fm.get("date_updated") or fm.get("date_added")
+                date_str = (fm.get("last_updated") or fm.get("date_updated") or fm.get("date_added")
                             or fm.get("date_proposed") or "")
                 if isinstance(date_str, str) and date_str:
                     try:

@@ -78,7 +78,7 @@ domain: "{domain}"
 status: mainstream         # or historical, if the seed is a superseded technique
 aliases: []                # list any common aliases the LLM is confident about
 first_introduced: "{year if present in Wikipedia summary, else empty}"
-date_updated: "{today}"
+last_updated: "{today}"
 source_url: "{wikipedia url, or empty if 404}"
 ---
 
