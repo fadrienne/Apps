@@ -27,7 +27,7 @@ Topic / wiki 模式：相同信号，去掉 anchor overlap 与 anchor-influence 
 
 Venue 模式：
 
-1. **Wiki relevance** —— 主信号。`tools/discover.py` 会从 `wiki/papers/`、`wiki/concepts/`、`wiki/topics/` 建一个小型 BM25 风格的本地 corpus，其中页面标题和 frontmatter 权重大于正文。候选的标题、摘要、keywords、TLDR 和 track name 会与这个 corpus 打分。若 wiki 过于稀疏，或 venue 候选完全无法命中 corpus，工具会失败，而不是假装给出个性化 ranking。
+1. **Wiki relevance** —— 主信号。`tools/discover.py` 会从 `wiki/sources/`、`wiki/concepts/`、`wiki/topics/` 建一个小型 BM25 风格的本地 corpus，其中页面标题和 frontmatter 权重大于正文。候选的标题、摘要、keywords、TLDR 和 track name 会与这个 corpus 打分。若 wiki 过于稀疏，或 venue 候选完全无法命中 corpus，工具会失败，而不是假装给出个性化 ranking。
 2. **Citation count** —— Paper Copilot 可用的引用字段，做对数缩放，作为次级信号。
 3. **Freshness** —— 轻量 tie-breaker；venue 运行通常固定一个年份，所以它一般影响不大。
 4. **Paper Copilot rating / review metadata** —— 存在时仅作次级 tie-breaker。

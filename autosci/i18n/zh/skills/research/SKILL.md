@@ -46,7 +46,7 @@ argument-hint: <research-direction-or-brief> [--auto] [--start-from stage1|stage
 - `wiki/experiments/*.md` — Stage 3-4 状态检查
 - `wiki/methods/*.md` — Stage 5 论文写作上下文
 - `wiki/outputs/pipeline-progress.md` — --start-from 恢复状态
-- `wiki/papers/*.md` — Stage 5 论文写作上下文
+- `wiki/sources/*.md` — Stage 5 论文写作上下文
 
 ### Writes
 - `wiki/outputs/pipeline-progress.md` — 每个 Gate 保存进度（委托写入 wiki 实体的操作由子 skill 完成）

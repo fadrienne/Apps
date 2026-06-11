@@ -33,7 +33,7 @@ argument-hint: <idea-description-or-slug> [--quick] [--verbose] [--write]
 ## Wiki Interaction
 
 ### Reads
-- `wiki/papers/*.md` — search existing papers for similar methods
+- `wiki/sources/*.md` — search existing papers for similar methods
 - `wiki/concepts/*.md` — check concept overlap
 - `wiki/methods/*.md` — check for already-cataloged methods that overlap with the candidate
 - `wiki/ideas/*.md` — check for duplication with existing ideas (especially `failure_reason` of failed ideas)
@@ -87,7 +87,7 @@ Use DeepXiv brief TLDRs to quickly judge method similarity.
 **If DeepXiv is unavailable**: fall back to S2 search only (original behavior).
 
 **Source C — Wiki Internal Search:**
-1. Scan Key idea and Method sections of all pages in `wiki/papers/`
+1. Scan Key idea and Method sections of all pages in `wiki/sources/`
 2. Scan Definition and Variants sections of `wiki/concepts/`
 3. Scan all content in `wiki/ideas/`, with special attention to:
    - ideas with status = failed and their failure_reason (anti-repetition)

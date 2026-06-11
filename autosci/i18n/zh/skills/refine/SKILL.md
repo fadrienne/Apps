@@ -36,7 +36,7 @@ argument-hint: <artifact-slug-or-path> [--max-rounds N] [--target-score N] [--di
 - `wiki/ideas/*.md` — 若 artifact 是 idea
 - `wiki/experiments/*.md` — 若 artifact 是 experiment plan
 - `wiki/methods/*.md` — review 引用的 methods
-- `wiki/papers/*.md` — review 引用的 papers
+- `wiki/sources/*.md` — review 引用的 papers
 - `wiki/outputs/*.md` — 若 artifact 是 paper draft 或 output
 - `wiki/graph/context_brief.md` — 传递给 /review 的全局上下文
 - `wiki/graph/open_questions.md` — 检查是否有新 gap 需要记录
@@ -61,7 +61,7 @@ argument-hint: <artifact-slug-or-path> [--max-rounds N] [--target-score N] [--di
 ### Step 1: 初始化
 
 1. **定位 artifact**：
-   - 若为 slug：按顺序在 `wiki/ideas/`、`wiki/experiments/`、`wiki/methods/`、`wiki/outputs/`、`wiki/papers/` 中查找 `{slug}.md`
+   - 若为 slug：按顺序在 `wiki/ideas/`、`wiki/experiments/`、`wiki/methods/`、`wiki/outputs/`、`wiki/sources/` 中查找 `{slug}.md`
    - 若为文件路径：直接读取
    - 记录 artifact 类型和路径
 2. **读取当前内容**：加载 artifact 完整文本

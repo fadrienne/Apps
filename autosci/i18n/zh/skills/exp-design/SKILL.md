@@ -30,7 +30,7 @@ argument-hint: <idea-slug>
 - `wiki/ideas/{slug}.md` — idea的假设、方法、风险、新颖性论点
 - `wiki/ideas/*.md` — 其他idea（用于候选C跨idea结合，筛选已验证/通过预实验的idea）
 - `experiments/pilot/{slug}/report.md` — 预实验评估结果（若存在）
-- `wiki/papers/*.md` — 相关论文的baseline设置和方法细节
+- `wiki/sources/*.md` — 相关论文的baseline设置和方法细节
 - `wiki/concepts/*.md` 和 `wiki/topics/*.md` — 通过idea的 `origin_gaps` 引用
 - `wiki/methods/*.md` — idea所基于的可复用方法
 - `wiki/experiments/*.md` — 已有实验（避免重复设计）
@@ -67,7 +67,7 @@ argument-hint: <idea-slug>
    - 从 `## Approach sketch` 的wikilinks读取引用的 `wiki/methods/*.md`
    - 读取 `linked_idea` 匹配的已有 `wiki/experiments/*.md`
 
-4. **读取相关论文**：从 `wiki/papers/*.md` 中提取与idea相关的baseline设置和方法细节。
+4. **读取相关论文**：从 `wiki/sources/*.md` 中提取与idea相关的baseline设置和方法细节。
 
 ---
 
@@ -95,7 +95,7 @@ argument-hint: <idea-slug>
 
 1. **确定基准**，基于：
    - idea的领域（NLP、CV、RL等）
-   - 相关论文中使用的标准基准（来自 `wiki/papers/`）
+   - 相关论文中使用的标准基准（来自 `wiki/sources/`）
    - 数据集可用性和计算约束
 
 2. **选择数据集**：

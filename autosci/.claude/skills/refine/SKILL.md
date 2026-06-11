@@ -37,7 +37,7 @@ argument-hint: <artifact-slug-or-path> [--max-rounds N] [--target-score N] [--di
 - `wiki/ideas/*.md` — if artifact is an idea
 - `wiki/experiments/*.md` — if artifact is an experiment plan
 - `wiki/methods/*.md` — methods referenced by the review
-- `wiki/papers/*.md` — papers referenced by the review
+- `wiki/sources/*.md` — papers referenced by the review
 - `wiki/outputs/*.md` — if artifact is a paper draft or output
 - `wiki/graph/context_brief.md` — global context passed to /review
 - `wiki/graph/open_questions.md` — check whether new gaps need recording
@@ -62,7 +62,7 @@ argument-hint: <artifact-slug-or-path> [--max-rounds N] [--target-score N] [--di
 ### Step 1: Initialize
 
 1. **Locate artifact**:
-   - If slug: search sequentially in `wiki/ideas/`, `wiki/experiments/`, `wiki/methods/`, `wiki/outputs/`, `wiki/papers/` for `{slug}.md`
+   - If slug: search sequentially in `wiki/ideas/`, `wiki/experiments/`, `wiki/methods/`, `wiki/outputs/`, `wiki/sources/` for `{slug}.md`
    - If file path: read directly
    - Record artifact type and path
 2. **Read current content**: load full artifact text

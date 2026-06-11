@@ -47,7 +47,7 @@ argument-hint: <experiment-slug> [--review] [--collect] [--full] [--env local|re
 ### Reads
 - `wiki/experiments/{slug}.md` — experiment config: setup, metrics, baseline, hypothesis, linked_idea
 - `wiki/ideas/{linked-idea}.md` — linked idea's approach sketch (guide code implementation, understand experiment purpose)
-- `wiki/papers/*.md` — related papers' method details and hyperparameters (implementation reference)
+- `wiki/sources/*.md` — related papers' method details and hyperparameters (implementation reference)
 - `wiki/experiments/*.md` — other experiments on the same idea (reference setup, avoid known mistakes)
 
 ### Writes

@@ -37,7 +37,7 @@ argument-hint: <review-file-or-path> [--paper-slug <slug>] [--venue <venue>] [--
 - `wiki/ideas/*.md` — map concerns to ideas, check linked experiments and novelty argument
 - `wiki/methods/*.md` — map concerns to methods, check Mechanism / Procedure / Limitations
 - `wiki/experiments/*.md` — find experiment results supporting ideas (via `linked_idea`)
-- `wiki/papers/*.md` — find citation context for referenced papers
+- `wiki/sources/*.md` — find citation context for referenced papers
 - `wiki/concepts/*.md` — understand the conceptual background of method-related concerns
 - `wiki/outputs/PAPER_PLAN.md` — understand paper structure (from /paper-plan, if --paper-slug provided)
 - `wiki/graph/context_brief.md` — global context

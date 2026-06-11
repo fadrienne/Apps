@@ -40,7 +40,7 @@ argument-hint: <paper-plan-path> [--review] [--sections <section-numbers>]
 - `wiki/ideas/*.md` — Hypothesis、Novelty argument、Approach sketch、Motivation、Risks、Lessons learned
 - `wiki/methods/*.md` — Mechanism、Procedure、Assumptions、Tradeoff profile（支持 Method 撰写）
 - `wiki/experiments/*.md` — Results、Analysis、key_result、metrics 数据
-- `wiki/papers/*.md` — Method、Results、Related（作为引用内容和 baseline 参考）
+- `wiki/sources/*.md` — Method、Results、Related（作为引用内容和 baseline 参考）
 - `wiki/concepts/*.md` — Definition、Intuition、Variants、Comparison（支持 Method 撰写）
 - `wiki/topics/*.md` — Overview、Timeline、SOTA tracker、Open problems（支持 Introduction 上下文）
 - `wiki/people/*.md` — 人名和机构（引用格式）
@@ -148,7 +148,7 @@ argument-hint: <paper-plan-path> [--review] [--sections <section-numbers>]
 
 读取所有相关 wiki 页面的对应部分：
 - Introduction → wiki/ideas/{idea}.md（Hypothesis、Motivation、Novelty argument）+ wiki/topics/{topic}.md#Overview
-- Related Work → wiki/papers/*.md#Related + wiki/concepts/*.md#Comparison
+- Related Work → wiki/sources/*.md#Related + wiki/concepts/*.md#Comparison
 - Method → wiki/methods/{method}.md（## Mechanism + ## Procedure）+ wiki/concepts/{concept}.md（## Definition + ## Intuition）
 - Experiments → wiki/experiments/*.md#Results + wiki/experiments/*.md#Analysis
 - Conclusion → wiki/ideas/*.md#Lessons_learned + wiki/concepts/*.md#Open_problems + wiki/topics/*.md#Open_problems + wiki/graph/open_questions.md

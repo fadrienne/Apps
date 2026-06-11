@@ -31,7 +31,7 @@ argument-hint: <idea-slug> [--env local|remote]
 
 ### Reads
 - `experiments/pilot/{slug}.yaml` — Pilot Spec（所有配置）**如果在对应位置不存在所选择idea的Pilot Spec，提醒用户，并按照 /ideate Phase 5 中创建Pilot Spec的步骤进行创建**
-- `wiki/papers/*.md` — 相关论文的方法描述（实现参考）
+- `wiki/sources/*.md` — 相关论文的方法描述（实现参考）
 
 ### Writes
 - `experiments/pilot/code/{slug}/` — 预实验代码目录
@@ -62,7 +62,7 @@ argument-hint: <idea-slug> [--env local|remote]
 
 2. **加载实现上下文**：
    - 使用 `pilot_spec.hypothesis` 和 `pilot_spec.approach_sketch` 作为主要实现指南（idea 页面由 `/ideate` Phase 4 在预实验之前写入）
-   - 读取相关论文的方法描述（算法细节，来自 `wiki/papers/` 若存在）
+   - 读取相关论文的方法描述（算法细节，来自 `wiki/sources/` 若存在）
    - 读取源论文 repo 获取基础代码参考
 
 3. **检验数据集以及其余配置**

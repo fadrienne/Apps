@@ -88,7 +88,7 @@ Examples:
 ## What NOT To Do
 
 - **Never** generate BibTeX from memory (wrong venue/year is worse than [UNCONFIRMED])
-- **Never** cite a paper not in the wiki (all citations trace back to wiki/papers/)
+- **Never** cite a paper not in the wiki (all citations trace back to wiki/sources/)
 - **Never** use `\nocite{*}` (every entry must be explicitly cited)
 - **Never** silently drop a [UNCONFIRMED] marker (it must survive until human verification or successful fetch)
 - **Never** fabricate DOIs or arXiv IDs

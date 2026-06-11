@@ -36,7 +36,7 @@ argument-hint: <review-file-or-path> [--paper-slug <slug>] [--venue <venue>] [--
 - `wiki/ideas/*.md` — 把 concern 映射到 idea，检查 linked experiments 与 novelty 论证
 - `wiki/methods/*.md` — 把 concern 映射到 method，检查 Mechanism / Procedure / Limitations
 - `wiki/experiments/*.md` — 通过 `linked_idea` 找到支持 idea 的实验 result
-- `wiki/papers/*.md` — 查找引用的论文上下文
+- `wiki/sources/*.md` — 查找引用的论文上下文
 - `wiki/concepts/*.md` — 理解 method 相关 concerns 的概念背景
 - `wiki/outputs/PAPER_PLAN.md` — 了解论文结构（来自 /paper-plan，若有 --paper-slug）
 - `wiki/graph/context_brief.md` — 全局上下文

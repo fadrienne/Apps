@@ -43,7 +43,7 @@ argument-hint: <artifact-path-or-slug> [--difficulty standard|hard|adversarial] 
 ## Wiki Interaction
 
 ### Reads
-- `wiki/papers/*.md` — 查找制品引用的论文，验证引用正确性
+- `wiki/sources/*.md` — 查找制品引用的论文，验证引用正确性
 - `wiki/concepts/*.md` — 理解制品涉及的技术概念
 - `wiki/methods/*.md` — 检查制品依赖的 methods 当前状态
 - `wiki/experiments/*.md` — 查找相关实验结果
@@ -66,7 +66,7 @@ argument-hint: <artifact-path-or-slug> [--difficulty standard|hard|adversarial] 
 ### Step 1: 加载上下文
 
 1. **解析 artifact**：
-   - 若为 slug：按顺序在 `wiki/ideas/`、`wiki/experiments/`、`wiki/methods/`、`wiki/papers/`、`wiki/outputs/` 中查找 `{slug}.md`
+   - 若为 slug：按顺序在 `wiki/ideas/`、`wiki/experiments/`、`wiki/methods/`、`wiki/sources/`、`wiki/outputs/` 中查找 `{slug}.md`
    - 若为文件路径：直接读取
    - 若为自由文本：直接使用
 2. **确定 artifact 类型**：idea / experiment / method / paper-draft / proposal / other

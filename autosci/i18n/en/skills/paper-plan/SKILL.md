@@ -37,7 +37,7 @@ argument-hint: <idea-slugs...> --venue <ICLR|NeurIPS|ICML|ACL|CVPR|IEEE> [--titl
 - `wiki/ideas/*.md` — Hypothesis, Motivation, Approach sketch, Novelty argument, status, novelty_score, target_venue, linked_experiments, origin_gaps
 - `wiki/experiments/*.md` — supporting experiments (linked via `linked_idea`); results, metrics, key_result
 - `wiki/methods/*.md` — methods referenced by the idea's Approach sketch (Mechanism, Procedure, source_papers)
-- `wiki/papers/*.md` — evidence source papers (Method, Results, Related)
+- `wiki/sources/*.md` — evidence source papers (Method, Results, Related)
 - `wiki/concepts/*.md` — concepts the idea's `origin_gaps` points to (Definition, Variants, Comparison)
 - `wiki/topics/*.md` — topics the idea's `origin_gaps` points to (Overview, Open problems)
 - `wiki/graph/context_brief.md` — global context
@@ -66,7 +66,7 @@ argument-hint: <idea-slugs...> --venue <ICLR|NeurIPS|ICML|ACL|CVPR|IEEE> [--titl
 2. For each idea, traverse:
    - `linked_experiments` → read each `wiki/experiments/{slug}.md` (key_result, metrics, outcome)
    - `origin_gaps` → read each `wiki/concepts/{slug}.md` and `wiki/topics/{slug}.md` (background context)
-   - `## Approach sketch` body wikilinks → read each `wiki/methods/{slug}.md` and `wiki/papers/{slug}.md`
+   - `## Approach sketch` body wikilinks → read each `wiki/methods/{slug}.md` and `wiki/sources/{slug}.md`
 3. Read `wiki/graph/context_brief.md` for global context
 4. Read `wiki/graph/open_questions.md` to annotate known limitations
 5. Load relevant edges from `wiki/graph/edges.jsonl` to build relationships between ideas
@@ -356,7 +356,7 @@ Revise the outline based on Review LLM feedback (add sections, adjust page budge
 - **At least one experiment evidence**: purely theoretical ideas are insufficient for an empirical paper; at least one supporting experiment is required
 - **Page budget must be feasible**: total section pages <= venue main-body limit; otherwise adjust (compress or move to appendix)
 - **Review LLM review is mandatory**: cannot be skipped; catching problems at the outline stage has the lowest cost
-- **All citations from wiki**: every paper in the citation plan must exist in wiki/papers/
+- **All citations from wiki**: every paper in the citation plan must exist in wiki/sources/
 - **idea → section mapping must be complete**: every target idea must appear in at least one section
 - **Every section must have an idea**: a section with no idea support is filler and should be removed or merged
 - **Graph edges via tools/research_wiki.py**: do not manually edit edges.jsonl

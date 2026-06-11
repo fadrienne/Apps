@@ -23,7 +23,7 @@ description: Scan the full wiki to detect health issues and produce a tiered fix
 ## Wiki Interaction
 
 ### Reads
-- `wiki/papers/*.md` — paper page fields and links
+- `wiki/sources/*.md` — paper page fields and links
 - `wiki/concepts/*.md` — concept page fields and links
 - `wiki/topics/*.md` — topic page fields and links
 - `wiki/people/*.md` — people page fields and links

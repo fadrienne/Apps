@@ -40,7 +40,7 @@ argument-hint: <paper-plan-path> [--review] [--sections <section-numbers>]
 - `wiki/ideas/*.md` — Hypothesis, Novelty argument, Approach sketch, Motivation, Risks, Lessons learned
 - `wiki/methods/*.md` — Mechanism, Procedure, Assumptions, Tradeoff profile (supports Method writing)
 - `wiki/experiments/*.md` — Results, Analysis, key_result, metrics data
-- `wiki/papers/*.md` — Method, Results, Related (as citation content and baseline reference)
+- `wiki/sources/*.md` — Method, Results, Related (as citation content and baseline reference)
 - `wiki/concepts/*.md` — Definition, Intuition, Variants, Comparison (supports Method writing)
 - `wiki/topics/*.md` — Overview, Timeline, SOTA tracker, Open problems (supports Introduction context)
 - `wiki/people/*.md` — author names and institutions (citation formatting)
@@ -148,7 +148,7 @@ From the section definition in PAPER_PLAN, extract:
 
 Read the relevant portions of all related wiki pages:
 - Introduction → wiki/ideas/{idea}.md (Hypothesis, Motivation, Novelty argument) + wiki/topics/{topic}.md#Overview
-- Related Work → wiki/papers/*.md#Related + wiki/concepts/*.md#Comparison
+- Related Work → wiki/sources/*.md#Related + wiki/concepts/*.md#Comparison
 - Method → wiki/methods/{method}.md (## Mechanism + ## Procedure) + wiki/concepts/{concept}.md (## Definition + ## Intuition)
 - Experiments → wiki/experiments/*.md#Results + wiki/experiments/*.md#Analysis
 - Conclusion → wiki/ideas/*.md#Lessons_learned + wiki/concepts/*.md#Open_problems + wiki/topics/*.md#Open_problems + wiki/graph/open_questions.md

@@ -30,7 +30,7 @@ argument-hint: <idea-slug>
 - `wiki/ideas/{slug}.md` — idea's hypothesis, approach, risks, novelty argument
 - `wiki/ideas/*.md` — other ideas (for Candidate C cross-idea combination, filtering for validated/pilot-passed ideas)
 - `experiments/pilot/{slug}/report.md` — pilot evaluation results (if exists)
-- `wiki/papers/*.md` — related papers for baseline setups and method details
+- `wiki/sources/*.md` — related papers for baseline setups and method details
 - `wiki/concepts/*.md` and `wiki/topics/*.md` — referenced via idea's `origin_gaps`
 - `wiki/methods/*.md` — reusable methods the idea builds on
 - `wiki/experiments/*.md` — existing experiments (avoid duplicate designs)
@@ -67,7 +67,7 @@ argument-hint: <idea-slug>
    - From `## Approach sketch` wikilinks, read referenced `wiki/methods/*.md`
    - Read existing `wiki/experiments/*.md` whose `linked_idea` matches this idea
 
-4. **Read related papers**: from `wiki/papers/*.md`, extract baseline setups and method details relevant to the idea.
+4. **Read related papers**: from `wiki/sources/*.md`, extract baseline setups and method details relevant to the idea.
 
 ---
 
@@ -95,7 +95,7 @@ For each candidate, document:
 
 1. **Identify benchmark(s)** based on:
    - The idea's domain (NLP, CV, RL, etc.)
-   - Standard benchmarks used in related papers (from `wiki/papers/`)
+   - Standard benchmarks used in related papers (from `wiki/sources/`)
    - Dataset availability and compute constraints
 
 2. **Select Dataset**:

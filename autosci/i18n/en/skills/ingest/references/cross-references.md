@@ -49,7 +49,7 @@ types on new writes.
 
 The bibliographic layer is separate from the semantic layer:
 
-- always write `graph/citations.jsonl` with `type: cites` when a reference resolves to an existing `wiki/papers/{slug}.md`
+- always write `graph/citations.jsonl` with `type: cites` when a reference resolves to an existing `wiki/sources/{slug}.md`
 - write `graph/edges.jsonl` only when the paper text gives a clear semantic cue
 - do not force every citation into a semantic edge
 

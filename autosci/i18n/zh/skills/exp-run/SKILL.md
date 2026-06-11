@@ -47,7 +47,7 @@ argument-hint: <experiment-slug> [--review] [--collect] [--full] [--env local|re
 ### Reads
 - `wiki/experiments/{slug}.md` — 实验配置：setup、metrics、baseline、hypothesis、linked_idea
 - `wiki/ideas/{linked-idea}.md` — 关联 idea 的 approach sketch（指导代码实现，理解实验目的）
-- `wiki/papers/*.md` — 相关论文的方法细节和超参数（参考实现）
+- `wiki/sources/*.md` — 相关论文的方法细节和超参数（参考实现）
 - `wiki/experiments/*.md` — 同一 idea 的其他实验（参考 setup、避免重复错误）
 
 ### Writes

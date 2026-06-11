@@ -32,7 +32,7 @@ argument-hint: "[research-direction-or-topic] [--max-ideas N] [--skip-validation
 - `wiki/graph/context_brief.md` — global context
 - `wiki/graph/open_questions.md` — knowledge gaps, drives idea direction
 - `wiki/ideas/*.md` — existing ideas, especially status=failed ideas and their failure_reason (banlist)
-- `wiki/papers/*.md` — existing paper methods and results
+- `wiki/sources/*.md` — existing paper methods and results
 - `wiki/concepts/*.md` — technical concepts, find cross-domain combination opportunities
 - `wiki/methods/*.md` — reusable methods, scope candidate inspirations
 - `wiki/topics/*.md` — research direction maps, SOTA and open problems (including `### Known gaps` and `### Methodological gaps`)
@@ -455,7 +455,7 @@ pilot_spec:
 
 **How to build the Pilot Spec**:
 - **hypothesis / approach_sketch**: copy from the idea generated in Phase 2 (these are the same 1-2 sentence hypothesis and 3-5 sentence approach sketch)
-- **repo / base code**: check `wiki/papers/{source-paper}.md` for code links; if the idea combines two methods, pick the primary method's repo as base
+- **repo / base code**: check `wiki/sources/{source-paper}.md` for code links; if the idea combines two methods, pick the primary method's repo as base
 - **model / dataset / hardware**: inherit from the source paper's experiment setup in wiki, reduce batch_size and max_steps per pilot requirements below
 - **seeds**: default 1 for pilot (single run is sufficient for pass/fail detection)
 - **metrics**: choose 1-2 metrics that directly test the hypothesis (not a full metric suite)

@@ -6,7 +6,7 @@ argument-hint: <research-question-or-idea-slugs> [--format latex|markdown] [--ma
 # /survey
 
 > Generate a Related Work section ready for direct use in a paper, based on existing wiki knowledge.
-> Draw material from wiki/papers/, concepts/, topics/; group by research direction (not paper-by-paper listing).
+> Draw material from wiki/sources/, concepts/, topics/; group by research direction (not paper-by-paper listing).
 > End each group with a statement of how it differs from this work. Citations follow citation-verification.md;
 > writing follows academic-writing.md Related Work rules.
 > Supports LaTeX and Markdown output formats.
@@ -32,7 +32,7 @@ argument-hint: <research-question-or-idea-slugs> [--format latex|markdown] [--ma
 ## Wiki Interaction
 
 ### Reads
-- `wiki/papers/*.md` — Problem & Context, Key idea, Experiment & Results, Related, My take
+- `wiki/sources/*.md` — Problem & Context, Key idea, Experiment & Results, Related, My take
 - `wiki/concepts/*.md` — Definition, Variants, Comparison, Known limitations
 - `wiki/topics/*.md` — Overview, Timeline, Open problems, Seminal works
 - `wiki/ideas/*.md` — Hypothesis, Motivation, origin_gaps (if input is idea slugs)
@@ -73,7 +73,7 @@ argument-hint: <research-question-or-idea-slugs> [--format latex|markdown] [--ma
 
 For each paper in the candidate list:
 
-1. Read `wiki/papers/{slug}.md`: focus on Problem & Context, Key idea, Experiment & Results, My take
+1. Read `wiki/sources/{slug}.md`: focus on Problem & Context, Key idea, Experiment & Results, My take
 2. Read linked `wiki/concepts/*.md`: focus on Definition, Variants, Comparison
 3. Read related `wiki/topics/*.md`: focus on Timeline, Open problems
 
@@ -174,7 +174,7 @@ If output format is LaTeX, following `shared-references/citation-verification.md
 
 ## Constraints
 
-- **Only cite papers already in the wiki**: do not fabricate citations; every `\cite{}` or `[[slug]]` must correspond to a page in wiki/papers/
+- **Only cite papers already in the wiki**: do not fabricate citations; every `\cite{}` or `[[slug]]` must correspond to a page in wiki/sources/
 - **Group by theme, not as a flat list**: each paragraph covers a research direction, not "Paper A did X. Paper B did Y."
 - **Every group must have a positioning sentence**: state the relationship to this work (at the end — difference or inheritance)
 - **Warn when candidate papers < 5**: prompt user to /ingest more papers first

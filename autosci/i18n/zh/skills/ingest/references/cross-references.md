@@ -44,7 +44,7 @@ edge 类型选择：
 
 bibliographic 层与 semantic 层分开：
 
-- 当 reference 能解析到已有 `wiki/papers/{slug}.md` 时，总是写 `graph/citations.jsonl`，`type: cites`
+- 当 reference 能解析到已有 `wiki/sources/{slug}.md` 时，总是写 `graph/citations.jsonl`，`type: cites`
 - 只有论文文本给出清晰语义信号时，才写 `graph/edges.jsonl`
 - 不要把每条 citation 都强行解释成 semantic edge
 

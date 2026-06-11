@@ -31,7 +31,7 @@ argument-hint: <idea-slug> [--env local|remote]
 
 ### Reads
 - `experiments/pilot/{slug}.yaml` — Pilot Spec (all configuration) **If the Pilot Spec for the selected idea does not exist at the corresponding position, remind the user and create it following the steps for creating a Pilot Spec in /ideate Phase 5.**
-- `wiki/papers/*.md` — related papers' method descriptions (implementation reference)
+- `wiki/sources/*.md` — related papers' method descriptions (implementation reference)
 
 ### Writes
 - `experiments/pilot/code/{slug}/` — pilot code directory
@@ -62,7 +62,7 @@ argument-hint: <idea-slug> [--env local|remote]
 
 2. **Load implementation context**:
    - Use `pilot_spec.hypothesis` and `pilot_spec.approach_sketch` as the primary implementation guide (idea pages are written by `/ideate` Phase 4, before pilot)
-   - Read related papers' method descriptions for algorithm details (from `wiki/papers/` if they exist)
+   - Read related papers' method descriptions for algorithm details (from `wiki/sources/` if they exist)
    - Read source paper repo for base code reference
 
 3. **Inspect the dataset and other configurations**

@@ -32,7 +32,7 @@ argument-hint: <question>
 - `wiki/graph/context_brief.md` — global compressed context (ideas, gaps, failed ideas, papers, edges)
 - `wiki/index.md` — page catalog for locating relevant pages
 - `wiki/graph/open_questions.md` — open questions, helps identify whether the question touches known gaps
-- `wiki/papers/*.md` — paper pages relevant to the question
+- `wiki/sources/*.md` — paper pages relevant to the question
 - `wiki/concepts/*.md` — concept pages relevant to the question
 - `wiki/methods/*.md` — method pages relevant to the question
 - `wiki/topics/*.md` — topic pages relevant to the question

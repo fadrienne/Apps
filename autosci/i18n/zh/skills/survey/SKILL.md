@@ -6,7 +6,7 @@ argument-hint: <research-question-or-idea-slugs> [--format latex|markdown] [--ma
 # /survey
 
 > 基于 wiki 已有知识，生成可直接用于论文的 Related Work 章节。
-> 从 wiki/papers/、concepts/、topics/ 取材，按研究方向分组（非逐篇罗列），
+> 从 wiki/sources/、concepts/、topics/ 取材，按研究方向分组（非逐篇罗列），
 > 每组以「与本文的区别」收尾。引用遵循 citation-verification.md，
 > 写作遵循 academic-writing.md 的 Related Work 规则。
 > 支持 LaTeX 和 Markdown 两种输出格式。
@@ -32,7 +32,7 @@ argument-hint: <research-question-or-idea-slugs> [--format latex|markdown] [--ma
 ## Wiki Interaction
 
 ### Reads
-- `wiki/papers/*.md` — Problem & Context、Key idea、Experiment & Results、Related、My take
+- `wiki/sources/*.md` — Problem & Context、Key idea、Experiment & Results、Related、My take
 - `wiki/concepts/*.md` — Definition、Variants、Comparison、Known limitations
 - `wiki/topics/*.md` — Overview、Timeline、Open problems、Seminal works
 - `wiki/ideas/*.md` — Hypothesis、Motivation、origin_gaps（若输入为 idea slugs）
@@ -73,7 +73,7 @@ argument-hint: <research-question-or-idea-slugs> [--format latex|markdown] [--ma
 
 对候选论文列表中的每篇论文：
 
-1. 读取 `wiki/papers/{slug}.md`：重点读 Problem & Context、Key idea、Experiment & Results、My take
+1. 读取 `wiki/sources/{slug}.md`：重点读 Problem & Context、Key idea、Experiment & Results、My take
 2. 读取该论文关联的 `wiki/concepts/*.md`：重点读 Definition、Variants、Comparison
 3. 读取相关 `wiki/topics/*.md`：重点读 Timeline、Open problems
 
@@ -174,7 +174,7 @@ argument-hint: <research-question-or-idea-slugs> [--format latex|markdown] [--ma
 
 ## Constraints
 
-- **只引用 wiki 中已有论文**：不凭空编造引用。每个 `\cite{}` 或 `[[slug]]` 必须对应 wiki/papers/ 中的页面
+- **只引用 wiki 中已有论文**：不凭空编造引用。每个 `\cite{}` 或 `[[slug]]` 必须对应 wiki/sources/ 中的页面
 - **按主题分组，非逐篇列表**：每段覆盖一个研究方向，非「Paper A did X. Paper B did Y.」
 - **每组必须有定位句**：与本文的关系（结尾处说明区别或继承）
 - **候选论文 < 5 篇时警告**：提示用户先 /ingest 更多论文

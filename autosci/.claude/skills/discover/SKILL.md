@@ -11,7 +11,7 @@ Use these local references on demand:
 
 - `references/seed-modes.md` — when to pick anchor / topic / wiki / venue mode and how to translate the user's phrasing into one
 - `references/ranking-signals.md` — what `tools/discover.py` scores on.
-- `references/wiki-dedup.md` — how candidates are filtered against `wiki/papers/` and what to do with matches
+- `references/wiki-dedup.md` — how candidates are filtered against `wiki/sources/` and what to do with matches
 
 ## Inputs
 
@@ -36,9 +36,9 @@ Exactly one of `--anchor`, `--topic`, `--from-wiki`, or `--venue` must be given.
 
 ### Reads
 
-- `wiki/papers/*.md` — frontmatter `arxiv` (or legacy `arxiv_id`) for dedup against already-ingested papers
-- `wiki/papers/*.md` modification times — for `--from-wiki` anchor selection
-- `wiki/papers/*.md`, `wiki/concepts/*.md`, `wiki/topics/*.md` — titles and body text for venue-mode relevance scoring
+- `wiki/sources/*.md` — frontmatter `arxiv` (or legacy `arxiv_id`) for dedup against already-ingested papers
+- `wiki/sources/*.md` modification times — for `--from-wiki` anchor selection
+- `wiki/sources/*.md`, `wiki/concepts/*.md`, `wiki/topics/*.md` — titles and body text for venue-mode relevance scoring
 
 ### Writes
 
@@ -148,7 +148,7 @@ When `/ingest` is invoked with the optional `--discover` flag (default off), it 
 - **All seed channels fail**: report the failure, write no shortlist, and do not log a successful run.
 - **S2 unavailable, DeepXiv available (topic mode)**: continue with DeepXiv only; note the degradation in the report.
 - **S2 returns zero recommendations for an anchor**: keep going with the remaining anchors; if all anchors return zero, treat as total failure.
-- **`--from-wiki` finds no anchorable papers** (`wiki/papers/` empty or all missing `arxiv_id`): tell the user the wiki is too sparse for wiki-mode discovery and suggest topic mode.
+- **`--from-wiki` finds no anchorable papers** (`wiki/sources/` empty or all missing `arxiv_id`): tell the user the wiki is too sparse for wiki-mode discovery and suggest topic mode.
 - **`from-venue` with a sparse wiki** (too few terms extracted from wiki content): fail clearly and suggest ingesting papers or using topic mode. Venue mode relies on existing wiki content for relevance; without it the ranking would be arbitrary.
 - **Anchor ID is malformed or unknown**: S2 will return 404; surface the bad ID in the report and continue with any remaining anchors.
 

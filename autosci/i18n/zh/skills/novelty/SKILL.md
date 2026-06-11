@@ -33,7 +33,7 @@ argument-hint: <idea-description-or-slug> [--quick] [--verbose] [--write]
 ## Wiki Interaction
 
 ### Reads
-- `wiki/papers/*.md` — 搜索已有论文中是否有类似方法
+- `wiki/sources/*.md` — 搜索已有论文中是否有类似方法
 - `wiki/concepts/*.md` — 检查概念重叠
 - `wiki/methods/*.md` — 检查是否已有重叠的 method 实体
 - `wiki/ideas/*.md` — 检查是否与已有 idea 重复（特别是 failed ideas 的 failure_reason）
@@ -87,7 +87,7 @@ python3 tools/fetch_deepxiv.py brief <arxiv_id>
 **若 DeepXiv 不可用**：仅使用 S2 搜索（回退到原有行为）。
 
 **Source C — Wiki 内部搜索：**
-1. 扫描 `wiki/papers/` 所有页面的 Key idea 和 Method 段落
+1. 扫描 `wiki/sources/` 所有页面的 Key idea 和 Method 段落
 2. 扫描 `wiki/concepts/` 的 Definition 和 Variants 段落
 3. 扫描 `wiki/ideas/` 的全部内容，特别关注：
    - status = failed 的 ideas 及其 failure_reason（anti-repetition）

@@ -43,7 +43,7 @@ argument-hint: <artifact-path-or-slug> [--difficulty standard|hard|adversarial] 
 ## Wiki Interaction
 
 ### Reads
-- `wiki/papers/*.md` — locate papers cited by the artifact, verify citation accuracy
+- `wiki/sources/*.md` — locate papers cited by the artifact, verify citation accuracy
 - `wiki/concepts/*.md` — understand technical concepts involved in the artifact
 - `wiki/methods/*.md` — check the current status of methods the artifact depends on
 - `wiki/experiments/*.md` — find related experiment results
@@ -66,7 +66,7 @@ argument-hint: <artifact-path-or-slug> [--difficulty standard|hard|adversarial] 
 ### Step 1: Load Context
 
 1. **Parse artifact**:
-   - If slug: search sequentially in `wiki/ideas/`, `wiki/experiments/`, `wiki/methods/`, `wiki/papers/`, `wiki/outputs/` for `{slug}.md`
+   - If slug: search sequentially in `wiki/ideas/`, `wiki/experiments/`, `wiki/methods/`, `wiki/sources/`, `wiki/outputs/` for `{slug}.md`
    - If file path: read directly
    - If free text: use directly
 2. **Determine artifact type**: idea / experiment / method / paper-draft / proposal / other

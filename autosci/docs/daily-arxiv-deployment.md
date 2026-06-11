@@ -84,7 +84,7 @@ git push
 
 The step also needs `GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}` in its `env:` block.
 
-### Pipeline finishes green, but no auto-ingest commit lands and no `wiki/papers/<slug>.md` is created
+### Pipeline finishes green, but no auto-ingest commit lands and no `wiki/sources/<slug>.md` is created
 
 The action's `--allowedTools` is missing `Skill` (and likely `TodoWrite` / `Agent`). Without `Skill`, Claude has no way to invoke the `/ingest` skill — but the prompt's structured output schema still gets filled in with `ingest_status: success`, so the failure is silent. Use:
 

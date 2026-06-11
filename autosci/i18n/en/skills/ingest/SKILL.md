@@ -34,7 +34,7 @@ Open `runtime/schema/entities.yaml` for frontmatter field definitions and `runti
 ### Reads
 
 - `wiki/index.md` for existing slugs and tags
-- `wiki/papers/*.md` to detect an already-ingested paper
+- `wiki/sources/*.md` to detect an already-ingested paper
 - `wiki/concepts/*.md` and `wiki/foundations/*.md` for dedup matches
 - `wiki/methods/*.md` for dedup matches against existing reusable methods
 - `wiki/people/*.md` for existing authors
@@ -43,7 +43,7 @@ Open `runtime/schema/entities.yaml` for frontmatter field definitions and `runti
 
 ### Writes
 
-- `wiki/papers/{slug}.md` — CREATE
+- `wiki/sources/{slug}.md` — CREATE
 - `wiki/concepts/{slug}.md` — CREATE (new) or EDIT (append `key_papers`, aliases, variants)
 - `wiki/methods/{slug}.md` — CREATE (new, only when the method is named, reusable, and citable across papers) or EDIT (append `source_papers`)
 - `wiki/people/{slug}.md` — CREATE (importance ≥ 4 only) or EDIT (append into `## Recent work`)
@@ -110,7 +110,7 @@ Raw persistence rule: never copy or duplicate a file already under `raw/discover
    "$PYTHON_BIN" tools/research_wiki.py slug "<paper-title>"
    ```
 
-2. Stop-if-exists: if `wiki/papers/{slug}.md` already exists and the arXiv ID or title matches, report and exit. If they differ, resolve the collision per `references/error-handling.md`.
+2. Stop-if-exists: if `wiki/sources/{slug}.md` already exists and the arXiv ID or title matches, report and exit. If they differ, resolve the collision per `references/error-handling.md`.
 3. When an arXiv ID is available, query Semantic Scholar:
 
    ```bash
@@ -175,7 +175,7 @@ Skip this whole step in INIT MODE — the parent `/init` handles it at fan-in.
 "$PYTHON_BIN" tools/fetch_s2.py citations <arxiv-id>
 ```
 
-- For each reference whose arXiv ID or title resolves to an existing `wiki/papers/{slug}.md`, add a bibliographic `cites` row to `graph/citations.jsonl`.
+- For each reference whose arXiv ID or title resolves to an existing `wiki/sources/{slug}.md`, add a bibliographic `cites` row to `graph/citations.jsonl`.
 - Add a semantic paper-to-paper edge in `graph/edges.jsonl` only when the source text gives a clear cue. Edge-type selection is in `references/cross-references.md`. If no semantic relation cleanly fits, keep only the `cites` row.
 - For each citation already in the wiki, append the citer's slug to this paper's `cited_by`.
 - Surface unmatched high-citation references in the final report so the user can decide whether to follow up with another `/ingest`.

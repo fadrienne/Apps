@@ -31,7 +31,7 @@ argument-hint: <question>
 - `wiki/graph/context_brief.md` — 全局压缩上下文（ideas, gaps, failed ideas, papers, edges）
 - `wiki/index.md` — 页面目录，用于定位相关页面
 - `wiki/graph/open_questions.md` — 开放问题，辅助判断问题是否涉及已知知识缺口
-- `wiki/papers/*.md` — 与问题相关的论文页面
+- `wiki/sources/*.md` — 与问题相关的论文页面
 - `wiki/concepts/*.md` — 与问题相关的概念页面
 - `wiki/methods/*.md` — 与问题相关的 method 页面
 - `wiki/topics/*.md` — 与问题相关的 topic 页面

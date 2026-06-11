@@ -32,7 +32,7 @@ argument-hint: "[research-direction-or-topic] [--max-ideas N] [--skip-validation
 - `wiki/graph/context_brief.md` — 全局上下文
 - `wiki/graph/open_questions.md` — 知识缺口，驱动 idea 方向
 - `wiki/ideas/*.md` — 已有 ideas，特别是 status=failed 的 ideas 及 failure_reason（banlist）
-- `wiki/papers/*.md` — 已有论文方法和结果
+- `wiki/sources/*.md` — 已有论文方法和结果
 - `wiki/concepts/*.md` — 技术概念，寻找跨领域组合机会
 - `wiki/methods/*.md` — 可复用 method，圈定候选灵感来源
 - `wiki/topics/*.md` — 研究方向地图，SOTA 和 open problems（含 `### Known gaps` 与 `### Methodological gaps`）

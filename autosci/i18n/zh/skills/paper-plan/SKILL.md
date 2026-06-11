@@ -37,7 +37,7 @@ argument-hint: <idea-slugs...> --venue <ICLR|NeurIPS|ICML|ACL|CVPR|IEEE> [--titl
 - `wiki/ideas/*.md` — Hypothesis、Motivation、Approach sketch、Novelty argument、status、novelty_score、target_venue、linked_experiments、origin_gaps
 - `wiki/experiments/*.md` — 支撑实验（通过 `linked_idea` 关联）、results、metrics、key_result
 - `wiki/methods/*.md` — idea 的 Approach sketch 中引用的方法（Mechanism、Procedure、source_papers）
-- `wiki/papers/*.md` — evidence 来源论文（Method、Results、Related）
+- `wiki/sources/*.md` — evidence 来源论文（Method、Results、Related）
 - `wiki/concepts/*.md` — idea 的 `origin_gaps` 指向的概念（Definition、Variants、Comparison）
 - `wiki/topics/*.md` — idea 的 `origin_gaps` 指向的研究方向（Overview、Open problems）
 - `wiki/graph/context_brief.md` — 全局上下文
@@ -66,7 +66,7 @@ argument-hint: <idea-slugs...> --venue <ICLR|NeurIPS|ICML|ACL|CVPR|IEEE> [--titl
 2. 对每个 idea，遍历：
    - `linked_experiments` → 读取每个 `wiki/experiments/{slug}.md`（key_result、metrics、outcome）
    - `origin_gaps` → 读取每个 `wiki/concepts/{slug}.md` 和 `wiki/topics/{slug}.md`（背景上下文）
-   - `## Approach sketch` 正文中的 wikilink → 读取每个 `wiki/methods/{slug}.md` 和 `wiki/papers/{slug}.md`
+   - `## Approach sketch` 正文中的 wikilink → 读取每个 `wiki/methods/{slug}.md` 和 `wiki/sources/{slug}.md`
 3. 读取 `wiki/graph/context_brief.md` 获取全局上下文
 4. 读取 `wiki/graph/open_questions.md` 标注 known limitations
 5. 从 `wiki/graph/edges.jsonl` 加载相关边，构建 ideas 之间的关系
@@ -356,7 +356,7 @@ mcp__llm-review__chat:
 - **至少一个 experiment evidence**：纯理论 idea 不足以支撑实验性论文，需至少一个支撑实验
 - **page budget 必须可行**：总 section 页数 <= venue 主文限制，否则调整（压缩或移至 appendix）
 - **Review LLM review 必选**：不可跳过。大纲阶段发现问题成本最低
-- **所有引用来自 wiki**：citation plan 中的每篇论文必须在 wiki/papers/ 中存在
+- **所有引用来自 wiki**：citation plan 中的每篇论文必须在 wiki/sources/ 中存在
 - **idea → section 映射完整**：每个 target idea 必须出现在至少一个 section 中
 - **每个 section 必须有 idea**：无 idea 支撑的 section 视为填充，应删除或合并
 - **graph edges 使用 tools/research_wiki.py**：不手动编辑 edges.jsonl

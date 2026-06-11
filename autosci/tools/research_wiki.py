@@ -431,7 +431,7 @@ def add_citation(wiki_root: str, from_id: str, to_id: str,
 def _build_arxiv_index(wiki_root: Path) -> dict[str, str]:
     """Map arXiv ID (and S2 ID) → paper slug, for citation resolution.
 
-    Reads each wiki/papers/*.md frontmatter once. Both 'arxiv' and 's2_id'
+    Reads each wiki/sources/*.md frontmatter once. Both 'arxiv' and 's2_id'
     fields are indexed so references arriving with either identifier match.
     """
     index: dict[str, str] = {}

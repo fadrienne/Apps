@@ -444,10 +444,10 @@ def _extract_arxiv_id_from_paper(path: Path) -> str:
 
 
 def _wiki_known_arxiv_ids(wiki_root: Path | None) -> set[str]:
-    """Scan wiki/papers/*.md for arxiv/arxiv_id frontmatter values."""
+    """Scan wiki/sources/*.md for arxiv/arxiv_id frontmatter values."""
     if not wiki_root or not wiki_root.exists():
         return set()
-    papers_dir = wiki_root / "papers"
+    papers_dir = wiki_root / "sources"
     if not papers_dir.exists():
         return set()
     seen: set[str] = set()
@@ -482,10 +482,10 @@ def _extract_title_from_paper(path: Path) -> str:
 
 
 def _wiki_known_title_keys(wiki_root: Path | None) -> set[str]:
-    """Scan wiki/papers/*.md for normalized title keys."""
+    """Scan wiki/sources/*.md for normalized title keys."""
     if not wiki_root or not wiki_root.exists():
         return set()
-    papers_dir = wiki_root / "papers"
+    papers_dir = wiki_root / "sources"
     if not papers_dir.exists():
         return set()
     seen: set[str] = set()
@@ -933,7 +933,7 @@ def _gather_from_topic(topic: str, limit: int) -> list[dict[str, Any]]:
 
 def _wiki_recent_anchors(wiki_root: Path, k: int) -> list[str]:
     """Pick the K most recently modified paper pages and return their arxiv IDs."""
-    papers_dir = wiki_root / "papers"
+    papers_dir = wiki_root / "sources"
     if not papers_dir.exists():
         return []
     paths = sorted(papers_dir.glob("*.md"), key=lambda p: p.stat().st_mtime, reverse=True)
@@ -1005,7 +1005,7 @@ def build_shortlist(
             raise ValueError("from-wiki requires --wiki-root")
         derived = _wiki_recent_anchors(wiki_root, k=3)
         if not derived:
-            raise ValueError("from-wiki found no anchorable papers under wiki/papers/")
+            raise ValueError("from-wiki found no anchorable papers under wiki/sources/")
         candidates = _gather_from_anchors(
             derived,
             negative_ids,

@@ -4,11 +4,11 @@
 
 ## What it catches
 
-For each candidate, `tools/discover.py` extracts the `arxiv_id` from the candidate record (S2's `externalIds.ArXiv`, DeepXiv's `arxiv_id`, Paper Copilot arXiv fields/URLs when present, etc.) and checks whether any existing `wiki/papers/*.md` page has a matching `arxiv` (or legacy `arxiv_id`) in its frontmatter. Matches are dropped from the shortlist before scoring; the number of removed candidates is reported as `wiki_dedup_count`.
+For each candidate, `tools/discover.py` extracts the `arxiv_id` from the candidate record (S2's `externalIds.ArXiv`, DeepXiv's `arxiv_id`, Paper Copilot arXiv fields/URLs when present, etc.) and checks whether any existing `wiki/sources/*.md` page has a matching `arxiv` (or legacy `arxiv_id`) in its frontmatter. Matches are dropped from the shortlist before scoring; the number of removed candidates is reported as `wiki_dedup_count`.
 
 This catches the typical case: an already-ingested paper bubbles up as a recommendation again. Surfacing such a paper would waste the user's review attention; dropping it is correct.
 
-For venue mode, candidates are also filtered by normalized title against `wiki/papers/*.md`. Paper Copilot records often lack arXiv IDs, so title fallback is a practical dedup layer for that source. Those title fallback removals are included in `wiki_dedup_count`.
+For venue mode, candidates are also filtered by normalized title against `wiki/sources/*.md`. Paper Copilot records often lack arXiv IDs, so title fallback is a practical dedup layer for that source. Those title fallback removals are included in `wiki_dedup_count`.
 
 ## What it does not catch
 

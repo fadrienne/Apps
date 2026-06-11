@@ -5,7 +5,7 @@ papers.
 The bootstrap `/init` workflow skips `fetch_s2.py references` in parallel mode
 for safety and never reinstates it at fan-in. As a result, freshly-bootstrapped
 wikis have an empty `citations.jsonl`. This script walks every paper in
-`wiki/papers/`, fetches references from Semantic Scholar, and uses
+`wiki/sources/`, fetches references from Semantic Scholar, and uses
 `research_wiki.py add-citations-batch` to append all matching `cites` rows.
 
 Idempotent: re-runs only add newly-discovered references; existing ones are

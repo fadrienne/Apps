@@ -46,7 +46,7 @@ argument-hint: <research-direction-or-brief> [--auto] [--start-from stage1|stage
 - `wiki/experiments/*.md` — Stage 3-4 status checks
 - `wiki/methods/*.md` — Stage 5 paper writing context
 - `wiki/outputs/pipeline-progress.md` — --start-from state recovery
-- `wiki/papers/*.md` — Stage 5 paper writing context
+- `wiki/sources/*.md` — Stage 5 paper writing context
 
 ### Writes
 - `wiki/outputs/pipeline-progress.md` — save progress at each Gate (wiki entity writes are delegated to sub-skills)
