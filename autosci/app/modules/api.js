@@ -40,6 +40,10 @@ export async function fetchText(path) {
 // callers keep working. Single source of truth lives in modules/schema.js.
 export { ENTITY_DIRS } from "./schema.js";
 
+export function getHealth() {
+  return fetchJSON("/api/health");
+}
+
 export function getStats() {
   return fetchJSON("/api/stats");
 }

@@ -4,7 +4,7 @@
 // SSE live-reload: subscribes to /api/events; when wiki/ files change
 // outside the SPA's own writes, re-fetch state and trigger a re-render.
 
-import { getEntities, getGraph } from "./api.js";
+import { getEntities, getGraph, getHealth } from "./api.js";
 import { ENTITY_DIRS, TYPE_PRECEDENCE } from "./schema.js";
 import { state, markReady } from "./state.js";
 import { startRouter } from "./router.js";
@@ -36,7 +36,8 @@ async function boot() {
 // Re-fetch all wiki data and rebuild state caches. Safe to call repeatedly.
 async function reloadData() {
   const banner = document.getElementById("boot-status");
-  const [graph, ...listings] = await Promise.all([
+  const [health, graph, ...listings] = await Promise.all([
+    getHealth().catch(() => ({})),
     getGraph().catch((err) => {
       console.warn("graph fetch failed:", err);
       return { edges: [], citations: [] };
@@ -48,6 +49,8 @@ async function reloadData() {
       })
     ),
   ]);
+
+  state.obsidianVault = health.obsidian_vault || "";
 
   // Wipe and rebuild — state is reused so existing references stay valid
   state.slugMap.clear();

@@ -63,9 +63,12 @@ function renderLink(slug) {
   }
   const href = `#/reader/${chosen.type}/${slug}`;
   const title = chosen.title || slug;
-  return `<a class="wikilink" href="${href}" title="${escapeHtml(
-    title
-  )}">${escapeHtml(slug)}</a>`;
+  const obsidianLink = state.obsidianVault
+    ? ` <a class="obsidian-link" target="_blank" rel="noopener"
+           href="obsidian://open?vault=${encodeURIComponent(state.obsidianVault)}&file=${encodeURIComponent(chosen.type + "/" + slug)}"
+           title="Open in Obsidian">⌥</a>`
+    : "";
+  return `<a class="wikilink" href="${href}" title="${escapeHtml(title)}">${escapeHtml(slug)}</a>${obsidianLink}`;
 }
 
 function escapeHtml(s) {

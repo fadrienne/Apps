@@ -253,6 +253,11 @@ export async function viewEntity(mount, type, slug) {
         <button type="button" class="ghost-mini" id="edit-field-btn" title="Edit a frontmatter field">edit field…</button>
         <button type="button" class="ghost-mini" id="add-edge-btn" title="Add a graph edge from this entity">+ edge</button>
         ${type === "papers" ? `<button type="button" class="ghost-mini" id="add-cite-btn" title="Add a bibliographic citation from this paper">+ cites</button>` : ""}
+        ${state.obsidianVault
+          ? `<a class="ghost-mini" target="_blank" rel="noopener"
+                href="obsidian://open?vault=${encodeURIComponent(state.obsidianVault)}&file=${encodeURIComponent(type + "/" + slug)}"
+                title="Open this page in Obsidian (${state.obsidianVault})">Obsidian ↗</a>`
+          : ""}
         ${renderIntentButtons(type, slug, fm)}
       </span>
     </div>

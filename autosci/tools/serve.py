@@ -386,7 +386,11 @@ class WikiHandler(SimpleHTTPRequestHandler):
             self._handle_sse()
             return
         if path == "/api/health":
-            self._send_json({"status": "ok", "phase": 4})
+            self._send_json({
+                "status": "ok",
+                "phase": 4,
+                "obsidian_vault": _VISUALIZE_CFG.get("obsidian_vault", ""),
+            })
             return
         if path == "/api/stats":
             try:

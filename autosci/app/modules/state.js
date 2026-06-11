@@ -16,6 +16,8 @@ export const state = {
   ready: false,
   // Last error during boot, if any (string)
   bootError: null,
+  // Obsidian vault name for deep-link integration (loaded from /api/health)
+  obsidianVault: "",
   // Timestamp of most recent SPA-initiated write (ms since epoch). Used by
   // the SSE live-reload listener to suppress redundant reboots when our
   // own PATCH/POST is the cause of the file-change event.
