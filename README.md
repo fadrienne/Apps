@@ -22,3 +22,16 @@ See [`autosci/README.md`](autosci/README.md) for setup and usage.
 A business dashboard for tracking key metrics and performance indicators.
 
 See [`thrive-hub/`](thrive-hub/) for details.
+
+### [gstack](gstack/)
+
+An open-source AI-powered software factory by Garry Tan (YC President & CEO) that transforms Claude Code into a virtual engineering team. Provides 23+ specialized skills covering the full product development lifecycle — from strategic planning and design through QA, security audits, and shipping.
+
+**Key features:**
+- Structured sprint workflow: Think → Plan → Build → Review → Test → Ship → Reflect
+- Specialized AI roles: CEO, designer, engineering manager, QA lead, release engineer
+- Browser-based QA with AI-controlled Chromium
+- Cross-model code review (Claude + OpenAI)
+- Persistent knowledge base (GBrain) with local or cloud storage
+
+See [`gstack/README.md`](gstack/README.md) for setup and usage.
