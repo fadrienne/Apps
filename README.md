@@ -17,6 +17,12 @@ A memory-centric agentic system for the full scientific research lifecycle, powe
 
 See [`autosci/README.md`](autosci/README.md) for setup and usage.
 
+### [NotebookLM](notebooklm/)
+
+Python automation client for Google NotebookLM. List, create, and interact with notebooks; add URL sources; chat with content; and generate audio overviews — all from the command line or Python scripts.
+
+See [`notebooklm/README.md`](notebooklm/README.md) for setup and usage.
+
 ### [Thrive Hub](thrive-hub/)
 
 A business dashboard for tracking key metrics and performance indicators.
