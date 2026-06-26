@@ -35,3 +35,17 @@ An open-source AI-powered software factory by Garry Tan (YC President & CEO) tha
 - Persistent knowledge base (GBrain) with local or cloud storage
 
 See [`gstack/README.md`](gstack/README.md) for setup and usage.
+
+### [Scientific Agent Skills](scientific-agent-skills/)
+
+A curated collection of 24 Claude Code skills for scientific research, adapted from the K-Dense-AI open-source library. Covers the full research workflow from literature discovery through data analysis, molecular modeling, and publication.
+
+**Skill categories:**
+- Research workflow: literature review, paper lookup, hypothesis generation, experimental design, peer review, citation management
+- Bioinformatics: Biopython, gget, bulk RNA-seq, pathway enrichment
+- Chemistry & ML: datamol/RDKit, DeepChem, molecular dynamics, NetworkX
+- Data & visualization: Polars, Matplotlib, exploratory data analysis, infographics, LaTeX posters
+- Clinical & health: PyHealth, clinical decision support
+- Web & search: Exa search, Parallel web, database lookup (30+ scientific databases)
+
+See [`scientific-agent-skills/README.md`](scientific-agent-skills/README.md) for setup and usage.
