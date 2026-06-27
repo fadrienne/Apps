@@ -4,25 +4,33 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 LOCK_FILE="$SCRIPT_DIR/skills-lock.json"
-SKILLS_DIR="$SCRIPT_DIR/.claude/skills"
 TMPDIR_WORK="$(mktemp -d)"
 trap 'rm -rf "$TMPDIR_WORK"' EXIT
 
 usage() {
-  echo "Usage: $0 [--force] [--help]"
+  echo "Usage: $0 [--global] [--force] [--help]"
   echo ""
-  echo "  --force  Reinstall skills even if already installed"
-  echo "  --help   Show this message"
+  echo "  --global  Install into ~/.claude/skills/ (available across all projects)"
+  echo "  --force   Reinstall skills even if already installed"
+  echo "  --help    Show this message"
 }
 
 FORCE=false
+GLOBAL=false
 for arg in "$@"; do
   case "$arg" in
+    --global) GLOBAL=true ;;
     --force) FORCE=true ;;
     --help) usage; exit 0 ;;
     *) echo "Unknown option: $arg"; usage; exit 1 ;;
   esac
 done
+
+if [ "$GLOBAL" = true ]; then
+  SKILLS_DIR="$HOME/.claude/skills"
+else
+  SKILLS_DIR="$SCRIPT_DIR/.claude/skills"
+fi
 
 if [ ! -f "$LOCK_FILE" ]; then
   echo "Error: $LOCK_FILE not found" >&2
