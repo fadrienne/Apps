@@ -2,8 +2,6 @@
  * Pure helper functions for session-start context assembly.
  */
 
-import { minimatch } from "node:path";
-
 export function take(text: string, lines: number): string {
 	return text.split("\n").slice(0, lines).join("\n");
 }

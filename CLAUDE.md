@@ -125,3 +125,18 @@ These index notes need active curation — update them when you create or comple
 | Competency note | `perf/competencies/` |
 | Reference / runbook | `reference/` |
 | Draft / reasoning | `thinking/` |
+
+## Skills
+
+### NotebookLM
+
+The notebooklm-py skill is installed at `.claude/skills/notebooklm.md`. It provides programmatic access to Google NotebookLM via the `notebooklm` CLI.
+
+**Setup (one-time):**
+```bash
+pip install "notebooklm-py[browser]"
+playwright install chromium
+notebooklm login
+```
+
+See `.claude/skills/notebooklm.md` for the full command reference and workflow examples.

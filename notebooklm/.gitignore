@@ -1,0 +1,8 @@
+.env
+auth.json
+*.json.bak
+__pycache__/
+*.pyc
+.venv/
+dist/
+*.egg-info/
