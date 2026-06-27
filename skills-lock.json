@@ -6,6 +6,60 @@
       "sourceType": "github",
       "skillPath": "SKILL.md",
       "computedHash": "5c0fa3fe0dd99fd3016ac120a1b5f425c6f93ce1d2f1c531b19e34361e532d6f"
+    },
+    "geomaster": {
+      "source": "K-Dense-AI/scientific-agent-skills",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "ab68e643f201b8f58eb53823507ccbae113b9a5b45e01607dd662ae2a156b700"
+    },
+    "geopandas": {
+      "source": "K-Dense-AI/scientific-agent-skills",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "0ed6c960418bce936556d0c1b37b0dff1b9cd8811a4d128719a36973c8093984"
+    },
+    "database-lookup": {
+      "source": "K-Dense-AI/scientific-agent-skills",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "eec04f1c4c12f6879c95d27feb0b60db2ba8db96b0233b11234ee45bb7e4a84e"
+    },
+    "scientific-visualization": {
+      "source": "K-Dense-AI/scientific-agent-skills",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "d63d0d42d93cd4417b0d0bffe69184dca070fc7db50f199fd17a7240499a8e6a"
+    },
+    "statistical-analysis": {
+      "source": "K-Dense-AI/scientific-agent-skills",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "7f256304a0cca6f93ad632a51ab0d27240abacda94d99ab597c16dd5436a0782"
+    },
+    "networkx": {
+      "source": "K-Dense-AI/scientific-agent-skills",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "edabe5dd119a1fd9dbacb766aca33ff40d35724e4432788bd05ab7fba8a84ee3"
+    },
+    "scientific-writing": {
+      "source": "K-Dense-AI/scientific-agent-skills",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "a379626211936d541a1dbd2e91aac5b88917c09e82435233e79d17eaa441aa4a"
+    },
+    "paper-lookup": {
+      "source": "K-Dense-AI/scientific-agent-skills",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "301dfd7e0475460da21a45a22e00d2545030f259591b9ff1fbfb00df7043961f"
+    },
+    "markdown-mermaid-writing": {
+      "source": "K-Dense-AI/scientific-agent-skills",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "50a75a499515484553cbc35376d00c8f4ce08cb1d1cbb255c71618747783a5d9"
     }
   }
 }
