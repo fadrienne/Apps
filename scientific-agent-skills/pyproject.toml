@@ -1,0 +1,31 @@
+[project]
+name = "scientific-agent-skills"
+version = "1.0.0"
+description = "Claude Code skills for scientific research workflows"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "K-Dense, Inc.", email = "" },
+]
+
+[project.optional-dependencies]
+literature = [
+    "requests>=2.31.0",
+]
+data = [
+    "polars>=0.20.0",
+    "matplotlib>=3.8.0",
+    "scipy>=1.12.0",
+    "numpy>=1.26.0",
+]
+search = [
+    "exa-py>=1.0.0",
+]
+all = [
+    "scientific-agent-skills[literature,data,search]",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
