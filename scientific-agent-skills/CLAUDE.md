@@ -10,7 +10,7 @@ When the user's request matches a skill below, invoke it via the Skill tool.
 |---|---|
 | "find papers on X", "literature review", "what's known about X" | `/literature-review` |
 | "look up this paper", "find paper by author/DOI", "get paper details" | `/paper-lookup` |
-| "query PubChem / UniProt / ChEMBL / NCBI / ...", "look up compound / gene / protein" | `/database-lookup` |
+| "query a scientific database", "look up a compound or dataset" | `/database-lookup` |
 | "search the web for X", "find recent news on X" | `/exa-search` or `/parallel-web` |
 | "generate hypotheses for X", "why does X happen", "explain X mechanistically" | `/hypothesis-generation` |
 | "design an experiment to test X", "how many replicates do I need", "randomize my treatment groups" | `/experimental-design` |
@@ -19,18 +19,8 @@ When the user's request matches a skill below, invoke it via the Skill tool.
 | "review this paper", "peer review", "critique this manuscript" | `/peer-review` |
 | "make an infographic", "visualize these findings", "create a summary figure" | `/infographics` |
 | "make a poster", "conference poster", "create a scientific poster" | `/latex-posters` |
-| "parse this sequence", "run BLAST", "analyze this FASTA", "align sequences" | `/biopython` |
-| "get gene expression data", "fetch protein sequence", "retrieve genomic data" | `/gget` |
-| "differential expression", "RNA-seq analysis", "DESeq2", "compare samples" | `/bulk-rnaseq` |
-| "pathway enrichment", "GO terms", "KEGG pathways", "what pathways are enriched" | `/pathway-enrichment` |
-| "visualize molecules", "calculate ADMET", "manipulate SMILES", "molecular properties" | `/datamol` |
-| "predict drug properties", "molecular fingerprints", "train on molecules", "drug discovery" | `/deepchem` |
-| "run MD simulation", "molecular dynamics", "energy minimization", "protein dynamics" | `/molecular-dynamics` |
 | "plot this data", "make a figure", "publication figure", "matplotlib" | `/matplotlib` |
 | "analyze this CSV", "fast data processing", "data transformation", "polars" | `/polars` |
-| "network analysis", "graph centrality", "node clustering", "biological network" | `/networkx` |
-| "clinical decision", "treatment guideline", "drug interaction", "clinical prediction" | `/clinical-decision-support` |
-| "predict patient outcome", "healthcare ML", "clinical data", "EHR analysis" | `/pyhealth` |
 
 ## Skill Directory
 

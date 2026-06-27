@@ -1,6 +1,6 @@
 # Scientific Agent Skills
 
-A curated collection of 24 agent skills for scientific research, adapted from the [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) open-source collection. Transforms Claude Code into a powerful research assistant across biology, chemistry, medicine, and data science.
+A curated collection of agent skills for scientific research, adapted from the [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) open-source collection.
 
 ## Skills
 
@@ -10,7 +10,7 @@ A curated collection of 24 agent skills for scientific research, adapted from th
 |---|---|
 | `/literature-review` | Systematic literature reviews across PubMed, arXiv, Semantic Scholar, and more |
 | `/paper-lookup` | Quick paper search across 10+ academic databases |
-| `/database-lookup` | Query 78+ public scientific databases via REST APIs |
+| `/database-lookup` | Query public scientific databases via REST APIs |
 | `/exa-search` | Semantic AI-powered web search for scientific content |
 | `/parallel-web` | Parallel web search with academic source prioritization |
 
@@ -31,37 +31,12 @@ A curated collection of 24 agent skills for scientific research, adapted from th
 | `/infographics` | Scientific infographics and data visualization |
 | `/latex-posters` | Conference poster generation in LaTeX |
 
-### Bioinformatics
-
-| Skill | Description |
-|---|---|
-| `/biopython` | Computational biology: sequences, BLAST, PDB, phylogenetics |
-| `/gget` | Genomic data retrieval from Ensembl, UniProt, NCBI |
-| `/bulk-rnaseq` | RNA-seq differential expression analysis pipeline |
-| `/pathway-enrichment` | GO/KEGG biological pathway enrichment analysis |
-
-### Chemistry & Drug Discovery
-
-| Skill | Description |
-|---|---|
-| `/datamol` | Molecular manipulation and ADMET prediction |
-| `/deepchem` | Deep learning for drug discovery and molecular property prediction |
-| `/molecular-dynamics` | Molecular dynamics simulation with GROMACS/OpenMM |
-
 ### Data Analysis
 
 | Skill | Description |
 |---|---|
 | `/matplotlib` | Publication-quality scientific figures |
 | `/polars` | High-performance data analysis and transformation |
-| `/networkx` | Network/graph analysis for biological and social networks |
-
-### Clinical & Health
-
-| Skill | Description |
-|---|---|
-| `/clinical-decision-support` | Evidence-based clinical decision tools |
-| `/pyhealth` | Healthcare machine learning and clinical prediction |
 
 ## Installation
 
@@ -85,7 +60,6 @@ Once installed, invoke skills in Claude Code conversations:
 
 ```
 /literature-review "CRISPR off-target effects in therapeutic applications"
-/database-lookup compound:aspirin databases:PubChem,ChEMBL
 /hypothesis-generation "Why do some cancer cells resist immunotherapy?"
 /experimental-design factorial treatment:drug dose:3 replicates:5
 ```

@@ -42,10 +42,7 @@ A curated collection of 24 Claude Code skills for scientific research, adapted f
 
 **Skill categories:**
 - Research workflow: literature review, paper lookup, hypothesis generation, experimental design, peer review, citation management
-- Bioinformatics: Biopython, gget, bulk RNA-seq, pathway enrichment
-- Chemistry & ML: datamol/RDKit, DeepChem, molecular dynamics, NetworkX
 - Data & visualization: Polars, Matplotlib, exploratory data analysis, infographics, LaTeX posters
-- Clinical & health: PyHealth, clinical decision support
-- Web & search: Exa search, Parallel web, database lookup (30+ scientific databases)
+- Web & search: Exa search, Parallel web, database lookup
 
 See [`scientific-agent-skills/README.md`](scientific-agent-skills/README.md) for setup and usage.
