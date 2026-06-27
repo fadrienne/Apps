@@ -17,6 +17,10 @@
         "CLAUDE_FLOW_MEMORY_BACKEND": "hybrid"
       },
       "autoStart": false
+    },
+    "qmd": {
+      "command": "node",
+      "args": [".claude/scripts/qmd-mcp.mjs"]
     }
   }
 }
