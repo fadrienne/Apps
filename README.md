@@ -1,6 +1,6 @@
 # Apps
 
-A monorepo containing a personal knowledge vault and a collection of AI-powered tools.
+A repo containing a personal knowledge vault and a collection of AI-powered tools.
 
 ## [Obsidian Mind](Obsidian%20Mind/) — Personal Knowledge Vault
 
