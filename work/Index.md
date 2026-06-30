@@ -19,7 +19,7 @@ Incident docs live in `work/incidents/`. See `Incidents.base` for overview.
 
 ## Active Projects
 
--
+- [[markitdown-exploration]] — Exploring MarkItDown for document-to-Markdown conversion in LLM pipelines
 
 ## Review Prep
 
