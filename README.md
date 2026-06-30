@@ -10,6 +10,25 @@ See [`CLAUDE.md`](CLAUDE.md) for the full operating manual.
 
 ## Projects
 
+### [Feynman](feynman/)
+
+A bundle of 20 Claude Code skills for the scientific research lifecycle, plus 13 reusable prompts and a 4-agent subagent team (researcher, reviewer, writer, verifier). Skills cover the full pipeline from literature search and hypothesis generation through paper writing, peer review, and compute orchestration.
+
+**Skills include:** alpha-research, autoresearch, deep-research, literature-review, paper-writing, peer-review, paper-code-audit, replication, source-comparison, ml-training-recipe, docker, modal-compute, runpod-compute, eli5, jobs, preview, session-log, session-search, contributing, watch
+
+See [`feynman/AGENTS.md`](feynman/AGENTS.md) for agent conventions and [`feynman/skills/`](feynman/skills/) for individual skill docs.
+
+### [Hallmark](hallmark/)
+
+A design skill for AI coding assistants that makes generated UIs look made, not generated. Use for building new pages, auditing existing designs, redesigns, and extracting design patterns from URLs or screenshots.
+
+**Key features:**
+- Component library covering navigation, hero sections, carousels, modals, and more
+- Theme references: carnival, cobalt, hum, lumen
+- Supports greenfield builds, audits, and design extraction from live URLs or images
+
+See [`hallmark/SKILL.md`](hallmark/SKILL.md) for usage.
+
 ### [AutoSci](autosci/)
 
 A memory-centric agentic system for the full scientific research lifecycle, powered by Claude Code. Handles everything from literature ingestion and idea generation through experiment execution to paper writing and conference rebuttal.
