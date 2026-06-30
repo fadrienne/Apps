@@ -8,11 +8,11 @@ Topic: $ARGUMENTS
 
 ## Process
 
-1. **Search vault** for all notes related to this topic: grep `work/`, `org/`, `brain/` for the meeting topic/participants/project name.
+1. **Search vault** for all notes related to this topic: grep `work/`, `org/`, `Obsidian Mind/brain/` for the meeting topic/participants/project name.
 
-2. **Load person context** for each attendee — check `org/people/` notes.
+2. **Load person context** for each attendee — check `Obsidian Mind/org/people/` notes.
 
-3. **Surface relevant decisions** from `brain/Key Decisions.md` related to this topic.
+3. **Surface relevant decisions** from `Obsidian Mind/brain/Key Decisions.md` related to this topic.
 
 4. **Find open items** — unchecked tasks in related work notes. Flag anything that blocks this meeting's outcomes.
 

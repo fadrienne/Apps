@@ -22,10 +22,10 @@ For each note created/modified:
 ## 3. Index Consistency
 
 Check that indexes reflect current reality:
-- `work/Index.md` — new work notes added?
-- `brain/Memories.md` — new brain topics indexed?
+- `Obsidian Mind/work/Index.md` — new work notes added?
+- `Obsidian Mind/brain/Memories.md` — new brain topics indexed?
 - `org/People & Context.md` — new people noted?
-- `perf/Brag Doc.md` — wins captured?
+- `Obsidian Mind/perf/Brag Doc.md` — wins captured?
 
 ## 4. Orphan Detection
 
@@ -33,11 +33,11 @@ Find notes with no incoming links. Flag them — every note should be reachable.
 
 ## 5. Archive Check
 
-Any `work/active/` notes with `status: completed`? Suggest archiving to `work/archive/YYYY/`.
+Any `Obsidian Mind/work/active/` notes with `status: completed`? Suggest archiving to `Obsidian Mind/work/archive/YYYY/`.
 
 ## 6. Ways of Working
 
-Did this session surface any new patterns, gotchas, or workflow improvements worth capturing in `brain/`?
+Did this session surface any new patterns, gotchas, or workflow improvements worth capturing in `Obsidian Mind/brain/`?
 
 ## 7. Brag Spotter
 

@@ -27,6 +27,6 @@ Provide Slack channel URLs, DM links, or describe what to search for.
    - People involved with their contributions
    - Open questions or gaps to follow up on
 
-5. **Save to** `thinking/slack-scan-<YYYY-MM-DD>-<context>.md` — transient, link to evidence notes.
+5. **Save to** `Obsidian Mind/thinking/slack-scan-<YYYY-MM-DD>-<context>.md` — transient, link to evidence notes.
 
 Instruct: after running this, use `/om-peer-scan` for GitHub evidence, then merge both for a complete picture.

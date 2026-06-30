@@ -8,7 +8,7 @@ Peer: $ARGUMENTS
 
 ## Process
 
-1. **Load evidence** — read `perf/evidence/<peer>-*.md`, any `work/1-1/` notes with this person, `org/people/<peer>.md`, and relevant work notes where they're mentioned.
+1. **Load evidence** — read `Obsidian Mind/perf/evidence/<peer>-*.md`, any `Obsidian Mind/work/1-1/` notes with this person, `Obsidian Mind/org/people/<peer>.md`, and relevant work notes where they're mentioned.
 
 2. **Structure by projects** — organize observations around shared work:
    - What the project was

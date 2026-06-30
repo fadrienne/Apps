@@ -23,7 +23,7 @@ Provide GitHub username and optionally a date range (e.g. `@alice since:2026-01-
 
 4. **Look for leadership signals** — did they mentor others in PR comments? Did they push back on risky changes? Did they go beyond the task?
 
-5. **Save evidence** to `perf/evidence/<peer>-prs-<YYYY-MM-DD>.md` with:
+5. **Save evidence** to `Obsidian Mind/perf/evidence/<peer>-prs-<YYYY-MM-DD>.md` with:
    - PR links as sources
    - Direct quotes from PR descriptions/comments (max 125 chars)
    - Competency mapping table

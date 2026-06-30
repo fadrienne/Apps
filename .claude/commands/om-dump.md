@@ -11,15 +11,15 @@ For each piece of content:
 1. **Classify** — decision / incident / 1:1 / win / architecture / project update / person context / work note
 2. **Search** existing notes to avoid duplication (grep for key terms, check work/active/)
 3. **Route** to the correct note and folder:
-   - Decision → `brain/Key Decisions.md` + source work note
-   - Incident → `work/incidents/` with full frontmatter
-   - 1:1 → `work/1-1/` with participant and date
-   - Win → current quarter brag note in `perf/brag/`
-   - Architecture → `reference/` or `work/active/`
-   - Project update → existing or new `work/active/` note
-   - Person context → `org/people/` note
+   - Decision → `Obsidian Mind/brain/Key Decisions.md` + source work note
+   - Incident → `Obsidian Mind/work/incidents/` with full frontmatter
+   - 1:1 → `Obsidian Mind/work/1-1/` with participant and date
+   - Win → current quarter brag note in `Obsidian Mind/perf/brag/`
+   - Architecture → `Obsidian Mind/reference/` or `Obsidian Mind/work/active/`
+   - Project update → existing or new `Obsidian Mind/work/active/` note
+   - Person context → `Obsidian Mind/org/people/` note
 4. **Create or update** notes with proper YAML frontmatter, wikilinks, folder placement
-5. **Update indexes** — `work/Index.md`, `brain/Memories.md`, `perf/Brag Doc.md` as needed
+5. **Update indexes** — `Obsidian Mind/work/Index.md`, `Obsidian Mind/brain/Memories.md`, `Obsidian Mind/perf/Brag Doc.md` as needed
 6. **Summarize** — what was captured and where it landed
 
 Follow all conventions in `CLAUDE.md`. Every note needs frontmatter and at least one `[[wikilink]]`.

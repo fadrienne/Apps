@@ -8,15 +8,15 @@ Participant: $ARGUMENTS
 
 ## Process
 
-1. **Load person context** — read `org/people/<name>.md`. Note role, relationship, review history, recurring themes.
+1. **Load person context** — read `Obsidian Mind/org/people/<name>.md`. Note role, relationship, review history, recurring themes.
 
-2. **Review 1:1 history** — read all notes in `work/1-1/` matching this person. Surface unresolved action items and recurring topics.
+2. **Review 1:1 history** — read all notes in `Obsidian Mind/work/1-1/` matching this person. Surface unresolved action items and recurring topics.
 
-3. **Check active work** — scan `work/active/` for projects involving this person or their team. Note blockers and progress.
+3. **Check active work** — scan `Obsidian Mind/work/active/` for projects involving this person or their team. Note blockers and progress.
 
 4. **North Star alignment** — does anything in the current goals need this person's input or visibility?
 
-5. **Recent wins** — check `perf/brag/` for wins from the last 30 days worth sharing.
+5. **Recent wins** — check `Obsidian Mind/perf/brag/` for wins from the last 30 days worth sharing.
 
 6. **Open tasks** — scan for `- [ ]` items assigned to or involving this person.
 

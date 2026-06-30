@@ -4,14 +4,14 @@ description: "Morning kickoff — load vault context, surface open tasks, identi
 
 # Morning Standup
 
-Read `brain/North Star.md` (first 30 lines), all notes in `work/active/`, and run `git log --oneline --since="48 hours ago"`. Then:
+Read `Obsidian Mind/brain/North Star.md` (first 30 lines), all notes in `Obsidian Mind/work/active/`, and run `git log --oneline --since="48 hours ago"`. Then:
 
 1. **Yesterday** — what got done (from git log and any notes modified in the last 48h)
-2. **Active Projects** — current status of each note in `work/active/`
-3. **Open Tasks** — unchecked `- [ ]` items across `work/active/` and vault root notes
+2. **Active Projects** — current status of each note in `Obsidian Mind/work/active/`
+3. **Open Tasks** — unchecked `- [ ]` items across `Obsidian Mind/work/active/` and vault root notes
 4. **North Star Alignment** — does today's work connect to current focus?
 5. **Today's Priorities** — recommend 3 focus items based on tasks, goals, and blockers
 
 Keep it scannable. This is orientation, not a deep dive. Flag anything that needs a decision or is blocked.
 
-Check `work/Index.md` for anything in Review Prep that may need attention.
+Check `Obsidian Mind/work/Index.md` for anything in Review Prep that may need attention.
