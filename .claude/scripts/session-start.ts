@@ -4,8 +4,8 @@
  *
  * Emits a markdown block on stdout with: date header, North Star excerpt,
  * brain-topics index, recent git changes (last 48h), open tasks aggregated
- * from work/active/ and the vault root, active work listing, and a full
- * vault markdown file listing.
+ * from Obsidian Mind/work/active/ and the vault root, active work listing,
+ * and a full vault markdown file listing.
  */
 
 import {
@@ -36,9 +36,11 @@ import {
 } from "./lib/session-start.ts";
 import { buildQmdCommand, resolveQmdEntry } from "./lib/qmd.ts";
 
+const VAULT = "Obsidian Mind";
+
 function readManifestRaw(): string | null {
 	try {
-		return readFileSync("vault-manifest.json", { encoding: "utf-8" });
+		return readFileSync(`${VAULT}/vault-manifest.json`, { encoding: "utf-8" });
 	} catch {
 		return null;
 	}
@@ -54,7 +56,7 @@ process.chdir(cwd);
 const envFile = process.env["CLAUDE_ENV_FILE"];
 if (envFile) {
 	try {
-		appendFileSync(envFile, `export VAULT_PATH="${cwd}"\n`);
+		appendFileSync(envFile, `export VAULT_PATH="${cwd}/${VAULT}"\n`);
 	} catch {
 		/* best-effort */
 	}
@@ -101,7 +103,7 @@ function runCmd(
 
 function northStar(): string {
 	try {
-		return take(readFileSync("brain/North Star.md", { encoding: "utf-8" }), 30);
+		return take(readFileSync(`${VAULT}/brain/North Star.md`, { encoding: "utf-8" }), 30);
 	} catch {
 		return "(not found)";
 	}
@@ -150,10 +152,10 @@ function listMarkdownSources(
 
 function openTasks(): string {
 	const sources = [
-		...listMarkdownSources("work/active", (name) => `work/active/${name}`),
+		...listMarkdownSources(`${VAULT}/work/active`, (name) => `${VAULT}/work/active/${name}`),
 		...listMarkdownSources(
-			".",
-			(name) => name,
+			VAULT,
+			(name) => `${VAULT}/${name}`,
 			(name) => isInfraFilename(name, infraRootFilenames),
 		),
 	];
@@ -163,7 +165,7 @@ function openTasks(): string {
 function brainIndex(): string {
 	let entries: Dirent[];
 	try {
-		entries = readdirSync("brain", { withFileTypes: true });
+		entries = readdirSync(`${VAULT}/brain`, { withFileTypes: true });
 	} catch {
 		return "(none)";
 	}
@@ -176,7 +178,7 @@ function brainIndex(): string {
 		let description: string | null = null;
 		let hasContent = false;
 		try {
-			const content = readFileSync(join("brain", f), { encoding: "utf-8" });
+			const content = readFileSync(join(`${VAULT}/brain`, f), { encoding: "utf-8" });
 			description = extractFrontmatterField(content, "description");
 			hasContent = hasBrainContent(stripFrontmatter(content));
 		} catch {
@@ -190,7 +192,7 @@ function brainIndex(): string {
 function activeWork(): string {
 	let entries: Dirent[];
 	try {
-		entries = readdirSync("work/active", { withFileTypes: true });
+		entries = readdirSync(`${VAULT}/work/active`, { withFileTypes: true });
 	} catch {
 		return "(none)";
 	}
@@ -199,10 +201,8 @@ function activeWork(): string {
 }
 
 const SKIP_PREFIXES: readonly string[] = [
-	".git",
-	".obsidian",
-	"thinking",
-	".claude",
+	`${VAULT}/.obsidian`,
+	`${VAULT}/thinking`,
 ];
 
 function listMd(): string[] {
@@ -215,13 +215,13 @@ function listMd(): string[] {
 			return;
 		}
 		for (const e of entries) {
-			const full = dir === "." ? e.name : join(dir, e.name);
+			const full = join(dir, e.name);
 			if (isSkippedPath(full, SKIP_PREFIXES)) continue;
 			if (e.isDirectory()) walk(full);
 			else if (e.isFile() && isMarkdownFilename(e.name)) results.push(`./${full}`);
 		}
 	}
-	walk(".");
+	walk(VAULT);
 	return results.sort();
 }
 

@@ -31,8 +31,8 @@ Before executing: show file counts by action type, list conflicts, estimate impa
 - Transform frontmatter to match current schema
 - Convert markdown links `[text](path)` to wikilinks `[[Note Name]]`
 - Move files to correct folders per `CLAUDE.md` placement rules
-- Rebuild `work/Index.md`, `brain/Memories.md`, `perf/Brag Doc.md`
-- Generate migration log at `thinking/migration-<YYYY-MM-DD>.md`
+- Rebuild `Obsidian Mind/work/Index.md`, `Obsidian Mind/brain/Memories.md`, `Obsidian Mind/perf/Brag Doc.md`
+- Generate migration log at `Obsidian Mind/thinking/migration-<YYYY-MM-DD>.md`
 
 ## Constraints
 

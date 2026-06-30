@@ -1,6 +1,12 @@
 # Apps
 
-A collection of applications and tools.
+A monorepo containing a personal knowledge vault and a collection of AI-powered tools.
+
+## [Obsidian Mind](Obsidian%20Mind/) — Personal Knowledge Vault
+
+An AI-enhanced personal knowledge management system built on Obsidian. Open the `Obsidian Mind/` folder as your vault root in Obsidian. Features lifecycle hooks, slash commands for common workflows, and multi-agent support (Claude Code, Codex, Gemini).
+
+See [`CLAUDE.md`](CLAUDE.md) for the full operating manual.
 
 ## Projects
 

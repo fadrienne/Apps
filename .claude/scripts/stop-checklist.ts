@@ -25,7 +25,7 @@ if (input?.stop_hook_active === true) process.exit(0);
 
 const checklist = [
 	"Session end checklist:",
-	"- Archive completed projects? (work/active/ -> work/archive/YYYY/)",
+	"- Archive completed projects? (Obsidian Mind/work/active/ -> Obsidian Mind/work/archive/YYYY/)",
 	"- Update indexes? (Index.md, Memories.md, People & Context, Brag Doc)",
 	"- New notes linked? (orphans are bugs)",
 	"- Run /om-vault-audit if many notes were created/modified",

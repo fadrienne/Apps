@@ -8,7 +8,7 @@ Write a complete self-assessment from vault data.
 
 ## Process
 
-1. **Load context** — read `perf/brag/` for the review period, `perf/competencies/`, `brain/North Star.md`, relevant `work/active/` and `work/archive/` notes.
+1. **Load context** — read `Obsidian Mind/perf/brag/` for the review period, `Obsidian Mind/perf/competencies/`, `Obsidian Mind/brain/North Star.md`, relevant `Obsidian Mind/work/active/` and `Obsidian Mind/work/archive/` notes.
 
 2. **Draft Projects** — for each significant project:
    - WHAT was delivered (concrete outcomes, not activities)

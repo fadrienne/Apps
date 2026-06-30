@@ -8,7 +8,7 @@ Target: $ARGUMENTS
 
 ## Process
 
-1. **Load voice samples** — read 3–5 existing notes the user has written (not Claude-drafted). Look in `work/active/`, `work/1-1/`, `perf/brag/`. Extract the writing fingerprint: sentence length, vocabulary level, use of hedges/intensifiers, how they open bullets, punctuation habits.
+1. **Load voice samples** — read 3–5 existing notes the user has written (not Claude-drafted). Look in `Obsidian Mind/work/active/`, `Obsidian Mind/work/1-1/`, `Obsidian Mind/perf/brag/`. Extract the writing fingerprint: sentence length, vocabulary level, use of hedges/intensifiers, how they open bullets, punctuation habits.
 
 2. **Detect context** from frontmatter tags:
    - `work-note` / `active` → professional but direct

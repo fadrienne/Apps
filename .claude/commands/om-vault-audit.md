@@ -11,14 +11,14 @@ Run a comprehensive structural audit. Invoke two subagents:
 ## Audit Areas
 
 1. **Folder Structure** — notes in correct folders per `CLAUDE.md` rules?
-2. **Index Files** — `work/Index.md`, `org/People & Context.md`, `perf/Brag Doc.md`, `brain/Memories.md` current?
+2. **Index Files** — `Obsidian Mind/work/Index.md`, `org/People & Context.md`, `Obsidian Mind/perf/Brag Doc.md`, `Obsidian Mind/brain/Memories.md` current?
 3. **Frontmatter** — all required fields present per note type?
 4. **Duplicate Tags** — repeated entries in tag arrays?
 5. **Status Alignment** — `status: completed` notes still in `active/`?
 6. **Orphan Detection** — notes with no incoming links?
 7. **Link Validation** — broken `[[wikilinks]]`?
-8. **Stale Context** — `work/active/` notes unchanged for 60+ days?
-9. **Brain/Org Accuracy** — `brain/` and `org/` content still current?
+8. **Stale Context** — `Obsidian Mind/work/active/` notes unchanged for 60+ days?
+9. **Brain/Org Accuracy** — `Obsidian Mind/brain/` and `org/` content still current?
 10. **Conceptual Integrity** — notes mixing unrelated topics?
 
 ## Constraints
@@ -30,7 +30,7 @@ Run a comprehensive structural audit. Invoke two subagents:
 
 ## Output
 
-Timestamped audit report in `thinking/vault-audit-<YYYY-MM-DD>.md` with:
+Timestamped audit report in `Obsidian Mind/thinking/vault-audit-<YYYY-MM-DD>.md` with:
 - Summary stats
 - Action items by priority (Fix Now / Fix Later / Informational)
 - Specific recommendations with file paths

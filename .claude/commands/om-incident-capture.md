@@ -12,9 +12,9 @@ Provide Slack channel URLs, ticket links, or paste messages directly.
 
 1. **Invoke `slack-archaeologist`** — reconstruct the full timeline from Slack. Every message, thread, reaction that's relevant. Produce unified timeline with attribution.
 
-2. **Invoke `people-profiler`** — create or update `org/people/` notes for everyone involved.
+2. **Invoke `people-profiler`** — create or update `Obsidian Mind/org/people/` notes for everyone involved.
 
-3. **Create incident note** at `work/incidents/<ticket>-<slug>.md`:
+3. **Create incident note** at `Obsidian Mind/work/incidents/<ticket>-<slug>.md`:
 
 ```yaml
 ---
@@ -44,4 +44,4 @@ role: "<responder|lead|reviewer|communicator>"
 
 5. **Create brag entry** — add to current quarter brag note with competency links (e.g. `[[Incident Response]]`, `[[Technical Leadership]]`).
 
-6. **Update `work/Index.md`** — add to Incidents section.
+6. **Update `Obsidian Mind/work/Index.md`** — add to Incidents section.

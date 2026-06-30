@@ -8,17 +8,17 @@ Project: $ARGUMENTS
 
 ## Workflow
 
-1. **Locate the note** — find `work/active/<project>.md`. If ambiguous, list matches and ask user to confirm.
+1. **Locate the note** — find `Obsidian Mind/work/active/<project>.md`. If ambiguous, list matches and ask user to confirm.
 
 2. **Verify it's done** — check `status` field. If not `completed`, ask for confirmation before archiving.
 
 3. **Determine year** — use the note's `date` field or today's date for the archive folder.
 
-4. **Move** — copy to `work/archive/<YYYY>/<project>.md`, update `status: archived`.
+4. **Move** — copy to `Obsidian Mind/work/archive/<YYYY>/<project>.md`, update `status: archived`.
 
 5. **Update indexes**:
-   - `work/Index.md` — move from Active to Completed (under correct quarter), update status
-   - Check `perf/Brag Doc.md` — if project had wins, ensure they're still linked
+   - `Obsidian Mind/work/Index.md` — move from Active to Completed (under correct quarter), update status
+   - Check `Obsidian Mind/perf/Brag Doc.md` — if project had wins, ensure they're still linked
 
 6. **Check related notes** — find all notes that link to this project. Update any that reference it as "active" work.
 

@@ -2,19 +2,30 @@
 
 This vault gives you persistent memory across AI coding agent sessions. Read this file to understand how the vault works, then use the commands and hooks to make it yours.
 
-## Vault Structure
+## Repository Layout
 
 ```
-brain/          — persistent knowledge (North Star, Memories, Decisions, Patterns, Gotchas)
-work/           — active projects, archive (by year), incidents, 1:1 notes
-org/            — people directory, team notes, org context
-perf/           — brag doc, quarterly evidence, competency notes
-reference/      — reference docs, runbooks, architecture notes
-thinking/       — Claude's scratchpad (drafts, reasoning, session logs)
-templates/      — note templates for consistent structure
-bases/          — Obsidian Bases (database views)
+Obsidian Mind/  — the personal knowledge vault (open this folder in Obsidian)
+  brain/        — persistent knowledge (North Star, Memories, Decisions, Patterns, Gotchas)
+  work/         — active projects, archive (by year), incidents, 1:1 notes
+  org/          — people directory, team notes, org context
+  perf/         — brag doc, quarterly evidence, competency notes
+  reference/    — reference docs, runbooks, architecture notes
+  thinking/     — Claude's scratchpad (drafts, reasoning, session logs)
+  templates/    — note templates for consistent structure
+  bases/        — Obsidian Bases (database views)
+  .obsidian/    — Obsidian app config
+
+autosci/                — agentic scientific research system
+gstack/                 — AI-powered software factory (gstack)
+notebooklm/             — Google NotebookLM Python automation
+scientific-agent-skills/ — 24 Claude Code skills for research
+thrive-hub/             — business metrics dashboard (React/Vite)
+
 .claude/        — Claude Code config: commands, agents, scripts, settings
 ```
+
+> **Obsidian tip**: open `Obsidian Mind/` as your vault root, not the repo root.
 
 ## Core Principles
 
@@ -39,7 +50,7 @@ quarter: "Q2 2026"
 ---
 ```
 
-**Wikilinks**: use `[[Note Name]]` for all internal references. Never use markdown links for vault notes. Partial names work: `[[Alice]]` resolves to `org/people/Alice Chen.md`.
+**Wikilinks**: use `[[Note Name]]` for all internal references. Never use markdown links for vault notes. Partial names work: `[[Alice]]` resolves to `Obsidian Mind/org/people/Alice Chen.md`.
 
 **Annotations**: when linking to a competency, annotate: `[[Technical Leadership]] — led cross-team API migration`.
 
@@ -59,7 +70,7 @@ Run these from Claude Code or your agent platform:
 | `/om-incident-capture $ARGUMENTS` | Capture incident from Slack into vault |
 | `/om-slack-scan $ARGUMENTS` | Deep scan Slack channels for evidence |
 | `/om-meeting $ARGUMENTS` | Prep brief for any meeting |
-| `/om-intake` | Process raw meeting notes from `work/meetings/` |
+| `/om-intake` | Process raw meeting notes from `Obsidian Mind/work/meetings/` |
 | `/om-peer-scan $ARGUMENTS` | Scan a peer's GitHub PRs for review evidence |
 | `/om-review-brief $ARGUMENTS` | Generate review brief (manager or peers version) |
 | `/om-self-review` | Write self-assessment from vault data |
@@ -77,12 +88,12 @@ Hooks run automatically — no action needed.
 | **SessionStart** | Startup/resume/clear/compact | Injects date, North Star excerpt, brain topics, recent git changes, open tasks, active work listing, vault file listing |
 | **UserPromptSubmit** | Every message | Classifies content (decision / incident / 1:1 / win / architecture / person / project) and injects routing hints |
 | **PostToolUse** | After Write/Edit on `.md` | Validates frontmatter completeness and checks for wikilinks |
-| **PreCompact** | Before context compaction | Backs up session transcript to `thinking/session-logs/` |
+| **PreCompact** | Before context compaction | Backs up session transcript to `Obsidian Mind/thinking/session-logs/` |
 | **Stop** | End of session | Prints wrap-up checklist (archive check, index updates, orphan check) |
 
 ## Memory System
 
-The `brain/` folder is the primary memory store across sessions:
+The `Obsidian Mind/brain/` folder is the primary memory store across sessions:
 
 - **[[North Star]]** — living goals document. Read at session start, update when focus shifts.
 - **[[Memories]]** — index of memory topics, links to Key Decisions, Patterns, Gotchas.
@@ -91,11 +102,11 @@ The `brain/` folder is the primary memory store across sessions:
 - **[[Gotchas]]** — things that have caused problems before.
 - **[[Skills]]** — full reference for all commands, subagents, and hooks.
 
-When you learn something worth remembering, write it to the relevant `brain/` note with a wikilink back to the source work note.
+When you learn something worth remembering, write it to the relevant `Obsidian Mind/brain/` note with a wikilink back to the source work note.
 
 ## Semantic Search (QMD)
 
-Optional. Install with `npm install -g @tobilu/qmd`, then bootstrap: `node --experimental-strip-types scripts/qmd-bootstrap.ts`.
+Optional. Install with `npm install -g @tobilu/qmd`, then bootstrap: `node --experimental-strip-types .claude/scripts/qmd-bootstrap.ts`.
 
 Once installed, the SessionStart hook re-indexes automatically. Use `qmd --index obsidian-mind query "..."` for hybrid search, or let agents use the MCP server (`.mcp.json`).
 
@@ -103,10 +114,10 @@ Once installed, the SessionStart hook re-indexes automatically. Use `qmd --index
 
 These index notes need active curation — update them when you create or complete work:
 
-- `work/Index.md` — all work notes
-- `brain/Memories.md` — topic index for brain notes
-- `org/People & Context.md` — people and org context
-- `perf/Brag Doc.md` — quarterly brag index
+- `Obsidian Mind/work/Index.md` — all work notes
+- `Obsidian Mind/brain/Memories.md` — topic index for brain notes
+- `Obsidian Mind/org/People & Context.md` — people and org context
+- `Obsidian Mind/perf/Brag Doc.md` — quarterly brag index
 
 `/om-vault-audit` and `/om-wrap-up` catch drift and suggest fixes.
 
@@ -114,17 +125,17 @@ These index notes need active curation — update them when you create or comple
 
 | Content type | Folder |
 |-------------|--------|
-| Active project | `work/active/` |
-| Completed project | `work/archive/YYYY/` |
-| Incident doc | `work/incidents/` |
-| 1:1 meeting note | `work/1-1/` |
-| Person profile | `org/people/` |
-| Team note | `org/teams/` |
-| Quarterly brag | `perf/brag/` |
-| PR / git evidence | `perf/evidence/` |
-| Competency note | `perf/competencies/` |
-| Reference / runbook | `reference/` |
-| Draft / reasoning | `thinking/` |
+| Active project | `Obsidian Mind/work/active/` |
+| Completed project | `Obsidian Mind/work/archive/YYYY/` |
+| Incident doc | `Obsidian Mind/work/incidents/` |
+| 1:1 meeting note | `Obsidian Mind/work/1-1/` |
+| Person profile | `Obsidian Mind/org/people/` |
+| Team note | `Obsidian Mind/org/teams/` |
+| Quarterly brag | `Obsidian Mind/perf/brag/` |
+| PR / git evidence | `Obsidian Mind/perf/evidence/` |
+| Competency note | `Obsidian Mind/perf/competencies/` |
+| Reference / runbook | `Obsidian Mind/reference/` |
+| Draft / reasoning | `Obsidian Mind/thinking/` |
 
 ## Skills
 

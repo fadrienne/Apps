@@ -82,7 +82,7 @@ if (isMainModule(import.meta.url)) {
 	}
 
 	const projectDir = process.env["CLAUDE_PROJECT_DIR"] ?? process.cwd();
-	const backupDir = join(projectDir, "thinking/session-logs");
+	const backupDir = join(projectDir, "Obsidian Mind/thinking/session-logs");
 	mkdirSync(backupDir, { recursive: true });
 
 	const dest = join(
