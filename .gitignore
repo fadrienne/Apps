@@ -16,6 +16,7 @@
 
 # Session logs (local transcripts)
 thinking/session-logs/
+Obsidian Mind/thinking/session-logs/
 
 # Claude Flow runtime state
 .claude-flow/
