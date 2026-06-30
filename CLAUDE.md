@@ -1,8 +1,6 @@
 # Apps Repository
 
-This repo contains the **Obsidian Mind** personal knowledge vault and several AI-powered app projects.
-
-Vault operating manual → [`Obsidian Mind/CLAUDE.md`](Obsidian%20Mind/CLAUDE.md)
+This repo contains several AI-powered app projects.
 
 ## Apps
 
