@@ -44,10 +44,10 @@
       "computedHash": "0ed6c960418bce936556d0c1b37b0dff1b9cd8811a4d128719a36973c8093984"
     },
     "hallmark": {
-      "source": "nutlope/hallmark",
+      "source": "fadrienne/Apps",
       "sourceType": "github",
       "skillPath": "SKILL.md",
-      "computedHash": "5c0fa3fe0dd99fd3016ac120a1b5f425c6f93ce1d2f1c531b19e34361e532d6f"
+      "computedHash": "5437b73a1a829210681ca21fa09b7276a5978875f960d3998846e0dc333e9343"
     },
     "hypothesis-generation": {
       "source": "K-Dense-AI/scientific-agent-skills",
