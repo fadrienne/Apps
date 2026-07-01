@@ -14,7 +14,10 @@ When the user's request matches a skill below, invoke it via the Skill tool.
 | "search the web for X", "find recent news on X", "fetch this URL", "enrich this list" | `/exa-search` or `/web-lookup` |
 | "generate hypotheses for X", "why does X happen", "explain X mechanistically" | `/hypothesis-generation` |
 | "design an experiment to test X", "how many replicates do I need", "randomize my treatment groups" | `/experimental-design` |
+| "how many samples do I need", "what is my power", "sample size for a t-test", "power curve" | `/statistical-power` |
 | "explore this dataset", "what's in this file", "summarize these data" | `/exploratory-data-analysis` |
+| "my analysis script is crashing", "debug this code", "profile my pipeline", "check for data leakage" | `/research-code` |
+| "track my experiment runs", "compare training runs", "MLflow", "Weights & Biases", "hyperparameter sweep" | `/experiment-tracking` |
 | "format my references", "check my citations", "deduplicate bibliography" | `/citation-management` |
 | "review this paper", "peer review", "critique this manuscript" | `/peer-review` |
 | "make an infographic", "visualize these findings", "create a summary figure" | `/infographics` |
