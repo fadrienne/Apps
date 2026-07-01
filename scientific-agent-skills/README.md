@@ -20,7 +20,10 @@ A curated collection of agent skills for scientific research, adapted from the [
 |---|---|
 | `/hypothesis-generation` | Generate 3–5 competing testable hypotheses from evidence |
 | `/experimental-design` | Statistical design of experiments (randomization, blocking, factorial) |
+| `/statistical-power` | Sample size calculation, power curves, and simulation-based power for complex designs |
 | `/exploratory-data-analysis` | EDA across 200+ scientific file formats |
+| `/research-code` | Debug, profile, and review Python research and analysis code for correctness |
+| `/experiment-tracking` | Log, compare, and manage ML experiment runs via MLflow or Weights & Biases |
 
 ### Scientific Communication
 
