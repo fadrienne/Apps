@@ -6,13 +6,31 @@ allowed-tools: Read Write Edit Bash
 
 # Scientific Writing
 
-## Agents
+## Agent Workflow
 
-When running the full paper-writing workflow, use:
-- **`writer`** agent: drafts sections, converts outlines to prose, formats citations
-- **`verifier`** agent: checks claims against sources, validates citations, reviews logical flow
+When the user asks to write a paper from collected research, run a two-agent pipeline using the `Task` tool:
 
-Output goes to `papers/`. Run the `/draft` workflow to invoke the full agent pipeline.
+**Step 1 — Derive a slug** from the topic (lowercase, hyphens, ≤5 words). All files in this run use the slug as a prefix.
+
+**Step 2 — Writer agent**
+```
+Task("writer", "Draft a scientific paper on <topic>. Slug: <slug>. Source material is in outputs/<slug>-research-*.md and outputs/.plans/<slug>.md. Save the draft to papers/<slug>.md.")
+```
+The `writer` agent produces a full IMRAD draft in `papers/<slug>.md` with inline citations and a Sources appendix.
+
+**Step 3 — Verifier agent**
+```
+Task("verifier", "Verify papers/<slug>.md against source material in outputs/<slug>-research-*.md. Fix citations, mark unverified claims, and write a log to outputs/<slug>-verification.md.")
+```
+The `verifier` agent checks every factual claim, corrects citations, marks unverified statements, and writes a verification log.
+
+**Step 4 — Deliver**
+Read `outputs/<slug>-verification.md`. If the recommendation is READY FOR DELIVERY, present the draft to the user. If NEEDS REVISION, address the flagged issues before delivering.
+
+Output locations:
+- Draft: `papers/<slug>.md`
+- Verification log: `outputs/<slug>-verification.md`
+- Plan artifact: `outputs/.plans/<slug>.md`
 
 ---
 
