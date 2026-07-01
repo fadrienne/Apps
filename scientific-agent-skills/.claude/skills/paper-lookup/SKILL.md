@@ -1,6 +1,6 @@
 ---
 name: paper-lookup
-description: Quick paper search and metadata retrieval across 10+ academic databases. Use for targeted lookups by title, author, DOI, or PMID — faster than /literature-review for single-paper queries.
+description: "Structured search across 10 academic databases (PubMed, arXiv, Semantic Scholar, OpenAlex, Crossref, Unpaywall, PMC, bioRxiv, medRxiv, CORE). Use for: finding papers by topic/author/DOI/PMID, citation graphs, open-access PDF links, preprint tracking, and cross-database queries. Do NOT use for general web search — use /web-lookup. Do NOT use for interactive Q&A about a paper's content — use /alpha-research."
 argument-hint: "<title or author or DOI or PMID or arXiv ID>"
 version: 1.0
 author: K-Dense, Inc. (adapted)

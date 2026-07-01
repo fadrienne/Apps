@@ -205,7 +205,7 @@ def find_competing_approaches(problem_description):
 - Does not access paywalled content (returns metadata only for subscription journals)
 - Coverage focuses on English-language content
 - Very recent content (<24h) may not be indexed
-- Deep research reports require `/parallel-web --mode deep-research` instead
+- Deep research reports require `/web-lookup --mode deep-research` instead
 
 ## Rate limits
 

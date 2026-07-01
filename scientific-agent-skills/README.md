@@ -12,7 +12,7 @@ A curated collection of agent skills for scientific research, adapted from the [
 | `/paper-lookup` | Quick paper search across 10+ academic databases |
 | `/database-lookup` | Query public scientific databases via REST APIs |
 | `/exa-search` | Semantic AI-powered web search for scientific content |
-| `/parallel-web` | Parallel web search with academic source prioritization |
+| `/web-lookup` | General web search, URL extraction, data enrichment, and deep research reports |
 
 ### Research Methodology
 

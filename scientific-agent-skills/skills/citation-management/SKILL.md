@@ -236,7 +236,7 @@ Any `@article` entry missing `volume`, `pages`, or `doi` is considered **incompl
 
 #### Step 2: Web Search for Missing Metadata
 
-For each incomplete entry, use the **parallel-web skill** to search for the missing information:
+For each incomplete entry, use the **web-lookup skill** to search for the missing information:
 
 **Option A — Search by title and author** (best for finding DOI):
 ```bash

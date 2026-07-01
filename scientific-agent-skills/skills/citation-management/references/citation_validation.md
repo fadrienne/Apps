@@ -754,7 +754,7 @@ title = {Study of H\textsubscript{2}O}  % H₂O
 
 1. **Identify the missing fields** by scanning the BibTeX entry for empty or absent `volume`, `pages`, `number`, `doi` fields.
 
-2. **Search for the missing metadata using web search** (parallel-web skill):
+2. **Search for the missing metadata using web search** (web-lookup skill):
    ```bash
    # Search by author + title to find complete citation info
    parallel-cli search "AUTHOR_NAME PAPER_TITLE JOURNAL volume pages DOI" \

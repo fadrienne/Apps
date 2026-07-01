@@ -11,7 +11,7 @@ When the user's request matches a skill below, invoke it via the Skill tool.
 | "find papers on X", "literature review", "what's known about X" | `/literature-review` |
 | "look up this paper", "find paper by author/DOI", "get paper details" | `/paper-lookup` |
 | "query a scientific database", "look up a compound or dataset" | `/database-lookup` |
-| "search the web for X", "find recent news on X" | `/exa-search` or `/parallel-web` |
+| "search the web for X", "find recent news on X", "fetch this URL", "enrich this list" | `/exa-search` or `/web-lookup` |
 | "generate hypotheses for X", "why does X happen", "explain X mechanistically" | `/hypothesis-generation` |
 | "design an experiment to test X", "how many replicates do I need", "randomize my treatment groups" | `/experimental-design` |
 | "explore this dataset", "what's in this file", "summarize these data" | `/exploratory-data-analysis` |
