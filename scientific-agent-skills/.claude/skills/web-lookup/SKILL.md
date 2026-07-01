@@ -1,12 +1,12 @@
 ---
-name: parallel-web
-description: All-in-one web toolkit for scientific search and data enrichment. Prioritizes academic sources (peer-reviewed journals, preprints, institutional sources). Provides search, URL extraction, data enrichment, and deep research reports.
+name: web-lookup
+description: "General web search, URL extraction, bulk data enrichment, and deep research reports powered by parallel-cli. Use for: web searches (current events, products, non-paper content, general lookups), fetching a specific URL or web page, enriching a list of entities (companies, people, products) with web-sourced fields, or running exhaustive multi-source deep research reports. Prioritizes academic and scientific sources when the query is technical. Do NOT use for targeted paper/DOI lookups — use /paper-lookup for those. Do NOT use for interactive Q&A about a specific arXiv paper — use /alpha-research for that."
 argument-hint: "<search query or URL> [--mode search|extract|enrich|deep-research]"
 version: 1.1
 author: K-Dense, Inc. (adapted)
 ---
 
-# /parallel-web
+# /web-lookup
 
 Search the web with academic source prioritization, extract content from URLs, enrich datasets with web-sourced fields, or generate comprehensive deep research reports.
 

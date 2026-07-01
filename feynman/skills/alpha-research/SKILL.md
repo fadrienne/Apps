@@ -1,9 +1,29 @@
 ---
 name: alpha-research
-description: Search, read, and query research papers via the `alpha` CLI (alphaXiv-backed). Use when the user asks about academic papers, wants to find research on a topic, needs to read a specific paper, ask questions about a paper, inspect a paper's code repository, or manage paper annotations.
+description: "Interactive paper Q&A, reading, and annotation via the `alpha` CLI (alphaXiv-backed). Use for: asking questions about a specific arXiv paper's content, reading full paper text, inspecting a paper's GitHub repo, and managing local paper annotations. Requires the `alpha` CLI to be installed. If `alpha` is not available, fall back to /paper-lookup for search and /web-lookup for URL extraction. Do NOT use for general paper database search — use /paper-lookup. Do NOT use for general web search — use /web-lookup."
 ---
 
 # Alpha Research CLI
+
+## Prerequisite check
+
+Before running any `alpha` command, verify the CLI is available:
+
+```bash
+which alpha 2>/dev/null || echo "NOT_FOUND"
+```
+
+**If `alpha` is not found — fall back immediately:**
+
+| Task | Fallback |
+|---|---|
+| Search for papers by topic / author / DOI | Use `/paper-lookup` |
+| Fetch content from a URL or read a paper online | Use `/web-lookup` |
+| Ask questions about a paper's content | Fetch the PDF via `/web-lookup` then read it directly |
+
+Tell the user that `alpha` is not installed and that they can install it with `alpha login` (alphaXiv account required). Continue with the fallback rather than stopping.
+
+---
 
 Use the `alpha` CLI via bash for all paper research operations.
 

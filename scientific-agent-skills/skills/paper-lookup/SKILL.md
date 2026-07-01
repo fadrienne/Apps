@@ -1,6 +1,6 @@
 ---
 name: paper-lookup
-description: Search 10 academic paper databases via REST APIs for research papers, preprints, and scholarly articles. Covers PubMed, PMC (full text), bioRxiv, medRxiv, arXiv, OpenAlex, Crossref, Semantic Scholar, CORE, Unpaywall. Use when searching for papers, citations, DOI/PMID lookups, abstracts, full text, open access, preprints, citation graphs, author search, or any scholarly literature query. Triggers on mentions of any supported database or requests like "find papers on X" or "look up this DOI".
+description: "Structured search across 10 academic databases (PubMed, arXiv, Semantic Scholar, OpenAlex, Crossref, Unpaywall, PMC, bioRxiv, medRxiv, CORE). Use for: finding papers by topic/author/DOI/PMID, citation graphs, open-access PDF links, preprint tracking, and cross-database queries. Do NOT use for general web search — use /web-lookup. Do NOT use for interactive Q&A about a paper's content — use /alpha-research."
 metadata: {"version": "1.0", "skill-author": "K-Dense Inc."}
 ---
 
