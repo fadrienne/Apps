@@ -24,3 +24,8 @@ Obsidian Mind/thinking/session-logs/
 # Node typecheck deps (CI + local dev only; runtime is zero-deps)
 node_modules/
 .claude/scripts/node_modules/
+
+# Secrets (API tokens, credentials)
+.env
+.env.*
+!.env.example
