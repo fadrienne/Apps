@@ -1,0 +1,9 @@
+{
+  "name": "data-tools",
+  "version": "1.0.0",
+  "description": "Data collection and automation skills: Apify scraping, browser automation, and Google NotebookLM programmatic access.",
+  "author": {
+    "name": "fadrienne"
+  },
+  "keywords": ["apify", "browser", "notebooklm", "automation"]
+}

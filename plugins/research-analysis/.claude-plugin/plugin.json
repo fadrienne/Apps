@@ -1,0 +1,9 @@
+{
+  "name": "research-analysis",
+  "version": "1.0.0",
+  "description": "Research, reasoning, and writing skills: arXiv lookup, Fabric patterns, wisdom extraction, multi-agent debate, first-principles reasoning, root cause analysis, systems thinking, scientific writing, and story writing.",
+  "author": {
+    "name": "fadrienne"
+  },
+  "keywords": ["research", "writing", "reasoning", "analysis"]
+}

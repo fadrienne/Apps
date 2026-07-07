@@ -1,0 +1,9 @@
+{
+  "name": "github-devops",
+  "version": "1.0.0",
+  "description": "GitHub workflow skills: code review, multi-repo coordination, project management, release management, workflow automation, repo importing, skill building, and pair programming.",
+  "author": {
+    "name": "fadrienne"
+  },
+  "keywords": ["github", "devops", "code-review", "release-management"]
+}

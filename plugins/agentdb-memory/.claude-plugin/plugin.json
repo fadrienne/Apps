@@ -1,0 +1,9 @@
+{
+  "name": "agentdb-memory",
+  "version": "1.0.0",
+  "description": "AgentDB skills for vector search, memory patterns, optimization, learning plugins, and ReasoningBank adaptive-learning integration.",
+  "author": {
+    "name": "fadrienne"
+  },
+  "keywords": ["agentdb", "memory", "vector-search", "reasoningbank"]
+}
