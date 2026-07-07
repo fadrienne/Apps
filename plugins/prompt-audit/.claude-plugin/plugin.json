@@ -1,0 +1,9 @@
+{
+  "name": "prompt-audit",
+  "version": "1.0.0",
+  "description": "Audits AI instruction sets (CLAUDE.md, system prompts, skills) for over-prompting and prompt bloat.",
+  "author": {
+    "name": "fadrienne"
+  },
+  "keywords": ["prompt-engineering", "audit"]
+}

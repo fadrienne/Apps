@@ -1,0 +1,38 @@
+{
+  "name": "apps-skills",
+  "owner": {
+    "name": "fadrienne"
+  },
+  "plugins": [
+    {
+      "name": "research-analysis",
+      "source": "./plugins/research-analysis",
+      "description": "Research, reasoning, and writing skills: arXiv lookup, Fabric patterns, wisdom extraction, multi-agent debate, first-principles reasoning, root cause analysis, systems thinking, scientific writing, and story writing."
+    },
+    {
+      "name": "github-devops",
+      "source": "./plugins/github-devops",
+      "description": "GitHub workflow skills: code review, multi-repo coordination, project management, release management, workflow automation, repo importing, skill building, and pair programming."
+    },
+    {
+      "name": "agentdb-memory",
+      "source": "./plugins/agentdb-memory",
+      "description": "AgentDB skills for vector search, memory patterns, optimization, learning plugins, and ReasoningBank adaptive-learning integration."
+    },
+    {
+      "name": "swarm-v3-dev",
+      "source": "./plugins/swarm-v3-dev",
+      "description": "Claude-flow v3 development skills: swarm orchestration, SPARC methodology, hooks automation, stream chaining, verification/quality, and the nine v3 architecture workstreams."
+    },
+    {
+      "name": "data-tools",
+      "source": "./plugins/data-tools",
+      "description": "Data collection and automation skills: Apify scraping, browser automation, and Google NotebookLM programmatic access."
+    },
+    {
+      "name": "prompt-audit",
+      "source": "./plugins/prompt-audit",
+      "description": "Audits AI instruction sets (CLAUDE.md, system prompts, skills) for over-prompting and prompt bloat."
+    }
+  ]
+}

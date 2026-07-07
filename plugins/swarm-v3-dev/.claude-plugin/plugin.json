@@ -1,0 +1,9 @@
+{
+  "name": "swarm-v3-dev",
+  "version": "1.0.0",
+  "description": "Claude-flow v3 development skills: swarm orchestration, SPARC methodology, hooks automation, stream chaining, verification/quality, and the nine v3 architecture workstreams (CLI, core, DDD, integration, MCP, memory, performance, security, swarm coordination).",
+  "author": {
+    "name": "fadrienne"
+  },
+  "keywords": ["claude-flow", "swarm", "sparc", "v3"]
+}
