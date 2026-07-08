@@ -285,6 +285,30 @@ APIFY_API_BASE_URL=https://api.apify.com/v2
 
 Get your token from: https://console.apify.com/account/integrations
 
+## Gotcha: Bun + proxied sandboxes (e.g. Claude Code on the web)
+
+In network-sandboxed environments that route HTTPS through a local policy-enforcing
+proxy (`HTTPS_PROXY` set to a `127.0.0.1` port), **Bun's HTTP client fails with
+`ECONNRESET`** on every request through that proxy — this reproduces with Bun's
+native `fetch()`, `node:https` + `proxy-agent`, and therefore `apify-client`
+(which uses axios under the hood). `curl` and plain Node.js both work fine against
+the same proxy, so this is a Bun-specific gap, not a token or network-policy issue.
+
+Workaround: run the script with Node instead of Bun:
+
+```bash
+NODE_USE_ENV_PROXY=1 node --experimental-transform-types your-script.ts
+```
+
+- `NODE_USE_ENV_PROXY=1` — Node's fetch ignores `HTTPS_PROXY` by default even on
+  recent versions; this opts in.
+- `--experimental-transform-types` — required instead of `--experimental-strip-types`
+  because this codebase uses TypeScript parameter properties
+  (`constructor(private client: ApifyClient, ...)`), which strip-only mode rejects.
+
+This is only needed inside a proxied sandbox. Running locally with Bun and no
+corporate/agent proxy in front of it works as designed with no workaround needed.
+
 ## TypeScript Types
 
 All types are exported from the main module:
