@@ -21,6 +21,10 @@
     "qmd": {
       "command": "node",
       "args": [".claude/scripts/qmd-mcp.mjs"]
+    },
+    "linkedin": {
+      "command": "bash",
+      "args": ["linkedin-mcp/run.sh"]
     }
   }
 }
