@@ -4,9 +4,7 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
-if [ -z "${CHROME_PATH:-}" ] && [ -x /opt/pw-browsers/chromium ]; then
-  export CHROME_PATH=/opt/pw-browsers/chromium
-fi
-export UV_HTTP_TIMEOUT="${UV_HTTP_TIMEOUT:-300}"
+# shellcheck source=browser-env.sh
+. "./browser-env.sh"
 
 exec uv run --no-project --python 3.12 --with mcp-server-linkedin python seed_session.py

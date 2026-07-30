@@ -27,7 +27,9 @@ pass it as a CLI argument (argv leaks into process listings and shell history).
 import asyncio
 import json
 import os
+import sqlite3
 import sys
+import time
 
 
 def main() -> None:
@@ -53,6 +55,13 @@ def main() -> None:
     cookie_path = portable_cookie_path(profile_dir)
     cookie_path.parent.mkdir(parents=True, exist_ok=True)
 
+    # A real future expiry matters: Chromium keeps session cookies (expires=-1)
+    # in memory only, so a session cookie never reaches the profile's cookie
+    # store. When the server runs on the same machine that seeded it, it trusts
+    # that store rather than re-injecting cookies.json — a session cookie would
+    # leave every tool call logged out. LinkedIn's own li_at lasts about a year.
+    expires = time.time() + 300 * 24 * 3600
+
     cookie_path.write_text(
         json.dumps(
             [
@@ -61,7 +70,7 @@ def main() -> None:
                     "value": li_at,
                     "domain": ".linkedin.com",
                     "path": "/",
-                    "expires": -1,
+                    "expires": expires,
                     "httpOnly": True,
                     "secure": True,
                     "sameSite": "None",
@@ -80,9 +89,36 @@ def main() -> None:
             "grab a fresh li_at from a logged-in browser and try again."
         )
 
+    if not _cookie_persisted(profile_dir):
+        sys.exit(
+            "The cookie validated but did not persist into the browser profile at\n"
+            f"  {profile_dir}\n"
+            "The server reads that store on the machine that seeded it, so tool "
+            "calls would run logged out. Re-run seeding; if it repeats, the "
+            "browser is not closing cleanly."
+        )
+
     write_source_state(profile_dir)
     print(f"Session seeded. Profile: {profile_dir}")
     print("The LinkedIn MCP server will now start authenticated.")
+
+
+def _cookie_persisted(profile_dir) -> bool:
+    """Whether li_at reached the profile's on-disk cookie store."""
+    for cookies_db in profile_dir.glob("**/Cookies"):
+        try:
+            conn = sqlite3.connect(f"file:{cookies_db}?mode=ro", uri=True)
+            try:
+                rows = conn.execute(
+                    "SELECT 1 FROM cookies WHERE name = 'li_at' LIMIT 1"
+                ).fetchall()
+            finally:
+                conn.close()
+            if rows:
+                return True
+        except sqlite3.Error:
+            continue
+    return False
 
 
 if __name__ == "__main__":

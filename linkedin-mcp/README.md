@@ -51,16 +51,34 @@ There is no browser to import from, so seed the session from your `li_at` cookie
 lost when the container is reclaimed, so a fresh container needs re-seeding. (Don't commit session
 artifacts to git; the `li_at` cookie is full access to your LinkedIn account.)
 
-## Network policy requirement (remote containers)
+## Remote container caveats
 
-The scraping browser must reach LinkedIn directly. In a Claude Code remote environment with a
-restricted network policy, CONNECT to `www.linkedin.com` is denied (403) and every tool call fails
-with a proxy error. Fix: in the environment's network settings, allow at least:
+### Network policy
 
-- `linkedin.com` / `*.linkedin.com`
-- `*.licdn.com` (LinkedIn static/media CDN)
+The scraping browser must reach LinkedIn directly. Under a restricted network policy, CONNECT to
+`www.linkedin.com` is denied (403) and every tool call fails with a proxy error. Fix: in the
+environment's network settings, allow at least `linkedin.com` / `*.linkedin.com` and `*.licdn.com`
+(LinkedIn's static/media CDN), or use a permissive policy.
 
-or use a permissive/trusted network policy for the environment.
+### TLS 1.3 is reset by the sandbox proxy
+
+Even with LinkedIn allowed, Chromium's TLS 1.3 handshakes are reset by the sandboxed egress proxy —
+every `https://` load fails with `ERR_CONNECTION_RESET` while `curl` through the same proxy
+succeeds. Disabling post-quantum key agreement alone doesn't help; the whole TLS 1.3 handshake is
+affected.
+
+[`chromium-tls12.sh`](chromium-tls12.sh) works around this by capping the handshake at TLS 1.2, and
+[`browser-env.sh`](browser-env.sh) routes `CHROME_PATH` through it whenever a proxy is configured.
+Certificate verification stays fully enabled. Set `LINKEDIN_MCP_NO_TLS_CAP=1` to opt out. On a
+normal machine (no intercepting proxy) the cap is never applied.
+
+### LinkedIn rate-limits datacenter IPs
+
+Requests from a remote container come from a datacenter IP, which LinkedIn treats with suspicion:
+expect `HTTP 429` responses and redirects to the login page under repeated requests, even with a
+valid cookie. Space out calls, and re-seed after a cooldown if seeding fails with 429. Running on
+your own machine avoids this entirely — this is the main reason to prefer local use for heavy
+scraping.
 
 ## Security notes
 
