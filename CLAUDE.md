@@ -6,6 +6,7 @@ This repo contains several AI-powered app projects.
 
 | Project | Description |
 |---------|-------------|
+| [`academic-research-skills/`](academic-research-skills/) | Academic research pipeline plugin (4 skills promoted to `.claude/skills/`) |
 | [`autosci/`](autosci/) | Agentic scientific research system |
 | [`feynman/`](feynman/) | 20 Claude Code skills for scientific research workflows |
 | [`gstack/`](gstack/) | AI-powered software factory |
