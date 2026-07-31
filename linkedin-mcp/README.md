@@ -34,18 +34,27 @@ uvx mcp-server-linkedin@latest --login
 
 ### In a headless/remote container (Claude Code on the web)
 
-There is no browser to import from, so seed the session from your `li_at` cookie:
+There is no browser to import from, so seed the session from cookies taken out of a browser where
+you're logged in. Either a single `li_at`:
 
-1. In a browser where you're logged in to LinkedIn:
-   DevTools → Application → Cookies → `https://www.linkedin.com` → copy the `li_at` value.
-2. In the remote session:
+```sh
+LINKEDIN_LI_AT=<cookie value> ./linkedin-mcp/seed.sh
+```
 
-   ```sh
-   LINKEDIN_LI_AT=<cookie value> ./linkedin-mcp/seed.sh
-   ```
+or the full cookie set, which LinkedIn is likelier to accept from a datacenter IP (see below):
 
-   The script writes the portable cookie file, validates it against LinkedIn in a headless
-   browser, and persists the session metadata the server expects.
+```sh
+LINKEDIN_COOKIES_JSON=~/linkedin-cookies.json ./linkedin-mcp/seed.sh
+```
+
+Find them under DevTools → Application → Cookies → `https://www.linkedin.com`, or export them with
+a cookie-editor extension. `LINKEDIN_COOKIES_JSON` takes a JSON array (inline or a path) and keeps
+the cookies the server replays: `li_at`, `li_rm`, `JSESSIONID`, `bcookie`, `bscookie`, `liap`,
+`lidc`.
+
+The script writes the portable cookie file, validates the session against LinkedIn in a headless
+browser, and persists the session metadata the server expects. It fails loudly rather than
+reporting a success that cannot work.
 
 **Note:** remote containers are ephemeral — the seeded session lives in `~/.linkedin-mcp/` and is
 lost when the container is reclaimed, so a fresh container needs re-seeding. (Don't commit session
@@ -60,25 +69,39 @@ The scraping browser must reach LinkedIn directly. Under a restricted network po
 environment's network settings, allow at least `linkedin.com` / `*.linkedin.com` and `*.licdn.com`
 (LinkedIn's static/media CDN), or use a permissive policy.
 
-### TLS 1.3 is reset by the sandbox proxy
+### Encrypted Client Hello breaks every page load
 
-Even with LinkedIn allowed, Chromium's TLS 1.3 handshakes are reset by the sandboxed egress proxy —
-every `https://` load fails with `ERR_CONNECTION_RESET` while `curl` through the same proxy
-succeeds. Disabling post-quantum key agreement alone doesn't help; the whole TLS 1.3 handshake is
-affected.
+Even with LinkedIn allowed, every `https://` load from Chromium fails with `ERR_CONNECTION_RESET`
+while `curl` through the same proxy succeeds. The cause is Chromium's Encrypted Client Hello: the
+egress gateway answers `CONNECT` with `200 Connection Established` and then resets the tunnel the
+moment that ClientHello arrives, returning zero bytes.
 
-[`chromium-tls12.sh`](chromium-tls12.sh) works around this by capping the handshake at TLS 1.2, and
-[`browser-env.sh`](browser-env.sh) routes `CHROME_PATH` through it whenever a proxy is configured.
-Certificate verification stays fully enabled. Set `LINKEDIN_MCP_NO_TLS_CAP=1` to opt out. On a
-normal machine (no intercepting proxy) the cap is never applied.
+[`browser-env.sh`](browser-env.sh) writes `/etc/chromium/policies/managed/ech.json` disabling ECH
+whenever a proxy is configured. Two details are easy to get wrong:
 
-### LinkedIn rate-limits datacenter IPs
+- The `--disable-features=EncryptedClientHello` flag is **silently ignored**; only the enterprise
+  policy works, and only from `/etc/chromium/policies/managed` for this build.
+- Capping the handshake at TLS 1.2 also clears the reset, but a browser claiming to be current
+  Chrome while refusing TLS 1.3 is an implausible fingerprint that LinkedIn answers with `HTTP 429`.
+  Keep TLS 1.3 and drop only ECH.
 
-Requests from a remote container come from a datacenter IP, which LinkedIn treats with suspicion:
-expect `HTTP 429` responses and redirects to the login page under repeated requests, even with a
-valid cookie. Space out calls, and re-seed after a cooldown if seeding fails with 429. Running on
-your own machine avoids this entirely — this is the main reason to prefer local use for heavy
-scraping.
+Set `LINKEDIN_MCP_NO_ECH_POLICY=1` to skip writing the policy. On a normal machine (no intercepting
+proxy) it is never written.
+
+### LinkedIn challenges datacenter IPs
+
+Requests from a remote container come from a datacenter IP. Unauthenticated page loads work, but
+authenticated ones may be answered with `HTTP 429` even with a valid cookie — LinkedIn treats a
+session replayed from an unfamiliar address as suspect. Mitigations, in order of effectiveness:
+
+1. Run on your own machine, where the IP is residential and the session is the one you logged in
+   with. This is the reliable option and the reason to prefer local use for heavy scraping.
+2. Seed the full cookie set via `LINKEDIN_COOKIES_JSON` rather than `li_at` alone, so the session
+   looks like the browser it came from.
+3. Wait out the block and space out calls. Cooldowns can run to hours.
+
+Note that a 429 in seeding is reported as "LinkedIn did not accept the session" — check the output
+for `HTTP ERROR 429` to tell an IP block apart from a genuinely expired cookie.
 
 ## Security notes
 
