@@ -31,7 +31,7 @@ Generates a single self-contained HTML file styled as an editorial magazine, plu
 1. Searches for stories from Francesca's approved sources on her core topics
 2. Filters out skip topics
 3. Applies her personal lens to select and frame each story
-4. Writes 10 stories in editorial style (not AI summary style)
+4. Writes 10 stories, each with a one-line "why this matters to you", short-form Story Notes, and a longer Story Article draft, all addressed to Francesca in second person
 5. Flags urgent/actionable stories with ⚡
 6. Renders a full HTML magazine with distinct layouts per story
 7. Converts the HTML to a PDF
@@ -103,6 +103,8 @@ If a story does not pass at least one of these, cut it. If it passes all three, 
 
 **Lead every story with why it matters to Francesca specifically** — not a generic summary of the event.
 
+**Voice: second person, always.** All written copy in the magazine addresses Francesca directly as "you" — never third person ("Francesca", "she", "her"). When a possessive would be ambiguous against "you" (e.g. "her government", "her organisation"), name the entity instead: "Seychelles's government", "SHORE", "Shorelines". This applies to every section of every story, not just the lede.
+
 ---
 
 ## Step 4: Select and Flag 10 Stories
@@ -115,16 +117,41 @@ Flag any story that is **directly urgent or actionable** — a funding deadline,
 
 ## Step 5: Write Each Story
 
-Each story gets **2 to 3 tight paragraphs**. Rules:
+Each story has **three distinct written parts**, in this order, each clearly labelled in the rendered spread:
 
-- Lead with the insight or the "why Francesca should care" — not a headline restatement
-- Then the detail: what happened, who is involved, what is at stake
+### 1. Why This Story Is Important
+
+Exactly **one sentence**. Second person, addressed directly to Francesca. States why this specific story matters to *you* — your work, SHORE, or Shorelines — not a summary of the event itself. This is the personal stake, distilled to a single line.
+
+Example (voice reference, not to be reused verbatim):
+> *The Commonwealth is holding a grant open specifically for the 25 Commonwealth SIDS, Seychelles among them, and it's a call Seychelles's government is already eligible to fill.*
+
+Rendered **bold and italic**, in a distinct accent colour from the body text (see Step 6 for the CSS treatment) — this line should be visually unmistakable as the "why it matters" beat, before the reader hits a word of the story itself.
+
+### 2. Story Notes
+
+**2 to 3 tight paragraphs.** This is the short-form editorial cut: quick to read, suited for a Substack note or a LinkedIn post. Rules:
+
+- Second person throughout, per the voice rule above
+- Lead with the detail that matters most, not a headline restatement
+- Then the rest: what happened, who is involved, what is at stake
 - No filler phrases ("according to sources", "experts say", "in a world where")
 - No em dashes
 - No kicker sentences that restate what the paragraph already established
 - No hollow transitions
 - Write editorial, not AI summary
-- If there is a direct link for Francesca to act on (submit, apply, read the full text), include it as a clean URL at the end of the story
+- If there is a direct link to act on (submit, apply, read the full text), include it as a clean URL at the end
+
+### 3. Story Article
+
+**A longer draft, roughly 5 to 8 paragraphs (400 to 700 words).** This is the raw material for an actual Shorelines piece, not a note. Rules:
+
+- Follow Francesca's established writing rules (see her CLAUDE.md Writing rules: direct, moving quickly between observation and argument, visible point of view, no em dashes, short sentences earn their place after long ones, "But" and "So" openers are fine)
+- Banned: kicker sentences that restate the paragraph, negative parallelism ("it's not X, it's Y"), rhetorical questions answered in the next clause, over-signalled transitions like "Furthermore", hedged padding, stakes inflation, false suspense ("here's where it gets interesting")
+- Academic register: precise and evidence-based, not passive and padded. Anchor claims in concrete numbers and named specifics, not general claims
+- Name the objection or counterpoint before answering it where one exists
+- This section stands on its own as a publishable draft — it does not need to repeat the one-line "why it matters" verbatim, but should carry the same underlying argument, developed properly: context, stakes, what happens next
+- If there is a direct link to act on, include it as a clean URL at the end
 
 ---
 
@@ -160,6 +187,16 @@ Give each of the 10 stories a **distinct visual treatment**. Rotate through thes
 ### Numerals
 Each story displays its number (01 through 10) prominently. Vary the numeral treatment: oversized background numeral, circled numeral, boxed numeral, hairline numeral, etc.
 
+### Three-part story content
+
+Every story spread renders its three written parts from Step 5, in order, each visually distinguishable:
+
+1. **Why This Story Is Important** — the single bold-italic sentence, in an accent colour distinct from the body copy (e.g. deep teal or forest green against navy body text — stay within the strict palette below). No section label needed above it; its styling alone marks it as the lede beat.
+2. **Story Notes** — labelled with a small-caps or letter-spaced eyebrow heading reading "STORY NOTES", then the 2 to 3 short paragraphs.
+3. **Story Article** — labelled with a matching eyebrow heading reading "STORY ARTICLE", then the longer draft. Since this section runs longer, give it visual room: it can run narrower-measure (for readability at length) even within a wide layout like Broadsheet, and doesn't need to fully match the decorative intensity of the rest of the spread — legibility over ornament here.
+
+Each story spread therefore has more content than earlier editions did. Keep the layout's *distinct visual treatment* (per the list above) applied to the spread as a whole — masthead numeral, background, headline styling — but let the three-part body use a consistent internal pattern across all 10 stories so the reader learns to scan it.
+
 ### Colour Rules (strict)
 
 - **No dark theme anywhere.** Do not use black, near-black, midnight, or charcoal as a dominant background, even for "Hero" or accent spreads. Every spread uses a light or bright background. Navy is permitted only as a text colour or thin accent rule, never as a large background fill.
@@ -193,7 +230,7 @@ magazines/YYYY-MM-DD.pdf
 
 Where `YYYY-MM-DD` is today's date. Create the `magazines/` directory if it does not exist.
 
-**If running as the scheduled cloud routine** (Google Drive MCP connector available): also upload `YYYY-MM-DD.pdf` to a Google Drive folder named "Morning Magazine" (create the folder if it does not exist), using the Drive connector's create/upload tool.
+**If running as the scheduled cloud routine** (Google Drive MCP connector available): also upload `YYYY-MM-DD.pdf` to a Google Drive folder named "Morning Magazine" (create the folder if it does not exist), using the Drive connector's create/upload tool. If the PDF's base64 payload is too large to relay through the tool call (this has happened in practice for magazines around 600KB+, since dense base64 text can blow up token cost far faster than its byte size suggests), fall back to uploading `YYYY-MM-DD.html` instead — same folder, same filename pattern. The HTML renders identically in a browser, so nothing is lost except the binary PDF artifact itself. Note the fallback in the delivery summary rather than silently substituting it.
 
 **If running manually with no Drive connector available:** just confirm the local file paths — do not attempt the Drive upload.
 
@@ -216,6 +253,7 @@ Keep this brief. The magazine is the deliverable, not the chat summary.
 
 These apply to all written copy in the magazine:
 
+- Second person throughout — "you", "your" — never "Francesca", "she", "her". Name entities (Seychelles, SHORE, Shorelines) instead of using an ambiguous possessive
 - No em dashes
 - No hollow openers or closers
 - No kicker sentence pairs that restate the argument
