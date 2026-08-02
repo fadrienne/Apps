@@ -41,12 +41,9 @@
   }
 
   img, svg { max-width: 100%; }
-
   .wrap { max-width: 100%; overflow-x: hidden; }
-
   a { color: var(--teal-dark); }
   a:hover { color: var(--navy); }
-
   p { max-width: 42em; }
 
   /* ---------- MASTHEAD ---------- */
@@ -121,11 +118,7 @@
   .jump-nav a .n { color: var(--sky-bright); margin-right: 0.4rem; font-family: 'Space Mono', monospace; }
 
   /* ---------- SHARED STORY SCAFFOLD ---------- */
-  .story {
-    padding: 5rem 2rem;
-    position: relative;
-    overflow: hidden;
-  }
+  .story { padding: 5rem 2rem; position: relative; overflow: hidden; }
   .story-inner { max-width: 54rem; margin: 0 auto; position: relative; z-index: 2; }
   .flag {
     display: inline-flex;
@@ -143,12 +136,6 @@
     margin-bottom: 1.75rem;
   }
   .flag .bolt { font-size: 1.4rem; }
-  .deck {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 1.6rem;
-    margin: 1rem 0 2rem;
-  }
   .story p { font-size: 1.35rem; margin: 0 0 1.4rem; }
   .story .cta {
     display: inline-block;
@@ -157,195 +144,146 @@
     font-size: 1.1rem;
     word-break: break-word;
   }
+  .num { font-family: 'Fraunces', serif; font-weight: 700; }
 
-  /* numerals shared */
-  .num {
+  /* ---------- WHY IT MATTERS + EYEBROWS (new) ---------- */
+  .why-matters {
     font-family: 'Fraunces', serif;
     font-weight: 700;
+    font-style: italic;
+    font-size: 1.6rem;
+    line-height: 1.35;
+    color: var(--teal-dark);
+    margin: 0 0 2rem;
+    padding-left: 1.25rem;
+    border-left: 4px solid var(--forest);
   }
+  #s9 .why-matters { color: var(--yellow); border-left-color: var(--yellow); }
+  #s4 .why-matters { color: var(--forest); border-left-color: var(--forest); }
+
+  .eyebrow {
+    display: block;
+    font-family: 'Space Mono', monospace;
+    font-size: 1rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin: 2.5rem 0 1rem;
+  }
+  .eyebrow:first-of-type { margin-top: 0; }
+  #s9 .eyebrow { color: #cfe9e6; }
+  #s4 .eyebrow { color: var(--forest); opacity: 0.75; }
+
+  .story-article p { max-width: 38em; font-size: 1.25rem; }
 
   /* ---------- 1. HERO ---------- */
-  #s1 {
-    background: linear-gradient(180deg, var(--sky-bright) 0%, var(--sky) 100%);
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
+  #s1 { background: linear-gradient(180deg, var(--sky-bright) 0%, var(--sky) 100%); padding-top: 6rem; padding-bottom: 6rem; }
   #s1 .num-bg {
-    position: absolute;
-    top: -3rem; right: -1rem;
-    font-size: 22rem;
-    font-weight: 900;
-    color: rgba(23,50,79,0.09);
-    line-height: 1;
-    z-index: 1;
-    user-select: none;
+    position: absolute; top: -3rem; right: -1rem;
+    font-size: 22rem; font-weight: 900; color: rgba(23,50,79,0.09);
+    line-height: 1; z-index: 1; user-select: none;
   }
   #s1 h2 {
-    font-family: 'Fraunces', serif;
-    font-weight: 900;
-    font-size: clamp(3rem, 8vw, 6rem);
-    color: var(--navy);
-    line-height: 1.02;
-    margin: 0 0 1.5rem;
+    font-family: 'Fraunces', serif; font-weight: 900;
+    font-size: clamp(3rem, 8vw, 6rem); color: var(--navy);
+    line-height: 1.02; margin: 0 0 1.5rem;
   }
 
   /* ---------- 2. COASTAL ---------- */
   #s2 { background: var(--sky-pale); border-top: 10px solid var(--forest); }
   #s2 .story-inner { max-width: 68rem; }
-  #s2 .cols {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
-  }
   #s2 h2 {
-    grid-column: 1 / -1;
-    font-family: 'Fraunces', serif;
-    font-weight: 700;
-    font-size: clamp(2.3rem, 5vw, 3.6rem);
-    color: var(--navy);
-    margin: 0 0 0.5rem;
+    font-family: 'Fraunces', serif; font-weight: 700;
+    font-size: clamp(2.3rem, 5vw, 3.6rem); color: var(--navy); margin: 0 0 0.5rem;
   }
   #s2 .num { color: var(--forest); font-size: 2rem; margin-bottom: 1rem; display:block; }
-  @media (max-width: 780px) { #s2 .cols { grid-template-columns: 1fr; } }
 
   /* ---------- 3. SUNBEAM ALERT ---------- */
   #s3 { background: var(--yellow); }
   #s3 .stamp {
-    display: inline-block;
-    border: 4px solid var(--navy);
-    color: var(--navy);
-    font-family: 'Space Mono', monospace;
-    font-weight: 700;
-    font-size: 1.6rem;
-    padding: 0.5rem 1rem;
-    transform: rotate(-4deg);
-    margin-bottom: 1.5rem;
+    display: inline-block; border: 4px solid var(--navy); color: var(--navy);
+    font-family: 'Space Mono', monospace; font-weight: 700; font-size: 1.6rem;
+    padding: 0.5rem 1rem; transform: rotate(-4deg); margin-bottom: 1.5rem;
   }
   #s3 h2 {
-    font-family: 'Fraunces', serif;
-    font-weight: 700;
-    font-style: italic;
-    font-size: clamp(2.6rem, 6vw, 4.2rem);
-    color: var(--navy);
-    margin: 0 0 1.5rem;
-    line-height: 1.05;
+    font-family: 'Fraunces', serif; font-weight: 700; font-style: italic;
+    font-size: clamp(2.6rem, 6vw, 4.2rem); color: var(--navy);
+    margin: 0 0 1.5rem; line-height: 1.05;
   }
+  #s3 .why-matters { background: rgba(23,50,79,0.08); padding: 1rem 1.25rem; border-radius: 4px; }
 
   /* ---------- 4. TERMINAL ---------- */
   #s4 { background: var(--mint-pale); border: 10px solid var(--mint); border-left: none; border-right: none; }
-  #s4 .story-inner {
-    background: var(--mint);
-    border-radius: 10px;
-    padding: 2.5rem;
-    border: 2px solid var(--forest);
-  }
-  #s4 .termbar {
-    display: flex; gap: 0.5rem; margin-bottom: 1.5rem;
-  }
+  #s4 .story-inner { background: var(--mint); border-radius: 10px; padding: 2.5rem; border: 2px solid var(--forest); }
+  #s4 .termbar { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; }
   #s4 .dot { width: 0.8rem; height: 0.8rem; border-radius: 50%; background: var(--forest); opacity: 0.5;}
   #s4 * { font-family: 'Space Mono', monospace; color: var(--forest); }
   #s4 h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0 0 1.5rem; font-weight: 700; }
   #s4 .prompt::before { content: "$ "; color: var(--teal-dark); }
-  #s4 p { font-size: 1.2rem; }
+  #s4 p { font-size: 1.15rem; }
+  #s4 .why-matters { border-left-color: var(--forest); }
 
   /* ---------- 5. ACADEMIC DROP CAP ---------- */
   #s5 { background: var(--off-white); }
   #s5 h2 {
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: clamp(2.2rem, 5vw, 3.4rem);
-    color: var(--navy);
-    margin: 0 0 2rem;
+    font-family: 'Fraunces', serif; font-weight: 600;
+    font-size: clamp(2.2rem, 5vw, 3.4rem); color: var(--navy); margin: 0 0 1.25rem;
   }
   #s5 .dropcap {
-    font-family: 'Fraunces', serif;
-    font-weight: 900;
-    font-size: 6.5rem;
-    line-height: 0.8;
-    float: left;
-    margin: 0.1rem 0.6rem 0 0;
-    color: var(--navy);
+    font-family: 'Fraunces', serif; font-weight: 900; font-size: 6.5rem;
+    line-height: 0.8; float: left; margin: 0.1rem 0.6rem 0 0; color: var(--navy);
   }
   #s5 .footnote {
-    margin-top: 2.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--slate);
-    font-size: 1.05rem;
-    color: var(--slate);
-    font-family: 'Space Mono', monospace;
+    margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--slate);
+    font-size: 1.05rem; color: var(--slate); font-family: 'Space Mono', monospace;
   }
 
   /* ---------- 6. BIG STAT ---------- */
-  #s6 { background: var(--sky-pale); text-align: center; }
+  #s6 { background: var(--sky-pale); }
+  #s6 .stat-block { text-align: center; }
   #s6 .bigstat {
-    font-family: 'Fraunces', serif;
-    font-weight: 900;
-    font-size: clamp(6rem, 20vw, 13rem);
-    color: var(--teal-dark);
-    line-height: 0.85;
-    margin: 1rem 0;
+    font-family: 'Fraunces', serif; font-weight: 900;
+    font-size: clamp(6rem, 20vw, 13rem); color: var(--teal-dark);
+    line-height: 0.85; margin: 1rem 0;
   }
   #s6 .stat-label {
-    font-family: 'Space Mono', monospace;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--navy);
-    font-size: 1.1rem;
+    font-family: 'Space Mono', monospace; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--navy); font-size: 1.1rem;
   }
   #s6 h2 {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(2rem, 4.5vw, 2.8rem);
-    color: var(--navy);
-    margin: 1.5rem 0;
+    font-family: 'Fraunces', serif; font-size: clamp(2rem, 4.5vw, 2.8rem);
+    color: var(--navy); margin: 1.5rem 0;
   }
-  #s6 .story-inner { text-align: left; }
-  #s6 .stat-block { text-align: center; }
 
   /* ---------- 7. PULL QUOTE ---------- */
   #s7 { background: var(--mint); }
   #s7 h2 { font-size: 1.4rem; font-family:'Space Mono', monospace; color: var(--forest); margin-bottom: 2rem; }
   #s7 .quote {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-weight: 600;
-    font-size: clamp(2.2rem, 5.5vw, 3.6rem);
-    color: var(--navy);
-    line-height: 1.2;
-    border-left: 6px solid var(--forest);
-    padding-left: 2rem;
-    margin: 0 0 2.5rem;
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 600;
+    font-size: clamp(2.2rem, 5.5vw, 3.6rem); color: var(--navy); line-height: 1.2;
+    border-left: 6px solid var(--forest); padding-left: 2rem; margin: 0 0 2.5rem;
   }
 
   /* ---------- 8. BROADSHEET ---------- */
   #s8 { background: var(--cream); }
   #s8 .story-inner { max-width: 72rem; }
   #s8 h2 {
-    font-family: 'Fraunces', serif;
-    font-weight: 700;
-    font-size: clamp(2.4rem, 5.5vw, 3.8rem);
-    color: var(--navy);
-    border-bottom: 3px solid var(--teal);
-    padding-bottom: 1rem;
-    margin: 0 0 0.5rem;
+    font-family: 'Fraunces', serif; font-weight: 700;
+    font-size: clamp(2.4rem, 5.5vw, 3.8rem); color: var(--navy);
+    border-bottom: 3px solid var(--teal); padding-bottom: 1rem; margin: 0 0 0.5rem;
   }
   #s8 .rule { height: 2px; background: var(--teal); width: 6rem; margin: 1.5rem 0 2rem; }
-  #s8 .cols3 {
-    columns: 2;
-    column-gap: 3rem;
-  }
+  #s8 .cols3 { columns: 2; column-gap: 3rem; }
   #s8 .cols3 p { break-inside: avoid; }
+  #s8 .story-article { columns: 1; }
   @media (max-width: 780px) { #s8 .cols3 { columns: 1; } }
 
   /* ---------- 9. COLOUR FIELD ---------- */
   #s9 { background: var(--teal-dark); }
   #s9 * { color: #ffffff; }
   #s9 h2 {
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    font-size: clamp(2.6rem, 6vw, 4.4rem);
-    margin: 0 0 1.75rem;
-    line-height: 1.05;
+    font-family: 'Inter', sans-serif; font-weight: 800;
+    font-size: clamp(2.6rem, 6vw, 4.4rem); margin: 0 0 1.75rem; line-height: 1.05;
   }
   #s9 .num { color: var(--yellow); }
   #s9 a { color: var(--yellow); }
@@ -356,30 +294,25 @@
     background-image:
       radial-gradient(circle at 20% 30%, rgba(23,50,79,0.035) 0, transparent 45%),
       radial-gradient(circle at 80% 70%, rgba(31,92,63,0.035) 0, transparent 45%);
-    border-top: 1px solid var(--slate);
-    border-bottom: 1px solid var(--slate);
+    border-top: 1px solid var(--slate); border-bottom: 1px solid var(--slate);
   }
   #s10 h2 {
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: clamp(2.3rem, 5.5vw, 3.6rem);
-    color: var(--navy);
-    margin: 0 0 1.5rem;
-    text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+    font-family: 'Fraunces', serif; font-weight: 600;
+    font-size: clamp(2.3rem, 5.5vw, 3.6rem); color: var(--navy);
+    margin: 0 0 1.5rem; text-shadow: 0 1px 0 rgba(255,255,255,0.6);
   }
-  #s10 p { font-family: 'Fraunces', serif; font-size: 1.4rem; }
+  #s10 p, #s10 .story-article p { font-family: 'Fraunces', serif; font-size: 1.4rem; }
+  #s10 .story-article p { font-size: 1.25rem; }
 
   /* numeral treatments */
   .n-circle {
     display: inline-flex; align-items: center; justify-content: center;
     width: 3.2rem; height: 3.2rem; border-radius: 50%;
-    border: 3px solid var(--navy); color: var(--navy);
-    font-size: 1.3rem; margin-bottom: 1.5rem;
+    border: 3px solid var(--navy); color: var(--navy); font-size: 1.3rem; margin-bottom: 1.5rem;
   }
   .n-box {
     display: inline-flex; align-items: center; justify-content: center;
-    padding: 0.4rem 0.9rem;
-    background: var(--navy); color: var(--yellow);
+    padding: 0.4rem 0.9rem; background: var(--navy); color: var(--yellow);
     font-size: 1.2rem; margin-bottom: 1.5rem;
   }
   .n-hair {
@@ -388,15 +321,10 @@
   }
   .n-hair::after { content: ""; display: block; width: 3rem; height: 2px; background: var(--slate); margin-top: 0.5rem; }
 
-  /* footer */
   .colophon {
-    background: var(--navy);
-    color: #dbe9f2;
-    text-align: center;
-    padding: 3.5rem 2rem;
-    font-family: 'Space Mono', monospace;
-    font-size: 1rem;
-    letter-spacing: 0.05em;
+    background: var(--navy); color: #dbe9f2; text-align: center;
+    padding: 3.5rem 2rem; font-family: 'Space Mono', monospace;
+    font-size: 1rem; letter-spacing: 0.05em;
   }
   .colophon .yellow { color: var(--yellow); }
 
@@ -404,6 +332,7 @@
     body { font-size: 1.7rem; }
     .story { padding: 3.5rem 1.25rem; }
     .story p { font-size: 1.15rem; }
+    .story-article p { font-size: 1.1rem; }
   }
 </style>
 </head>
@@ -414,7 +343,7 @@
     <div class="kicker">SHORE Institute · Field Edition</div>
     <h1>Morning Edition</h1>
     <div class="date">Sunday, 2 August 2026</div>
-    <p class="standfirst">Ten stories on ocean governance, hydrospatial science, and SIDS equity, read through the lens of Francesca Adrienne's work at SHORE Institute and Shorelines.</p>
+    <p class="standfirst">Ten stories on ocean governance, hydrospatial science, and SIDS equity, written straight to you as Founder of SHORE Institute and Shorelines.</p>
   </header>
 
   <nav class="jump-nav" aria-label="Jump to story">
@@ -437,8 +366,20 @@
     <div class="story-inner">
       <div class="flag"><span class="bolt">⚡</span> Deadline: tomorrow, 3 August</div>
       <h2>A $15,000 door closes tomorrow</h2>
-      <p>SHORE Institute runs on exactly this kind of grant: small enough that the big funders don't bother, large enough to cover a real season of fieldwork. The Sustainable Ocean Alliance's 30x30 fund is built for organisations Francesca's size, not the multilateral machinery she spends most of her week navigating.</p>
+      <p class="why-matters">This is exactly the kind of grant SHORE was built to catch: small, unglamorous, and closing in less than a day.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>SHORE runs on exactly this kind of grant: small enough that the big funders don't bother, large enough to cover a real season of fieldwork. The Sustainable Ocean Alliance's 30x30 fund is built for organisations your size, not the multilateral machinery you spend most of your week navigating.</p>
       <p>SOA is taking proposals from small organisations and local leaders working on marine protected areas and other effective area-based conservation measures. Up to USD 15,000 per organisation, USD 5,000 for unaffiliated applicants, total pool USD 50,000 to 80,000, rolling review with notification in four to six weeks. The window closes 3 August 2026.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>The ocean conservation sector has a funding shape problem, and the Sustainable Ocean Alliance's new 30x30 grant round is a small but useful corrective. SOA has opened applications from small organisations and unaffiliated local leaders working on marine protected areas and other effective area-based conservation measures (OECMs), with awards of up to USD 15,000 per organisation and USD 5,000 for individuals working without institutional backing. The total pool is modest, USD 50,000 to 80,000, but the ceiling is set deliberately low: this is not money aimed at the coalitions and multilateral secretariats that dominate ocean finance headlines. It is money aimed at people running fieldwork on annual budgets smaller than a single conference delegation's travel costs.</p>
+        <p>That distinction matters more than the dollar figure suggests. Global ocean protection sits at roughly 10 percent as of April 2026, against the 2030 target of 30 percent, and the gap will not close through billion-dollar pledges alone. Big commitments, like the USD 6.4 billion mobilised at the Our Ocean Conference in Mombasa in June, tend to fund infrastructure, government programmes, and multi-year initiatives with the administrative capacity to absorb large grants and report against them. Small organisations, the ones doing the actual boundary surveys, community consultations, and enforcement patrols inside proposed MPAs, are structurally excluded from that tier of funding.</p>
+        <p>SHORE sits in exactly this gap. The Institute is small by design, built to move on hydrospatial questions specific to Seychelles rather than to compete for the large multilateral contracts that reward scale over specificity. A grant like this one is not transformative money. It is the kind of money that funds one more season of fieldwork, one more dataset, one more piece of evidence for a larger case. Rolling review with four to six week notification means an application submitted this week could be funded before October.</p>
+        <p>The application window closes 3 August 2026, which leaves a narrow window to act rather than deliberate. The proposal does not need to be elaborate. SOA's own language signals what they are looking for: local leadership, a defined area-based conservation activity, and a credible use of a small amount of money. A tight two-page case for a specific piece of SHORE's mapping or consultation work, tied to an identifiable OECM or MPA process in Seychelles waters, is a stronger fit than a broader institutional pitch.</p>
+        <p>The larger point worth carrying past this one deadline: small-grant infrastructure like this is undersupplied relative to demand, and the organisations that watch for it and apply consistently accumulate outsized advantage over years, not from any single award, but from treating every open call as worth a same-week response.</p>
+      </div>
       <a class="cta" href="https://www.soalliance.org/stories/2026CFP" target="_blank" rel="noopener">soalliance.org/stories/2026CFP</a>
     </div>
   </section>
@@ -446,17 +387,21 @@
   <!-- STORY 2: COASTAL -->
   <section class="story" id="s2">
     <div class="story-inner">
-      <div class="cols">
-        <div style="grid-column: 1 / -1;">
-          <span class="num">02</span>
-          <h2>The high seas treaty's paperwork problem</h2>
-        </div>
-        <div>
-          <p>Every marine protected area nomination that the Ocean Mapping Hub's work will eventually feed into runs through BBNJ's subsidiary bodies. Those bodies still don't formally exist, and the gap is no longer a technicality.</p>
-        </div>
-        <div>
-          <p>PrepCom3 concluded 2 April at UN Headquarters with real progress on the secretariat's structure and financial rules, but no agreement on how to nominate and elect members of the subsidiary bodies. That means those bodies won't be fully seated when COP1 opens on 11 January 2027, which risks pushing the first ABNJ protection proposals back by up to a year.</p>
-        </div>
+      <span class="num">02</span>
+      <h2>The high seas treaty's paperwork problem</h2>
+      <p class="why-matters">Every marine protected area nomination your Ocean Mapping Hub work will eventually feed into runs through machinery that, as of April, still doesn't formally exist.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>Every marine protected area nomination that your Ocean Mapping Hub work will eventually feed into runs through BBNJ's subsidiary bodies. Those bodies still don't formally exist, and the gap is no longer a technicality.</p>
+      <p>PrepCom3 concluded 2 April at UN Headquarters with real progress on the secretariat's structure and financial rules, but no agreement on how to nominate and elect members of the subsidiary bodies. That means those bodies won't be fully seated when COP1 opens on 11 January 2027, which risks pushing the first ABNJ protection proposals back by up to a year.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>The High Seas Treaty entered into force in January 2026 on the strength of 83 ratifications, and for a moment it looked like the hard part was over. It wasn't. Treaties that regulate areas beyond national jurisdiction do not run on ratification alone; they run on the institutional machinery built underneath them, and that machinery is where BBNJ implementation is currently stalling.</p>
+        <p>The third and final session of the Preparatory Commission, PrepCom3, closed on 2 April 2026 at UN Headquarters after two weeks of negotiation. Delegates made genuine progress on several fronts: the structure and reporting lines of the future BBNJ Secretariat, several financial rules governing how the Agreement's institutions will be funded, and a working prototype of the clearing-house mechanism meant to coordinate data and applications across the Agreement's four pillars, including marine protected areas in areas beyond national jurisdiction (ABNJ).</p>
+        <p>What PrepCom3 did not settle is more consequential than what it did. Governments could not agree on an early nomination and election process for members of the Agreement's subsidiary bodies, the scientific and technical committees that will actually evaluate MPA proposals, environmental impact assessments, and access to marine genetic resources. Without that process locked in before COP1, those bodies will not be fully constituted when the Conference of the Parties convenes for the first time, from 11 to 22 January 2027 in New York. The practical consequence is a lag of up to a year before the treaty's technical machinery can begin functioning at full capacity, even though the Agreement itself has been legally in force since January.</p>
+        <p>For anyone working on hydrospatial data with an eye toward ABNJ protection, this is not an abstract governance footnote. Every proposal to designate a marine protected area on the high seas will eventually need to pass through these subsidiary bodies. If they are not seated, there is no forum to submit a proposal to, however strong the underlying science and mapping.</p>
+        <p>There is a narrower opportunity inside the delay. The twelve months between COP1 convening on paper and the subsidiary bodies functioning in practice will likely be used by well-prepared research institutions and coastal states to build the technical case for future ABNJ nominations before the formal review process opens, front-loading science and stakeholder consultation rather than waiting for a functioning committee. Seychelles, as a state with direct BBNJ interest and a track record on MPA design, is well positioned to be part of that early preparation, provided the mapping and evidence work is ready before the institutional queue actually opens.</p>
       </div>
       <a class="cta" href="https://highseasalliance.org/2026/04/16/bbnj-prepcom-3-inside-the-negotiations/" target="_blank" rel="noopener">highseasalliance.org — PrepCom3: Inside the Negotiations</a>
     </div>
@@ -468,8 +413,20 @@
       <div class="flag" style="background:var(--navy); color:var(--yellow);"><span class="bolt">⚡</span> Applications open now</div>
       <div class="stamp">No. 03</div>
       <h2>Seychelles already has a seat reserved</h2>
-      <p>The Commonwealth is holding a grant open specifically for the 25 Commonwealth SIDS, Seychelles among them. That's not a call Francesca has to compete globally for. It's a call her government is already eligible to fill, and one she could help shape or support through TICA or a partner ministry.</p>
+      <p class="why-matters">This is a call your own government is already eligible to fill, not one you have to compete globally for.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>The Commonwealth is holding a grant open specifically for the 25 Commonwealth SIDS, Seychelles among them. That's not a call you have to compete globally for. It's a call Seychelles's government is already eligible to fill, and one you could help shape or support through SHORE or a partner ministry.</p>
       <p>The COP29 Presidency–Commonwealth Fund for Small Island Developing States is disbursing US$5 million over five years, with grants of up to US$200,000 per country for one government-backed project each. Priorities are climate mitigation and adaptation, restoration and conservation, a just energy transition, and ocean health.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>Climate finance for small island states is, by most measures available in 2026, still shockingly thin. UNCTAD's own analysis this year describes SIDS as structurally locked out of climate finance, treated by funders as too small, too fragmented, and too risky to underwrite at scale, despite carrying some of the most acute and immediate climate exposure of any country grouping. Against that backdrop, a fund that is small in absolute terms but specifically designed around SIDS eligibility deserves more attention than its headline number suggests.</p>
+        <p>The COP29 Presidency–Commonwealth Fund for Small Island Developing States, launched jointly by the Commonwealth Secretariat and Azerbaijan's COP29 Presidency, is disbursing US$5 million over five years. Every one of the 25 Commonwealth SIDS, Seychelles included, is eligible to apply for a grant of up to US$200,000 to support one government-backed project. The fund's stated priorities span climate mitigation and adaptation, restoration and conservation, a just energy transition, and ocean health, a wide enough net that a well-framed hydrospatial or marine spatial planning proposal fits comfortably inside it.</p>
+        <p>What makes this fund worth flagging specifically is the eligibility structure itself. This is not a competitive global call where 25 small states are up against 190 larger, better-resourced ones. It is a call built around a closed pool of Commonwealth SIDS, where Seychelles starts as one of a small number of qualified applicants rather than one bidder among hundreds. That changes the calculus for how much effort a proposal deserves relative to its odds of success.</p>
+        <p>It also changes who the natural applicant is. Because the grant is structured as government-backed, per country, the practical path runs through a ministry, not directly through an NGO or research institute. That means the useful move here is not preparing an application in isolation, but building the technical and evidentiary case that a ministry already engaged on ocean policy, blue economy, or environment would want attached to its own submission. SHORE's comparative advantage is exactly that kind of case: mapping and evidence that turns a general priority area like "ocean health" into a specific, fundable project with a defined boundary and outcome.</p>
+        <p>The fund follows the same institutional logic as the Apia Commonwealth Ocean Declaration, which received an initial US$1 million tranche this year for implementation support across restoration, blue finance access, and marine protection for SIDS. For a country the size of Seychelles, showing up early and consistently on these smaller Commonwealth-specific pools compounds over years, not through any single award, but through becoming a known, prepared applicant by the time the next round opens.</p>
+      </div>
       <a class="cta" href="https://thecommonwealth.org/news/commonwealth-and-cop29-presidency-invite-commonwealth-sids-submit-climate-action-proposals" target="_blank" rel="noopener">thecommonwealth.org — COP29 Presidency-Commonwealth Fund for SIDS</a>
     </div>
   </section>
@@ -479,8 +436,20 @@
     <div class="story-inner">
       <div class="termbar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
       <h2><span class="prompt">geoai --status marine_pipelines</span></h2>
+      <p class="why-matters">This is the tooling layer sitting directly underneath HARMONiSE, and it decides what SHORE can credibly promise a client next year.</p>
+
+      <span class="eyebrow">Story Notes</span>
       <p>This is the tooling layer underneath HARMONiSE: the automated pipelines that turn multibeam and satellite-derived bathymetry into usable coastal maps for governments that can't afford a full GIS unit. When this tech moves from paper to production, it changes what SHORE can credibly promise a client.</p>
       <p>GeoAI workflows are now validated for coral reef segmentation on orthomosaics, detection of illegal, unreported, and unregulated fishing vessels from satellite radar, and automated habitat classification. The shift worth tracking is not the models themselves but their move from research papers into operational marine spatial planning tools that non-specialist agencies can actually run.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>The gap between GeoAI research and GeoAI infrastructure has been the real bottleneck in hydrospatial science for the past several years, and 2026 is the year that gap started closing in a way worth tracking closely.</p>
+        <p>Three workflows have moved from published methodology to something closer to operational tooling. Coral reef segmentation on aerial and satellite orthomosaics, once a labour-intensive manual digitisation task, is now handled by trained models that can classify reef structure and habitat type across large areas in a fraction of the time. Detection of illegal, unreported, and unregulated fishing vessels from satellite synthetic aperture radar, a task that used to require analysts trained in radar interpretation, is increasingly automated well enough to flag vessels for human review rather than requiring a human to find them in the first place. And automated habitat classification, stitching multiple sensor types into a single land-and-seafloor cover map, is starting to appear in marine spatial planning tools aimed at government users who are not GIS specialists.</p>
+        <p>That last point is the one that matters most for HARMONiSE and the Ocean Mapping Hub. The technical capability to run these models has existed in research contexts for several years. What has been missing, and what is now starting to appear, is the packaging: interfaces and pipelines that a small environment or fisheries ministry, without a dedicated GIS unit, can actually operate. That is precisely the gap HARMONiSE was designed to sit in.</p>
+        <p>The practical implication is a widening choice: build custom pipelines from research-grade components, which offers more control but more maintenance burden, or integrate emerging off-the-shelf GeoAI tooling as it matures, trading some customisation for speed to deployment. Given the pace at which this space is moving, that decision is worth revisiting on a roughly six-month cycle rather than settling once. What was cutting-edge and research-only eighteen months ago is showing up in operational marine spatial planning products today.</p>
+        <p>The organisations best positioned over the next two years will be the ones that track this shift closely enough to move existing pipelines onto better underlying tooling as it becomes available, rather than either overbuilding custom infrastructure too early or waiting for a fully mature commercial product that may compromise on the specificity Seychelles's waters actually need.</p>
+      </div>
     </div>
   </section>
 
@@ -489,9 +458,21 @@
     <div class="story-inner">
       <span class="n-circle">05</span>
       <h2>Whose seabed data is it, really</h2>
+      <p class="why-matters">This is the data sovereignty half of your High-Income SIDS Paradox argument, made concrete by two separate institutions this year.</p>
+
+      <span class="eyebrow">Story Notes</span>
       <p><span class="dropcap">T</span>his is the data sovereignty half of the High-Income SIDS Paradox: the gap between having ocean and having the capacity to govern data about it. Two developments this year sharpen the argument that capacity building has to include who owns and controls the data, not just who collects it.</p>
-      <p>The International Seabed Authority is running capacity-building programmes for Pacific SIDS on deep-seabed regulatory engagement, environmental management, and data governance, aimed at getting island states into the room for decisions currently made without them. Separately, the UN's Third World Ocean Assessment now formally calls for greater recognition of Indigenous knowledge within ocean governance frameworks, a shift Francesca has been arguing for from the Seychelles side of the table.</p>
+      <p>The International Seabed Authority is running capacity-building programmes for Pacific SIDS on deep-seabed regulatory engagement, environmental management, and data governance, aimed at getting island states into the room for decisions currently made without them. Separately, the UN's Third World Ocean Assessment now formally calls for greater recognition of Indigenous knowledge within ocean governance frameworks, a shift you've been arguing for from the Seychelles side of the table.</p>
       <div class="footnote">Sources: pina.com.fj, "Why Capacity Building Matters" (23 June 2026); Honolulu Star-Advertiser, "U.N. report highlights Indigenous knowledge in ocean governance" (29 July 2026)</div>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>The High-Income SIDS Paradox, as a framework, rests on a specific claim: that a country like Seychelles can be classified as high-income by conventional metrics while remaining structurally excluded from the capacity, data infrastructure, and institutional standing that determine who actually governs ocean space. Two developments from this year, one from the Pacific, one from a global UN assessment, sharpen that argument considerably.</p>
+        <p>The International Seabed Authority's capacity-building work with Pacific SIDS is explicit about the target: regulatory engagement, environmental management, scientific cooperation, and, critically, data governance. That last category tends to be treated as an afterthought in capacity-building programmes generally focused on training people to collect data, run surveys, and operate instruments. What ISA's framing acknowledges is that collection capacity without governance capacity produces a specific failure mode: island states that generate or host valuable ocean data but have no institutional mechanism to control who accesses it, on what terms, or for what benefit.</p>
+        <p>The Third World Ocean Assessment's call for formal recognition of Indigenous knowledge in ocean governance frameworks addresses a related but distinct gap: whose knowledge counts as legitimate evidence in the first place. For decades, ocean governance instruments have implicitly treated Western scientific data collection as the default legitimate basis for decision-making, sidelining generations of place-based observation held by coastal and Indigenous communities. A UN assessment formally naming this exclusion is a meaningful, if overdue, shift in the baseline for what counts as ocean knowledge worth governing at all.</p>
+        <p>Read together, these two threads point toward the same underlying gap: capacity-building programmes that focus on the tools of data collection without addressing who controls the resulting data, and whose knowledge systems are recognised as authoritative, will continue producing island states that are ocean-rich and governance-poor. Seychelles occupies a distinctive position in this conversation, high-income enough to be excluded from the concessional capacity-building tracks aimed at lower-income SIDS, but without the deep institutional infrastructure of larger coastal states.</p>
+        <p>Making that specific gap visible, and naming the data governance and knowledge-recognition dimensions explicitly rather than folding them into generic capacity language, is exactly the contribution the High-Income SIDS Paradox work is positioned to make as these two threads develop further over the year.</p>
+      </div>
       <a class="cta" href="https://pina.com.fj/2026/06/23/why-capacity-building-matters-supporting-pacific-sids-in-understanding-deep-seabed-governance/" target="_blank" rel="noopener">pina.com.fj — Capacity Building for Pacific SIDS</a>
     </div>
   </section>
@@ -505,8 +486,20 @@
       <h2>Seabed 2030 just published its yearly report card</h2>
     </div>
     <div class="story-inner">
+      <p class="why-matters">The annual grid release is the one moment each year to check whether the Indian Ocean's blind spots, not just the global average, are actually closing.</p>
+
+      <span class="eyebrow">Story Notes</span>
       <p>Seabed 2030 is the closest thing hydrospatial science has to shared infrastructure, and the annual grid release is the moment to check whether the Indian Ocean's blind spots are actually closing, not just the global average.</p>
       <p>The GEBCO_2026 grid, released in April, brings total coverage to 28.7% of the ocean floor, roughly 104 million square kilometres, more than two-thirds of Earth's land surface, after nearly 5 million square kilometres were added in a single year. 220 organisations have now contributed data, including first-time national submissions from Malaysia, Morocco, Papua New Guinea, and Saudi Arabia. The Seabed 2030 Symposium runs 8 to 9 October in Cartagena, Colombia, worth calendaring now.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>Seabed 2030's annual grid release has become the closest thing hydrospatial science has to an audited financial statement: a single, citable number that states exactly how much of the ocean floor is mapped, and by extension, how much remains unknown. The GEBCO_2026 grid, published in April, sets that number at 28.7 percent, roughly 104 million square kilometres, an area exceeding two-thirds of the entire land surface of the planet, after nearly 5 million square kilometres were added over the preceding year.</p>
+        <p>The headline percentage is useful but coarse. It says nothing about where the remaining 71.3 percent sits, and the honest answer is that gaps are not distributed evenly. Coverage tends to cluster around well-resourced coastal states, shipping lanes, and areas with active hydrocarbon or fisheries interest, while large stretches of the Indian Ocean, including much of the water Seychelles has jurisdiction or interest over as a large ocean state, remain thin. The global percentage climbing is genuinely good news for the project as a whole, but it should not be read as evidence that the specific gaps that matter most locally are closing at the same rate.</p>
+        <p>Two details in this year's release are worth tracking for what they signal about the project's trajectory. First, 220 organisations have now contributed data to Seabed 2030, including first-time national submissions from Malaysia, Morocco, Papua New Guinea, and Saudi Arabia, suggesting the project is successfully drawing in states that previously had no reason, or no capacity, to submit their own bathymetric holdings. Second, the pace of new coverage, nearly 5 million square kilometres in a single year, would need to roughly hold or accelerate for the project's 2030 completion target to be credible, given the scale of ocean floor still unmapped.</p>
+        <p>For Seychelles specifically, the practical question this year's grid raises is straightforward: what proportion of the Exclusive Economic Zone and extended continental shelf area is actually reflected in GEBCO_2026 at a resolution useful for marine spatial planning, versus interpolated or low-confidence, and what would it take to close that specific gap through a national submission process similar to the ones Malaysia, Morocco, Papua New Guinea, and Saudi Arabia have just completed.</p>
+        <p>That is a concrete, scoped question that HARMONiSE and the Ocean Mapping Hub are well positioned to answer, and the Seabed 2030 Symposium in Cartagena, Colombia, running 8 to 9 October, is the natural venue to raise it directly with the people running the project, rather than waiting for next year's grid release to find out the gap is still there.</p>
+      </div>
       <a class="cta" href="https://seabed2030.org/2026/04/20/global-seabed-mapping-reaches-new-milestone-as-five-million-square-kilometres-added-in-a-year/" target="_blank" rel="noopener">seabed2030.org — Global Seabed Mapping Milestone</a>
     </div>
   </section>
@@ -516,8 +509,20 @@
     <div class="story-inner">
       <h2>07 / PULL QUOTE</h2>
       <p class="quote">"10.01% of the ocean is now officially designated within protected and conserved areas."</p>
-      <p>That number is the benchmark Francesca will get asked about at every conference this year, and it's leverage as much as milestone. Seychelles pioneered blue-bond-financed MPA expansion back in 2018, protecting 17 million hectares. The rest of the world is only now catching up to the model it built.</p>
+      <p class="why-matters">Seychelles built the blueprint for this milestone in 2018, and the rest of the world is only now catching up to it.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>That number is the benchmark you'll get asked about at every conference this year, and it's leverage as much as milestone. Seychelles pioneered blue-bond-financed MPA expansion back in 2018, protecting 17 million hectares. The rest of the world is only now catching up to the model it built.</p>
       <p>IUCN confirms roughly 5 million square kilometres of ocean, an area bigger than the EU, were protected in the past two years alone, with major new designations in Indonesia, Thailand, and Ghana's first-ever MPA. BBNJ's entry into force in January opens the door to nominating protected areas beyond national jurisdiction for the first time, the next lever on this same trajectory.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>As of 1 April 2026, IUCN confirms that 10.01 percent of the global ocean is now within officially designated protected and conserved areas, crossing the symbolic double-digit threshold for the first time. Around 5 million square kilometres, an area larger than the European Union, were added to that total over the preceding two years alone, driven by major new designations including 284 marine and coastal protected areas across Indonesia and Thailand, and Ghana's first-ever MPA after more than 15 years of advocacy.</p>
+        <p>The milestone is worth marking, and worth situating in a longer story that predates most of this year's announcements. Seychelles issued the world's first sovereign blue bond in 2018, with World Bank support, and used the proceeds to expand marine protected area coverage across roughly 17 million hectares of national waters, a scale that was, at the time, well ahead of comparable commitments from far larger economies. What is happening globally in 2026, other states finally moving in volume toward the 30 percent by 2030 target, is in a meaningful sense the rest of the world validating a financing and governance model Seychelles tested and proved seven years earlier.</p>
+        <p>That history is an argument, not just a footnote. When Seychelles engages internationally on MPA finance, blue bonds, or debt-for-nature structures, the correct framing is not "Seychelles supports this approach", but "Seychelles built this approach and has seven years of operational data on how it performs." That distinction matters in funding conversations, in technical assistance requests, and in how seriously partners take Seychelles's input on MPA design questions relative to countries now attempting their first blue bond.</p>
+        <p>The next lever on the same trajectory is institutional rather than financial. BBNJ's entry into force in January 2026 opens, for the first time, a formal pathway to nominate marine protected areas in areas beyond national jurisdiction, ocean space that previously had no mechanism for protection at all regardless of scientific justification. Once BBNJ's subsidiary bodies are fully seated, that pathway becomes the next frontier for the same kind of ambitious, evidence-led MPA proposal Seychelles has already demonstrated it can design and finance domestically.</p>
+        <p>The 10 percent milestone is a floor being built under the 30x30 target, not a ceiling on what a state with real MPA design experience, like Seychelles, could credibly propose next.</p>
+      </div>
       <a class="cta" href="https://iucn.org/press-release/202604/world-reaches-milestone-nature-10-ocean-now-officially-protected" target="_blank" rel="noopener">iucn.org — World Reaches Milestone for Nature</a>
     </div>
   </section>
@@ -528,11 +533,23 @@
       <span class="n-hair">STORY 08</span>
       <h2>Mombasa's $6.4 billion, line by line</h2>
       <div class="rule"></div>
+      <p class="why-matters">This is the funding and diplomatic weather report for the entire blue economy sector you operate in, and it rewards a close read.</p>
+
+      <span class="eyebrow">Story Notes</span>
       <div class="cols3">
-        <p>This is the funding and diplomatic weather report for the entire blue economy sector Francesca operates in, and it rewards a close read of who committed to what.</p>
+        <p>This is the funding and diplomatic weather report for the entire blue economy sector you operate in, and it rewards a close read of who committed to what.</p>
         <p>The 11th Our Ocean Conference closed in Mombasa on 18 June with US$6.4 billion pledged across 320 separate commitments from more than 5,000 delegates.</p>
         <p>Three outcomes carry weight beyond the venue: a coral reef protection coalition that grew to 20 countries, with Kenya, Comoros, the Dominican Republic, the UK, and Mexico newly signed; the Mombasa Declaration on fisheries transparency, adopted by 16 countries to fight illegal, unreported, and unregulated fishing; and an expanding moratorium on deep-sea mining.</p>
         <p>Two new marine protected areas were also announced: 337,000 square kilometres around Chile's Juan Fernández Islands, and the 287,000 square kilometre Azores Marine Park, now the largest protected area network in the North Atlantic. Kenya alone announced 42 commitments worth US$1 billion as host.</p>
+      </div>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>Reading a $6.4 billion conference outcome as a single number obscures more than it reveals. The real value of the Our Ocean Conference's Mombasa outcomes, closed on 18 June after three days of negotiation among more than 5,000 delegates and 320 separate commitments, is in the composition: who committed, to what, and what those commitments reveal about where ocean finance and diplomatic attention are actually moving in 2026.</p>
+        <p>Three outcomes carry weight well beyond the conference venue itself. The coral reef protection coalition grew to 20 countries spanning every major reef region globally, with Kenya, Comoros, the Dominican Republic, the United Kingdom, and Mexico signing on in Mombasa. Sixteen countries adopted the Mombasa Declaration on fisheries transparency, a coordinated commitment to combat illegal, unreported, and unregulated fishing through shared monitoring and enforcement data. And the moratorium on deep-sea mining continued to expand, adding further weight to the position that commercial seabed extraction should not proceed ahead of adequate environmental understanding.</p>
+        <p>Two new marine protected area designations stood out for scale. Chile's Juan Fernández Islands region gained 337,000 square kilometres of protection, and the Azores Marine Park, at 287,000 square kilometres, became the largest protected area network in the North Atlantic. Both designations demonstrate that large-scale MPA declarations, once rare outside a handful of Pacific and Indian Ocean states, are becoming a more standard tool for mid-sized coastal nations with sufficient political will.</p>
+        <p>Kenya's role as host deserves specific attention. The government announced 42 separate commitments worth a combined US$1 billion, an unusually large single-country pledge for an African host nation, signalling a deliberate strategy of using the Our Ocean platform to attract sustained international attention and investment to Kenya's blue economy sector.</p>
+        <p>For a small island state observing from outside the room, the Mombasa outcomes are worth reading less as isolated headline pledges and more as a signal of where the next several years of ocean finance attention will concentrate: reef protection coalitions, fisheries transparency partnerships, deep-sea mining moratoria, and large-scale MPA designations backed by mid-sized coastal economies. Each category represents an active coalition or funding stream that a state with Seychelles's MPA and blue finance track record has a credible, evidence-backed case to join, provided the outreach happens while these commitments are still fresh and their implementing institutions are still being staffed.</p>
       </div>
       <a class="cta" href="https://oceanpanel.org/eleventh-our-ocean-conference-mobilises-more-than-6-4-billion-usd-in-new-ocean-commitments/" target="_blank" rel="noopener">oceanpanel.org — 11th Our Ocean Conference Outcomes</a>
     </div>
@@ -543,8 +560,20 @@
     <div class="story-inner">
       <span class="num">09</span>
       <h2>Modi came to Victoria with nineteen outcomes</h2>
-      <p>This is happening in Francesca's own capital, in her own sector, while the multilateral processes elsewhere in this edition move at treaty pace. A state visit produces bilateral outcomes in days that BBNJ has spent three years negotiating.</p>
+      <p class="why-matters">This is happening in your own capital, in your own sector, while the rest of this edition moves at treaty pace.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>This is happening in your own capital, in your own sector, while the multilateral processes elsewhere in this edition move at treaty pace. A state visit produces bilateral outcomes in days that BBNJ has spent three years negotiating.</p>
       <p>Narendra Modi's state visit to Seychelles, 27 to 29 June, produced nineteen bilateral outcomes spanning development finance, digital payments, maritime cooperation, agriculture, and institutional capacity-building, under the MAHASAGAR vision for regional security and growth. It builds on Seychelles' 2018 status as issuer of the world's first sovereign blue bond, and on February's Mumbai roundtable marking 50 years of India-Seychelles diplomatic ties.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>State visits move faster than treaties, and the contrast between Narendra Modi's June visit to Seychelles and BBNJ's three-year path to a functioning secretariat is a useful reminder of how differently bilateral and multilateral ocean diplomacy actually operate. Modi's visit, 27 to 29 June, produced nineteen separate bilateral outcomes across development finance, digital payments, maritime cooperation, agriculture, and institutional capacity-building, agreed and announced within a three-day window.</p>
+        <p>The visit sits under India's MAHASAGAR vision, Mutual and Holistic Advancement for Security and Growth Across Regions, a framework explicitly designed to deepen India's economic and security relationships across the Indian Ocean region. For Seychelles, the relationship is not new. It builds on February's Mumbai business roundtable, which marked 50 years of India-Seychelles diplomatic ties and focused specifically on maritime trade and blue economy cooperation between the two countries.</p>
+        <p>What makes this visit worth separating from the general pattern of bilateral diplomacy is the specific combination India is offering: scale and technical capability on one side, matched against Seychelles's demonstrated experience as a small island state that has already pioneered blue finance and ocean governance instruments, most notably the 2018 sovereign blue bond, on the other. That is a genuinely complementary pairing: India brings capital and technical infrastructure at a scale Seychelles cannot generate domestically, while Seychelles brings governance models and operational experience in blue economy instruments that India has not yet built at the same level of sophistication.</p>
+        <p>Nineteen outcomes in three days is a lot to track, and most of the substantive detail will only become clear as individual agreements are implemented over the coming months. The outcomes worth following most closely from a hydrospatial and ocean governance standpoint are the maritime cooperation and capacity-building commitments specifically, since those are the categories most likely to intersect with SHORE's own work, whether through technical exchange, joint mapping initiatives, or Indian investment in Seychelles's blue economy infrastructure.</p>
+        <p>Given the pace at which this relationship is moving, a state visit every few months rather than the multi-year negotiation cycles typical of BBNJ or UNCLOS-adjacent processes, it is worth checking for implementation detail on these commitments well before the usual one-year diplomatic review cycle would normally prompt a follow-up.</p>
+      </div>
       <a class="cta" href="https://www.theweek.in/news/maritime/2026/02/07/india-seychelles-talk-maritime-trade-blue-economy-at-business-roundtable-in-mumbai-all-you-need-to-know.html" target="_blank" rel="noopener">theweek.in — India-Seychelles Blue Economy Roundtable</a>
     </div>
   </section>
@@ -555,8 +584,20 @@
       <div class="flag"><span class="bolt">⚡</span> Closes 31 August, 23:59 UTC</div>
       <span class="n-hair">STORY 10</span>
       <h2>Twenty-nine days to put HARMONiSE on the record</h2>
-      <p>This is the direct route to formal Ocean Decade endorsement Francesca has been circling for HARMONiSE and the Ocean Mapping Hub. A recognised Decade Action carries real bureaucratic weight in funding conversations and partnership requests, well beyond what the name alone suggests.</p>
+      <p class="why-matters">This is the direct route to formal Ocean Decade endorsement you've been circling for HARMONiSE, and it closes in 29 days.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>This is the direct route to formal Ocean Decade endorsement you've been circling for HARMONiSE and the Ocean Mapping Hub. A recognised Decade Action carries real bureaucratic weight in funding conversations and partnership requests, well beyond what the name alone suggests.</p>
       <p>IOC-UNESCO's Call for Decade Actions No. 11/2026 is open until 31 August 2026, addressing priority needs identified in the Barcelona Statement. It covers new Ocean Decade Projects and contributions that strengthen existing Decade Actions and coordination structures. Submissions go through oceandecade.org, with questions to oceandecade@unesco.org.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>Formal recognition under the UN Decade of Ocean Science for Sustainable Development carries a specific kind of institutional weight that is easy to underestimate from outside the system and difficult to overstate from inside it. A recognised Decade Action is not funding in itself, but it functions as a credibility marker that opens doors in funding conversations, partnership negotiations, and academic collaboration that would otherwise require years of reputation-building to access through informal channels alone.</p>
+        <p>IOC-UNESCO's Call for Decade Actions No. 11/2026 is open until 31 August 2026, 23:59 UTC, and is structured around priority needs identified in the Barcelona Statement, the most recent framework document setting direction for the second half of the Ocean Decade. The call covers two categories: new Ocean Decade Projects, and contributions that strengthen existing Decade Actions and the coordination structures that connect them. Submissions go through oceandecade.org, with technical questions directed to oceandecade@unesco.org.</p>
+        <p>For HARMONiSE and the Ocean Mapping Hub, this call is the most direct and currently open route to formal Decade recognition available. The framework and the mapping hub's underlying work, translating multibeam and satellite-derived bathymetry into usable coastal data products for governments without dedicated GIS capacity, sits squarely within the kind of applied, capacity-building-oriented science-to-policy work the Ocean Decade has consistently prioritised in its Decade Actions to date. That fit does not guarantee a successful application, but it means the proposal does not require reframing HARMONiSE's actual work to match the call; it requires documenting that work clearly enough for reviewers unfamiliar with the Seychelles context to understand why it matters.</p>
+        <p>The twenty-nine day window between now and the 31 August deadline is tight but workable for an application built from material that largely already exists in some form: HARMONiSE's methodology documentation, the Ocean Mapping Hub's stated objectives, and evidence of the capacity gap it addresses, most of which has already been articulated in funding proposals, conference materials, or Shorelines pieces over the past year. The main drafting work is less about generating new content and more about translating existing material into the specific format and framing the Call for Decade Actions guidance note requires.</p>
+        <p>Given that this specific call closes in under a month, and that IOC-UNESCO typically issues these calls on a roughly annual cadence rather than continuously, missing this window means waiting for the next numbered call, likely twelve months out, before another formal opportunity of this kind opens. That asymmetry, a short and firm deadline against a long wait for the next chance, is the strongest practical argument for treating this as a near-term priority.</p>
+      </div>
       <a class="cta" href="https://oceandecade.org/call-for-decade-actions-11-2026/" target="_blank" rel="noopener">oceandecade.org — Call for Decade Actions No. 11/2026</a>
     </div>
   </section>
