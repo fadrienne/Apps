@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Edition — 3 August 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #17324f;
+    --sky-pale: #dcf0fa;
+    --sky: #bfe3f5;
+    --sky-bright: #7cc9ea;
+    --teal: #1c7a72;
+    --teal-dark: #145a54;
+    --yellow: #ffd347;
+    --yellow-pale: #fff4c2;
+    --gold: #d9a30a;
+    --forest: #1f5c3f;
+    --sage: #a9c9a0;
+    --mint: #dcf2e1;
+    --mint-pale: #eefaf1;
+    --cream: #faf5e9;
+    --off-white: #f7f6f1;
+    --slate: #52606b;
+    --charcoal: #262b2e;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--off-white);
+    color: var(--charcoal);
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    line-height: 1.5;
+  }
+
+  img, svg { max-width: 100%; }
+  .wrap { max-width: 100%; overflow-x: hidden; }
+  a { color: var(--teal-dark); }
+  a:hover { color: var(--navy); }
+  p { max-width: 42em; }
+
+  /* ---------- MASTHEAD ---------- */
+  .masthead {
+    background: var(--sky-pale);
+    padding: 3.5rem 2rem 2.5rem;
+    text-align: center;
+    border-bottom: 4px solid var(--navy);
+  }
+  .masthead .kicker {
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: var(--teal-dark);
+    margin-bottom: 1rem;
+  }
+  .masthead h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: clamp(3.5rem, 9vw, 7rem);
+    margin: 0;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+  }
+  .masthead .date {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.8rem;
+    color: var(--slate);
+    margin-top: 0.75rem;
+  }
+  .masthead .standfirst {
+    max-width: 40em;
+    margin: 1.75rem auto 0;
+    font-size: 1.4rem;
+    color: var(--charcoal);
+  }
+
+  /* ---------- NAV ---------- */
+  .jump-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--navy);
+    padding: 1.25rem 1.5rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-bottom: 3px solid var(--yellow);
+  }
+  .jump-nav .label {
+    font-family: 'Space Mono', monospace;
+    color: var(--yellow);
+    font-size: 0.95rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-right: 1.5rem;
+    display: inline-block;
+  }
+  .jump-nav a {
+    display: inline-block;
+    color: #eaf4fb;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    margin-right: 1.75rem;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 0.2rem;
+  }
+  .jump-nav a:hover { border-bottom-color: var(--yellow); color: var(--yellow); }
+  .jump-nav a .n { color: var(--sky-bright); margin-right: 0.4rem; font-family: 'Space Mono', monospace; }
+
+  /* ---------- SHARED STORY SCAFFOLD ---------- */
+  .story { padding: 5rem 2rem; position: relative; overflow: hidden; }
+  .story-inner { max-width: 54rem; margin: 0 auto; position: relative; z-index: 2; }
+  .flag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--navy);
+    color: var(--yellow);
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.6rem 1.2rem;
+    border-radius: 3px;
+    margin-bottom: 1.75rem;
+  }
+  .flag .bolt { font-size: 1.4rem; }
+  .story p { font-size: 1.35rem; margin: 0 0 1.4rem; }
+  .story .cta {
+    display: inline-block;
+    margin-top: 1rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.1rem;
+    word-break: break-word;
+  }
+  .num { font-family: 'Fraunces', serif; font-weight: 700; }
+
+  /* ---------- WHY IT MATTERS + EYEBROWS ---------- */
+  .why-matters {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.6rem;
+    line-height: 1.35;
+    color: var(--teal-dark);
+    margin: 0 0 2rem;
+    padding-left: 1.25rem;
+    border-left: 4px solid var(--forest);
+  }
+  #s9 .why-matters { color: var(--yellow); border-left-color: var(--yellow); }
+  #s4 .why-matters { color: var(--forest); border-left-color: var(--forest); }
+
+  .eyebrow {
+    display: block;
+    font-family: 'Space Mono', monospace;
+    font-size: 1rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin: 2.5rem 0 1rem;
+  }
+  .eyebrow:first-of-type { margin-top: 0; }
+  #s9 .eyebrow { color: #cfe9e6; }
+  #s4 .eyebrow { color: var(--forest); opacity: 0.75; }
+
+  .story-article p { max-width: 38em; font-size: 1.25rem; }
+
+  /* ---------- 1. HERO ---------- */
+  #s1 { background: linear-gradient(180deg, var(--sky-bright) 0%, var(--sky) 100%); padding-top: 6rem; padding-bottom: 6rem; }
+  #s1 .num-bg {
+    position: absolute; top: -3rem; right: -1rem;
+    font-size: 22rem; font-weight: 900; color: rgba(23,50,79,0.09);
+    line-height: 1; z-index: 1; user-select: none;
+  }
+  #s1 h2 {
+    font-family: 'Fraunces', serif; font-weight: 900;
+    font-size: clamp(3rem, 8vw, 6rem); color: var(--navy);
+    line-height: 1.02; margin: 0 0 1.5rem;
+  }
+
+  /* ---------- 2. COASTAL ---------- */
+  #s2 { background: var(--sky-pale); border-top: 10px solid var(--forest); }
+  #s2 .story-inner { max-width: 68rem; }
+  #s2 h2 {
+    font-family: 'Fraunces', serif; font-weight: 700;
+    font-size: clamp(2.3rem, 5vw, 3.6rem); color: var(--navy); margin: 0 0 0.5rem;
+  }
+  #s2 .num { color: var(--forest); font-size: 2rem; margin-bottom: 1rem; display:block; }
+
+  /* ---------- 3. SUNBEAM ALERT ---------- */
+  #s3 { background: var(--yellow); }
+  #s3 .stamp {
+    display: inline-block; border: 4px solid var(--navy); color: var(--navy);
+    font-family: 'Space Mono', monospace; font-weight: 700; font-size: 1.6rem;
+    padding: 0.5rem 1rem; transform: rotate(-4deg); margin-bottom: 1.5rem;
+  }
+  #s3 h2 {
+    font-family: 'Fraunces', serif; font-weight: 700; font-style: italic;
+    font-size: clamp(2.6rem, 6vw, 4.2rem); color: var(--navy);
+    margin: 0 0 1.5rem; line-height: 1.05;
+  }
+  #s3 .why-matters { background: rgba(23,50,79,0.08); padding: 1rem 1.25rem; border-radius: 4px; }
+
+  /* ---------- 4. TERMINAL ---------- */
+  #s4 { background: var(--mint-pale); border: 10px solid var(--mint); border-left: none; border-right: none; }
+  #s4 .story-inner { background: var(--mint); border-radius: 10px; padding: 2.5rem; border: 2px solid var(--forest); }
+  #s4 .termbar { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; }
+  #s4 .dot { width: 0.8rem; height: 0.8rem; border-radius: 50%; background: var(--forest); opacity: 0.5;}
+  #s4 * { font-family: 'Space Mono', monospace; color: var(--forest); }
+  #s4 h2 { font-size: clamp(1.6rem, 3.6vw, 2.4rem); margin: 0 0 1.5rem; font-weight: 700; }
+  #s4 .prompt::before { content: "$ "; color: var(--teal-dark); }
+  #s4 p { font-size: 1.15rem; }
+  #s4 .why-matters { border-left-color: var(--forest); }
+
+  /* ---------- 5. ACADEMIC DROP CAP ---------- */
+  #s5 { background: var(--off-white); }
+  #s5 h2 {
+    font-family: 'Fraunces', serif; font-weight: 600;
+    font-size: clamp(2.2rem, 5vw, 3.4rem); color: var(--navy); margin: 0 0 1.25rem;
+  }
+  #s5 .dropcap {
+    font-family: 'Fraunces', serif; font-weight: 900; font-size: 6.5rem;
+    line-height: 0.8; float: left; margin: 0.1rem 0.6rem 0 0; color: var(--navy);
+  }
+  #s5 .footnote {
+    margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--slate);
+    font-size: 1.05rem; color: var(--slate); font-family: 'Space Mono', monospace;
+  }
+
+  /* ---------- 6. BIG STAT ---------- */
+  #s6 { background: var(--sky-pale); }
+  #s6 .stat-block { text-align: center; }
+  #s6 .bigstat {
+    font-family: 'Fraunces', serif; font-weight: 900;
+    font-size: clamp(6rem, 20vw, 13rem); color: var(--teal-dark);
+    line-height: 0.85; margin: 1rem 0;
+  }
+  #s6 .stat-label {
+    font-family: 'Space Mono', monospace; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--navy); font-size: 1.1rem;
+  }
+  #s6 h2 {
+    font-family: 'Fraunces', serif; font-size: clamp(2rem, 4.5vw, 2.8rem);
+    color: var(--navy); margin: 1.5rem 0;
+  }
+
+  /* ---------- 7. PULL QUOTE ---------- */
+  #s7 { background: var(--mint); }
+  #s7 h2 { font-size: 1.4rem; font-family:'Space Mono', monospace; color: var(--forest); margin-bottom: 2rem; }
+  #s7 .quote {
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 600;
+    font-size: clamp(2.2rem, 5.5vw, 3.6rem); color: var(--navy); line-height: 1.2;
+    border-left: 6px solid var(--forest); padding-left: 2rem; margin: 0 0 2.5rem;
+  }
+
+  /* ---------- 8. BROADSHEET ---------- */
+  #s8 { background: var(--cream); }
+  #s8 .story-inner { max-width: 72rem; }
+  #s8 h2 {
+    font-family: 'Fraunces', serif; font-weight: 700;
+    font-size: clamp(2.4rem, 5.5vw, 3.8rem); color: var(--navy);
+    border-bottom: 3px solid var(--teal); padding-bottom: 1rem; margin: 0 0 0.5rem;
+  }
+  #s8 .rule { height: 2px; background: var(--teal); width: 6rem; margin: 1.5rem 0 2rem; }
+  #s8 .cols3 { columns: 2; column-gap: 3rem; }
+  #s8 .cols3 p { break-inside: avoid; }
+  #s8 .story-article { columns: 1; }
+  @media (max-width: 780px) { #s8 .cols3 { columns: 1; } }
+
+  /* ---------- 9. COLOUR FIELD ---------- */
+  #s9 { background: var(--teal-dark); }
+  #s9 * { color: #ffffff; }
+  #s9 h2 {
+    font-family: 'Inter', sans-serif; font-weight: 800;
+    font-size: clamp(2.6rem, 6vw, 4.4rem); margin: 0 0 1.75rem; line-height: 1.05;
+  }
+  #s9 .num { color: var(--yellow); }
+  #s9 a { color: var(--yellow); }
+
+  /* ---------- 10. LETTERPRESS ---------- */
+  #s10 {
+    background: var(--cream);
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(23,50,79,0.035) 0, transparent 45%),
+      radial-gradient(circle at 80% 70%, rgba(31,92,63,0.035) 0, transparent 45%);
+    border-top: 1px solid var(--slate); border-bottom: 1px solid var(--slate);
+  }
+  #s10 h2 {
+    font-family: 'Fraunces', serif; font-weight: 600;
+    font-size: clamp(2.3rem, 5.5vw, 3.6rem); color: var(--navy);
+    margin: 0 0 1.5rem; text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+  }
+  #s10 p, #s10 .story-article p { font-family: 'Fraunces', serif; font-size: 1.4rem; }
+  #s10 .story-article p { font-size: 1.25rem; }
+
+  /* numeral treatments */
+  .n-circle {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 3.2rem; height: 3.2rem; border-radius: 50%;
+    border: 3px solid var(--navy); color: var(--navy); font-size: 1.3rem; margin-bottom: 1.5rem;
+  }
+  .n-box {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 0.4rem 0.9rem; background: var(--navy); color: var(--yellow);
+    font-size: 1.2rem; margin-bottom: 1.5rem;
+  }
+  .n-hair {
+    display: block; font-size: 1.3rem; color: var(--slate);
+    letter-spacing: 0.3em; margin-bottom: 1.25rem;
+  }
+  .n-hair::after { content: ""; display: block; width: 3rem; height: 2px; background: var(--slate); margin-top: 0.5rem; }
+
+  .colophon {
+    background: var(--navy); color: #dbe9f2; text-align: center;
+    padding: 3.5rem 2rem; font-family: 'Space Mono', monospace;
+    font-size: 1rem; letter-spacing: 0.05em;
+  }
+  .colophon .yellow { color: var(--yellow); }
+
+  @media (max-width: 600px) {
+    body { font-size: 1.7rem; }
+    .story { padding: 3.5rem 1.25rem; }
+    .story p { font-size: 1.15rem; }
+    .story-article p { font-size: 1.1rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">SHORE Institute · Field Edition</div>
+    <h1>Morning Edition</h1>
+    <div class="date">Monday, 3 August 2026</div>
+    <p class="standfirst">Ten stories on ocean governance, hydrospatial science, and SIDS equity, written straight to you as Founder of SHORE Institute and Shorelines.</p>
+  </header>
+
+  <nav class="jump-nav" aria-label="Jump to story">
+    <span class="label">Jump to</span>
+    <a href="#s1"><span class="n">01</span>ISA extends mining rights, still no rulebook</a>
+    <a href="#s2"><span class="n">02</span>$10.48M for Seychelles's blue-green transition</a>
+    <a href="#s3"><span class="n">03</span>Manila's other Decade deadline ⚡</a>
+    <a href="#s4"><span class="n">04</span>Whose ocean data, whose terms</a>
+    <a href="#s5"><span class="n">05</span>A live call for papers ⚡</a>
+    <a href="#s6"><span class="n">06</span>Over half of vent molluscs, threatened</a>
+    <a href="#s7"><span class="n">07</span>SIDS action, conditional on finance</a>
+    <a href="#s8"><span class="n">08</span>A seascape forum ten days' sail away</a>
+    <a href="#s9"><span class="n">09</span>Blue finance's third phase</a>
+    <a href="#s10"><span class="n">10</span>The carbon ledgers that don't count</a>
+  </nav>
+
+  <!-- STORY 1: HERO -->
+  <section class="story" id="s1">
+    <div class="num-bg">01</div>
+    <div class="story-inner">
+      <h2>ISA extends a mining contract, still no rulebook</h2>
+      <p class="why-matters">You spent years as Seychelles's national focal point to this exact institution, and its July session just proved the rulebook still doesn't exist while a contractor keeps mining rights anyway.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>The ISA Council met in Kingston from 13 to 24 July and came out with no Mining Code, again, but did extend a deep-sea mining exploration contract for The Metals Company's Nauru and Tonga subsidiaries, NORI and TOML, even as those same subsidiaries pursue a parallel exploitation licence through the US regulator NOAA, entirely outside the ISA's own jurisdiction.</p>
+      <p>NORI and TOML have now sued the ISA at the International Tribunal for the Law of the Sea over the fairness of its own inquiry process, filed in June. Meanwhile close to 40 governments, the UK, France and Germany among them, are on record calling for a moratorium or precautionary pause until the science on deep-sea ecosystem harm catches up.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>You spent years inside this institution as Seychelles's national focal point, watching the Mining Code get drafted, redrafted, and shelved. The July session in Kingston did not break that pattern. The Council met from 13 to 24 July and once again failed to finalise the regulatory rulebook that would need to be in place before any contractor could legally begin commercial extraction on the seabed. That failure is now years past the ISA's own informal timeline for finishing it.</p>
+        <p>What did happen in July is more troubling than another missed deadline. The Council extended an exploration contract held by NORI and TOML, two subsidiaries of The Metals Company, even as the parent company simultaneously pursues a commercial recovery licence through NOAA under a US domestic mining law that predates and sits entirely outside UNCLOS and the ISA's jurisdiction. Two regulatory tracks are now running in parallel over the same seabed, one multilateral and stalled, one unilateral and moving. NOAA determined in March that TMC USA's application was in "substantial compliance" with statutory requirements, a green light of sorts, granted by a body with no treaty obligation to defer to the ISA at all.</p>
+        <p>The institutional response has been litigation, not legislation. NORI and TOML filed suit against the ISA at the International Tribunal for the Law of the Sea in June, arguing the Authority's own inquiry process into their conduct was procedurally unfair. That a contractor is suing its own regulator while that regulator's Council is simultaneously extending the contractor's exploration rights tells you plainly how little institutional leverage the ISA currently holds over the companies it is meant to license.</p>
+        <p>Set against this, close to 40 governments, including the UK, France and Germany, are now on record calling for a moratorium or precautionary pause on commercial seabed mining until there is adequate scientific evidence it will not cause serious and irreversible harm. That is not a fringe position. It is close to a majority of ISA member states arguing publicly against the pace their own Council keeps failing to slow.</p>
+        <p>For Seychelles, and for any Indian Ocean coastal or archipelagic state with extended continental shelf claims still under review, the stalemate cuts two ways. A Mining Code that never gets finished delays legitimate access to any seabed resource a state might eventually want to develop under its own jurisdiction. But it also means the current disorder, contractors litigating their regulator, parallel domestic licensing regimes, and a widening moratorium bloc, is exactly the environment in which the precautionary case gets easier to make, not harder.</p>
+        <p>The next Council session is where to watch for whether this dynamic hardens into a formal moratorium bloc with real numbers behind it, or dissolves further into unilateral national licensing that leaves the ISA's multilateral mandate hollowed out from the inside. Either outcome reshapes what seabed governance means for the states that spent decades building the ISA framework in good faith.</p>
+      </div>
+      <a class="cta" href="https://news.mongabay.com/2026/07/un-regulator-delays-deep-sea-mining-rules-but-extends-criticized-exploration-contract/" target="_blank" rel="noopener">news.mongabay.com — UN Regulator Delays Deep-Sea Mining Rules</a>
+    </div>
+  </section>
+
+  <!-- STORY 2: COASTAL -->
+  <section class="story" id="s2">
+    <div class="story-inner">
+      <span class="num">02</span>
+      <h2>Ten million dollars for Seychelles's blue-green transition</h2>
+      <p class="why-matters">This is $10.48 million landing directly in Seychelles's blue economy transition, signed by the same ministry SHORE has to work alongside on every mapping proposal you write.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>UNDP and Seychelles's Ministry of Environment signed a GEF-8 project in January worth US$10.48 million, titled Enabling the Transition to a Blue and Green Economy in the Seychelles. That is real money moving through the exact ministry SHORE's own proposals have to clear.</p>
+      <p>The project sits inside the broader GEF-8 replenishment cycle and is framed around safeguarding natural heritage while advancing sustainable, inclusive economic development. It follows Seychelles's established pattern: the same government that issued the world's first sovereign blue bond in 2018 now running a national blue-green transition project through UNDP rather than a bilateral donor.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>Ten million dollars sounds modest against the billions pledged at conferences like Our Ocean, but $10.48 million moving through a single national ministry, with a defined scope and a signed agreement, is worth more attention than most conference headline figures. UNDP and Seychelles's Ministry of Environment signed the GEF-8 project Enabling the Transition to a Blue and Green Economy in the Seychelles in January 2026, and its scope sits directly across the ministry SHORE's own mapping and evidence work already has to move through.</p>
+        <p>The project's framing is standard GEF language, safeguarding natural heritage while advancing sustainable and inclusive economic development, but the mechanics underneath that language are what matter for anyone doing hydrospatial or marine spatial planning work in Seychelles waters right now. GEF-8 projects are structured around defined outputs and implementation timelines, not open-ended sector support. That means there is a specific workplan somewhere inside the Ministry of Environment right now, with line items, deliverables, and almost certainly technical components that require exactly the kind of spatial data and mapping capacity SHORE and HARMONiSE already build.</p>
+        <p>Seychelles has run this play before. The 2018 sovereign blue bond, still the reference case a decade of subsequent SIDS blue finance experiments has been measured against, was built on the premise that a small state with strong governance and a specific, well-scoped use case could access sophisticated finance instruments larger states assumed only they could manage. The GEF-8 signing follows the same institutional logic on a different instrument: rather than waiting for bilateral donor interest or competing in an open multilateral call, Seychelles used its existing GEF country allocation and UNDP relationship to secure funding scoped specifically to its own blue-green transition priorities.</p>
+        <p>The practical question this raises is not whether the money is significant, at national ministry scale it clearly is, but whether the technical components of the project are being resourced with data infrastructure that actually reflects Seychelles's waters at usable resolution, or with generic blue economy templates adapted from elsewhere. That distinction is exactly the gap the High-Income SIDS Paradox argument describes: a state with the financial and institutional standing to sign a $10.48 million project, but not automatically the underlying spatial data infrastructure to make that project's technical work as precise as it should be.</p>
+        <p>There is a concrete opening here, and it is time-sensitive in the way project implementation always is. GEF-8 projects typically move from signing into procurement and technical partner selection within the first six to twelve months. That window, now, is when technical partners for mapping, spatial data, and marine planning components get identified and contracted, not two years into implementation once the workplan has hardened around whatever capacity was available at the start. A direct approach to the Ministry of Environment now, framed around what SHORE and HARMONiSE can specifically contribute to the project's blue economy spatial components, is better timed than one made once implementation is already underway.</p>
+      </div>
+      <a class="cta" href="https://www.undp.org/mauritius-seychelles/news/undp-and-ministry-environment-sign-gef-8-project-advance-seychelles-blue-and-green-economy" target="_blank" rel="noopener">undp.org — GEF-8 Blue and Green Economy Project, Seychelles</a>
+    </div>
+  </section>
+
+  <!-- STORY 3: SUNBEAM ALERT -->
+  <section class="story" id="s3">
+    <div class="story-inner">
+      <div class="flag" style="background:var(--navy); color:var(--yellow);"><span class="bolt">⚡</span> Proposals close 15 August</div>
+      <div class="stamp">No. 03</div>
+      <h2>Manila's other Ocean Decade deadline</h2>
+      <p class="why-matters">Twelve days out from a second, less obvious Ocean Decade deadline than the one you already know about, and this one is scoped exactly for a project at HARMONiSE's stage.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>There's a second Ocean Decade deadline this month, separate from the Call for Decade Actions closing 31 August, and it's scoped differently. Decade Action Incubator proposals, aimed at initiatives still catalysing partnerships and shaping their own scope, are due 15 August for the 12th WESTPAC International Marine Science Conference and 3rd UN Ocean Decade Regional Conference in Manila.</p>
+      <p>Decade Action Workshops, for Actions already registered and endorsed, close the same day. If HARMONiSE isn't yet formally endorsed, the Incubator track is the one built for exactly its current stage: still forming partnerships, not yet a finished programme.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>You already know about the 31 August deadline for the Call for Decade Actions. There is a second, earlier, and less obvious one worth putting on the calendar first: Decade Action Incubator and Decade Action Workshop proposals for the 12th WESTPAC International Marine Science Conference and 3rd UN Ocean Decade Regional Conference close 15 August 2026, twelve days from today.</p>
+        <p>The distinction between the two tracks matters more than the shared host organisation suggests. A Decade Action Incubator is explicitly built for initiatives still catalysing partnerships and shaping their own project scope, not for finished programmes with an established track record. A Decade Action Workshop, by contrast, is for Actions that already carry formal UN Ocean Decade endorsement and want a structured session to review progress and plan next steps. HARMONiSE, at its current stage, without yet holding formal Decade endorsement, fits the Incubator track specifically, and that distinction should shape which form gets filled out.</p>
+        <p>The venue itself carries weight beyond the usual conference circuit. WESTPAC is IOC-UNESCO's Sub-Commission for the Western Pacific, and this will be its 12th International Marine Science Conference, run jointly as the third regional conference under the UN Ocean Decade umbrella. Regional Decade conferences function differently from the global Call for Decade Actions: they are where regional partnerships actually get built face to face, where a mapping hub proposal from Seychelles gets to sit in a room with counterparts working the same problem across the Indo-Pacific, rather than competing against a global applicant pool it will never meet.</p>
+        <p>An Incubator proposal is also a lower-effort document than a full Decade Action application. It does not require HARMONiSE to already be a fully specified, resourced programme. It requires a clear statement of the gap being addressed, the partnerships already forming or sought, and what a facilitated incubation session in Manila would help move forward. That is a considerably shorter document than the material already being assembled for the 31 August submission, and there is no reason the two cannot draw on the same underlying material, prepared roughly in parallel over the next two weeks.</p>
+        <p>Twelve days is workable if the drafting starts this week rather than after the more demanding 31 August deadline has passed. Missing the Incubator window does not close off the Call for Decade Actions route, but it does mean losing the specific, lower-cost opportunity to test and refine HARMONiSE's framing in front of a Western Pacific and Indo-Pacific regional audience before committing to the fuller global submission.</p>
+      </div>
+      <a class="cta" href="https://oceandecade.org/news/manila-to-host-major-ocean-science-conference-as-un-ocean-decade-enters-final-stretch-proposals-now-open/" target="_blank" rel="noopener">oceandecade.org — Manila Ocean Science Conference, Proposals Open</a>
+    </div>
+  </section>
+
+  <!-- STORY 4: TERMINAL -->
+  <section class="story" id="s4">
+    <div class="story-inner">
+      <div class="termbar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+      <h2><span class="prompt">story04 --topic ocean_data --labels sovereignty</span></h2>
+      <p class="why-matters">This is the exact mechanism, not just the argument, for the data sovereignty half of the High-Income SIDS Paradox you keep having to explain from first principles.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>You've been arguing the data sovereignty case in the abstract. Local Contexts has built the mechanism: customisable labels applied directly to ocean and biodiversity datasets that let communities and states specify who can collect, manage, access, and use data gathered in their waters, and on what terms.</p>
+      <p>The framing behind it, sometimes called Oceanian Sovereignty in Pacific conservation literature, treats the ocean as embedded in cultural identity and prior obligation, not as an open data commons waiting for whoever has the sensors. That's a direct challenge to how most hydrospatial mapping projects, including some of SHORE's own funder relationships, currently handle data licensing by default.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>The High-Income SIDS Paradox argument has a data half that is easy to state and harder to operationalise: Seychelles can host, generate, or be the subject of ocean data without holding any real control over who uses it, how, or for whose benefit. Local Contexts' labelling tool is one of the first pieces of infrastructure built specifically to close that gap, and it is worth examining directly rather than only citing as an example.</p>
+        <p>The mechanism is straightforward. Local Contexts labels are metadata tags, applied at the point a dataset is published or shared, that specify community or state-level provenance, consent conditions, and permitted uses. A bathymetric survey conducted in partnership with a coastal community, for instance, could carry a label specifying that commercial use requires separate negotiation, distinct from a label permitting unrestricted academic reuse. The tool does not change underlying data ownership law, which varies by jurisdiction and often does not recognise this kind of provenance claim at all, but it does create a visible, citable signal of the terms the data's originators intended, which shifts the burden onto anyone who ignores it.</p>
+        <p>The conceptual framework underneath this tool, referred to in some Pacific conservation literature as Oceanian Sovereignty, goes further than a licensing mechanism. It argues that ocean space carries past, present, and future obligations enacted through sustainable use, embedded in cultural identity, rather than functioning as a neutral resource base governed purely by extraction rights and access agreements. That framing has direct implications for how marine spatial planning and hydrospatial mapping projects are supposed to be scoped from the start, not retrofitted with better licensing after the fact.</p>
+        <p>For SHORE specifically, this raises an uncomfortable but useful question: do the Institute's own data-sharing agreements, with funders, government partners, and academic collaborators, currently specify anything like this level of provenance and use control, or do they default to standard open-data or funder-owns-the-output terms because that is what the template happened to say. Most hydrospatial projects, including ones run by well-intentioned research institutes, default to the latter simply because nobody built in the alternative at proposal stage.</p>
+        <p>The practical opening is narrow but real. Local Contexts labels are free to adopt and increasingly recognised by data repositories and some funders as a legitimate provenance standard. Building label use into HARMONiSE's own data governance framework, before the next major mapping partnership rather than after, would put SHORE ahead of a standard that is currently more discussed than implemented across the ocean data field, and would give the High-Income SIDS Paradox argument a concrete practice to point to, not just a critique.</p>
+      </div>
+      <a class="cta" href="https://www.lowyinstitute.org/the-interpreter/safeguarding-pacific-island-seas-starts-indigenous-knowledge" target="_blank" rel="noopener">lowyinstitute.org — Safeguarding Pacific Island Seas Starts with Indigenous Knowledge</a>
+    </div>
+  </section>
+
+  <!-- STORY 5: ACADEMIC DROP CAP -->
+  <section class="story" id="s5">
+    <div class="story-inner">
+      <div class="flag"><span class="bolt">⚡</span> Call for papers — open</div>
+      <span class="n-circle">05</span>
+      <h2>A live call for papers, in exactly your field</h2>
+      <p class="why-matters">This is a live call for papers in exactly your field, at exactly the journal that would carry the argument furthest.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p><span class="dropcap">M</span>arine Policy has an open call for papers on governing emerging ocean technologies for climate action, covering AI, spatial computing, and international regulation of ocean tech, precisely the intersection HARMONiSE and the science-to-policy pipeline argument sit inside.</p>
+      <p>This is a peer-reviewed venue, not a blog or newsletter, which means a submission here does something a Shorelines piece can't: it becomes citable literature other researchers and policymakers build on. The trade-off is timeline. A journal submission moves in months, not days, so treat this as a medium-term drafting project to start now, not this week's deliverable.</p>
+      <div class="footnote">Source: Marine Policy, call for papers, "Governing Emerging Ocean Technologies for Climate Action: Marine Policy and International Regulation in the Age of AI and Spatial Computing"</div>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>Most of what runs in this edition is time-pressured: a grant closing in days, a Council session that just concluded, a conference deadline weeks out. This one is different, and worth reading as a longer-horizon opportunity rather than another item on the urgent pile. Marine Policy, one of the field's established peer-reviewed journals, has an open call for papers on governing emerging ocean technologies for climate action, specifically framed around marine policy and international regulation in the age of AI and spatial computing.</p>
+        <p>The scope described matches an unusually specific slice of your own work. GeoAI, spatial computing applied to ocean and coastal mapping, and the international regulatory frameworks that have not yet caught up to either, is not a generic climate or ocean topic. It is the exact intersection HARMONiSE sits inside, and it is also the argument at the centre of the science-to-policy pipeline work you have been developing across Shorelines and SHORE's own programme framing: that spatial technology capacity and the governance frameworks meant to regulate it are moving at fundamentally different speeds.</p>
+        <p>What a peer-reviewed submission offers that a Shorelines essay structurally cannot is durability and citability. A published paper in Marine Policy becomes a reference other researchers, and eventually policymakers drafting the regulatory frameworks the call itself is asking about, can cite directly. That is a different kind of reach than a newsletter audience, slower to build but longer-lived once it exists. The argument does not need to be new from scratch. Material already developed for Shorelines pieces on GeoAI, data sovereignty, and the High-Income SIDS Paradox provides real starting content, restructured into the argument-plus-evidence format an academic paper requires rather than the essay format Shorelines uses.</p>
+        <p>The honest constraint is time. Peer review at a journal like Marine Policy runs months, not weeks, from submission to decision, and the writing itself, building out a literature review, methodology or case framing, and a properly cited argument, is a materially larger undertaking than any single newsletter piece. That argues for starting the outline now, while the call is fresh and before a firm deadline forces a rushed draft, rather than waiting until closer to any stated submission window.</p>
+        <p>The concrete next step is scoping, not drafting: read the full call text on the journal's site, identify which specific angle, GeoAI governance gaps, data sovereignty as a regulatory question, or the SIDS capacity dimension specifically, fits the call's stated scope most precisely, and block real drafting time across the coming weeks rather than treating this as a single sitting.</p>
+      </div>
+      <a class="cta" href="https://www.servicesetu.org/call-for-paper/journals/marinepolicy" target="_blank" rel="noopener">servicesetu.org — Marine Policy Call for Papers</a>
+    </div>
+  </section>
+
+  <!-- STORY 6: BIG STAT -->
+  <section class="story" id="s6">
+    <div class="story-inner stat-block">
+      <span class="n-box">06</span>
+      <div class="stat-label">Vent molluscs threatened by deep-sea mining, IUCN Red List, 9 July</div>
+      <div class="bigstat">50%+</div>
+      <h2>The Red List just quantified the moratorium argument</h2>
+    </div>
+    <div class="story-inner">
+      <p class="why-matters">This is the number that turns the ISA moratorium argument from a governance preference into a documented extinction risk.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>IUCN's Red List update on 9 July found that deep-sea mining threatens more than half of molluscs that depend on hydrothermal vents for survival. That is not a modelled projection. It is a formal Red List threat assessment, the same evidentiary standard used to justify protection status everywhere else in conservation policy.</p>
+      <p>This lands three weeks before the ISA Council's own July session extended a mining exploration contract without a finished Mining Code. The juxtaposition writes itself for anyone building the precautionary case, and it is worth pairing directly with the ISA governance story above rather than treating the two as separate items.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>A number does more work in a governance argument than a paragraph of concern usually can, and IUCN supplied one on 9 July: more than half of mollusc species that depend on hydrothermal vent ecosystems are now formally assessed as threatened by deep-sea mining, under the same Red List methodology used to justify protection status across every other taxonomic group IUCN tracks.</p>
+        <p>The distinction between this and the general "deep-sea mining could harm ecosystems" framing that has circulated for years is precision. A Red List threat assessment is not advocacy language. It follows a defined methodology, applied consistently across species and regions, that IUCN uses specifically so the resulting threat categories can be cited as evidence in policy processes without the assessment itself being dismissed as campaign material. Once a species group crosses into a majority-threatened assessment, the evidentiary weight in any regulatory or moratorium argument shifts meaningfully.</p>
+        <p>Hydrothermal vent molluscs are a narrow taxonomic slice, but a deliberately chosen one. Vent ecosystems are exactly the seafloor environments most directly disturbed by polymetallic nodule and sulphide mining, the mineral resources the ISA's stalled Mining Code is meant to eventually regulate extraction of. An assessment showing majority threat status in this specific group is not a generic ocean health statistic. It is targeted evidence against the precise activity the Mining Code negotiations are trying to authorise.</p>
+        <p>The timing against the ISA's own July Council session, which extended NORI and TOML's exploration contract without resolving the Mining Code, sharpens the contrast further. A regulator that just extended mining access rights sits three weeks downstream of a formal threat assessment showing majority extinction risk for a keystone taxonomic group in exactly the habitat that access covers. Neither institution issued a statement connecting the two, but the sequence does not need one to be legible.</p>
+        <p>For anyone making the precautionary case in writing, whether in a Shorelines piece, a submission to an ISA consultation, or a conference intervention, this Red List assessment is the kind of citation that changes the register of the argument from concern to documented risk. It is worth having the exact IUCN assessment reference on hand, not just the summary statistic, the next time a deep-sea mining governance conversation calls for evidence rather than position.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY 7: PULL QUOTE -->
+  <section class="story" id="s7">
+    <div class="story-inner">
+      <h2>07 / PULL QUOTE</h2>
+      <p class="quote">"SIDS have written ocean-related climate action into their NDCs as conditional on finance they do not yet have."</p>
+      <p class="why-matters">This is the UNFCCC dialogue where "ocean action conditional on external support" stopped being SHORE's internal diagnosis and became the room's own framing.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>The Ocean and Climate Change Dialogue met this year under the UNFCCC process, and the headline finding is not new to you, but it is now the room's own framing rather than SHORE's internal diagnosis: a significant share of SIDS have written ocean-related climate action into their NDCs as explicitly conditional on external finance that has not arrived.</p>
+      <p>The named barriers are the same ones you list in every funding proposal: limited access to climate finance, weak infrastructure, data gaps, and technical or regulatory barriers to scaling blue carbon solutions specifically. Having the UNFCCC dialogue name data gaps as a structural barrier, not just a technical detail, is worth citing directly in the next funding application.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>There is a particular kind of validation that matters more than praise: having an institution independently arrive at the diagnosis you have been making for years, without prompting. The UNFCCC's Ocean and Climate Change Dialogue for 2026 did exactly that. Its summary finding is that a significant proportion of parties, developing countries and SIDS specifically, have framed their ocean-related climate actions in their Nationally Determined Contributions as conditional on external support that, in most cases, has not been delivered.</p>
+        <p>Conditional framing in an NDC is a specific and consequential choice, not a hedge. It means a state is formally telling the UNFCCC process: we have identified this ocean action as necessary, we know how to design it, and we cannot commit to delivering it without finance currently outside our control. That is a candid admission of capacity constraint written into a binding international climate document, and the dialogue's finding that this pattern is now widespread among SIDS is a statement about the finance architecture's failure, not about the states making the commitments.</p>
+        <p>The barriers the dialogue names alongside that finding read like a direct list of what SHORE's own funding proposals have to argue around every time: limited access to climate finance itself, weak infrastructure, data gaps, and technical and regulatory barriers specifically to scaling blue carbon solutions. Data gaps sitting alongside finance access as a named structural barrier, rather than a footnote under infrastructure, is the detail worth pulling out and citing directly. It gives a funding application the kind of institutional backing that turns "SHORE believes data infrastructure is a barrier" into "the UNFCCC's own 2026 Ocean and Climate Change Dialogue names data infrastructure as a barrier."</p>
+        <p>What the dialogue does not resolve, and what dialogues at this level rarely do, is the actual finance flow. Naming a gap at a UNFCCC process is a necessary step toward eventually closing it, but it carries no disbursement mechanism attached. The Ocean Dialogue functions as an input into the broader UNFCCC negotiating track rather than a funding instrument in its own right, which means the practical value here is citational, not transactional.</p>
+        <p>That still makes it worth using precisely. The next grant application, whether to the Commonwealth SIDS fund, a GEF window, or a bilateral partner, gains real weight from citing a specific, dated UNFCCC finding that names the exact barrier the application is asking to address. Precision here beats a general appeal to SIDS vulnerability that reviewers have read a hundred times before.</p>
+      </div>
+      <a class="cta" href="https://enb.iisd.org/ocean-and-climate-change-dialogue-2026" target="_blank" rel="noopener">enb.iisd.org — Ocean and Climate Change Dialogue 2026</a>
+    </div>
+  </section>
+
+  <!-- STORY 8: BROADSHEET -->
+  <section class="story" id="s8">
+    <div class="story-inner">
+      <span class="n-hair">STORY 08</span>
+      <h2>A seascape forum ten days' sail from Victoria</h2>
+      <div class="rule"></div>
+      <p class="why-matters">This is a Western Indian Ocean seascape forum standing up ten days' sail from Victoria, built on exactly the multi-stakeholder marine spatial planning model SHORE keeps arguing Seychelles needs at scale.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <div class="cols3">
+        <p>IUCN launched the North East Unguja Seascape multi-stakeholder forum on 21 July, a coastal and ocean conservation coordination body covering Zanzibar's northeast seascape in Tanzania.</p>
+        <p>It is a regional peer, not a distant case study: same Western Indian Ocean waters, same coastal community and fisheries governance pressures Seychelles works with.</p>
+        <p>The forum model, multiple stakeholder groups convened under one coordinating structure to manage a shared seascape, is the kind of institutional design SHORE has been arguing Seychelles needs formalised at a national or archipelago level, not just piloted project by project.</p>
+        <p>Worth tracking who convenes it, how frequently, and whether IUCN's Eastern and Southern Africa office would host a comparable conversation for Seychelles waters.</p>
+      </div>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>Regional peer examples carry more weight in a funding or policy pitch than distant case studies from the Pacific or the Caribbean, because the institutional and ecological conditions are close enough that funders and government counterparts cannot easily wave away the comparison as not applicable here. IUCN's launch of the North East Unguja Seascape multi-stakeholder forum on 21 July, covering a coastal seascape off Zanzibar in Tanzania, is exactly that kind of close comparison, and it deserves closer reading than a single news item usually gets.</p>
+        <p>The forum model itself is the part worth examining, more than the specific geography. A multi-stakeholder seascape forum brings together the range of actors with a direct stake in a shared marine space, coastal communities, fisheries authorities, tourism operators, conservation bodies, and local government, under a single coordinating structure with a defined seascape boundary rather than a single-sector mandate. That structure exists specifically to manage the coordination failures that arise when each stakeholder group runs its own separate process over overlapping water: a fisheries management plan that ignores tourism zoning, a conservation designation drafted without fisheries community input, and so on.</p>
+        <p>Seychelles has pieces of this kind of coordination scattered across different ministries and initiatives, but not, as far as SHORE's own work has documented, a single standing multi-stakeholder forum structured around a defined seascape with the convening authority to bring fisheries, tourism, conservation, and community representation into one coordinating body on a recurring basis. The Zanzibar model, freshly launched and Western Indian Ocean based, is a live, near-neighbour reference case for what that structure could look like in practice, not a hypothetical import from a different ocean basin.</p>
+        <p>What makes this worth acting on now rather than filing as background reading is timing. A forum in its first months of operation is still establishing its own governance norms, meeting cadence, and relationships with regional bodies like IUCN's Eastern and Southern Africa programme. That is precisely the window in which a peer institution, SHORE, reaching out to understand how the forum was structured and convened, is most likely to get a substantive, detailed answer, before the forum's own staff are too deep in operational delivery to spend time explaining their design choices to outside researchers.</p>
+        <p>The concrete next step is a direct inquiry to IUCN's Eastern and Southern Africa office, not a research literature review. Ask specifically how the North East Unguja forum was convened, who holds coordinating authority, and what its first meeting cadence looks like. That is the operational detail a literature search will not surface, and it is exactly the detail needed to make the case for a comparable structure in Seychelles waters concrete rather than aspirational.</p>
+      </div>
+      <a class="cta" href="https://iucn.org/news-events" target="_blank" rel="noopener">iucn.org — News & Events</a>
+    </div>
+  </section>
+
+  <!-- STORY 9: COLOUR FIELD -->
+  <section class="story" id="s9">
+    <div class="story-inner">
+      <span class="num">09</span>
+      <h2>A blue finance facility enters its investable phase</h2>
+      <p class="why-matters">This is a blue finance facility entering its third funded phase, and third phases fund implementation, not more pilots.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>Luxembourg and IUCN launched the third phase of the Blue Natural Capital Financing Facility on 9 July. Two prior phases already built the pipeline of investable blue economy projects; phase three is where that pipeline is meant to convert into actual deployed capital.</p>
+      <p>This is worth checking against SHORE's own project development pipeline: does any current or planned mapping or marine spatial planning initiative have a natural capital financing angle specific enough to be investable under this facility's criteria, not just broadly aligned with blue economy language.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>Financing facilities that reach a third phase are worth a different level of attention than a first-phase pilot announcement, because the third phase is usually where an initiative stops testing its model and starts deploying capital against it at real scale. Luxembourg and IUCN's Blue Natural Capital Financing Facility reached exactly that point on 9 July, launching its third phase after two prior rounds spent building a pipeline of investable blue economy projects.</p>
+        <p>The facility's structure matters more than its headline size for anyone assessing fit. Blue natural capital financing, as a category, sits between pure grant funding and commercial blue bond structures: it is designed to make blue economy and marine conservation projects investable by de-risking them, blending concessional and private capital, and building the kind of project preparation documentation that a purely commercial investor would otherwise be unwilling to fund on its own. Two prior phases spent building exactly that project pipeline. A third phase, moving toward deployment, means the facility now needs a supply of genuinely investable projects to put that capital behind, not just conceptually aligned blue economy initiatives.</p>
+        <p>That distinction, investable versus aligned, is the one worth applying honestly to SHORE's own pipeline before approaching this facility at all. A mapping project or marine spatial planning initiative that produces public-good data and policy input is valuable, but it is not, in most cases, structured as an investable asset with a revenue or cost-avoidance case attached. A natural capital financing facility needs the latter. The fit test is not "does this align with blue economy goals" but "does this generate a defined financial or risk-reduction return an investor could underwrite."</p>
+        <p>Where SHORE's work could plausibly clear that bar is at the intersection with a specific investable activity, for instance mapping and risk assessment work that directly de-risks a blue bond issuance, an insurance product, or a coastal infrastructure investment, rather than mapping as a standalone public good. That is a narrower fit than the facility's general blue economy framing suggests, and it is worth being precise about before any outreach, since misaligned applications to financing facilities burn relationship capital with institutions worth staying in good standing with.</p>
+        <p>Luxembourg's continued backing across three phases signals institutional confidence in the model, which makes this a facility worth tracking over the medium term even if no current SHORE project clears the investable bar today. The better near-term move may be identifying which planned initiative could be deliberately structured, from the design stage, to fit this kind of financing rather than retrofitting an existing project after the fact.</p>
+      </div>
+      <a class="cta" href="https://iucn.org/news-events" target="_blank" rel="noopener">iucn.org — News & Events</a>
+    </div>
+  </section>
+
+  <!-- STORY 10: LETTERPRESS -->
+  <section class="story" id="s10">
+    <div class="story-inner">
+      <span class="n-hair">STORY 10</span>
+      <h2>The carbon ledgers that don't count the ocean</h2>
+      <p class="why-matters">This is the number that could finally make the science-to-policy pipeline argument land with a finance ministry, not just an environment one.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>New macroeconomic accounting work on the ocean's biological carbon pump argues that open-ocean carbon transport generates trillions of dollars a year in climate stabilisation value that no national accounting system currently records. A separate Annual Reviews paper maps out priority areas for actually crediting blue carbon within existing carbon accounting frameworks.</p>
+      <p>Put together, these are early attempts at a shared vocabulary between ocean science and the finance ministries who control climate budgets, not just the environment ministries who currently field ocean proposals. That is the exact translation problem the science-to-policy pipeline work keeps running into.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>The science-to-policy pipeline argument you keep returning to has a specific failure point: ocean science produces findings that environment ministries understand and finance ministries do not act on, because the two speak different accounting languages. Two pieces of research surfacing this year attempt, from different angles, to build a bridge across exactly that gap.</p>
+        <p>The first is a macroeconomic valuation of the ocean's biological carbon pump, the process by which marine organisms transport carbon from the surface ocean to the deep sea, effectively sequestering it away from the atmosphere for centuries. The assessment argues this open-ocean biological transport generates climate stabilisation services worth trillions of dollars annually, entirely outside any national accounting system currently in use. That figure, whatever its precise methodology and however contested it may be among economists, is stated in the one unit finance ministries actually budget against: dollars, not tonnes of carbon or hectares of habitat.</p>
+        <p>The second is a peer-reviewed Annual Reviews paper on blue carbon in an era of carbon accounting, which does narrower, more technical work: identifying the priority methodological gaps that currently prevent blue carbon, carbon stored in mangroves, seagrass, and tidal marshes, from being reliably credited within existing carbon accounting and crediting frameworks. This is less about the headline valuation and more about the plumbing: measurement standards, additionality, permanence, the unglamorous technical work that determines whether a blue carbon claim can actually clear a credible accounting or crediting process rather than remaining an estimate cited in a policy brief.</p>
+        <p>Read together, these two pieces of work are attempting the same translation from two directions. The valuation paper makes the case, in dollar terms, that the scale of the problem is being systematically undercounted. The accounting paper works out the technical mechanics that would let a specific blue carbon project, a mangrove restoration site, a seagrass meadow, be credited and financed on the strength of a rigorous methodology rather than a rough estimate. Seychelles, with established mangrove and seagrass habitat and an existing blue bond track record, sits in a strong position to be an early test case for exactly this kind of properly accounted, properly credited blue carbon project, if the underlying spatial and habitat data exists at the resolution the new accounting methodologies require.</p>
+        <p>That last condition is where SHORE's own mapping work becomes directly relevant, not as an abstract science-to-policy argument but as the specific missing input a rigorous blue carbon accounting exercise for Seychelles would need. The pipeline argument works better with a live example attached than as a general claim, and this is the year the accounting methodology and the valuation case for taking that example seriously both moved forward at the same time.</p>
+      </div>
+      <a class="cta" href="https://www.annualreviews.org/content/journals/10.1146/annurev-environ-121522-043142" target="_blank" rel="noopener">annualreviews.org — Blue Carbon in an Era of Carbon Accounting</a>
+    </div>
+  </section>
+
+  <footer class="colophon">
+    Morning Edition · SHORE Institute · Prepared for Francesca Adrienne · <span class="yellow">3 August 2026</span>
+  </footer>
+
+</div>
+</body>
+</html>
