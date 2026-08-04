@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Edition — 4 August 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #17324f;
+    --sky-pale: #dcf0fa;
+    --sky: #bfe3f5;
+    --sky-bright: #7cc9ea;
+    --teal: #1c7a72;
+    --teal-dark: #145a54;
+    --yellow: #ffd347;
+    --yellow-pale: #fff4c2;
+    --gold: #d9a30a;
+    --forest: #1f5c3f;
+    --sage: #a9c9a0;
+    --mint: #dcf2e1;
+    --mint-pale: #eefaf1;
+    --cream: #faf5e9;
+    --off-white: #f7f6f1;
+    --slate: #52606b;
+    --charcoal: #262b2e;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--off-white);
+    color: var(--charcoal);
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    line-height: 1.5;
+  }
+
+  img, svg { max-width: 100%; }
+  .wrap { max-width: 100%; overflow-x: hidden; }
+  a { color: var(--teal-dark); }
+  a:hover { color: var(--navy); }
+  p { max-width: 42em; }
+
+  /* ---------- MASTHEAD ---------- */
+  .masthead {
+    background: var(--sky-pale);
+    padding: 3.5rem 2rem 2.5rem;
+    text-align: center;
+    border-bottom: 4px solid var(--navy);
+  }
+  .masthead .kicker {
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: var(--teal-dark);
+    margin-bottom: 1rem;
+  }
+  .masthead h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: clamp(3.5rem, 9vw, 7rem);
+    margin: 0;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+  }
+  .masthead .date {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.8rem;
+    color: var(--slate);
+    margin-top: 0.75rem;
+  }
+  .masthead .standfirst {
+    max-width: 40em;
+    margin: 1.75rem auto 0;
+    font-size: 1.4rem;
+    color: var(--charcoal);
+  }
+
+  /* ---------- NAV ---------- */
+  .jump-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--navy);
+    padding: 1.25rem 1.5rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-bottom: 3px solid var(--yellow);
+  }
+  .jump-nav .label {
+    font-family: 'Space Mono', monospace;
+    color: var(--yellow);
+    font-size: 0.95rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-right: 1.5rem;
+    display: inline-block;
+  }
+  .jump-nav a {
+    display: inline-block;
+    color: #eaf4fb;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    margin-right: 1.75rem;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 0.2rem;
+  }
+  .jump-nav a:hover { border-bottom-color: var(--yellow); color: var(--yellow); }
+  .jump-nav a .n { color: var(--sky-bright); margin-right: 0.4rem; font-family: 'Space Mono', monospace; }
+
+  /* ---------- SHARED STORY SCAFFOLD ---------- */
+  .story { padding: 5rem 2rem; position: relative; overflow: hidden; }
+  .story-inner { max-width: 54rem; margin: 0 auto; position: relative; z-index: 2; }
+  .flag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--navy);
+    color: var(--yellow);
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.6rem 1.2rem;
+    border-radius: 3px;
+    margin-bottom: 1.75rem;
+  }
+  .flag .bolt { font-size: 1.4rem; }
+  .story p { font-size: 1.35rem; margin: 0 0 1.4rem; }
+  .story .cta {
+    display: inline-block;
+    margin-top: 1rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.1rem;
+    word-break: break-word;
+  }
+  .num { font-family: 'Fraunces', serif; font-weight: 700; }
+
+  /* ---------- WHY IT MATTERS + EYEBROWS ---------- */
+  .why-matters {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.6rem;
+    line-height: 1.35;
+    color: var(--teal-dark);
+    margin: 0 0 2rem;
+    padding-left: 1.25rem;
+    border-left: 4px solid var(--forest);
+  }
+  #s9 .why-matters { color: var(--yellow); border-left-color: var(--yellow); }
+  #s4 .why-matters { color: var(--forest); border-left-color: var(--forest); }
+
+  .eyebrow {
+    display: block;
+    font-family: 'Space Mono', monospace;
+    font-size: 1rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin: 2.5rem 0 1rem;
+  }
+  .eyebrow:first-of-type { margin-top: 0; }
+  #s9 .eyebrow { color: #cfe9e6; }
+  #s4 .eyebrow { color: var(--forest); opacity: 0.75; }
+
+  .story-article p { max-width: 38em; font-size: 1.25rem; }
+
+  /* ---------- 1. HERO ---------- */
+  #s1 { background: linear-gradient(180deg, var(--sky-bright) 0%, var(--sky) 100%); padding-top: 6rem; padding-bottom: 6rem; }
+  #s1 .num-bg {
+    position: absolute; top: -3rem; right: -1rem;
+    font-size: 22rem; font-weight: 900; color: rgba(23,50,79,0.09);
+    line-height: 1; z-index: 1; user-select: none;
+  }
+  #s1 h2 {
+    font-family: 'Fraunces', serif; font-weight: 900;
+    font-size: clamp(3rem, 8vw, 6rem); color: var(--navy);
+    line-height: 1.02; margin: 0 0 1.5rem;
+  }
+
+  /* ---------- 2. COASTAL ---------- */
+  #s2 { background: var(--sky-pale); border-top: 10px solid var(--forest); }
+  #s2 .story-inner { max-width: 68rem; }
+  #s2 h2 {
+    font-family: 'Fraunces', serif; font-weight: 700;
+    font-size: clamp(2.3rem, 5vw, 3.6rem); color: var(--navy); margin: 0 0 0.5rem;
+  }
+  #s2 .num { color: var(--forest); font-size: 2rem; margin-bottom: 1rem; display:block; }
+
+  /* ---------- 3. SUNBEAM ALERT ---------- */
+  #s3 { background: var(--yellow); }
+  #s3 .stamp {
+    display: inline-block; border: 4px solid var(--navy); color: var(--navy);
+    font-family: 'Space Mono', monospace; font-weight: 700; font-size: 1.6rem;
+    padding: 0.5rem 1rem; transform: rotate(-4deg); margin-bottom: 1.5rem;
+  }
+  #s3 h2 {
+    font-family: 'Fraunces', serif; font-weight: 700; font-style: italic;
+    font-size: clamp(2.6rem, 6vw, 4.2rem); color: var(--navy);
+    margin: 0 0 1.5rem; line-height: 1.05;
+  }
+  #s3 .why-matters { background: rgba(23,50,79,0.08); padding: 1rem 1.25rem; border-radius: 4px; }
+
+  /* ---------- 4. TERMINAL ---------- */
+  #s4 { background: var(--mint-pale); border: 10px solid var(--mint); border-left: none; border-right: none; }
+  #s4 .story-inner { background: var(--mint); border-radius: 10px; padding: 2.5rem; border: 2px solid var(--forest); }
+  #s4 .termbar { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; }
+  #s4 .dot { width: 0.8rem; height: 0.8rem; border-radius: 50%; background: var(--forest); opacity: 0.5;}
+  #s4 * { font-family: 'Space Mono', monospace; color: var(--forest); }
+  #s4 h2 { font-size: clamp(1.6rem, 3.6vw, 2.4rem); margin: 0 0 1.5rem; font-weight: 700; }
+  #s4 .prompt::before { content: "$ "; color: var(--teal-dark); }
+  #s4 p { font-size: 1.15rem; }
+  #s4 .why-matters { border-left-color: var(--forest); }
+
+  /* ---------- 5. ACADEMIC DROP CAP ---------- */
+  #s5 { background: var(--off-white); }
+  #s5 h2 {
+    font-family: 'Fraunces', serif; font-weight: 600;
+    font-size: clamp(2.2rem, 5vw, 3.4rem); color: var(--navy); margin: 0 0 1.25rem;
+  }
+  #s5 .dropcap {
+    font-family: 'Fraunces', serif; font-weight: 900; font-size: 6.5rem;
+    line-height: 0.8; float: left; margin: 0.1rem 0.6rem 0 0; color: var(--navy);
+  }
+  #s5 .footnote {
+    margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--slate);
+    font-size: 1.05rem; color: var(--slate); font-family: 'Space Mono', monospace;
+  }
+
+  /* ---------- 6. BIG STAT ---------- */
+  #s6 { background: var(--sky-pale); }
+  #s6 .stat-block { text-align: center; }
+  #s6 .bigstat {
+    font-family: 'Fraunces', serif; font-weight: 900;
+    font-size: clamp(5rem, 15vw, 10rem); color: var(--teal-dark);
+    line-height: 0.85; margin: 1rem 0;
+  }
+  #s6 .stat-label {
+    font-family: 'Space Mono', monospace; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--navy); font-size: 1.1rem;
+  }
+  #s6 h2 {
+    font-family: 'Fraunces', serif; font-size: clamp(2rem, 4.5vw, 2.8rem);
+    color: var(--navy); margin: 1.5rem 0;
+  }
+
+  /* ---------- 7. PULL QUOTE ---------- */
+  #s7 { background: var(--mint); }
+  #s7 h2 { font-size: 1.4rem; font-family:'Space Mono', monospace; color: var(--forest); margin-bottom: 2rem; }
+  #s7 .quote {
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 600;
+    font-size: clamp(2.2rem, 5.5vw, 3.6rem); color: var(--navy); line-height: 1.2;
+    border-left: 6px solid var(--forest); padding-left: 2rem; margin: 0 0 2.5rem;
+  }
+  #s7 .attribution {
+    font-family: 'Space Mono', monospace; font-size: 1rem; color: var(--slate);
+    padding-left: 2.1rem; margin: -2rem 0 2.5rem; text-transform: uppercase; letter-spacing: 0.1em;
+  }
+
+  /* ---------- 8. BROADSHEET ---------- */
+  #s8 { background: var(--cream); }
+  #s8 .story-inner { max-width: 72rem; }
+  #s8 h2 {
+    font-family: 'Fraunces', serif; font-weight: 700;
+    font-size: clamp(2.4rem, 5.5vw, 3.8rem); color: var(--navy);
+    border-bottom: 3px solid var(--teal); padding-bottom: 1rem; margin: 0 0 0.5rem;
+  }
+  #s8 .rule { height: 2px; background: var(--teal); width: 6rem; margin: 1.5rem 0 2rem; }
+  #s8 .cols3 { columns: 2; column-gap: 3rem; }
+  #s8 .cols3 p { break-inside: avoid; }
+  #s8 .story-article { columns: 1; }
+  @media (max-width: 780px) { #s8 .cols3 { columns: 1; } }
+
+  /* ---------- 9. COLOUR FIELD ---------- */
+  #s9 { background: var(--teal-dark); }
+  #s9 * { color: #ffffff; }
+  #s9 h2 {
+    font-family: 'Inter', sans-serif; font-weight: 800;
+    font-size: clamp(2.6rem, 6vw, 4.4rem); margin: 0 0 1.75rem; line-height: 1.05;
+  }
+  #s9 .num { color: var(--yellow); }
+  #s9 a { color: var(--yellow); }
+
+  /* ---------- 10. LETTERPRESS ---------- */
+  #s10 {
+    background: var(--cream);
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(23,50,79,0.035) 0, transparent 45%),
+      radial-gradient(circle at 80% 70%, rgba(31,92,63,0.035) 0, transparent 45%);
+    border-top: 1px solid var(--slate); border-bottom: 1px solid var(--slate);
+  }
+  #s10 h2 {
+    font-family: 'Fraunces', serif; font-weight: 600;
+    font-size: clamp(2.3rem, 5.5vw, 3.6rem); color: var(--navy);
+    margin: 0 0 1.5rem; text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+  }
+  #s10 p, #s10 .story-article p { font-family: 'Fraunces', serif; font-size: 1.4rem; }
+  #s10 .story-article p { font-size: 1.25rem; }
+
+  /* numeral treatments */
+  .n-circle {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 3.2rem; height: 3.2rem; border-radius: 50%;
+    border: 3px solid var(--navy); color: var(--navy); font-size: 1.3rem; margin-bottom: 1.5rem;
+  }
+  .n-box {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 0.4rem 0.9rem; background: var(--navy); color: var(--yellow);
+    font-size: 1.2rem; margin-bottom: 1.5rem;
+  }
+  .n-hair {
+    display: block; font-size: 1.3rem; color: var(--slate);
+    letter-spacing: 0.3em; margin-bottom: 1.25rem;
+  }
+  .n-hair::after { content: ""; display: block; width: 3rem; height: 2px; background: var(--slate); margin-top: 0.5rem; }
+
+  .colophon {
+    background: var(--navy); color: #dbe9f2; text-align: center;
+    padding: 3.5rem 2rem; font-family: 'Space Mono', monospace;
+    font-size: 1rem; letter-spacing: 0.05em;
+  }
+  .colophon .yellow { color: var(--yellow); }
+
+  @media (max-width: 600px) {
+    body { font-size: 1.7rem; }
+    .story { padding: 3.5rem 1.25rem; }
+    .story p { font-size: 1.15rem; }
+    .story-article p { font-size: 1.1rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">SHORE Institute · Field Edition</div>
+    <h1>Morning Edition</h1>
+    <div class="date">Tuesday, 4 August 2026</div>
+    <p class="standfirst">Ten stories on ocean governance, hydrospatial science, and SIDS equity, written straight to you as Founder of SHORE Institute and Shorelines.</p>
+  </header>
+
+  <nav class="jump-nav" aria-label="Jump to story">
+    <span class="label">Jump to</span>
+    <a href="#s1"><span class="n">01</span>West Africa stakes the first BBNJ claim</a>
+    <a href="#s2"><span class="n">02</span>€23M and 55,000 tonnes: Seychelles's new terms</a>
+    <a href="#s3"><span class="n">03</span>Kuala Lumpur mapping sprint opens ⚡</a>
+    <a href="#s4"><span class="n">04</span>A fusion model closes the reef gap</a>
+    <a href="#s5"><span class="n">05</span>A tribunal rules against your old regulator</a>
+    <a href="#s6"><span class="n">06</span>104 million km², and a home in Monaco</a>
+    <a href="#s7"><span class="n">07</span>Half a million square miles, reopened</a>
+    <a href="#s8"><span class="n">08</span>Antigua's marker before CHOGM</a>
+    <a href="#s9"><span class="n">09</span>A first national forum on the ocean</a>
+    <a href="#s10"><span class="n">10</span>Vanuatu's fifty-year-old convention</a>
+  </nav>
+
+  <!-- STORY 1: HERO -->
+  <section class="story" id="s1">
+    <div class="num-bg">01</div>
+    <div class="story-inner">
+      <h2>West Africa stakes the first claim on a BBNJ sanctuary</h2>
+      <p class="why-matters">Six months after BBNJ entered into force, a West African bloc just showed you what a first-wave high seas sanctuary proposal actually looks like on paper, and no Western Indian Ocean state, Seychelles included, has drafted one yet.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>At the 11th Our Ocean Conference in Mombasa this week, West African nations called for the Eastern Atlantic's Convergence Zone of the Canary and Guinea Currents, the migration corridor and nursery habitat stretching from Cape Verde and Senegal in the north to Nigeria and São Tomé and Príncipe in the south, to be included in the first wave of high seas marine protected areas designated under BBNJ.</p>
+      <p>Senegal's Minister of Environment and Ecological Transition, Aliou Gori Diouf, tied the proposal directly to the global 30x30 target. Chile and Costa Rica separately announced they will bring their own high seas MPA proposals forward ahead of the treaty's first Conference of the Parties.</p>
+      <p>No high seas MPA has actually been designated under BBNJ yet. These are proposals staking out the queue before COP1 sets the agenda, and queue position matters more than usual for a mechanism this new.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>BBNJ entered into force in January with 83 parties already on board, and the six months since have been almost entirely procedural: preparatory commission sessions, secretariat arrangements, the scaffolding work nobody outside the process pays attention to. This week in Mombasa, that changed. West African states used the 11th Our Ocean Conference to name an actual geography, the Convergence Zone of the Canary and Guinea Currents, and ask for it to be treated as a first-wave candidate for high seas protection under the new agreement.</p>
+        <p>The choice of geography is not arbitrary. The Convergence Zone is where the Canary Current moving south and the Guinea Current moving north meet, creating one of the Atlantic's more productive upwelling systems and a migration corridor for species that move between West African national waters and the high seas beyond them. Framing it as a BBNJ candidate area is also a statement about scale: it runs the length of the West African coast, from Cape Verde and Senegal down to Nigeria and São Tomé and Príncipe, treating a shared regional ecosystem as a single conservation unit rather than a patchwork of adjacent national proposals.</p>
+        <p>What makes this the story worth reading closely, rather than filing as one more MPA announcement, is timing against an empty precedent. BBNJ does not yet have a single designated high seas MPA. The mechanism for actually creating one, a proposal submitted for COP consideration, assessed against the agreement's criteria, and adopted, has never been run end to end. West Africa is not applying to an established process. It is trying to define what a strong first application looks like, in public, before COP1 exists to receive it. Chile and Costa Rica moving on the same timeline, from a completely different ocean basin, confirms this is a deliberate first-mover strategy playing out across multiple regions at once, not a coincidence of conference timing.</p>
+        <p>Set that against the Western Indian Ocean, and the absence is conspicuous. Seychelles has, by most measures, the strongest marine spatial planning credentials of any state in the region: the 2018 sovereign blue bond, a marine spatial plan covering the full EEZ, and years of your own work as the country's national focal point for exactly this kind of ocean governance process. None of that has yet produced a Western Indian Ocean candidate area for the BBNJ queue. The Nazareth Bank, the Saya de Malha, and other high seas features within reach of the Seychelles plateau are precisely the kind of shared regional ecosystem the West African proposal treats as a single conservation unit, and none of them currently has a comparable regional coalition behind them.</p>
+        <p>The honest objection is capacity, not will. Building a credible BBNJ candidate proposal requires exactly the spatial baseline data, bathymetry, species distribution, connectivity mapping, that a hydrospatial mapping hub is built to produce, and producing it for a high seas area beyond any single state's EEZ requires the kind of regional coordination the West African bloc appears to have assembled ahead of Mombasa. That is not a criticism you can level from outside; it is the specific gap SHORE's own mapping and governance work sits closest to closing.</p>
+        <p>What is worth tracking from here is whether COP1, whenever the preparatory process lands a date for it, receives a genuinely competitive field of first-wave proposals or a thin one dominated by whichever regions moved earliest. Precedent set in a mechanism's first cases tends to shape every case that follows. A Western Indian Ocean proposal arriving in year three of BBNJ implementation, after the assessment criteria have already hardened around cases from the Atlantic and the Pacific, faces a different and harder bar than one arriving in the first wave.</p>
+      </div>
+      <a class="cta" href="https://news.mongabay.com/2026/03/with-high-seas-treaty-in-place-west-african-countries-plan-for-protected-area/" target="_blank" rel="noopener">news.mongabay.com — West African Countries Plan for High Seas Protected Area</a>
+    </div>
+  </section>
+
+  <!-- STORY 2: COASTAL -->
+  <section class="story" id="s2">
+    <div class="story-inner">
+      <span class="num">02</span>
+      <h2>€23 million and 55,000 tonnes: the new terms of your fisheries deal</h2>
+      <p class="why-matters">This is the fisheries agreement money you have to read against your own credentials, because three million euros of it is earmarked for exactly the sustainable fisheries data and monitoring capacity SHORE already knows how to build.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>On 27 July, the EU and Seychelles signed a new protocol to their Sustainable Fisheries Partnership Agreement. EU vessels get four years of access to Seychelles waters to fish up to 55,000 tonnes of tuna and other migratory species annually. The EU's total contribution over that period is €23 million, of which €3 million is earmarked specifically for support to Seychelles's sustainable fisheries sector.</p>
+      <p>This is not a new relationship. Seychelles has run a Sustainable Fisheries Partnership Agreement with the EU for decades, and this protocol renews and resets the terms rather than establishing something new. What is worth your attention is the €3 million sectoral support line, which typically funds exactly the kind of monitoring, surveillance, and scientific capacity that spatial data infrastructure sits underneath.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>Fisheries access agreements rarely make it into a governance briefing on their own merits, they are commercial arrangements dressed in sustainability language more often than not, but the numbers in this one are specific enough to be worth reading properly. On 27 July, the European Commission and Seychelles's government signed a new four-year protocol to their long-running Sustainable Fisheries Partnership Agreement. EU-flagged vessels get access to fish up to 55,000 tonnes of tuna and other migratory species in Seychelles waters annually, in exchange for a total EU financial contribution of €23 million across the protocol's four years.</p>
+        <p>The detail that separates this from a straightforward access-for-cash transaction is the €3 million carved out specifically for support to Seychelles's sustainable fisheries sector, distinct from the market access payment itself. Sectoral support tranches in EU fisheries partnership agreements are typically channelled through the national fisheries authority and directed at monitoring, control and surveillance systems, scientific data collection, and management capacity, rather than general budget support. That is a real, if modest, line of funding aimed directly at the kind of infrastructure question SHORE's own work already sits inside.</p>
+        <p>The tension worth naming, because a blue economy framing tends to smooth over it, is between the quota economics and domestic equity. Fifty-five thousand tonnes of tuna a year is a large industrial harvest against Seychelles's own artisanal and semi-industrial fishing sector, and the €23 million headline figure needs to be weighed against the market value of that catch, not treated as a straightforward net gain. Blue economy transitions that lean on foreign fleet access payments to fund domestic sustainability work carry an inherent asymmetry: the sector generating the environmental pressure and the sector receiving the mitigation funding are not quite the same one.</p>
+        <p>What makes the sectoral support line concretely relevant rather than background context is where that kind of funding usually goes once it clears the national fisheries authority. Monitoring, control and surveillance work depends on exactly the spatial data infrastructure, vessel tracking overlaid against protected area boundaries, catch reporting tied to actual fishing grounds, that a hydrospatial mapping capability produces as its core output. A €3 million allocation spread across four years of implementation is a modest sum at the scale of a national fisheries authority's needs, which typically means the technical components get contracted out rather than built entirely in-house.</p>
+        <p>The practical question is whether that contracting conversation is happening yet, and with whom. Protocol signings of this kind move into implementation within months, not years, since the fishing access itself starts immediately. That makes the window for a conversation with Seychelles's fisheries authority about where the monitoring and data components of the sectoral support tranche will be resourced a near-term one, not a someday one, and it is a considerably narrower, more concrete ask than a general blue economy partnership pitch.</p>
+      </div>
+      <a class="cta" href="https://oceans-and-fisheries.ec.europa.eu/news/european-union-and-seychelles-renew-agreement-granting-eu-fishing-vessels-access-seychelles-waters-2026-07-27_en" target="_blank" rel="noopener">oceans-and-fisheries.ec.europa.eu — EU-Seychelles Fisheries Protocol</a>
+    </div>
+  </section>
+
+  <!-- STORY 3: SUNBEAM ALERT -->
+  <section class="story" id="s3">
+    <div class="story-inner">
+      <div class="flag" style="background:var(--navy); color:var(--yellow);"><span class="bolt">⚡</span> Registration now open — Kuala Lumpur, 20–22 October</div>
+      <div class="stamp">No. 03</div>
+      <h2>Registration opens for the Indo-Pacific's mapping sprint</h2>
+      <p class="why-matters">This is a hands-on regional bathymetry data sprint, and the room it puts you in, mapping practitioners working the same problem across an ocean basin, is worth more to Ocean Mapping Hub than another conference panel.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>Registration is now live for the Seabed 2030 Indo-Pacific Ocean Mapping Meeting and Data Sprint, running 20 to 22 October in Kuala Lumpur. It is a Nippon Foundation-GEBCO Seabed 2030 regional convening, arriving on the heels of April's GEBCO_2026 Grid release and the 28.7% global seafloor coverage milestone announced at April's IHO Assembly in Monaco.</p>
+      <p>A data sprint is a working format, not a lecture circuit: practitioners bring bathymetric data, gaps, and processing problems into the room and work them collaboratively over the three days, rather than presenting finished results to an audience.</p>
+      <p>The honest caveat: this is labelled an Indo-Pacific convening, and Seychelles sits in the Western Indian Ocean, one of Seabed 2030's four regional centres but not the one this meeting is organised under. Worth confirming directly with the Seabed 2030 secretariat whether Indian Ocean practitioners are within scope before assuming it.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>Most of the seabed mapping news that reaches you arrives as a milestone announcement, a percentage of the ocean floor now covered, a new grid released, numbers meant to communicate progress to a general audience. This is a different kind of item: an operational, working convening where the people actually producing and cleaning bathymetric data spend three days in a room together. Registration opened this week for the Seabed 2030 Indo-Pacific Ocean Mapping Meeting and Data Sprint, set for 20 to 22 October in Kuala Lumpur.</p>
+        <p>The distinction between a data sprint and a conference matters more than it sounds. A conference format has practitioners present finished work to an audience that mostly listens. A data sprint has practitioners bring unfinished problems, a data gap in a specific stretch of seafloor, a processing pipeline that doesn't handle a particular sensor type well, a crowdsourced bathymetry dataset that needs quality control, and work them collaboratively with people who have solved adjacent versions of the same problem. That format produces working relationships and shared technical fixes in a way a panel discussion does not.</p>
+        <p>Context makes the timing sharper. The GEBCO_2026 Grid, the eighth iteration of the global bathymetric compilation Seabed 2030 produces, was published in April, incorporating regional datasets from all four of Seabed 2030's regional centres. That same month, at the IHO's 4th Assembly in Monaco, the project reported 28.7% global seafloor coverage, with nearly five million square kilometres of new data added over the preceding year. An October data sprint sits squarely inside the working period where that next year's worth of coverage actually gets produced, not announced.</p>
+        <p>The caveat worth being precise about, because SHORE's own credibility with this community depends on not overstating fit, is geography. This meeting is explicitly framed as an Indo-Pacific regional convening. Seabed 2030 organises its work through four regional centres, and the Western Indian Ocean, where Seychelles and the Ocean Mapping Hub's own waters sit, is not the same regional grouping as the Indo-Pacific centre this meeting appears to be convened under. That does not necessarily rule out participation, regional convenings sometimes welcome adjacent-region observers specifically to build cross-regional links, but it means the right first step is a direct question to the Seabed 2030 secretariat about scope, not an assumption of eligibility based on the meeting's general relevance to your work.</p>
+        <p>If the answer is that Indian Ocean practitioners are welcome, even as observers, this is a genuinely high-value room: a working, technical convening of the exact global community Seabed 2030 and the Ocean Mapping Hub both draw legitimacy from being part of. If the answer is that it is closed to the Indo-Pacific centre specifically, the more useful next question becomes whether Seabed 2030's Western Indian Ocean regional centre has, or is planning, a comparable convening of its own, and if not, what it would take to propose one.</p>
+      </div>
+      <a class="cta" href="https://seabed2030.org/" target="_blank" rel="noopener">seabed2030.org — Seabed 2030 Project</a>
+    </div>
+  </section>
+
+  <!-- STORY 4: TERMINAL -->
+  <section class="story" id="s4">
+    <div class="story-inner">
+      <div class="termbar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+      <h2><span class="prompt">story04 --topic reef_bathymetry --model mamba_fusion</span></h2>
+      <p class="why-matters">This is a direct technical answer to the accuracy ceiling that has kept satellite-derived bathymetry too unreliable to build a granite-and-coral Seychelles baseline on with confidence.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>A new peer-reviewed method published in Remote Sensing fuses multiple satellite-derived bathymetry models using a Mamba architecture, informed by automated classification of coral reef geomorphology and seafloor sediment type, rather than running one regression model uniformly across an entire reef system.</p>
+      <p>Conventional single-model SDB regression in optically complex, heterogeneous reef water typically runs 0.8 to 0.9 metres RMSE. Classification-informed fusion is built specifically to reduce that error in exactly the mixed substrate, mixed depth conditions that make Seychelles's inner reef and granitic island waters hard to map from satellite alone.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>Satellite-derived bathymetry works by inferring depth from how light of different wavelengths attenuates through water, and it works best where the seafloor is uniform, sandy, and the water column is optically simple. It works worst in exactly the conditions that define a lot of Seychelles's inner reef and granitic island waters: mixed substrate, coral interspersed with sand and rock, variable turbidity, depths shifting quickly over short distances. That gap between where SDB performs well and where SHORE actually needs it to perform well is the specific technical problem this new method is aimed at.</p>
+        <p>The approach, published in Remote Sensing, uses a Mamba architecture, a newer class of state-space model built for efficiently processing long, structured sequences, to fuse the outputs of multiple SDB models rather than relying on a single regression approach applied uniformly. Critically, the fusion is informed by an automated classification of the reef's geomorphology and sediment type first, so the model can weight different bathymetric estimation approaches differently depending on whether it is looking at sand, coral rubble, or reef structure, instead of applying one method everywhere and averaging out the errors.</p>
+        <p>That distinction, classification-informed fusion versus uniform single-model regression, is where the accuracy gain is supposed to come from. Published benchmarks for conventional SDB regression in optically complex, heterogeneous reef water run in the range of 0.8 to 0.9 metres root mean square error, using approaches like random forest regression. That is a workable margin for broad habitat mapping but a rough one for anything requiring precise navigational or engineering-grade bathymetry. A method that adapts its estimation strategy to the actual seafloor type underneath each pixel is targeting exactly that precision gap.</p>
+        <p>The objection worth naming before treating this as immediately applicable: the validation for this specific method comes from reef systems studied in existing published literature, not from Western Indian Ocean granitic island waters. Reef geomorphology, water optical properties, and sediment composition vary meaningfully between ocean basins, and a fusion model tuned and validated on Pacific or Red Sea reef data does not automatically transfer its accuracy claims to Seychelles's mix of granite, coral, and carbonate sand without local testing.</p>
+        <p>That is precisely the kind of testing SHORE is positioned to run. If the method, or a comparable classification-informed SDB fusion approach, could be applied to existing satellite imagery over a Seychelles reef system where ground-truth bathymetric survey data already exists from prior SHORE fieldwork, a direct accuracy comparison against the conventional single-model baseline becomes a concrete, publishable validation exercise, not just a literature citation. That is a specific, near-term technical project, not an abstract research direction to keep an eye on.</p>
+      </div>
+      <a class="cta" href="https://doi.org/10.3390/rs17132134" target="_blank" rel="noopener">doi.org — Multi-Model Synergistic SDB Fusion for Coral Reef Habitat Classification</a>
+    </div>
+  </section>
+
+  <!-- STORY 5: ACADEMIC DROP CAP -->
+  <section class="story" id="s5">
+    <div class="story-inner">
+      <span class="n-circle">05</span>
+      <h2>A tribunal rules against the regulator you used to answer to</h2>
+      <p class="why-matters">This is the first contentious ruling the Seabed Disputes Chamber has ever issued under Part XI, and it went against the multilateral seabed regulator, not the mining contractor, in the very forum you spent years working inside.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p><span class="dropcap">O</span>n 18 July, the Seabed Disputes Chamber of the International Tribunal for the Law of the Sea unanimously ordered the International Seabed Authority to observe due process in its inquiry into whether The Metals Company's subsidiaries, NORI and TOML, remain compliant with their exploration contracts. The Chamber found a real and imminent risk of irreparable harm to the companies' rights if the ISA's inquiry continued without procedural safeguards.</p>
+      <p>Both NORI and the ISA must submit their first compliance reports to the Chamber by 31 August. This is the first contentious decision the Seabed Disputes Chamber has issued under Part XI of UNCLOS since its creation, a genuine legal first, not an incremental procedural ruling.</p>
+      <div class="footnote">Source: ITLOS Press Release 391, 18 July 2026, Seabed Disputes Chamber, Nauru Ocean Resources Inc. v. International Seabed Authority</div>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>You spent years inside the ISA as Seychelles's national focal point, watching an institution that moves by consensus among 36 Council members try to regulate an industry that moves at commercial speed. What happened on 18 July is the kind of development that institution has never faced before: its own judicial arm, the Seabed Disputes Chamber, ruled against it in a contentious case, the first the Chamber has ever decided under Part XI of UNCLOS since the provision was written.</p>
+        <p>The case, Nauru Ocean Resources Inc. v. International Seabed Authority, centres on an inquiry the ISA opened into whether NORI, and its sister company TOML, remain in compliance with their exploration contract obligations. NORI and TOML, both subsidiaries of The Metals Company, argued the ISA's inquiry process denied them due process and fair treatment, and asked the Chamber for provisional measures while the underlying dispute is resolved. The Chamber agreed. It found it had prima facie jurisdiction, that the companies' due process claim was plausible, and that there was a real and imminent risk of irreparable harm to their rights if the inquiry proceeded without correction.</p>
+        <p>The order itself is procedural rather than a ruling on the substance of whether NORI and TOML actually violated their contracts. The Chamber ordered the ISA to observe due process, explain its inquiry process clearly, and give the companies the information they need to respond to the questions raised, within a reasonable time. It stopped short of resolving whether the underlying non-compliance concerns are valid. But procedural rulings carry their own weight in an institution whose legitimacy rests on being seen to apply its own rules consistently, and this is a tribunal telling the seabed's principal regulator, in public, that its own process did not meet that bar.</p>
+        <p>The compliance deadline is the detail worth marking on a calendar rather than filing away. Both NORI and the ISA must submit reports to the Chamber on their compliance with the order by 31 August, the same week as the Ocean Decade's own Call for Decade Actions deadline. That report will be the first concrete signal of whether the ISA treats this ruling as a genuine course correction in how it runs contractor inquiries, or as a procedural inconvenience to be managed while the underlying Mining Code negotiations continue to stall.</p>
+        <p>For anyone who has worked seabed governance from the multilateral side, the uncomfortable reading of this ruling is not that a tribunal upheld due process, that is what tribunals are for, but that it took a Part XI first, an entire generation into the ISA's existence, to establish that a state party's own judicial mechanism would actually check the Authority's conduct toward a contractor. Whichever side of the deep-sea mining moratorium debate carries more weight in the coming Council sessions, this ruling is now a fixed data point in how contractor-regulator disputes at the ISA get litigated from here, and it sets a precedent the next contested inquiry, against any contractor, will be measured against.</p>
+      </div>
+      <a class="cta" href="https://www.itlos.org/fileadmin/itlos/documents/press_releases_english/PR_391_EN.pdf" target="_blank" rel="noopener">itlos.org — Press Release 391, Seabed Disputes Chamber Order</a>
+    </div>
+  </section>
+
+  <!-- STORY 6: BIG STAT -->
+  <section class="story" id="s6">
+    <div class="story-inner stat-block">
+      <span class="n-box">06</span>
+      <div class="stat-label">Cumulative seafloor mapped, GEBCO_2026 Grid, IHO 4th Assembly, April</div>
+      <div class="bigstat">104M km²</div>
+      <h2>GEBCO just got a permanent home, in Monaco</h2>
+    </div>
+    <div class="story-inner">
+      <p class="why-matters">This is the moment the world's bathymetric data compilation stopped being a distributed project run out of goodwill and became an institution with a building, a budget line, and a leadership succession, and that changes what it means to partner with it.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>The IHO's 4th General Assembly met in Monaco from 20 to 23 April, with more than 500 participants from 104 member states, and elected a new Secretary-General and Directors to lead the organisation. The Assembly approved plans for a permanent, Monaco-based secretariat for GEBCO, housed at the IHO's existing offices on Quai Antoine Ier.</p>
+      <p>Panama joined as a new IHO member state at the same Assembly. Cumulative seafloor mapping coverage under the GEBCO_2026 Grid now stands at roughly 104 million square kilometres, with over five million square kilometres added in the past year alone.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>Institutions that run on distributed goodwill and institutions with a permanent address behave differently, and GEBCO just moved from the first category toward the second. At the IHO's 4th General Assembly in Monaco this April, more than 500 participants from 104 member states approved plans for a permanent, Monaco-based secretariat for GEBCO, the General Bathymetric Chart of the Oceans, to be housed at the IHO's own offices on Quai Antoine Ier.</p>
+        <p>That is a smaller-sounding decision than it is. GEBCO has functioned for decades as a joint programme between the IHO and the Intergovernmental Oceanographic Commission, coordinating bathymetric data compilation through a network of regional centres, the four Seabed 2030 hubs among them, rather than a single standing institutional home. A permanent secretariat changes the coordination model from project-based, dependent on whichever partner institutions and funding cycles happen to be active at a given time, to institution-based, with continuity that survives any single funder's changing priorities or any single regional centre's capacity fluctuations.</p>
+        <p>The Assembly paired that institutional consolidation with a leadership transition, electing a new Secretary-General and Directors for the years ahead, and with Panama's accession as a new member state. Panama's addition matters for reasons beyond headcount: as a major flag-of-convenience registry and Canal operator, its participation strengthens the IHO's connection to global shipping and maritime safety data at a scale few other single accessions would.</p>
+        <p>Set against the institutional news, the number itself is worth sitting with. The GEBCO_2026 Grid, released in April and built on the SRTM15+ base grid augmented by data from all four Seabed 2030 regional centres, now covers approximately 104 million square kilometres of the seafloor, with more than five million square kilometres added in the twelve months before the Assembly. That is real, compounding progress toward the 2030 target of a complete map, and it is progress that a newly permanent secretariat is now institutionally positioned to sustain past any single funding cycle's expiry.</p>
+        <p>The open question, for anyone building a hydrospatial mapping partnership from a small state, is what institutional consolidation at this scale means for access. A distributed, project-based GEBCO was, in practice, reachable through whichever regional centre a given state's waters fell under. A GEBCO with a fixed Monaco address and a formal leadership structure may become easier to engage with predictably, a known office, a known point of contact, or it may become a more formal, harder-to-reach institution than the looser network it is replacing. Which of those two outcomes actually materialises is worth watching over the Secretariat's first year of operation, not assumed either way from the Assembly announcement alone.</p>
+      </div>
+      <a class="cta" href="https://iho.int/en/global-hydrographic-community-to-gather-in-monaco-for-pivotal-international-hydrographic-organization-assembly" target="_blank" rel="noopener">iho.int — 4th Session of the IHO Assembly</a>
+    </div>
+  </section>
+
+  <!-- STORY 7: PULL QUOTE -->
+  <section class="story" id="s7">
+    <div class="story-inner">
+      <h2>07 / PULL QUOTE</h2>
+      <p class="quote">"You weren't allowed to fish. Canada was, Japan was. They all came in to fish, but our people weren't allowed to fish there."</p>
+      <p class="attribution">President Trump, on signing the proclamation, 11 June 2026</p>
+      <p class="why-matters">This is half a million square miles of some of the most intact ocean protection anywhere reopened to industrial fishing, on a fairness argument that never mentions what those protections were actually for.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>On 11 June, President Trump signed a proclamation restoring commercial fishing access to the Mau and Ho'omalu Zones of the Papahānaumokuākea Marine National Monument, the Islands Unit of the Mariana Trench Marine National Monument, and the Rose Atoll Marine National Monument, reopening close to half a million square miles around the Northwestern Hawaiian Islands, the Northern Mariana Islands, and American Samoa.</p>
+      <p>The White House framed the move as correcting a fairness gap, American vessels excluded while foreign fleets fished nearby waters, and as support for coastal fishing communities and lower seafood prices. Earthjustice and other environmental groups have said they will challenge the proclamation in court.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>Some of the most intact, least industrially fished ocean ecosystems left anywhere are found inside the Pacific's marine national monuments, precisely because they have been closed to commercial extraction for years. On 11 June, that changed. President Trump signed a proclamation reopening commercial fishing across three of them: the Mau and Ho'omalu Zones of Papahānaumokuākea, the Islands Unit of the Mariana Trench Marine National Monument, and Rose Atoll, covering close to half a million square miles of water around the Northwestern Hawaiian Islands, the Northern Mariana Islands, and American Samoa.</p>
+        <p>The administration's stated rationale is a fairness argument, not an ecological one. In signing the proclamation, the President framed the existing closures as penalising American fishermen while foreign fleets fished nearby: "You weren't allowed to fish. Canada was, Japan was. They all came in to fish, but our people weren't allowed to fish there." The accompanying White House fact sheet frames the move around economic opportunity for domestic fishing communities, increased seafood production, and lower consumer prices.</p>
+        <p>What that framing does not engage with is why these specific areas were closed in the first place. Marine national monuments in the Pacific were established, across multiple administrations, specifically because they protect ecosystems, seamounts, deep coral, pelagic habitat for species like tuna and billfish that migrate through monument waters, that function differently, and often more productively for surrounding fisheries, when left undisturbed. A fairness argument about who gets to fish inside a protected area does not address whether protecting that area was the right call to begin with, and the proclamation's own text, at least as reported, does not appear to attempt that argument directly.</p>
+        <p>Earthjustice and other environmental organisations have said they intend to challenge the proclamation in court, following a pattern already visible elsewhere in Pacific monument litigation: in August 2025, a US District Court in Hawaii vacated a National Marine Fisheries Service determination permitting commercial fishing in the Pacific Islands Heritage Marine National Monument on similar legal grounds. Whether that precedent extends to this proclamation, issued through a different legal mechanism, is now the live question, and it will likely take months to resolve through the courts rather than through public comment.</p>
+        <p>For the wider BBNJ and 30x30 conversation this edition has been tracking all week, the contrast is stark and worth naming plainly. West African states used the Our Ocean Conference this same week to propose new high seas protections under a brand-new international agreement. The United States, simultaneously, rolled back protections that predate BBNJ entirely, inside its own jurisdiction. Global ocean governance is not moving in one direction at once, and any argument for expanding protection elsewhere now has to be made against a live, high-profile counterexample of a major power doing the opposite.</p>
+      </div>
+      <a class="cta" href="https://earthjustice.org/press/2026/trump-administration-continues-attacks-on-pristine-pacific-marine-monuments" target="_blank" rel="noopener">earthjustice.org — Trump Administration Continues Attacks on Pacific Marine Monuments</a>
+    </div>
+  </section>
+
+  <!-- STORY 8: BROADSHEET -->
+  <section class="story" id="s8">
+    <div class="story-inner">
+      <span class="n-hair">STORY 08</span>
+      <h2>Antigua's blue finance centre marks the runway to CHOGM</h2>
+      <div class="rule"></div>
+      <p class="why-matters">This is the Commonwealth's own blue finance network setting its agenda ahead of CHOGM, and it runs through exactly the ocean governance relationship you already have with the Commonwealth Secretariat.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <div class="cols3">
+        <p>The Centre of Excellence for Oceanography and the Blue Economy, launched at SIDS4 in Antigua in 2024 by the Commonwealth Secretariat, the University of the West Indies, and the Association of Commonwealth Universities, is running a Blue Finance and Ocean Innovation event ahead of November's Commonwealth Heads of Government Meeting.</p>
+        <p>CHOGM sets the Commonwealth's political agenda for the following cycle. An event explicitly positioned ahead of it is agenda-shaping, not incidental programming.</p>
+        <p>The Commonwealth Secretariat has already delivered a draft Blue Economy Roadmap for Seychelles through its ocean governance advisory work, the same institutional relationship this event sits inside.</p>
+        <p>Specific participation and agenda details for the event were not available at the time of writing and are worth following as CHOGM approaches.</p>
+      </div>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>Institutions built at global summits often fade once the summit's press cycle ends. The Centre of Excellence for Oceanography and the Blue Economy, COBE, launched at the UN's 4th Small Island Developing States conference in Antigua in May 2024, has not followed that pattern. It is now running a Blue Finance and Ocean Innovation event positioned deliberately ahead of the Commonwealth Heads of Government Meeting this November, which is a different kind of signal than a routine capacity-building workshop.</p>
+        <p>COBE's founding partnership, the Commonwealth Secretariat, the University of the West Indies, and the Association of Commonwealth Universities, was built to develop regional research and innovation expertise and strengthen institutional capacity in marine science and the blue economy across Commonwealth small states. That mandate covers exactly the ground SHORE occupies for Seychelles specifically: the gap between having ocean governance ambition and having the technical, spatial, and financing infrastructure to act on it.</p>
+        <p>The CHOGM timing is the detail that turns this from background context into something worth tracking actively. CHOGM meets roughly every two years and functions as the Commonwealth's highest political forum, where heads of government set shared priorities for the cycle ahead. A blue finance and ocean innovation event explicitly staged ahead of it is not simply programming, it is positioning: an attempt to get blue economy financing onto the political agenda CHOGM sets, before the summit itself locks in that agenda's shape.</p>
+        <p>Seychelles already has a working relationship with the Commonwealth Secretariat on exactly this terrain. The Secretariat has provided policy advice on ocean governance and the blue economy directly to Seychelles's government, including a draft Blue Economy Roadmap developed with Commonwealth ocean governance experts. That existing relationship is the entry point here, not a cold introduction. A conversation with the Secretariat's ocean governance team about COBE's CHOGM-adjacent event, and whether Seychelles, or SHORE specifically, has a role in shaping its blue finance agenda, is a considerably shorter path than approaching COBE as an unfamiliar institution.</p>
+        <p>What is not yet available, and worth tracking rather than guessing at, is the event's actual date, format, and who is being invited to shape its agenda versus simply attend it. Blue finance and ocean innovation programming ahead of a major political summit tends to firm up its details in the months immediately preceding, which puts the coming weeks as the practical window for finding out whether this is a room Seychelles's Commonwealth relationship already opens a door into, or one that requires a fresh approach.</p>
+      </div>
+      <a class="cta" href="https://www.acu.ac.uk/news/cobe-launch/" target="_blank" rel="noopener">acu.ac.uk — COBE Launch at SIDS4</a>
+    </div>
+  </section>
+
+  <!-- STORY 9: COLOUR FIELD -->
+  <section class="story" id="s9">
+    <div class="story-inner">
+      <span class="num">09</span>
+      <h2>A first national forum on the ocean</h2>
+      <p class="why-matters">This is a coastal state building its national ocean strategy from a standing start, and watching how it sequences that process is worth more to the High-Income SIDS Paradox argument than another comparison to a wealthier peer.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>On 3 August, the Dominican Republic's Ministry of Environment and Natural Resources, with UNDP and the Technological Institute of Santo Domingo, held the country's First National Oceans Forum under the theme "The Ocean as the Foundation of Sustainable Prosperity." The stated aim is to place ocean conservation at the centre of the national agenda and lay groundwork for a future National Ocean Strategy.</p>
+      <p>The Dominican Republic is not classified as a Small Island Developing State under the UN grouping Seychelles belongs to. It is a larger, continental-shelf Caribbean nation. The comparison worth drawing here is not identity but sequencing: what a national ocean governance process looks like when it is being built from close to zero, against Seychelles's already-established but resource-constrained machinery.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>The High-Income SIDS Paradox argument usually gets illustrated against wealthier peers: Seychelles has the institutional standing to sign sophisticated finance instruments but not always the underlying spatial data infrastructure to match. This week offers a different, and arguably more useful, comparison. On 3 August, the Dominican Republic's Ministry of Environment and Natural Resources, working with UNDP and the Technological Institute of Santo Domingo, convened the country's first-ever National Oceans Forum, an explicit first step toward a national ocean governance strategy that does not yet exist.</p>
+        <p>It is worth being precise about what the Dominican Republic is and is not, since the comparison only holds if the framing is accurate. It is not a Small Island Developing State under the UN classification Seychelles sits within; it is a larger, populous, continental-shelf Caribbean nation with a different economic base and geography entirely. The value of the comparison is not shared identity. It is shared subject matter: both states are, right now, doing the work of building national ocean governance architecture, from very different starting points.</p>
+        <p>Seychelles built its ocean governance machinery early and well by regional standards: a full-EEZ marine spatial plan, a sovereign blue bond that became the reference case other small states now measure their own blue finance experiments against, and a national government with genuine institutional memory in ocean diplomacy. What it has not always had, at pace with that early institutional strength, is the spatial data infrastructure to make each new governance instrument as precise as the instrument itself promised. The Dominican Republic is starting from the opposite position: a forum explicitly framed as the first step, with no existing National Ocean Strategy to build on yet, but also no earlier framework locking its approach into decisions made a decade ago under different assumptions.</p>
+        <p>That gives the Dominican Republic's process, worth watching over the coming months rather than judging from a single forum announcement, a genuine research value: it is a live case of a coastal state sequencing ocean governance from the ground up, in real time, with UNDP and an academic partner already embedded from the start rather than brought in after the strategy's shape has hardened. Whether data infrastructure and spatial planning capacity get built into that sequencing early, or bolted on later the way it often has been elsewhere, including in parts of Seychelles's own history, is exactly the kind of comparative evidence the High-Income SIDS Paradox argument benefits from having beyond a single case study.</p>
+        <p>The concrete value here, beyond a comparative citation, is watching for the process design itself: how the Dominican Republic's ministry structures its stakeholder input, whether spatial data needs get identified explicitly in the forum's outputs, and how quickly the "future National Ocean Strategy" the forum gestures toward actually gets drafted. A state building this architecture from scratch, documented publicly from its first forum onward, is a rare opportunity to observe sequencing decisions as they happen rather than reconstructing them retrospectively from a finished strategy document.</p>
+      </div>
+      <a class="cta" href="https://dominicantoday.com/dominican-republic-holds-first-national-oceans-forum-to-strengthen-marine-conservation/" target="_blank" rel="noopener">dominicantoday.com — Dominican Republic Holds First National Oceans Forum</a>
+    </div>
+  </section>
+
+  <!-- STORY 10: LETTERPRESS -->
+  <section class="story" id="s10">
+    <div class="story-inner">
+      <span class="n-hair">STORY 10</span>
+      <h2>Vanuatu's next step into a fifty-year-old convention</h2>
+      <p class="why-matters">This is a Pacific SIDS still working to accede to a regional seas convention forty years after it was written, and it is the closest published mirror to whatever implementation gap Seychelles still carries under its own Nairobi Convention obligations.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>Vanuatu held a national workshop in Port Vila from 22 to 24 June, facilitated by the Secretariat of the Pacific Regional Environment Programme, to prepare for accession to the Noumea Convention, the 1986 regional seas agreement covering the South Pacific, and for its actual implementation once accession happens.</p>
+      <p>That a Pacific state is still working toward accession to a convention this old is a useful, uncomfortable data point: regional seas conventions accumulate implementation gaps quietly, over decades, in ways that rarely make it into a governance briefing until a workshop like this one surfaces them.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>Regional seas conventions are the layer of ocean governance that sits below UNCLOS and, now, below BBNJ, but above any single state's national law: binding agreements among the states sharing an ocean basin to manage shared marine resources and environmental protection together. The Noumea Convention, formally the Convention for the Protection of Natural Resources and Environment of the South Pacific Region, has covered the South Pacific since 1986. That Vanuatu, a Pacific nation whose economy and food security depend directly on the marine resources the Convention exists to protect, is only now working toward accession, forty years after the Convention was adopted, is worth sitting with rather than passing over as a procedural footnote.</p>
+        <p>The mechanism matters here as much as the fact. From 22 to 24 June, Vanuatu held a national workshop in Port Vila, facilitated by the Secretariat of the Pacific Regional Environment Programme, aimed at preparing the country not just for the formal act of accession but for actually implementing the Convention's obligations once accession takes effect. That distinction, accession versus implementation readiness, is the more honest framing. A state can accede to a convention on paper in a single diplomatic act; building the domestic legal, institutional, and technical capacity to actually meet its obligations is the slower, less visible work a single accession announcement never captures.</p>
+        <p>This is where the comparison to Seychelles's own position under the Nairobi Convention, the Western Indian Ocean's equivalent regional seas agreement, becomes genuinely useful rather than a stretch. Seychelles has been a party to the Nairobi Convention for considerably longer than Vanuatu has been working toward Noumea Convention accession. But convention membership and full implementation capacity are not the same achievement, and it would be worth an honest internal audit, not assumed but actually checked, of where Seychelles's own Nairobi Convention obligations, data reporting, protected area coordination, pollution response commitments, currently stand against what full implementation would require.</p>
+        <p>Older regional seas conventions accumulate exactly this kind of quiet implementation gap. They were negotiated in a different technical era, often before the spatial data and monitoring infrastructure now available existed at all, and unlike a headline treaty like BBNJ, they rarely get revisited publicly unless a workshop like Vanuatu's forces the question into view. The SPREP-facilitated model itself, a dedicated national workshop combining accession preparation with implementation planning in the same sessions rather than treating them as sequential steps, is also a useful template worth examining directly: a comparable Indian Ocean Commission or Nairobi Convention secretariat-facilitated audit of Seychelles's own implementation status would surface exactly the kind of gaps this Vanuatu process is designed to catch before they compound further.</p>
+        <p>The edition closes here deliberately. A West African bloc proposing new high seas protections, a tribunal ruling against its own seabed regulator, an American administration reopening monuments to fishing, and a Pacific state still finishing the paperwork on a forty-year-old convention are, together, a fair snapshot of where ocean governance actually stands this week: expanding in some rooms, contracting in others, and in most places, still catching up on obligations nobody has finished implementing yet.</p>
+      </div>
+      <a class="cta" href="https://www.sprep.org/news/strengthening-the-noumea-convention-to-protect-the-pacifics-natural-resources-and-environment" target="_blank" rel="noopener">sprep.org — Strengthening the Noumea Convention</a>
+    </div>
+  </section>
+
+  <footer class="colophon">
+    Morning Edition · SHORE Institute · Prepared for Francesca Adrienne · <span class="yellow">4 August 2026</span>
+  </footer>
+
+</div>
+</body>
+</html>
