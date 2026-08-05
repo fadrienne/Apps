@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Edition — 5 August 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #17324f;
+    --sky-pale: #dcf0fa;
+    --sky: #bfe3f5;
+    --sky-bright: #7cc9ea;
+    --teal: #1c7a72;
+    --teal-dark: #145a54;
+    --yellow: #ffd347;
+    --yellow-pale: #fff4c2;
+    --gold: #d9a30a;
+    --forest: #1f5c3f;
+    --sage: #a9c9a0;
+    --mint: #dcf2e1;
+    --mint-pale: #eefaf1;
+    --cream: #faf5e9;
+    --off-white: #f7f6f1;
+    --slate: #52606b;
+    --charcoal: #262b2e;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--off-white);
+    color: var(--charcoal);
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    line-height: 1.5;
+  }
+
+  img, svg { max-width: 100%; }
+  .wrap { max-width: 100%; overflow-x: hidden; }
+  a { color: var(--teal-dark); }
+  a:hover { color: var(--navy); }
+  p { max-width: 42em; }
+
+  /* ---------- MASTHEAD ---------- */
+  .masthead {
+    background: var(--sky-pale);
+    padding: 3.5rem 2rem 2.5rem;
+    text-align: center;
+    border-bottom: 4px solid var(--navy);
+  }
+  .masthead .kicker {
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: var(--teal-dark);
+    margin-bottom: 1rem;
+  }
+  .masthead h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: clamp(3.5rem, 9vw, 7rem);
+    margin: 0;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+  }
+  .masthead .date {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.8rem;
+    color: var(--slate);
+    margin-top: 0.75rem;
+  }
+  .masthead .standfirst {
+    max-width: 40em;
+    margin: 1.75rem auto 0;
+    font-size: 1.4rem;
+    color: var(--charcoal);
+  }
+
+  /* ---------- NAV ---------- */
+  .jump-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--navy);
+    padding: 1.25rem 1.5rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-bottom: 3px solid var(--yellow);
+  }
+  .jump-nav .label {
+    font-family: 'Space Mono', monospace;
+    color: var(--yellow);
+    font-size: 0.95rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-right: 1.5rem;
+    display: inline-block;
+  }
+  .jump-nav a {
+    display: inline-block;
+    color: #eaf4fb;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    margin-right: 1.75rem;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 0.2rem;
+  }
+  .jump-nav a:hover { border-bottom-color: var(--yellow); color: var(--yellow); }
+  .jump-nav a .n { color: var(--sky-bright); margin-right: 0.4rem; font-family: 'Space Mono', monospace; }
+
+  /* ---------- SHARED STORY SCAFFOLD ---------- */
+  .story { padding: 5rem 2rem; position: relative; overflow: hidden; }
+  .story-inner { max-width: 54rem; margin: 0 auto; position: relative; z-index: 2; }
+  .flag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--navy);
+    color: var(--yellow);
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.6rem 1.2rem;
+    border-radius: 3px;
+    margin-bottom: 1.75rem;
+  }
+  .flag .bolt { font-size: 1.4rem; }
+  .story p { font-size: 1.35rem; margin: 0 0 1.4rem; }
+  .story .cta {
+    display: inline-block;
+    margin-top: 1rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.1rem;
+    word-break: break-word;
+  }
+  .num { font-family: 'Fraunces', serif; font-weight: 700; }
+
+  /* ---------- WHY IT MATTERS + EYEBROWS ---------- */
+  .why-matters {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.6rem;
+    line-height: 1.35;
+    color: var(--teal-dark);
+    margin: 0 0 2rem;
+    padding-left: 1.25rem;
+    border-left: 4px solid var(--forest);
+  }
+  #s9 .why-matters { color: var(--yellow); border-left-color: var(--yellow); }
+  #s4 .why-matters { color: var(--forest); border-left-color: var(--forest); }
+
+  .eyebrow {
+    display: block;
+    font-family: 'Space Mono', monospace;
+    font-size: 1rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--slate);
+    margin: 2.5rem 0 1rem;
+  }
+  .eyebrow:first-of-type { margin-top: 0; }
+  #s9 .eyebrow { color: #17324f; opacity: 0.7; }
+  #s4 .eyebrow { color: var(--forest); opacity: 0.75; }
+
+  .story-article p { max-width: 38em; font-size: 1.25rem; }
+
+  /* ---------- 1. HERO ---------- */
+  #s1 { background: linear-gradient(180deg, var(--sky-bright) 0%, var(--sky) 100%); padding-top: 6rem; padding-bottom: 6rem; }
+  #s1 .num-bg {
+    position: absolute; top: -3rem; right: -1rem;
+    font-size: 22rem; font-weight: 900; color: rgba(23,50,79,0.09);
+    line-height: 1; z-index: 1; user-select: none;
+  }
+  #s1 h2 {
+    font-family: 'Fraunces', serif; font-weight: 900;
+    font-size: clamp(3rem, 8vw, 6rem); color: var(--navy);
+    line-height: 1.02; margin: 0 0 1.5rem;
+  }
+
+  /* ---------- 2. BIG STAT ---------- */
+  #s2 { background: var(--sky-pale); }
+  #s2 .stat-block { text-align: center; }
+  #s2 .bigstat {
+    font-family: 'Fraunces', serif; font-weight: 900;
+    font-size: clamp(4.5rem, 13vw, 8.5rem); color: var(--teal-dark);
+    line-height: 0.85; margin: 1rem 0;
+  }
+  #s2 .stat-label {
+    font-family: 'Space Mono', monospace; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--navy); font-size: 1.1rem;
+  }
+  #s2 h2 {
+    font-family: 'Fraunces', serif; font-size: clamp(2rem, 4.5vw, 2.8rem);
+    color: var(--navy); margin: 1.5rem 0;
+  }
+
+  /* ---------- 3. SUNBEAM ALERT ---------- */
+  #s3 { background: var(--yellow); }
+  #s3 .stamp {
+    display: inline-block; border: 4px solid var(--navy); color: var(--navy);
+    font-family: 'Space Mono', monospace; font-weight: 700; font-size: 1.6rem;
+    padding: 0.5rem 1rem; transform: rotate(-4deg); margin-bottom: 1.5rem;
+  }
+  #s3 h2 {
+    font-family: 'Fraunces', serif; font-weight: 700; font-style: italic;
+    font-size: clamp(2.6rem, 6vw, 4.2rem); color: var(--navy);
+    margin: 0 0 1.5rem; line-height: 1.05;
+  }
+  #s3 .why-matters { background: rgba(23,50,79,0.08); padding: 1rem 1.25rem; border-radius: 4px; }
+
+  /* ---------- 4. COASTAL ---------- */
+  #s4 { background: var(--mint-pale); border-top: 10px solid var(--forest); }
+  #s4 .story-inner { max-width: 68rem; }
+  #s4 h2 {
+    font-family: 'Fraunces', serif; font-weight: 700;
+    font-size: clamp(2.3rem, 5vw, 3.6rem); color: var(--navy); margin: 0 0 0.5rem;
+  }
+  #s4 .num { color: var(--forest); font-size: 2rem; margin-bottom: 1rem; display:block; }
+  #s4 .cols2 { columns: 2; column-gap: 3rem; }
+  #s4 .cols2 p { break-inside: avoid; }
+  #s4 .story-article { columns: 1; }
+  @media (max-width: 780px) { #s4 .cols2 { columns: 1; } }
+
+  /* ---------- 5. TERMINAL ---------- */
+  #s5 { background: var(--mint); border: 10px solid var(--mint-pale); border-left: none; border-right: none; }
+  #s5 .story-inner { background: var(--mint-pale); border-radius: 10px; padding: 2.5rem; border: 2px solid var(--forest); }
+  #s5 .termbar { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; }
+  #s5 .dot { width: 0.8rem; height: 0.8rem; border-radius: 50%; background: var(--forest); opacity: 0.5;}
+  #s5 * { font-family: 'Space Mono', monospace; color: var(--forest); }
+  #s5 h2 { font-size: clamp(1.6rem, 3.6vw, 2.4rem); margin: 0 0 1.5rem; font-weight: 700; }
+  #s5 .prompt::before { content: "$ "; color: var(--teal-dark); }
+  #s5 p { font-size: 1.15rem; }
+  #s5 .why-matters { border-left-color: var(--forest); color: var(--forest); }
+
+  /* ---------- 6. ACADEMIC DROP CAP ---------- */
+  #s6 { background: var(--off-white); }
+  #s6 h2 {
+    font-family: 'Fraunces', serif; font-weight: 600;
+    font-size: clamp(2.2rem, 5vw, 3.4rem); color: var(--navy); margin: 0 0 1.25rem;
+  }
+  #s6 .dropcap {
+    font-family: 'Fraunces', serif; font-weight: 900; font-size: 6.5rem;
+    line-height: 0.8; float: left; margin: 0.1rem 0.6rem 0 0; color: var(--navy);
+  }
+  #s6 .footnote {
+    margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--slate);
+    font-size: 1.05rem; color: var(--slate); font-family: 'Space Mono', monospace;
+  }
+
+  /* ---------- 7. PULL QUOTE ---------- */
+  #s7 { background: var(--sky-pale); }
+  #s7 h2 { font-size: 1.4rem; font-family:'Space Mono', monospace; color: var(--teal-dark); margin-bottom: 2rem; }
+  #s7 .quote {
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 600;
+    font-size: clamp(2.2rem, 5.5vw, 3.6rem); color: var(--navy); line-height: 1.2;
+    border-left: 6px solid var(--teal); padding-left: 2rem; margin: 0 0 2.5rem;
+  }
+  #s7 .attribution {
+    font-family: 'Space Mono', monospace; font-size: 1rem; color: var(--slate);
+    padding-left: 2.1rem; margin: -2rem 0 2.5rem; text-transform: uppercase; letter-spacing: 0.1em;
+  }
+
+  /* ---------- 8. BROADSHEET ---------- */
+  #s8 { background: var(--cream); }
+  #s8 .story-inner { max-width: 72rem; }
+  #s8 h2 {
+    font-family: 'Fraunces', serif; font-weight: 700;
+    font-size: clamp(2.4rem, 5.5vw, 3.8rem); color: var(--navy);
+    border-bottom: 3px solid var(--teal); padding-bottom: 1rem; margin: 0 0 0.5rem;
+  }
+  #s8 .rule { height: 2px; background: var(--teal); width: 6rem; margin: 1.5rem 0 2rem; }
+  #s8 .cols3 { columns: 2; column-gap: 3rem; }
+  #s8 .cols3 p { break-inside: avoid; }
+  #s8 .story-article { columns: 1; }
+  @media (max-width: 780px) { #s8 .cols3 { columns: 1; } }
+
+  /* ---------- 9. COLOUR FIELD ---------- */
+  #s9 { background: var(--teal-dark); }
+  #s9 * { color: #ffffff; }
+  #s9 h2 {
+    font-family: 'Inter', sans-serif; font-weight: 800;
+    font-size: clamp(2.6rem, 6vw, 4.4rem); margin: 0 0 1.75rem; line-height: 1.05;
+  }
+  #s9 .num { color: var(--yellow); }
+  #s9 a { color: var(--yellow); }
+  #s9 .flag { background: var(--yellow); color: var(--navy); }
+
+  /* ---------- 10. LETTERPRESS ---------- */
+  #s10 {
+    background: var(--cream);
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(23,50,79,0.035) 0, transparent 45%),
+      radial-gradient(circle at 80% 70%, rgba(31,92,63,0.035) 0, transparent 45%);
+    border-top: 1px solid var(--slate); border-bottom: 1px solid var(--slate);
+  }
+  #s10 h2 {
+    font-family: 'Fraunces', serif; font-weight: 600;
+    font-size: clamp(2.3rem, 5.5vw, 3.6rem); color: var(--navy);
+    margin: 0 0 1.5rem; text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+  }
+  #s10 p, #s10 .story-article p { font-family: 'Fraunces', serif; font-size: 1.4rem; }
+  #s10 .story-article p { font-size: 1.25rem; }
+
+  /* numeral treatments */
+  .n-circle {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 3.2rem; height: 3.2rem; border-radius: 50%;
+    border: 3px solid var(--navy); color: var(--navy); font-size: 1.3rem; margin-bottom: 1.5rem;
+  }
+  .n-box {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 0.4rem 0.9rem; background: var(--navy); color: var(--yellow);
+    font-size: 1.2rem; margin-bottom: 1.5rem;
+  }
+  .n-hair {
+    display: block; font-size: 1.3rem; color: var(--slate);
+    letter-spacing: 0.3em; margin-bottom: 1.25rem;
+  }
+  .n-hair::after { content: ""; display: block; width: 3rem; height: 2px; background: var(--slate); margin-top: 0.5rem; }
+
+  .colophon {
+    background: var(--navy); color: #dbe9f2; text-align: center;
+    padding: 3.5rem 2rem; font-family: 'Space Mono', monospace;
+    font-size: 1rem; letter-spacing: 0.05em;
+  }
+  .colophon .yellow { color: var(--yellow); }
+
+  @media (max-width: 600px) {
+    body { font-size: 1.7rem; }
+    .story { padding: 3.5rem 1.25rem; }
+    .story p { font-size: 1.15rem; }
+    .story-article p { font-size: 1.1rem; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="kicker">SHORE Institute · Field Edition</div>
+    <h1>Morning Edition</h1>
+    <div class="date">Wednesday, 5 August 2026</div>
+    <p class="standfirst">Ten stories on ocean governance, hydrospatial science, and SIDS equity, written straight to you as Founder of SHORE Institute and Shorelines.</p>
+  </header>
+
+  <nav class="jump-nav" aria-label="Jump to story">
+    <span class="label">Jump to</span>
+    <a href="#s1"><span class="n">01</span>The financial rules holding up COP1</a>
+    <a href="#s2"><span class="n">02</span>220 contributors, and Seychelles isn't one</a>
+    <a href="#s3"><span class="n">03</span>$200,000 per SIDS, no application yet ⚡</a>
+    <a href="#s4"><span class="n">04</span>Your blue bond, read by someone else</a>
+    <a href="#s5"><span class="n">05</span>Whose model is your seafloor trained on</a>
+    <a href="#s6"><span class="n">06</span>A working paper on high seas planning</a>
+    <a href="#s7"><span class="n">07</span>"Unauthorised administrative regimes"</a>
+    <a href="#s8"><span class="n">08</span>Mombasa's seascape math</a>
+    <a href="#s9"><span class="n">09</span>Manila opens the floor ⚡</a>
+    <a href="#s10"><span class="n">10</span>A line you used to draw yourself</a>
+  </nav>
+
+  <!-- STORY 1: HERO -->
+  <section class="story" id="s1">
+    <div class="num-bg">01</div>
+    <div class="story-inner">
+      <h2>The financial rules holding up BBNJ's first COP</h2>
+      <p class="why-matters">The Preparatory Commission has agreed on most of what BBNJ's first Conference of the Parties needs to run, but it is deadlocked on the financial rules and subsidiary bodies that decide how money actually reaches a state like Seychelles, and that is the part of this treaty you cannot afford to stop watching once the ratification headlines end.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>BBNJ entered into force in January with 82 states and the EU now party to it. Since then, the Preparatory Commission has been meeting in successive sessions to prepare the ground for the treaty's first Conference of the Parties, working through governance, the Clearing-House Mechanism, and the financial mechanism.</p>
+      <p>Delegates reached agreement on many of the items on the table. The unresolved items are specific and structural: the rules of procedure, the design of COP1's subsidiary bodies, and the financial rules and regulations that will govern the treaty's funding mechanism.</p>
+      <p>The financial mechanism is the piece with the most direct bearing on Seychelles. It is the channel through which capacity-building and technology transfer funding, the provisions BBNJ negotiators fought hardest for on behalf of developing states, actually gets disbursed once COP1 convenes.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>You have sat inside enough multilateral negotiations to know that a treaty's text and a treaty's plumbing are two different achievements, and BBNJ is currently in the gap between them. It entered into force in January, 82 states and the European Union now bound by it, and the six months since have been the unglamorous work of a Preparatory Commission trying to turn a signed agreement into an institution that can actually function. Most of that work is going well. Some of it is stuck, and the parts that are stuck are the parts that matter most to a state without the capacity to negotiate from strength once the money starts moving.</p>
+        <p>The Preparatory Commission has reached agreement across a wide range of organisational questions ahead of the treaty's first Conference of the Parties: governance arrangements, the operation of the Clearing-House Mechanism that is meant to be BBNJ's central information hub for access and benefit-sharing, and much of the scaffolding COP1 needs to convene at all. What remains unresolved is a shorter, sharper list: the rules of procedure that will govern how COP1 actually makes decisions, the design and mandate of its subsidiary bodies, and the financial rules and regulations that will govern the treaty's funding mechanism.</p>
+        <p>Of those three, the financial rules are the ones worth tracking closest, because they are not a procedural technicality. BBNJ's capacity-building and marine technology transfer provisions were among the most contested parts of the entire negotiation, precisely because developing states, Seychelles among them through your own years working this file, pushed hard for a treaty that would not just protect biodiversity in the high seas but fund the ability of smaller states to participate meaningfully in that protection. Whether that funding commitment translates into a mechanism that actually disburses money predictably, or one that stalls in the same governance disputes now holding up its design, is being decided in exactly the sessions the Preparatory Commission has not yet resolved.</p>
+        <p>The honest read on why these three items are the sticking points, rather than the others, is that they are where the treaty's abstract commitments become concrete allocations of power and resources. Rules of procedure determine how COP1 votes and who can block what. Subsidiary body design determines which states get seats at the tables where implementation detail actually gets written. Financial rules determine who controls the fund and on what terms it disburses. These are the questions every multilateral instrument fights hardest over last, because they are where the negotiation stops being about principle and starts being about who holds leverage once the treaty is operating.</p>
+        <p>For SHORE and for Seychelles's own BBNJ engagement, the practical implication is timing. A financial mechanism still being designed is not yet a mechanism you can apply to, partner through, or build a capacity-building proposal against. But it is a mechanism whose design is still open, which means the coming Preparatory Commission sessions are the last real window where developing state input on the fund's rules, disbursement criteria, and access modalities can shape the instrument before COP1 locks it in. That is a narrower and more urgent ask than simply waiting for the fund to open.</p>
+        <p>What is worth watching from here is whether the next Preparatory Commission session resolves the financial rules cleanly or carries the disagreement into COP1 itself, since a COP convened without settled financial rules tends to spend its first substantive sessions relitigating governance rather than allocating funding. Either outcome is a signal worth having early, not after the fact.</p>
+      </div>
+      <a class="cta" href="https://enb.iisd.org/negotiations/conservation-and-sustainable-use-marine-biological-diversity-beyond-areas-national" target="_blank" rel="noopener">enb.iisd.org — BBNJ Preparatory Commission coverage</a>
+    </div>
+  </section>
+
+  <!-- STORY 2: BIG STAT -->
+  <section class="story" id="s2">
+    <div class="story-inner stat-block">
+      <span class="n-box">02</span>
+      <div class="stat-label">Organisations now contributing data to the GEBCO_2026 Grid</div>
+      <div class="bigstat">220</div>
+      <h2>Fifteen new contributors this year. None of them is Seychelles.</h2>
+    </div>
+    <div class="story-inner">
+      <p class="why-matters">Four countries made their first-ever national bathymetric submission to Seabed 2030 this year, which means becoming a named national contributor is an open door, and it is one Seychelles, with its own mapping ambitions, has not walked through yet.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>The GEBCO_2026 Grid, released this year, now covers 28.7% of the world's ocean floor to modern mapping standards, up from 27.3% in the 2025 release, roughly 104 million square kilometres in total. Nearly five million square kilometres of new data were added over the past year.</p>
+      <p>220 organisations now contribute data to Seabed 2030, including 15 new contributors added this year. Among them are the first-ever national submissions from Malaysia, Morocco, Papua New Guinea, and Saudi Arabia, announced by Nippon Foundation Executive Director Mitsuyuki Unno at the IHO Assembly in Monaco.</p>
+      <p>A national submission is distinct from having your waters mapped by someone else's survey vessel or satellite feed. It is a state or its designated institution submitting its own collected bathymetric data under its own name.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>There are two different ways a country's waters end up in the GEBCO grid. One is passive: a foreign research vessel transits the area, a satellite-derived bathymetry model infers depth from ocean colour, a crowdsourced dataset from commercial shipping picks up a transect, and the data enters the compilation without the coastal state having submitted anything itself. The other is active: the state or a national institution collects and submits its own bathymetric data, under its own name, as a formal national contributor to Seabed 2030. Those two routes produce the same grid cell, but they are not the same relationship to the data, and only one of them builds sovereign mapping capacity in the process.</p>
+        <p>This year's GEBCO_2026 Grid update makes that distinction concrete. Global coverage moved from 27.3% to 28.7%, close to five million additional square kilometres mapped to modern standards, bringing the cumulative total to roughly 104 million square kilometres. Behind that headline number sits a quieter one: 220 organisations now contribute data to Seabed 2030, 15 of them new this year, and four of those new contributors, Malaysia, Morocco, Papua New Guinea, and Saudi Arabia, made their first-ever national submission.</p>
+        <p>None of those four is a small island developing state with Seychelles's specific profile, but the pattern they represent is exactly the one worth studying. Each is a state that, until this year, had its waters represented in the global bathymetric record primarily through data collected by others, and each has now taken the additional step of building or designating the institutional capacity to submit its own survey data directly. That step is not free. It requires a data pipeline, quality control against GEBCO's submission standards, and an institutional point of contact with the regional centre responsible for processing it.</p>
+        <p>Seychelles is not currently listed among Seabed 2030's national contributors. That is not a criticism so much as an accurate description of where the Ocean Mapping Hub's work currently sits: building the bathymetric survey and processing capacity that a national submission would eventually draw on, without yet having formalised the submission relationship itself. The four states that crossed that threshold this year did so through exactly the kind of institutional designation, a government ministry or research body formally recognised as the national data provider, that is a procedural step rather than a technical one once baseline survey capacity exists.</p>
+        <p>The honest gap to name is scale. Malaysia, Morocco, Papua New Guinea, and Saudi Arabia each command survey resources, whether naval hydrographic services or commissioned commercial surveys, well beyond what a small state with Seychelles's population and budget can field on its own. A first Seychelles national submission would necessarily be smaller and slower to build than theirs. But Seabed 2030's regional centre model exists precisely to lower that bar, aggregating and processing data from smaller contributors who could not run a submission pipeline entirely independently, and Seychelles's own reef and inner-water bathymetric work, collected in partnership with SHORE's fieldwork, is a plausible starting dataset for exactly that kind of first submission.</p>
+        <p>The concrete next step is a direct conversation with Seabed 2030's Western Indian Ocean regional centre about what a Seychelles national submission pathway would actually require: data format, quality thresholds, and whether existing SHORE survey data could form part of a first tranche. That is a narrower and more answerable question than the general ambition of "becoming a Seabed 2030 contributor," and it is the same procedural step four other states just completed this year.</p>
+      </div>
+      <a class="cta" href="https://www.gebco.net/news/release-gebco2026-grid" target="_blank" rel="noopener">gebco.net — Release of the GEBCO_2026 Grid</a>
+    </div>
+  </section>
+
+  <!-- STORY 3: SUNBEAM ALERT -->
+  <section class="story" id="s3">
+    <div class="story-inner">
+      <div class="flag" style="background:var(--navy); color:var(--yellow);"><span class="bolt">⚡</span> $5M fund, up to $200,000 per state, application details still pending</div>
+      <div class="stamp">No. 03</div>
+      <h2>A grant with your name on it, and no form to fill in yet</h2>
+      <p class="why-matters">The Commonwealth has opened a $5 million climate and ocean fund for which Seychelles's government is automatically eligible up to $200,000, and the only thing standing between that money and an actual application is the Secretariat publishing the call, which means the work to do right now is making sure Seychelles is ready the day it does.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>The Commonwealth Secretariat and Azerbaijan's COP29 Presidency have jointly opened a funding call for climate action proposals from the 25 Commonwealth Small Island Developing States, Seychelles among them. Governments of all Commonwealth SIDS can apply for grants of up to US$200,000, drawn from a $5 million fund running over the next five years.</p>
+      <p>The fund is designed to strengthen climate resilience, improve ocean health, and expand sustainable energy solutions. It follows the Apia Commonwealth Ocean Declaration, adopted at CHOGM 2024 in Samoa, and two joint flagship projects launched in April.</p>
+      <p>Detailed application guidance was not yet published at the time this call was announced. That is the one piece of friction here: the eligibility and the funding envelope are confirmed, the mechanics of applying are not, which makes this a call to watch closely rather than one to act on today.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>Most of the funding opportunities that cross your desk require you to first establish eligibility, then find the call, then build a case for why your project fits it. This one inverts that order. The Commonwealth Secretariat and Azerbaijan's COP29 Presidency have already named Seychelles's government, along with the other 24 Commonwealth Small Island Developing States, as an eligible applicant to a $5 million climate action fund, with individual grants of up to US$200,000 available. The eligibility is settled before the application process itself has been.</p>
+        <p>The fund sits inside a wider Commonwealth ocean architecture that has been building since 2024. It follows the Apia Commonwealth Ocean Declaration, the major outcome of CHOGM 2024 in Samoa, and arrives on the heels of two joint flagship projects the Commonwealth and COP29 Presidency launched together in April, implementing the Declaration's commitments on ocean restoration and sustainable use. Reading this fund as an isolated grant call undersells it. It is the financing arm of a Commonwealth ocean strategy that Seychelles has been present for at every prior stage, from CHOGM itself through the flagship project launches.</p>
+        <p>What the fund is for is specific rather than open-ended: strengthening climate resilience, improving ocean health, and expanding sustainable energy solutions, across in-country projects in the 25 Commonwealth SIDS. That framing maps cleanly onto work SHORE is already positioned to lead, spatial baseline data for climate adaptation planning and ocean health monitoring being exactly the kind of technical component a resilience or ocean health project needs to be credible rather than aspirational.</p>
+        <p>The objection worth naming plainly: the actual mechanics of applying, the application form, submission deadline, and assessment criteria, were not available when this call was announced, and the Commonwealth's own language commits only to publishing further detail "in due course." That is a genuine gap, not a formality. A $200,000 ceiling spread across 25 eligible states and a five-year fund window suggests this will be competitive rather than automatic, and states that have a project concept ready the day the application guidance lands will move faster than states starting from a blank page.</p>
+        <p>That is the actual task this story sets, not a wait-and-see one. The window between now and the guidance being published is exactly the time to have a Seychelles project concept drafted, scoped around ocean health monitoring or climate resilience data infrastructure, SHORE's specific technical contribution defined, and the right point of contact at Seychelles's government identified for who would formally submit on the country's behalf. A grant call that opens with eligibility already confirmed rewards whoever is ready first, not whoever reacts fastest once the form appears.</p>
+        <p>The practical move now is a direct enquiry to the Commonwealth Secretariat's Oceans and Natural Resources team about expected timing for the detailed call, rather than waiting for it to surface passively. Five million dollars across five years and 25 eligible states is not a large pool per applicant, which makes early positioning, not just eligibility, the thing that actually determines whether Seychelles's application lands or gets lost in a late-arriving crowd.</p>
+      </div>
+      <a class="cta" href="https://thecommonwealth.org/news/commonwealth-and-cop29-presidency-invite-commonwealth-sids-submit-climate-action-proposals" target="_blank" rel="noopener">thecommonwealth.org — Commonwealth and COP29 Presidency open funding call</a>
+    </div>
+  </section>
+
+  <!-- STORY 4: COASTAL -->
+  <section class="story" id="s4">
+    <div class="story-inner">
+      <span class="num">04</span>
+      <h2>Your blue bond, filed as a case study by people who weren't in the room</h2>
+      <p class="why-matters">This is a published academic account of Seychelles's blue bond, and it is worth reading closely for exactly the gap between how the instrument is being written up externally now and what you know from having watched it happen.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <div class="cols2">
+        <p>A peer-reviewed article, "From concept to practice: financing sustainable blue economy in Small Island Developing States, lessons learnt from the Seychelles experience," analyses Seychelles's blue bond and blue economy financing roadmap as a reference model for other SIDS.</p>
+        <p>Seychelles's blue economy is estimated at 30.6% of GDP, valued at roughly US$495 million, with associated wages accounting for 10.4% of 2018 GNI. The blue bond's proceeds funded expansion of marine protected areas to 30% of Seychelles's exclusive economic zone, alongside fisheries governance and sustainable blue sector development.</p>
+        <p>Academic case studies of this kind shape how funders, multilateral bodies, and peer SIDS understand what worked, what the enabling conditions were, and what is replicable elsewhere, often independent of how the people who actually ran the process would characterise it themselves.</p>
+      </div>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>Seychelles's 2018 sovereign blue bond, the first of its kind, has by now become a fixed reference point in blue economy literature, cited whenever a paper or a conference panel needs a working example of innovative ocean finance. A recent peer-reviewed article puts that citation to fuller use, running Seychelles's experience as an actual case study: what the financing mechanism was, what enabling conditions made it possible, and what of that is transferable to other Small Island Developing States trying to build comparable instruments.</p>
+        <p>The economic scaffolding the paper works from is precise. Seychelles's blue economy is conservatively estimated at 30.6% of GDP, roughly US$495 million, with the wages it generates accounting for 10.4% of 2018 GNI. Those are not abstract sustainability metrics, they are the kind of numbers that make a blue bond bankable in the first place: an economic sector large enough, and quantifiable enough, to underwrite a sovereign debt instrument against. The bond's proceeds were allocated concretely, expanding marine protected area coverage to 30% of the exclusive economic zone, improving fisheries governance, and developing sustainable blue sectors including eco-tourism and seafood value chains.</p>
+        <p>What is worth your attention is less the numbers, which you know better than the paper's authors do, and more the framing choices academic literature makes when it writes up a policy instrument after the fact. A published case study necessarily compresses years of political negotiation, institutional coordination, and implementation friction into an enabling-conditions narrative clean enough to be replicable elsewhere. That compression is not dishonest, it is what a case study is for, but it also means the published account and the lived experience of running the process rarely match in texture, even when they match in fact.</p>
+        <p>That gap is where a Shorelines piece has real room to work. You have a vantage point on Seychelles's blue bond and its wider blue economy roadmap that no external academic author has: proximity to the institutional negotiations, the maritime boundary and governance context the instrument sat inside, and a working knowledge of which enabling conditions the published literature tends to underweight because they were procedural rather than financial. A response essay, not a rebuttal but a corrective, naming specifically where the academic account of Seychelles's blue bond is accurate as far as it goes and where it misses the governance machinery underneath the finance headline, is a genuinely differentiated piece no one else writing about SIDS blue finance is positioned to write.</p>
+        <p>The objection worth anticipating if you write it: this is one paper among a growing body of blue bond literature, and singling it out risks reading as thin-skinned rather than substantive unless the corrective is specific and evidenced, not just asserted. The strongest version of that piece names the exact enabling condition the paper treats as a footnote and you know was load-bearing, backed by something concrete: a negotiation detail, a sequencing decision, an institutional relationship that made the bond possible and that a purely financial case study would have no way to see.</p>
+        <p>Read as raw material rather than as a finished argument against it, this paper is useful precisely because it shows you what the outside view of Seychelles's blue bond currently looks like, which is the view most funders and peer SIDS officials will actually encounter before they encounter yours.</p>
+      </div>
+      <a class="cta" href="https://www.sciencedirect.com/science/article/pii/S0308597X24000708" target="_blank" rel="noopener">sciencedirect.com — Financing sustainable blue economy in SIDS: lessons from Seychelles</a>
+    </div>
+  </section>
+
+  <!-- STORY 5: TERMINAL -->
+  <section class="story" id="s5">
+    <div class="story-inner">
+      <div class="termbar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+      <h2><span class="prompt">story05 --topic geoai_sovereignty --scale small_state</span></h2>
+      <p class="why-matters">If a country the size of Canada is treating the AI models trained on its own geospatial data as a sovereignty question, a state Seychelles's size, which has no domestic capacity to train those models at all, is not facing a policy question so much as a dependency it has not yet named.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>Digital sovereignty debates now increasingly treat AI models themselves, not just the data they are trained on, as national infrastructure. The argument, made explicitly in Canadian geospatial policy commentary this year, is that a country relying on foreign-trained GeoAI models to interpret its own territory has effectively outsourced part of its national resilience and autonomy.</p>
+      <p>GeoAI, the fusion of satellite imagery and machine learning for automated mapping, change detection, and predictive modelling, is the same category of tool the Ocean Mapping Hub's bathymetry and reef classification work depends on. The sovereignty argument applies with more force, not less, to a state with no domestic capacity to train comparable models itself.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>The sovereignty conversation around AI has mostly been fought over large language models and where they are hosted. A narrower, more concrete version of the same argument is now surfacing in the geospatial field specifically: that AI models trained to interpret satellite imagery, classify terrain, or infer bathymetry are themselves a form of national infrastructure, and that a country dependent on foreign-trained models to understand its own territory carries a sovereignty exposure most digital policy frameworks have not caught up to yet.</p>
+        <p>The argument, made explicitly this year in Canadian commentary on sovereign AI and geospatial data, is worth sitting with because Canada is not a state anyone would describe as lacking capacity. It has a national mapping agency, university research infrastructure, and the compute resources to train its own models if it chose to. If a state with that capacity is treating foreign-trained GeoAI as a sovereignty question worth raising publicly, the same exposure, applied to a state with none of that infrastructure, is not a debate. It is simply the current condition.</p>
+        <p>SHORE's own mapping and reef classification work sits directly inside this category. Satellite-derived bathymetry fusion models, automated reef geomorphology classification, and the broader GeoAI toolkit the Ocean Mapping Hub draws on are, without exception, trained by institutions outside Seychelles, on training data that may or may not include representative examples of Seychelles's own granitic island and reef geography. Every time that toolkit is applied to Seychelles's waters, the interpretation running underneath the output was built somewhere else, on assumptions about what a coastline or a seafloor typically looks like that were not calibrated against this coastline specifically.</p>
+        <p>The honest counterargument is that building sovereign AI training capacity is not remotely realistic at Seychelles's scale, and treating this as a call to "build your own models" would be a category error. No small state trains foundation models from scratch. But the sovereignty question does not actually require that. It requires something narrower and more achievable: knowing what training data underlies the models SHORE relies on, whether Western Indian Ocean granitic reef systems are represented in it, and, where they are not, contributing validated local data back into the models that will keep being used on Seychelles's waters regardless of who trains them.</p>
+        <p>That reframes the sovereignty question from an infrastructure problem, which is unsolvable at this scale, into a data contribution problem, which is not. A validated, ground-truthed bathymetric dataset from Seychelles's own reef systems, contributed to the open scientific record rather than held privately, is a way of ensuring the next generation of GeoAI fusion models trained on global data actually performs adequately here, instead of applying accuracy assumptions calibrated on entirely different reef geographies. It is a modest, concrete version of sovereignty: not owning the model, but making sure the model was not built blind to your geography.</p>
+        <p>The near-term step worth taking is documenting, for SHORE's own methodology, exactly which published GeoAI or SDB fusion tools are currently in use and what is publicly known about their training data provenance. That audit is the prerequisite for the more useful conversation that follows: which gaps in that training data Seychelles's own validated field data could credibly fill.</p>
+      </div>
+      <a class="cta" href="https://gogeomatics.ca/sovereignai-is-geoai/" target="_blank" rel="noopener">gogeomatics.ca — Sovereign AI and GeoAI: Why Geospatial Data Matters</a>
+    </div>
+  </section>
+
+  <!-- STORY 6: ACADEMIC DROP CAP -->
+  <section class="story" id="s6">
+    <div class="story-inner">
+      <span class="n-circle">06</span>
+      <h2>The first serious paper on planning a high seas MPA, from the wrong ocean</h2>
+      <p class="why-matters"><span class="dropcap">A</span> published methodology for applying marine spatial planning beyond national jurisdiction now exists, tested on the Southwest Atlantic rather than the Western Indian Ocean, which makes it the closest available template for the exact BBNJ planning exercise no one has run here yet.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>A peer-reviewed article in Sustainability Science, "Applying marine spatial planning to challenges in areas beyond national jurisdiction: insights from the Southwest Atlantic," works through what MSP methodology actually looks like when applied outside any single state's exclusive economic zone.</p>
+      <p>This is squarely a BBNJ implementation question. The agreement created the legal basis for area-based management tools in the high seas, but the practical methodology for how you spatially plan an area no single state has jurisdiction over is a separate, harder technical problem the treaty text does not itself resolve.</p>
+      <div class="footnote">Source: Sustainability Science, "Applying marine spatial planning to challenges in areas beyond national jurisdiction: insights from the Southwest Atlantic," 2026</div>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>Marine spatial planning inside a state's own exclusive economic zone is, by now, a mature methodology. Seychelles ran one of the more credited versions of it across its full EEZ. Marine spatial planning in areas beyond national jurisdiction, the high seas BBNJ now provides a legal mechanism to protect, is a much newer and less settled problem, because the entire premise of conventional MSP, a single planning authority with jurisdiction over the area being planned, does not hold once you cross into waters no state owns.</p>
+        <p>A new paper in Sustainability Science takes on that problem directly, using the Southwest Atlantic as its test case. What matters about the paper is not the geography, which is on the other side of the world from anything SHORE works on directly, but the methodology: how do you build a spatial plan, in the practical sense of zoning, prioritisation criteria, and stakeholder process, for an area where "stakeholder" means multiple states and international bodies with overlapping interests rather than a single planning authority with clear jurisdiction.</p>
+        <p>That is precisely the technical gap sitting underneath BBNJ's promise. The treaty creates the legal instrument, area-based management tools including high seas MPAs, but it does not itself specify the spatial planning methodology a state or coalition of states would use to build a credible candidate proposal. West African states used the Our Ocean Conference in June to name a candidate geography for exactly this kind of proposal. What they, and any Western Indian Ocean coalition attempting the same thing eventually, actually need is a working MSP methodology adapted for ABNJ conditions, not just political will to propose an area.</p>
+        <p>Reading this paper as a template rather than a citation is the useful move. If its Southwest Atlantic methodology, whatever criteria it uses for zoning priority, whatever process it proposes for reconciling multiple states' interests in a shared high seas area, could be adapted and tested against a Western Indian Ocean candidate geography, the Nazareth Bank or the Saya de Malha among the more obvious options, that is a concrete research exercise: not proposing an MPA outright, but stress-testing whether an ABNJ planning methodology built for one ocean basin transfers to another.</p>
+        <p>The objection worth naming before treating this as directly applicable: the Southwest Atlantic's political geography, the specific states and interests involved, its ecological baseline, and its existing data coverage are all different from the Western Indian Ocean's, and a methodology validated in one ABNJ context does not automatically carry its conclusions to another without local adaptation and testing. That is not a reason to set the paper aside. It is the reason a comparative application, not a wholesale adoption, is the right next step.</p>
+        <p>That comparative application is, concretely, a publishable piece of work: a methods paper or Shorelines Deep Dive applying the Southwest Atlantic ABNJ planning framework against Western Indian Ocean high seas data, testing where it holds and where it breaks. It would be among the first attempts to do that for this region, ahead of whatever candidate proposal eventually gets built, and it is the kind of contribution that establishes SHORE's standing in the BBNJ implementation conversation before a Western Indian Ocean proposal exists to attach it to.</p>
+      </div>
+      <a class="cta" href="https://link.springer.com/article/10.1007/s11625-026-01820-0" target="_blank" rel="noopener">link.springer.com — MSP in Areas Beyond National Jurisdiction: Southwest Atlantic</a>
+    </div>
+  </section>
+
+  <!-- STORY 7: PULL QUOTE -->
+  <section class="story" id="s7">
+    <div class="story-inner">
+      <h2>07 / PULL QUOTE</h2>
+      <p class="quote">"...if it respects the sovereign rights of coastal states and avoids legitimizing unauthorized administrative regimes in areas subject to sovereignty disputes."</p>
+      <p class="attribution">On marine spatial planning's expanding remit under BBNJ</p>
+      <p class="why-matters">This is the single sentence carrying the entire tension in extending marine spatial planning into the high seas, and it is the same tension a Western Indian Ocean high seas proposal will eventually have to answer for the Nazareth Bank and the Saya de Malha, not just for European waters.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>More than 290 policymakers, researchers, and maritime experts gathered in Brussels for the EU's second Maritime Spatial Planning Week, with over 15 sessions on the growing use of maritime space, from renewable energy and fisheries to biodiversity protection.</p>
+      <p>A recurring theme was BBNJ's entry into force reinforcing the potential role of MSP in improving coherence across ocean uses, provided it does not become a vehicle for asserting authority over disputed or unresolved sovereignty claims.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>The line worth sitting with from this year's EU Maritime Spatial Planning Week is not the attendance figure, though 290 policymakers and experts across 15 sessions is a genuine scale of convening. It is the caveat attached to MSP's expanding role now that BBNJ has entered into force: that marine spatial planning can strengthen coherence across competing ocean uses, but only if it respects coastal states' sovereign rights and does not become a mechanism for legitimising administrative authority over areas where sovereignty is disputed or unresolved.</p>
+        <p>That caveat reads, in a European policy context, as a reference to the Arctic, the Aegean, and other contested maritime spaces closer to home. But the underlying principle travels directly to the Western Indian Ocean, and to any future high seas MPA proposal built around features like the Nazareth Bank or the Saya de Malha, which sit in waters where jurisdictional questions between Seychelles, Mauritius, and other regional states are not uniformly settled. An ABNJ spatial plan for either feature will, at some point, have to answer the same question Brussels is currently posing to itself: whose planning authority is this, and does the plan itself risk asserting a claim the planning exercise was never meant to make.</p>
+        <p>Given your own background running maritime boundary delimitation for Seychelles, this is not an abstract governance nuance. It is the precise seam between two things that look similar but are legally distinct: spatial planning as a technical, cooperative exercise in managing shared marine resources, and spatial planning as an implicit assertion of jurisdictional authority over an area. Conflating them, even unintentionally, in a Western Indian Ocean ABNJ proposal would risk exactly the friction this EU caveat is trying to preempt in its own waters.</p>
+        <p>The practical lesson from Brussels is that this tension does not resolve itself by ignoring it. It gets managed through deliberate process design: MSP frameworks that explicitly bracket sovereignty questions as out of scope for the planning exercise itself, treating jurisdictional determination as a separate legal track that the spatial plan neither depends on nor prejudges. That is a design choice, not a default, and it has to be built into a Western Indian Ocean ABNJ proposal from the outset rather than retrofitted after a dispute surfaces.</p>
+        <p>For a future Nazareth Bank or Saya de Malha proposal, the direct implication is procedural: any Western Indian Ocean coalition building toward a BBNJ candidate area needs the same explicit sovereignty-bracketing language the EU's own MSP practice is now reaching for, agreed among the states involved before the technical planning work begins, not negotiated defensively after a jurisdictional objection is raised. That is a governance design question SHORE, given the maritime boundary expertise already in the room, is genuinely positioned to help get right early.</p>
+      </div>
+      <a class="cta" href="https://cinea.ec.europa.eu/news-events/news/eu-maritime-spatial-planning-week-getting-together-better-planning-sea-2026-06-05_en" target="_blank" rel="noopener">cinea.ec.europa.eu — EU Maritime Spatial Planning Week</a>
+    </div>
+  </section>
+
+  <!-- STORY 8: BROADSHEET -->
+  <section class="story" id="s8">
+    <div class="story-inner">
+      <span class="n-hair">STORY 08</span>
+      <h2>Mombasa's seascape math, and where Seychelles sits in it</h2>
+      <div class="rule"></div>
+      <p class="why-matters">Regional large marine seascape efforts across the Western Indian Ocean are being framed explicitly against the global 30x30 target, and the science-policy interface driving that work is convening in your own region, not somewhere you have to fly to reach.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <div class="cols3">
+        <p>The 13th WIOMSA Scientific Symposium, held in Kenya, advanced the science-policy-society interface across the Western Indian Ocean, part of the IOC's regional cooperation efforts under the UN Ocean Decade.</p>
+        <p>Efforts to advance large marine seascapes in the region are explicitly framed around the global 30x30 biodiversity target, integrating marine protected areas, fisheries management, and spatial planning as a combined approach rather than separate instruments.</p>
+        <p>Large marine seascape thinking treats an ocean region as a connected management unit rather than a set of individually managed protected areas, closer in spirit to how a full-EEZ marine spatial plan like Seychelles's own already operates.</p>
+      </div>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>The Western Indian Ocean Marine Science Association's Scientific Symposium is not a conference that needs introducing to you, but its 13th edition, held in Kenya this year, is worth reading as more than a routine convening. It is where the region's science-policy-society interface, the working relationship between researchers, governments, and coastal communities that actually determines whether ocean science translates into ocean governance, gets tested and advanced in real time, and this year's edition did that explicitly around the language of large marine seascapes and the 30x30 target.</p>
+        <p>Large marine seascape thinking is a specific methodological choice, not a synonym for marine protected areas. It treats an ocean region, spanning multiple countries' waters and often adjacent high seas, as a single connected management unit, integrating marine protected areas, fisheries management, and spatial planning together rather than layering them as separate, uncoordinated instruments. That is conceptually close to what Seychelles already built with its own full-EEZ marine spatial plan, which is one reason this framing, when it surfaces regionally rather than nationally, is worth Seychelles's direct engagement rather than passive observation.</p>
+        <p>The 30x30 target, protecting 30% of the world's ocean by 2030, is the number every regional seascape effort in the Western Indian Ocean is now measuring itself against, and Seychelles already has a claim worth foregrounding in that conversation: its own blue bond-funded expansion of marine protected areas to 30% of its exclusive economic zone, achieved years ahead of the global target's own deadline. That is not a footnote. It is the single most concrete piece of evidence in the entire Western Indian Ocean region that the 30x30 target is achievable at national scale, and it is exactly the kind of case study a regional seascape convening built around that target should be citing directly, with Seychelles's own voice attached to it, not summarised secondhand from a case study paper someone else wrote.</p>
+        <p>The honest gap is presence, not substance. A regional science-policy symposium held in Kenya, in your own ocean basin, is a considerably lower-friction opportunity for direct engagement than the international conferences a small state's limited travel budget usually has to prioritise between. Whether Seychelles's government or research institutions were represented at this year's WIOMSA Symposium, and if not, what the pathway is to ensuring representation at the next one, is worth establishing directly rather than assuming.</p>
+        <p>The concrete opportunity sitting inside this is a regional one specifically. Large marine seascape coalitions, unlike a single-state marine spatial plan, require exactly the kind of cross-border spatial data coordination SHORE's hydrospatial focus is built for. If the Western Indian Ocean's large marine seascape effort is still assembling its technical and spatial data partners, that is a considerably more accessible entry point for SHORE than trying to insert itself into an established international mapping consortium from outside.</p>
+      </div>
+      <a class="cta" href="https://www.ioc.unesco.org/en/looking-back-2025-landmark-year-ocean-science-action" target="_blank" rel="noopener">ioc.unesco.org — WIOMSA and Western Indian Ocean regional cooperation</a>
+    </div>
+  </section>
+
+  <!-- STORY 9: COLOUR FIELD -->
+  <section class="story" id="s9">
+    <div class="story-inner">
+      <div class="flag"><span class="bolt">⚡</span> Proposals now open — Manila, 20–23 April 2027</div>
+      <span class="num">09</span>
+      <h2>Manila just opened the floor for the Ocean Decade's next chapter</h2>
+      <p class="why-matters">Proposals are now open for Scientific Sessions and Decade Action workshops at the Ocean Decade's next major regional conference, and a Western Indian Ocean session on hydrospatial equity, the High-Income SIDS Paradox, or GeoAI data sovereignty would put SHORE's actual research agenda in front of exactly the audience the Ocean Decade's final stretch is trying to reach.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>Manila will host the 12th WESTPAC International Marine Science Conference and 3rd UN Ocean Decade Regional Conference, 20 to 23 April 2027, as the UN Ocean Decade enters its final stretch. Proposals are now open for Scientific Sessions, Decade Action Incubators, and Decade Action Workshops.</p>
+      <p>Governments, research institutions, and ocean stakeholders are invited to submit. This is a call for session proposals, not just attendance, which means the shape of the conference's programme is still being written and open to what gets submitted now.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>A conference proposals window is a different kind of opportunity than a conference itself, and it is worth treating that way. Manila has been named host for the 12th WESTPAC International Marine Science Conference and the 3rd UN Ocean Decade Regional Conference, running 20 to 23 April 2027, and the call now open is not for attendees but for the people who will shape what the conference actually covers: proposals for Scientific Sessions, Decade Action Incubators, and Decade Action Workshops.</p>
+        <p>The framing matters. This conference is being positioned explicitly as the UN Ocean Decade entering its final stretch, the multi-year initiative running toward 2030 that has structured much of the international ocean science agenda since 2021. A conference convened at that inflection point is where the Decade's remaining priorities get set, and a Scientific Session proposal accepted into that programme is not just a speaking slot, it is a stake in defining what counts as unfinished Ocean Decade business worth addressing in its final years.</p>
+        <p>That is the opening worth taking seriously. WESTPAC conferences draw specifically from the Western Pacific and, by extension, the Indo-Pacific ocean science community, a genuinely different audience than the Atlantic- and Caribbean-heavy convenings SHORE's work more often reaches. A session proposal built around the High-Income SIDS Paradox, hydrospatial equity, or the GeoAI sovereignty question this edition has already raised would put that research agenda in front of an audience that has had comparatively little direct exposure to it, rather than repeating a pitch to rooms that have already heard some version of it.</p>
+        <p>The three proposal categories are not interchangeable, and picking the right one matters more than submitting quickly. A Scientific Session is the conventional academic format, peer-reviewed research presented and discussed. A Decade Action Incubator is explicitly designed to develop new Ocean Decade Actions, formally endorsed initiatives with defined partners and outputs, which is a heavier commitment but a more durable one: an endorsed Decade Action carries institutional weight a conference session alone does not. A Decade Action Workshop sits between the two, a working session rather than a presentation, closer in spirit to the data sprint format used elsewhere in Seabed 2030's own convenings.</p>
+        <p>Given SHORE's actual stage of work, a Decade Action Incubator proposal, built around formalising the HARMONiSE framework or the Ocean Mapping Hub as a recognised Ocean Decade Action, is the more ambitious and more valuable route, though also the one requiring the most preparation before submission. A Scientific Session proposal on the High-Income SIDS Paradox specifically is the lower-friction alternative, built more directly from research and argument you already have in hand.</p>
+        <p>The immediate task is not drafting the proposal itself but confirming the submission deadline and required format, since an eight-month runway to an April 2027 conference typically means proposal windows close well before the event, often six months or more in advance. That timeline check is the first concrete step, not a detail to leave for later.</p>
+      </div>
+      <a class="cta" href="https://oceandecade.org/news/manila-to-host-major-ocean-science-conference-as-un-ocean-decade-enters-final-stretch-proposals-now-open/" target="_blank" rel="noopener">oceandecade.org — Manila to host major Ocean Science Conference, proposals now open</a>
+    </div>
+  </section>
+
+  <!-- STORY 10: LETTERPRESS -->
+  <section class="story" id="s10">
+    <div class="story-inner">
+      <span class="n-hair">STORY 10</span>
+      <h2>A line you used to draw for a living, redrawn by someone else</h2>
+      <p class="why-matters">The Chagos Archipelago sovereignty transfer from the UK to Mauritius, with Diego Garcia carved out under a 99-year lease, is the kind of maritime boundary settlement you spent years working from the delimitation side, and it is worth reading now for what it signals about how great powers still resolve small-state sovereignty claims when strategic assets are involved.</p>
+
+      <span class="eyebrow">Story Notes</span>
+      <p>In May 2025, the United Kingdom and Mauritius signed an agreement transferring sovereignty of the Chagos Archipelago to Mauritius, while the UK and United States retain control of Diego Garcia, the archipelago's largest island and site of a major joint military base, under a 99-year lease.</p>
+      <p>The Indian Ocean currently has fourteen ongoing sovereignty disputes, a reminder that jurisdictional uncertainty is not a resolved background condition in this ocean basin but an active, live feature of it, with direct implications for how maritime boundaries, EEZ claims, and any future ABNJ proposal get negotiated regionally.</p>
+
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>You spent years as Director General for Maritime Boundary Delimitation, work that is, at its core, about turning contested or ambiguous jurisdiction into a settled line on a chart. The Chagos Archipelago settlement is that same work, run at a different scale and under a different balance of power, and it resolved, at least on paper, one of the longest-running sovereignty disputes in the Indian Ocean.</p>
+        <p>The agreement, signed in May 2025 between the United Kingdom and Mauritius, transfers sovereignty of the Chagos Archipelago to Mauritius, ending a dispute that runs back to Mauritius's own independence in 1968, when the UK detached the Chagos Islands to form the British Indian Ocean Territory. What the agreement does not do is return the whole archipelago cleanly. Diego Garcia, the largest island and the site of a joint UK-US military base operating since the 1970s, remains under UK and US control through a 99-year lease, a carve-out that separates formal sovereignty from actual strategic control for the better part of a century.</p>
+        <p>That structure, sovereignty transferred, strategic control retained through a long lease, is worth reading precisely rather than treating as a straightforward decolonisation success story. It resolves the sovereignty question in the sense international law cares about, but it does so in a form that leaves Mauritius with formal title over territory it will not meaningfully administer within most working lifetimes. For any small state watching how a strategically significant maritime territory actually gets negotiated when a great power's military interest is directly at stake, that is the precedent worth studying: sovereignty and control are negotiable separately, and a settlement can satisfy the legal claim while the underlying strategic asymmetry persists largely unchanged.</p>
+        <p>The wider Indian Ocean context makes this more than a single case study. Fourteen sovereignty disputes remain active across the region, a considerable number for a single ocean basin, and each of them sits at the same intersection Chagos did: a maritime territory's legal status, its resource and EEZ implications, and its strategic value to powers well beyond the immediate region, all bound together in a single negotiation. That is the same intersection any future Western Indian Ocean ABNJ proposal, built around the Nazareth Bank or the Saya de Malha, will eventually have to navigate, even without a comparable military dimension attached.</p>
+        <p>The professional read worth taking from this, given your own delimitation background, is procedural rather than political: what the Chagos settlement's structure, sovereignty and control negotiated as separable questions, over a multi-decade lease instrument, actually teaches about drafting a long-horizon maritime governance agreement that has to satisfy competing claims without pretending the underlying power asymmetry has disappeared. That is a genuinely reusable piece of legal and diplomatic craft, and it is worth a closer technical read of the agreement's actual lease and jurisdiction provisions, not just its sovereignty transfer headline, for what it might inform in future Western Indian Ocean maritime negotiations.</p>
+        <p>The edition closes here deliberately. A treaty's plumbing still being negotiated in Geneva, a data grid quietly growing more sovereign contributors, a grant with your name already on the eligibility list, and a sovereignty dispute finally settled after fifty-seven years are, together, an honest snapshot of where ocean governance actually sits this week: some of it moving at the pace of institutions, some of it moving at the pace of a single signature, and almost none of it moving at the pace anyone standing outside the process would expect.</p>
+      </div>
+      <a class="cta" href="https://www.eurasiareview.com/16022026-chagos-islands-and-the-return-of-sovereignty-analysis/" target="_blank" rel="noopener">eurasiareview.com — Chagos Islands and the Return of Sovereignty</a>
+    </div>
+  </section>
+
+  <footer class="colophon">
+    Morning Edition · SHORE Institute · Prepared for Francesca Adrienne · <span class="yellow">5 August 2026</span>
+  </footer>
+
+</div>
+</body>
+</html>
