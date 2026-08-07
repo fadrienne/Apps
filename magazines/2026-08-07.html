@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Edition — 7 August 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,600;1,9..144,700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#12395c;
+    --blue:#1f5fa8;
+    --blue-mid:#2f74c0;
+    --sky:#e8f2fc;
+    --sky-mid:#cfe6fb;
+    --teal:#0f6e64;
+    --teal-mid:#1d968a;
+    --teal-deep:#0a4f48;
+    --forest:#1f5c3f;
+    --forest-mid:#2f8a5c;
+    --sage:#dcecdd;
+    --yellow:#f6c93b;
+    --yellow-deep:#e0ac0a;
+    --cream:#faf6ec;
+    --ivory:#fffdf6;
+    --ink:#1a2430;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    font-size:2rem;
+    line-height:1.5;
+  }
+  img{max-width:100%;}
+  a{color:inherit;}
+  .wrap{max-width:100%;overflow-x:hidden;}
+
+  /* MASTHEAD */
+  .masthead{
+    background:var(--blue-mid);
+    color:var(--ivory);
+    padding:4rem 2rem 3rem;
+    text-align:center;
+    border-bottom:0.6rem solid var(--yellow);
+  }
+  .masthead .kicker{
+    font-family:'Inter',sans-serif;
+    letter-spacing:0.35em;
+    text-transform:uppercase;
+    font-size:1rem;
+    font-weight:600;
+    color:var(--yellow);
+    margin-bottom:1rem;
+  }
+  .masthead h1{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:clamp(3.2rem,9vw,7rem);
+    letter-spacing:-0.02em;
+  }
+  .masthead .date{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:1.6rem;
+    margin-top:1.2rem;
+    color:var(--sky-mid);
+  }
+
+  /* NAV */
+  nav.jumpto{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:var(--blue);
+    border-bottom:0.3rem solid var(--yellow);
+    padding:1.2rem 2rem;
+  }
+  nav.jumpto .label{
+    color:var(--yellow);
+    font-size:0.95rem;
+    font-weight:700;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    display:block;
+    margin-bottom:0.6rem;
+  }
+  nav.jumpto ol{
+    list-style:none;
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.5rem 1rem;
+  }
+  nav.jumpto li a{
+    color:var(--ivory);
+    text-decoration:none;
+    font-size:1.05rem;
+    font-weight:500;
+    border-bottom:2px solid transparent;
+    padding-bottom:2px;
+  }
+  nav.jumpto li a:hover{border-bottom-color:var(--yellow);}
+
+  section.story{
+    padding:5rem 2rem;
+    position:relative;
+    scroll-margin-top:6rem;
+    overflow:hidden;
+  }
+  .story-inner{max-width:1100px;margin:0 auto;}
+  .flag{
+    display:inline-flex;
+    align-items:center;
+    gap:0.5rem;
+    background:var(--yellow);
+    color:var(--navy);
+    font-weight:800;
+    font-size:1.1rem;
+    padding:0.5rem 1.2rem;
+    border-radius:999px;
+    margin-bottom:1.5rem;
+    letter-spacing:0.05em;
+  }
+  p{margin-bottom:1.4rem;}
+  p:last-child{margin-bottom:0;}
+  .story-link{
+    display:inline-block;
+    margin-top:1rem;
+    font-weight:600;
+    text-decoration:underline;
+    word-break:break-all;
+  }
+
+  /* 1. HERO — full-bleed medium blue */
+  .hero{
+    background:var(--blue);
+    color:var(--ivory);
+  }
+  .hero .num{
+    font-family:'Fraunces',serif;
+    font-size:8rem;
+    opacity:0.35;
+    line-height:1;
+    font-weight:700;
+  }
+  .hero h2{
+    font-family:'Fraunces',serif;
+    font-size:clamp(2.8rem,6.5vw,5.5rem);
+    font-weight:700;
+    line-height:1.05;
+    margin:1rem 0 2rem;
+  }
+  .hero p{font-size:2.1rem;max-width:900px;}
+
+  /* 2. SKYLINE — pale sky blue, two column, navy accent rule */
+  .skyline{background:var(--sky);}
+  .skyline .num{
+    font-family:'Fraunces',serif;
+    font-size:1.6rem;
+    font-weight:700;
+    color:var(--blue);
+    border:3px solid var(--blue);
+    border-radius:50%;
+    width:4rem;height:4rem;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:1.5rem;
+  }
+  .skyline .rule{width:6rem;height:0.5rem;background:var(--navy);margin-bottom:1.5rem;}
+  .skyline h2{
+    font-family:'Fraunces',serif;
+    font-size:clamp(2.4rem,5vw,4rem);
+    color:var(--navy);
+    margin-bottom:2rem;
+    max-width:800px;
+  }
+  .skyline .cols{display:grid;grid-template-columns:1fr 1fr;gap:3rem;}
+  @media(max-width:800px){.skyline .cols{grid-template-columns:1fr;}}
+
+  /* 3. SUNSHINE ALERT — yellow background, stamp number, bold italic head */
+  .sunshine{background:var(--yellow);color:var(--navy);}
+  .sunshine .stamp{
+    display:inline-block;
+    border:0.4rem double var(--navy);
+    padding:0.6rem 1.4rem;
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    font-size:1.4rem;
+    transform:rotate(-4deg);
+    margin-bottom:2rem;
+  }
+  .sunshine h2{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:700;
+    font-size:clamp(2.6rem,6vw,4.8rem);
+    margin-bottom:2rem;
+    line-height:1.1;
+  }
+
+  /* 4. TERMINAL — mint green on cream, monospace */
+  .terminal{
+    background:var(--ivory);
+    border:0.4rem solid var(--forest);
+    margin:0 1rem;
+    border-radius:0.5rem;
+  }
+  .terminal .bar{
+    background:var(--forest-mid);
+    color:var(--ivory);
+    font-family:'Courier New',monospace;
+    padding:0.8rem 1.5rem;
+    font-size:1.1rem;
+    display:flex;justify-content:space-between;
+  }
+  .terminal .term-body{padding:3rem;}
+  .terminal .num{
+    font-family:'Courier New',monospace;
+    color:var(--forest);
+    font-size:1.4rem;
+    margin-bottom:1rem;
+  }
+  .terminal h2{
+    font-family:'Courier New',monospace;
+    color:var(--teal-deep);
+    font-size:clamp(1.8rem,3.6vw,2.8rem);
+    margin-bottom:2rem;
+    font-weight:700;
+  }
+  .terminal p{font-family:'Courier New',monospace;font-size:1.55rem;color:#1c3d36;}
+  .terminal .story-link{color:var(--forest);}
+
+  /* 5. ACADEMIC DROP CAP */
+  .academic{background:var(--ivory);}
+  .academic .num{
+    font-family:'Fraunces',serif;
+    font-size:1.3rem;
+    letter-spacing:0.3em;
+    color:var(--blue);
+    text-transform:uppercase;
+    margin-bottom:1.5rem;
+    font-weight:700;
+  }
+  .academic h2{
+    font-family:'Fraunces',serif;
+    font-size:clamp(2.4rem,5vw,4rem);
+    margin-bottom:2rem;
+    color:var(--navy);
+    border-bottom:2px solid var(--sky-mid);
+    padding-bottom:1.5rem;
+  }
+  .academic .drop p:first-of-type::first-letter{
+    font-family:'Fraunces',serif;
+    font-size:6.5rem;
+    font-weight:700;
+    float:left;
+    line-height:0.8;
+    padding-right:1rem;
+    color:var(--teal);
+  }
+  .academic .footnote{
+    margin-top:2rem;
+    font-size:1.2rem;
+    color:#5a6472;
+    border-top:1px solid #d8dce0;
+    padding-top:1rem;
+  }
+
+  /* 6. BIG STAT */
+  .bigstat{background:var(--sage);text-align:center;}
+  .bigstat .num{
+    font-family:'Inter',sans-serif;
+    font-size:1.2rem;
+    font-weight:700;
+    letter-spacing:0.3em;
+    color:var(--forest);
+    margin-bottom:1rem;
+  }
+  .bigstat .stat{
+    font-family:'Fraunces',serif;
+    font-weight:900;
+    font-size:clamp(5rem,14vw,10rem);
+    color:var(--forest);
+    line-height:0.9;
+    margin-bottom:1rem;
+  }
+  .bigstat .stat-label{
+    font-size:1.6rem;
+    font-weight:600;
+    color:var(--teal-deep);
+    margin-bottom:2.5rem;
+  }
+  .bigstat h2{
+    font-family:'Fraunces',serif;
+    font-size:clamp(2rem,4.2vw,3rem);
+    color:var(--navy);
+    margin-bottom:2rem;
+    max-width:800px;
+    margin-left:auto;margin-right:auto;
+  }
+  .bigstat .story-inner{text-align:left;}
+  .bigstat .center-block{text-align:center;}
+
+  /* 7. PULL QUOTE — teal background */
+  .pullquote{background:var(--teal-mid);color:var(--ivory);}
+  .pullquote .num{
+    font-size:1.2rem;
+    letter-spacing:0.3em;
+    color:var(--yellow);
+    font-weight:700;
+    margin-bottom:1.5rem;
+  }
+  .pullquote blockquote{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(2.2rem,5.5vw,4rem);
+    line-height:1.2;
+    margin-bottom:2.5rem;
+    max-width:950px;
+  }
+  .pullquote h2{
+    font-family:'Inter',sans-serif;
+    font-size:1.5rem;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    margin-bottom:1.5rem;
+    color:var(--yellow);
+  }
+
+  /* 8. BROADSHEET */
+  .broadsheet{background:var(--ivory);border-top:0.3rem solid var(--navy);border-bottom:0.3rem solid var(--navy);}
+  .broadsheet .num{
+    font-family:'Fraunces',serif;
+    font-size:1.3rem;
+    color:var(--navy);
+    font-weight:700;
+    margin-bottom:0.5rem;
+  }
+  .broadsheet h2{
+    font-family:'Fraunces',serif;
+    font-size:clamp(2.6rem,5.5vw,4.4rem);
+    color:var(--navy);
+    margin-bottom:1rem;
+    border-bottom:0.15rem solid var(--yellow-deep);
+    padding-bottom:1.5rem;
+  }
+  .broadsheet .rule-orn{
+    width:100%;
+    text-align:center;
+    color:var(--blue);
+    margin-bottom:2rem;
+    font-size:1.5rem;
+    letter-spacing:1rem;
+  }
+  .broadsheet .cols3{
+    column-count:2;
+    column-gap:3rem;
+  }
+  @media(max-width:800px){.broadsheet .cols3{column-count:1;}}
+  .broadsheet .cols3 p{margin-bottom:1.4rem;}
+
+  /* 9. COLOUR FIELD — solid teal or forest */
+  .colourfield{background:var(--forest-mid);color:var(--ivory);}
+  .colourfield .num{
+    font-family:'Inter',sans-serif;
+    font-weight:800;
+    font-size:1.3rem;
+    letter-spacing:0.25em;
+    color:var(--yellow);
+    margin-bottom:1.5rem;
+  }
+  .colourfield h2{
+    font-family:'Inter',sans-serif;
+    font-weight:800;
+    font-size:clamp(2.6rem,6vw,5rem);
+    line-height:1.05;
+    margin-bottom:2rem;
+    max-width:900px;
+  }
+  .colourfield p{font-size:2rem;}
+
+  /* 10. LETTERPRESS — cream, textured, serif */
+  .letterpress{
+    background:var(--cream);
+    border:1px solid #e3dcc8;
+  }
+  .letterpress .num{
+    font-family:'Fraunces',serif;
+    font-size:5rem;
+    font-weight:300;
+    color:var(--blue);
+    opacity:0.5;
+    margin-bottom:0.5rem;
+  }
+  .letterpress h2{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:clamp(2.4rem,5vw,4.2rem);
+    color:var(--navy);
+    margin-bottom:2rem;
+    text-shadow:0.5px 0.5px 0 rgba(18,57,92,0.08);
+  }
+  .letterpress p{font-family:'Fraunces',serif;font-size:1.9rem;color:#2a2620;}
+
+  footer{
+    background:var(--blue-mid);
+    color:var(--sky-mid);
+    text-align:center;
+    padding:3.5rem 2rem;
+    font-size:1.2rem;
+  }
+  footer .signoff{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:1.8rem;
+    color:var(--yellow);
+    margin-bottom:1rem;
+  }
+
+  @media print{
+    body{font-size:11px;}
+    nav.jumpto{position:static;}
+    .masthead{padding:1.5rem 1rem 1.2rem;}
+    section.story{padding:1.2rem 1rem;}
+    .hero .num,.bigstat .stat{font-size:3rem;}
+    p{margin-bottom:0.6rem;}
+    .academic .drop p:first-of-type::first-letter{font-size:2.6rem;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div class="kicker">SHORE Institute · Shorelines Desk</div>
+  <h1>Morning Edition</h1>
+  <div class="date">Friday, 7 August 2026</div>
+</header>
+
+<nav class="jumpto">
+  <span class="label">Jump to story</span>
+  <ol>
+    <li><a href="#s1">01. Decade Actions Call Closes in Three Weeks ⚡</a></li>
+    <li><a href="#s2">02. GEBCO_2026 Grid Lands, Kuala Lumpur Sprint Opens ⚡</a></li>
+    <li><a href="#s3">03. The High-Income SIDS Paradox Gets a Reform Window</a></li>
+    <li><a href="#s4">04. BBNJ, Seven Months In</a></li>
+    <li><a href="#s5">05. Seychelles' Largest GEF Grant Yet</a></li>
+    <li><a href="#s6">06. Ocean Protection Crosses 10 Percent</a></li>
+    <li><a href="#s7">07. Commonwealth Incubator, Next Round ⚡</a></li>
+    <li><a href="#s8">08. AOSIS Presses on Finance at Bonn</a></li>
+    <li><a href="#s9">09. UN Report Names Indigenous Knowledge Gap</a></li>
+    <li><a href="#s10">10. Machine Learning Comes for the Seafloor</a></li>
+  </ol>
+</nav>
+
+<!-- STORY 1: HERO -->
+<section class="story hero" id="s1">
+  <div class="story-inner">
+    <div class="flag">⚡ DEADLINE — 31 AUGUST 2026</div>
+    <div class="num">01</div>
+    <h2>The Ocean Decade wants applications from groups exactly like yours, and the window shuts in three weeks.</h2>
+    <p>IOC-UNESCO's Call for Decade Actions No. 11/2026 is open until 31 August. It is built around the priorities that came out of the Barcelona Statement, and it exists to strengthen existing Decade Actions and widen participation ahead of the 2027 Ocean Decade Conference, including dedicated travel support for people from underrepresented regions. That last clause matters. It is one of the few UN Ocean Decade instruments that explicitly budgets for getting SIDS voices into the room rather than assuming they will find their own way there.</p>
+    <p>HARMONiSE and the Ocean Mapping Hub sit squarely inside what this call wants: a Decade Action that strengthens capacity and mapping infrastructure in a small island state. Endorsement does not carry funding on its own, but it is the credential that opens doors to Ocean Decade partners, and it is free to apply for. Three weeks is tight but workable if the concept note already exists in some form.</p>
+    <a class="story-link" href="https://oceandecade.org">oceandecade.org</a>
+  </div>
+</section>
+
+<!-- STORY 2: SKYLINE -->
+<section class="story skyline" id="s2">
+  <div class="story-inner">
+    <div class="flag">⚡ REGISTRATION OPEN</div>
+    <div class="num">02</div>
+    <div class="rule"></div>
+    <h2>28.7 percent of the seafloor is now mapped, and the next data sprint is in your ocean basin.</h2>
+    <div class="cols">
+      <p>The Nippon Foundation-GEBCO Seabed 2030 project has released the GEBCO_2026 grid and confirmed the milestone at the IHO Assembly in Monaco: 28.7 percent of the world's ocean floor mapped, close to 104 million square kilometres, with nearly five million square kilometres added in the past year alone. For a hydrospatial researcher this is the headline number to cite for the next twelve months, and it is a useful contrast against the 72 percent still unmapped, which is the gap SHORE Institute's own work sits inside.</p>
+      <p>More immediately useful: registration is now live for the Seabed 2030 Indo-Pacific Ocean Mapping Meeting and Data Sprint, 20 to 22 October in Kuala Lumpur. This is the regional forum where SIDS mapping gaps get named specifically and where crowd-sourced bathymetry partnerships get built. It is close enough geographically and thematically to be worth a submission or at minimum a seat in the room.</p>
+    </div>
+    <a class="story-link" href="https://seabed2030.gebco.net">seabed2030.gebco.net</a>
+  </div>
+</section>
+
+<!-- STORY 3: SUNSHINE ALERT -->
+<section class="story sunshine" id="s3">
+  <div class="story-inner">
+    <div class="stamp">FILE UNDER: SEYCHELLES CASE STUDY</div>
+    <div class="num">03</div>
+    <h2><em>The metric that keeps Seychelles out of concessional finance is finally being named as the problem, not the country.</em></h2>
+    <p>ODI's 2026 briefing on climate finance access states plainly what the High-Income SIDS Paradox has been arguing for years: GNI per capita, the gatekeeping metric for concessional finance and debt relief, misreads structural vulnerability as prosperity. The same briefing puts a number on the distortion — SIDS climate adaptation runs to roughly 3.4 percent of GDP annually against 1.4 percent for other developing countries — which is the kind of figure this framework has needed and can now cite directly.</p>
+    <p>The proposed Multidimensional Vulnerability Index, still under negotiation, is the mechanism that would sit alongside GNI per capita rather than replace it outright. 2026 is being described in the same briefing as a genuine reform window, not a symbolic one. Worth tracking who is drafting the SIDS submissions into that negotiation, because that is where a Seychelles-specific case study lands with the most weight.</p>
+    <a class="story-link" href="https://odi.org/en/publications/making-an-exception-maintaining-oda-eligibility-for-small-island-developing-states/">odi.org — Making an Exception</a>
+  </div>
+</section>
+
+<!-- STORY 4: TERMINAL -->
+<section class="story terminal" id="s4">
+  <div class="term-body">
+    <div class="bar"><span>bbnj_status.log</span><span>rev. 07.08.2026</span></div>
+    <div class="story-inner" style="padding-top:2rem;">
+      <div class="num">$ story --id 04</div>
+      <h2>&gt; seven months into force, the treaty that makes high-seas MPAs possible is still assembling its own machinery.</h2>
+      <p>The BBNJ Agreement entered into force on 17 January 2026 after crossing 60 ratifications. Since then the Preparatory Commission has run three sessions, the last closing in early April, laying groundwork for COP1 and the rules that will govern how Parties actually propose marine protected areas and other area-based management tools in international waters. This is the procedural phase that decides whether the 30x30 target on the high seas is reachable or theoretical.</p>
+      <p>Nothing here is urgent this week, but it is the governance backbone underneath every high-seas MPA story for the rest of the decade, including the IUCN milestone two stories down. Worth a standing note for whenever COP1 dates are confirmed.</p>
+      <a class="story-link" href="https://www.ioc.unesco.org/en/bbnj-agreement-successfully-ratified">ioc.unesco.org — BBNJ ratified</a>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 5: ACADEMIC DROP CAP -->
+<section class="story academic" id="s5">
+  <div class="story-inner drop">
+    <div class="num">Home Waters</div>
+    <h2>Seychelles just signed its largest single GEF project, and the terms tell you where donor money is actually going.</h2>
+    <p>UNDP and Seychelles' Ministry of Environment signed a USD 10.48 million GEF-8 project in January 2026, "Enabling the Transition to a Blue and Green Economy in the Seychelles." It is the country's largest single GEF grant to date, and it is framed explicitly around natural heritage protection alongside inclusive economic development, which is the exact join SHORE Institute works in.</p>
+    <p>Layer that against the outcomes of Modi's state visit in June, nineteen bilateral agreements spanning development finance, digital payments, and maritime cooperation, and a pattern is visible: Seychelles is being positioned as the proof point for blue finance mechanisms that other Western Indian Ocean states are meant to follow. Worth tracking which local NGOs and institutes get named as implementing partners on the GEF project once it publishes its inception documents.</p>
+    <div class="footnote">Source: UNDP Mauritius-Seychelles, January 2026 signing announcement; India MEA/PIB, June 2026 visit outcomes.</div>
+  </div>
+</section>
+
+<!-- STORY 6: BIG STAT -->
+<section class="story bigstat" id="s6">
+  <div class="story-inner center-block">
+    <div class="num">STORY 06</div>
+    <div class="stat">10%</div>
+    <div class="stat-label">of the global ocean is now under some form of protection</div>
+  </div>
+  <div class="story-inner">
+    <h2 style="text-align:center;">The protected ocean crossed the 10 percent line this year. The next 20 points are the hard ones.</h2>
+    <p>As of early August, global marine protected and conserved areas have surpassed 10 percent coverage, roughly a third of the way to the 2030 target of 30 percent under the Kunming-Montreal framework. Recent additions include 284 sites across Indonesia and Thailand and Ghana's first MPA, the Greater Cape Three Points, declared after more than fifteen years of advocacy.</p>
+    <p>The caveat that matters more than the milestone: many European MPAs still permit bottom trawling inside their boundaries, which means the coverage number and the protection number are not the same thing. That distinction, paper MPAs versus enforced MPAs, is the more interesting story for a governance audience than the topline percentage.</p>
+    <a class="story-link" href="https://news.mongabay.com/short-article/2026/06/world-oceans-day-marine-protected-areas-surpass-10-mark-in-2026/">mongabay.com — MPAs surpass 10%</a>
+  </div>
+</section>
+
+<!-- STORY 7: PULL QUOTE -->
+<section class="story pullquote" id="s7">
+  <div class="story-inner">
+    <div class="flag" style="background:var(--yellow);color:var(--teal-deep);">⚡ WATCH — NEXT CALL OPENS MID-2026</div>
+    <div class="num">STORY SEVEN</div>
+    <h2>The precedent</h2>
+    <blockquote>"An eighteen-month monitoring programme of plastic pollution in rivers on Mahé, informing policy and raising awareness to protect freshwater and coastal ecosystems."</blockquote>
+    <p>That is the Commonwealth Blue Charter Project Incubator's own description of its existing Seychelles grant, delivered through The Ocean Project, a local NGO. It matters because it is the template: government-led theme, local NGO delivery partner, grant band of £5,000 to £50,000, aimed at training, capacity-building, and rapid vulnerability assessments. The next call for proposals opens mid-2026, and no firm date has been published yet.</p>
+    <p>This is worth a calendar flag rather than immediate action. When the call opens, the Seychelles precedent is the strongest reference point for a SHORE Institute proposal built around HARMONiSE's capacity-building components.</p>
+    <a class="story-link" href="https://thecommonwealth.org/bluecharter/commonwealth-blue-charter-project-incubator">thecommonwealth.org — Blue Charter Incubator</a>
+  </div>
+</section>
+
+<!-- STORY 8: BROADSHEET -->
+<section class="story broadsheet" id="s8">
+  <div class="story-inner">
+    <div class="num">No. 08</div>
+    <h2>AOSIS told the Bonn dialogue that finance access has to be driven by SIDS, not offered to them.</h2>
+    <div class="rule-orn">· · ·</div>
+    <div class="cols3">
+      <p>The Ocean and Climate Change Dialogue convened at the Bonn climate talks in June 2026, working through ocean-related priorities in NDCs and the pathways to unlock ocean-linked climate finance. Charles Hamilton, speaking for the Alliance of Small Island States, underlined that capacity building for SIDS matters as much as the finance itself, and that access has to be driven by SIDS and tied closely to their own NDCs rather than designed elsewhere and offered down.</p>
+      <p>Persistent barriers named in the same dialogue: limited access to climate finance, weak infrastructure, and the conditionality problem where developing states, SIDS especially, frame ocean action in their NDCs as contingent on external support that may not arrive. Youth4Climate is adding a dedicated Oceans and SIDS theme to its 2026 Call for Solutions, aimed at younger climate leaders working on ocean ecosystems and community resilience, though a submission deadline has not yet surfaced in the public materials.</p>
+    </div>
+    <a class="story-link" href="https://enb.iisd.org/ocean-and-climate-change-dialogue-2026-summary">enb.iisd.org — Ocean and Climate Dialogue 2026</a>
+  </div>
+</section>
+
+<!-- STORY 9: COLOUR FIELD -->
+<section class="story colourfield" id="s9">
+  <div class="story-inner">
+    <div class="num">STORY NINE — DATA SOVEREIGNTY</div>
+    <h2>A UN ocean assessment just told science agencies what Pacific data sovereignty networks have been saying for a decade.</h2>
+    <p>The UN's Third World Ocean Assessment calls for greater recognition of Indigenous knowledge in ocean governance, as reported in late July. It lands the same week federal agencies like NOAA are still short of clear mechanisms to protect Indigenous data sovereignty inside their own data management systems, which is the gap between the policy language and the pipeline that actually moves data from community to decision.</p>
+    <p>This is the direct precedent for how SHORE Institute should be framing data governance in the Ocean Mapping Hub: two-way partnership terms with community data holders, not extraction dressed as capacity-building. The Global Indigenous Data Alliance's CARE principles are the reference point worth citing if this becomes a Shorelines piece.</p>
+    <a class="story-link" href="https://www.staradvertiser.com/2026/07/29/hawaii-news/u-n-report-highlights-indigenous-knowledge-in-ocean-governance/">staradvertiser.com — UN report on Indigenous knowledge</a>
+  </div>
+</section>
+
+<!-- STORY 10: LETTERPRESS -->
+<section class="story letterpress" id="s10">
+  <div class="story-inner">
+    <div class="num">10.</div>
+    <h2>Machine learning is starting to close the resolution gap that multibeam sonar alone cannot afford to close.</h2>
+    <p>Two threads worth holding together. First, the Copernicus Marine Service's March 2026 workshop on data for maritime spatial planning drew 60 participants in the room and 1,250 online, built around free access to indicators like multi-decadal sea temperature trends, sea level rise, and marine heatwave monitoring. That is infrastructure any MSP process, including one built for Seychelles' waters, can plug into without procurement.</p>
+    <p>Second, published work through 2026 keeps pushing explainable machine learning for bathymetric mapping, adaptive normalisation and feature engineering aimed at getting more signal out of satellite-derived bathymetry in complex seabed terrain, exactly the terrain type most SIDS coastlines have. With over 80 percent of the seafloor still unmapped at high resolution, this is the technical layer underneath the GEBCO milestone in story two, and the more the Ocean Mapping Hub should be tracking directly.</p>
+    <a class="story-link" href="https://link.springer.com/article/10.1007/s12601-025-00251-9">Ocean Science Journal — explainable ML for bathymetric mapping</a>
+  </div>
+</section>
+
+<footer>
+  <div class="signoff">That's the desk for today.</div>
+  <div>Morning Edition is compiled for Francesca Adrienne, Founder, SHORE Institute · Shorelines</div>
+</footer>
+
+</div>
+</body>
+</html>
