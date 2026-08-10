@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Edition — 10 August 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sky:#cfe7f8;
+    --sky-deep:#a9d3ee;
+    --azure:#6fa0d8;
+    --azure-deep:#2c5580;
+    --sunshine:#f6c445;
+    --gold:#c98f1c;
+    --sage:#dcecd9;
+    --forest:#5fb583;
+    --forest-deep:#276b45;
+    --teal:#5cc3ab;
+    --cream:#faf6ec;
+    --ivory:#fdfbf4;
+    --navy-text:#1c3a52;
+    --charcoal:#26312b;
+    --line:#c8dbe4;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--ivory);
+    color:var(--charcoal);
+    font-family:'Inter',sans-serif;
+    font-size:2rem;
+    line-height:1.55;
+  }
+  h1,h2,h3,.serif{font-family:'Fraunces',serif;}
+  p{margin:0 0 1.3em 0;}
+  a{color:var(--azure-deep);}
+  a.story-link{
+    display:inline-block;
+    margin-top:0.3em;
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:0.62em;
+    letter-spacing:0.02em;
+    text-decoration-thickness:2px;
+  }
+
+  /* ---------- MASTHEAD ---------- */
+  .masthead{
+    background:var(--sunshine);
+    color:var(--navy-text);
+    padding:4rem 2rem 3rem;
+    text-align:center;
+    border-bottom:6px solid var(--navy-text);
+  }
+  .masthead .kicker{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    letter-spacing:0.35em;
+    text-transform:uppercase;
+    font-size:0.85rem;
+    margin-bottom:1rem;
+  }
+  .masthead h1{
+    font-size:5.5rem;
+    margin:0;
+    font-weight:600;
+    line-height:1.02;
+  }
+  .masthead .date{
+    font-size:1.3rem;
+    margin-top:1.2rem;
+    font-weight:500;
+  }
+  .masthead .subline{
+    max-width:44ch;
+    margin:1.5rem auto 0;
+    font-size:1.15rem;
+    font-family:'Fraunces',serif;
+    font-style:italic;
+  }
+
+  /* ---------- NAV ---------- */
+  nav.jump{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:var(--sunshine);
+    color:var(--navy-text);
+    padding:1.2rem 2rem;
+    font-family:'Inter',sans-serif;
+    border-bottom:3px solid var(--navy-text);
+  }
+  nav.jump .label{
+    font-size:0.7rem;
+    letter-spacing:0.3em;
+    text-transform:uppercase;
+    color:var(--azure-deep);
+    font-weight:700;
+    margin-bottom:0.6rem;
+    display:block;
+  }
+  nav.jump ol{
+    margin:0;
+    padding:0;
+    list-style:none;
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.5rem 1.2rem;
+  }
+  nav.jump li{font-size:0.95rem;}
+  nav.jump a{
+    color:var(--navy-text);
+    text-decoration:none;
+    border-bottom:2px solid transparent;
+    padding-bottom:2px;
+  }
+  nav.jump a:hover{border-bottom-color:var(--forest-deep);}
+  nav.jump .num{color:var(--azure-deep);font-weight:700;margin-right:0.3em;}
+
+  /* ---------- SHARED STORY STRUCTURE ---------- */
+  section.story{
+    padding:5rem 2rem;
+    position:relative;
+    overflow:hidden;
+  }
+  .story-inner{max-width:52rem;margin:0 auto;position:relative;z-index:2;}
+  .story-inner.wide{max-width:66rem;}
+  .flag{
+    display:inline-flex;
+    align-items:center;
+    gap:0.5rem;
+    background:var(--sunshine);
+    color:var(--navy-text);
+    font-family:'Inter',sans-serif;
+    font-weight:800;
+    font-size:0.85rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:0.5rem 1rem;
+    border-radius:2px;
+    margin-bottom:1.6rem;
+  }
+  .headline{
+    font-size:3.2rem;
+    line-height:1.06;
+    margin:0 0 1.6rem 0;
+    font-weight:600;
+  }
+  .dek{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:1.3rem;
+    margin-bottom:2rem;
+    opacity:0.85;
+  }
+  .story p{font-size:1em;}
+  .meta{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:0.75rem;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    margin-bottom:1rem;
+  }
+
+  /* ===== 01 HERO — sky blue, huge serif ===== */
+  .s-hero{background:var(--sky);color:var(--navy-text);padding:7rem 2rem;}
+  .s-hero .num-bg{
+    position:absolute;
+    top:-2rem; right:-1rem;
+    font-family:'Fraunces',serif;
+    font-size:22rem;
+    font-weight:700;
+    color:var(--sky-deep);
+    opacity:0.5;
+    z-index:1;
+    line-height:1;
+  }
+  .s-hero .headline{font-size:4rem;max-width:16ch;}
+
+  /* ===== 02 DEEP BLUE — two column ===== */
+  .s-deepblue{background:var(--azure);color:var(--navy-text);}
+  .s-deepblue .accent-rule{height:6px;width:6rem;background:var(--navy-text);margin-bottom:2rem;}
+  .s-deepblue .cols{display:grid;grid-template-columns:1fr 1fr;gap:3rem;}
+  .s-deepblue .headline{grid-column:1/-1;}
+  .s-deepblue a{color:var(--forest-deep);}
+  .s-deepblue .num{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:1.1rem;
+    border:2px solid var(--navy-text);
+    color:var(--navy-text);
+    display:inline-block;
+    padding:0.3rem 0.8rem;
+    margin-bottom:1.5rem;
+  }
+
+  /* ===== 03 SUNSHINE ALERT — stamp number, italic ===== */
+  .s-sunshine{background:var(--sunshine);color:var(--navy-text);}
+  .s-sunshine .stamp{
+    width:6rem;height:6rem;
+    border:4px solid var(--navy-text);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:2.2rem;font-weight:700;
+    transform:rotate(-8deg);
+    margin-bottom:2rem;
+  }
+  .s-sunshine .headline{font-style:italic;font-weight:700;}
+  .s-sunshine .flag{background:var(--ivory);color:var(--navy-text);border:2px solid var(--navy-text);}
+
+  /* ===== 04 TERMINAL — monospace, green on light ===== */
+  .s-terminal{background:var(--charcoal-light,#eef6ee);background:#eef6ee;color:var(--forest-deep);font-family:'IBM Plex Mono',monospace;border-top:4px dashed var(--forest);border-bottom:4px dashed var(--forest);}
+  .s-terminal .headline{font-family:'IBM Plex Mono',monospace;font-size:2.4rem;}
+  .s-terminal .prompt{color:var(--forest);font-weight:700;}
+  .s-terminal p{font-family:'IBM Plex Mono',monospace;font-size:0.85em;line-height:1.7;}
+  .s-terminal .meta{color:var(--forest);}
+  .s-terminal a{color:var(--forest-deep);font-family:'IBM Plex Mono',monospace;}
+  .s-terminal .bracket{color:var(--teal);}
+
+  /* ===== 05 ACADEMIC DROP CAP ===== */
+  .s-academic{background:var(--ivory);color:var(--charcoal);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .s-academic .headline{color:var(--navy-text);}
+  .s-academic .dropcap p:first-of-type::first-letter{
+    font-family:'Fraunces',serif;
+    font-size:5.5rem;
+    float:left;
+    line-height:0.8;
+    padding:0.05em 0.1em 0 0;
+    color:var(--azure-deep);
+    font-weight:700;
+  }
+  .s-academic .footnote{
+    font-size:0.7rem;
+    border-top:1px solid var(--line);
+    padding-top:1rem;
+    margin-top:2rem;
+    font-family:'IBM Plex Mono',monospace;
+    color:#4a5a52;
+  }
+
+  /* ===== 06 BIG STAT ===== */
+  .s-bigstat{background:var(--sage);color:var(--forest-deep);text-align:center;}
+  .s-bigstat .stat{
+    font-family:'Fraunces',serif;
+    font-size:11rem;
+    font-weight:700;
+    line-height:0.9;
+    margin:1rem 0;
+    color:var(--forest-deep);
+  }
+  .s-bigstat .stat-label{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    font-size:0.9rem;
+    margin-bottom:2.5rem;
+  }
+  .s-bigstat .headline,.s-bigstat p{text-align:left;max-width:46rem;margin-left:auto;margin-right:auto;}
+  .s-bigstat .headline{text-align:center;}
+
+  /* ===== 07 PULL QUOTE ===== */
+  .s-pullquote{background:var(--teal);color:var(--navy-text);}
+  .s-pullquote blockquote{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:2.6rem;
+    line-height:1.2;
+    margin:2rem 0 2.5rem;
+    font-weight:500;
+  }
+  .s-pullquote blockquote::before{content:"\201C";}
+  .s-pullquote blockquote::after{content:"\201D";}
+  .s-pullquote .headline{font-size:2.4rem;}
+  .s-pullquote a{color:var(--forest-deep);}
+
+  /* ===== 08 BROADSHEET ===== */
+  .s-broadsheet{background:var(--cream);color:var(--charcoal);}
+  .s-broadsheet .rule{border:none;border-top:2px solid var(--navy-text);border-bottom:1px solid var(--navy-text);height:4px;margin:1.5rem 0 2.5rem;}
+  .s-broadsheet .cols3{column-count:2;column-gap:3rem;column-rule:1px solid var(--line);}
+  .s-broadsheet .cols3 p{font-size:0.85em;}
+  .s-broadsheet .headline{column-span:all;}
+
+  /* ===== 09 COLOUR FIELD ===== */
+  .s-colourfield{background:var(--forest);color:var(--navy-text);}
+  .s-colourfield .headline{font-family:'Inter',sans-serif;font-weight:800;font-size:3rem;}
+  .s-colourfield .num-box{
+    display:inline-block;
+    background:var(--sunshine);
+    color:var(--forest-deep);
+    font-family:'Inter',sans-serif;
+    font-weight:800;
+    padding:0.4rem 1rem;
+    margin-bottom:2rem;
+    font-size:1rem;
+  }
+  .s-colourfield a{color:var(--azure-deep);}
+
+  /* ===== 10 LETTERPRESS ===== */
+  .s-letterpress{
+    background:var(--cream);
+    color:var(--navy-text);
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(28,58,82,0.03) 1px, transparent 1px),
+      radial-gradient(circle at 70% 60%, rgba(28,58,82,0.03) 1px, transparent 1px);
+    background-size:6px 6px, 9px 9px;
+  }
+  .s-letterpress .headline{
+    text-shadow:0.5px 0.5px 0 rgba(28,58,82,0.15);
+    border-bottom:3px double var(--navy-text);
+    padding-bottom:1.2rem;
+  }
+  .s-letterpress .num-hairline{
+    font-family:'Fraunces',serif;
+    font-size:1.2rem;
+    letter-spacing:0.3em;
+    color:var(--gold);
+    font-weight:700;
+    margin-bottom:1rem;
+  }
+
+  footer{
+    background:var(--sage);
+    color:var(--navy-text);
+    text-align:center;
+    padding:3.5rem 2rem;
+    font-family:'Inter',sans-serif;
+    font-size:0.95rem;
+    border-top:3px solid var(--forest-deep);
+  }
+  footer .fname{font-family:'Fraunces',serif;font-style:italic;font-size:1.3rem;color:var(--forest-deep);margin-bottom:0.5rem;}
+
+  @media(max-width:700px){
+    body{font-size:1.55rem;}
+    .headline{font-size:2.2rem !important;}
+    .s-hero .headline{font-size:2.6rem !important;}
+    .s-hero .num-bg{font-size:10rem;}
+    .s-deepblue .cols{grid-template-columns:1fr;}
+    .s-broadsheet .cols3{column-count:1;}
+    .s-bigstat .stat{font-size:5.5rem;}
+    .masthead h1{font-size:3rem;}
+    nav.jump ol{gap:0.4rem 0.8rem;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="kicker">SHORE Institute · Shorelines</div>
+  <h1>Morning Edition</h1>
+  <div class="date">Monday, 10 August 2026</div>
+  <div class="subline">Ten stories from the ocean governance, hydrospatial science, and blue economy beat — filtered for what actually touches your work.</div>
+</header>
+
+<nav class="jump">
+  <span class="label">Jump to story</span>
+  <ol>
+    <li><a href="#story-1"><span class="num">01</span>The High Seas Treaty Enters Its Working Phase</a></li>
+    <li><a href="#story-2"><span class="num">02</span>28.7% of the Seafloor Is Mapped ⚡</a></li>
+    <li><a href="#story-3"><span class="num">03</span>SIDS Get a Sliver of the Climate Finance They're Owed</a></li>
+    <li><a href="#story-4"><span class="num">04</span>Nineteen Agreements, One Blue Bond</a></li>
+    <li><a href="#story-5"><span class="num">05</span>GeoAI's Market Number Is Small</a></li>
+    <li><a href="#story-6"><span class="num">06</span>The Governance Gap Under BBNJ Has a Name Now</a></li>
+    <li><a href="#story-7"><span class="num">07</span>Whose Ocean Data Is It</a></li>
+    <li><a href="#story-8"><span class="num">08</span>Three Funding Windows Close by October ⚡</a></li>
+    <li><a href="#story-9"><span class="num">09</span>A Pliocene Current Shift Gets a Fresh Read</a></li>
+    <li><a href="#story-10"><span class="num">10</span>The Ocean Decade's Current Call Closes August 31 ⚡</a></li>
+  </ol>
+</nav>
+
+<!-- ===================== STORY 01 — HERO ===================== -->
+<section class="story s-hero" id="story-1">
+  <div class="num-bg">01</div>
+  <div class="story-inner">
+    <div class="meta">Ocean Governance</div>
+    <h2 class="headline">The High Seas Treaty Enters Its Working Phase</h2>
+    <p>BBNJ has been in force since January, which means the two-thirds of the ocean that sits beyond national jurisdiction now has a legal architecture for the first time. That is the frame HARMONiSE has to slot into. Whatever spatial data infrastructure Seychelles builds for its own EEZ now sits next to a parallel high-seas regime with its own area-based management tools, environmental impact assessment rules, and benefit-sharing obligations.</p>
+    <p>The agreement has cleared ratification with 83 parties and 145 signatories. The real work has shifted to the Preparatory Commission, which is negotiating how the first Conference of the Parties will function: how area-based management proposals get submitted and reviewed, and how the treaty's technical and scientific body will operate once it exists.</p>
+    <p>For a state whose blue economy ambitions extend past its own EEZ into the wider Western Indian Ocean, the design choices being locked in at these PrepCom sessions decide whether a small state can realistically table an ABMT proposal, or whether the process ends up dominated by states that already have high-seas science capacity. Worth tracking as the PrepCom reports circulate.</p>
+    <a class="story-link" href="https://sdg.iisd.org/news/bbnj-agreement-enters-into-force/">sdg.iisd.org — BBNJ Agreement enters into force</a>
+  </div>
+</section>
+
+<!-- ===================== STORY 02 — DEEP BLUE ===================== -->
+<section class="story s-deepblue" id="story-2">
+  <div class="story-inner wide">
+    <div class="flag">⚡ Actionable — registration open</div>
+    <div class="num">02 / HYDROSPATIAL SCIENCE</div>
+    <h2 class="headline">28.7% of the Seafloor Is Mapped — and Kuala Lumpur Wants Your Data</h2>
+    <div class="accent-rule"></div>
+    <div class="cols">
+      <div>
+        <p>This is the number the Ocean Mapping Hub's advocacy case rests on. Under a third of the global ocean floor has modern bathymetric coverage, and Seabed 2030 just added almost five million square kilometres in a year, still short of pace for the 2030 target. Every satellite-derived bathymetry dataset Seychelles or its neighbours contribute is coverage the Nippon Foundation-GEBCO project cannot buy any other way.</p>
+      </div>
+      <div>
+        <p>The regional detail matters more than the global one. The ROPME Sea Area's coverage tripled in a year, from roughly 6.4% to 20.5%, helped by a nearly 300,000 square kilometre SDB contribution from Greenwater Foundation spanning 20 nations. First-time national submissions this year came from Malaysia, Morocco, Papua New Guinea, and Saudi Arabia — exactly the profile of contributor Seychelles should be matching.</p>
+        <p>The Indo-Pacific Ocean Mapping Meeting &amp; Data Sprint runs in Kuala Lumpur, 20 to 22 October. Registration is open now, and it is a concrete venue to either contribute Seychelles SDB data or scope a national submission.</p>
+      </div>
+    </div>
+    <a class="story-link" href="https://oceannews.com/news/science-technology/seabed-2030-and-greenwater-foundation-formalize-ocean-mapping-partnership/">oceannews.com — Seabed 2030 and Greenwater Foundation partnership</a>
+  </div>
+</section>
+
+<!-- ===================== STORY 03 — BIG STAT ===================== -->
+<section class="story s-bigstat" id="story-3">
+  <div class="story-inner">
+    <div class="meta">SIDS Equity &amp; Climate Finance</div>
+    <h2 class="headline">SIDS Get a Sliver of the Climate Finance They're Owed</h2>
+    <div class="stat">64%</div>
+    <div class="stat-label">of SIDS ocean-related climate commitments depend on external support that mostly isn't arriving</div>
+    <p>This is evidence for the High-Income SIDS Paradox argument, running in the direction that hits most SIDS but not the one that hits Seychelles specifically. Most small island states are locked out of climate finance because funders treat them as too small and too fragmented to underwrite efficiently. Seychelles gets the opposite penalty: its GNI per capita disqualifies it from concessional finance altogether, despite carrying the same ocean exposure as its poorer neighbours.</p>
+    <p>A new Back to Blue report puts numbers on the general gap. SIDS contribute under 1% of global emissions but absorb outsized climate risk through an ocean that makes up 70% of their biosphere — and 64% of their ocean-related climate commitments depend on external support that isn't showing up at the scale needed.</p>
+    <p>Useful citation for the next funding pitch, or a Shorelines piece arguing that "high income" is the wrong proxy for climate vulnerability.</p>
+    <a class="story-link" href="https://unctad.org/news/blog-climate-finance-sids-shockingly-low-why-needs-change">unctad.org — Climate finance for SIDS is shockingly low</a>
+  </div>
+</section>
+
+<!-- ===================== STORY 04 — COLOUR FIELD ===================== -->
+<section class="story s-colourfield" id="story-4">
+  <div class="story-inner">
+    <div class="num-box">03 / BLUE ECONOMY — SEYCHELLES</div>
+    <h2 class="headline">Nineteen Agreements, One Blue Bond, and the Case Study Writes Itself</h2>
+    <p>This one is home turf. Prime Minister Modi's June state visit to Seychelles produced nineteen bilateral outcomes across development finance, maritime cooperation, and infrastructure, landing on top of a sovereign blue bond that is now seven years into funding stock assessments, catch monitoring, and traceability systems for artisanal fisheries.</p>
+    <p>Seychelles still runs roughly 80% of the Western Indian Ocean's tuna catch through Port Victoria, in the world's second-largest tuna basin at about 20% of global production. That is the leverage point: a blue economy built on one dominant, well-monitored fishery, with donor attention now stacking a second layer of finance on top of the first.</p>
+    <p>Worth revisiting for Shorelines as the counter-example to reach for when the High-Income SIDS Paradox argument needs a "here's what capital actually does when it shows up" case, rather than the usual absence-of-capital framing.</p>
+    <a class="story-link" href="https://www.cnbcafrica.com/2026/seychelles-2026-2027-accelerating-growth-across-finance-infrastructure-blue-economy">cnbcafrica.com — Seychelles 2026/2027: finance, infrastructure, blue economy</a>
+  </div>
+</section>
+
+<!-- ===================== STORY 05 — TERMINAL ===================== -->
+<section class="story s-terminal" id="story-5">
+  <div class="story-inner">
+    <div class="meta">$ topic --geoai --ocean</div>
+    <h2 class="headline"><span class="bracket">[04]</span> GeoAI's Market Number Is Small. The Capability Gap Behind It Isn't.</h2>
+    <p><span class="prompt">&gt;</span> The USD 172 million 2026 figure for AI-driven geospatial analytics is almost beside the point. What matters for HARMONiSE is that GeoAI research is converging fast on the exact stack the Ocean Mapping Hub needs: satellite-derived bathymetry, Argo network fusion, and now conversational interfaces like OceanAI sitting on top of oceanographic reanalysis products.</p>
+    <p><span class="prompt">&gt;</span> The direction of travel in the literature is toward explainability and adaptability, not raw prediction accuracy alone — the right emphasis for anything Seychelles would need to defend in front of a funder or a regional fisheries body. A black-box bathymetry model is a hard sell to IOC-UNESCO. An explainable one is a grant application.</p>
+    <p><span class="prompt">&gt;</span> Track the <em>Remote Sensing</em> special issue on GeoAI and EO big data for citable methods when HARMONiSE's technical annex needs backing.</p>
+    <a class="story-link" href="https://www.sciencedirect.com/science/article/pii/S2589004225026689">sciencedirect.com — GeoAI: beyond mapping earth and cities</a>
+  </div>
+</section>
+
+<!-- ===================== STORY 06 — ACADEMIC DROP CAP ===================== -->
+<section class="story s-academic" id="story-6">
+  <div class="story-inner dropcap">
+    <div class="meta">06 · Ocean Governance — Peer-Reviewed</div>
+    <h2 class="headline">The Governance Gap Under BBNJ Has a Name Now</h2>
+    <p>A paper in <em>Frontiers in Marine Science</em> this year gives precise language to a problem SHORE Institute has been circling for a while: high seas MPA decision-making sits inside a "layered and dispersed institutional environment," where regional fisheries bodies differ wildly in capacity, timelines, and whether marine biodiversity conservation is even part of their mandate.</p>
+    <p>That is the implementation gap BBNJ was meant to close and hasn't yet, because the treaty's area-based management tool process still has to negotiate around existing regional fisheries management organisations rather than override them. For a small state trying to table a high seas ABMT proposal, that means working out which of several overlapping bodies actually has to sign off before a Seychelles proposal goes anywhere.</p>
+    <div class="footnote">Cite directly if the next Shorelines piece needs a peer-reviewed source for: the high seas treaty entering into force did not, by itself, fix the coordination problem. — Frontiers in Marine Science, "High seas marine protected areas under the BBNJ agreement: implementation gaps and governance pathways," 2026.</div>
+    <a class="story-link" href="https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2026.1860724/full">frontiersin.org — full paper</a>
+  </div>
+</section>
+
+<!-- ===================== STORY 07 — PULL QUOTE ===================== -->
+<section class="story s-pullquote" id="story-7">
+  <div class="story-inner">
+    <div class="meta">07 · Data Sovereignty</div>
+    <h2 class="headline">Whose Ocean Data Is It</h2>
+    <blockquote>The Third World Ocean Assessment calls for greater recognition of Indigenous knowledge in ocean governance, drawing on nearly 600 experts from 86 countries.</blockquote>
+    <p>Data sovereignty is one of the standing focus areas, and this is the UN's clearest recent statement of it applied to the ocean rather than land. Ocean Networks Canada's parallel work on Indigenous ocean data sovereignty, explicitly framed as "decolonizing data," is a workable template for what HARMONiSE's own data governance protocols should look like whenever SHORE Institute works with community or artisanal fisher data in Seychelles.</p>
+    <p>The open question the Assessment doesn't answer: who holds veto rights over spatial data collected in someone else's traditional fishing grounds, and whether a hydrospatial observatory needs a data sovereignty policy before its first survey, not after.</p>
+    <a class="story-link" href="https://www.staradvertiser.com/2026/07/29/hawaii-news/u-n-report-highlights-indigenous-knowledge-in-ocean-governance/">staradvertiser.com — UN report highlights Indigenous knowledge in ocean governance</a>
+  </div>
+</section>
+
+<!-- ===================== STORY 08 — SUNSHINE ALERT ===================== -->
+<section class="story s-sunshine" id="story-8">
+  <div class="story-inner">
+    <div class="flag">⚡ Actionable — deadlines below</div>
+    <div class="stamp">08</div>
+    <div class="meta">Funding &amp; Opportunities</div>
+    <h2 class="headline">Three Ocean Funding Windows Close Between Now and October</h2>
+    <p>Not background reading, this one is a to-do list. Pure Ocean's call for projects opens 1 September with Phase 1 applications open through 1 October. The Weeden Foundation's marine conservation grants, USD 10,000 to 30,000, have returning grantees on a 4 September full-proposal deadline. IOOS's USD 7.5 million Ocean Technology Transition programme has already closed for new applications but announces selections in September — worth watching for partnership signals even without a live window.</p>
+    <p>None of these fund HARMONiSE outright, but Pure Ocean and Weeden are both plausible seed or bridge funding for a discrete Ocean Mapping Hub pilot, and both have proposal cycles short enough to turn around before year end.</p>
+    <a class="story-link" href="https://www.pure-ocean.org/en/call-for-projects/">pure-ocean.org — Call for projects 2026</a>
+  </div>
+</section>
+
+<!-- ===================== STORY 09 — BROADSHEET ===================== -->
+<section class="story s-broadsheet" id="story-9">
+  <div class="story-inner wide">
+    <div class="meta">09 · Hydrospatial Science — Reading List</div>
+    <h2 class="headline">A Pliocene Current Shift Gets a Fresh Read</h2>
+    <hr class="rule">
+    <div class="cols3">
+      <p>Not urgent, but the kind of paper worth knowing exists. New <em>Nature Geoscience</em> research traces how the Southern Ocean's subtropical front moved north during the late Pliocene, cutting salt transport by the Agulhas Leakage — the current system that connects the Indian and Atlantic Oceans directly off southern Africa.</p>
+      <p>The Agulhas system sits upstream of everything the Western Indian Ocean does hydrographically, including the water masses Seychelles sits in. A paleoclimate paper on how that current responded to a warmer climate state is a useful long-baseline reference point for anything SHORE Institute eventually has to say about projected changes to regional circulation.</p>
+      <p>Filed for the hydrospatial science reading list rather than immediate action, but worth having on hand the next time a funder asks what's known about regional circulation risk.</p>
+    </div>
+    <a class="story-link" href="https://www.nature.com/ngeo/">nature.com/ngeo — browse articles</a>
+  </div>
+</section>
+
+<!-- ===================== STORY 10 — LETTERPRESS ===================== -->
+<section class="story s-letterpress" id="story-10">
+  <div class="story-inner">
+    <div class="flag">⚡ Actionable — closes 31 August</div>
+    <div class="num-hairline">— X —</div>
+    <div class="meta">UN Ocean Decade</div>
+    <h2 class="headline">The Ocean Decade's Current Call Closes August 31</h2>
+    <p>Three weeks out. Call for Decade Actions No. 11/2026 is open until 31 August, built around the Barcelona Statement priorities, and it explicitly includes travel support to enable diverse participation — including small island states — at the 2027 Ocean Decade Conference.</p>
+    <p>This is a live avenue to get SHORE Institute or the Ocean Mapping Hub formally endorsed as a UN Ocean Decade Action, which carries more weight with funders than unaffiliated NGO status, and the travel support line is aimed squarely at closing the participation gap for under-resourced delegations.</p>
+    <p>Endorsement applications go through the Ocean Decade website before the 31 August close.</p>
+    <a class="story-link" href="https://oceandecade.org/">oceandecade.org — Call for Decade Actions</a>
+  </div>
+</section>
+
+<footer>
+  <div class="fname">Shorelines</div>
+  <div>Morning Edition compiled for Francesca Adrienne, SHORE Institute · 10 August 2026</div>
+</footer>
+
+</body>
+</html>
