@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Morning Edition — 17 August 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600;1,9..144,700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,600&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0b2545;
+    --navy-soft:#123a63;
+    --sky:#cfe9f8;
+    --sky-deep:#9fd3ee;
+    --sky-pale:#eaf6fd;
+    --teal:#0f6f66;
+    --teal-deep:#0a4d46;
+    --teal-pale:#e3f3f0;
+    --yellow:#ffd23f;
+    --yellow-bright:#ffe066;
+    --yellow-soft:#fff3c4;
+    --gold:#d9a521;
+    --forest:#1f4d3a;
+    --forest-deep:#153328;
+    --sage:#a8c3a0;
+    --mint:#dcf3e8;
+    --mint-deep:#c3e8d6;
+    --off-white:#faf7f0;
+    --cream:#f3ecd9;
+    --cream-deep:#ece0bd;
+    --slate:#48546b;
+    --charcoal:#2c2c2c;
+    --white:#ffffff;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--off-white);
+    color:var(--charcoal);
+    font-family:'Inter',sans-serif;
+    font-size:2rem;
+    line-height:1.55;
+  }
+  img{max-width:100%;}
+  .measure{max-width:42em;}
+
+  /* ---------- Masthead ---------- */
+  .masthead{
+    background:var(--navy);
+    color:var(--off-white);
+    padding:3.5rem 2rem 2.5rem;
+    text-align:center;
+  }
+  .masthead .eyebrow{
+    font-family:'Inter',sans-serif;
+    font-size:1.1rem;
+    letter-spacing:0.35em;
+    text-transform:uppercase;
+    color:var(--yellow);
+    font-weight:700;
+    margin:0 0 1rem;
+  }
+  .masthead h1{
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    font-size:clamp(3.5rem,8vw,6.5rem);
+    margin:0;
+    line-height:0.98;
+  }
+  .masthead .dateline{
+    margin-top:1.2rem;
+    font-size:1.4rem;
+    color:var(--sky-deep);
+    font-style:italic;
+    font-family:'Fraunces',serif;
+  }
+
+  /* ---------- Jump nav ---------- */
+  nav.jump{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:var(--sky-pale);
+    border-bottom:4px solid var(--navy);
+    padding:1.2rem 1.5rem;
+  }
+  nav.jump .jump-label{
+    font-size:1rem;
+    letter-spacing:0.25em;
+    text-transform:uppercase;
+    font-weight:800;
+    color:var(--teal-deep);
+    margin-right:1rem;
+    display:block;
+    margin-bottom:0.8rem;
+  }
+  nav.jump ol{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.6rem 1rem;
+  }
+  nav.jump li a{
+    display:inline-block;
+    color:var(--navy);
+    text-decoration:none;
+    background:var(--white);
+    border:2px solid var(--sky-deep);
+    border-radius:999px;
+    padding:0.5rem 1.1rem;
+    font-size:1.05rem;
+    font-weight:600;
+  }
+  nav.jump li a .n{
+    font-family:'JetBrains Mono',monospace;
+    color:var(--teal);
+    margin-right:0.5rem;
+  }
+  nav.jump li a:hover{background:var(--yellow-soft);}
+  nav.jump li a .bolt{color:var(--gold);margin-left:0.3rem;}
+
+  /* ---------- Shared story chrome ---------- */
+  section.story{
+    padding:5rem 2rem;
+    position:relative;
+    overflow:hidden;
+  }
+  .flag{
+    display:inline-flex;
+    align-items:center;
+    gap:0.5rem;
+    background:var(--navy);
+    color:var(--yellow);
+    font-weight:800;
+    font-size:1.15rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:0.6rem 1.3rem;
+    border-radius:999px;
+    margin-bottom:1.8rem;
+  }
+  .eyebrow-label{
+    font-size:1.05rem;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    font-weight:800;
+    margin:2.6rem 0 1rem;
+  }
+  .why-matters{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:1.6rem;
+    line-height:1.5;
+    margin:1.8rem 0 2.2rem;
+    max-width:44em;
+  }
+  .story-notes p, .story-article p{
+    margin:0 0 1.3rem;
+  }
+  .story-notes{max-width:42em;}
+  .story-article{max-width:38em;}
+  .story-article p:first-child{margin-top:0;}
+  a.actlink{
+    word-break:break-all;
+    font-weight:700;
+  }
+  .numeral{
+    font-family:'Fraunces',serif;
+    font-weight:700;
+  }
+
+  /* ===== 1. HERO (yellow, story 01) ===== */
+  .hero{
+    background:linear-gradient(180deg,var(--yellow-bright) 0%, var(--yellow) 100%);
+    color:var(--navy);
+  }
+  .hero .numeral{
+    font-size:8rem;
+    opacity:0.25;
+    position:absolute;
+    top:1rem;
+    right:2rem;
+    line-height:1;
+  }
+  .hero h2{
+    font-family:'Fraunces',serif;
+    font-weight:900;
+    font-size:clamp(3rem,6vw,5.2rem);
+    line-height:1.02;
+    margin:0.5rem 0 1.5rem;
+    max-width:16em;
+  }
+  .hero .why-matters{color:var(--teal-deep);}
+  .hero .flag{background:var(--navy);color:var(--yellow);}
+
+  /* ===== 2. SUNBEAM ALERT (bright yellow, story 02) ===== */
+  .sunbeam{
+    background:var(--yellow-bright);
+    color:var(--navy);
+    border-top:12px solid var(--navy);
+    border-bottom:12px solid var(--navy);
+  }
+  .sunbeam .stamp{
+    display:inline-block;
+    border:5px solid var(--navy);
+    border-radius:50%;
+    width:6rem;
+    height:6rem;
+    line-height:5.4rem;
+    text-align:center;
+    font-family:'JetBrains Mono',monospace;
+    font-weight:700;
+    font-size:2.2rem;
+    transform:rotate(-8deg);
+    margin-bottom:1.5rem;
+  }
+  .sunbeam h2{
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    font-style:italic;
+    font-size:clamp(2.6rem,5vw,4.2rem);
+    line-height:1.08;
+    margin:0.5rem 0 1.5rem;
+  }
+  .sunbeam .why-matters{color:var(--teal-deep);}
+
+  /* ===== 3. COASTAL (pale blue, two column, story 03) ===== */
+  .coastal{
+    background:var(--sky-pale);
+    color:var(--navy);
+    border-left:14px solid var(--forest);
+  }
+  .coastal .numeral{
+    font-size:2.4rem;
+    border:3px solid var(--forest);
+    padding:0.3rem 1rem;
+    display:inline-block;
+    color:var(--forest);
+  }
+  .coastal h2{
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    font-size:clamp(2.6rem,4.5vw,4rem);
+    line-height:1.08;
+    margin:1rem 0 1.5rem;
+    max-width:18em;
+  }
+  .coastal .cols{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:3rem;
+    margin-top:2rem;
+  }
+  @media(max-width:900px){.coastal .cols{grid-template-columns:1fr;}}
+
+  /* ===== 4. BROADSHEET (newspaper columns, story 04) ===== */
+  .broadsheet{
+    background:var(--off-white);
+    color:var(--charcoal);
+    border-top:3px solid var(--navy);
+    border-bottom:3px solid var(--navy);
+  }
+  .broadsheet .masthead-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    border-bottom:3px solid var(--teal);
+    padding-bottom:1rem;
+    margin-bottom:2rem;
+  }
+  .broadsheet .numeral{font-size:2rem;color:var(--teal);}
+  .broadsheet .rule{
+    height:4px;
+    background:var(--teal);
+    width:5rem;
+    margin:1.5rem 0;
+  }
+  .broadsheet h2{
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    font-size:clamp(2.4rem,4.2vw,3.6rem);
+    line-height:1.1;
+    margin:0 0 1.5rem;
+    max-width:20em;
+  }
+  .broadsheet .cols3{
+    columns:2;
+    column-gap:3rem;
+    column-rule:1px solid var(--sage);
+    max-width:52em;
+  }
+  @media(max-width:900px){.broadsheet .cols3{columns:1;}}
+  .broadsheet .story-article{max-width:none;}
+
+  /* ===== 5. BIG STAT (story 05) ===== */
+  .bigstat{
+    background:var(--sky);
+    color:var(--navy);
+    text-align:left;
+  }
+  .bigstat .stat-wrap{
+    display:flex;
+    align-items:center;
+    gap:2.5rem;
+    flex-wrap:wrap;
+    margin:1rem 0 2rem;
+  }
+  .bigstat .stat-number{
+    font-family:'Fraunces',serif;
+    font-weight:900;
+    font-size:clamp(6rem,14vw,11rem);
+    line-height:0.85;
+    color:var(--teal-deep);
+  }
+  .bigstat .stat-caption{
+    font-size:1.4rem;
+    max-width:16em;
+    font-weight:600;
+  }
+  .bigstat h2{
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    font-size:clamp(2.4rem,4.5vw,3.8rem);
+    margin:0 0 0.5rem;
+    max-width:18em;
+  }
+
+  /* ===== 6. TERMINAL (monospace, mint, story 06) ===== */
+  .terminal{
+    background:var(--mint);
+    color:var(--forest-deep);
+  }
+  .terminal .term-window{
+    background:var(--off-white);
+    border:3px solid var(--forest);
+    border-radius:10px;
+    padding:2rem 2.2rem;
+    font-family:'JetBrains Mono',monospace;
+    max-width:44em;
+    margin-bottom:2rem;
+  }
+  .terminal .term-window .dots span{
+    display:inline-block;
+    width:0.9rem;height:0.9rem;
+    border-radius:50%;
+    margin-right:0.5rem;
+    background:var(--sage);
+  }
+  .terminal h2{
+    font-family:'JetBrains Mono',monospace;
+    font-weight:700;
+    font-size:clamp(1.8rem,3.2vw,2.6rem);
+    margin:1.2rem 0 0;
+    line-height:1.4;
+  }
+  .terminal .prompt{color:var(--teal-deep);}
+  .terminal .eyebrow-label, .terminal .numeral{font-family:'JetBrains Mono',monospace;}
+  .terminal .why-matters{font-family:'JetBrains Mono',monospace;font-style:normal;font-size:1.25rem;color:var(--teal-deep);}
+  .terminal .story-notes, .terminal .story-article{font-family:'Inter',sans-serif;}
+
+  /* ===== 7. PULL QUOTE (story 07) ===== */
+  .pullquote{
+    background:var(--sky-pale);
+    color:var(--navy);
+  }
+  .pullquote .quote{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-style:italic;
+    font-size:clamp(2.2rem,4.5vw,3.6rem);
+    line-height:1.25;
+    border-left:8px solid var(--teal);
+    padding-left:2rem;
+    margin:1.5rem 0 2.5rem;
+    max-width:34em;
+  }
+  .pullquote h2{
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    font-size:clamp(2rem,3.6vw,3rem);
+    margin:0 0 1rem;
+  }
+
+  /* ===== 8. ACADEMIC DROP CAP (story 08) ===== */
+  .dropcap{
+    background:var(--off-white);
+    color:var(--charcoal);
+    border:1px solid var(--sage);
+  }
+  .dropcap h2{
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    font-size:clamp(2.4rem,4.2vw,3.6rem);
+    margin:1rem 0 1.5rem;
+    color:var(--navy);
+  }
+  .dropcap .story-article p:first-of-type::first-letter{
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    font-size:5.5rem;
+    float:left;
+    line-height:0.8;
+    padding-right:0.6rem;
+    color:var(--navy);
+  }
+  .dropcap .footnote{
+    font-size:1.1rem;
+    color:var(--slate);
+    border-top:1px solid var(--sage);
+    padding-top:1rem;
+    margin-top:2rem;
+    max-width:38em;
+  }
+
+  /* ===== 9. COLOUR FIELD (solid teal, story 09) ===== */
+  .colorfield{
+    background:var(--teal);
+    color:var(--white);
+  }
+  .colorfield h2{
+    font-family:'Inter',sans-serif;
+    font-weight:800;
+    font-size:clamp(2.6rem,4.6vw,4rem);
+    line-height:1.1;
+    margin:1rem 0 1.5rem;
+    max-width:16em;
+  }
+  .colorfield .numeral{
+    font-size:2.2rem;
+    color:var(--yellow);
+    border:3px solid var(--yellow);
+    border-radius:50%;
+    width:4.5rem;
+    height:4.5rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .colorfield .why-matters{color:var(--yellow-bright);}
+  .colorfield a.actlink{color:var(--yellow-bright);}
+  .colorfield .eyebrow-label{color:var(--sky);}
+
+  /* ===== 10. LETTERPRESS (cream, story 10) ===== */
+  .letterpress{
+    background:var(--cream);
+    color:var(--charcoal);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(11,37,69,0.02) 0px, rgba(11,37,69,0.02) 1px, transparent 1px, transparent 3px);
+    border:1px solid var(--cream-deep);
+  }
+  .letterpress h2{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:clamp(2.4rem,4.2vw,3.8rem);
+    margin:1rem 0 1.5rem;
+    text-shadow:1px 1px 0 rgba(255,255,255,0.6);
+    color:var(--navy);
+  }
+  .letterpress .numeral{
+    font-size:1.8rem;
+    letter-spacing:0.1em;
+    color:var(--gold);
+    border-bottom:2px solid var(--gold);
+    padding-bottom:0.3rem;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--navy);
+    color:var(--sky-pale);
+    text-align:center;
+    padding:3rem 2rem;
+    font-size:1.1rem;
+  }
+  footer .fname{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:1.5rem;
+    color:var(--yellow);
+    margin-bottom:0.5rem;
+  }
+
+  @media(max-width:700px){
+    body{font-size:1.7rem;}
+    section.story{padding:3.5rem 1.3rem;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <p class="eyebrow">Shorelines &middot; A Personal Briefing</p>
+  <h1>Morning Edition</h1>
+  <p class="dateline">Monday, 17 August 2026</p>
+</header>
+
+<nav class="jump" aria-label="Jump to story">
+  <span class="jump-label">Jump to story</span>
+  <ol>
+    <li><a href="#story-01"><span class="n">01</span>Commonwealth SIDS Fund<span class="bolt">&#9889;</span></a></li>
+    <li><a href="#story-02"><span class="n">02</span>Seabed 2030 Data Sprint<span class="bolt">&#9889;</span></a></li>
+    <li><a href="#story-03"><span class="n">03</span>BBNJ Preparatory Commission</a></li>
+    <li><a href="#story-04"><span class="n">04</span>10% Ocean Protected</a></li>
+    <li><a href="#story-05"><span class="n">05</span>India-Seychelles MAHASAGAR</a></li>
+    <li><a href="#story-06"><span class="n">06</span>CARE Principles for Ocean Data</a></li>
+    <li><a href="#story-07"><span class="n">07</span>Ocean Deoxygenation 2025</a></li>
+    <li><a href="#story-08"><span class="n">08</span>Copernicus Marine Data for MSP</a></li>
+    <li><a href="#story-09"><span class="n">09</span>Plastics Treaty Draft</a></li>
+    <li><a href="#story-10"><span class="n">10</span>Open Access Geoscience</a></li>
+  </ol>
+</nav>
+
+<!-- ============ STORY 01 — HERO ============ -->
+<section class="story hero" id="story-01">
+  <span class="numeral">01</span>
+  <span class="flag">&#9889; Actionable — Grant Call</span>
+  <h2>A $200,000 Door Just Opened for Seychelles</h2>
+  <p class="why-matters">The Commonwealth and Azerbaijan&rsquo;s COP29 Presidency have opened a $5 million fund for the 25 Commonwealth SIDS, and Seychelles&rsquo;s government can apply for up to $200,000 in a call built around exactly the kind of AI-and-space-data ocean work HARMONiSE does.</p>
+
+  <p class="eyebrow-label">Story Notes</p>
+  <div class="story-notes">
+    <p>The COP29 Presidency&ndash;Commonwealth Fund for Small Island Developing States opened its call for proposals at the start of London Climate Action Week. Grants run up to US$200,000 per Commonwealth SIDS government, drawn from a US$5 million pool inside a wider US$10 million, five-year commitment.</p>
+    <p>The first US$2 million already went to two flagship projects: implementation of the Apia Commonwealth Ocean Declaration from CHOGM 2024, and an AI-and-space-data climate initiative. That tells you what the panel rewards. Ocean health proposals with a data or space-data backbone score well, which is close to a description of HARMONiSE and the Ocean Mapping Hub.</p>
+    <p>This is a government-to-government fund. The application has to route through Seychelles&rsquo;s Department of Blue Economy or an equivalent line ministry, not through SHORE directly. If Seychelles hasn&rsquo;t submitted yet, that is a conversation worth having this week.</p>
+    <p><a class="actlink" href="https://thecommonwealth.org/news/commonwealth-collaboration-azerbaijan-launches-funding-sids">thecommonwealth.org/news/commonwealth-collaboration-azerbaijan-launches-funding-sids</a></p>
+  </div>
+
+  <p class="eyebrow-label">Story Article</p>
+  <div class="story-article">
+    <p>Grant windows for Commonwealth SIDS rarely name AI and space data as a funding priority in the same sentence as ocean health. This one does, and that combination is worth sitting with.</p>
+    <p>The COP29 Presidency&ndash;Commonwealth Fund for Small Island Developing States launched with US$10 million committed over five years, split so US$5 million reaches the 25 Commonwealth SIDS directly through grants capped at US$200,000 per government. The first tranche, US$2 million, already funded two flagship projects: rollout of the Apia Commonwealth Ocean Declaration agreed at CHOGM 2024 in Samoa, and a project delivering AI and space data solutions for climate action. Neither is abstract. Both are precedent for what the panel will fund next.</p>
+    <p>You have spent years arguing that Seychelles gets treated as data-rich in classification terms and data-poor in practice, the High-Income SIDS Paradox playing out in a funding line for once. Seychelles sits above the income thresholds that unlock concessional climate finance from most multilateral windows, yet the actual bathymetric, spatial and ocean-observation infrastructure on the ground remains thin. A fund explicitly open to all 25 Commonwealth SIDS regardless of income classification sidesteps that problem entirely. It is built on Commonwealth membership, not GNI per capita.</p>
+    <p>The objection worth naming: this is a government fund, not an NGO fund. SHORE cannot apply directly, and Seychelles&rsquo;s Department of Blue Economy would need to be the applicant of record. That is a real constraint, not a formality. It means the useful move this week is not a SHORE proposal draft, it is a conversation with the department about whether a bid is already in motion, and if not, what a HARMONiSE-shaped one would look like on their letterhead.</p>
+    <p>The AI-and-space-data precedent project matters here specifically. It signals the fund&rsquo;s technical committee already understands that satellite-derived bathymetry, GeoAI classification and space-based ocean observation are legitimate climate resilience infrastructure, not a stretch justification bolted onto a conservation proposal. A pitch built around expanding SDB coverage for Seychelles&rsquo;s EEZ, feeding into both Seabed 2030 and a national marine spatial plan, would not need to explain why mapping counts as climate adaptation. The fund has already accepted that argument once.</p>
+    <p>Five million dollars split across 25 governments over five years is not a large pool per country, and other Commonwealth SIDS, several with more developed grant-writing capacity in this specific niche, will be competing for the same money. Speed matters more than polish here. A rough proposal in early is worth more than a refined one that misses this round&rsquo;s allocation.</p>
+    <p><a class="actlink" href="https://thecommonwealth.org/news/commonwealth-collaboration-azerbaijan-launches-funding-sids">thecommonwealth.org/news/commonwealth-collaboration-azerbaijan-launches-funding-sids</a></p>
+  </div>
+</section>
+
+<!-- ============ STORY 02 — SUNBEAM ALERT ============ -->
+<section class="story sunbeam" id="story-02">
+  <span class="stamp">02</span>
+  <span class="flag">&#9889; Actionable — Registration Open</span>
+  <h2>Seabed 2030 Wants Your Data in Kuala Lumpur</h2>
+  <p class="why-matters">Seabed 2030 has opened registration for its Indo-Pacific Ocean Mapping Meeting and Data Sprint in Kuala Lumpur this October, the exact regional forum where a HARMONiSE bathymetric data contribution would count toward the 28.7% of the ocean floor now mapped.</p>
+
+  <p class="eyebrow-label">Story Notes</p>
+  <div class="story-notes">
+    <p>The Nippon Foundation-GEBCO Seabed 2030 Project reported 28.7% global seafloor coverage this year, after adding almost five million square kilometres of new data in twelve months. Registration is now open for the project&rsquo;s Indo-Pacific Ocean Mapping Meeting and Data Sprint, running 20 to 22 October 2026 in Kuala Lumpur.</p>
+    <p>Regional coverage gains this cycle were uneven and instructive. The ROPME Sea Area more than tripled its mapped share, from roughly 6.4% to 20.5%, on the strength of coordinated regional contribution rather than any single mapping campaign. The Greenwater Foundation alone handed over almost 300,000 square kilometres of satellite-derived bathymetry spanning 20 nations, one of the largest non-profit bathymetric contributions on record.</p>
+    <p>A data sprint is a working meeting, not a conference. Regional teams show up with data holdings and leave with them ingested into the GEBCO grid. If SHORE or Seychelles&rsquo;s hydrographic authority holds any unpublished multibeam, SDB or LiDAR data for the Seychelles EEZ, Kuala Lumpur is the room where it gets counted.</p>
+    <p><a class="actlink" href="https://seabed2030.org/">seabed2030.org</a></p>
+  </div>
+
+  <p class="eyebrow-label">Story Article</p>
+  <div class="story-article">
+    <p>A data sprint is a specific kind of event, and it is worth being precise about what it is not. It is not a symposium where papers get presented and everyone goes home. It is a working meeting where regional teams bring whatever bathymetric data they hold, whatever state it is in, and leave with it ingested into the GEBCO grid.</p>
+    <p>Seabed 2030 announced 28.7% global seafloor coverage this year, an increase built on almost five million square kilometres of new data added over twelve months. The regional breakdown matters more than the headline number. The ROPME Sea Area&rsquo;s coverage more than tripled, from about 6.4% to 20.5%, largely because a small number of committed contributors treated the gap as solvable rather than permanent. The Greenwater Foundation&rsquo;s contribution, almost 300,000 square kilometres of satellite-derived bathymetry across 20 nations, shows what a non-profit or research institute can move into the public record without owning a survey vessel.</p>
+    <p>Registration for the Indo-Pacific Ocean Mapping Meeting and Data Sprint in Kuala Lumpur, 20 to 22 October, is open now. That geography puts Seychelles technically at the edge of the room rather than its centre, since Indo-Pacific coverage discussions tend to gravitate toward the larger Pacific and Southeast Asian gaps. But edge of the room is still in the room, and the alternative, waiting for an Indian Ocean-specific sprint that may not convene this cycle, costs more than the trip.</p>
+    <p>The honest question is whether SHORE or Seychelles&rsquo;s hydrographic function holds anything worth bringing. If there is unpublished multibeam data sitting in a drive from a past survey, or SDB coverage generated through HARMONiSE work that has not been formally submitted to the GEBCO grid, this is the mechanism that gets it counted, cited and attributed. Data that sits uncontributed does not advance the 2030 target and does not advance Seychelles&rsquo;s claim to being a serious contributor to regional ocean mapping, a claim that matters both for BBNJ implementation and for the argument that Seychelles&rsquo;s technical capacity outstrips its income classification.</p>
+    <p>If nothing is ready to contribute yet, the sprint is still worth attending as reconnaissance. Watching how the Greenwater Foundation and ROPME contributors structured their submissions is a faster way to learn the practical mechanics of a GEBCO contribution than reading the documentation cold.</p>
+    <p><a class="actlink" href="https://seabed2030.org/">seabed2030.org</a></p>
+  </div>
+</section>
+
+<!-- ============ STORY 03 — COASTAL ============ -->
+<section class="story coastal" id="story-03">
+  <span class="numeral">03</span>
+  <h2>BBNJ Is Law Now. The Real Work Starts in the Preparatory Commission</h2>
+  <p class="why-matters">BBNJ entered into force in January with 83 parties, and the Preparatory Commission meetings deciding how the high seas treaty actually gets implemented are exactly where a hydrospatial voice from a small state should be arguing for data standards now, before COP1 sets precedent Seychelles can&rsquo;t undo.</p>
+
+  <div class="cols">
+    <div>
+      <p class="eyebrow-label">Story Notes</p>
+      <div class="story-notes">
+        <p>The BBNJ Agreement entered into force on 17 January 2026, 120 days after Sierra Leone and Morocco pushed ratifications past the 60-country threshold in September 2025. The treaty now has 83 parties and 145 signatories, the first legally binding framework for managing marine biodiversity beyond national jurisdiction.</p>
+        <p>Entry into force is the easy part. The Preparatory Commission, which held its first session in April 2025, is now working through the mechanics that will shape everything downstream: how area-based management tools get proposed and approved, how environmental impact assessments for high-seas activity get standardised, and how the benefit-sharing mechanism for marine genetic resources actually functions.</p>
+        <p>None of that is decided yet, which means the data standards question is still open. Whoever sets the baseline for what counts as adequate spatial and biodiversity data in an EIA submission sets a bar every future submission has to clear. A small state with strong hydrospatial capacity has more leverage in that standard-setting conversation than its GDP would suggest.</p>
+        <p><a class="actlink" href="https://sdg.iisd.org/news/bbnj-agreement-enters-into-force/">sdg.iisd.org/news/bbnj-agreement-enters-into-force</a></p>
+      </div>
+    </div>
+    <div>
+      <p class="eyebrow-label">Story Article</p>
+      <div class="story-article">
+        <p>Treaties get covered twice: once when they are signed, and once when they enter into force. The coverage in between, the Preparatory Commission sessions where the actual operating rules get written, gets almost none. That is a mistake, because that is where the leverage is.</p>
+        <p>BBNJ entered into force on 17 January 2026, 120 days after the 60th ratification, with Sierra Leone and Morocco crossing the threshold in September 2025. The treaty now counts 83 parties and 145 signatories. It is the first legally binding instrument governing marine biodiversity in the roughly two-thirds of the ocean that falls outside any national jurisdiction, an area of governance that previously ran on a patchwork of sectoral bodies with no unified biodiversity mandate.</p>
+        <p>The Preparatory Commission held its first session in April 2025 and continues working ahead of the first Conference of the Parties. Three mechanisms are still being negotiated in practice, not just in principle: how states or organisations propose area-based management tools, what environmental impact assessment submissions have to contain to be considered adequate, and how the benefit-sharing arrangement for marine genetic resources collected on the high seas actually gets administered.</p>
+        <p>The EIA standard is the one that should have your attention. Every future high-seas activity, deep-sea mining exploration, cable-laying, scientific research with commercial potential, will need to submit environmental impact data against whatever baseline the Preparatory Commission and early COP sessions establish. If that baseline gets written by states and industries with the deepest existing survey capacity, it will default to standards only they can easily meet. If states with strong hydrospatial science but modest budgets, Seychelles among them, argue early for standards built around openly available bathymetric and biodiversity baselines, GEBCO grid data, OBIS records, satellite-derived products, the standard becomes something a small state can actually contribute to and audit, not just comply with.</p>
+        <p>This is not a hypothetical influence opportunity. BBNJ explicitly recognises the special circumstances of SIDS, and the treaty&rsquo;s capacity-building and technology transfer provisions exist because negotiators anticipated this exact asymmetry. But provisions on paper do not write technical standards. Showing up to Preparatory Commission sessions, or briefing Seychelles&rsquo;s delegation on what a workable EIA data standard looks like from a hydrospatial science perspective, is the mechanism that turns the provision into practice.</p>
+        <p>The COP1 date has not been finalised publicly in the sources reviewed here. What is confirmed is that the Preparatory Commission is where the technical groundwork gets laid before that date arrives, and that groundwork is where a research institute with real spatial data expertise has more to offer than its size would suggest.</p>
+        <p><a class="actlink" href="https://sdg.iisd.org/news/bbnj-agreement-enters-into-force/">sdg.iisd.org/news/bbnj-agreement-enters-into-force</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY 04 — BROADSHEET ============ -->
+<section class="story broadsheet" id="story-04">
+  <div class="masthead-row">
+    <span class="numeral">04 &middot; Ocean Protection</span>
+    <span>Field Report</span>
+  </div>
+  <h2>10% of the Ocean Is Now Protected. Watch How Cook Islands Got There</h2>
+  <p class="why-matters">IUCN Oceania&rsquo;s direct technical support for Cook Islands&rsquo; national marine spatial plan is close to a template for what SHORE could offer Seychelles, and the milestone announcement is a useful benchmark for where Seychelles&rsquo;s own protected area coverage sits by comparison.</p>
+  <div class="rule"></div>
+
+  <p class="eyebrow-label">Story Notes</p>
+  <div class="story-notes">
+    <p>The global ocean crossed a protection milestone in April 2026: 10.01% of the ocean is now within protected or conserved areas, according to IUCN. It is a number worth holding up against Seychelles&rsquo;s own marine protected area coverage, since the 30% target for 2030 remains a long way off globally and the gap between announced commitments and gazetted protection stays wide almost everywhere.</p>
+    <p>IUCN Oceania&rsquo;s work with the Cook Islands is the more useful story underneath the headline. The organisation presented a technical assessment of a proposed marine protected area network directly to the Cook Islands government, feeding into the country&rsquo;s national marine spatial plan. That is a specific, replicable model: an external technical body providing the spatial assessment work that a small state&rsquo;s own agencies may not have capacity to run in-house.</p>
+    <p>French Polynesia has also moved, with a presidential commitment to add at least 500,000 square kilometres of highly protected area by World Ocean Day 2026 and a public ban on deep-sea mining. Pacific SIDS are setting precedent in this space faster than Indian Ocean SIDS currently are.</p>
+    <p><a class="actlink" href="https://iucn.org/press-release/202604/world-reaches-milestone-nature-10-ocean-now-officially-protected">iucn.org/press-release/202604/world-reaches-milestone-nature-10-ocean-now-officially-protected</a></p>
+  </div>
+
+  <p class="eyebrow-label">Story Article</p>
+  <div class="story-article cols3">
+    <p>Ten percent is not the headline it sounds like. The global 30x30 target for 2030 is thirty percent of the ocean under protection, and the world has covered a third of the distance with four years left. But the number that matters more for SHORE&rsquo;s purposes is not the global figure. It is the mechanism by which individual Pacific SIDS are closing their own gaps, because that mechanism is portable.</p>
+    <p>IUCN&rsquo;s press release marking the 10.01% milestone in April 2026 sits alongside a quieter, more instructive story: IUCN Oceania&rsquo;s direct technical support to the Cook Islands government. The organisation built and presented a technical assessment of a proposed marine protected area network, work that fed straight into the Cook Islands&rsquo; national marine spatial planning process. This is not funding. It is technical capacity, delivered by an external body with spatial science expertise, to a small state government that does not have the in-house staff to run that assessment alone.</p>
+    <p>That is close to a description of what SHORE already positions itself to do for Seychelles, and the Cook Islands case is worth studying as a template rather than admiring from a distance. What did the technical assessment actually contain? What format did IUCN deliver it in, and how did the Cook Islands government fold it into a national plan rather than letting it sit as an external report nobody adopted? Those are answerable questions, and the answers would sharpen any pitch SHORE makes to Seychelles&rsquo;s Department of Blue Economy about running an equivalent assessment here.</p>
+    <p>French Polynesia&rsquo;s move is the sharper contrast. A presidential commitment to add 500,000 square kilometres of highly protected area by World Ocean Day 2026, paired with an explicit ban on deep-sea mining, is a political statement backed by acreage, not just a target on paper. It puts French Polynesia and increasingly the Cook Islands ahead of most Indian Ocean SIDS on this specific metric. Seychelles has real marine protected area coverage already, built through the 2018 debt-for-nature swap and subsequent expansions, so this is not a story about Seychelles starting from zero. It is a story about the pace other SIDS are now setting, and whether Seychelles&rsquo;s own MPA expansion plans are keeping that pace or falling behind it.</p>
+    <p>The honest gap in this reporting: none of the sources reviewed here confirm Seychelles&rsquo;s current percentage against the 30x30 baseline with a specific number. That comparison is worth running directly against Seychelles&rsquo;s own MPA registry before this becomes a Shorelines argument, rather than assuming the story writes itself from the Pacific precedent alone.</p>
+    <p><a class="actlink" href="https://iucn.org/press-release/202604/world-reaches-milestone-nature-10-ocean-now-officially-protected">iucn.org/press-release/202604/world-reaches-milestone-nature-10-ocean-now-officially-protected</a></p>
+  </div>
+</section>
+
+<!-- ============ STORY 05 — BIG STAT ============ -->
+<section class="story bigstat" id="story-05">
+  <span class="numeral">05</span>
+  <h2>19 Agreements, One Number Worth Watching</h2>
+  <div class="stat-wrap">
+    <div class="stat-number">19</div>
+    <div class="stat-caption">bilateral outcomes from Modi&rsquo;s June 2026 state visit to Seychelles &mdash; alongside an IMF growth projection of 3.4% for 2027, explicitly tied to blue economy expansion.</div>
+  </div>
+  <p class="why-matters">Modi&rsquo;s June state visit produced nineteen bilateral outcomes with Seychelles spanning maritime cooperation and blue economy finance, and IMF&rsquo;s 3.4% growth projection for 2027 is being explicitly tied to that blue economy expansion, which means SHORE has a live opening to argue for a spatial data component in whatever comes next.</p>
+
+  <p class="eyebrow-label">Story Notes</p>
+  <div class="story-notes">
+    <p>Indian Prime Minister Narendra Modi&rsquo;s state visit to Seychelles, 27 to 29 June 2026, produced nineteen bilateral outcomes covering development finance, digital payments, maritime cooperation, agriculture and institutional capacity-building. The visit sits inside India&rsquo;s MAHASAGAR framework, Mutual and Holistic Advancement for Security and Growth Across Regions, which frames Indian Ocean economic cooperation explicitly around security and blue economy growth together.</p>
+    <p>IMF is projecting 3.4% GDP growth for Seychelles in 2027, and CNBC Africa&rsquo;s coverage ties that projection directly to Seychelles scaling high-value, innovation-driven sectors including the blue economy. That is a specific, citable growth number to anchor any argument about the blue economy&rsquo;s economic weight in Seychelles, not just its environmental one.</p>
+    <p>Nineteen outcomes is a lot of agreements to have moved through without a public breakdown of which ones carry a maritime data or spatial component. That breakdown is worth requesting directly from Seychelles&rsquo;s Ministry of Foreign Affairs or the Department of Blue Economy before assuming none of the nineteen have anything to do with hydrospatial work.</p>
+  </div>
+
+  <p class="eyebrow-label">Story Article</p>
+  <div class="story-article">
+    <p>Nineteen bilateral outcomes from a single state visit is an unusually high number, and high numbers like that tend to get reported as a bloc rather than itemised. That is the gap worth closing here, because somewhere inside nineteen agreements spanning development finance, digital payments, maritime cooperation, agriculture and capacity-building, there is very likely a maritime domain awareness or ocean data component that has not yet surfaced in general coverage.</p>
+    <p>Modi&rsquo;s visit, 27 to 29 June 2026, sits inside India&rsquo;s MAHASAGAR framework, which stands for Mutual and Holistic Advancement for Security and Growth Across Regions. The name signals the framing: India is positioning Indian Ocean blue economy cooperation as a security-and-growth package, not a standalone development programme. That framing matters for how any future Seychelles-India ocean data cooperation would be pitched and funded, since security-adjacent budgets in India&rsquo;s foreign policy establishment tend to move faster and larger than pure development ones.</p>
+    <p>The economic case for taking this seriously is not abstract. CNBC Africa&rsquo;s coverage of Seychelles&rsquo;s 2026/2027 outlook ties an IMF-projected 3.4% GDP growth rate for 2027 directly to the country scaling high-value, innovation-driven sectors, blue economy explicitly named among them. That gives you a number to put next to any argument about the blue economy&rsquo;s weight in Seychelles&rsquo;s growth story, rather than relying on the sector&rsquo;s environmental framing alone, which is the framing you have flagged as a recurring weakness in your own programme communications.</p>
+    <p>The open question, and it is a real gap rather than a rhetorical one, is which of the nineteen bilateral outcomes touch maritime domain awareness, hydrographic cooperation or ocean data sharing specifically. India has invested heavily in maritime domain awareness infrastructure across the Indian Ocean region through other bilateral relationships, and MAHASAGAR&rsquo;s own name puts growth and security in the same sentence. It would be surprising if none of the nineteen outcomes touched that space, but surprising is not the same as confirmed.</p>
+    <p>The practical next step is not writing a Shorelines piece from what is public yet. It is requesting the itemised list of the nineteen outcomes from Seychelles&rsquo;s Ministry of Foreign Affairs or the Department of Blue Economy, and checking specifically for anything resembling a hydrographic data-sharing MOU, a satellite-derived bathymetry component, or joint maritime surveillance capacity building. If one exists, it belongs in the next HARMONiSE positioning conversation. If none exists, that absence is itself worth noting as a gap in an otherwise dense bilateral relationship.</p>
+  </div>
+</section>
+
+<!-- ============ STORY 06 — TERMINAL ============ -->
+<section class="story terminal" id="story-06">
+  <span class="numeral">06</span>
+  <div class="term-window">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <h2><span class="prompt">$</span> care_principles --apply-to ocean_indicators</h2>
+  </div>
+  <p class="why-matters">A new push to apply CARE principles, not just FAIR, to global ocean indicators is the data-sovereignty argument SHORE has been making about Seychelles&rsquo;s own ocean data, now showing up in the peer-reviewed literature as a formal standard worth citing.</p>
+
+  <p class="eyebrow-label">Story Notes</p>
+  <div class="story-notes">
+    <p>A recent ScienceDirect paper on global ocean indicators argues explicitly that indicator design at the science-policy nexus should follow CARE principles, Collective Benefit, Authority to Control, Responsibility and Ethics, alongside the more familiar FAIR principles of Findable, Accessible, Interoperable and Reusable. The paper names Indigenous and Local Communities specifically as stakeholders whose authority over their own data needs protecting inside global ocean indicator frameworks, not just their access to the outputs.</p>
+    <p>Separately, the Collaboratory for Indigenous Data Governance is running a Fall 2026 IDX webinar series starting 26 August, with weekly sessions on advancing Indigenous data sovereignty and governance. It is a US-based initiative but the frameworks it develops, CARE principles chief among them, are increasingly cited in ocean and geoscience contexts globally, including the ScienceDirect paper above.</p>
+    <p>This matters for the science-to-policy pipeline argument you have been building around Seychelles&rsquo;s own ocean data. CARE gives that argument a formal, citable standard rather than a general principle, which is useful the next time data sovereignty needs defending against a donor or research partner assuming open access by default.</p>
+    <p><a class="actlink" href="https://www.sciencedirect.com/science/article/pii/S0308597X25003380">sciencedirect.com/science/article/pii/S0308597X25003380</a></p>
+  </div>
+
+  <p class="eyebrow-label">Story Article</p>
+  <div class="story-article">
+    <p>FAIR and CARE sound like they belong to the same sentence, and increasingly the literature is putting them there deliberately. FAIR, Findable, Accessible, Interoperable, Reusable, has been the dominant data standard in ocean science for a decade, built around the assumption that open, well-structured data is an unambiguous good. CARE, Collective Benefit, Authority to Control, Responsibility, Ethics, developed originally by Indigenous data sovereignty networks, starts from a different assumption: that who controls data, and who benefits from its use, matters as much as whether it is technically accessible.</p>
+    <p>A recent paper on global ocean indicators, published through ScienceDirect, argues that indicator frameworks at the science-policy nexus should apply both standards together, not treat CARE as an afterthought bolted onto a FAIR-compliant dataset. The paper names Indigenous and Local Communities specifically as stakeholders whose authority over data needs structural protection, not just consultation.</p>
+    <p>This is directly useful to an argument you have made in less formal terms for a while: that Seychelles, and small states generally, get treated as data sources for global ocean indicators without a proportionate say in how that data gets used, licensed or credited. CARE gives that argument a citable, peer-reviewed anchor rather than leaving it as an assertion about fairness. The next time a donor, a research consortium or a multilateral programme proposes an ocean data-sharing arrangement that defaults to fully open access without addressing control or attribution, CARE principles are the specific standard to invoke, not a general appeal to sovereignty.</p>
+    <p>The Collaboratory for Indigenous Data Governance&rsquo;s Fall 2026 IDX webinar series, starting 26 August, is a US-focused initiative in origin, built out of Indigenous data sovereignty networks in the US, Canada, Australia and Aotearoa. It is not built for SIDS specifically. But the CARE framework it is built around travels well outside its original context, and the ScienceDirect ocean indicators paper is direct evidence of that migration into marine science.</p>
+    <p>There is a genuine tension worth naming rather than glossing over. CARE principles emerged specifically to protect Indigenous communities&rsquo; authority over their own knowledge and data, a context with real historical specificity around colonialism and extraction. Seychelles&rsquo;s situation as a small island state negotiating with larger donors and research partners is analogous in structure, unequal power over data terms, but not identical in history. Borrowing the CARE framework for a SIDS data sovereignty argument works better when that distinction gets acknowledged upfront rather than assumed away, both because it is intellectually honest and because it heads off the objection before a reviewer or donor raises it.</p>
+    <p><a class="actlink" href="https://www.sciencedirect.com/science/article/pii/S0308597X25003380">sciencedirect.com/science/article/pii/S0308597X25003380</a></p>
+  </div>
+</section>
+
+<!-- ============ STORY 07 — PULL QUOTE ============ -->
+<section class="story pullquote" id="story-07">
+  <span class="numeral">07</span>
+  <h2>Ocean Deoxygenation, 2025</h2>
+  <p class="quote">&ldquo;The ocean in 2025 saw record-high sea level, record heat content, and continued deoxygenation, all at once.&rdquo;</p>
+  <p class="why-matters">The 2025 State of the Climate ocean chapter confirms deoxygenation is worsening fastest in exactly the ocean basins that matter for global tuna fisheries, which turns an abstract climate indicator into a direct blue economy risk number, if it turns out to apply to Seychelles&rsquo;s own waters.</p>
+
+  <p class="eyebrow-label">Story Notes</p>
+  <div class="story-notes">
+    <p>The American Meteorological Society&rsquo;s State of the Climate in 2025 report, its Global Oceans chapter published this August, confirms a grim trifecta: record-high global sea level, high sea surface temperatures and ocean heat content, and widespread marine heatwaves, all occurring alongside continued ocean deoxygenation. Machine-learning analyses in the report show broadly negative oxygen anomalies concentrated in the North Pacific and Southern Oceans, driven by elevated heat content and ENSO variability.</p>
+    <p>Carbon Brief&rsquo;s parallel coverage projects 2026 global temperatures averaging around 1.51&deg;C above pre-industrial levels, with high sea surface temperatures expected to weaken ocean carbon sinks and damage coral reefs further.</p>
+    <p>None of the sources reviewed here isolate Indian Ocean or Western Indian Ocean deoxygenation data specifically, which matters, because the North Pacific and Southern Ocean concentration noted in the report does not automatically transfer to Seychelles&rsquo;s waters. That regional gap is worth flagging rather than assuming the global trend applies uniformly to Seychelles&rsquo;s tuna fishery, its principal blue economy export.</p>
+    <p><a class="actlink" href="https://www.nature.com/articles/d41586-026-02496-3">nature.com/articles/d41586-026-02496-3</a></p>
+  </div>
+
+  <p class="eyebrow-label">Story Article</p>
+  <div class="story-article">
+    <p>Ocean deoxygenation is the climate indicator that gets the least attention relative to its economic bite, and the 2025 State of the Climate report is a reminder of why that gap matters. Sea level and sea surface temperature get headlines because they are visible and intuitive. Dissolved oxygen concentration does not translate into a photograph, but it translates directly into where fish can survive, and Seychelles&rsquo;s economy runs substantially on where fish can survive.</p>
+    <p>The American Meteorological Society&rsquo;s Global Oceans chapter for 2025, published in the August 2026 State of the Climate compilation, reports record-high global sea level, record sea surface temperatures and ocean heat content, and widespread marine heatwaves, all occurring in the same year as continued deoxygenation. An ensemble of statistical and machine-learning analyses in the report identifies the North Pacific and Southern Ocean as the basins with the most negative oxygen anomalies, linked to elevated heat content and ENSO-driven variability.</p>
+    <p>Carbon Brief&rsquo;s broader 2026 climate outlook projects the year averaging around 1.51&deg;C above pre-industrial temperatures, with high sea surface temperatures explicitly expected to weaken ocean carbon sinks and further damage coral reefs. Both of those consequences are relevant to Seychelles beyond the abstract climate framing: reef damage affects coastal protection and tourism, and a weakening carbon sink is a global mitigation problem that SIDS bear disproportionate consequences from without having caused it.</p>
+    <p>Here is the gap worth naming rather than papering over. Nothing in the sources reviewed here isolates deoxygenation data for the Indian Ocean or the Western Indian Ocean tuna fishing grounds specifically. The North Pacific and Southern Ocean concentration the report highlights does not automatically mean the Western Indian Ocean is deoxygenating at the same rate, and Seychelles&rsquo;s blue economy, heavily weighted toward tuna, cannot be assumed to be exposed on the same timeline as a Pacific fishery would be.</p>
+    <p>That is precisely the kind of regional data gap HARMONiSE and SHORE exist to close. A Shorelines piece built on this story should not extrapolate the global deoxygenation trend onto Seychelles&rsquo;s waters without checking whether Western Indian Ocean oxygen data actually shows the same signal, through IOC-UNESCO regional monitoring networks or WIOMSA research. The stronger piece is not &ldquo;the ocean is deoxygenating and Seychelles should worry.&rdquo; It is &ldquo;here is what we actually know about Western Indian Ocean deoxygenation, and here is the monitoring gap that leaves Seychelles&rsquo;s tuna fishery exposed to a risk nobody has quantified locally yet.&rdquo;</p>
+    <p><a class="actlink" href="https://www.nature.com/articles/d41586-026-02496-3">nature.com/articles/d41586-026-02496-3</a></p>
+  </div>
+</section>
+
+<!-- ============ STORY 08 — ACADEMIC DROP CAP ============ -->
+<section class="story dropcap" id="story-08">
+  <span class="numeral">08</span>
+  <h2>The Free Ocean Data Copernicus Wants You Using</h2>
+  <p class="why-matters">The Copernicus Marine Service&rsquo;s push to get its free, science-based ocean data into national marine spatial planning processes is a direct technical resource HARMONiSE should already be pulling from, and a March 2026 Brussels workshop record is worth reading for exactly how other agencies are structuring that use.</p>
+
+  <p class="eyebrow-label">Story Notes</p>
+  <div class="story-notes">
+    <p>Mercator Ocean International ran a workshop on marine data for maritime spatial planning in Brussels in March 2026, focused on how the Copernicus Marine Service&rsquo;s free, science-based ocean data products support MSP processes across member states and partner countries. The workshop sits inside a broader push in the geospatial technology literature toward what researchers are now calling GeoAI, the application of machine learning to remote sensing and GIS data specifically for marine spatial planning and coastal ecosystem management.</p>
+    <p>The tools involved are not exotic. Satellite platforms, GPS, GIS, multispectral and radar sensors, vessel tracking and animal telemetry data, all feeding into spatially explicit models for ecosystem-based management. What is shifting is the analytical layer on top, with GeoAI increasingly doing the pattern-recognition work that used to require manual GIS analysis.</p>
+    <p>Copernicus Marine data is free at the point of use, which matters directly for a small-state research institute working without a large data-licensing budget. Whether HARMONiSE&rsquo;s current pipeline is already drawing on Copernicus products, and whether it should be drawing on more of them, is worth a direct technical review rather than an assumption either way.</p>
+    <p><a class="actlink" href="https://events.marine.copernicus.eu/marine-data-for-msp-2026">events.marine.copernicus.eu/marine-data-for-msp-2026</a></p>
+  </div>
+
+  <p class="eyebrow-label">Story Article</p>
+  <div class="story-article">
+    <p>Drop the assumption that useful ocean data has to be expensive or hard to access, and the Copernicus Marine Service becomes one of the more consequential resources sitting underused by SIDS research institutes. It is free, it is science-based, and Mercator Ocean International has been actively working to get national governments using it in marine spatial planning, not just leaving it in a repository for specialists to find on their own.</p>
+    <p>The March 2026 Brussels workshop on marine data for maritime spatial planning is a specific, documented instance of that push. Mercator Ocean International convened participants to work through how Copernicus Marine Service data products, ocean colour, temperature, currents, sea level and more, integrate into the practical workflow of drafting a marine spatial plan, not just the theoretical case for why they should.</p>
+    <p>This sits inside a wider shift the geospatial literature is now naming GeoAI, the application of machine learning methods to remote sensing and GIS data specifically for marine spatial planning and coastal ecosystem management. The tools underneath GeoAI are not new: satellite platforms, GPS, multispectral and radar sensors, vessel tracking, animal telemetry, all producing spatially explicit data that GIS has processed for years. What GeoAI adds is automated pattern recognition at a scale manual GIS analysis could not match, turning raw remote sensing feeds into classified habitat maps, bathymetric surfaces or vessel activity patterns without a human tracing every polygon.</p>
+    <p>For a research institute your size, the free-data point matters more than the GeoAI framing does. Data licensing costs are a real constraint on what HARMONiSE can build, and Copernicus Marine Service removing that constraint for a defined set of ocean variables is a direct operational advantage, not just a nice-to-have. The open question is whether the current HARMONiSE pipeline is already pulling from Copernicus products at the depth it could be, or whether there is unused capacity sitting in that free-data relationship.</p>
+    <p>The honest counterpoint: free and science-based does not mean plug-and-play for a small state&rsquo;s specific spatial planning needs. Copernicus products are built at a resolution and cadence designed for broad European and global coverage, and Seychelles-specific applications, fine-grained reef mapping or nearshore bathymetry, may need supplementary local data regardless of how much Copernicus provides at the regional scale. The workshop record is worth reading in detail for how other participating countries handled that resolution gap, rather than assuming Copernicus alone closes it.</p>
+    <p><a class="actlink" href="https://events.marine.copernicus.eu/marine-data-for-msp-2026">events.marine.copernicus.eu/marine-data-for-msp-2026</a></p>
+  </div>
+  <p class="footnote">Source: Mercator Ocean International, Marine Data for MSP workshop record, March 2026.</p>
+</section>
+
+<!-- ============ STORY 09 — COLOUR FIELD ============ -->
+<section class="story colorfield" id="story-09">
+  <span class="numeral">09</span>
+  <h2>The Plastics Treaty Draft Just Disappointed Everyone, On Purpose</h2>
+  <p class="why-matters">The latest global plastics treaty draft is being read as deliberately unambitious to force governments to negotiate compromise language directly, and that negotiating dynamic is worth watching closely since any final agreement on plastic pollution will eventually intersect with BBNJ implementation work.</p>
+
+  <p class="eyebrow-label">Story Notes</p>
+  <div class="story-notes">
+    <p>The Environmental Investigation Agency&rsquo;s Ocean Campaign Leader, Christina Dixon, criticised the latest global plastics treaty document, published around 10 August 2026, for retreating from the ambition needed to end plastic pollution. Treaty chair Cordano described the document as containing no surprises, and confirmed that countries put forward possible compromise language during talks in Nairobi that he deliberately excluded from this draft, wanting governments to work through those options directly in the meetings ahead rather than negotiating off a chair&rsquo;s text.</p>
+    <p>That is a specific negotiating strategy, not an oversight. A deliberately thin draft forces governments into the room to do the actual compromise-building, rather than reacting to or rejecting a chair&rsquo;s proposed language. It is a high-risk approach; it can produce a genuinely negotiated outcome, or it can stall entirely if no government moves first.</p>
+    <p>This intersects with ocean governance more directly than it might first appear. Marine plastic pollution is one of the pressure points BBNJ&rsquo;s area-based management tools and environmental impact assessment provisions will eventually need to address, and a weak plastics treaty leaves that gap for BBNJ mechanisms to partially absorb.</p>
+    <p><a class="actlink" href="https://sdg.iisd.org/">sdg.iisd.org</a></p>
+  </div>
+
+  <p class="eyebrow-label">Story Article</p>
+  <div class="story-article">
+    <p>There are two ways to read a deliberately weak treaty draft, and the difference matters for how closely this is worth tracking. One reading is that the chair has run out of ambition and is settling for whatever the most reluctant governments will accept. The other is that the chair is running a specific negotiating strategy: publish a thin document, force governments to bring their own compromise language into the room, and build the real agreement through direct negotiation rather than reaction to a chair&rsquo;s text.</p>
+    <p>The available evidence points toward the second reading, deliberately so. Cordano, chairing the global plastics treaty negotiations, described the latest draft as containing no surprises, and confirmed that countries had already put forward possible compromise ideas during talks in Nairobi, ideas he chose not to fold into this version. The Environmental Investigation Agency&rsquo;s Ocean Campaign Leader, Christina Dixon, read the same document as a retreat from necessary ambition, which is the natural reaction from an advocacy organisation to a chair deliberately withholding stronger language.</p>
+    <p>Both readings can be true at once. A thin draft that forces governments to negotiate compromise language directly is a real strategy with a track record in other multilateral processes, and it is also, correctly, weaker than what ocean conservation advocates are asking for. The question worth tracking is not which reading is right, it is whether governments actually use the room the chair has deliberately left open, or whether the vacuum just produces deadlock.</p>
+    <p>The connection to your own work is not immediate, but it is real. Marine plastic pollution sits adjacent to BBNJ&rsquo;s mandate without being formally inside it. BBNJ&rsquo;s environmental impact assessment framework, still being defined through the Preparatory Commission process, will eventually need to account for plastic pollution as one of the cumulative pressures on high-seas biodiversity, alongside deep-sea mining, fishing and shipping traffic. A weak global plastics treaty does not remove that pressure from the ocean, it just leaves BBNJ&rsquo;s own mechanisms, still under construction, as one of the few remaining instruments positioned to address it at the ecosystem level.</p>
+    <p>For Seychelles and other small states, marine plastic pollution is also a direct coastal and fisheries problem independent of any high-seas framing, one where a weak global treaty translates into continued reliance on national and regional cleanup and monitoring efforts with less international financing support behind them than a stronger treaty would have unlocked. Worth revisiting once the next negotiating round produces either genuine compromise language or confirmed deadlock, since either outcome changes what BBNJ implementation needs to absorb.</p>
+    <p><a class="actlink" href="https://sdg.iisd.org/">sdg.iisd.org</a></p>
+  </div>
+</section>
+
+<!-- ============ STORY 10 — LETTERPRESS ============ -->
+<section class="story letterpress" id="story-10">
+  <span class="numeral">No. 10</span>
+  <h2>Where Ocean Science Actually Gets Published Without a Fee</h2>
+  <p class="why-matters">DOAJ now lists 265 open-access geoscience journals, 136 of them with no publication charge at all, which is the concrete answer to where a Shorelines-adjacent research piece from SHORE could actually get peer-reviewed and published without a fee Seychelles&rsquo;s budget can&rsquo;t absorb.</p>
+
+  <p class="eyebrow-label">Story Notes</p>
+  <div class="story-notes">
+    <p>The Directory of Open Access Journals listed 265 entries across Geology, Geodesy and Geophysics as of March 2026, and 136 of those journals levy no publication charge at all. That is worth knowing precisely because article processing charges are one of the quieter barriers keeping small-state researchers out of peer-reviewed publication, even when the research itself is sound.</p>
+    <p>Ocean Science, the Copernicus-published, European Geosciences Union journal, reported 31 open access articles as of late July 2026, with typical turnaround of about 22.7 days to first decision and 4.6 days from acceptance to publication once accepted, fast by academic publishing standards. Oceanography, published by The Oceanography Society, and the MDPI journal Geosciences are two more established options in the no-fee or lower-fee bracket.</p>
+    <p>This is a direct, practical resource for any HARMONiSE or SHORE research output aiming for peer-reviewed credibility rather than staying at the grey-literature or Substack level. Worth a proper comparison of submission requirements across two or three of these titles before the next research output is ready to place.</p>
+    <p><a class="actlink" href="https://open-access.network/en/information/subject-specific-open-access/geosciences">open-access.network/en/information/subject-specific-open-access/geosciences</a></p>
+  </div>
+
+  <p class="eyebrow-label">Story Article</p>
+  <div class="story-article">
+    <p>A research institute&rsquo;s credibility with funders and policy audiences rests partly on where its work gets published, and article processing charges are one of the more mundane barriers standing between SHORE&rsquo;s research output and a peer-reviewed record. This is worth a direct look, not because it is dramatic, but because it is solvable.</p>
+    <p>The Directory of Open Access Journals counted 265 entries across Geology, Geodesy and Geophysics as of March 2026. Of those, 136 charge no publication fee at all. That is a meaningfully large pool of legitimate, indexed venues that do not require the kind of budget line SHORE does not have. Ocean Science, published by Copernicus on behalf of the European Geosciences Union, is one of the more established titles in this space, with 31 open access articles recorded as of late July 2026 and a turnaround time, about 22.7 days to first decision and 4.6 days from acceptance to publication, that is fast relative to typical academic publishing timelines that stretch into many months.</p>
+    <p>Oceanography, published quarterly by The Oceanography Society, and Geosciences, an MDPI title, round out a short list of established, indexed, open access options worth comparing directly. Each has a different submission process, different scope emphasis, and, in MDPI&rsquo;s case specifically, a fee structure worth checking directly since MDPI journals are not uniformly no-fee across the portfolio even when individual titles are described as open access.</p>
+    <p>The strategic case for placing SHORE research in one of these venues rather than only through Shorelines or LinkedIn is straightforward. A peer-reviewed publication carries weight in funding applications, in academic partnership conversations, and in the graduate study application you are working through, in a way a Substack piece, however well argued, does not. It is a different register of credibility, aimed at a different audience, and the two are complementary rather than competing.</p>
+    <p>The honest constraint: peer review takes real time and a specific kind of academic writing discipline that differs from Shorelines&rsquo; more direct, argument-led register. Not every HARMONiSE output needs to go through this pipeline, and forcing a piece that works better as an op-ed into a journal submission format wastes both the argument and the submission slot. The useful next step is identifying which piece of current research, likely something with a clear methodological contribution around SDB or hydrospatial mapping technique, is actually shaped for a journal submission, and running the DOAJ list against that specific piece rather than treating open access publishing as a general aspiration.</p>
+    <p><a class="actlink" href="https://open-access.network/en/information/subject-specific-open-access/geosciences">open-access.network/en/information/subject-specific-open-access/geosciences</a></p>
+  </div>
+</section>
+
+<footer>
+  <p class="fname">Shorelines</p>
+  <p>Morning Edition &middot; compiled for Francesca Adrienne &middot; 17 August 2026 &middot; SHORE Institute</p>
+</footer>
+
+</body>
+</html>
