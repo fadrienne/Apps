@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Edition — 19 August 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,600;1,700;1,800&family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0b2545;
+    --sky: #cfe8f7;
+    --sky-pale: #eaf6fc;
+    --sun: #ffd93d;
+    --sun-pale: #fff6d9;
+    --gold: #c9971f;
+    --teal: #1f8a7a;
+    --teal-deep: #146357;
+    --forest: #1b4332;
+    --sage: #87986a;
+    --mint: #d8f3dc;
+    --mint-pale: #eefaf0;
+    --off-white: #faf7f0;
+    --cream: #f5efdd;
+    --slate: #5b6472;
+    --charcoal: #2b2b2b;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--off-white);
+    color: var(--charcoal);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: clamp(1.15rem, 1rem + 0.6vw, 2rem);
+    line-height: 1.55;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .display {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 600;
+    color: var(--navy);
+    margin: 0;
+  }
+
+  a { color: var(--teal-deep); }
+
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 clamp(1rem, 4vw, 3rem); }
+
+  /* MASTHEAD */
+  .masthead {
+    background: var(--off-white);
+    padding: 3.5rem 0 2rem;
+    text-align: center;
+    border-bottom: 3px solid var(--navy);
+  }
+  .masthead .kicker {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: var(--teal-deep);
+    font-weight: 700;
+  }
+  .masthead h1 {
+    font-size: clamp(3rem, 6vw, 6rem);
+    letter-spacing: -0.01em;
+    margin: 0.4rem 0 0.6rem;
+  }
+  .masthead .date {
+    font-size: 1.3rem;
+    color: var(--slate);
+    font-style: italic;
+  }
+
+  /* NAV */
+  nav.jump {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--navy);
+    padding: 1rem clamp(1rem, 4vw, 3rem);
+    overflow-x: auto;
+    white-space: nowrap;
+    border-bottom: 4px solid var(--sun);
+  }
+  nav.jump .label {
+    color: var(--sun);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    margin-right: 1.2rem;
+  }
+  nav.jump a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    margin-right: 1.6rem;
+    font-family: 'Inter', sans-serif;
+    border-bottom: 1px solid transparent;
+  }
+  nav.jump a:hover { border-bottom-color: var(--sun); }
+
+  /* SHARED STORY SCAFFOLD */
+  section.story { position: relative; padding: 5rem 0; border-bottom: 1px solid rgba(11,37,69,0.08); }
+
+  .flag {
+    display: inline-block;
+    background: var(--sun);
+    color: var(--navy);
+    font-weight: 800;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    font-size: 1.05rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.03em;
+  }
+
+  .headline {
+    font-size: clamp(2.2rem, 4vw, 3.8rem);
+    line-height: 1.08;
+    margin-bottom: 1.5rem;
+  }
+
+  .why {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: clamp(1.4rem, 2vw, 1.9rem);
+    color: var(--teal-deep);
+    line-height: 1.4;
+    margin: 1.6rem 0 2.4rem;
+    max-width: 46rem;
+  }
+
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--forest);
+    margin: 2.6rem 0 1rem;
+  }
+
+  .notes p, .article p { margin: 0 0 1.1rem; }
+  .article { max-width: 42rem; }
+
+  .storylink { display: inline-block; margin-top: 0.6rem; font-weight: 700; }
+
+  /* NUMERAL VARIANTS */
+  .num-bg {
+    position: absolute;
+    top: -1rem; right: 1rem;
+    font-family: 'Fraunces', serif;
+    font-size: clamp(7rem, 16vw, 14rem);
+    font-weight: 700;
+    color: rgba(11,37,69,0.08);
+    line-height: 1;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .num-circle {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 3.4rem; height: 3.4rem; border-radius: 50%;
+    border: 3px solid var(--navy);
+    font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+  }
+  .num-box {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 3.4rem; height: 3.4rem;
+    background: var(--navy); color: #fff;
+    font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+  }
+  .num-hairline {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 1.1rem;
+    letter-spacing: 0.3em;
+    color: var(--slate);
+    margin-bottom: 1rem;
+  }
+  .num-stamp {
+    display: inline-block;
+    border: 3px dashed var(--navy);
+    padding: 0.3rem 0.9rem;
+    transform: rotate(-4deg);
+    font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+  }
+  .num-foot {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--slate);
+    border-top: 1px solid var(--slate);
+    padding-top: 0.3rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  /* 1. HERO */
+  .layout-hero { background: var(--sky); }
+  .layout-hero .headline { font-size: clamp(2.6rem, 5.5vw, 4.6rem); }
+
+  /* 2. SUNBEAM ALERT */
+  .layout-sunbeam { background: var(--sun); }
+  .layout-sunbeam .headline { font-style: italic; font-weight: 800; }
+  .layout-sunbeam .why { color: var(--navy); }
+
+  /* 3. COASTAL */
+  .layout-coastal { background: var(--sky-pale); }
+  .layout-coastal .rule { height: 6px; width: 8rem; background: var(--forest); margin: 1.2rem 0 2rem; }
+  .layout-coastal .cols { columns: 1; }
+  @media (min-width: 780px) { .layout-coastal .cols.two { columns: 2; column-gap: 3rem; } }
+
+  /* 4. TERMINAL */
+  .layout-terminal { background: var(--mint-pale); }
+  .layout-terminal .headline, .layout-terminal .notes, .layout-terminal .eyebrow {
+    font-family: 'SFMono-Regular', Consolas, 'Courier New', monospace;
+    color: var(--forest);
+  }
+  .layout-terminal .headline { font-size: clamp(1.9rem, 3.4vw, 3rem); }
+  .layout-terminal .term-bar { background: var(--forest); color: var(--mint-pale); padding: 0.5rem 1rem; font-family: monospace; font-size: 1rem; margin-bottom: 1.5rem; display: inline-block; }
+
+  /* 5. ACADEMIC DROP CAP */
+  .layout-academic { background: var(--off-white); }
+  .layout-academic .article p:first-of-type::first-letter {
+    font-family: 'Fraunces', serif;
+    font-size: 5.5rem;
+    font-weight: 700;
+    color: var(--navy);
+    float: left;
+    line-height: 0.8;
+    padding-right: 0.5rem;
+    margin-top: 0.3rem;
+  }
+  .layout-academic .footnote { font-size: 1rem; color: var(--slate); border-top: 1px solid var(--slate); margin-top: 2rem; padding-top: 0.8rem; }
+
+  /* 6. BIG STAT */
+  .layout-stat { background: var(--off-white); text-align: center; }
+  .layout-stat .stat {
+    font-family: 'Fraunces', serif; font-weight: 700;
+    font-size: clamp(4.2rem, 11vw, 8rem);
+    color: var(--teal-deep);
+    line-height: 1;
+    margin: 0.5rem 0 0.5rem;
+  }
+  .layout-stat .stat-label { color: var(--slate); font-size: 1.2rem; margin-bottom: 2rem; }
+  .layout-stat .headline, .layout-stat .why, .layout-stat .notes, .layout-stat .article { text-align: left; margin-left: auto; margin-right: auto; }
+
+  /* 7. PULL QUOTE */
+  .layout-pullquote { background: var(--mint); }
+  .layout-pullquote .pq {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: clamp(1.8rem, 3.4vw, 3rem);
+    color: var(--forest);
+    line-height: 1.25;
+    margin: 2rem 0 2.5rem;
+    border-left: 6px solid var(--teal-deep);
+    padding-left: 1.5rem;
+  }
+
+  /* 8. BROADSHEET */
+  .layout-broadsheet { background: var(--cream); }
+  .layout-broadsheet .rule-thin { height: 3px; background: var(--teal-deep); width: 100%; margin: 1.5rem 0; }
+  .layout-broadsheet .cols3 { columns: 1; }
+  @media (min-width: 900px) { .layout-broadsheet .cols3 { columns: 2; column-gap: 2.5rem; } }
+  .layout-broadsheet .article { columns: 1; max-width: 40rem; }
+
+  /* 9. COLOUR FIELD */
+  .layout-colourfield { background: var(--teal-deep); }
+  .layout-colourfield .headline, .layout-colourfield h4 { color: #fff; }
+  .layout-colourfield .why { color: var(--sun); }
+  .layout-colourfield .eyebrow { color: var(--sun-pale); }
+  .layout-colourfield .notes p, .layout-colourfield .article p { color: #f2fbf9; }
+  .layout-colourfield .num-box { background: #fff; color: var(--teal-deep); }
+  .layout-colourfield a { color: var(--sun); }
+
+  /* 10. LETTERPRESS */
+  .layout-letterpress {
+    background: var(--cream);
+    background-image: radial-gradient(rgba(11,37,69,0.035) 1px, transparent 1px);
+    background-size: 6px 6px;
+  }
+  .layout-letterpress .headline { font-family: 'Fraunces', serif; font-weight: 700; }
+  .layout-letterpress .article { font-family: 'Fraunces', serif; }
+
+  footer.magfoot {
+    text-align: center;
+    padding: 3.5rem 1rem 4rem;
+    color: var(--slate);
+    font-size: 1.1rem;
+  }
+
+  @media print {
+    nav.jump { position: static; }
+    section.story { break-inside: avoid; page-break-after: always; }
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="kicker">Shorelines · Morning Edition</div>
+  <h1>Morning Edition</h1>
+  <div class="date">Wednesday, 19 August 2026</div>
+</div>
+
+<nav class="jump">
+  <span class="label">Jump to story</span>
+  <a href="#s1">01 · Mombasa: first African Our Ocean Conference</a>
+  <a href="#s2">02 · ISA leaves Kingston without a code</a>
+  <a href="#s3">03 · BBNJ's unfinished business before COP1</a>
+  <a href="#s4">04 · Satellite bathymetry gets sharper</a>
+  <a href="#s5">05 · Third World Ocean Assessment</a>
+  <a href="#s6">06 · Seychelles MSP, 410,000 km²</a>
+  <a href="#s7">07 · The reef that moved five times</a>
+  <a href="#s8">08 · GEF-7 Blue Economy Project</a>
+  <a href="#s9">09 · Seychelles signs with the African Union</a>
+  <a href="#s10">10 · Geospatial World Forum on data sovereignty</a>
+</nav>
+
+<!-- STORY 1 — HERO -->
+<section class="story layout-hero" id="s1">
+  <div class="wrap">
+    <div class="num-hairline">S T O R Y &nbsp; 0 1</div>
+    <h2 class="headline">Mombasa just ran a $6.4 billion Our Ocean Conference, and it was the first one Africa ever hosted</h2>
+    <p class="why">Mombasa proved a $6.4 billion ocean conference can be hosted, chaired, and delivered by an African government, which is the capacity argument you have been making about SIDS for years, made at conference scale.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="notes">
+      <p>Kenya hosted the 11th Our Ocean Conference this year, the first ever held on African soil. More than 100 governments, businesses, and civil society organisations announced 320 commitments worth $6.4 billion, covering conservation, sustainable fisheries, climate resilience, and the blue economy.</p>
+      <p>Five governments, Kenya, Comoros, the Dominican Republic, the UK, and Mexico, signed onto the High-Level Climate-Resilient Coral Reef Commitment in Mombasa, bringing that coalition to 20 countries across every reef region on Earth. Separately, more than 40 states used the conference to back a precautionary pause on deep-sea mining, a thread worth following through to story 02.</p>
+      <p>One commitment worth flagging for HARMONiSE specifically: mapping Indigenous groups' customary waters was named among the new funding lines announced. <a href="https://www.ouroceanconference.org/conferences/mombasa-2026/">ouroceanconference.org</a></p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="article">
+      <p>Ten previous editions of the Our Ocean Conference ran in Indonesia, Chile, Norway, Malta, the United States, Panama, Greece, and elsewhere. None ran in Africa, despite the continent holding 38 coastal and island states and a coastline longer than any other continent's. That changed this year in Mombasa, and the number attached to it, $6.4 billion across 320 commitments, is not the most important fact about the conference. The most important fact is that it happened at all, on African terms, with an African government in the chair.</p>
+      <p>The commitments themselves span the usual OOC categories: marine protected areas, sustainable fisheries, climate resilience, blue economy finance, and marine pollution. The coral reef coalition growing to 20 nations is a genuine expansion, not a re-announcement, with five new signatories including Kenya itself and the UK. But the detail that should sit longest with you is the customary waters mapping commitment. Indigenous and community tenure over coastal waters is almost never captured in formal marine spatial data, which means it is almost never defensible in a marine spatial planning process, a licensing dispute, or a court. A funded commitment to map it is a hydrospatial problem before it is anything else, and it is exactly the kind of gap HARMONiSE was built to close.</p>
+      <p>Worth naming the scepticism directly, because it is the standard and fair critique of every Our Ocean Conference since the first one in 2014: pledges are not disbursements. Analysts tracking prior OOC commitments have found a meaningful share never convert into delivered funding, and $6.4 billion announced from a podium in Mombasa is not $6.4 billion moving through a Seychellois or Kenyan ministry account. That gap between announcement and delivery is worth watching over the next twelve months, not dismissing outright.</p>
+      <p>The deep-sea mining pause coalition crossing 40 nations at this conference, discussed in full in story 02, matters here too because of where it happened. A precautionary position on seabed mining, articulated from an African stage rather than a European or North American one, changes who gets to claim ownership of ocean caution as a geopolitical stance. That reframing has value for Seychelles's own positioning inside AU and Commonwealth ocean governance forums.</p>
+      <p>The structural point for you is simpler than any of the individual commitments. For over a decade, Seychelles's own diplomatic ocean work, the Blue Economy Department years, the marine spatial planning built there, the debt-for-nature swap, has been cited internationally as a model precisely because it came from a small state with limited capacity. Mombasa is the same argument delivered at a different scale: African and island states can convene, not just attend, the rooms that decide ocean policy. That is worth building into how you pitch HARMONiSE's regional ambitions, not just its technical ones.</p>
+      <p>Full commitment list and outcomes: <a href="https://www.ouroceanconference.org/conferences/mombasa-2026/">ouroceanconference.org</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 2 — SUNBEAM ALERT -->
+<section class="story layout-sunbeam" id="s2">
+  <div class="wrap">
+    <div class="num-stamp">02</div>
+    <h2 class="headline">The ISA left Kingston without a mining code again, and the pause coalition is now big enough to matter</h2>
+    <p class="why">The International Seabed Authority left Kingston in July without a mining code again, and the precautionary-pause coalition it failed to silence has grown to more than 40 nations, six of them African, which puts a Seychelles position on the table in a way it wasn't a year ago.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="notes">
+      <p>The ISA Council met in Kingston, Jamaica, from 13 to 24 July. It extended a contested exploration contract held by a subsidiary of The Metals Company, and it once again failed to finalise the regulatory code needed before commercial deep-sea mining could legally begin. Scientific gaps in the draft framework remain unresolved.</p>
+      <p>The precautionary-pause coalition, states calling for a moratorium or pause until the science and rules catch up, now stands at more than 40 nations. Malawi became the first African state to back it in May. Kenya, newly holding an ISA Council seat, is among the six African states now supporting a pause.</p>
+      <p>No new Council session date has been confirmed at time of writing; the next scheduled meeting will decide whether the code advances or stalls again. <a href="https://news.mongabay.com/short-article/2026/08/six-african-countries-now-support-precautionary-pause-on-deep-seabed-mining/">news.mongabay.com</a></p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="article">
+      <p>The pattern at the ISA is now familiar enough to describe without checking the transcript: Council convenes, disagreement surfaces over environmental thresholds and revenue-sharing formulas, no code gets adopted, an existing exploration contract gets extended anyway. That is what happened again in Kingston in July. The contract extension is the part worth sitting with. Regulatory uncertainty has not stopped exploration activity from continuing under contracts issued years ago, which means the absence of a code is not neutral. It defaults toward the industry that already holds licences.</p>
+      <p>What is different this year is the shape of the opposition. A moratorium coalition built mostly of European and Pacific states for the past several years now includes six African countries, with Kenya bringing a Council seat into the mix for the first time. Malawi's move in May, an inland state with no coastline of its own, signalled that the pause argument had shifted from a coastal-states issue to a continental governance position. That shift happened partly on the back of the same African ocean governance momentum visible at Mombasa in story 01.</p>
+      <p>Seychelles has not taken a public position in this specific coalition count, at least not one that surfaced in this search. That is worth noting plainly rather than assuming. Seychelles has deep-water interests of its own, an extended continental shelf claim, EEZ boundaries that abut international seabed area, and a track record of caution-first ocean governance dating back to the blue bond and the 30 percent MPA commitment. A precautionary stance would be consistent with everything Seychelles has built its ocean reputation on. Staying formally uncommitted while the coalition count becomes a live diplomatic metric is itself a choice, whether or not it's a deliberate one.</p>
+      <p>The counter-argument from mining proponents deserves a fair hearing rather than a dismissal: cobalt, nickel, and manganese demand for the energy transition is real, land-based extraction carries its own documented human and environmental costs, and delay has a price attached to it too. That argument has kept The Metals Company's contracts alive through repeated stalemates. But "we need the minerals" is a different claim from "we have adequate rules to extract them safely," and the ISA's own inability to finish its code after years of drafting is the strongest evidence that the second claim isn't yet true.</p>
+      <p>The next Council session is the thing to watch, not this one. Every stalemate narrows the gap between exploration contracts quietly accumulating and a finished code arriving to govern them, and that gap is where the real risk sits.</p>
+      <p>Background and country count: <a href="https://news.mongabay.com/short-article/2026/08/six-african-countries-now-support-precautionary-pause-on-deep-seabed-mining/">news.mongabay.com</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 3 — COASTAL -->
+<section class="story layout-coastal" id="s3">
+  <div class="wrap">
+    <div class="num-box">03</div>
+    <div class="rule"></div>
+    <h2 class="headline">BBNJ's Preparatory Commission closed in April with the hard questions unresolved. COP1 now has a date</h2>
+    <p class="why">PrepCom3 closed in April with the two questions that decide whether BBNJ works for SIDS, high seas MPA designation and marine genetic resource benefit-sharing, still unresolved, and COP1 is now dated for January 2027, which puts a hard deadline on unfinished business.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="notes cols two">
+      <p>The third and final Preparatory Commission session before BBNJ's first Conference of the Parties met at UN Headquarters from 22 March to 2 April this year. Many of the operational details, how high seas MPAs actually get designated, how benefits from marine genetic resources get shared, remained undecided when it closed.</p>
+      <p>COP1 is now scheduled for 11 to 22 January 2027, under a treaty requirement that it convene no later than 17 January 2027, one year after entry into force. That leaves roughly five months from today for any further intersessional work to close the gaps PrepCom3 left open.</p>
+      <p>This is the same institutional architecture question flagged in this edition's Mombasa coverage: whether SIDS have real standing in the rooms writing the rules, or only in the rooms ratifying them.</p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="article">
+      <p>Three PrepCom sessions have now run since BBNJ entered into force on 17 January this year: procedural groundwork through 2025, a second session in August 2025, and the third and supposedly final one this March and April. "Supposedly final" is doing real work in that sentence. Multiple observers tracking the March-April session, including IDDRI's own assessment, described the outcome as mixed rather than resolved, with core mechanics still open going into COP1.</p>
+      <p>The two unresolved pieces are the ones that determine whether the treaty text's equity language survives contact with implementation. Area-based management tools, including how a state or coalition actually proposes and gets a high seas MPA designated, still lack finished procedural rules. So does the access and benefit-sharing mechanism for marine genetic resources, the single issue that nearly collapsed BBNJ negotiations more than once across two decades. Both questions share a common shape: whichever states arrive with the scientific and legal capacity to move first, and to shape the procedural rules while they're still being written, get outsized influence over how those rules end up working.</p>
+      <p>January 2027 is closer than it looks from August. Five months sounds like runway until you count the diplomatic calendar inside it: national delegations need instructed positions, regional blocs need coordinated ones, and any further intersessional consultations need to be scheduled and actually attended. For a small foreign ministry, that timeline compresses fast.</p>
+      <p>This is where the Mombasa story and this one connect directly. An African-hosted, African-chaired Our Ocean Conference demonstrated convening capacity at scale. BBNJ's COP1 is a different kind of room, smaller, more technical, more legally consequential, but the same capacity question applies: does Seychelles, or a coordinated SIDS bloc including Seychelles, have a resourced position ready for January, or does the country arrive to ratify rules it had limited hand in writing.</p>
+      <p>Worth naming the more optimistic read too, because it's genuine: entry into force already happened, which two decades of negotiation history suggested might never occur. A treaty with unfinished operational rules is still a meaningfully better position than no treaty at all. The unresolved mechanics are a governance problem to solve inside a functioning legal instrument, not a reason to doubt the instrument itself.</p>
+      <p>The piece worth drafting out of this before January is not "BBNJ still has gaps," which every ocean policy outlet will say in the run-up to COP1. It's the narrower, more useful argument: which of those gaps, MPA designation process or benefit-sharing formula, matters more for a Western Indian Ocean SIDS specifically, and what Seychelles's delegation should be instructed to prioritise if it can only spend real political capital on one.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 4 — TERMINAL -->
+<section class="story layout-terminal" id="s4">
+  <div class="wrap">
+    <div class="term-bar">$ sdb --method=spectral-temporal-averaging --sensor=PlanetScope-SuperDove</div>
+    <div class="num-hairline">S T O R Y &nbsp; 0 4</div>
+    <h2 class="headline">A published method makes satellite bathymetry sharper, and it's built on imagery Seychelles can already access</h2>
+    <p class="why">A published method for pulling more accurate seabed depth out of PlanetScope SuperDove imagery through spectral and temporal averaging is exactly the kind of tool the Ocean Mapping Hub needs before it can promise Seychelles-scale coverage without a survey vessel.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="notes">
+      <p>A study published in Remote Sensing this year describes an integrated approach to satellite-derived bathymetry (SDB) that combines spectral averaging across multiple imagery bands with temporal averaging across repeat passes, using PlanetScope SuperDove data. The combination measurably improves depth accuracy in shallow coastal waters compared to single-image SDB.</p>
+      <p>SDB works by modelling how light attenuates through water at different wavelengths, then inverting that model to estimate depth from satellite reflectance, no vessel or sonar required. It has always been noisy: turbidity, wave glint, and bottom-type variation degrade single-scene estimates. Averaging across many scenes and spectral bands is a direct answer to that noise problem.</p>
+      <p>Full method: <a href="https://doi.org/10.3390/rs18020270">doi.org/10.3390/rs18020270</a></p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="article">
+      <p>Multibeam echosounding is the gold standard for seafloor mapping, and it is also the reason global coverage sits at 28.7 percent after a decade of coordinated international effort. Vessel time is expensive, weather-dependent, and structurally unavailable to most SIDS at the scale their EEZs demand. Satellite-derived bathymetry has always been the workaround argument, cheap, repeatable, no ship required, but the workaround has a well-known ceiling: single-image SDB estimates are noisy enough that they've mostly served as a supplement to survey data, not a substitute for it.</p>
+      <p>This method narrows that gap without pretending to close it. Spectral averaging pulls signal from the fact that different wavelengths penetrate water to different depths, so combining bands gives the depth-inversion model more constraint to work with than any single band alone. Temporal averaging does something different: it treats transient noise sources, glint off wave faces, a passing cloud shadow, suspended sediment after a rain event, as things that should cancel out across repeat passes rather than corrupt a single estimate. PlanetScope's SuperDove constellation is well suited to this because it revisits the same patch of ocean daily, which most bathymetry-capable satellites cannot match.</p>
+      <p>The honest limitation, and it matters for anything HARMONiSE promises publicly, is that SDB of any sophistication still tops out around 20 to 30 metres depth in clear water, shallower in turbid coastal zones. That covers reef flats, lagoons, and nearshore shipping approaches. It does not cover EEZ-scale seafloor mapping, drop-offs, or the deep basin data Seabed 2030 actually needs to close its remaining coverage gap. Any pitch built on this method has to be explicit about that boundary, because overselling SDB's reach is the fastest way to lose credibility with a hydrographic audience that already knows exactly where the technique breaks down.</p>
+      <p>Within that boundary, though, the case for a Seychelles pilot is strong. Reef flats and lagoon systems across the Inner and Outer Islands are precisely the shallow, clear-water environments where spectral-temporal SDB performs best, and PlanetScope access does not require the capital outlay of a survey vessel or a multibeam unit. A pilot comparing this method's output against any existing nearshore survey data Seychelles already holds would be a low-cost way to validate the approach before committing it to a HARMONiSE deliverable.</p>
+      <p>Method paper: <a href="https://doi.org/10.3390/rs18020270">doi.org/10.3390/rs18020270</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 5 — ACADEMIC DROP CAP -->
+<section class="story layout-academic" id="s5">
+  <div class="wrap">
+    <div class="num-circle">05</div>
+    <h2 class="headline">The UN's Third World Ocean Assessment argues Indigenous knowledge belongs inside the formal record, not beside it</h2>
+    <p class="why">The Third World Ocean Assessment, built by nearly 600 experts across 86 countries, spent June arguing for something you've said in every Shorelines piece on data sovereignty: that Indigenous and local knowledge belongs inside the formal ocean-science record, not filed alongside it as context.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="notes">
+      <p>The UN released the Third World Ocean Assessment (WOA III) in June, drawing on close to 600 contributing experts from 86 countries. It is the reference document the UN General Assembly and UNCLOS-related processes lean on for the current state of ocean science, and this edition explicitly calls for greater recognition of Indigenous knowledge inside ocean governance.</p>
+      <p>WOA reports exist precisely to be cited: they are the evidentiary backbone for negotiations from BBNJ to the SDG14 review cycle. A WOA edition formally endorsing Indigenous knowledge integration changes what counts as legitimate evidence in those rooms, not just what gets acknowledged in a preamble.</p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="article">
+      <p>Two previous World Ocean Assessments, in 2016 and 2021, established the WOA series as the closest thing ocean governance has to a shared factual baseline. States cite it because it is UN-convened and expert-reviewed at a scale no single government or research body could match on its own, nearly 600 contributors this round. That authority is exactly why what WOA III chooses to formally recognise carries weight beyond the document itself.</p>
+      <p>The recognition of Indigenous knowledge is not a symbolic addition. Formal ocean science assessment has a structural bias built into its own methodology: it privileges peer-reviewed, quantitatively measured, institutionally generated data, and it has no established pathway for knowledge held by coastal and Indigenous communities who have observed the same waters for generations without publishing about them. That bias is not neutral. It systematically under-represents exactly the communities whose observational record is often longest and most granular, because it was never built to be published in the first place.</p>
+      <p>WOA III naming this gap does not solve it. The harder problem, which the assessment itself does not fully resolve, is methodological: how does a UN-convened, expert-reviewed process actually validate and integrate knowledge that was never generated to meet peer-review standards, without either tokenising it or forcing it into a format that strips out what made it valuable. That is an open design question, and it is one HARMONiSE and the wider hydrospatial data sovereignty argument sit directly inside.</p>
+      <p>The connection to your own work is not abstract. The data sovereignty case you make for SIDS, that hydrospatial data generated in and about small island states should be governed by those states rather than hosted and controlled elsewhere, has an Indigenous-knowledge parallel running through it: data and observation generated by communities should be governed by those communities, not simply extracted into someone else's formal record. WOA III gives that argument a citable, UN-level anchor it didn't have before June.</p>
+      <p>The immediate use for this is citation. Any Shorelines piece or funding proposal arguing that formal ocean data infrastructure needs to make room for non-institutional knowledge now has a UN General Assembly-adjacent document to point to, rather than having to build the legitimacy argument from first principles every time.</p>
+      <div class="footnote">UN World Ocean Assessment III, released June 2026. Full report via the UN Regular Process for Global Reporting and Assessment of the State of the Marine Environment.</div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 6 — BIG STAT -->
+<section class="story layout-stat" id="s6">
+  <div class="wrap">
+    <div class="num-circle">06</div>
+    <div class="stat">410,000 km²</div>
+    <div class="stat-label">of Seychelles' ocean territory under its Marine Spatial Plan, now entering final implementation</div>
+    <h2 class="headline">The Seychelles Marine Spatial Plan, the second largest in the world by area, is entering final implementation</h2>
+    <p class="why">The Seychelles Marine Spatial Plan, the second largest in the world by area, is entering final implementation this year, and it is the direct institutional descendant of the Blue Economy Department work you helped build.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="notes">
+      <p>The Seychelles Marine Spatial Plan covers more than 410,000 square kilometres, demarcated into 13 marine protected areas spanning priority tuna habitat, seagrass beds, and coral reef systems. Final works are underway now, according to the Seychelles News Agency, ahead of implementation this year.</p>
+      <p>It is the second largest marine spatial plan in the world by area, and the first comprehensive MSP completed in the Western Indian Ocean. Seychelles' land area is roughly 455 square kilometres. The plan governs an ocean footprint close to 900 times that.</p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="article">
+      <p>Seychelles committed to protecting 30 percent of its waters in 2018, through the debt-for-nature swap that remains one of the most cited blue finance instruments anywhere. Delivering on that commitment required a spatial planning process capable of allocating use across an EEZ that is roughly 3,000 times the country's land area, balancing tuna fisheries, tourism, shipping lanes, and conservation zones inside a single coherent framework. That process is what is now closing out.</p>
+      <p>"Final stages" is a specific procedural milestone, not a vague sense of near-completion. It means zoning categories are being locked, the 13 constituent MPAs are moving toward formal gazettement, and the plan is approaching the point where it stops being a planning document and starts being an enforceable one. That transition is where most marine spatial plans globally either prove themselves or quietly stall.</p>
+      <p>The scale comparison is worth using in any public-facing framing of this: 410,000 square kilometres of ocean under one spatial plan, produced by a country of roughly 100,000 people and 455 square kilometres of land. That ratio is the argument for what small, capacity-constrained states can deliver when the planning framework is right, and it is a ratio very few other states, SIDS or otherwise, can put next to their own MSP.</p>
+      <p>The honest counterpoint is enforcement, and it deserves equal weight to the achievement itself. A spatial plan covering 410,000 square kilometres is only as real as the surveillance, monitoring, and compliance capacity behind it. Seychelles has invested in satellite-based vessel monitoring and coast guard patrol capacity, but no SIDS anywhere has the asset base to physically patrol an area of that size continuously. The plan's credibility over the next several years will rest less on the zoning maps themselves and more on what enforcement technology, satellite AIS tracking, remote sensing-based illegal fishing detection, gets built around them.</p>
+      <p>That enforcement gap is precisely where HARMONiSE and hydrospatial monitoring tools have a role to play that goes beyond mapping the zones in the first place. A plan this size does not need better cartography at this stage. It needs a monitoring layer that can tell, continuously and cheaply, whether the zones it just finished drawing are actually being respected.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 7 — PULL QUOTE -->
+<section class="story layout-pullquote" id="s7">
+  <div class="wrap">
+    <div class="num-hairline">S T O R Y &nbsp; 0 7</div>
+    <h2 class="headline">The Great Barrier Reef has died and come back to life five times in 30,000 years</h2>
+    <p class="pq">Over the last 30,000 years the Great Barrier Reef has migrated back and forth across the seafloor, dying twice when the sea fell out from under it and drowning three more times when it rose faster than coral could grow.</p>
+    <p class="why">A new dated record of the reef's five death-and-migration events over 30,000 years is the paleo-baseline coastal geomorphology has been missing, and it's the kind of study your own graduate research framing needs to sit next to.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="notes">
+      <p>A paper published this week in Nature Geoscience reports that the Great Barrier Reef has physically relocated across the ocean floor multiple times over the past 30,000 years, tracking large sea-level fluctuations rather than staying fixed in place. The researchers identified five distinct reef death events in that record.</p>
+      <p>Two of those deaths happened when falling sea level exposed the reef to air. Three happened when sea level rose faster than the coral could vertically accrete, drowning it. The rate threshold that separates survival from drowning is the number worth extracting from this paper.</p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="article">
+      <p>Reefs are usually discussed as fixed features under threat, bleaching in place, degrading in place. This record complicates that picture in a useful way: over geological time, reefs are not fixed at all. They migrate, following the shoreline as sea level rises and falls, and they die when that migration can't keep pace, either because the water retreats out from under them or advances too fast for coral growth to track it.</p>
+      <p>The drowning threshold is the detail with the most direct bearing on the present. Coral vertical growth rates have a ceiling, and the paper's dated record of three drowning events gives an empirical baseline for what rate of sea-level rise historically exceeded that ceiling on this specific reef system. Comparing that historical threshold against current and projected anthropogenic sea-level rise rates is exactly the kind of paleo-to-present argument that strengthens a reef resilience case, rather than relying on modelled projections alone.</p>
+      <p>The named caveat matters and should travel with this study wherever it gets cited: these are geological-timescale sea-level changes, driven by glacial-interglacial cycles over thousands of years, compared against a current rate of change driven by anthropogenic warming and compressed into decades, alongside thermal stress and acidification the historical reef never had to survive simultaneously. The drowning-rate threshold is a useful data point, not a like-for-like prediction of what today's reefs will do.</p>
+      <p>Seychelles' reef systems are geologically different, granitic and coralline islands rather than a continental shelf reef complex, but the underlying physics of the drowning threshold applies wherever reef accretion rates meet a rising sea. Aldabra and the outer island reef systems face the same structural question the Great Barrier Reef has answered five times in its geological past: can vertical growth keep pace, and at what rate of rise does that stop being true.</p>
+      <p>This is a paper worth holding onto specifically for graduate research framing. A dated paleo-record of reef migration and drowning thresholds gives any coastal geomorphology or reef resilience research design an empirical anchor that pure contemporary monitoring data doesn't provide on its own, and it is the sort of citation that signals methodological seriousness to a supervisor or admissions committee assessing a hydrospatial science proposal.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 8 — BROADSHEET -->
+<section class="story layout-broadsheet" id="s8">
+  <div class="wrap">
+    <div class="num-box">08</div>
+    <div class="rule-thin"></div>
+    <h2 class="headline">The Indian Ocean's first GEF-financed blue economy project is the unglamorous work that decides if the MSP means anything</h2>
+    <p class="why">The US$4.95 million GEF-7 Blue Economy Project is the Indian Ocean's first GEF-financed blue economy programme, and its job, building the institutional capacity to actually run the Marine Spatial Plan, is the unglamorous work that decides whether the SMSP in story 06 means anything in practice.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="cols3 notes">
+      <p>UNDP Mauritius-Seychelles launched the GEF-7 Blue Economy Project this year: a US$4.95 million programme, the first GEF-financed blue economy project anywhere in the Indian Ocean. Its stated focus is strengthening the institutional capacity needed to implement marine spatial planning, plus expanding two existing marine protected areas in the Inner Islands.</p>
+      <p>Capacity strengthening in a project like this typically means staffing, monitoring systems, and the operational data infrastructure a plan needs after the zoning maps are finished, exactly the layer the Seychelles MSP in story 06 is about to need most.</p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="article">
+      <p>Every marine spatial plan eventually confronts the same gap between the document and the delivery: drawing the zones is a planning exercise; running them, monitoring compliance, updating boundaries against new science, coordinating across ministries, is an institutional operations problem that no zoning map solves on its own. The GEF-7 Blue Economy Project is explicitly aimed at that second, harder problem, and its timing lines up almost exactly with the SMSP's move into final implementation covered in story 06.</p>
+      <p>Being the first GEF-financed blue economy project in the Indian Ocean is worth pausing on. GEF's blue economy funding line has run heavily toward Pacific and Caribbean SIDS to date; a first Indian Ocean project signals GEF is treating the region, and by extension Seychelles' MSP model, as a credible template worth replicating elsewhere in the basin. That is a reputational asset beyond the $4.95 million itself.</p>
+      <p>The named risk, and it applies to capacity-building funding generally, not this project specifically, is that institutional strengthening projects are notoriously difficult to measure. A workshop delivered, a training completed, a system procured, are all countable outputs. Whether a ministry's actual capacity to enforce a 410,000 square kilometre spatial plan improved as a result is a much harder thing to verify, and donor reporting on capacity projects has a long history of counting the former while assuming the latter.</p>
+      <p>That measurement gap is where a data-literate partner has genuine value to add, rather than being a passive observer of the project's outputs. If SHORE or HARMONiSE can plug into this project's implementation, whether through the monitoring systems component, the MPA expansion mapping in the Inner Islands, or simply by documenting what capacity actually shifted, that is a concrete, fundable role sitting inside an already-resourced project rather than a proposal built from nothing.</p>
+      <p>The MPA expansion in the Inner Islands is the most immediately mappable piece of this project and the most natural entry point for a conversation with UNDP Mauritius-Seychelles about where independent hydrospatial expertise fits into delivery.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 9 — COLOUR FIELD -->
+<section class="story layout-colourfield" id="s9">
+  <div class="wrap">
+    <div class="num-box">09</div>
+    <h2 class="headline">Seychelles just signed with the African Union to reassert the blue economy as a strategic priority</h2>
+    <p class="why">Seychelles's government just signed with the African Union to reassert the blue economy as a strategic priority, and it is exactly the kind of continental platform a small state uses to punch above its GDP.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="notes">
+      <p>Seychelles's Minister for Fisheries, Agriculture and Blue Economy signed an agreement with the African Union on 27 July, formally reasserting the blue economy as a strategic national and continental priority. The signing frames Seychelles as demonstrating what a small island state can contribute to sustainable marine resource management and spatial planning at continental scale.</p>
+      <p>The timing sits directly after Mombasa's Our Ocean Conference in story 01, part of the same broader run of African-led ocean governance moments this year.</p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="article">
+      <p>The African Union's Africa's Integrated Maritime Strategy has existed on paper for over a decade, built around the idea that the continent's blue economy, fisheries, shipping, offshore energy, marine tourism, represents a growth opportunity most African states have under-capitalised relative to their coastlines. What that strategy has generally lacked is a small island member state with a completed, internationally cited spatial planning process to point to as evidence the framework works in practice. Seychelles is now positioning itself as exactly that reference case, in the same month the SMSP moves into final implementation.</p>
+      <p>What Seychelles brings to this AU platform is concrete rather than aspirational: a nearly finished 410,000 square kilometre marine spatial plan, a blue bond structure other states have studied and partially replicated, and hydrospatial expertise built through SHORE and the wider Blue Economy Department legacy. Few AU member states, continental or island, can point to all three simultaneously.</p>
+      <p>What Seychelles gets from the platform is visibility and alignment with continental funding instruments that a state of its size cannot access alone. AU-level blue economy financing windows, technical assistance programmes, and continental data-sharing frameworks are all easier to enter as a named strategic partner than as an unaffiliated small state application.</p>
+      <p>The tension worth naming honestly: the AU's blue economy strategy has historically weighted its priorities toward continental coastal states with larger populations and GDP, whose fisheries and shipping volumes dominate the numbers that get cited in continental reporting. An island state contributing a spatial planning methodology rather than fisheries tonnage risks having its actual contribution undervalued in a framework built around bigger, more visible economic categories. Whether this agreement gives Seychelles a real seat in shaping AU blue economy priorities, or a symbolic one in a strategy still weighted toward larger states, will show in how the next round of AU blue economy funding gets allocated.</p>
+      <p>Read alongside Mombasa and the ISA moratorium coalition in story 02, this agreement is another data point in the same pattern: African and island ocean governance is consolidating into a more coordinated bloc this year than it has been in the recent past, and Seychelles has real standing to be part of shaping it, not just attending it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 10 — LETTERPRESS -->
+<section class="story layout-letterpress" id="s10">
+  <div class="wrap">
+    <div class="num-hairline">S T O R Y &nbsp; 1 0</div>
+    <h2 class="headline">The Geospatial World Forum built its 2026 theme around sovereignty. A "SIDS Global Data Hub" is the argument you've been making</h2>
+    <p class="why">The Geospatial World Forum built its entire 2026 theme around sovereignty, economy, and society, and the "SIDS Global Data Hub" it showcased is precisely the infrastructure argument you've been making about why hydrospatial data has to live somewhere Seychelles controls.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="notes">
+      <p>The Geospatial World Forum ran its 2026 edition under the theme "Sovereignty, Economy & Society," foregrounding data governance as a core geospatial industry issue rather than a side panel. The SDG Data Alliance presented on building the data foundations for resilient island futures, centred on a proposed SIDS Global Data Hub, a sustainable repository for environmental, economic, and social data generated by and about island states.</p>
+      <p>The framing explicitly extends "sovereignty" beyond political borders into who controls the data infrastructure describing a state's own territory and resources, the same argument underpinning HARMONiSE's data sovereignty position.</p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="article">
+      <p>Most hydrospatial and environmental data generated about small island states does not stay in small island states. Satellite operators, international research consortia, and multilateral agencies collect, process, and host the majority of it on infrastructure entirely outside the jurisdictions the data describes. A Seychelles bathymetric survey can end up more accessible to a research institution in Europe than to the ministry that commissioned it, simply because of where the processed dataset was ultimately hosted. That is the structural problem the SIDS Global Data Hub concept, presented at GWF this year, is aimed at.</p>
+      <p>The theme choice, "Sovereignty, Economy & Society," is a signal from a major geospatial industry forum that data governance is being treated as infrastructure policy now, not a compliance afterthought bolted onto a mapping project. That shift in framing matters for how a HARMONiSE funding pitch gets received: it can now be positioned inside a live, named industry conversation about sovereignty-first geospatial infrastructure, rather than having to argue the premise from scratch every time.</p>
+      <p>The honest risk with hub concepts like this one, and it is worth naming because it is the pattern almost every prior "SIDS data platform" initiative has run into, is sustainability after the launch grant. Building a data hub is a fundable, demonstrable, one-time project. Hosting, maintaining, and governing it for the next decade is an ongoing operational cost that most initial funding packages do not cover, and platforms in this space have a track record of going quiet within a few years of their launch announcement once the founding grant runs out.</p>
+      <p>That risk is also the opening. A hub model that has thought through long-term hosting economics, rather than just the initial build, is more credible to funders who have watched previous platforms stall. If the SIDS Global Data Hub concept has a genuine answer to that sustainability question, it is worth understanding in detail, both as a potential home for HARMONiSE-generated data and as a model to borrow from or explicitly differentiate against in your own funding narrative.</p>
+      <p>The practical next step is finding out who is actually building this, the SDG Data Alliance's governance structure, funding sources, and whether Western Indian Ocean states have any presence in the conversation yet. A sovereignty-first data infrastructure initiative that Seychelles isn't at the table for is a gap worth closing before the architecture is locked in around other regions' priorities.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="magfoot">
+  Morning Edition · Compiled for Francesca Adrienne · Shorelines
+</footer>
+
+</body>
+</html>
