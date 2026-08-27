@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Edition — 27 August 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,600;1,9..144,700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sky: #d7ecfb;
+    --sky-mid: #bfe0f7;
+    --sky-bright: #a9d8f5;
+    --navy: #0c2d52;
+    --teal: #1c6e78;
+    --teal-deep: #0f4d55;
+    --yellow: #ffd54a;
+    --yellow-soft: #ffe9a8;
+    --gold: #cf9a1e;
+    --forest: #204d32;
+    --forest-deep: #163823;
+    --sage: #b7cdac;
+    --mint: #e6f4e9;
+    --cream: #faf5e9;
+    --offwhite: #f8f6f1;
+    --slate: #56606b;
+    --charcoal: #2a2f34;
+    --white: #ffffff;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { font-size: 18px; }
+
+  body {
+    margin: 0;
+    background: var(--offwhite);
+    color: var(--charcoal);
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    line-height: 1.5;
+  }
+
+  h1, h2, h3, .display {
+    font-family: 'Fraunces', serif;
+    color: var(--navy);
+    margin: 0;
+    line-height: 1.05;
+  }
+
+  a { color: var(--teal-deep); }
+  a:hover { color: var(--forest); }
+
+  p { margin: 0 0 1.2em 0; }
+
+  .measure { max-width: 42ch; }
+  .measure-wide { max-width: 62ch; }
+
+  /* ---------- MASTHEAD ---------- */
+  .masthead {
+    background: var(--cream);
+    padding: 4rem 2rem 3rem;
+    text-align: center;
+    border-bottom: 6px solid var(--navy);
+  }
+  .masthead .kicker {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    color: var(--teal-deep);
+    margin-bottom: 1.5rem;
+  }
+  .masthead h1 {
+    font-size: clamp(3.5rem, 9vw, 7rem);
+    font-weight: 900;
+    letter-spacing: -0.01em;
+  }
+  .masthead .date {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.8rem;
+    color: var(--slate);
+    margin-top: 1.2rem;
+  }
+
+  /* ---------- NAV ---------- */
+  nav.jump {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--cream);
+    border-bottom: 4px solid var(--navy);
+    padding: 1.4rem 2rem;
+    box-shadow: 0 4px 14px rgba(12,45,82,0.12);
+  }
+  nav.jump .label {
+    color: var(--teal-deep);
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-bottom: 0.9rem;
+    font-family: 'Inter', sans-serif;
+  }
+  nav.jump ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.4rem;
+  }
+  nav.jump li a {
+    color: var(--navy);
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  nav.jump li a:hover { color: var(--forest-deep); }
+  nav.jump .n { color: var(--gold); font-weight: 800; }
+
+  /* ---------- SHARED STORY BODY ---------- */
+  .story { position: relative; padding: 5rem 2rem; overflow: hidden; }
+  .story-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 2; }
+
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    font-size: 1.15rem;
+    margin: 2.6rem 0 1rem;
+  }
+
+  .lede {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: clamp(1.8rem, 2.6vw, 2.4rem);
+    line-height: 1.35;
+    margin: 1.6rem 0 2.4rem;
+  }
+
+  .flag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 1.05rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 999px;
+    margin-bottom: 1.6rem;
+  }
+
+  .headline {
+    font-size: clamp(2.6rem, 5.5vw, 4.6rem);
+    font-weight: 700;
+    margin: 0.8rem 0 0;
+  }
+
+  .article-body { font-size: 1.7rem; }
+  .article-body p { margin-bottom: 1.3em; }
+
+  .source-link {
+    display: inline-block;
+    margin-top: 1rem;
+    font-weight: 600;
+    word-break: break-all;
+    font-size: 1.5rem;
+  }
+
+  /* ---------- 01 HERO ---------- */
+  #story-01 {
+    background: linear-gradient(160deg, var(--sky-bright) 0%, var(--sky) 60%, var(--yellow-soft) 100%);
+  }
+  #story-01 .numeral {
+    position: absolute;
+    top: -3rem;
+    right: 1rem;
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: clamp(9rem, 22vw, 18rem);
+    color: rgba(12,45,82,0.10);
+    z-index: 1;
+    line-height: 1;
+  }
+  #story-01 .flag { background: var(--navy); color: var(--yellow); }
+  #story-01 .headline { color: var(--navy); }
+  #story-01 .lede { color: var(--teal-deep); }
+
+  /* ---------- 02 COASTAL ---------- */
+  #story-02 { background: var(--sky); }
+  #story-02 .rule { height: 8px; width: 6rem; background: var(--forest); margin-bottom: 1.6rem; }
+  #story-02 .numeral {
+    font-family: 'Fraunces', serif; font-weight: 700; font-size: 2.2rem;
+    color: var(--forest); border: 3px solid var(--forest); border-radius: 50%;
+    width: 4.5rem; height: 4.5rem; display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.6rem;
+  }
+  #story-02 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem; }
+  #story-02 .headline { color: var(--navy); }
+  #story-02 .lede { color: var(--forest-deep); }
+  @media (max-width: 850px) { #story-02 .two-col { grid-template-columns: 1fr; } }
+
+  /* ---------- 03 SUNBEAM ALERT ---------- */
+  #story-03 { background: var(--yellow); }
+  #story-03 .stamp {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 1.6rem;
+    background: var(--navy);
+    color: var(--yellow);
+    padding: 0.7rem 1.6rem;
+    transform: rotate(-4deg);
+    margin-bottom: 1.8rem;
+    letter-spacing: 0.05em;
+  }
+  #story-03 .headline {
+    font-style: italic;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  #story-03 .lede { color: var(--teal-deep); background: rgba(255,255,255,0.5); padding: 1.2rem 1.6rem; border-radius: 0.6rem; }
+  #story-03 .flag { background: var(--navy); color: var(--yellow); }
+
+  /* ---------- 04 BROADSHEET ---------- */
+  #story-04 { background: var(--offwhite); }
+  #story-04 .masthead-rule { border-top: 3px solid var(--teal); border-bottom: 3px solid var(--teal); padding: 0.6rem 0; margin-bottom: 2rem; text-align: center; }
+  #story-04 .numeral { font-family: 'Fraunces', serif; font-weight: 300; font-size: 4rem; color: var(--slate); }
+  #story-04 .columns { columns: 2 280px; column-gap: 3rem; margin-top: 2rem; }
+  #story-04 .headline { text-align: center; }
+  #story-04 .lede { color: var(--teal-deep); text-align: center; }
+  @media (max-width: 700px) { #story-04 .columns { columns: 1; } }
+
+  /* ---------- 05 TERMINAL ---------- */
+  #story-05 { background: var(--mint); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  #story-05 .headline, #story-05 h1, #story-05 h2 { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: var(--forest-deep); }
+  #story-05 .article-body, #story-05 p, #story-05 .lede, #story-05 .eyebrow { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: var(--forest-deep); }
+  #story-05 .lede { font-style: normal; }
+  #story-05 .terminal-bar {
+    background: var(--forest-deep); color: var(--mint); padding: 0.9rem 1.4rem; border-radius: 0.4rem 0.4rem 0 0;
+    font-size: 1.2rem; margin-bottom: 0; display: flex; gap: 0.5rem;
+  }
+  #story-05 .terminal-box { border: 3px solid var(--forest-deep); border-radius: 0 0 0.4rem 0.4rem; padding: 2rem; background: #fbfff9; }
+  #story-05 .prompt::before { content: "$ "; color: var(--teal-deep); }
+
+  /* ---------- 06 BIG STAT ---------- */
+  #story-06 { background: var(--sky-mid); text-align: center; }
+  #story-06 .stat {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: clamp(6rem, 16vw, 12rem);
+    color: var(--teal-deep);
+    line-height: 0.9;
+    margin: 1rem 0;
+  }
+  #story-06 .stat-label { font-size: 1.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); }
+  #story-06 .numeral { font-family: 'Fraunces', serif; font-weight: 700; font-size: 2rem; color: var(--navy); }
+  #story-06 .headline { text-align: center; }
+  #story-06 .lede { text-align: left; }
+  #story-06 .article-body { text-align: left; margin-top: 2rem; }
+
+  /* ---------- 07 PULL QUOTE ---------- */
+  #story-07 { background: var(--sage); }
+  #story-07 .numeral {
+    border: 2px solid var(--forest-deep);
+    display: inline-block; padding: 0.3rem 1rem; font-family: 'Fraunces', serif; font-weight: 700; margin-bottom: 1.6rem;
+  }
+  #story-07 blockquote {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    color: var(--navy);
+    border-left: 8px solid var(--forest-deep);
+    padding: 0.5rem 0 0.5rem 2.4rem;
+    margin: 2.5rem 0;
+  }
+  #story-07 .headline { color: var(--navy); }
+  #story-07 .lede { color: var(--forest-deep); }
+
+  /* ---------- 08 ACADEMIC DROP CAP ---------- */
+  #story-08 { background: var(--cream); }
+  #story-08 .numeral { font-size: 1.6rem; letter-spacing: 0.4em; color: var(--slate); font-weight: 700; }
+  #story-08 .dropcap:first-letter {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 6.5rem;
+    float: left;
+    line-height: 0.75;
+    padding-right: 0.15em;
+    color: var(--navy);
+  }
+  #story-08 .footnote { font-size: 1.3rem; color: var(--slate); border-top: 1px solid var(--slate); padding-top: 1rem; margin-top: 2rem; }
+  #story-08 .headline { font-weight: 400; }
+  #story-08 .lede { color: var(--teal-deep); }
+
+  /* ---------- 09 COLOUR FIELD ---------- */
+  #story-09 { background: var(--teal-deep); color: var(--white); }
+  #story-09 h1, #story-09 h2, #story-09 .headline { color: var(--white); }
+  #story-09 .lede { color: var(--yellow-soft); }
+  #story-09 .eyebrow { color: var(--sky); }
+  #story-09 a { color: var(--yellow-soft); }
+  #story-09 .numeral {
+    font-family: 'Inter', sans-serif; font-weight: 900; font-size: 2rem;
+    background: var(--yellow); color: var(--teal-deep); display: inline-block; padding: 0.4rem 1.1rem; border-radius: 0.3rem;
+  }
+  #story-09 .flag { background: var(--yellow); color: var(--teal-deep); }
+
+  /* ---------- 10 LETTERPRESS ---------- */
+  #story-10 {
+    background: var(--cream);
+    background-image:
+      radial-gradient(rgba(12,45,82,0.035) 1px, transparent 1px);
+    background-size: 6px 6px;
+  }
+  #story-10 .numeral {
+    font-family: 'Fraunces', serif; font-weight: 900; font-size: 2.4rem;
+    color: var(--navy); border-bottom: 4px double var(--navy); display: inline-block; padding-bottom: 0.2rem;
+  }
+  #story-10 .headline { font-weight: 400; letter-spacing: -0.01em; }
+  #story-10 .lede { color: var(--forest-deep); }
+  #story-10 .article-body { max-width: 62ch; margin: 0 auto; }
+  #story-10 .story-inner { text-align: left; }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    background: var(--mint);
+    color: var(--charcoal);
+    text-align: center;
+    padding: 4rem 2rem;
+    font-size: 1.3rem;
+    border-top: 4px solid var(--forest-deep);
+  }
+  footer .sign {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 2rem;
+    color: var(--forest-deep);
+    margin-bottom: 1rem;
+  }
+  footer a { color: var(--teal-deep); }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="kicker">SHORE Institute · Shorelines Field Edition</div>
+  <h1>Morning Edition</h1>
+  <div class="date">Thursday, 27 August 2026</div>
+</header>
+
+<nav class="jump" aria-label="Jump to story">
+  <div class="label">Jump to story</div>
+  <ol>
+    <li><a href="#story-01"><span class="n">01</span> The Ocean Is Running Hot Off Your Own Coast ⚡</a></li>
+    <li><a href="#story-02"><span class="n">02</span> Five Million Dollars, No Deadline Yet ⚡</a></li>
+    <li><a href="#story-03"><span class="n">03</span> The Objection With Your Government's Name On It ⚡</a></li>
+    <li><a href="#story-04"><span class="n">04</span> Twenty-Three Million Euros, One Dependency</a></li>
+    <li><a href="#story-05"><span class="n">05</span> 28.7% of the Seafloor</a></li>
+    <li><a href="#story-06"><span class="n">06</span> No Code, No Permits, No Vacuum Filled</a></li>
+    <li><a href="#story-07"><span class="n">07</span> The Rules Get Written Before the Vote</a></li>
+    <li><a href="#story-08"><span class="n">08</span> A New Chair Takes the Regional Table</a></li>
+    <li><a href="#story-09"><span class="n">09</span> Fragmented, Short-Term, Hard to Reach</a></li>
+    <li><a href="#story-10"><span class="n">10</span> Whose Governance Runs the Model</a></li>
+  </ol>
+</nav>
+
+<!-- ============ STORY 01 — HERO ============ -->
+<section class="story" id="story-01">
+  <div class="numeral">01</div>
+  <div class="story-inner">
+    <span class="flag">⚡ Live alert</span>
+    <h2 class="headline">The Ocean Is Running Hot Off Your Own Coast</h2>
+    <p class="lede">Mercator Ocean's latest reading puts the water off Victoria into moderate to severe heatwave territory, and marine spatial planning only earns its name as a resilience tool if it tells you which reefs to protect first, before the bleaching starts.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <p>The Indian Ocean is running a moderate to severe marine heatwave right now, according to Mercator Ocean International's latest monitoring, and the World Meteorological Organization expects a strong El Niño to intensify through October, with a positive Indian Ocean Dipole likely to stack on top of it. Two warming signals compounding at once is not a normal August.</p>
+    <p>You've committed 30 percent of Seychelles' waters to marine protection, and the government's blue economy framing rests on stewardship rather than depletion. That framing only has operational teeth if it can tell you where to spend attention first. This heatwave will not hit every reef the same way.</p>
+    <p>The ocean absorbs more than 90 percent of the excess heat trapped by greenhouse gas emissions, which means the water off your coast is doing planetary-scale work nobody else's territory gets credited for. Former President James Michel put his name to a piece making exactly that case this week, worth reading before your next donor conversation.</p>
+    <a class="source-link" href="https://www.ipsnews.net/2026/08/the-indian-ocean-is-sounding-the-alarm-and-its-islands-are-among-the-first-to-hear-it/">ipsnews.net/2026/08/the-indian-ocean-is-sounding-the-alarm</a>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="article-body measure-wide">
+      <p>These heatwaves used to be rare events in the tropical Indian Ocean. Now they are an annual affair. Mercator Ocean International's latest monitoring shows moderate to severe conditions across the basin, and the World Meteorological Organization expects a strong El Niño to intensify through October, with a positive Indian Ocean Dipole likely to develop alongside it. Two independent warming mechanisms stacking in the same season is what turns a hot month into a mass bleaching event.</p>
+      <p>El Niño and a positive Dipole both push warmer water toward the western Indian Ocean, and when they compound, sea surface temperatures can sit above coral thermal thresholds for long enough to trigger bleaching rather than just stress. This is the mechanism, not a guess: it is the same combination that has driven the worst previous bleaching years in this basin.</p>
+      <p>Seychelles' response so far is a 30 percent marine protection commitment and a marine spatial planning framework built on stewardship rather than depletion. Here is the objection worth naming directly: protection status stops extraction, not heat. A marine protected area boundary does not lower sea surface temperature by a single degree. Declaring a reef protected and watching it bleach anyway are both true at once.</p>
+      <p>What actually helps is knowing, at reef scale, which sites have historically shown thermal resistance, the coral refugia that survive heatwaves other reefs nearby do not. That is a triage question, and triage requires data resolution most national mapping programmes do not yet have. Spreading restoration budget evenly across a protected zone wastes it. Spending it on the sites most likely to survive and reseed the rest does not.</p>
+      <p>This is where hydrospatial monitoring capacity, the kind HARMONiSE is built to provide, becomes resilience infrastructure rather than a research nicety. Donors fund policy frameworks readily: a marine spatial plan, a protection target, a blue economy strategy. Funding the fine-grained, reef-by-reef monitoring capacity that makes those frameworks operational during an actual heatwave is a harder sell, and it is the case that needs making now, while the water is warm and the argument is concrete rather than hypothetical.</p>
+      <p>This heatwave is a live test of whether "stewardship rather than depletion" has any operational teeth this year. The answer will show up in whether anyone can point to reef-scale data when it is needed, not in the wording of the policy document.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY 02 — SUNBEAM ALERT ============ -->
+<section class="story" id="story-02">
+  <div class="stamp">STORY 02</div>
+  <div class="story-inner">
+    <span class="flag">⚡ Funding call open now</span>
+    <h2 class="headline">Five Million Dollars, Twenty-Five States, No Deadline Yet</h2>
+    <p class="lede">A five-year, five-million-dollar fund with individual grants up to two hundred thousand dollars just opened for the twenty-five Commonwealth SIDS, Seychelles included, and the formal call for proposals hasn't dropped yet, which means the government that starts drafting now wins.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <p>The Commonwealth and the COP29 Presidency have launched the COP29 Presidency–Commonwealth Fund for Small Island Developing States: five million dollars over five years, individual project grants capped at two hundred thousand dollars, open to all twenty-five Commonwealth SIDS.</p>
+    <p>It funds climate resilience, ocean health, sustainable energy, early warning systems, nature-based solutions and marine protection, with priority to projects naming Indigenous communities, women or young people as direct beneficiaries. The expected shape is roughly one government-backed project per nation.</p>
+    <p>The formal call for proposals hasn't been published. The Commonwealth says only that details will follow in due course. That gap between announcement and open call is exactly the window where a ready proposal beats a good idea.</p>
+    <a class="source-link" href="https://thecommonwealth.org/news/commonwealth-and-cop29-presidency-invite-commonwealth-sids-submit-climate-action-proposals">thecommonwealth.org/news/commonwealth-and-cop29-presidency-invite-commonwealth-sids</a>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="article-body measure-wide">
+      <p>This fund sits alongside an existing line of Commonwealth SIDS finance, not instead of it. The Commonwealth Blue Charter Project Incubator offers catalytic grants up to fifty thousand pounds, with its next call opening mid-2026. The new fund is bigger per project and narrower in allocation logic, built around roughly one supported project per nation across twenty-five states.</p>
+      <p>The real constraint most Commonwealth SIDS face is not a shortage of eligible projects. It is the absence of a standing pipeline of bankable proposals ready before a call opens. Small administrations tend to write against the clock of the call itself, which produces weaker submissions under avoidable time pressure.</p>
+      <p>Seychelles has an actual advantage here, not just a theoretical one. It runs one of the more developed government blue economy strategies among the twenty-five states and has direct experience structuring blended finance, having issued the world's first sovereign blue bond in 2018. That track record reads well against a funder assessing delivery risk.</p>
+      <p>Name the objection: is a two-hundred-thousand-dollar ceiling worth the administrative cost of a proper application for a small government unit. It is. With five million dollars split across twenty-five eligible states over five years, the odds of funding for a genuinely ready proposal are good, and two hundred thousand dollars covers a real pilot, not a token grant.</p>
+      <p>What "ready" looks like before the call drops: a concept note anchored in baseline data, a realistic budget, an identified delivery partner, and a government support letter drafted in advance rather than requested at the last minute. Each of those depends on having the underlying environmental data in hand, which loops back to the seafloor and reef monitoring gap raised elsewhere in this edition.</p>
+      <p>The fund rewards administrations that treat "in due course" as a starting gun, not a delay.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY 03 — COASTAL ============ -->
+<section class="story" id="story-03">
+  <div class="story-inner">
+    <div class="rule"></div>
+    <div class="numeral">03</div>
+    <span class="flag" style="background:var(--forest-deep); color:var(--mint);">⚡ Vote on a knife edge</span>
+    <h2 class="headline">The Objection With Your Government's Name On It</h2>
+    <p class="lede">Seven of the roughly ten objections needed to kill the Indian Ocean's yellowfin tuna dFAD closure are already filed, and Seychelles is one of the governments objecting to a measure it once helped champion.</p>
+
+    <div class="two-col">
+      <div>
+        <div class="eyebrow">Story Notes</div>
+        <p>Under Indian Ocean Tuna Commission rules, if one-third of member states formally object to a conservation measure, it becomes unenforceable for everyone, not just the objectors. Seven states have already objected to the 72-day annual dFAD closure that took effect in January 2024. Three more objections end it entirely.</p>
+        <p>Kenya proposed the closure in the first place, then withdrew support after the EU reportedly threatened to withhold a 24 million dollar aid package. Tanzania then switched sides. Seychelles and Mauritius are objecting too, both citing the preferential EU trade arrangements attached to tuna canned in their own factories.</p>
+        <p>The EU's stated position is that there isn't enough evidence a dFAD closure would rebuild yellowfin stocks, and that gradual reductions guided by the scientific committee are the better route. Conservationists dispute that reading.</p>
+        <a class="source-link" href="https://hakaimagazine.com/news/months-after-it-was-accepted-a-lauded-agreement-to-protect-indian-ocean-tuna-is-falling-apart/">hakaimagazine.com/news/a-lauded-agreement-to-protect-indian-ocean-tuna-is-falling-apart</a>
+      </div>
+      <div>
+        <div class="eyebrow">Story Article</div>
+        <div class="article-body">
+          <p>Seychelles built its international reputation on ocean governance leadership: 30 percent marine protection, active BBNJ advocacy, a stated blue economy vision. It is also, right now, one of the governments working to unwind a tuna conservation measure it once supported. Both things are true at the same time.</p>
+          <p>The mechanism matters as much as the headline. The 72-day dFAD closure passed the IOTC in February 2023 and took effect in January 2024. Under the commission's own charter, one-third of members objecting nullifies the measure basin-wide. Seven objections are already in.</p>
+          <p>Name the government's likely argument: the tuna-canning trade relationship with the EU is a genuine economic dependency, not a symbolic one. Canning jobs and export revenue are immediate and real. A conservation measure resting on contested evidence is a harder sell domestically than it is at a conference podium.</p>
+          <p>Complicate it in return: the EU's own evidentiary objection is not disinterested either, since EU-flagged vessels are the heaviest dFAD users in the basin. "Not enough evidence yet" has been the argument used to slow-walk conservation measures in other regional fisheries bodies before the stock in question actually collapsed.</p>
+          <p>The more useful frame for a Shorelines piece is not "champion or hypocrite." It is that the "ocean governance champion" label SIDS use internationally is conditional on where the economic exposure sits. Seychelles leads on BBNJ, where it has no domestic industry stake, and objects on dFADs, where it has a direct one. That is a sharper, more honest argument than treating governance leadership as a fixed trait.</p>
+          <p>Watch the objection count. Three more and the measure dies for the whole basin, and Seychelles will have been one of the votes that killed it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY 04 — BROADSHEET ============ -->
+<section class="story" id="story-04">
+  <div class="story-inner">
+    <div class="masthead-rule">
+      <div class="numeral">04</div>
+    </div>
+    <h2 class="headline">Twenty-Three Million Euros, Four Years, One Dependency</h2>
+    <p class="lede">A four-year, twenty-three-million-euro protocol now locks in EU access to fifty-five thousand tonnes of tuna a year in your waters, the same revenue relationship driving Seychelles' objection to the dFAD closure in the story above.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <p class="measure-wide" style="margin:0 auto;">The EU and Seychelles signed a new four-year protocol to their Sustainable Fisheries Partnership Agreement on 27 July, after a five-month gap since the previous protocol expired on 23 February. The EU will contribute 23 million euros over the four years for access to fish up to 55,000 tonnes of tuna and other migratory species annually. Five months without a signed protocol is a long interruption for an agreement this central to Seychelles' fisheries economy, and it suggests harder bargaining than past renewals.</p>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="columns article-body">
+      <p>Four years, 23 million euros, 55,000 tonnes a year. Those are the terms the EU and Seychelles settled on after a five-month gap between the old protocol's expiry on 23 February and the new signature on 27 July.</p>
+      <p>Five months is long enough to signal this round was not a formality. The specific sticking points have not been made public, and inventing them would be guessing rather than reporting. What is worth tracking is why the gap ran that long, and whether it recurs at the next renewal.</p>
+      <p>This is the same fisheries relationship that runs through the story above it. The access-fee income and the tuna-canning jobs it underwrites are the reasons, per reporting, the EU had leverage to pressure Kenya on the dFAD vote, and the reason Seychelles' own canning interests cut against the conservation measure.</p>
+      <p>Name the objection directly: access-fee income of this scale is real, dependable revenue for a small state budget, and diversifying away from it is far easier to argue for in a policy paper than to execute in an actual fiscal year.</p>
+      <p>Counter it with the number. Twenty-three million euros over four years, weighed against the value of Seychelles' full tuna resource and the reputational cost of being on record objecting to a conservation measure at BBNJ-adjacent fora, is a trade worth pricing properly rather than defaulting into.</p>
+      <p>This is the numbers argument to bring into any room where "just blue transition" gets discussed as though it is only about renewable energy. Fisheries access-fee dependency is the transition that actually needs a plan.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY 05 — TERMINAL ============ -->
+<section class="story" id="story-05">
+  <div class="story-inner">
+    <div class="terminal-bar"><span>●</span><span>●</span><span>●</span><span style="margin-left:1rem;">seabed2030 --status</span></div>
+    <div class="terminal-box">
+      <div class="numeral" style="border:none; padding:0;">// STORY_05</div>
+      <h2 class="headline">28.7% of the Seafloor</h2>
+      <p class="lede">Global seafloor mapping just jumped to 28.7 percent with the 2026 GEBCO grid release, five million square kilometres added in a single year, and nobody yet knows exactly how much of that gain touched the Western Indian Ocean.</p>
+
+      <div class="eyebrow">Story Notes</div>
+      <p><span class="prompt">28.7% of the world's ocean floor is now mapped</span>, up from 27.3% in last year's release, with almost five million square kilometres added in the past twelve months alone, per the Nippon Foundation-GEBCO Seabed 2030 project.</p>
+      <p>The GEBCO_2026 grid is downloadable now, with Web Map Services available for anyone building on it. Two dates for the calendar: the Seabed 2030 Indo-Pacific Ocean Mapping Meeting and Data Sprint in Kuala Lumpur, 20-22 October, and a symposium in Cartagena, 8-9 October.</p>
+      <a class="source-link" href="https://www.gebco.net/news/release-gebco2026-grid" style="color:var(--teal-deep);">gebco.net/news/release-gebco2026-grid</a>
+
+      <div class="eyebrow">Story Article</div>
+      <div class="article-body">
+        <p>28.7% mapped in 2026, up from 27.3% in 2025. Roughly 1.4 points of progress a year at current pace. Simple arithmetic says that rate does not reach 100% by 2030, the project's own named target.</p>
+        <p>What is genuinely unclear is how much of the remaining 71% sits in the Western Indian Ocean specifically. The public release does not break out regional coverage at that resolution, so stating a precise gap figure for Seychelles' own exclusive economic zone would be guessing. The honest position is that nobody outside the technical team currently holds that number.</p>
+        <p>That gap is the opening for a HARMONiSE-adjacent claim: the actual national-level answer to "how much of our waters are mapped" is one SHORE could credibly close, using crowd-sourced bathymetry rather than waiting on a survey fleet Seychelles does not have.</p>
+        <p>Crowd-sourced bathymetry is exactly the mechanism smaller states without hydrographic fleets already use to contribute usable depth data from ordinary vessel transits. The Kuala Lumpur data sprint in October is the room where that capacity gets built, and Seychelles' absence from it would be conspicuous.</p>
+        <p>Name the objection: mapping competes for budget against reef monitoring and grant-writing capacity, both raised elsewhere in this edition, and a small government unit could reasonably ask why this should take priority.</p>
+        <p>It should not take priority over those things. It underwrites them. Meaningful marine spatial planning, reef triage, or a credible proposal to the Commonwealth SIDS fund all require knowing the seafloor being planned over. This is infrastructure for the rest of this edition, not a competing line item.</p>
+        <p>Register interest in the Kuala Lumpur sprint now. October is close, and turning up with Seychelles-specific data in hand is a different conversation than turning up to learn what crowd-sourced bathymetry is.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY 06 — BIG STAT ============ -->
+<section class="story" id="story-06">
+  <div class="story-inner">
+    <div class="numeral">06</div>
+    <h2 class="headline">No Code, No Permits, No Vacuum Filled</h2>
+    <div class="stat">0</div>
+    <div class="stat-label">Mining codes finalised at the ISA's latest session</div>
+    <p class="lede">The International Seabed Authority closed its latest session with no mining code and no permits issued, keeping the legal vacuum around deep-sea mining exactly where a state with no navy and no exploration fleet needs it to stay: unresolved and multilateral.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <p>The ISA's latest Council session ended without finalising the Mining Code or approving any commercial permits. France, Germany, Brazil, Mexico, Costa Rica, Palau and South Africa were among the states pushing back, citing unresolved scientific, environmental and governance gaps.</p>
+    <p>A moratorium coalition now counts roughly 40 states plus a growing list of businesses and financial institutions. Separately, the ISA is investigating Nauru Ocean Resources Inc., a subsidiary of The Metals Company, over attempts to pursue seabed mining through national authorisation processes instead of the ISA framework, the same kind of end-run the United States' own unilateral permitting push represents at state level.</p>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="article-body measure-wide">
+      <p>No code, no permits, after another full session. That is neither a win nor a loss. It is the persistence of the current legal vacuum, and for once the vacuum is doing useful work.</p>
+      <p>Without an agreed code, no state can claim a clean legal right to mine the international seabed. That is the only real leverage smaller coastal and island states have in a domain where the United States is not even an ISA member and is proceeding on its own permitting track regardless of what the Authority decides.</p>
+      <p>Name the pressure pushing the other way: critical mineral competition between the United States and China, and mining companies arguing that further delay simply cedes commercial advantage to whoever moves first outside the framework entirely.</p>
+      <p>Seychelles has a direct stake in this holding, not an abstract one. A state with an extended continental shelf claim and no independent capacity to police its own seabed depends entirely on the ISA framework staying intact, because the alternative is raw capability determining outcomes, and capability is precisely what small island states do not have.</p>
+      <p>This connects directly to BBNJ implementation. The same multilateral machinery that moves slowly on area-based management tools and financial mechanism design is the machinery a state like Seychelles needs to work precisely because it is slow and consensus-based, not despite it.</p>
+      <p>The Nauru Ocean Resources investigation is the test case to watch. If a national-authorisation route around the ISA survives that inquiry, the precedent set matters more than anything decided at the next scheduled Council session.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY 07 — PULL QUOTE ============ -->
+<section class="story" id="story-07">
+  <div class="story-inner">
+    <div class="numeral">07</div>
+    <h2 class="headline">The Rules Get Written Before the Vote</h2>
+    <p class="lede">BBNJ has been in force since January with 83 parties on board, and the sessions writing the actual rules on area-based management and the clearing-house mechanism are happening now, before most small states have a formal seat at a Conference of the Parties.</p>
+
+    <blockquote>"The financial mechanism and the clearing-house mechanism, not the ratification count, decide whether this agreement is usable by a capacity-constrained state or just formally signed by one."</blockquote>
+
+    <div class="eyebrow">Story Notes</div>
+    <p>The BBNJ Agreement reached its 60-ratification threshold on 19 September 2025 and entered into force on 17 January 2026, with 83 parties and 145 signatories at that point.</p>
+    <p>The second Preparatory Commission session ran 18 to 29 August 2025 at UN Headquarters, covering rules of procedure, the financial mechanism, and the clearing-house mechanism. Negotiations toward the first Conference of the Parties are underway now.</p>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="article-body measure-wide">
+      <p>What is actually being decided in this Preparatory Commission window is the financial mechanism's design and the clearing-house mechanism's function, both of which determine whether Seychelles can meaningfully use this agreement or simply has it on the books.</p>
+      <p>The clearing-house mechanism is the information and capacity-matching system smaller states are meant to use to access marine genetic resource benefit-sharing and technical support, rather than negotiating those things bilaterally against better-resourced states each time.</p>
+      <p>Name the risk plainly: financial mechanism design decided now, before most SIDS have full delegations engaged in the PrepCom detail, tends to default to structures that suit states with standing negotiating capacity in Geneva and New York, not the states that most need the mechanism to work simply.</p>
+      <p>Waiting for the first Conference of the Parties to see what the rules turned out to be is a worse position than engaging at the PrepCom stage now. Even a short technical submission on clearing-house design shapes the baseline that Conference works from.</p>
+      <p>Seychelles' stake here is concrete: an extended continental shelf claim and a direct interest in marine genetic resources found in its own waters both run through how these mechanisms get built, not through the ratification milestone already behind everyone.</p>
+      <p>Track the date once the first Conference of the Parties is set, and treat the current preparatory window as the actual decision point.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY 08 — ACADEMIC DROP CAP ============ -->
+<section class="story" id="story-08">
+  <div class="story-inner">
+    <div class="numeral">S T O R Y&nbsp; 0 8</div>
+    <h2 class="headline">A New Chair Takes the Regional Table</h2>
+    <p class="lede">France, an EU member state with its own Indian Ocean territory and fishing interests, is set to take over the Indian Ocean Commission's chairmanship from Comoros next month.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <p>Seychelles' Ministry of Foreign Affairs has flagged that France is preparing to take the Indian Ocean Commission chairmanship from Comoros next month, rotating leadership of the regional body that groups Seychelles with Comoros, Madagascar, Mauritius and Réunion.</p>
+    <p>The chairmanship rotates among the five members, and each chair sets priorities for the body's work over its term, from fisheries cooperation to regional hydrographic and climate programmes.</p>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="article-body dropcap measure-wide">
+      <p>France's move into the Indian Ocean Commission chair, as reported by Seychelles' own Ministry of Foreign Affairs, rotates regional leadership away from Comoros for the coming term. Treat the specifics as reported rather than settled in full detail until the handover itself is confirmed.</p>
+      <p>The structural point worth naming is that France sits in the IOC as a member through Réunion, a French department, while simultaneously being an EU member state whose fishing and, potentially, seabed mineral interests across the wider Indian Ocean do not always align with Comoros, Madagascar, Mauritius or Seychelles acting as full sovereign states.</p>
+      <p>Name the objection to worrying about this at all: France has chaired the body before, the IOC works by consensus among its five members regardless of who holds the chair, and a chairmanship is procedural rather than directive.</p>
+      <p>Counter it: a procedural chair still sets meeting agendas and represents the IOC externally for the length of its term, in exactly the multilateral fora, Ocean Decade meetings, BBNJ side events, Commonwealth gatherings, where Seychelles otherwise has to represent itself without that regional cover.</p>
+      <p>What is worth actually watching is whether the IOC's blue economy and hydrographic cooperation programmes, the ones that would eventually intersect with HARMONiSE-style regional data-sharing, keep their current priority level under a French chair or get reshuffled toward EU-aligned priorities instead.</p>
+      <p>A direct conversation with Seychelles' Ministry of Foreign Affairs about what continuity it is actually negotiating for, before the handover rather than after, is the useful next step here.</p>
+      <p class="footnote">Sourced from Seychelles Ministry of Foreign Affairs public reporting, mfa.gov.sc. Handover date and formal agenda not independently confirmed at time of writing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY 09 — COLOUR FIELD ============ -->
+<section class="story" id="story-09">
+  <div class="story-inner">
+    <div class="numeral">09</div>
+    <h2 class="headline">Fragmented, Short-Term, Hard to Reach</h2>
+    <span class="flag">⚡ Position window open now</span>
+    <p class="lede">The 2026 Ocean and Climate Change Dialogue named the exact three failures you've spent years working around in grant administration, and the Blue NDC Challenge launching at COP31 is the first mechanism built to answer all three at once.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <p>This year's UNFCCC Ocean and Climate Change Dialogue, held 10 to 11 June, identified three recurring barriers to ocean climate finance: too fragmented, too short-term, and too hard to access, especially for SIDS and least developed countries. Persistent gaps in blue carbon and marine ecosystem data, and weak coordination across governance levels, compound the problem.</p>
+    <p>IOC-UNESCO's Blue Carbon Finance Toolbox is one existing response, mapping the mechanisms already available. The bigger move is the Blue NDC Challenge and its implementation taskforce, both under development now and expected to launch at COP31.</p>
+    <a class="source-link" href="https://ocean-climate.org/en/report-the-ocean-and-climate-change-dialogue/">ocean-climate.org/en/report-the-ocean-and-climate-change-dialogue</a>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="article-body measure-wide">
+      <p>Translate the diagnosis into what it actually means operationally, from the finance-administration side rather than the marine-science side. "Fragmented" means a coastal resilience project has to piece together three or four separate funding lines with different reporting cycles and different eligibility criteria, none designed to speak to each other.</p>
+      <p>"Too short-term" means most available finance runs on twelve to twenty-four month project cycles, while reef recovery, seafloor mapping programmes, and marine spatial planning implementation all run on five to ten year horizons. That is a structural mismatch, not a management failure on the recipient side.</p>
+      <p>"Too hard to access" means the application and reporting burden falls hardest on the smallest government units, the same ones with the least spare capacity to write it. That is precisely the constraint named against the Commonwealth SIDS fund earlier in this edition.</p>
+      <p>Name the objection: another dialogue, another toolbox, another taskforce risks becoming institutional noise if COP31 does not produce something with actual money attached and a different eligibility architecture, not just better-labelled versions of the same funding lines.</p>
+      <p>Counter it: a COP31 launch date is a real forcing function, and a taskforce still under development is the stage where design choices remain open. Submitting a position now on what "less fragmented, longer-term, easier to access" would concretely require, drawn from direct grant administration experience, has an actual chance of shaping the mechanism rather than reacting to it once finished.</p>
+      <p>This is the argument for a Shorelines piece written from the finance-administration side of ocean governance, a perspective underrepresented in this conversation and exactly where your specific expertise sits.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY 10 — LETTERPRESS ============ -->
+<section class="story" id="story-10">
+  <div class="story-inner">
+    <div class="numeral">10</div>
+    <h2 class="headline">Whose Governance Runs the Model</h2>
+    <p class="lede">GeoAI workflows can now turn a low-cost sensor feed into a usable reef map without a survey fleet, and this year's Geospatial World Forum put data sovereignty, not just data access, at the centre of what that capability actually means for a place like Seychelles.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <p>Recent GeoAI research demonstrates a scalable, cost-effective methodology for high-resolution reef monitoring: low-cost data collection combined with weakly supervised deep learning and multi-scale remote sensing, producing usable ecosystem maps without a dedicated survey fleet.</p>
+    <p>The 2026 Geospatial World Forum ran under the theme Sovereignty, Economy and Society, arguing that sovereignty now depends as much on data access, digital infrastructure and the capacity to turn information into action as it does on borders. The Pacific Data Sovereignty Network is the clearest existing model of what that looks like in practice for island states.</p>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="article-body">
+      <p>GeoAI plus multi-scale remote sensing now produces a functional reef or ecosystem map from low-cost sensor data, without the fleet cost that used to gate this kind of monitoring entirely. That is a genuine capability shift for a state without its own hydrographic fleet.</p>
+      <p>Name the catch immediately: that capability usually arrives bundled with someone else's satellite feed, someone else's model, and someone else's cloud infrastructure. That is the actual question the Forum's theme was pointing at: who controls how a small state's own ecosystem data gets used once it has passed through a system it does not own.</p>
+      <p>Name the objection from the open-data side: restricting access to environmental data on sovereignty grounds slows down the climate science international partners are trying to fund and share, and a state with limited technical capacity benefits more from openness than from control.</p>
+      <p>Counter it with the Pacific Data Sovereignty Network, which shows the two are not actually opposed. A Pacific-governed framework for how Pacific environmental and cultural data gets used and shared coexists with, rather than blocks, open scientific collaboration, because sovereignty there means governance of use, not refusal to share.</p>
+      <p>Apply that distinction directly to how HARMONiSE gets positioned: as a sovereignty-preserving hydrospatial tool, one where Seychelles controls the data governance layer even while using externally sourced imagery and internationally developed models, not simply as a national mapping capability with a local flag on it.</p>
+      <p>That distinction, between owning the infrastructure and owning the governance of what runs on it, is the sharper pitch to bring to funders and to peers. It says more than "we need better maps."</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="sign">Morning Edition</div>
+  <p>Ten stories, three flagged. Compiled for Francesca Adrienne, SHORE Institute · Shorelines.</p>
+  <p>Sources: Mercator Ocean International, IPS News, the Commonwealth Secretariat, Hakai Magazine, the European Commission, GEBCO / Seabed 2030, Oceanographic Magazine, IISD Earth Negotiations Bulletin, the IOC-UNESCO, and the Seychelles Ministry of Foreign Affairs.</p>
+</footer>
+
+</body>
+</html>
