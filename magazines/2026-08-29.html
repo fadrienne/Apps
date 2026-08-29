@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Morning Edition · 29 August 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#123a5c;
+    --teal:#0f6e6e;
+    --sky:#bfe1f5;
+    --sky-deep:#7fc4e8;
+    --yellow:#ffd23f;
+    --gold:#e8a93b;
+    --forest:#1e5631;
+    --sage:#a9c9a0;
+    --mint:#d3f0e2;
+    --off-white:#faf7f0;
+    --cream:#f3ecd9;
+    --slate:#4c5b66;
+    --charcoal:#2e3438;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    background:var(--off-white);
+    color:var(--charcoal);
+    font-size:1.05rem;
+    line-height:1.6;
+  }
+  h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700;color:var(--navy);}
+  a{color:var(--teal);}
+  .container{max-width:1100px;margin:0 auto;padding:0 2rem;}
+
+  /* MASTHEAD */
+  .masthead{
+    background:var(--sky);
+    padding:4rem 2rem 3rem;
+    text-align:center;
+    border-bottom:6px solid var(--navy);
+  }
+  .masthead .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    letter-spacing:0.3em;
+    text-transform:uppercase;
+    font-size:1rem;
+    color:var(--navy);
+    margin-bottom:1rem;
+  }
+  .masthead h1{
+    font-size:5.5rem;
+    letter-spacing:-0.02em;
+    line-height:1;
+  }
+  .masthead .date{
+    font-size:1.75rem;
+    color:var(--teal);
+    margin-top:1rem;
+    font-weight:500;
+  }
+  .masthead .strap{
+    margin-top:1.5rem;
+    font-size:1.15rem;
+    color:var(--slate);
+    max-width:700px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  /* NAV */
+  .jumpnav{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:var(--navy);
+    padding:1.25rem 2rem;
+  }
+  .jumpnav .container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.9rem;
+    justify-content:center;
+  }
+  .jumpnav a{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:0.95rem;
+    color:var(--white);
+    background:rgba(255,255,255,0.12);
+    padding:0.6rem 1.1rem;
+    border-radius:999px;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .jumpnav a:hover{background:var(--teal);}
+  .jumpnav a .num{color:var(--yellow);margin-right:0.4em;}
+
+  /* SHARED STORY STRUCTURE */
+  .story{
+    padding:5rem 2rem;
+    scroll-margin-top:6rem;
+    position:relative;
+    overflow:hidden;
+  }
+  .story-inner{max-width:900px;margin:0 auto;}
+  .flag{
+    display:inline-flex;
+    align-items:center;
+    gap:0.5rem;
+    font-family:'Inter',sans-serif;
+    font-weight:800;
+    font-size:1.1rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    background:var(--yellow);
+    color:var(--navy);
+    padding:0.6rem 1.2rem;
+    border-radius:999px;
+    margin-bottom:1.5rem;
+  }
+  .headline{
+    font-size:3.2rem;
+    line-height:1.05;
+    margin:1rem 0 2rem;
+  }
+  .why{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:1.7rem;
+    line-height:1.4;
+    margin:2rem 0 2.5rem;
+  }
+  .eyebrow-label{
+    font-family:'JetBrains Mono',monospace;
+    letter-spacing:0.25em;
+    text-transform:uppercase;
+    font-size:0.9rem;
+    font-weight:700;
+    margin-bottom:1rem;
+    display:block;
+  }
+  .notes p, .article p{
+    font-size:1.15rem;
+    margin-bottom:1.3rem;
+    max-width:70ch;
+  }
+  .article{margin-top:3rem;}
+  .article p{font-size:1.08rem;}
+  .story-link{
+    display:inline-block;
+    margin-top:0.5rem;
+    font-weight:700;
+    word-break:break-all;
+  }
+  .section-block{margin-bottom:3rem;}
+
+  /* NUMERALS */
+  .numeral-bg{
+    position:absolute;
+    font-family:'Fraunces',serif;
+    font-weight:900;
+    font-size:22rem;
+    line-height:1;
+    opacity:0.14;
+    top:-4rem;
+    right:-1rem;
+    z-index:0;
+    pointer-events:none;
+  }
+  .numeral-circle{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:5rem;
+    height:5rem;
+    border-radius:50%;
+    font-family:'Fraunces',serif;
+    font-weight:800;
+    font-size:1.8rem;
+    margin-bottom:1.5rem;
+  }
+  .numeral-box{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:0.6rem 1.3rem;
+    font-family:'JetBrains Mono',monospace;
+    font-weight:700;
+    font-size:1.4rem;
+    border:3px solid currentColor;
+    margin-bottom:1.5rem;
+  }
+  .numeral-hairline{
+    font-family:'Inter',sans-serif;
+    font-weight:300;
+    font-size:1.3rem;
+    letter-spacing:0.4em;
+    border-top:1px solid currentColor;
+    padding-top:0.6rem;
+    display:inline-block;
+    margin-bottom:1.5rem;
+  }
+  .numeral-stamp{
+    display:inline-block;
+    font-family:'Fraunces',serif;
+    font-weight:900;
+    font-size:2.2rem;
+    border:4px solid var(--navy);
+    padding:0.4rem 1rem;
+    transform:rotate(-4deg);
+    margin-bottom:1.5rem;
+    background:rgba(255,255,255,0.4);
+  }
+
+  /* 1. HERO */
+  .layout-hero{background:var(--sky-deep);color:var(--navy);}
+  .layout-hero .headline{font-size:4.2rem;}
+  .layout-hero .why{color:var(--forest);}
+  .layout-hero .numeral-bg{color:var(--navy);}
+
+  /* 2. COASTAL */
+  .layout-coastal{background:var(--sky);color:var(--navy);}
+  .layout-coastal .story-inner{
+    border-left:8px solid var(--forest);
+    padding-left:2.5rem;
+  }
+  .layout-coastal .why{color:var(--teal);}
+  .layout-coastal .two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2.5rem;
+  }
+
+  /* 3. SUNBEAM ALERT */
+  .layout-sunbeam{background:var(--yellow);color:var(--navy);}
+  .layout-sunbeam .why{color:var(--navy);font-style:italic;font-weight:800;}
+  .layout-sunbeam .headline{font-style:italic;font-weight:800;}
+
+  /* 4. TERMINAL */
+  .layout-terminal{background:var(--mint);color:var(--forest);font-family:'JetBrains Mono',monospace;}
+  .layout-terminal .headline{font-family:'JetBrains Mono',monospace;font-size:2.4rem;color:var(--forest);}
+  .layout-terminal .why{font-family:'JetBrains Mono',monospace;font-style:normal;color:var(--navy);border-left:4px solid var(--forest);padding-left:1.2rem;}
+  .layout-terminal .notes p, .layout-terminal .article p{font-family:'JetBrains Mono',monospace;font-size:0.95rem;}
+  .layout-terminal .eyebrow-label{color:var(--teal);}
+  .layout-terminal .story-link{color:var(--forest);}
+
+  /* 5. ACADEMIC DROP CAP */
+  .layout-academic{background:var(--off-white);color:var(--charcoal);}
+  .layout-academic .why{color:var(--teal);}
+  .layout-academic .notes p:first-of-type::first-letter{
+    font-family:'Fraunces',serif;
+    font-weight:800;
+    font-size:5rem;
+    float:left;
+    line-height:0.8;
+    margin-right:0.15em;
+    color:var(--navy);
+  }
+  .footnote{
+    margin-top:2rem;
+    padding-top:1rem;
+    border-top:1px solid var(--slate);
+    font-size:0.9rem;
+    color:var(--slate);
+    font-style:italic;
+  }
+
+  /* 6. BIG STAT */
+  .layout-bigstat{background:var(--off-white);color:var(--navy);text-align:center;}
+  .layout-bigstat .stat{
+    font-family:'Fraunces',serif;
+    font-weight:900;
+    font-size:9rem;
+    line-height:1;
+    color:var(--teal);
+    margin:1.5rem 0;
+  }
+  .layout-bigstat .stat-label{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    color:var(--navy);
+    margin-bottom:2rem;
+  }
+  .layout-bigstat .why, .layout-bigstat .notes, .layout-bigstat .article{text-align:left;}
+
+  /* 7. PULL QUOTE */
+  .layout-pullquote{background:var(--sage);color:var(--navy);}
+  .layout-pullquote .quote{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:2.6rem;
+    line-height:1.25;
+    margin:2.5rem 0;
+    padding:0 1rem;
+  }
+  .layout-pullquote .quote::before{content:"\201C";}
+  .layout-pullquote .quote::after{content:"\201D";}
+
+  /* 8. BROADSHEET */
+  .layout-broadsheet{background:var(--off-white);color:var(--charcoal);}
+  .layout-broadsheet .rule{
+    height:3px;
+    background:var(--teal);
+    width:100%;
+    margin:1.5rem 0 2.5rem;
+  }
+  .layout-broadsheet .columns{
+    column-count:2;
+    column-gap:3rem;
+  }
+  .layout-broadsheet .columns p{break-inside:avoid;}
+
+  /* 9. COLOUR FIELD */
+  .layout-colourfield{background:var(--teal);color:var(--white);}
+  .layout-colourfield .why{color:var(--yellow);}
+  .layout-colourfield .headline{color:var(--white);}
+  .layout-colourfield a{color:var(--yellow);}
+  .layout-colourfield .eyebrow-label{color:var(--mint);}
+
+  /* 10. LETTERPRESS */
+  .layout-letterpress{
+    background:var(--cream);
+    color:var(--charcoal);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(0,0,0,0.015) 0px, rgba(0,0,0,0.015) 1px, transparent 1px, transparent 3px);
+  }
+  .layout-letterpress .headline, .layout-letterpress .why, .layout-letterpress .notes, .layout-letterpress .article{
+    font-family:'Fraunces',serif;
+  }
+  .layout-letterpress .why{color:var(--forest);}
+  .layout-letterpress .eyebrow-label{font-family:'JetBrains Mono',monospace;color:var(--teal);}
+
+  footer{
+    background:var(--navy);
+    color:var(--sky);
+    text-align:center;
+    padding:3rem 2rem;
+    font-size:1rem;
+  }
+  footer .brand{font-family:'Fraunces',serif;font-weight:700;font-size:1.4rem;color:var(--white);margin-bottom:0.5rem;}
+
+  @media (max-width:700px){
+    .masthead h1{font-size:2.8rem;}
+    .headline{font-size:2rem;}
+    .layout-hero .headline{font-size:2.4rem;}
+    .why{font-size:1.3rem;}
+    .layout-pullquote .quote{font-size:1.7rem;}
+    .layout-bigstat .stat{font-size:4.5rem;}
+    .layout-coastal .two-col{grid-template-columns:1fr;}
+    .layout-broadsheet .columns{column-count:1;}
+    .numeral-bg{font-size:9rem;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="eyebrow">SHORE Institute · Shorelines</div>
+  <h1>Morning Edition</h1>
+  <div class="date">Saturday, 29 August 2026</div>
+  <p class="strap">Ten stories, filtered through ocean governance, hydrospatial science, and SIDS equity. Read over your first coffee.</p>
+</header>
+
+<nav class="jumpnav">
+  <div class="container">
+    <a href="#story-1"><span class="num">01</span>A $5M Door You Know How to Open ⚡</a>
+    <a href="#story-2"><span class="num">02</span>Two Days Left on the Decade's Call ⚡</a>
+    <a href="#story-3"><span class="num">03</span>28.7% of the Seafloor, One Year On</a>
+    <a href="#story-4"><span class="num">04</span>21.1°C, Out of Season</a>
+    <a href="#story-5"><span class="num">05</span>Turning Seawater Carbon to Stone</a>
+    <a href="#story-6"><span class="num">06</span>A Seat You Already Missed</a>
+    <a href="#story-7"><span class="num">07</span>The Swap That Didn't Reduce the Debt</a>
+    <a href="#story-8"><span class="num">08</span>The Sovereignty Question NOAA Can't Answer</a>
+    <a href="#story-9"><span class="num">09</span>Seychelles, Assigned as the Model Again</a>
+    <a href="#story-10"><span class="num">10</span>Charting the Seafloor With a Foundation Model</a>
+  </div>
+</nav>
+
+<!-- STORY 1: HERO -->
+<section class="story layout-hero" id="story-1">
+  <div class="numeral-bg">01</div>
+  <div class="story-inner">
+    <span class="flag">⚡ Funding call open</span>
+    <h2 class="headline">A $5 Million Door You Know How to Open</h2>
+    <p class="why">The Commonwealth Secretariat and Azerbaijan's COP29 Presidency have opened a $5 million fund built for exactly the government-facing proposal work you spent years running at the Department of Blue Economy, and Seychelles's government is one of 25 eligible applicants.</p>
+
+    <div class="section-block notes">
+      <span class="eyebrow-label">Story Notes</span>
+      <p>The Commonwealth Secretariat and Azerbaijan's COP29 Presidency have opened a call for proposals from the 25 Commonwealth Small Island Developing States, with grants of up to US$200,000 drawn from a US$5 million fund running over five years. Eligible categories: early warning systems, climate risk planning, nature-based solutions, marine protection, sustainable fisheries, and resilient renewable energy infrastructure.</p>
+      <p>This is a government-to-government channel, not one SHORE Institute applies to directly, since only Commonwealth SIDS governments can submit. But you have built exactly this kind of proposal before, at the Department of Blue Economy and as UNDP regional project manager, and Seychelles's government will need people who can write a ToR-grade marine protection proposal fast.</p>
+      <a class="story-link" href="https://thecommonwealth.org/news/commonwealth-and-cop29-presidency-invite-commonwealth-sids-submit-climate-action-proposals" target="_blank" rel="noopener">thecommonwealth.org/news/commonwealth-and-cop29-presidency-invite-commonwealth-sids-submit-climate-action-proposals</a>
+    </div>
+
+    <div class="article">
+      <span class="eyebrow-label">Story Article</span>
+      <p>The Commonwealth Secretariat and Azerbaijan's COP29 Presidency opened this fund in June, five months after their first tranche disbursed US$2 million toward environmental resilience projects across the same 25 Commonwealth Small Island Developing States. This second call carries the full ambition: a US$5 million pool over five years, individual grants up to US$200,000, aimed at climate risk planning, nature-based solutions, marine protection, sustainable fisheries and renewable energy infrastructure built to survive a cyclone season.</p>
+      <p>You have written this exact kind of proposal before. At the Department of Blue Economy you ran maritime boundary delimitation work that fed directly into funding submissions with the same structure: a defined geography, a named implementing agency, a budget line that has to survive a Commonwealth secretariat's scrutiny. As UNDP regional project manager you sat on the other side of that desk, reviewing exactly this kind of application for fit against donor priorities. Few people in Seychelles's government have done both.</p>
+      <p>That matters because the fund's real constraint is not money, it is drafting capacity. Twenty-five SIDS governments are competing for the same pool, most with thin technical benches and no dedicated grants unit. A country that submits a proposal with clean baseline data, a credible monitoring plan and a marine protection component tied to an existing MSP process, Seychelles already has one, will outcompete a government that submits a wish list.</p>
+      <p>Here is the objection worth naming directly: US$200,000 sounds small against the scale of what Seychelles needs to adapt its coastline and fisheries to a warming Indian Ocean. It is small, deliberately so. The Green Climate Fund and the Adaptation Fund operate at a different scale entirely; this one covers the gap they routinely skip, the pre-feasibility studies, the local data collection, the six months of staff time it takes to get a bigger application shovel-ready. Seen that way, US$200,000 well spent this year can unlock a much larger tranche next year.</p>
+      <p>There is a sharper point underneath this for your own research. Seychelles sits in the awkward middle of global climate finance, a High-Income SIDS by World Bank classification, which locks it out of concessional windows reserved for lower-income countries, while carrying every physical vulnerability of a small island state. A Commonwealth fund that admits Seychelles purely on SIDS status, income classification set aside, is one of the only channels that treats the paradox correctly. That is worth a paragraph in Shorelines on its own: which funds get the SIDS classification right, and which ones still gatekeep on GNI per capita.</p>
+      <p>The practical move this week: find out who in Blue Economy or the Ministry of Foreign Affairs is drafting Seychelles's submission, and offer the marine protection or fisheries components. You know the coastline, you know the MSP data, and you know how Commonwealth secretariats read a budget line.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 2: SUNBEAM ALERT -->
+<section class="story layout-sunbeam" id="story-2">
+  <div class="story-inner">
+    <span class="numeral-stamp">02</span>
+    <span class="flag" style="background:var(--navy);color:var(--yellow);">⚡ Deadline Monday, 31 Aug, 23:59 UTC</span>
+    <h2 class="headline">Two Days Left on the Decade's Call</h2>
+    <p class="why">The UN Ocean Decade's Call for Decade Actions closes in two days, and a HARMONiSE-aligned submission under the Projects or Contributions track could put the Ocean Mapping Hub inside the Decade's official coordination structure before the next funding cycle opens.</p>
+
+    <div class="section-block notes">
+      <span class="eyebrow-label">Story Notes</span>
+      <p>The UN Decade of Ocean Science for Sustainable Development has its eleventh Call for Decade Actions open. The Programmes track already closed on 31 May, but the Projects and Contributions tracks run through 31 August 2026, 23:59 UTC, which is Monday.</p>
+      <p>A Decade Action carries no direct funding. What it carries is formal endorsement: a stamp from IOC-UNESCO that lets a project cite Decade affiliation in every subsequent funding application, and a listing in the Ocean Decade's coordination structure that donors and multilateral partners scan when looking for endorsed initiatives to fund.</p>
+      <p>If HARMONiSE or the Ocean Mapping Hub is not already registered as a Decade Action, this is the last window until the next call, likely twelve to eighteen months out.</p>
+      <a class="story-link" href="https://oceandecade.org/call-for-decade-actions-11-2026/" target="_blank" rel="noopener">oceandecade.org/call-for-decade-actions-11-2026</a>
+    </div>
+
+    <div class="article">
+      <span class="eyebrow-label">Story Article</span>
+      <p>You have two days. The UN Decade of Ocean Science for Sustainable Development's eleventh Call for Decade Actions closes its Projects and Contributions tracks on 31 August 2026 at 23:59 UTC, and the Programmes track already closed back in May. If HARMONiSE or the Ocean Mapping Hub is not yet registered as an official Decade Action, this is the last chance before the next call opens, likely well into 2027.</p>
+      <p>A Decade Action carries no direct funding. That is the detail people miss and then dismiss the whole mechanism. What it carries is IOC-UNESCO endorsement: a formal listing inside the Decade's coordination structure, the right to describe a project as an "endorsed UN Ocean Decade Action" in every grant application that follows, and visibility to the donors, philanthropies and multilateral programmes that scan that structure specifically to find initiatives worth co-funding.</p>
+      <p>You know this mechanism from the inside. As IOC-UNESCO national focal point you watched how Decade endorsement functioned less as a badge and more as a filter: funders under time pressure use the Decade Action list to shortcut due diligence, on the logic that IOC-UNESCO has already vetted the science. A hydrospatial project without that filter has to prove its credibility from zero with every new funder it approaches. One with it starts three steps ahead.</p>
+      <p>Here is the objection worth answering directly: an endorsement with no cheque attached looks like paperwork for its own sake. It is not, if the sequencing is right. The realistic use of a Decade Action is not the endorsement itself, it is what the endorsement unlocks eighteen months later, when a GEF or Nippon Foundation call asks whether the project holds any existing multilateral recognition. Projects that can answer yes clear that screening question without a fight. Projects that cannot spend that stage explaining themselves instead of applying.</p>
+      <p>The Contributions track technically stays open on a rolling basis. But the call explicitly encourages submission by 31 August, and rolling reviews after a stated deadline routinely slow down once the review panel's attention moves to the next cycle. Treat Monday as the real date, not the soft one.</p>
+      <p>If a submission already exists in draft for HARMONiSE or the Ocean Mapping Hub, this is the week to finish it. If nothing exists yet, even a Contribution-track submission, the lighter of the two tracks, is worth filing before Monday rather than waiting twelve months for the next window.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 3: BIG STAT -->
+<section class="story layout-bigstat" id="story-3">
+  <div class="story-inner">
+    <span class="numeral-circle" style="background:var(--sky);color:var(--navy);">03</span>
+    <h2 class="headline">28.7% of the Seafloor, One Year On</h2>
+    <p class="stat-label">Global seafloor mapped to modern standards, GEBCO_2026 Grid</p>
+    <div class="stat">28.7%</div>
+    <p class="why">The GEBCO_2026 Grid puts global seafloor mapping at 28.7 per cent, and every square kilometre Seychelles contributes through crowdsourced bathymetry pulls the Ocean Mapping Hub's core dataset closer to being the reference record for the western Indian Ocean.</p>
+
+    <div class="section-block notes">
+      <span class="eyebrow-label">Story Notes</span>
+      <p>The Nippon Foundation-GEBCO Seabed 2030 project released the GEBCO_2026 Grid, putting global seafloor mapping coverage at 28.7 per cent, roughly 104 million square kilometres, more than two-thirds of the world's land area, after almost five million square kilometres of new data came in over the past year.</p>
+      <p>Most of that new data came through crowdsourced bathymetry, vessels and organisations submitting depth soundings collected during ordinary operations rather than dedicated survey cruises. That is the exact mechanism the Ocean Mapping Hub is built to plug into for the western Indian Ocean, where survey coverage remains among the thinnest in GEBCO's grid.</p>
+      <a class="story-link" href="https://www.gebco.net/news/release-gebco2026-grid" target="_blank" rel="noopener">gebco.net/news/release-gebco2026-grid</a>
+    </div>
+
+    <div class="article">
+      <span class="eyebrow-label">Story Article</span>
+      <p>Twenty-eight point seven per cent. That is where the Nippon Foundation-GEBCO Seabed 2030 project put global seafloor mapping coverage with this year's GEBCO_2026 Grid release, roughly 104 million square kilometres charted out of an ocean floor that covers 361 million. Almost five million square kilometres of new data came in over the past twelve months alone, more than the entire land area of India.</p>
+      <p>Put the arithmetic next to the deadline. Seabed 2030 exists to map the entire ocean floor by 2030. At the current addition rate, even holding steady rather than accelerating further, the project reaches roughly 45 per cent by the deadline year, not 100. That gap says less about the project's pace than about how much of the ocean floor has never been surveyed at all, and it is exactly the gap HARMONiSE and the Ocean Mapping Hub exist to help close in one specific region.</p>
+      <p>Most of this year's new coverage came through crowdsourced bathymetry: depth soundings collected by ordinary vessel traffic, fishing fleets, ferries, research cruises with the instrument left running between stations, submitted to GEBCO rather than sitting unused on a hard drive. That mechanism matters more in the western Indian Ocean than almost anywhere else, because dedicated survey cruises there are rare and expensive, while vessel traffic through and around Seychelles's exclusive economic zone is constant.</p>
+      <p>This is where the science-to-policy pipeline you keep returning to becomes concrete rather than rhetorical. A crowdsourced bathymetry pipeline for Seychelles waters is not a research nicety, it is infrastructure for the Marine Spatial Plan, for maritime boundary work, for fisheries management, all of which currently run on bathymetric data that is decades old in places or interpolated from satellite-derived bathymetry with real error margins. Every vessel that submits a sounding to GEBCO through a national contribution mechanism narrows that error.</p>
+      <p>The open question for SHORE Institute is whether Seychelles has that contribution mechanism running yet, formally, with a named point of contact and a data-sharing agreement with the Seychelles Maritime Safety Authority or the Seychelles Ports Authority. If not, the Ocean Mapping Hub is the natural home for it, and the GEBCO_2026 release is the reference point to cite when making that case to whichever ministry owns vessel traffic data. Coverage figures move slowly. National contribution agreements, once signed, move quickly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 4: PULL QUOTE -->
+<section class="story layout-pullquote" id="story-4">
+  <div class="story-inner">
+    <span class="numeral-hairline">04</span>
+    <h2 class="headline">21.1°C, Out of Season</h2>
+    <p class="why">A record 21.1°C average sea surface temperature this August is the kind of single, brutal number that turns a Shorelines piece on ocean warming from abstract into something a reader feels in one sentence.</p>
+
+    <blockquote class="quote">Sea temperatures normally peak in March or April. Hitting a record in August broke the pattern climate scientists use to sanity-check ocean heat data.</blockquote>
+
+    <div class="section-block notes">
+      <span class="eyebrow-label">Story Notes</span>
+      <p>Global average sea surface temperature hit a record 21.1°C in August, according to Copernicus Climate Change Service data, an unusual peak since sea temperatures typically run highest in March and April, following the austral summer.</p>
+      <p>Warmer oceans absorb carbon dioxide less efficiently. Researchers tracking the marine carbon sink through this heat spike found that physical and biological processes have so far limited the expected outgassing, but they are not certain those compensating processes hold as warming continues.</p>
+      <a class="story-link" href="https://www.carbonbrief.org/daily-briefing-hot-oceans-climate-damages-would-obliterate-north-sea-benefits-chinas-oil-demand-peak" target="_blank" rel="noopener">carbonbrief.org/daily-briefing-hot-oceans</a>
+    </div>
+
+    <div class="article">
+      <span class="eyebrow-label">Story Article</span>
+      <p>Twenty-one point one degrees Celsius. That is the global average sea surface temperature the EU's Copernicus Climate Change Service recorded this August, the hottest on record, and the timing is what makes it strange rather than merely bad. Sea temperatures normally peak in March or April, months after the austral summer has had time to warm the Southern Hemisphere's oceans. Hitting a record in August means the usual seasonal pattern climate scientists use to sanity-check ocean heat data broke this year.</p>
+      <p>Warmer water holds less dissolved gas, carbon dioxide included, which is the basic physics behind why a hotter ocean absorbs less carbon from the atmosphere. The ocean has been doing roughly a quarter of the planet's total carbon absorption work for decades, quietly, without anyone crediting it the way forests get credited. Researchers studying this year's heat spike found that physical mixing and biological carbon uptake have so far kept the sink from measurably weakening despite the record temperature. The finding that should worry you more than the temperature record itself: nobody studying it is confident those compensating processes continue to hold as warming keeps stacking up year on year.</p>
+      <p>This is a number, not yet a mechanism failure, and the distinction matters for how you write about it. Stakes inflation is the easy failure mode here, turning one hot August into a dying ocean. It is not that. Not yet. The record is a warning sign inside a system that has been quietly absorbing a problem for humanity for so long that most people have never had to think about what happens if it stops.</p>
+      <p>For Seychelles specifically, sea surface temperature matters twice over. It drives coral bleaching risk directly, and Seychelles's reef systems have already been through two major bleaching events this century. It also compounds the fisheries pressure that underwrites a meaningful share of the country's blue economy, since warmer surface water shifts pelagic fish distribution further from historic fishing grounds. A record set in the wrong season is a signal that the models built on the old seasonal pattern need re-checking against what is actually happening in Indian Ocean waters specifically, not just the global average.</p>
+      <p>There is a Shorelines piece here that does not need embellishment: take the 21.1°C figure, pair it with Seychelles's own sea surface temperature record if the Seychelles Meteorological Authority publishes one, and let the comparison do the work. A global record set outside its normal season, checked against what your own coastline is measuring, is a stronger argument than another paragraph about the ocean as a carbon sink in the abstract.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 5: TERMINAL -->
+<section class="story layout-terminal" id="story-5">
+  <div class="story-inner">
+    <span class="numeral-box">05</span>
+    <h2 class="headline">// seawater_carbon.to_stone()</h2>
+    <p class="why">An electrochemical process that turns dissolved carbon in seawater into solid stone for permanent storage is the first ocean carbon removal method that could plug directly into a small island state's existing port infrastructure rather than requiring a research fleet.</p>
+
+    <div class="section-block notes">
+      <span class="eyebrow-label">STORY NOTES</span>
+      <p>Researchers have developed an electrochemical system that converts dissolved inorganic carbon in seawater into stable calcium carbonate, essentially turning carbon into stone, for long-term storage, alongside separate modelling work testing sixty years of simulated iron fertilization across ten ocean regions.</p>
+      <p>The modelling identified the Pacific and Southern Oceans as the most efficient regions for iron fertilization-based carbon removal, but the electrochemical stone method does not depend on open-ocean fertilization at all. It can run at a fixed coastal or port-based installation.</p>
+      <a class="story-link" href="https://phys.org/news/2026-08-marine-carbon-technology-dioxide-seawater.html" target="_blank" rel="noopener">phys.org/news/2026-08-marine-carbon-technology-dioxide-seawater</a>
+    </div>
+
+    <div class="article">
+      <span class="eyebrow-label">STORY ARTICLE</span>
+      <p>Marine carbon removal research usually arrives in one of two shapes: iron fertilization, dumping nutrients into open water to trigger algal blooms that pull down carbon, or direct air capture repurposed for the ocean. Both need a research fleet, a large area of open water, and years of monitoring to prove the carbon actually stays down instead of cycling back into the atmosphere. A newer electrochemical method skips the fleet requirement entirely, converting dissolved inorganic carbon already present in seawater into stable calcium carbonate, solid stone, at a fixed installation.</p>
+      <p>That distinction matters more to Seychelles than the tonnage removed does. Iron fertilization and most ocean-based carbon removal proposals are geographically locked to large, isolated bodies of open ocean, the Southern Ocean above all, where a new modelling study covering sixty years of simulated fertilization found the highest efficiency. Seychelles's exclusive economic zone, at 1.4 million square kilometres, is large by area but does not sit inside the ocean regions the models flag as optimal. An electrochemical process that runs at a coastal installation instead of an open-water fertilization site does not have that geography problem. It could, in principle, sit at a port.</p>
+      <p>Name the counterargument directly: converting seawater carbon into calcium carbonate at meaningful scale is energy-intensive, and if that energy comes from a diesel-run grid, as most of Seychelles's electricity currently does, the removal math gets complicated fast. Any serious evaluation of this technology for Seychelles has to net out the emissions from running the process against the carbon it removes, not just cite the removal figure on its own.</p>
+      <p>Where this becomes a live question rather than an interesting abstract one is procurement. Small island states get pitched experimental climate technology constantly, most of it unproven at scale, and the pitch usually arrives faster than the due diligence capacity to evaluate it. A hydrospatial research institute is well placed to run that due diligence for a government approached with this kind of proposal: what is the actual energy source, what is the verification method for permanence, who else has piloted it and at what scale.</p>
+      <p>The near-term move is not adoption, it is positioning SHORE Institute as the technical evaluator Seychelles's government calls before signing anything with a vendor selling ocean carbon removal. That is a narrower, more credible role than trying to pilot the technology directly, and it is one nobody else in the region has explicitly claimed yet.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 6: COASTAL -->
+<section class="story layout-coastal" id="story-6">
+  <div class="story-inner">
+    <span class="numeral-hairline">06</span>
+    <h2 class="headline">A Seat You Already Missed, and What's Still Open</h2>
+    <p class="why">The in-person registration window for October's Seabed 2030 Indo-Pacific Mapping Meeting closed on 12 August, but the meeting's Data Sprint outputs and published recommendations are still worth tracking closely for what they say about mapping priorities in Seychelles's own ocean basin.</p>
+
+    <div class="two-col">
+      <div class="section-block notes">
+        <span class="eyebrow-label">Story Notes</span>
+        <p>Registration for the Seabed 2030 Indo-Pacific Ocean Mapping Meeting and Data Sprint, running 20 to 22 October 2026 in Kuala Lumpur, closed for in-person attendance and travel fund requests on 12 August. A separate Seabed 2030 Symposium runs 8 to 9 October in Cartagena, Colombia.</p>
+        <p>The meeting brings together hydrographic offices, academic institutions, research organisations, industry and government agencies from across the Indo-Pacific to coordinate mapping priorities and run a dedicated Data Sprint accelerating GEBCO Grid contributions.</p>
+        <a class="story-link" href="https://www.gebco.net/news/registration-open-seabed-2030-indo-pacific-mapping-meeting-2026" target="_blank" rel="noopener">gebco.net/news/registration-open-seabed-2030-indo-pacific-mapping-meeting-2026</a>
+      </div>
+      <div class="article">
+        <span class="eyebrow-label">Story Article</span>
+        <p>The registration window already closed on this one, 12 August for in-person attendance and travel fund requests at the Seabed 2030 Indo-Pacific Ocean Mapping Meeting and Data Sprint, running 20 to 22 October in Kuala Lumpur. Worth naming that plainly rather than treating the meeting as still open, because the useful move now is different from the one that would have applied three weeks ago.</p>
+        <p>The meeting itself groups hydrographic offices, universities, research bodies, industry and government agencies from across the Indo-Pacific basin to align mapping priorities and run a Data Sprint, a working session converting raw depth soundings into GEBCO-compliant grid contributions. Seychelles sits at the edge of the geography this meeting covers, part Indo-Pacific by ocean basin, part western Indian Ocean by the classification GEBCO itself tends to use. That edge position is worth flagging on its own, since it raises the question of which regional coordination structure Seychelles's mapping priorities actually get represented in, if either.</p>
+        <p>A second Seabed 2030 event, the annual Symposium, runs 8 to 9 October in Cartagena, Colombia, ahead of the Kuala Lumpur meeting. Symposium registration details were not confirmed in this search, and it is worth checking directly with the Seabed 2030 secretariat whether that window is still open, since a symposium format typically carries a lighter attendance bar than a working meeting with a data sprint component.</p>
+        <p>Missing an in-person seat does not mean missing the meeting's value. Seabed 2030 meetings publish outputs, priority-setting documents, regional gap analyses, that circulate well beyond the room. The Kuala Lumpur meeting's stated purpose, coordinating mapping priorities and accelerating GEBCO contributions, will produce exactly the kind of document that shows whether the western Indian Ocean is being treated as covered by existing Indo-Pacific coordination, or left in the gap between regional groupings.</p>
+        <p>The concrete task: email the Seabed 2030 secretariat now, both to confirm Cartagena's registration status and to ask directly where Seychelles and the western Indian Ocean sit in the Indo-Pacific meeting's scope. If the answer is that the region falls outside both the Pacific and this Indo-Pacific grouping's coordination structure, that gap is worth raising formally, and it is exactly the kind of finding that belongs in a Shorelines piece on regional data sovereignty in ocean mapping.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 7: ACADEMIC DROP CAP -->
+<section class="story layout-academic" id="story-7">
+  <div class="story-inner">
+    <span class="numeral-box">07</span>
+    <h2 class="headline">The Swap That Didn't Reduce the Debt</h2>
+    <p class="why">New research revisiting Seychelles's own 2015 debt-for-nature swap finds it increased public indebtedness without reducing sovereign debt, which is precisely the kind of finding the High-Income SIDS Paradox argument needs as primary evidence rather than anecdote.</p>
+
+    <div class="section-block notes">
+      <span class="eyebrow-label">Story Notes</span>
+      <p>Research examining Seychelles's landmark 2015 debt-for-nature swap, financed through a Nature Conservancy-brokered restructuring, finds the mechanism increased the country's public indebtedness to fund conservation activity rather than reducing Seychelles's underlying sovereign debt.</p>
+      <p>The swap converted US$29.6 million of Paris Club debt at a 5.4 per cent discount into a new obligation held by the Seychelles Conservation and Climate Adaptation Trust, funding marine protected area expansion. The research finds it also failed to secure environmental protections beyond commitments Seychelles's government had already made before the swap, apart from minor artisanal fisheries changes.</p>
+      <p class="footnote">Source: SeyCCAT, Frontiers in Marine Science, seyccat.org/seychelles-debt-for-nature-swap-case-study</p>
+    </div>
+
+    <div class="article">
+      <span class="eyebrow-label">Story Article</span>
+      <p>Seychelles's 2015 debt-for-nature swap has been cited for a decade as the model other small island states should copy: US$29.6 million of Paris Club debt bought back at a 5.4 per cent discount, restructured through a Nature Conservancy-brokered deal into a new obligation held by the Seychelles Conservation and Climate Adaptation Trust, financing 400,000 square kilometres of new marine protected area. It is one of the most-cited blue finance case studies in the field, appearing in UNFCCC technical papers, in AOSIS advocacy, in nearly every conference panel on innovative climate finance for islands.</p>
+      <p>Research revisiting the mechanism now makes two findings that complicate the model everyone keeps citing. First, the swap increased Seychelles's total public indebtedness rather than reducing it. Debt held by SeyCCAT still counts as sovereign obligation, restructured on friendlier terms and redirected toward conservation debt service, but not eliminated. Second, and more pointed, the swap did not secure environmental protections beyond what Seychelles's government had already committed to before signing, aside from minor changes to artisanal fisheries regulation. The marine protected area expansion the deal is famous for was largely already on Seychelles's own policy track.</p>
+      <p>Name the objection a debt-swap advocate would raise here: even if the swap did not reduce headline debt or force new protections, it converted expensive commercial-rate debt into a lower-rate obligation that funds conservation work that would otherwise compete for scarce budget against health, education and infrastructure. That is a real benefit, and it is worth stating plainly rather than dismissing the whole mechanism because it fell short of the story told about it.</p>
+      <p>But the finding that public indebtedness rose, not fell, belongs directly inside the High-Income SIDS Paradox argument. The standard case against Seychelles's income classification is that GNI per capita locks the country out of concessional finance while physical vulnerability stays identical to a low-income island state. This research adds a second, sharper layer: even the flagship alternative financing mechanism Seychelles is famous for pioneering did not actually solve the debt problem it was sold as solving. It restructured the debt. It did not remove it. If the celebrated workaround for high-income SIDS still leaves the country more indebted than before, that is close to the argument's strongest piece of evidence, not a footnote.</p>
+      <p>There is a methodological question worth sitting with before writing this up: is the finding that protections were already committed a fair standard, or is it asking every debt swap to deliver additionality beyond what any government would plausibly do anyway. Most conservation finance mechanisms struggle to prove genuine additionality, not just Seychelles's. That caveat belongs in the piece, stated once, clearly, rather than buried as a hedge.</p>
+      <p>The Shorelines angle writes itself: a decade-old case study everyone in blue finance cites approvingly, checked against what the debt and protection data actually show, comes out more complicated than the panel-circuit version. That gap between the cited story and the underlying data is exactly the kind of piece that gets forwarded inside multilateral finance circles, because everyone repeating the Seychelles case study at conferences has a stake in knowing whether it holds up.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 8: BROADSHEET -->
+<section class="story layout-broadsheet" id="story-8">
+  <div class="story-inner">
+    <span class="numeral-stamp">08</span>
+    <h2 class="headline">The Sovereignty Question NOAA Can't Answer</h2>
+    <div class="rule"></div>
+    <p class="why">NOAA's own admission that it has no clear mechanism for honouring Indigenous data sovereignty in ocean data management is the exact governance gap the Ocean Mapping Hub's data-sharing protocols need to be built to avoid replicating.</p>
+
+    <div class="section-block notes">
+      <span class="eyebrow-label">Story Notes</span>
+      <p>Federal agencies including NOAA have yet to determine clear mechanisms for honouring and protecting Indigenous data sovereignty within their ocean and coastal data management systems, according to reporting on the agency's own data strategy discussions.</p>
+      <p>The Pacific Data Sovereignty Network exists specifically to ensure Pacific knowledge and information is respected, culturally grounded, and applied to strengthen Pacific communities, rather than extracted into external databases without governance terms attached.</p>
+      <a class="story-link" href="https://www.noaa.gov/media/file/toward-national-ocean-data-strategy" target="_blank" rel="noopener">noaa.gov/media/file/toward-national-ocean-data-strategy</a>
+    </div>
+
+    <div class="article columns">
+      <span class="eyebrow-label" style="column-span:all;">Story Article</span>
+      <p>NOAA, one of the best-resourced ocean data agencies in the world, has publicly acknowledged it has no clear mechanism for honouring Indigenous data sovereignty inside its own ocean and coastal data management systems. That admission is worth sitting with, because if the agency running the US National Ocean Data Strategy has not solved this, no hydrospatial programme in a small island state gets to assume the problem solves itself by default.</p>
+      <p>Data sovereignty, in this context, means a specific and answerable question: who decides what happens to ocean data collected in or about a community's waters, who can access it, and who benefits when it gets used. The Pacific Data Sovereignty Network exists to answer that question for Pacific communities specifically, building governance structures so Pacific knowledge stays culturally grounded and applied for Pacific benefit, rather than flowing into an external database where the contributing community loses visibility into how its own data gets used downstream.</p>
+      <p>This maps directly onto a design decision the Ocean Mapping Hub has to make explicitly rather than by default. Bathymetric and coastal data collected in Seychelles's waters, through crowdsourced contributions, artisanal fishing communities, local dive operators, carries the same sovereignty question NOAA is publicly struggling with: does contributing data to a global grid like GEBCO mean losing governance over how that specific data gets used, licensed, or resold. GEBCO's data is open access by design, good for global science and genuinely double-edged for the community that collected it, since open access means no mechanism to track or condition downstream use.</p>
+      <p>Name the tension honestly rather than resolving it too quickly: open data and data sovereignty are not automatically compatible goals. A crowdsourced bathymetry pipeline optimised purely for maximum GEBCO contribution, the story two spreads back, and one optimised for community data governance can pull in different directions, since sovereignty frameworks often require consent processes, use restrictions or benefit-sharing terms that slow down or condition exactly the kind of open contribution Seabed 2030 wants to maximise.</p>
+      <p>Contributing to GEBCO and protecting data sovereignty are not mutually exclusive, provided the governance layer gets built first, explicitly, before the pipeline runs at scale. Retrofitting consent and benefit-sharing terms after data has already flowed into an open grid with no way to recall it is the harder, weaker version of the same fix. NOAA's own gap is the cautionary example: a well-funded agency that built the data infrastructure first and is now trying to attach sovereignty protections to a system that was not designed to carry them.</p>
+      <p>This is squarely a HARMONiSE framework question, not a side issue. If the framework already has an explicit data governance layer, this is worth stress-testing against the NOAA gap directly. If it does not yet, this is the evidence to cite for why it needs one before the Ocean Mapping Hub scales its data intake.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 9: COLOUR FIELD -->
+<section class="story layout-colourfield" id="story-9">
+  <div class="story-inner">
+    <span class="numeral-circle" style="background:var(--yellow);color:var(--navy);">09</span>
+    <h2 class="headline">Seychelles, Assigned as the Model Again</h2>
+    <p class="why">The Commonwealth Blue Charter is circulating Seychelles's Marine Spatial Plan as its flagship case study for the 30 per cent marine protection target, which makes this the single best-positioned reference point for pitching SHORE Institute's technical work to other Commonwealth SIDS.</p>
+
+    <div class="section-block notes">
+      <span class="eyebrow-label">Story Notes</span>
+      <p>The Commonwealth Secretariat is featuring Seychelles as its case study for using Marine Spatial Planning to meet the 30 per cent marine protected area target, built on the Seychelles Marine Spatial Plan Initiative that the Commonwealth supported with a dedicated Ocean Governance Expert over two years.</p>
+      <p>The SMSP Atlas is published online, and the underlying Blue Economy Roadmap positions marine spatial planning as the integrated mechanism for balancing biodiversity protection against blue economy expansion across the exclusive economic zone.</p>
+      <a class="story-link" href="https://thecommonwealth.org/case-study/case-study-seychelles-using-marine-spatial-planning-meet-30-cent-marine-protected-areas" target="_blank" rel="noopener">thecommonwealth.org/case-study/case-study-seychelles-using-marine-spatial-planning-meet-30-cent-marine-protected-areas</a>
+    </div>
+
+    <div class="article">
+      <span class="eyebrow-label">Story Article</span>
+      <p>The Commonwealth Secretariat has picked Seychelles as its flagship case study for how Marine Spatial Planning delivers the 30 per cent marine protected area target, the number every SIDS government now has to hit under the Kunming-Montreal Global Biodiversity Framework. That is not a small distinction. Case studies the Commonwealth actively circulates get cited in briefings to other member states, referenced in technical assistance requests, and used as the template other Commonwealth SIDS get pointed toward when they ask how a small state actually implements MSP rather than just committing to it on paper.</p>
+      <p>The underlying work is the Seychelles Marine Spatial Plan Initiative, built with two years of dedicated support from a Commonwealth-provided Ocean Governance Expert, and now published as a public SMSP Atlas. The Blue Economy Roadmap that frames it treats marine spatial planning as the mechanism that reconciles two goals that usually compete: protecting biodiversity and associated ecosystem services, and expanding the blue economy inside the same exclusive economic zone.</p>
+      <p>Here is the opening this creates, stated plainly rather than left implicit. If the Commonwealth is actively pointing other Commonwealth SIDS toward Seychelles's MSP process as the reference model, those governments need technical partners who can replicate the spatial analysis work itself, not just the policy framework sitting on top of it. That is precisely SHORE Institute's core technical competency: hydrospatial data, GIS-based marine spatial planning, the specific skill set behind an MSP Atlas rather than the policy document that describes it.</p>
+      <p>Name the risk before it becomes a missed opportunity: case studies age. The Commonwealth is featuring Seychelles's MSP process now, which means the window for positioning SHORE Institute as the technical partner other Commonwealth SIDS get referred to is open now, while the case study is fresh and actively circulating, not in two years once a different country's MSP process becomes the newer example. Commonwealth technical assistance requests tend to flow toward whoever is visible and credible at the moment a government asks who actually built this.</p>
+      <p>The concrete step is reaching out to whoever manages the Commonwealth Blue Charter's MSP case study content, likely inside the same Ocean Governance team that supported Seychelles's original process, to ask directly whether SHORE Institute can be listed as an available technical resource for other Commonwealth SIDS considering their own MSP process. That is a much smaller ask than a funding proposal, and it is the kind of positioning that turns into paid technical assistance contracts eighteen months later, once a specific government starts its own process and needs someone who has actually done this before.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 10: LETTERPRESS -->
+<section class="story layout-letterpress" id="story-10">
+  <div class="story-inner">
+    <span class="numeral-hairline">10</span>
+    <h2 class="headline">Charting the Seafloor With a Foundation Model</h2>
+    <p class="why">Esri's GeoAI tools for automated bathymetry and littoral zone classification from point clouds are the exact technical capability the Ocean Mapping Hub needs to evaluate now, before deciding whether to build that pipeline in-house or license it.</p>
+
+    <div class="section-block notes">
+      <span class="eyebrow-label">Story Notes</span>
+      <p>Esri's ArcGIS platform is applying GeoAI to object detection and classification directly from point clouds and raster surfaces derived from remote sensing, including maritime charting applications spanning bathymetry, the water column and littoral zones.</p>
+      <p>Separately, Canada's GeoAI Data Series now covers 560,000 square kilometres of AI-generated geospatial data, built from high-resolution imagery and geospatial foundation models developed by the Canada Centre for Mapping and Earth Observation, a working example of a national GeoAI mapping programme at scale.</p>
+      <a class="story-link" href="https://www.esri.com/about/newsroom/arcuser/geoai-for-mapping" target="_blank" rel="noopener">esri.com/about/newsroom/arcuser/geoai-for-mapping</a>
+    </div>
+
+    <div class="article">
+      <span class="eyebrow-label">Story Article</span>
+      <p>Automated bathymetric classification from point clouds and satellite-derived raster imagery has moved from research paper to production tool. Esri's ArcGIS platform now applies GeoAI directly to maritime charting tasks: object detection and classification across bathymetry, water column features and littoral zones, using the same foundation-model approach that has driven the broader GeoAI wave in terrestrial mapping.</p>
+      <p>Canada offers the clearest working example of what this looks like deployed at national scale. Its GeoAI Data Series, built by the Canada Centre for Mapping and Earth Observation using geospatial foundation models trained on high-resolution imagery, now covers 560,000 square kilometres of AI-generated geospatial data. That is not a pilot project. It is a national mapping programme treating GeoAI as standard production infrastructure rather than an experimental add-on.</p>
+      <p>This is the exact decision point the Ocean Mapping Hub is approaching, whether it has been named explicitly yet or not: build a bathymetric classification pipeline in-house using open-source machine learning tools, or license a platform like ArcGIS that already has the maritime charting capability built and tested. Both routes are legitimate. They are not equally fast, and they are not equally expensive in the same places.</p>
+      <p>Name the tradeoff honestly. Licensing Esri's platform gets a working maritime GeoAI capability running in weeks rather than the months or years an in-house build would need, but it comes with a recurring licensing cost and a dependency on Esri's roadmap for any Seychelles-specific customisation, satellite-derived bathymetry calibrated to local water clarity and reef structure, for instance. Building in-house keeps full control over that customisation and avoids the recurring cost, but it means the Ocean Mapping Hub needs machine learning expertise on staff or on contract that it may not currently have, and a multi-year runway before the tool matches what Esri already ships today.</p>
+      <p>The honest middle path, and the one Canada's programme actually suggests, is starting on a licensed platform to get a working pipeline into production now, while building the in-house expertise on the side, with a deliberate exit point once that expertise is strong enough to either replace the licensed tool or negotiate a much better rate for continued use. That sequencing avoids a multi-year in-house build that never ships anything usable, while not locking the Hub permanently into a licensing cost it never builds the capacity to escape.</p>
+      <p>Worth a direct conversation with Esri's regional education or NGO licensing team, since SHORE Institute's non-profit structure likely qualifies for reduced-rate access that would change this cost calculation meaningfully.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">Morning Edition</div>
+  <p>SHORE Institute · Shorelines · Victoria, Seychelles</p>
+  <p style="margin-top:0.5rem;opacity:0.8;">Saturday, 29 August 2026</p>
+</footer>
+
+</body>
+</html>
