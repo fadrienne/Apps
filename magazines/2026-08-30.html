@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Morning Edition · 30 August 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,500;1,9..144,600;1,9..144,700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#123a5c;
+    --teal:#0f6e6e;
+    --sky:#bfe1f5;
+    --sky-deep:#7fc4e8;
+    --yellow:#ffd23f;
+    --gold:#e8a93b;
+    --forest:#1e5631;
+    --sage:#a9c9a0;
+    --mint:#d3f0e2;
+    --off-white:#faf7f0;
+    --cream:#f3ecd9;
+    --slate:#4c5b66;
+    --charcoal:#2e3438;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    background:var(--off-white);
+    color:var(--charcoal);
+    font-size:1.05rem;
+    line-height:1.6;
+  }
+  h1,h2,h3,h4{font-family:'Fraunces',serif;font-weight:700;color:var(--navy);}
+  a{color:var(--teal);}
+  .container{max-width:1100px;margin:0 auto;padding:0 2rem;}
+
+  /* MASTHEAD */
+  .masthead{
+    background:var(--sky);
+    padding:4rem 2rem 3rem;
+    text-align:center;
+    border-bottom:6px solid var(--navy);
+  }
+  .masthead .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    letter-spacing:0.3em;
+    text-transform:uppercase;
+    font-size:1rem;
+    color:var(--navy);
+    margin-bottom:1rem;
+  }
+  .masthead h1{
+    font-size:5.5rem;
+    letter-spacing:-0.02em;
+    line-height:1;
+  }
+  .masthead .date{
+    font-size:1.75rem;
+    color:var(--teal);
+    margin-top:1rem;
+    font-weight:500;
+  }
+  .masthead .strap{
+    margin-top:1.5rem;
+    font-size:1.15rem;
+    color:var(--slate);
+    max-width:700px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  /* NAV */
+  .jumpnav{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:var(--navy);
+    padding:1.25rem 2rem;
+  }
+  .jumpnav .container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.9rem;
+    justify-content:center;
+  }
+  .jumpnav a{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:0.95rem;
+    color:var(--white);
+    background:rgba(255,255,255,0.12);
+    padding:0.6rem 1.1rem;
+    border-radius:999px;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .jumpnav a:hover{background:var(--teal);}
+  .jumpnav a .num{color:var(--yellow);margin-right:0.4em;}
+
+  /* SHARED STORY STRUCTURE */
+  .story{
+    padding:5rem 2rem;
+    scroll-margin-top:6rem;
+    position:relative;
+    overflow:hidden;
+  }
+  .story-inner{max-width:900px;margin:0 auto;}
+  .flag{
+    display:inline-flex;
+    align-items:center;
+    gap:0.5rem;
+    font-family:'Inter',sans-serif;
+    font-weight:800;
+    font-size:1.1rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    background:var(--yellow);
+    color:var(--navy);
+    padding:0.6rem 1.2rem;
+    border-radius:999px;
+    margin-bottom:1.5rem;
+  }
+  .headline{
+    font-size:3.2rem;
+    line-height:1.05;
+    margin:1rem 0 2rem;
+  }
+  .why{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:1.7rem;
+    line-height:1.4;
+    margin:2rem 0 2.5rem;
+  }
+  .eyebrow-label{
+    font-family:'JetBrains Mono',monospace;
+    letter-spacing:0.25em;
+    text-transform:uppercase;
+    font-size:0.9rem;
+    font-weight:700;
+    margin-bottom:1rem;
+    display:block;
+  }
+  .notes p, .article p{
+    font-size:1.15rem;
+    margin-bottom:1.3rem;
+    max-width:70ch;
+  }
+  .article{margin-top:3rem;}
+  .article p{font-size:1.08rem;}
+  .story-link{
+    display:inline-block;
+    margin-top:0.5rem;
+    font-weight:700;
+    word-break:break-all;
+  }
+  .section-block{margin-bottom:3rem;}
+
+  /* NUMERALS */
+  .numeral-bg{
+    position:absolute;
+    font-family:'Fraunces',serif;
+    font-weight:900;
+    font-size:22rem;
+    line-height:1;
+    opacity:0.14;
+    top:-4rem;
+    right:-1rem;
+    z-index:0;
+    pointer-events:none;
+  }
+  .numeral-circle{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:5rem;
+    height:5rem;
+    border-radius:50%;
+    font-family:'Fraunces',serif;
+    font-weight:800;
+    font-size:1.8rem;
+    margin-bottom:1.5rem;
+  }
+  .numeral-box{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:0.6rem 1.3rem;
+    font-family:'JetBrains Mono',monospace;
+    font-weight:700;
+    font-size:1.4rem;
+    border:3px solid currentColor;
+    margin-bottom:1.5rem;
+  }
+  .numeral-hairline{
+    font-family:'Inter',sans-serif;
+    font-weight:300;
+    font-size:1.3rem;
+    letter-spacing:0.4em;
+    border-top:1px solid currentColor;
+    padding-top:0.6rem;
+    display:inline-block;
+    margin-bottom:1.5rem;
+  }
+  .numeral-stamp{
+    display:inline-block;
+    font-family:'Fraunces',serif;
+    font-weight:900;
+    font-size:2.2rem;
+    border:4px solid var(--navy);
+    padding:0.4rem 1rem;
+    transform:rotate(-4deg);
+    margin-bottom:1.5rem;
+    background:rgba(255,255,255,0.4);
+  }
+
+  /* 1. HERO */
+  .layout-hero{background:var(--sky-deep);color:var(--navy);}
+  .layout-hero .headline{font-size:4.2rem;}
+  .layout-hero .why{color:var(--forest);}
+  .layout-hero .numeral-bg{color:var(--navy);}
+
+  /* 2. SUNBEAM ALERT */
+  .layout-sunbeam{background:var(--yellow);color:var(--navy);}
+  .layout-sunbeam .why{color:var(--navy);font-style:italic;font-weight:800;}
+  .layout-sunbeam .headline{font-style:italic;font-weight:800;}
+
+  /* 3. BIG STAT */
+  .layout-bigstat{background:var(--off-white);color:var(--navy);text-align:center;}
+  .layout-bigstat .stat{
+    font-family:'Fraunces',serif;
+    font-weight:900;
+    font-size:8rem;
+    line-height:1;
+    color:var(--teal);
+    margin:1.5rem 0;
+  }
+  .layout-bigstat .stat-label{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    color:var(--navy);
+    margin-bottom:2rem;
+  }
+  .layout-bigstat .why, .layout-bigstat .notes, .layout-bigstat .article{text-align:left;}
+
+  /* 4. COASTAL */
+  .layout-coastal{background:var(--sky);color:var(--navy);}
+  .layout-coastal .story-inner{
+    border-left:8px solid var(--forest);
+    padding-left:2.5rem;
+  }
+  .layout-coastal .why{color:var(--teal);}
+  .layout-coastal .two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2.5rem;
+  }
+
+  /* 5. TERMINAL */
+  .layout-terminal{background:var(--mint);color:var(--forest);font-family:'JetBrains Mono',monospace;}
+  .layout-terminal .headline{font-family:'JetBrains Mono',monospace;font-size:2.4rem;color:var(--forest);}
+  .layout-terminal .why{font-family:'JetBrains Mono',monospace;font-style:normal;color:var(--navy);border-left:4px solid var(--forest);padding-left:1.2rem;}
+  .layout-terminal .notes p, .layout-terminal .article p{font-family:'JetBrains Mono',monospace;font-size:0.95rem;}
+  .layout-terminal .eyebrow-label{color:var(--teal);}
+  .layout-terminal .story-link{color:var(--forest);}
+
+  /* 6. ACADEMIC DROP CAP */
+  .layout-academic{background:var(--off-white);color:var(--charcoal);}
+  .layout-academic .why{color:var(--teal);}
+  .layout-academic .notes p:first-of-type::first-letter{
+    font-family:'Fraunces',serif;
+    font-weight:800;
+    font-size:5rem;
+    float:left;
+    line-height:0.8;
+    margin-right:0.15em;
+    color:var(--navy);
+  }
+  .footnote{
+    margin-top:2rem;
+    padding-top:1rem;
+    border-top:1px solid var(--slate);
+    font-size:0.9rem;
+    color:var(--slate);
+    font-style:italic;
+  }
+
+  /* 7. PULL QUOTE */
+  .layout-pullquote{background:var(--sage);color:var(--navy);}
+  .layout-pullquote .quote{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:2.6rem;
+    line-height:1.25;
+    margin:2.5rem 0;
+    padding:0 1rem;
+  }
+  .layout-pullquote .quote::before{content:"\201C";}
+  .layout-pullquote .quote::after{content:"\201D";}
+
+  /* 8. BROADSHEET */
+  .layout-broadsheet{background:var(--off-white);color:var(--charcoal);}
+  .layout-broadsheet .rule{
+    height:3px;
+    background:var(--teal);
+    width:100%;
+    margin:1.5rem 0 2.5rem;
+  }
+  .layout-broadsheet .columns{
+    column-count:2;
+    column-gap:3rem;
+  }
+  .layout-broadsheet .columns p{break-inside:avoid;}
+
+  /* 9. COLOUR FIELD */
+  .layout-colourfield{background:var(--teal);color:var(--white);}
+  .layout-colourfield .why{color:var(--yellow);}
+  .layout-colourfield .headline{color:var(--white);}
+  .layout-colourfield a{color:var(--yellow);}
+  .layout-colourfield .eyebrow-label{color:var(--mint);}
+
+  /* 10. LETTERPRESS */
+  .layout-letterpress{
+    background:var(--cream);
+    color:var(--charcoal);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(0,0,0,0.015) 0px, rgba(0,0,0,0.015) 1px, transparent 1px, transparent 3px);
+  }
+  .layout-letterpress .headline, .layout-letterpress .why, .layout-letterpress .notes, .layout-letterpress .article{
+    font-family:'Fraunces',serif;
+  }
+  .layout-letterpress .why{color:var(--forest);}
+  .layout-letterpress .eyebrow-label{font-family:'JetBrains Mono',monospace;color:var(--teal);}
+
+  footer{
+    background:var(--navy);
+    color:var(--sky);
+    text-align:center;
+    padding:3rem 2rem;
+    font-size:1rem;
+  }
+  footer .brand{font-family:'Fraunces',serif;font-weight:700;font-size:1.4rem;color:var(--white);margin-bottom:0.5rem;}
+
+  @media (max-width:700px){
+    .masthead h1{font-size:2.8rem;}
+    .headline{font-size:2rem;}
+    .layout-hero .headline{font-size:2.4rem;}
+    .why{font-size:1.3rem;}
+    .layout-pullquote .quote{font-size:1.7rem;}
+    .layout-bigstat .stat{font-size:4.5rem;}
+    .layout-coastal .two-col{grid-template-columns:1fr;}
+    .layout-broadsheet .columns{column-count:1;}
+    .numeral-bg{font-size:9rem;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="eyebrow">SHORE Institute · Shorelines</div>
+  <h1>Morning Edition</h1>
+  <div class="date">Sunday, 30 August 2026</div>
+  <p class="strap">Ten stories, filtered through ocean governance, hydrospatial science, and SIDS equity. Read over your first coffee.</p>
+</header>
+
+<nav class="jumpnav">
+  <div class="container">
+    <a href="#story-1"><span class="num">01</span>One Day Left on the Decade's Call ⚡</a>
+    <a href="#story-2"><span class="num">02</span>Ten Point Five Million and a Seat at the Table</a>
+    <a href="#story-3"><span class="num">03</span>0.2% of a Global Total</a>
+    <a href="#story-4"><span class="num">04</span>New Delhi Opens a Fisheries Door</a>
+    <a href="#story-5"><span class="num">05</span>reef_segmentation.run()</a>
+    <a href="#story-6"><span class="num">06</span>Renaming the Small Island</a>
+    <a href="#story-7"><span class="num">07</span>The Platform Decided Before You're Consulted</a>
+    <a href="#story-8"><span class="num">08</span>A Case Study Worth Submitting ⚡</a>
+    <a href="#story-9"><span class="num">09</span>Cartagena, Eight and Nine October</a>
+    <a href="#story-10"><span class="num">10</span>The Taxonomy You Can Cite</a>
+  </div>
+</nav>
+
+<!-- STORY 1: HERO -->
+<section class="story layout-hero" id="story-1">
+  <div class="numeral-bg">01</div>
+  <div class="story-inner">
+    <span class="flag">⚡ Deadline tomorrow, 31 Aug, 23:59 UTC</span>
+    <h2 class="headline">One Day Left on the Decade's Call</h2>
+    <p class="why">The UN Ocean Decade's eleventh Call for Decade Actions closes its Projects and Contributions tracks tomorrow night, and if HARMONiSE or the Ocean Mapping Hub is still unregistered, tomorrow is the last chance before the review cycle closes for another year or more.</p>
+
+    <div class="section-block notes">
+      <span class="eyebrow-label">Story Notes</span>
+      <p>The window closes Monday 31 August 2026 at 23:59 UTC. The Programmes track shut in May; what remains open until tomorrow night are the Projects and Contributions tracks, the two categories a hydrospatial initiative like HARMONiSE or the Ocean Mapping Hub would actually file under.</p>
+      <p>Endorsement carries no funding attached to it directly. What it carries is an IOC-UNESCO stamp and a listing inside the Decade's coordination structure, the list donors and multilateral programmes scan first when looking for initiatives already vetted enough to be worth a closer look.</p>
+      <a class="story-link" href="https://oceandecade.org/call-for-decade-actions-11-2026/" target="_blank" rel="noopener">oceandecade.org/call-for-decade-actions-11-2026</a>
+    </div>
+
+    <div class="article">
+      <span class="eyebrow-label">Story Article</span>
+      <p>One day remains. The UN Decade of Ocean Science for Sustainable Development's eleventh Call for Decade Actions closes its Projects and Contributions tracks tomorrow, Monday 31 August 2026, at 23:59 UTC. The Programmes track closed back in May. If HARMONiSE or the Ocean Mapping Hub has not yet been filed as a registered Decade Action, tomorrow night is the last opportunity before the next call opens, likely well into 2027.</p>
+      <p>It is worth restating plainly what this endorsement is and is not, because the distinction gets lost under deadline pressure. A Decade Action carries no cheque. What it carries is the right to describe a project as an endorsed UN Ocean Decade Action in every subsequent grant application, and a place inside the coordination structure that funders scan specifically to shortcut due diligence on projects IOC-UNESCO has already reviewed.</p>
+      <p>You have watched this mechanism operate from the inside, as IOC-UNESCO national focal point. Funders under time pressure lean on the Decade Action list as a filter, not a formality. A hydrospatial project carrying that endorsement clears the credibility question in the first paragraph of an application. One without it spends half the application establishing legitimacy from zero, ground a listed project never has to cover again.</p>
+      <p>Name the objection honestly: an endorsement with no funding attached looks like paperwork for its own sake, and filing something at speed under a deadline risks a weaker submission than one drafted with time to spare. Both are fair points. But the realistic alternative to filing an imperfect submission tonight is not filing a stronger one next month, it is filing nothing for twelve to eighteen months, since the next call is not guaranteed to open on a predictable schedule.</p>
+      <p>The Contributions track carries a lighter submission bar than Projects, a shorter form built for exactly this kind of tight-turnaround filing. If a full Projects-track submission for HARMONiSE is not realistic tonight, a Contributions-track filing for either HARMONiSE or the Ocean Mapping Hub is still worth the hour it takes, since a lighter endorsement filed this year outranks a stronger one filed next year that never gets written.</p>
+      <p>If a draft already exists in any form, finish and submit it today rather than tomorrow, since portal traffic on a deadline day tends to slow submission systems exactly when you can least afford it to. If nothing exists yet, start with the Contributions track and treat the fuller Projects submission as next year's task, logged now rather than left to chance.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 2: SUNBEAM ALERT -->
+<section class="story layout-sunbeam" id="story-2">
+  <div class="story-inner">
+    <span class="numeral-stamp">02</span>
+    <span class="flag" style="background:var(--navy);color:var(--yellow);">Steering structure forming now</span>
+    <h2 class="headline">Ten Point Five Million and a Seat at the Table</h2>
+    <p class="why">UNDP and Seychelles's Ministry of Environment held the inception workshop for a US$10.48 million GEF-8 blue and green economy project on 21 August, and the institutions now sitting on its steering structure are exactly the partners SHORE Institute needs inside the room before workplans firm up.</p>
+
+    <div class="section-block notes">
+      <span class="eyebrow-label">Story Notes</span>
+      <p>The GEF-8 project, "Enabling the Transition to a Blue and Green Economy in the Seychelles," was signed in January 2026 and worth US$10.48 million. Its inception workshop on 21 August brought together government institutions, development partners, civil society organisations, academia, private sector representatives and community stakeholders to set the project in motion.</p>
+      <p>The stated aim is scaling up efforts to safeguard Seychelles's natural heritage while advancing sustainable and inclusive economic development, run jointly by UNDP and the Ministry of Environment.</p>
+      <a class="story-link" href="https://www.undp.org/mauritius-seychelles/press-releases/seychelles-launches-landmark-blue-and-green-economy-project-drive-nature-positive-development" target="_blank" rel="noopener">undp.org/mauritius-seychelles/press-releases/seychelles-launches-landmark-blue-and-green-economy-project</a>
+    </div>
+
+    <div class="article">
+      <span class="eyebrow-label">Story Article</span>
+      <p>Ten point four eight million US dollars, signed in January, moved into motion on 21 August when UNDP and Seychelles's Ministry of Environment convened the inception workshop for "Enabling the Transition to a Blue and Green Economy in the Seychelles." The room held government institutions, development partners, civil society organisations, academia, private sector representatives and community stakeholders, the full cast a GEF-8 project assembles once it stops being a signed agreement and starts being a workplan.</p>
+      <p>An inception workshop is not a ribbon-cutting. It is the meeting where institutional roles, coordination structures and early workplans get locked in, often for the life of the project. Whoever sits inside that room in the first ninety days tends to stay inside the tent for implementation. Whoever arrives after tends to find the technical partnership slots already filled.</p>
+      <p>That timing matters directly for SHORE Institute. A blue and green economy project of this scale, spanning government, academia and private sector, needs a spatial data backbone somewhere in its architecture, whether that shows up explicitly in the project document or gets discovered as a gap eighteen months in. Academia was named as one of the stakeholder categories represented at the inception workshop. Whether SHORE Institute specifically was in that seat, or whether the academia slot went to the University of Seychelles or another institution entirely, is the first thing worth confirming.</p>
+      <p>Name the risk plainly: large multilaterally-funded projects like this one frequently arrive with implementing partners already informally identified well before the inception workshop, since UNDP country offices tend to build coalitions during project design, not after signature. If SHORE Institute was not part of that design-phase conversation, the honest read is that the technical partnership question may already be more settled than an outsider reading the press release would assume.</p>
+      <p>That is a reason to ask directly, not a reason to assume the door is closed. GEF-8 projects of this size typically run technical working groups underneath the main steering committee, and those working groups, on marine spatial data or coastal resilience specifically, are where a research institute's actual contribution gets defined, regardless of who sat at the inception table. The concrete step is finding the project's designated UNDP focal point this week and asking plainly what technical working groups exist or are planned, and whether a hydrospatial data contribution has a defined home yet.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 3: BIG STAT -->
+<section class="story layout-bigstat" id="story-3">
+  <div class="story-inner">
+    <span class="numeral-circle" style="background:var(--sky);color:var(--navy);">03</span>
+    <h2 class="headline">0.2% of a Global Total</h2>
+    <p class="stat-label">Share of global climate finance reaching SIDS as adaptation funding</p>
+    <div class="stat">0.2%</div>
+    <p class="why">A new analysis putting Small Island Developing States' unmet climate finance need at roughly US$12 billion a year, against adaptation finance flows of just 0.2 per cent of the global total, is the hard number the High-Income SIDS Paradox argument has been missing.</p>
+
+    <div class="section-block notes">
+      <span class="eyebrow-label">Story Notes</span>
+      <p>A March 2026 analysis finds Small Island Developing States are being systematically locked out of climate finance because the global financing system treats them as too small and too fragmented to fund efficiently. International adaptation finance flows to SIDS sit at just 0.2 per cent of global climate finance, against an estimated need of roughly US$12 billion a year.</p>
+      <p>SIDS across the Caribbean, Pacific and Indian Oceans face some of the most severe and immediate climate impacts while contributing about 1 per cent of global carbon dioxide emissions, a mismatch the report frames as central to the exclusion, not incidental to it.</p>
+      <a class="story-link" href="https://www.forbes.com/sites/jamiehailstone/2026/03/04/small-island-states-locked-out-of-climate-finance-study-finds/" target="_blank" rel="noopener">forbes.com/sites/jamiehailstone/2026/03/04/small-island-states-locked-out-of-climate-finance-study-finds</a>
+    </div>
+
+    <div class="article">
+      <span class="eyebrow-label">Story Article</span>
+      <p>Zero point two per cent. That is the share of global climate finance reaching Small Island Developing States as adaptation funding, against an estimated unmet need across those states of roughly US$12 billion a year, according to a March 2026 analysis. The explanation the report gives is not that SIDS projects are weak. It is that the global financing system is structurally built around scale, and a state with a small population and a small absolute budget reads as inefficient to finance regardless of how urgent or well designed the project is.</p>
+      <p>This is the number the High-Income SIDS Paradox argument has needed and not quite had. The paradox, as you have framed it, is that Seychelles carries every physical vulnerability of a small island state while its GNI per capita locks it out of concessional finance reserved for lower-income countries. That framing has always been correct directionally. It has lacked a hard figure showing how thin the finance actually is even for SIDS that clear the income bar entirely.</p>
+      <p>The 0.2 per cent figure answers a different, sharper question: even setting income classification aside, the entire category of Small Island Developing States receives a rounding error's worth of global adaptation finance. Seychelles sits inside that undersized allocation and then gets a second exclusion layered on top, the high-income classification that closes off concessional windows other SIDS can still access. The paradox is not one gate. It is two, stacked.</p>
+      <p>Name the caveat before it gets raised for you: an aggregated 0.2 per cent figure across all SIDS masks real variation between them, and it is worth confirming what exactly the underlying study counts as adaptation finance and over what period, before citing the number as a headline figure in a Shorelines piece. A number this useful is worth one afternoon spent reading the source methodology rather than the press coverage of it.</p>
+      <p>With that check done, the piece writes itself: take the 0.2 per cent global figure, lay Seychelles's high-income exclusion on top of it, and the argument that a decade of GIS and maritime boundary work has been circling finally has its anchor statistic. That is a stronger opening than another paragraph describing the paradox in the abstract.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 4: COASTAL -->
+<section class="story layout-coastal" id="story-4">
+  <div class="story-inner">
+    <span class="numeral-hairline">04</span>
+    <h2 class="headline">New Delhi Opens a Fisheries Door</h2>
+    <p class="why">India and Seychelles's government agreed on 25 August to deepen cooperation on fisheries, aquaculture and the wider blue economy, and the joint research and technology partnerships on the table are exactly the kind of bilateral channel worth positioning inside before the workplan is set.</p>
+
+    <div class="two-col">
+      <div class="section-block notes">
+        <span class="eyebrow-label">Story Notes</span>
+        <p>India and Seychelles's government agreed on 25 August, following a high-level bilateral meeting in New Delhi, to deepen cooperation on fisheries, aquaculture and the wider blue economy. Discussions covered sustainable marine resource management, digital transformation in fisheries operations, and long-term institutional collaboration.</p>
+        <p>Both sides raised joint research, capacity-building and technology partnerships aimed at strengthening food security and economic resilience across the Indian Ocean region. This follows Prime Minister Modi's state visit to Seychelles in June, which produced nineteen bilateral outcomes spanning development finance, digital payments, maritime cooperation, agriculture and institutional capacity-building.</p>
+        <a class="story-link" href="https://opengovasia.com/india-and-seychelles-expand-cooperation-on-fisheries-and-blue-economy/" target="_blank" rel="noopener">opengovasia.com/india-and-seychelles-expand-cooperation-on-fisheries-and-blue-economy</a>
+      </div>
+      <div class="article">
+        <span class="eyebrow-label">Story Article</span>
+        <p>Digital transformation in fisheries operations is the phrase worth pausing on in this readout. India and Seychelles's government agreed on 25 August, at a bilateral meeting in New Delhi, to deepen cooperation across fisheries, aquaculture and the wider blue economy, with joint research, capacity-building and technology partnerships named specifically as areas both sides want to build out. This is the second bilateral marker in three months, following Prime Minister Modi's June state visit and its nineteen bilateral outcomes.</p>
+        <p>A pattern is forming, not a single event. Three bilateral touchpoints on blue economy cooperation inside two months signals a relationship India's government is actively building out, not a one-off gesture. For a country with India's scale of maritime and fisheries technology investment, that is worth Seychelles's government treating seriously as a technical partnership channel, not just a diplomatic one.</p>
+        <p>Digital transformation in fisheries operations, stated as a cooperation area rather than a specific committed project, is where the hydrospatial angle sits. Fisheries management at any serious scale runs on spatial data: vessel tracking, catch zone mapping, stock assessment tied to bathymetry and habitat. If India's technical cooperation in this space leans toward geospatial and remote sensing tools, and Indian institutions have deep capability there, that is a natural point of contact for SHORE Institute's core competency.</p>
+        <p>Name the realistic constraint here directly: state-to-state cooperation announcements like this one route through fisheries ministries and national technical cooperation agencies that typically already run their own GIS and remote sensing units. The opening is not assuming an empty seat, it is identifying where the specific technical gap sits, whether that is local capacity building, data infrastructure Seychelles's side needs help building, or something narrower still.</p>
+        <p>The concrete step is contacting Seychelles's Fisheries Authority or the relevant desk at the Ministry of Foreign Affairs to ask what technical scope this cooperation agreement is expected to cover, and whether a spatial data or GIS capacity component has been discussed. A bilateral relationship still forming its workplan is a better moment to raise that question than one already locked into a signed project document.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 5: TERMINAL -->
+<section class="story layout-terminal" id="story-5">
+  <div class="story-inner">
+    <span class="numeral-box">05</span>
+    <h2 class="headline">// reef_segmentation.run()</h2>
+    <p class="why">GeoAI workflows already run coral segmentation, fishing vessel detection and habitat classification end to end from satellite imagery, and that published workflow architecture is worth studying before the Ocean Mapping Hub decides how its own classification layer gets built.</p>
+
+    <div class="section-block notes">
+      <span class="eyebrow-label">STORY NOTES</span>
+      <p>A published GeoAI workflow for marine ecosystem monitoring covers the full pipeline from AI model prediction to finished map: coral reef habitat segmentation from underwater and satellite imagery, detection and classification of fishing vessels on remote sensing imagery, and segmentation of marine species and habitats more broadly.</p>
+      <p>The workflow is documented as a complete, generalisable process rather than a single case study result, meaning the pipeline architecture itself, not just its output maps, is the reusable part.</p>
+      <a class="story-link" href="https://isprs-archives.copernicus.org/articles/XLVIII-4-W7-2023/223/2023/" target="_blank" rel="noopener">isprs-archives.copernicus.org/articles/XLVIII-4-W7-2023/223/2023</a>
+    </div>
+
+    <div class="article">
+      <span class="eyebrow-label">STORY ARTICLE</span>
+      <p>Most GeoAI papers report a result: a model, a study area, an accuracy score. This one documents a workflow instead, a complete process for turning raw imagery into finished habitat and vessel-detection maps through AI model predictions, built to be repeated rather than admired once. That distinction is what makes it worth reading closely rather than filing as one more coral-mapping paper.</p>
+      <p>The pipeline covers three connected tasks: coral reef habitat segmentation from underwater and satellite imagery, fishing vessel detection and classification on remote sensing imagery, and broader marine species and habitat segmentation. Each stage takes raw geospatial input, runs it through a trained model, and outputs a usable map layer rather than a raw prediction score, which is the part that usually gets skipped in academic papers focused on model accuracy alone.</p>
+      <p>For the Ocean Mapping Hub, this is a blueprint question more than a technology question. Building a classification layer for Seychelles's reef systems from scratch means answering a series of architecture decisions, what imagery source, what model type, how predictions become a usable map, that this workflow has already answered and published in enough detail to critique and adapt rather than invent.</p>
+      <p>Name the honest limitation: a published workflow trained and validated on one set of reef systems and imagery conditions does not transfer cleanly to Seychelles's granitic and coralline reef structures without recalibration. Water clarity, reef morphology and available imagery resolution all differ enough that treating this as a drop-in tool rather than a starting architecture would be a mistake.</p>
+      <p>The realistic use is architectural, not literal. Reading this workflow closely and mapping its pipeline stages against what the Ocean Mapping Hub needs, coral segmentation for reef monitoring, vessel detection for fisheries surveillance, gives a concrete structure to evaluate build-versus-adapt decisions against, rather than starting that conversation with a blank page.</p>
+      <p>The near-term task is a working session, alone or with whoever is scoping the Hub's technical architecture, reading this paper's methodology section specifically and listing which of its three components map onto a near-term Seychelles pilot, and which would need a different approach entirely given local reef and imagery conditions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 6: ACADEMIC DROP CAP -->
+<section class="story layout-academic" id="story-6">
+  <div class="story-inner">
+    <span class="numeral-box">06</span>
+    <h2 class="headline">Renaming the Small Island</h2>
+    <p class="why">A new peer-reviewed paper renaming Small Island Developing States as Big Ocean States through the blue economy lens gives the High-Income SIDS Paradox argument a live academic vocabulary to sit inside, rather than standing alone.</p>
+
+    <div class="section-block notes">
+      <span class="eyebrow-label">Story Notes</span>
+      <p>A paper published in Geo: Geography and Environment, "From 'Small Island Developing State' to 'Big Ocean State': The Blue Economy and the Improvised (Re)Scaling of an Ocean Country," examines how the blue economy framing has been used to rescale how ocean nations describe themselves, shifting the emphasis from small land area to vast exclusive economic zone.</p>
+      <p>The Big Ocean State framing originated largely in Pacific SIDS advocacy, built on the argument that a country with a tiny land footprint but a maritime zone spanning millions of square kilometres is better described by its ocean territory than its coastline.</p>
+      <p class="footnote">Source: Geo: Geography and Environment, Royal Geographical Society-IBG, doi.org/10.1002/geo2.70072</p>
+    </div>
+
+    <div class="article">
+      <span class="eyebrow-label">Story Article</span>
+      <p>The term Big Ocean State did not emerge from an academic seminar. It came out of Pacific SIDS advocacy, coined by leaders in Kiribati, Tuvalu and the wider Pacific Islands Forum making a specific rhetorical move: reject the framing of smallness inherited from land-area geography and insist instead on being measured by exclusive economic zone. A country with a few hundred square kilometres of land and a few million square kilometres of ocean is not small by any honest reading. It has simply been described using the wrong denominator.</p>
+      <p>This paper traces that rescaling as an academic subject in its own right, examining the blue economy as the mechanism through which the reframing gets operationalised, not just declared. Calling yourself a Big Ocean State is a rhetorical claim. Building a blue economy strategy, a maritime boundary regime, an ocean governance architecture around that claim is what makes the rescaling durable rather than a slogan.</p>
+      <p>Seychelles fits this framing exactly and has rarely been discussed inside it. A land area of roughly 460 square kilometres against an exclusive economic zone of 1.4 million square kilometres is a Big Ocean State ratio more extreme than several of the Pacific states where the term originated. Yet the paper's framing, and the broader Big Ocean State literature it sits inside, is built almost entirely from Pacific case studies. The Indian Ocean, Seychelles specifically, is close to absent from this academic conversation.</p>
+      <p>Name the reason that gap probably exists rather than assuming it is oversight: Pacific SIDS built a coordinated regional advocacy architecture, the Pacific Islands Forum foremost among it, that pushed the Big Ocean State framing into international forums deliberately and repeatedly. The Indian Ocean SIDS have no equivalent coordinated advocacy body making the same rhetorical push, so the academic literature studying the framing has, understandably, followed where the advocacy was loudest.</p>
+      <p>That gap is the opening. A paper, or a substantial Shorelines piece, extending the Big Ocean State framing to Seychelles specifically, using maritime boundary delimitation experience to ground the argument in the actual EEZ geography rather than the rhetoric alone, would be filling a real absence in a live academic conversation rather than restating an established one. That is a stronger publishing angle than most topics currently in the pipeline, because the gap is specific, citable and largely untouched.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 7: PULL QUOTE -->
+<section class="story layout-pullquote" id="story-7">
+  <div class="story-inner">
+    <span class="numeral-hairline">07</span>
+    <h2 class="headline">The Platform Decided Before You're Consulted</h2>
+    <p class="why">Delegates at the BBNJ Preparatory Commission's third session flagged the need for a formal consultation process on the treaty's Clearing House Mechanism before COP1, and that information architecture decision will shape whether Seychelles's hydrospatial data ends up duplicated across yet another global reporting platform.</p>
+
+    <blockquote class="quote">Every clearing-house architecture decided before the consultation opens becomes a reporting obligation inherited without being consulted on.</blockquote>
+
+    <div class="section-block notes">
+      <span class="eyebrow-label">Story Notes</span>
+      <p>The BBNJ Agreement entered into force on 17 January 2026 with 83 parties. Its third Preparatory Commission session ran 23 March to 2 April 2026, and delegates underscored the importance of establishing a formal consultation process for developing the treaty's Clearing House Mechanism between PrepCom III and COP1.</p>
+      <p>The Clearing House Mechanism is the treaty's designated information-sharing platform, the system through which parties are expected to report and access data on marine genetic resources, area-based management tools and environmental impact assessments under the high seas regime.</p>
+      <a class="story-link" href="https://enb.iisd.org/marine-biodiversity-beyond-national-jurisdiction-bbnj-cop-prepcom3-26mar2026" target="_blank" rel="noopener">enb.iisd.org/marine-biodiversity-beyond-national-jurisdiction-bbnj-cop-prepcom3-26mar2026</a>
+    </div>
+
+    <div class="article">
+      <span class="eyebrow-label">Story Article</span>
+      <p>A Clearing House Mechanism sounds like plumbing, the unglamorous back-end system nobody outside treaty secretariats thinks about. It is also the system that determines, in practice, whether a coastal state's own hydrospatial and marine data infrastructure has to duplicate itself to satisfy a new global reporting layer, or whether it can plug into that layer using data structures it has already built. That decision has not been made yet. The BBNJ Preparatory Commission's third session, held from 23 March to 2 April 2026, flagged the need for a formal consultation process on exactly this question, to run between PrepCom III and COP1.</p>
+      <p>This matters more than it looks like it should, because information architecture decisions made early in a treaty's implementation tend to calcify. Once a Clearing House Mechanism's data standards, submission formats and access protocols are built, retrofitting them to accommodate a different national reporting structure becomes a multi-year technical negotiation rather than a design choice. Whatever gets decided in this consultation window is likely to be what parties live with for the treaty's first decade.</p>
+      <p>For Seychelles, and for SHORE Institute's own data governance thinking, that raises a direct and practical question. Does the CHM's eventual reporting format align with the kind of marine spatial data infrastructure the Ocean Mapping Hub is building, or will Seychelles's government need a separate reporting layer built specifically to satisfy BBNJ obligations, disconnected from national systems already in use.</p>
+      <p>Name the honest risk in this consultation process directly: formal UN-level consultations on technical infrastructure questions routinely open for input well after the substantive architecture has already been informally shaped by whichever secretariat staff and early-mover states did the preparatory technical work. A consultation window is real and worth engaging, but it is not the same as a blank slate.</p>
+      <p>The concrete task is tracking the Preparatory Commission's published outputs and the IISD Earth Negotiations Bulletin's ongoing PrepCom coverage for the moment this consultation process formally opens, and flagging it to whoever in Seychelles's government handles BBNJ implementation, likely within the Department of Blue Economy or Foreign Affairs, so that a national submission on data interoperability gets filed rather than missed. Given the maritime boundary delimitation background this office brings to exactly this kind of technical treaty detail, a drafted contribution here carries real weight if it lands inside the window rather than after it closes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 8: BROADSHEET -->
+<section class="story layout-broadsheet" id="story-8">
+  <div class="story-inner">
+    <span class="numeral-stamp">08</span>
+    <span class="flag">⚡ Call for submissions open</span>
+    <h2 class="headline">A Case Study Worth Submitting</h2>
+    <div class="rule"></div>
+    <p class="why">The co-facilitators of the UNFCCC's 2026 Ocean and Climate Change Dialogue have opened a call for submissions on financing sub-themes and case studies, and a short submission citing Seychelles's own blue finance record, debt swap included, is a low-effort way to get SHORE Institute's name into the record before the Dialogue convenes.</p>
+
+    <div class="section-block notes">
+      <span class="eyebrow-label">Story Notes</span>
+      <p>A message from the co-facilitator of the 2026 Ocean and Climate Change Dialogue, mandated under the UNFCCC since COP25, calls for submissions on possible sub-themes for the Dialogue's programme, alongside case studies on financing of the ocean and water systems, feeding into the Standing Committee on Finance's 2026 Forum on this same topic.</p>
+      <p>The letter is addressed to Parties and Observers, meaning non-party organisations, research institutes among them, are explicitly invited to contribute rather than only national delegations.</p>
+      <a class="story-link" href="https://unfccc.int/sites/default/files/resource/message_to_parties_and_observers_letter_from_the_co_facilitator_of_the_2026_ocean_and_climate_change_dialogue.pdf" target="_blank" rel="noopener">unfccc.int/sites/default/files/resource/message_to_parties_and_observers_letter_2026_ocean_and_climate_change_dialogue.pdf</a>
+    </div>
+
+    <div class="article columns">
+      <span class="eyebrow-label" style="column-span:all;">Story Article</span>
+      <p>The Ocean and Climate Change Dialogue has run under the UNFCCC every year since COP25, a standing forum for exactly the kind of technical, finance-adjacent ocean policy work that rarely makes headlines but shapes what the Standing Committee on Finance eventually recommends. The 2026 edition's co-facilitator has opened a call for submissions on two fronts: suggested sub-themes for the Dialogue's programme, and case studies specifically on financing the ocean and water systems.</p>
+      <p>Observers, not just party delegations, are explicitly invited to submit. That detail is easy to miss reading a formal UNFCCC letter, but it means a research institute with a documented case study in hand has a real, low-friction channel into this process, not a hypothetical one requiring government sponsorship to access.</p>
+      <p>Seychelles has exactly that case study sitting ready, and it is a stronger one than the version most people would reach for first. The instinct would be to submit the celebratory account of the 2015 debt-for-nature swap, the version cited for a decade across UNFCCC technical papers and AOSIS advocacy. Research revisiting that swap, covered in this edition's sibling piece last week, found it increased Seychelles's public indebtedness rather than reducing it, and secured little beyond protections the government had already committed to.</p>
+      <p>That complicated finding is the more valuable submission, not the weaker one. A Standing Committee on Finance forum built to scale ocean and water financing mechanisms across SIDS needs to know which flagship mechanisms actually deliver what they are sold as delivering, not another round of the case study everyone already cites approvingly. A submission that names the swap's real limitations alongside its real benefits reads as credible technical input from people who have actually examined the mechanism, not advocacy dressed as evidence.</p>
+      <p>Name the risk before submitting: a critical case study, sent to a body focused on scaling finance mechanisms, could land as unhelpful if framed as a takedown rather than a technical assessment. The framing needs to be additionality and design lessons, what worked, what did not, what a next-generation debt swap should do differently, not a case against debt swaps as a category.</p>
+      <p>The concrete task is finding the submission portal and actual deadline on the UNFCCC website this week, since the letter itself did not specify one in the material reviewed here, and drafting a two-page technical submission built around the swap's documented findings, framed as design lessons for the next mechanism rather than as criticism of the last one.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 9: COLOUR FIELD -->
+<section class="story layout-colourfield" id="story-9">
+  <div class="story-inner">
+    <span class="numeral-circle" style="background:var(--yellow);color:var(--navy);">09</span>
+    <h2 class="headline">Cartagena, Eight and Nine October</h2>
+    <p class="why">The GEBCO Symposium convenes in Cartagena on 8 and 9 October, and if the western Indian Ocean's coverage gap does not get a name-check from someone in that room, it stays invisible in the mapping community's own strategic conversation for another year.</p>
+
+    <div class="section-block notes">
+      <span class="eyebrow-label">Story Notes</span>
+      <p>The GEBCO Symposium 2026 runs 8 to 9 October in Cartagena, Colombia, ahead of the separate Seabed 2030 Indo-Pacific Ocean Mapping Meeting and Data Sprint in Kuala Lumpur later that month. The Symposium is GEBCO's broader annual strategic and scientific gathering, distinct in format and scope from the regional working meeting.</p>
+      <p>Registration details and any deadline for the Cartagena Symposium were not confirmed in the sources reviewed for this edition. That is worth checking directly with the GEBCO or Nippon Foundation-Seabed 2030 secretariat rather than assumed either way.</p>
+      <a class="story-link" href="https://iho.int/en/global-seabed-mapping-reaches-new-milestone-as-five-million-square-kilometres-added-in-a-year" target="_blank" rel="noopener">iho.int/en/global-seabed-mapping-reaches-new-milestone</a>
+    </div>
+
+    <div class="article">
+      <span class="eyebrow-label">Story Article</span>
+      <p>Two Seabed 2030 events sit on the October calendar, and they are not the same meeting wearing two names. The GEBCO Symposium, running 8 and 9 October in Cartagena, Colombia, is the annual strategic and scientific gathering where the mapping community sets direction and shares research. The Indo-Pacific Ocean Mapping Meeting and Data Sprint in Kuala Lumpur later in October, covered in an earlier edition, is a regional working session focused on coordinating mapping priorities and accelerating specific grid contributions. Conflating the two risks missing the one that actually matters for a strategic positioning question.</p>
+      <p>A Symposium is where the western Indian Ocean's coverage gap gets named in front of the people setting the field's priorities for the following year, not just the people doing the technical mapping work. That distinction is worth acting on directly rather than treating both October events as interchangeable opportunities.</p>
+      <p>Being honest about what is not yet known here matters more than filling the gap with a guess. Registration status, deadline, and whether remote or abstract-only participation is possible for the Cartagena Symposium were not confirmed in the material reviewed for this edition. Asserting a deadline without confirming it would be worse than naming the uncertainty plainly.</p>
+      <p>What is confirmed is the date and location, and that is enough to act on now. Symposium formats, unlike working meetings with a data sprint component, often accept remote participation, poster submissions or written contributions even after in-person registration has closed, since the value of a symposium submission is the content reaching the room, not necessarily a body physically present.</p>
+      <p>The concrete task this week is a direct email to the GEBCO or Nippon Foundation-Seabed 2030 secretariat, asking three things plainly: whether Cartagena registration is still open, whether a remote or written contribution track exists, and where the western Indian Ocean sits in Seabed 2030's regional coordination structure given it falls between the Indo-Pacific and established Atlantic groupings. That last question is the one worth pressing hardest, since a region absent from both regional coordination structures is a region whose coverage gap nobody is formally responsible for closing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 10: LETTERPRESS -->
+<section class="story layout-letterpress" id="story-10">
+  <div class="story-inner">
+    <span class="numeral-hairline">10</span>
+    <h2 class="headline">The Taxonomy You Can Cite</h2>
+    <p class="why">A review paper cataloguing the challenges and opportunities of geospatial technologies for Marine Spatial Planning gives you a ready-made literature scaffold for situating HARMONiSE's technical contribution inside the academic MSP conversation, rather than explaining it from scratch every time.</p>
+
+    <div class="section-block notes">
+      <span class="eyebrow-label">Story Notes</span>
+      <p>A review published in Ocean and Coastal Management surveys geospatial technologies used to improve Marine Spatial Planning, cataloguing the challenges and opportunities across remote sensing, GIS and related tools as applied to MSP processes.</p>
+      <p>The review complements a separate March 2026 workshop, "Marine Data for MSP," run through the Copernicus Marine Service, which focused on how open ocean data supports maritime spatial planning specifically in practice rather than in the academic literature.</p>
+      <a class="story-link" href="https://www.sciencedirect.com/science/article/abs/pii/S0964569122002563" target="_blank" rel="noopener">sciencedirect.com/science/article/abs/pii/S0964569122002563</a>
+    </div>
+
+    <div class="article">
+      <span class="eyebrow-label">Story Article</span>
+      <p>Every field builds a shared taxonomy of its own open problems eventually, and Marine Spatial Planning's geospatial technology literature now has one worth reading closely: a review cataloguing the challenges and opportunities of geospatial tools across the MSP process, from data collection through remote sensing to the GIS-based analysis that turns raw spatial data into a usable plan.</p>
+      <p>A review paper like this does something a single case study cannot. It maps the field's known gaps in one place, cited and structured, which means any new technical contribution, HARMONiSE included, can be positioned explicitly against that taxonomy rather than described in isolation. Reviewers and readers alike trust a contribution more when it names precisely which catalogued challenge it addresses, instead of presenting itself as a standalone innovation with no stated relationship to existing work.</p>
+      <p>This is a publishing-landscape opportunity as much as a technical one. Citing this review as the framing device for a HARMONiSE paper or a Shorelines piece on the Ocean Mapping Hub's methodology does two things at once: it situates the work inside an active academic conversation rather than describing it from scratch, and it signals to reviewers that the framework was built with awareness of the field's documented gaps, not in isolation from them.</p>
+      <p>Name the honest limitation directly: a broad review paper like this one is, by design, generic. It surveys geospatial MSP challenges globally, without the SIDS-specific constraints that actually shape what is feasible for a country like Seychelles, thin technical benches, limited survey vessel access, data sovereignty questions layered on top of already sparse coverage. That gap is not a flaw in the review. It is the space a SIDS-focused extension of it would need to fill.</p>
+      <p>The concrete task is reading the review's stated taxonomy of challenges closely and building a short table mapping each category against what HARMONiSE and the Ocean Mapping Hub already address, partially address, or do not yet touch. That table becomes the backbone of a methods section for a future publication, and a fast way to see exactly where the framework's real technical gaps sit before committing time to closing them.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">Morning Edition</div>
+  <p>SHORE Institute · Shorelines · Victoria, Seychelles</p>
+  <p style="margin-top:0.5rem;opacity:0.8;">Sunday, 30 August 2026</p>
+</footer>
+
+</body>
+</html>
