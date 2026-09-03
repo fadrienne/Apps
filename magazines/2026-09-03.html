@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Edition — 3 September 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,500;1,9..144,700&family=Inter:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0b3a5e;
+    --sky:#cdeaf8;
+    --sky-deep:#a9dcf3;
+    --sky-pale:#eaf6fc;
+    --teal:#1c8c80;
+    --teal-deep:#0f6a60;
+    --sun:#ffd23f;
+    --sun-deep:#f6b90f;
+    --gold:#e8b429;
+    --forest:#2f6b46;
+    --forest-deep:#1f5535;
+    --sage:#cfe3c2;
+    --mint:#e6f5ec;
+    --offwhite:#faf6ec;
+    --cream:#f4ecd8;
+    --slate:#55636c;
+    --charcoal:#2a2f33;
+    --paper:#fbf8f1;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--charcoal);
+    font-family:'Inter',sans-serif;
+    font-size:2rem;
+    line-height:1.5;
+  }
+  h1,h2,h3,h4{font-family:'Fraunces',serif;margin:0;}
+  a{color:var(--teal-deep);}
+  p{margin:0 0 1.1em 0;}
+  .eyebrow{
+    font-family:'Inter',sans-serif;
+    font-weight:800;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    font-size:0.85rem;
+    color:var(--teal-deep);
+    margin-bottom:0.6em;
+    display:block;
+  }
+  .why-line{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:1.5rem;
+    color:var(--forest-deep);
+    border-left:6px solid var(--sun-deep);
+    padding:0.6em 1em;
+    margin:1.4em 0 1.6em 0;
+    background:rgba(255,210,63,0.18);
+  }
+  .story-notes p, .story-article p{font-size:1.05rem;}
+  .story-article{max-width:42em;}
+  .story-body{margin-top:2.2em;}
+  .flag{
+    display:inline-block;
+    font-family:'Inter',sans-serif;
+    font-weight:900;
+    font-size:1rem;
+    letter-spacing:0.08em;
+    background:var(--sun);
+    color:var(--navy);
+    padding:0.35em 0.9em;
+    border-radius:2px;
+    margin-bottom:1em;
+    border:2px solid var(--navy);
+  }
+  .links-url{
+    font-family:'Space Mono',monospace;
+    font-size:0.85rem;
+    word-break:break-all;
+    color:var(--teal-deep);
+  }
+
+  /* ===== MASTHEAD ===== */
+  .masthead{
+    background:var(--sky-pale);
+    color:var(--navy);
+    text-align:center;
+    padding:4rem 1.5rem 3rem 1.5rem;
+    border-bottom:6px solid var(--sun);
+  }
+  .masthead .kicker{
+    font-family:'Inter',sans-serif;
+    letter-spacing:0.3em;
+    text-transform:uppercase;
+    font-size:0.9rem;
+    color:var(--teal-deep);
+    font-weight:800;
+    margin-bottom:1rem;
+  }
+  .masthead h1{
+    font-size:5rem;
+    font-weight:900;
+    letter-spacing:-0.01em;
+    color:var(--navy);
+  }
+  .masthead .date{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:1.6rem;
+    margin-top:1rem;
+    color:var(--teal-deep);
+  }
+  .masthead .strap{
+    font-family:'Inter',sans-serif;
+    font-size:1rem;
+    color:var(--slate);
+    margin-top:1.4rem;
+    max-width:36em;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  /* ===== NAV ===== */
+  nav.jump{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:var(--offwhite);
+    border-bottom:3px solid var(--navy);
+    padding:1rem 1.5rem;
+  }
+  nav.jump .label{
+    font-family:'Inter',sans-serif;
+    font-weight:800;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    font-size:0.8rem;
+    color:var(--navy);
+    display:block;
+    margin-bottom:0.6rem;
+  }
+  nav.jump ol{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.5rem 0.9rem;
+  }
+  nav.jump li a{
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    font-size:0.95rem;
+    color:var(--teal-deep);
+    text-decoration:none;
+    border-bottom:2px solid transparent;
+  }
+  nav.jump li a:hover{border-bottom-color:var(--sun-deep);}
+  nav.jump li a .n{color:var(--navy); font-weight:800; margin-right:0.2em;}
+
+  section.story{padding:5rem 1.5rem; scroll-margin-top:5rem; position:relative;}
+  .story-inner{max-width:62em; margin:0 auto;}
+  .headline{font-size:2.8rem; line-height:1.1; margin:0.3em 0 0.5em 0;}
+
+  /* ===== 1. HERO ===== */
+  .s-hero{background:var(--sky);}
+  .s-hero .headline{font-size:4rem; color:var(--navy); font-weight:900;}
+  .s-hero .num{
+    font-family:'Fraunces',serif;
+    font-weight:900;
+    font-size:8rem;
+    color:rgba(11,58,94,0.12);
+    position:absolute;
+    top:1rem; right:2rem;
+    line-height:1;
+  }
+
+  /* ===== 2. COASTAL ===== */
+  .s-coastal{background:var(--sky-pale);}
+  .s-coastal .rule{height:6px; width:6rem; background:var(--forest); margin-bottom:1.2rem;}
+  .s-coastal .grid{display:grid; grid-template-columns:1fr; gap:2rem;}
+  @media(min-width:900px){.s-coastal .grid{grid-template-columns:0.9fr 1.3fr;}}
+  .s-coastal .num{font-family:'Space Mono',monospace; font-weight:700; color:var(--forest); font-size:1.3rem;}
+
+  /* ===== 3. SUNBEAM ALERT ===== */
+  .s-sunbeam{background:var(--sun);}
+  .s-sunbeam .stamp{
+    display:inline-block;
+    font-family:'Space Mono',monospace;
+    font-weight:700;
+    border:3px solid var(--navy);
+    color:var(--navy);
+    padding:0.4em 0.8em;
+    transform:rotate(-3deg);
+    margin-bottom:1rem;
+  }
+  .s-sunbeam .headline{font-style:italic; font-weight:800; color:var(--navy);}
+  .s-sunbeam .why-line{background:rgba(11,58,94,0.08); border-left-color:var(--navy);}
+
+  /* ===== 4. COLOUR FIELD ===== */
+  .s-field{background:var(--teal); color:var(--offwhite);}
+  .s-field .headline{color:var(--offwhite); font-weight:900;}
+  .s-field .eyebrow{color:var(--sun);}
+  .s-field .num{
+    font-family:'Inter',sans-serif; font-weight:900; font-size:2rem;
+    color:var(--navy); background:var(--sun);
+    display:inline-flex; align-items:center; justify-content:center;
+    width:2.4em; height:2.4em; border-radius:50%; margin-bottom:1rem;
+  }
+  .s-field a{color:var(--sun);}
+  .s-field .why-line{background:rgba(255,255,255,0.12); color:var(--offwhite); border-left-color:var(--sun);}
+  .s-field .story-notes, .s-field .story-article{color:var(--offwhite);}
+  .s-field .eyebrow.inner{color:var(--sun);}
+
+  /* ===== 5. ACADEMIC DROP CAP ===== */
+  .s-academic{background:var(--offwhite);}
+  .s-academic .headline{font-weight:500; color:var(--navy); border-bottom:2px solid var(--slate); padding-bottom:0.4em;}
+  .s-academic .dropcap:first-letter{
+    font-family:'Fraunces',serif;
+    font-size:4.5rem;
+    font-weight:800;
+    color:var(--navy);
+    float:left;
+    line-height:0.8;
+    padding-right:0.15em;
+    padding-top:0.05em;
+  }
+  .s-academic .footnote{
+    font-family:'Space Mono',monospace;
+    font-size:0.8rem;
+    color:var(--slate);
+    border-top:1px solid var(--slate);
+    padding-top:1em;
+    margin-top:2em;
+  }
+  .s-academic .num{font-family:'Space Mono',monospace; color:var(--slate); font-size:1rem;}
+
+  /* ===== 6. BIG STAT ===== */
+  .s-stat{background:var(--mint);}
+  .s-stat .statblock{text-align:center; margin:1.5rem 0 2.5rem 0;}
+  .s-stat .statnum{
+    font-family:'Fraunces',serif;
+    font-weight:900;
+    font-size:7rem;
+    color:var(--teal-deep);
+    line-height:1;
+  }
+  .s-stat .statlabel{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    color:var(--navy);
+    font-size:1rem;
+  }
+  .s-stat .num{font-family:'Fraunces',serif; font-weight:900; color:var(--forest); font-size:1.5rem;}
+
+  /* ===== 7. TERMINAL ===== */
+  .s-terminal{background:var(--mint); font-family:'Space Mono',monospace;}
+  .s-terminal .headline{font-family:'Space Mono',monospace; color:var(--teal-deep); font-weight:700; font-size:2.1rem;}
+  .s-terminal .eyebrow{font-family:'Space Mono',monospace;}
+  .s-terminal .why-line{font-family:'Space Mono',monospace; font-style:normal; background:rgba(28,140,128,0.1);}
+  .s-terminal .story-notes p, .s-terminal .story-article p{font-family:'Space Mono',monospace; font-size:0.95rem;}
+  .s-terminal .num{font-family:'Space Mono',monospace; color:var(--teal-deep);}
+  .s-terminal .prompt{color:var(--forest-deep); font-weight:700;}
+
+  /* ===== 8. BROADSHEET ===== */
+  .s-broadsheet{background:var(--cream);}
+  .s-broadsheet .rule-thin{height:2px; background:var(--teal); width:100%; margin:0.6rem 0 1.6rem 0;}
+  .s-broadsheet .cols{columns:1; column-gap:2.5rem;}
+  @media(min-width:900px){.s-broadsheet .cols{columns:2;}}
+  .s-broadsheet .cols p{margin-bottom:1em;}
+  .s-broadsheet .num{
+    font-family:'Fraunces',serif; font-weight:900; font-size:1.4rem; color:var(--navy);
+    border:2px solid var(--navy); padding:0.1em 0.5em; display:inline-block;
+  }
+  .s-broadsheet .story-article{columns:1;}
+
+  /* ===== 9. PULL QUOTE ===== */
+  .s-pull{background:var(--sage);}
+  .s-pull blockquote{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:2.3rem;
+    color:var(--forest-deep);
+    line-height:1.25;
+    margin:1rem 0 1.6rem 0;
+    border-left:none;
+  }
+  .s-pull blockquote::before{content:"“";}
+  .s-pull blockquote::after{content:"”";}
+  .s-pull .num{font-family:'Fraunces',serif; font-style:italic; color:var(--forest); font-size:1.4rem;}
+
+  /* ===== 10. LETTERPRESS ===== */
+  .s-letter{
+    background:var(--offwhite);
+    background-image:
+      radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+    background-size:6px 6px;
+  }
+  .s-letter .headline{font-family:'Fraunces',serif; font-weight:700; color:var(--charcoal);}
+  .s-letter .num{
+    font-family:'Fraunces',serif; font-weight:900; font-size:2rem; color:var(--charcoal);
+    border-bottom:3px double var(--charcoal); padding-bottom:0.1em;
+  }
+  .s-letter .story-inner{border:1px solid rgba(0,0,0,0.15); padding:2.5rem;}
+  .s-letter .flag{background:var(--sun); color:var(--navy); border-color:var(--charcoal);}
+
+  footer{
+    background:var(--sky-pale);
+    color:var(--navy);
+    text-align:center;
+    padding:3rem 1.5rem;
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:1.2rem;
+    border-top:6px solid var(--sun);
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="kicker">Shorelines · Morning Edition</div>
+  <h1>Morning Edition</h1>
+  <div class="date">Thursday, 3 September 2026</div>
+  <div class="strap">Ten stories filtered through SHORE Institute's lens on ocean governance, hydrospatial science, and SIDS equity — read over your first coffee.</div>
+</div>
+
+<nav class="jump">
+  <span class="label">Jump to story</span>
+  <ol>
+    <li><a href="#s1"><span class="n">01</span>The Pacific's Nature Investment Test</a></li>
+    <li><a href="#s2"><span class="n">02</span>Overshoot, Priced in Ocean Terms</a></li>
+    <li><a href="#s3"><span class="n">03</span>⚡ The Kunming Dialogue</a></li>
+    <li><a href="#s4"><span class="n">04</span>Seychelles Diversifies, On Paper</a></li>
+    <li><a href="#s5"><span class="n">05</span>A Template for Co-Producing Ocean Plans</a></li>
+    <li><a href="#s6"><span class="n">06</span>28.7 Percent of the Seafloor</a></li>
+    <li><a href="#s7"><span class="n">07</span>GeoAI Reads the Reef</a></li>
+    <li><a href="#s8"><span class="n">08</span>⚡ The GEBCO Symposium</a></li>
+    <li><a href="#s9"><span class="n">09</span>One Sea, All the Deep Ocean's Oxygen</a></li>
+    <li><a href="#s10"><span class="n">10</span>⚡ A Super El Niño, By Autumn</a></li>
+  </ol>
+</nav>
+
+<!-- ============ STORY 1: HERO ============ -->
+<section id="s1" class="story s-hero">
+  <div class="num">01</div>
+  <div class="story-inner">
+    <span class="eyebrow">SIDS Equity &amp; Capacity</span>
+    <h2 class="headline">The Pacific just closed a nature-investment conference asking the question the Western Indian Ocean never gets to ask</h2>
+    <div class="why-line"><strong><em>IUCN closed its Pacific nature-investment programme this week with a hard question about what survives once the pledges stop, and the Western Indian Ocean has no equivalent recurring forum putting that question to SHORE's own region.</em></strong></div>
+    <div class="story-body">
+      <span class="eyebrow">Story Notes</span>
+      <div class="story-notes">
+        <p>IUCN published two linked pieces on 2 September: one closing out PPIN, a Pacific nature-investment initiative running alongside the 11th Pacific Islands Conference on Nature Conservation, and asking what foundation it leaves for future action once the funding cycle ends. The other, on the same day, covers UNEP's new Overshoot report, which this edition treats separately below.</p>
+        <p>PCNC11 is the Pacific region's recurring, IUCN-convened venue for turning conservation pledges into staffed, running programmes rather than one-off grants. It has run eleven times. The Western Indian Ocean, where Seychelles sits, has no direct equivalent: no recurring regional conference whose explicit job is auditing whether nature investment survived contact with implementation.</p>
+        <p>That gap is structural, not incidental. IOC-UNESCO, IUCN, and the Commonwealth Secretariat all run Indian Ocean programming, but none of it repeats annually with PCNC11's specific mandate: did the money that was pledged still exist as an institution eighteen months later? <a href="https://iucn.org/our-work/oceans-and-coasts" class="links-url">iucn.org/our-work/oceans-and-coasts</a></p>
+      </div>
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>Every SIDS nature-finance story eventually runs into the same unglamorous problem: money gets pledged, a project gets announced, and eighteen months later nobody can say with confidence whether the institution it was meant to build still exists in any functioning form. IUCN's own closing account of PPIN, its Pacific nature-investment initiative, published on 2 September, names this directly by asking what foundation the programme leaves for future action, rather than simply declaring victory on disbursement.</p>
+        <p>That question matters more than the funding total attached to it, because it is the question almost nobody asks in the Western Indian Ocean with the same institutional regularity. PCNC11, the 11th Pacific Islands Conference on Nature Conservation, exists specifically to force it: a recurring, region-wide gathering whose job is not to announce new conservation finance but to audit what the last round actually built. Eleven iterations in, that audit function has become part of how Pacific SIDS hold their own nature-finance programmes accountable, not just their donors.</p>
+        <p>Seychelles and the wider Western Indian Ocean have nothing structurally equivalent. IOC-UNESCO runs regional ocean science coordination. IUCN runs its own Oceans and Coasts programming. The Commonwealth Secretariat runs SIDS-specific funding windows, several of them live right now. None of these repeats on a fixed cycle with PPIN's specific mandate: closing the loop on whether a funded programme survived past its grant period as a durable, staffed thing, rather than a line in an annual report.</p>
+        <p>You could argue the Pacific has this infrastructure because it has more SIDS, more donor attention, and a longer institutional history of regional conservation coordination through bodies like SPREP, and that the Western Indian Ocean's smaller, more dispersed island states simply cannot replicate it at the same scale. That is a fair capacity argument. It is not an argument against building a smaller version, because the accountability function PCNC11 performs does not require SPREP's scale to work. It requires a fixed date, a convening body willing to ask uncomfortable questions about programme survival, and enough regional participants to make the audit socially costly to skip.</p>
+        <p>This is a gap SHORE is positioned to name publicly even if it cannot single-handedly fill it. A recurring Western Indian Ocean nature-investment audit, convened jointly with IOC-UNESCO's regional programme or the Nairobi Convention secretariat, would do for Seychelles, Comoros, Madagascar, and Mauritius what PPIN's closing report just did for the Pacific: put a number and a name on which funded programmes are still running, and which quietly stopped.</p>
+        <p>The counterargument that this kind of audit function invites donor scrutiny nobody in the region particularly wants misreads the incentive. Programmes that can show they survived past their grant period are the ones that win the next funding round. An accountability mechanism built by the region, on its own terms, is a stronger negotiating position than waiting for a donor evaluation to ask the same question less charitably, later, after the funding decision has already been made without you in the room.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY 2: COASTAL ============ -->
+<section id="s2" class="story s-coastal">
+  <div class="story-inner">
+    <span class="eyebrow">Ocean Governance</span>
+    <h2 class="headline">UNEP's new Overshoot report gives the ocean-equity argument a fresher citation than the one you've been using</h2>
+    <div class="why-line"><strong><em>UNEP's new Overshoot report and IUCN's response to it are a fresher, higher-profile citation for the argument you already make: that global overconsumption transfers its costs onto ocean systems Seychelles did not create and cannot buffer alone.</em></strong></div>
+    <div class="grid story-body">
+      <div>
+        <div class="rule"></div>
+        <span class="num">2 SEPT 2026 · IUCN RESPONSE</span>
+      </div>
+      <div>
+        <span class="eyebrow">Story Notes</span>
+        <div class="story-notes">
+          <p>UNEP published a new report on ecological overshoot, and IUCN's response, published 2 September, calls its findings stark and demands urgent, ambitious climate action in reply. Overshoot, as a framework, tracks how far human consumption of renewable resources runs ahead of what the planet regenerates in a given year.</p>
+          <p>Ocean acidification is one of the planetary boundaries already assessed as transgressed in prior scientific reviews, which means the ocean is not a bystander to overshoot. It is one of the systems absorbing the deficit directly, through carbon uptake and the chemistry changes that follow.</p>
+          <p>For a coastal, reef-dependent economy like Seychelles's, overshoot is not an abstraction measured somewhere else. It shows up as reef stress, fisheries pressure, and coastal erosion, all downstream of a global consumption pattern the country played almost no part in generating. <a href="https://iucn.org/our-work/oceans-and-coasts" class="links-url">iucn.org/our-work/oceans-and-coasts</a></p>
+        </div>
+        <span class="eyebrow">Story Article</span>
+        <div class="story-article">
+          <p>The word "overshoot" gets used loosely enough in climate commentary that it is worth being precise about what UNEP's new report is actually tracking: the gap between how fast humanity draws down renewable resources, forests, fisheries, freshwater, carbon-absorbing capacity, and how fast the planet regenerates them. IUCN's response, published the same day, calls the findings stark and pairs them with a demand for urgent, ambitious climate action, which is the standard register for this kind of report. What is less standard is how directly the ocean sits inside the accounting.</p>
+          <p>Ocean acidification already appears among the planetary boundaries scientific assessments class as transgressed, alongside biosphere integrity and biogeochemical flows. That is not a projection. It is a present-tense finding, and it means the ocean is not one line item among many in an overshoot report. It is one of the systems actively absorbing the deficit right now, through carbon uptake that changes seawater chemistry in ways that are measurable and, for reef ecosystems, increasingly severe.</p>
+          <p>You have argued before, in Shorelines and elsewhere, that Seychelles carries climate costs it did not generate: a narrow, tourism- and tuna-dependent economy exposed to sea level rise, reef collapse, and cyclone intensification driven overwhelmingly by consumption patterns in economies many times its size. The overshoot framework gives that argument a cleaner, more citable structure than "climate injustice" alone provides, because it quantifies the deficit rather than just naming the unfairness. A country with Seychelles's per-capita ecological footprint is not the one running the planetary account into deficit. It is absorbing acidification and warming generated mostly elsewhere.</p>
+          <p>The objection worth naming is that overshoot reports arrive annually, get cited widely for a news cycle, and rarely change the finance flows that would actually address the deficit they describe. That is a fair critique of the report genre, not of the underlying accounting. The value of this particular report for your own writing is not that it will change UNEP's funding architecture by itself. It is that it hands you a current, peer-adjacent framework, rather than a decade-old planetary boundaries citation, for making the same equity argument with sharper numbers behind it.</p>
+          <p>Where this becomes concrete for SHORE is in how the High-Income SIDS Paradox gets argued in funding applications. A Multidimensional Vulnerability Index case, or any case for concessional access despite Seychelles's GNI classification, is stronger when it can point to a current overshoot accounting showing the ocean absorbing a deficit the country did not create, rather than relying on a general appeal to fairness. Cite the report by name, not the framework in the abstract.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY 3: SUNBEAM ALERT ============ -->
+<section id="s3" class="story s-sunbeam">
+  <div class="story-inner">
+    <span class="stamp">03 · THIS WEEK</span>
+    <span class="flag">⚡ MEETS 7–9 SEP 2026</span>
+    <span class="eyebrow">Ocean Governance &amp; Biodiversity</span>
+    <h2 class="headline">The Kunming Dialogue meets this week to decide how the ocean gets counted in the first global review of the biodiversity framework</h2>
+    <div class="story-body">
+      <div class="why-line">The Kunming Dialogue convenes this week to shape the first global review of the Kunming-Montreal Global Biodiversity Framework, and how it frames the ocean's contribution to that review sets the terms BBNJ implementation gets measured against for years to come.</div>
+      <span class="eyebrow">Story Notes</span>
+      <div class="story-notes">
+        <p>The Kunming Dialogue, an informal technical dialogue supporting the first global review of the Kunming-Montreal Global Biodiversity Framework, runs 7 to 9 September 2026, with regional consultations on 6 September, proposed for Kunming, China. It responds to a mandate from CBD COP16, ahead of COP17's formal global review.</p>
+        <p>Roughly 400 to 500 participants are expected: parties, Indigenous Peoples and local communities, youth and women's representatives, academia, and private and financial sector observers. This is a technical dialogue, not a negotiating session, but its framing choices feed directly into what COP17 treats as settled.</p>
+        <p>The ocean's place in this review is not automatic. BBNJ, now in force, and the GBF's marine targets overlap but are governed separately, and how the Dialogue frames their coherence, or fails to, shapes whether ocean biodiversity gets tracked as integrated progress or as a separate, easily deprioritised column. <a href="https://www.cbd.int/gbf/implementation/globalreview" class="links-url">cbd.int/gbf/implementation/globalreview</a></p>
+      </div>
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>Global reviews of multilateral frameworks live or die on a framing decision made months before the formal review itself, in exactly the kind of informal technical dialogue meeting this week in China. The Kunming Dialogue, running 7 to 9 September with a regional consultation day on 6 September, is not where the Kunming-Montreal Global Biodiversity Framework gets amended. It is where the terms for judging its progress at COP17 get set, and those terms are rarely revisited once agreed.</p>
+        <p>The specific question worth watching is coherence between the GBF's ocean-related targets and the BBNJ Agreement, which entered into force in January this year. Both instruments touch marine biodiversity beyond national jurisdiction. Neither was negotiated with explicit reference to how its implementation reporting should interlock with the other's. A global review that treats ocean progress under the GBF as a separate accounting line from BBNJ's own implementation reporting risks doing exactly what you have flagged before with climate and ocean finance: splitting a genuinely integrated problem into two bureaucratic tracks that compete for the same limited attention rather than reinforcing each other.</p>
+        <p>With 400 to 500 participants expected, including Indigenous Peoples and local communities, academia, and financial sector representatives alongside parties, the Dialogue has the room composition to push for that coherence explicitly, if the people in the room raise it. This is a technical dialogue, which means its outputs carry less formal weight than a negotiated COP decision, but technical dialogues are exactly where framing language gets drafted that negotiators later adopt with minimal amendment, because nobody wants to reopen a fight that already happened at the technical level.</p>
+        <p>For Seychelles and SHORE, the practical stake is in how ocean biodiversity progress gets measured going forward. If the global review adopts marine indicators that track cleanly against BBNJ's own area-based management tool reporting, a single national submission on marine protected area progress can serve both frameworks. If the review keeps them separate, Seychelles's Blue Economy department ends up preparing duplicate reporting streams for functionally the same underlying data, a capacity cost that a small administration feels far more acutely than a larger one does.</p>
+        <p>The honest counterpoint is that pushing for framework coherence at a technical dialogue this size, with this packed an agenda, is a modest lever, and the people best positioned to raise it are established observer organisations already tracking both processes closely, not a single Indian Ocean SIDS institute watching from outside the room. That is true, and it argues for coordination rather than absence: flagging the coherence issue now, through IOC-UNESCO's regional channels or a written submission ahead of COP17, costs little and puts Seychelles's specific reporting-capacity concern on record before the framing solidifies rather than after.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY 4: COLOUR FIELD ============ -->
+<section id="s4" class="story s-field">
+  <div class="story-inner">
+    <div class="num">04</div>
+    <span class="eyebrow inner">Blue Economy</span>
+    <h2 class="headline">Seychelles's tourism numbers are the concrete evidence against the High-Income SIDS Paradox you keep having to argue from theory</h2>
+    <div class="story-body">
+      <div class="why-line">Seychelles's tourism arrivals grew 13 percent in 2025, with Gulf, African, and Asian markets now complementing Europe and India, and that diversification is the concrete evidence against the claim that a High-Income SIDS economy cannot broaden its base.</div>
+      <span class="eyebrow inner">Story Notes</span>
+      <div class="story-notes">
+        <p>Seychelles's tourism sector grew arrivals 13 percent in 2025, with expanding interest from the Gulf, wider Africa, and Asia now complementing its established European and Indian source markets, according to reporting on the country's 2026/2027 growth outlook across finance, infrastructure, and the blue economy.</p>
+        <p>Seychelles's marine resources still account for an estimated 20 to 30 percent of GDP, and public debt remains above 60 percent, the structural profile that keeps the country locked out of most concessional climate finance despite its acute exposure.</p>
+        <p>Market diversification does not resolve that structural exposure. It is still evidence worth citing precisely because it undercuts the lazy version of the High-Income SIDS Paradox argument: that these economies are too narrow to ever broaden. <a href="https://www.cnbcafrica.com/2026/seychelles-2026-2027-accelerating-growth-across-finance-infrastructure-blue-economy" class="links-url">cnbcafrica.com/2026/seychelles-2026-2027-accelerating-growth-across-finance-infrastructure-blue-economy</a></p>
+      </div>
+      <span class="eyebrow inner">Story Article</span>
+      <div class="story-article">
+        <p>The High-Income SIDS Paradox argument has a weak spot you have probably run into before: a sceptical funder or peer reviewer can point out that if Seychelles's economy really were as narrow and fragile as the paradox framing suggests, its GNI per capita would not be high enough to trigger the exclusion in the first place. The 2025 tourism figures give you a sharper answer than restating the paradox again.</p>
+        <p>Arrivals grew 13 percent in 2025, and the growth is not simply more of the same European and Indian visitor base. Gulf, wider African, and Asian markets are now expanding as complements to those established sources, according to reporting on Seychelles's 2026/2027 growth trajectory across finance, infrastructure, and the blue economy. That is market diversification happening in real time, inside a sector that still anchors a meaningful share of the country's foreign exchange earnings.</p>
+        <p>This matters for the paradox argument because it separates two things that get conflated in a quick funding pitch: economic narrowness and economic fragility. Seychelles's economy is narrow, concentrated heavily in tourism and tuna, with marine resources contributing an estimated 20 to 30 percent of GDP. But narrow is not static. A sector actively diversifying its own customer base while carrying public debt above 60 percent of GDP is a country doing real work to broaden its resilience within a structurally difficult position, not a country whose narrowness proves it cannot manage its own economy without external rescue.</p>
+        <p>The distinction sharpens the Multidimensional Vulnerability Index case this edition covers elsewhere. An MVI argument built on "Seychelles is too fragile to be excluded from concessional finance" is weaker than one built on "Seychelles is actively diversifying against real structural exposure and needs finance calibrated to that exposure, not blocked by an income metric blind to it." The tourism numbers are evidence for the second framing, which is the more defensible one in front of a finance committee that has heard the fragility argument before and grown sceptical of it.</p>
+        <p>The counterargument, and it is a real one, is that tourism growth driven by new source markets is exactly the kind of statistic that can mask underlying vulnerability rather than resolve it: more visitors from more countries still means more pressure on the same finite reef systems, freshwater supply, and coastal infrastructure that climate change is already stressing. That is true, and it is an argument for pairing the diversification story with a marine spatial planning case, not for dropping the diversification story. Growth without a spatial plan to absorb it responsibly is the version of this argument that actually does prove the sceptics right.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY 5: ACADEMIC DROP CAP ============ -->
+<section id="s5" class="story s-academic">
+  <div class="story-inner">
+    <span class="num">05</span>
+    <span class="eyebrow">Data Sovereignty &amp; Science-to-Policy</span>
+    <h2 class="headline">A peer-reviewed framework for co-producing ocean plans with Indigenous knowledge holders gives HARMONiSE something to cite instead of argue from scratch</h2>
+    <div class="story-body">
+      <div class="why-line">A new peer-reviewed framework for co-producing ocean plans with Indigenous and traditional knowledge holders gives HARMONiSE a citable, tested set of recommendations instead of a principle SHORE would otherwise have to argue from first principles every time.</div>
+      <span class="eyebrow">Story Notes</span>
+      <div class="story-notes dropcap">
+        <p>A paper in npj Ocean Sustainability sets out eight recommendations for co-producing sustainable ocean plans with Indigenous and traditional knowledge holders, covering consent, attribution, benefit-sharing, and how different knowledge systems get represented without being folded into a Western scientific data structure on someone else's terms.</p>
+        <p>This is not a position paper. It is a peer-reviewed, citable framework, which changes what it is useful for: a funding proposal or a HARMONiSE methodology section can reference specific recommendations rather than gesturing at data sovereignty as a value SHORE holds.</p>
+      </div>
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article dropcap">
+        <p>Data sovereignty arguments in ocean governance too often stay at the level of principle: knowledge holders should retain control over how their knowledge is used, consulted communities should benefit from what they contribute, consent should be ongoing rather than a one-time signature. All true, and all difficult to operationalise into an actual project methodology without something more specific to build against. The eight recommendations in this new npj Ocean Sustainability paper are exactly that specificity, covering consent structures, attribution practices, benefit-sharing mechanisms, and representation of knowledge systems on their own terms rather than translated into a format a Western scientific database can more easily ingest.</p>
+        <p>For HARMONiSE, this closes a gap that has been sitting in the framework's design since its earliest drafts. Reconciling satellite-derived and crowd-sourced bathymetry against sparse multibeam ground-truth is the technical half of the problem. The other half, in Seychellois and wider Western Indian Ocean waters, is that a meaningful amount of usable coastal and fisheries knowledge sits with fishers and community members who were never asked to contribute it in a form that respects their authorship over it. A published, peer-reviewed framework for doing that co-production properly means HARMONiSE's data governance section can cite specific recommendations rather than asserting data sovereignty as an aspiration with no operational detail behind it.</p>
+        <p>The practical difference this makes in a funding application is larger than it looks. A reviewer assessing a HARMONiSE proposal against Green Climate Fund or Commonwealth Blue Charter criteria, both of which increasingly weight community engagement and equitable knowledge governance, can verify a citation to a peer-reviewed co-production framework in a way they cannot verify a general statement of values. It converts an ethical commitment into a methodological one, which is the register funding reviewers are actually equipped to assess.</p>
+        <p>The objection worth naming directly: frameworks built from Pacific and Arctic Indigenous data sovereignty case studies do not automatically transfer to Seychellois or wider Western Indian Ocean fishing and coastal communities, whose knowledge systems, colonial histories, and current governance structures differ substantially from the contexts these recommendations were likely drawn from. That is a real limitation, and it is an argument for adapting the framework's eight recommendations to the specific communities SHORE would work with, not for treating them as a template to apply unmodified. The value of a peer-reviewed starting point is that adaptation from something specific is a faster, more defensible process than building a data governance methodology from nothing.</p>
+        <p>Read the paper before the next HARMONiSE proposal draft goes out. Citing it properly, and naming where its recommendations need local adaptation rather than direct adoption, is the difference between a data sovereignty section that reads as considered and one that reads as a box ticked.</p>
+        <p class="footnote">Source: npj Ocean Sustainability, "Co-producing ocean plans with Indigenous and traditional knowledge holders," 2026.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY 6: BIG STAT ============ -->
+<section id="s6" class="story s-stat">
+  <div class="story-inner">
+    <span class="num">06</span>
+    <span class="eyebrow">Hydrospatial Science</span>
+    <h2 class="headline">Global seabed mapping crossed 28.7 percent this year, and a tripling in one regional sea shows what a coordinated push actually looks like</h2>
+    <div class="statblock">
+      <div class="statnum">28.7%</div>
+      <div class="statlabel">Of the world's seafloor now mapped to modern standard, up from 27.3% a year ago</div>
+    </div>
+    <div class="story-body">
+      <div class="why-line">Global seabed mapping crossed 28.7 percent of modern-standard coverage this year, and the ROPME Sea Area's coverage more than tripling in twelve months shows what a coordinated regional push can do for the Western Indian Ocean's own gaps.</div>
+      <span class="eyebrow">Story Notes</span>
+      <div class="story-notes">
+        <p>Seabed 2030's latest update puts global modern-standard seafloor coverage at 28.7 percent, up from 27.3 percent the previous year, roughly 104 million square kilometres, an area larger than two-thirds of the world's land surface. Almost five million square kilometres were added over the past year alone.</p>
+        <p>The ROPME Sea Area, covering the Gulf and adjacent waters, more than tripled its coverage in the same period, from roughly 6.4 percent to 20.5 percent, the sharpest single regional gain in this year's update.</p>
+        <p>That kind of jump does not happen by accident. It happens when a regional coordinating body prioritises a specific gap and directs survey capacity at it deliberately, which is precisely the model the Indo-Pacific Regional Centre's own data sprints, and the GEBCO Symposium this edition covers separately, exist to replicate. <a href="https://ecomagazine.com/news/research/seabed-2030-project-issues-update-on-global-mapping-coverage" class="links-url">ecomagazine.com/news/research/seabed-2030-project-issues-update-on-global-mapping-coverage</a></p>
+      </div>
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>A single percentage point in global seabed coverage sounds small until you convert it into area: the jump from 27.3 to 28.7 percent this year represents almost five million square kilometres of newly mapped seafloor, added to a running total of roughly 104 million square kilometres now surveyed to modern standard, larger than two-thirds of the planet's land surface. Seabed 2030 tracks this number annually as its single clearest measure of progress toward full coverage by 2030.</p>
+        <p>The headline number is useful context. The regional breakdown is the actually instructive part. The ROPME Sea Area, covering the Gulf and its adjacent waters, went from roughly 6.4 percent coverage to 20.5 percent in a single year, more than tripling. That is not incremental survey accumulation. It is what happens when a Regional Centre identifies a known gap and a coordinated push, likely involving national hydrographic offices, commercial survey operators, and crowd-sourced bathymetry contributors working against a shared priority list, closes a meaningful fraction of it deliberately.</p>
+        <p>The Western Indian Ocean, where Seychelles's 1.4 million square kilometre EEZ sits, has not seen a comparable jump in this update. That is not a criticism of any single actor. It is a description of where survey capacity and coordinated prioritisation have and have not been directed this year, and it is the kind of gap that a regional convening, of the sort this edition's Kunming Dialogue and PPIN stories both point toward as structurally missing in this basin, could plausibly close if it existed with the same regularity and mandate.</p>
+        <p>What ROPME's tripling demonstrates, in practical terms, is that a 6 to 20 percent jump in a single year is achievable when the right coordination exists, not a multi-decade proposition. That is a useful number to cite in any HARMONiSE proposal arguing for dedicated Western Indian Ocean survey coordination: the comparison case is not hypothetical, it published this year, in the same GEBCO update cycle.</p>
+        <p>The fair counterpoint is that the ROPME Sea Area is smaller and more contained than the Western Indian Ocean's own coverage gap, and that a tripling from a low base is a different scale of achievement than what would be needed to meaningfully close Seychelles's own surrounding waters gap. That is true numerically, and it does not change the underlying mechanism: coordinated prioritisation moves the needle faster than the same survey effort applied without a shared regional plan. The Indo-Pacific Regional Centre's October data sprint and the GEBCO Symposium in Cartagena are both venues where that kind of prioritisation gets set for the year ahead, and both are covered elsewhere in this edition.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY 7: TERMINAL ============ -->
+<section id="s7" class="story s-terminal">
+  <div class="story-inner">
+    <span class="num">// 07</span>
+    <span class="eyebrow">GeoAI &amp; Remote Sensing</span>
+    <h2 class="headline">GeoAI already segments reef habitat and detects fishing vessels from ordinary satellite imagery. HARMONiSE needs this layer, not a bigger dataset.</h2>
+    <div class="story-body">
+      <div class="why-line">GeoAI workflows already segment coral reef habitat and detect fishing vessels from ordinary satellite imagery, and that automation layer is what turns HARMONiSE from a one-off validation exercise into a running observatory.</div>
+      <span class="eyebrow">Story Notes</span>
+      <div class="story-notes">
+        <p><span class="prompt">$</span> Published GeoAI workflows now run end-to-end: satellite or underwater imagery in, marine ecosystem maps out, using model predictions for tasks including coral reef habitat segmentation, fishing vessel detection and classification for fishing-effort estimation, and marine species and habitat segmentation from underwater imagery.</p>
+        <p><span class="prompt">$</span> The workflow layer, not just the individual models, is the part that matters. ArcGIS-class GIS platforms now support change detection, feature extraction, and multiresolution surface generation from point clouds and 3D meshes built directly from remote-sensing input.</p>
+        <p><span class="prompt">$</span> None of this replaces bathymetric survey. It replaces the manual labour of turning survey and satellite output into usable habitat maps on a repeat cycle, which is the actual bottleneck a small institute like SHORE runs into.</p>
+      </div>
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p><span class="prompt">&gt;</span> The gap between having satellite imagery and having a usable habitat map has always been labour, not data availability. GeoAI workflows documented across recent ISPRS and marine ecosystem monitoring literature close that gap directly: coral reef segmentation from underwater and satellite imagery, automated detection and classification of fishing vessels for estimating fishing effort, and segmentation of marine species and habitats, all running as trained model pipelines rather than manual digitisation.</p>
+        <p><span class="prompt">&gt;</span> What makes this relevant to HARMONiSE specifically is not any single model. It is that the workflow, imagery in, classified map out, is now documented well enough to adapt rather than build from scratch. A complete workflow for generating maps from AI model predictions, published through the ISPRS Archives, sets out exactly the kind of processing pipeline HARMONiSE's validation layer needs: taking satellite-derived bathymetry or coastal habitat imagery and turning it into a structured, repeatable map product instead of a one-time analysis someone has to redo by hand every time new imagery arrives.</p>
+        <p><span class="prompt">&gt;</span> This is the difference between HARMONiSE as a single validated dataset and HARMONiSE as an observatory. A validated dataset answers one question once. An observatory, built on a GeoAI processing layer that runs automatically each time new Copernicus Marine or GEBCO imagery lands, tracks change over time: reef degradation, coastline shift, bathymetric drift in dynamic sediment zones. That is a materially stronger pitch to a funder than a single validation study, because it demonstrates ongoing infrastructure rather than a completed deliverable.</p>
+        <p><span class="prompt">&gt;</span> The honest constraint is compute and technical capacity. Running GeoAI segmentation pipelines on a repeat schedule requires either cloud GIS infrastructure SHORE would need to budget for, or a partnership with an institution that already runs one, likely through Esri's maritime hydrography programme or an academic remote sensing group with existing ArcGIS GeoAI licensing. That is a real cost line, not a reason to skip the automation layer, because the manual alternative, redoing habitat classification by hand for every new imagery pass, does not scale past a single pilot study regardless of how good the underlying bathymetric data is.</p>
+        <p><span class="prompt">&gt;</span> Scope the automation layer into the next HARMONiSE proposal explicitly, with a named compute partner, rather than leaving it as a future phase to figure out after the validation study is funded. Funders read "we will automate this later" as a project that has not actually planned its own sustainability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY 8: BROADSHEET ============ -->
+<section id="s8" class="story s-broadsheet">
+  <div class="story-inner">
+    <span class="num">08</span>
+    <div class="rule-thin"></div>
+    <span class="flag">⚡ REGISTRATION OPEN</span>
+    <span class="eyebrow">Seabed Mapping</span>
+    <h2 class="headline">Registration is open for the GEBCO Symposium in Cartagena, themed exactly on the translation problem SHORE exists to solve</h2>
+    <div class="story-body">
+      <div class="why-line">Registration is open for the GEBCO Symposium in Cartagena this October, themed explicitly on turning a seabed mapping strategy into global ocean action, which is the exact translation problem HARMONiSE and SHORE exist to solve.</div>
+      <span class="eyebrow">Story Notes</span>
+      <div class="story-notes">
+        <div class="cols">
+          <p>The GEBCO Symposium 2026 runs 8 to 9 October in Cartagena, Colombia, at Hotel Capilla del Mar, under the theme "From a Seabed Mapping Strategy to Global Ocean Action." Registration is live now, alongside an open call for contributions.</p>
+          <p>The agenda spans mapping progress, ocean governance, marine spatial planning, biodiversity protection, and innovation in sustainable ocean management, drawing hydrographers, policymakers, researchers, and early-career professionals from across the global ocean-mapping community.</p>
+          <p>The theme itself is the pitch: this is not a data-release event. It is where the mapping community argues about what the data is actually for, which is precisely where a HARMONiSE presentation belongs rather than a purely technical hydrography conference.</p>
+        </div>
+      </div>
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>Conference themes are usually generic enough to mean almost anything. "From a Seabed Mapping Strategy to Global Ocean Action," the theme set for the GEBCO Symposium 2026 in Cartagena this October, is not. It names, directly, the gap between having a mapping strategy, which Seabed 2030 has run since 2017, and having that strategy translate into governance action, marine spatial plans, MPA nominations, blue economy decisions, that actually use the data once it exists.</p>
+        <p>That gap is exactly where HARMONiSE sits conceptually. The framework's premise is not that better bathymetric data alone solves anything. It is that reconciling satellite-derived, crowd-sourced, and sparse multibeam data into something a small-capacity administration can actually act on is a distinct problem from collecting the data in the first place, and one that gets far less institutional attention than data collection does. A symposium explicitly organised around the strategy-to-action gap is a room built for exactly that argument.</p>
+        <p>Registration is open now, running alongside a call for contributions, which means there is a live window to submit HARMONiSE, or a Western Indian Ocean case study built around it, as a presented paper rather than attending purely as an observer. A contributed session at a symposium this specifically themed carries more weight in a subsequent funding narrative than a poster at a general hydrography conference, because it demonstrates the work was judged relevant by the community setting the field's own agenda.</p>
+        <p>The venue and dates, 8 to 9 October in Cartagena, also put this symposium roughly two weeks ahead of the Indo-Pacific Ocean Mapping Data Sprint in Kuala Lumpur, which this edition's coverage of GEBCO's regional coverage gains references separately. Attending or presenting at Cartagena first, then citing whatever traction the presentation gets when engaging the Indo-Pacific Regional Centre's own priority-setting process, is a more credible sequencing than showing up to a working data sprint with no prior visibility in the broader Seabed 2030 community.</p>
+        <p>The realistic constraint is travel cost and timing against an already dense October calendar for anyone tracking both this symposium and the Kuala Lumpur sprint. If only one is feasible, Cartagena's governance-and-action framing is the better fit for a HARMONiSE pitch aimed at funders and policymakers; Kuala Lumpur's data-sprint format is the better fit for a purely technical bathymetric gap-filling conversation. Decide which argument needs making first, and let that decide which room to be in.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY 9: PULL QUOTE ============ -->
+<section id="s9" class="story s-pull">
+  <div class="story-inner">
+    <span class="num">ix.</span>
+    <span class="eyebrow">Hydrospatial Science &amp; Academic Publishing</span>
+    <h2 class="headline">One sea, two years of mooring data, and proof the deep North Atlantic's oxygen supply depends on a single place</h2>
+    <blockquote>The Labrador Sea alone exports more than 27 teramoles of oxygen a year into the deep North Atlantic, exactly matching what the deep-sea life there needs to breathe.</blockquote>
+    <div class="story-body">
+      <span class="eyebrow">Story Notes</span>
+      <div class="story-notes">
+        <p>A Nature Geoscience study, built on two years of continuous data from 60 oxygen sensors moored along the floor of the Labrador and western Irminger seas, finds the Labrador Sea's convection exports over 27 teramoles of oxygen annually into the deep North Atlantic, matching the respiration needs of the deep-sea life there.</p>
+        <p>Earlier work had found the Labrador Sea contributes little to the strength of the Atlantic Meridional Overturning Circulation itself. This study separates that question from oxygen transport, and finds the sea's role in the latter is not marginal at all. It is the primary supply line.</p>
+        <p>The dataset is the first continuous, multi-year oxygen record from moorings of this kind anywhere in the subpolar North Atlantic, which is what makes the finding a measurement result rather than a model inference. <a href="https://www.nature.com/articles/s41561-026-02057-3" class="links-url">nature.com/articles/s41561-026-02057-3</a></p>
+      </div>
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>Oceanography has a recurring problem that anyone doing hydrospatial work recognises immediately: models can suggest a mechanism, but only sustained, continuous measurement can confirm whether that mechanism actually operates at the scale claimed. This new Nature Geoscience study is a clean example of the second kind of evidence. Sixty oxygen sensors, moored along the floor of the Labrador and western Irminger seas from June 2020 to July 2022, produced the first continuous, multi-year oxygen record of its kind anywhere in the subpolar North Atlantic, and the result is more specific than a general "the ocean is important for oxygen" finding.</p>
+        <p>The Labrador Sea exports more than 27 teramoles of oxygen a year into the deep North Atlantic, a figure that matches the respiration demand of the deep-sea ecosystems living there. Simple air-sea gas exchange alone accounts for only about 4.1 teragrams-mole of that annually, meaning the bulk of the deep ocean's oxygen supply is not passive absorption at the surface. It is actively pumped down by winter convection in this one specific sea, acting as the ventilation system for an entire ocean basin's deep-sea life.</p>
+        <p>What makes this worth flagging for a Shorelines audience beyond pure scientific interest is the methodological point underneath it: earlier research had already established that the Labrador Sea contributes relatively little to the strength of the AMOC's overturning circulation itself. If that had been the only question asked, the sea's significance would have been understated substantially. This study asked a different, more specific question, oxygen transport rather than circulation strength, and found the answer was not marginal at all.</p>
+        <p>The argument this supports, and one worth making explicitly when pitching sustained ocean observation over one-off survey campaigns, is that a single well-designed measurement campaign answering the wrong question can miss an ecosystem's actual load-bearing mechanism entirely. HARMONiSE's own design, reconciling multiple data sources against sparse ground-truth rather than relying on a single survey type, is built on the same underlying logic: no single measurement method captures the full picture, and the mechanism that matters most is not always the one the initial hypothesis was testing for.</p>
+        <p>The fair caveat is that a two-year mooring array in the subpolar North Atlantic is a vastly larger and better-funded undertaking than anything a Western Indian Ocean observatory could mount in the near term, and the comparison should not be read as a claim that SHORE needs equivalent infrastructure to produce equivalent insight. The transferable lesson is scope, not scale: sustained, continuous measurement of a specific, well-chosen variable, oxygen here, sediment transport or reef temperature elsewhere, answers questions single survey campaigns structurally cannot.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY 10: LETTERPRESS ============ -->
+<section id="s10" class="story s-letter">
+  <div class="story-inner">
+    <span class="num">X</span>
+    <span class="flag">⚡ WARNING SIGN, THIS SEASON</span>
+    <span class="eyebrow">Climate Risk &amp; Blue Economy</span>
+    <h2 class="headline">Forecasters put the 2026 El Niño on track to cross the "super" threshold by autumn, and that lands before Seychelles's next high season</h2>
+    <div class="story-body">
+      <div class="why-line">Forecasters now put the 2026 El Niño on track to cross the "super" threshold by autumn, peaking in November or December, and that is a direct coral bleaching and fisheries warning for Seychelles's reefs and tuna-dependent economy landing before the next tourist high season.</div>
+      <span class="eyebrow">Story Notes</span>
+      <div class="story-notes">
+        <p>Carbon Brief's latest state-of-the-climate analysis puts 2026 on track as the second-warmest year on record, with a strong, potentially "super," El Niño developing by early autumn. The latest model median estimate puts warming near 2.2°C by September, in super El Niño territory, with the event expected to peak in November or December.</p>
+        <p>That peak timing means its largest warming influence lands on 2027, but the sea surface temperature and coral stress effects begin building now, well ahead of Seychelles's December-to-April high season for both tourism and reef exposure.</p>
+        <p>Historically, El Niño events of this strength have driven severe coral bleaching across the western Indian Ocean, the region Seychelles's marine tourism and near-shore fisheries both depend on directly. <a href="https://www.carbonbrief.org/state-of-the-climate-strong-el-nino-puts-2026-on-track-for-second-warmest-year" class="links-url">carbonbrief.org/state-of-the-climate-strong-el-nino-puts-2026-on-track-for-second-warmest-year</a></p>
+      </div>
+      <span class="eyebrow">Story Article</span>
+      <div class="story-article">
+        <p>Forecast uncertainty around El Niño intensity is usually large enough in early spring that nobody commits to a confident call, and that caveat still applies here. But Carbon Brief's latest analysis is unambiguous about the direction: models are converging on a strong, potentially "super," El Niño developing by early autumn 2026, with a median warming estimate near 2.2°C by September, squarely in the range that historically defines a super El Niño event, and a peak expected in November or December.</p>
+        <p>The timing matters more than the headline classification. A peak in late 2026 means the event's largest warming influence lands on 2027 globally, but sea surface temperature rise and the associated coral stress begin accumulating months before that peak, through the closing months of 2026. For Seychelles, that overlaps directly with the run-up to its December-to-April high season, when reef health and tourism demand are already tightly coupled.</p>
+        <p>The historical comparison is not reassuring. Past strong and super El Niño events, 1997-98 and 2015-16 in particular, drove some of the most severe coral bleaching episodes ever recorded across the western Indian Ocean, with mortality in some reef systems exceeding 90 percent in the worst-hit areas. Seychelles's own reefs, already carrying cumulative stress from prior bleaching cycles and ongoing acidification, are not starting this event from a position of full recovery.</p>
+        <p>This is where the tourism diversification story covered elsewhere in this edition and this El Niño warning intersect uncomfortably. Growing visitor numbers from new source markets is genuine economic progress. A visible bleaching event during the same season that growth is meant to consolidate is the scenario that turns a diversification success into a reputational and ecological setback simultaneously, because reef health is not a background detail for marine tourism, it is the product.</p>
+        <p>The forecast uncertainty is real and worth stating plainly: models this far out have historically struggled to nail down El Niño strength with confidence, and a strong event could still moderate before its projected peak. That uncertainty is an argument for near-term monitoring investment, not for waiting to see what happens. A reef temperature and bleaching monitoring push through the remainder of 2026, whether run through SHORE directly or coordinated with the Seychelles Fishing Authority and existing coral monitoring networks, is the kind of low-cost, high-value response window a forecast like this one actually creates. Watching from a distance and hoping the models moderate is not a strategy a reef-dependent economy can afford to default to twice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  End of today's edition — ten stories, three flagged urgent. Back tomorrow.
+</footer>
+
+</body>
+</html>
