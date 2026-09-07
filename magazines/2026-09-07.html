@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Morning Edition — 7 September 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,600;1,9..144,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0b3d63;
+  --charcoal:#22282c;
+  --slate:#4a5661;
+  --cream:#faf6ee;
+  --offwhite:#f5f7f2;
+  --sky-pale:#e9f4fb;
+  --sky-bold:#5cb9ec;
+  --sky-mid:#bfe3f7;
+  --teal:#166e63;
+  --teal-bold:#137a6c;
+  --teal-pale:#e1f3ee;
+  --forest:#1c5c3a;
+  --sage:#c9dcb8;
+  --sage-pale:#eef5e6;
+  --mint-pale:#e8f7ef;
+  --sun:#ffce3c;
+  --sun-soft:#ffe28a;
+  --gold:#e2a63c;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--offwhite);
+  font-family:'Inter',sans-serif;
+  color:var(--charcoal);
+  font-size:2rem;
+  line-height:1.55;
+}
+h1,h2,h3,h4{font-family:'Fraunces',serif;margin:0;}
+a{color:var(--navy);}
+.wrap{max-width:1100px;margin:0 auto;padding:0 2.2rem;}
+
+/* MASTHEAD */
+.masthead{
+  background:var(--cream);
+  border-bottom:6px solid var(--navy);
+  padding:3.5rem 0 2.5rem;
+  text-align:center;
+}
+.masthead .kicker{
+  font-family:'Inter',sans-serif;
+  letter-spacing:0.35em;
+  text-transform:uppercase;
+  font-size:1.1rem;
+  color:var(--teal);
+  font-weight:700;
+}
+.masthead h1{
+  font-size:5.5rem;
+  font-weight:900;
+  color:var(--navy);
+  margin:0.4rem 0 0.6rem;
+  letter-spacing:-0.01em;
+}
+.masthead .date{
+  font-size:1.6rem;
+  color:var(--slate);
+  font-weight:500;
+}
+
+/* NAV */
+.jumpnav{
+  position:sticky; top:0; z-index:50;
+  background:var(--navy);
+  padding:1.4rem 0;
+  box-shadow:0 2px 10px rgba(11,61,99,0.25);
+}
+.jumpnav .wrap{display:flex;flex-wrap:wrap;gap:0.9rem 1.4rem;align-items:center;}
+.jumpnav .label{color:var(--sun);font-weight:800;font-size:1.05rem;letter-spacing:0.12em;text-transform:uppercase;margin-right:0.4rem;}
+.jumpnav a{
+  color:#fff;
+  text-decoration:none;
+  font-size:1.05rem;
+  font-weight:600;
+  border-bottom:2px solid transparent;
+  padding-bottom:2px;
+}
+.jumpnav a:hover{border-bottom-color:var(--sun);}
+.jumpnav .num{color:var(--sun);font-weight:800;margin-right:0.25rem;}
+
+/* SHARED STORY SCAFFOLD */
+.story{padding:5.5rem 0;position:relative;overflow:hidden;}
+.story-inner{max-width:1100px;margin:0 auto;padding:0 2.2rem;position:relative;z-index:2;}
+.eyebrow{
+  font-family:'Inter',sans-serif;
+  font-size:1.05rem;
+  font-weight:800;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--teal);
+  margin:2.4rem 0 0.9rem;
+}
+.eyebrow.article{color:var(--forest);}
+.lede{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:700;
+  font-size:2.3rem;
+  line-height:1.35;
+  color:var(--teal);
+  margin:1.6rem 0 2rem;
+}
+.notes p, .article p{margin:0 0 1.3rem;}
+.notes{font-size:2rem;}
+.article{
+  font-size:1.85rem;
+  max-width:780px;
+  color:var(--charcoal);
+}
+.article p:first-of-type::first-letter{
+  font-weight:700;
+}
+.linkline{font-weight:600;word-break:break-word;}
+.flag{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:var(--sun);
+  color:var(--navy);
+  font-weight:800;
+  font-size:1.15rem;
+  padding:0.55rem 1.2rem;
+  border-radius:999px;
+  margin-bottom:1.6rem;
+  letter-spacing:0.04em;
+}
+.headline{
+  font-size:3.6rem;
+  line-height:1.08;
+  font-weight:700;
+  color:var(--navy);
+  margin:0.6rem 0 1.2rem;
+}
+
+/* 01 HERO */
+.s-hero{background:var(--sky-bold);}
+.s-hero .headline{font-size:4.6rem;font-weight:900;color:var(--navy);max-width:900px;}
+.s-hero .numeral{
+  font-family:'Fraunces',serif;font-weight:300;font-size:11rem;color:rgba(11,61,99,0.15);
+  position:absolute;top:1rem;right:2rem;line-height:1;z-index:1;
+}
+.s-hero .kick{color:var(--navy);font-weight:800;letter-spacing:0.18em;text-transform:uppercase;font-size:1.1rem;}
+
+/* 02 SUNBEAM ALERT */
+.s-sun{background:var(--sun);}
+.s-sun .headline{font-style:italic;font-weight:800;color:var(--navy);}
+.s-sun .stamp{
+  display:inline-block;
+  border:5px solid var(--navy);
+  color:var(--navy);
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-size:2.6rem;
+  padding:0.3rem 1.1rem;
+  transform:rotate(-4deg);
+  margin-bottom:1.4rem;
+  background:rgba(255,255,255,0.35);
+}
+.s-sun .flag{background:var(--navy);color:var(--sun);}
+
+/* 03 TERMINAL */
+.s-term{background:var(--mint-pale);font-family:'JetBrains Mono',monospace;color:var(--forest);}
+.s-term .headline{font-family:'JetBrains Mono',monospace;color:var(--forest);font-size:3rem;}
+.s-term .lede{font-family:'JetBrains Mono',monospace;font-style:normal;color:var(--forest);border-left:5px solid var(--forest);padding-left:1.4rem;}
+.s-term .notes,.s-term .article{font-family:'JetBrains Mono',monospace;font-size:1.55rem;color:#123d2c;}
+.s-term .eyebrow{font-family:'JetBrains Mono',monospace;color:var(--forest);}
+.s-term .numeral{font-family:'JetBrains Mono',monospace;color:var(--forest);opacity:0.35;font-size:2.4rem;}
+.s-term .prompt::before{content:"$ ";color:var(--teal);}
+
+/* 04 BIG STAT */
+.s-stat{background:var(--teal-pale);text-align:center;}
+.s-stat .headline{text-align:left;}
+.s-stat .bignum{
+  font-family:'Fraunces',serif;font-weight:900;font-size:8rem;color:var(--teal-bold);line-height:1;margin:1rem 0;
+}
+.s-stat .bignum small{display:block;font-family:'Inter',sans-serif;font-size:1.3rem;font-weight:700;color:var(--navy);letter-spacing:0.1em;text-transform:uppercase;margin-top:0.8rem;}
+.s-stat .stat-row{display:flex;gap:3rem;justify-content:center;flex-wrap:wrap;margin:2rem 0 1rem;}
+.s-stat .stat-item{text-align:center;}
+.s-stat .stat-item .n{font-family:'Fraunces',serif;font-weight:800;font-size:3.2rem;color:var(--navy);}
+.s-stat .stat-item .l{font-size:1.2rem;color:var(--slate);text-transform:uppercase;letter-spacing:0.08em;}
+.s-stat .lede,.s-stat .notes,.s-stat .article{text-align:left;}
+.s-stat .article{margin:0 auto;}
+
+/* 05 ACADEMIC DROP CAP */
+.s-academic{background:var(--cream);}
+.s-academic .dropcap p:first-of-type::first-letter{
+  font-family:'Fraunces',serif;
+  font-weight:700;
+  font-size:6.5rem;
+  float:left;
+  line-height:0.8;
+  padding-right:0.6rem;
+  padding-top:0.3rem;
+  color:var(--navy);
+}
+.s-academic .headline{font-weight:400;font-style:italic;}
+.s-academic .footnote{
+  font-size:1.3rem;color:var(--slate);border-top:1px solid #ccc;padding-top:1rem;margin-top:2rem;
+  font-family:'Inter',sans-serif;
+}
+.s-academic .numeral{font-family:'Fraunces',serif;font-weight:300;font-size:2.4rem;color:var(--navy);}
+
+/* 06 COASTAL */
+.s-coastal{background:var(--sky-pale);border-top:10px solid var(--forest);}
+.s-coastal .cols{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2rem;}
+.s-coastal .numeral{
+  display:inline-block;font-family:'Fraunces',serif;font-weight:600;font-size:2.4rem;color:var(--forest);
+  border-bottom:4px solid var(--forest);padding-bottom:0.2rem;margin-bottom:1rem;
+}
+@media (max-width:760px){.s-coastal .cols{grid-template-columns:1fr;}}
+
+/* 07 PULL QUOTE */
+.s-quote{background:var(--sage-pale);}
+.s-quote blockquote{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-style:italic;
+  font-size:3.4rem;
+  line-height:1.25;
+  color:var(--forest);
+  margin:2rem 0;
+  border-left:8px solid var(--forest);
+  padding-left:2rem;
+}
+.s-quote .numeral{font-family:'Fraunces',serif;font-weight:300;font-size:2.2rem;color:var(--forest);
+  border:3px solid var(--forest);border-radius:50%;width:4rem;height:4rem;display:flex;align-items:center;justify-content:center;}
+
+/* 08 BROADSHEET */
+.s-broad{background:var(--offwhite);}
+.s-broad .rule{border:none;border-top:3px solid var(--teal);border-bottom:1px solid var(--teal);height:5px;margin:1.4rem 0 2.2rem;}
+.s-broad .cols3{column-count:2;column-gap:3rem;}
+.s-broad .article{column-count:1;max-width:640px;}
+.s-broad .numeral{font-family:'Fraunces',serif;font-weight:700;border:2px solid var(--navy);padding:0.3rem 0.9rem;font-size:1.6rem;color:var(--navy);}
+@media (max-width:760px){.s-broad .cols3{column-count:1;}}
+
+/* 09 COLOUR FIELD */
+.s-field{background:var(--teal-bold);color:#fff;}
+.s-field .headline{color:#fff;font-family:'Inter',sans-serif;font-weight:800;font-size:3.4rem;}
+.s-field .lede{color:var(--sun-soft);}
+.s-field .eyebrow{color:var(--sun-soft);}
+.s-field .eyebrow.article{color:#fff;}
+.s-field .notes, .s-field .article{color:#f2fbf8;}
+.s-field a{color:var(--sun-soft);}
+.s-field .numeral{font-family:'Inter',sans-serif;font-weight:900;font-size:5rem;color:rgba(255,255,255,0.25);}
+.s-field .flag{background:var(--sun);color:var(--navy);}
+
+/* 10 LETTERPRESS */
+.s-press{
+  background:var(--cream);
+  background-image:
+    repeating-linear-gradient(0deg, rgba(11,61,99,0.02) 0px, rgba(11,61,99,0.02) 1px, transparent 1px, transparent 3px);
+}
+.s-press .headline{font-weight:600;text-shadow:0.5px 0.5px 0 rgba(11,61,99,0.15);}
+.s-press .numeral{
+  font-family:'Fraunces',serif;font-weight:700;font-size:2.2rem;color:var(--navy);
+  border-bottom:3px double var(--navy);padding-bottom:0.2rem;
+}
+.s-press .article,.s-press .notes{font-family:'Fraunces',serif;}
+
+footer{
+  background:var(--navy);
+  color:#fff;
+  text-align:center;
+  padding:3.5rem 2rem;
+  font-size:1.3rem;
+}
+footer .sig{font-family:'Fraunces',serif;font-style:italic;font-size:1.7rem;color:var(--sun-soft);margin-bottom:0.6rem;}
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="kicker">Shorelines &middot; SHORE Institute</div>
+  <h1>Morning Edition</h1>
+  <div class="date">Monday, 7 September 2026</div>
+</div>
+
+<nav class="jumpnav">
+  <div class="wrap">
+    <span class="label">Jump to story</span>
+    <a href="#s01"><span class="num">01</span>⚡ Six Weeks to Kuala Lumpur</a>
+    <a href="#s02"><span class="num">02</span>⚡ The Incubator's Next Round</a>
+    <a href="#s03"><span class="num">03</span>Forty Thousand Dollars, One Catch</a>
+    <a href="#s04"><span class="num">04</span>A Sixty-Billion-Dollar Sector</a>
+    <a href="#s05"><span class="num">05</span>Africa's Blue Economy Gets a Report Card</a>
+    <a href="#s06"><span class="num">06</span>Data Sovereignty Becomes Law</a>
+    <a href="#s07"><span class="num">07</span>Ocean Science Needs a Different Shape</a>
+    <a href="#s08"><span class="num">08</span>Australia Writes the Law First</a>
+    <a href="#s09"><span class="num">09</span>The Algorithm Reads the Reef</a>
+    <a href="#s10"><span class="num">10</span>Sixty-One Parties, One Pathway</a>
+  </div>
+</nav>
+
+<!-- STORY 01 — HERO -->
+<section class="story s-hero" id="s01">
+  <div class="numeral">01</div>
+  <div class="story-inner">
+    <div class="flag">⚡ ACTIONABLE — REGISTRATION LIVE</div>
+    <div class="kick">Hydrospatial Science</div>
+    <h2 class="headline">Six Weeks to Kuala Lumpur</h2>
+    <p class="lede">This is a working data sprint, not a symposium, and it is the closest, most immediately useful room the Ocean Mapping Hub has to walk into before Seabed 2030's global gathering in Cartagena the same month.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="notes">
+      <p>Registration is now live for the Seabed 2030 Indo-Pacific Ocean Mapping Meeting and Data Sprint, running 20 to 22 October 2026 in Kuala Lumpur. It sits six weeks after the flagship Seabed 2030 Symposium in Cartagena, Colombia, on 8 and 9 October, but it is a different kind of event entirely. A symposium is a programme of talks. A data sprint is a working session where regional teams sit down and actually process and contribute bathymetric survey data together, against a shared target and a shared deadline.</p>
+      <p>That format matters more than the venue. Whoever spends three days in that room shapes which regional datasets get folded into the next GEBCO grid update and whose processing conventions become the default the rest of the region copies. The western Indian Ocean has historically been thinner on the GEBCO coverage map than the Gulf or the western Pacific, and a data sprint is exactly the low-cost, high-leverage format where that gap gets closed by turning up with whatever survey data the Ocean Mapping Hub already holds, not by commissioning new fieldwork first.</p>
+      <p>Confirm the registration deadline and delegate slots with the Seabed 2030 secretariat this week, given how close the dates now sit. <a class="linkline" href="https://seabed2030.org/">seabed2030.org</a></p>
+    </div>
+
+    <div class="eyebrow article">Story Article</div>
+    <div class="article">
+      <p>A symposium and a data sprint sound like the same category of event until you sit in both, and the difference is exactly the one that decides whether a small hub's trip produces a slide deck or a dataset. The Seabed 2030 Symposium in Cartagena, 8 to 9 October, is the flagship gathering: national hydrographic offices, major research institutions, and the Nippon Foundation-GEBCO leadership presenting coverage strategy and partnership models at the programme level. It is the room to be seen in. The Indo-Pacific Ocean Mapping Meeting and Data Sprint in Kuala Lumpur, 20 to 22 October, is the room to actually work in.</p>
+      <p>A data sprint format means regional teams bring whatever bathymetric data they hold, in whatever state of processing it is in, and spend the three days working alongside GEBCO technical staff to bring it up to a submission standard. That is a fundamentally different value proposition for a small institute than a conference talk. It does not require a finished, polished dataset walking in the door. It requires showing up with something real, even partial, and the technical relationships built while processing it together are worth more, later, than a name badge from a plenary session.</p>
+      <p>The regional case for treating this as a priority rather than a nice-to-have rests on where the coverage gaps still sit. Global ocean floor mapping to modern standards has crossed the quarter mark, but coverage is deeply uneven by region, and past cycles have shown that concentrated regional campaigns, not organic accumulation, are what move a region's number. A Gulf-focused push more than tripled the ROPME Sea Area's mapped coverage in a single cycle. There is no structural reason a similarly deliberate western Indian Ocean effort, anchored by whatever the Ocean Mapping Hub can bring to Kuala Lumpur, could not do the same for this region specifically, and an Indo-Pacific-focused data sprint is a far more natural entry point for that than a global symposium built around larger, better-resourced delegations.</p>
+      <p>The honest constraint is timing and cost. Six weeks is a short runway to arrange travel, and a data sprint is only as useful as the dataset a delegate actually carries into it, which means the immediate task is inventorying what the Hub already has in a state fit to bring, not waiting to generate something new. If nothing is ready to process collaboratively, the trip still has value as a relationship-building exercise ahead of a future cycle, but it stops being the six-week, urgent-window story it currently is.</p>
+      <p>The concrete move this week is threefold: confirm the registration and delegate process directly with the Seabed 2030 secretariat, take stock of what bathymetric data the Ocean Mapping Hub can realistically bring in a form worth processing on-site, and decide, honestly, whether Kuala Lumpur or a later cycle is the more credible use of this particular six-week window.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 02 — SUNBEAM ALERT -->
+<section class="story s-sun" id="s02">
+  <div class="story-inner">
+    <div class="flag">⚡ ACTIONABLE — NEXT CALL OPENING</div>
+    <div class="stamp">02</div>
+    <div class="eyebrow" style="color:var(--navy);">Funding &amp; Blue Economy</div>
+    <h2 class="headline">The Incubator's Next Round</h2>
+    <p class="lede" style="color:var(--navy);">The Commonwealth Blue Charter Project Incubator already has Seychelles running one live project, and its next funding round opening this year is the fastest route to turning that existing relationship into a second one.</p>
+
+    <div class="eyebrow" style="color:var(--navy);">Story Notes</div>
+    <div class="notes" style="color:var(--navy);">
+      <p>Seychelles is one of four countries, alongside Barbados, Kenya, and Kiribati, currently implementing projects under the Commonwealth Blue Charter Project Incubator, addressing marine conservation challenges spanning plastic pollution reduction, coastal fisheries, blue carbon, and monitoring and mapping. Seychelles' own project is an 18-month monitoring programme tracking plastic pollution in rivers on Mahé, run in partnership with The Ocean Project, informing policy and raising awareness to protect freshwater and coastal ecosystems.</p>
+      <p>The next call for proposals under the Incubator is scheduled to open in mid-2026. Given where the calendar now sits, that window is either open or close to it. The Incubator's named theme list, monitoring and mapping explicitly included, is a closer technical match to SHORE's actual capability than the plastics-monitoring project currently running under Seychelles' name, which suggests a second, more technically distinct proposal is worth scoping rather than assuming the existing relationship covers the ground SHORE would want to cover.</p>
+      <p>Confirm the call's current status and submission process directly with the Commonwealth Blue Charter secretariat and with Seychelles' Blue Economy focal point this week.</p>
+    </div>
+
+    <div class="eyebrow" style="color:var(--navy);">Story Article</div>
+    <div class="article" style="color:var(--navy);">
+      <p>Being an existing implementing country under a funding mechanism is worth more than most applicants realise, and it is worth checking directly whether that advantage is being used. Seychelles already sits inside the Commonwealth Blue Charter Project Incubator's current cohort, running an 18-month Mahé river plastics monitoring programme with The Ocean Project. That relationship means the Incubator secretariat, the Commonwealth Secretariat's Blue Economy team, and whichever Seychelles government focal point manages the existing project already have a working channel open. A new proposal from the same country, arriving through that channel, starts from a position no first-time applicant gets.</p>
+      <p>What makes the timing worth acting on now is that the Incubator's next call for proposals is slated to open in mid-2026, which by September means it has either already opened or is imminent. Funding calls with soft or unpublicised opening dates are exactly the kind that get missed by organisations waiting for a formal public announcement rather than asking the secretariat directly. Given that Seychelles is already a known implementing country, a direct enquiry costs little and risks nothing.</p>
+      <p>The more interesting question is what to actually propose. The Incubator's named scope, plastic pollution reduction, coastal fisheries, blue carbon, and monitoring and mapping, is broader than the single theme Seychelles' current project addresses. Monitoring and mapping is the theme that sits most directly inside SHORE's technical mandate, and it is not the theme the existing Mahé project covers. That is a genuine opening rather than a reason to assume the ground is already claimed: a mapping-focused proposal, built around HARMONiSE or the Ocean Mapping Hub's existing capability, would complement rather than duplicate the current plastics work, and could plausibly run as a second, concurrent Seychelles project if the Incubator's rules permit more than one live project per country.</p>
+      <p>The honest caveat is that this last point is an assumption, not a confirmed fact. Whether the Incubator caps participation at one live project per country, and what the actual mid-2026 call's specific thematic priorities and funding ceiling look like this round, are details that need direct confirmation rather than inference from last year's programme description. Proposing a project against an assumed set of rules, only to find a one-project-per-country limit already in force, wastes the exact advantage this story is arguing to use.</p>
+      <p>The concrete step is a direct call this week to the Commonwealth Blue Charter Project Incubator secretariat and to Seychelles' Blue Economy Department, asking three specific questions: is the mid-2026 call open now, can a second concurrent project run alongside the existing Mahé programme, and what would a monitoring-and-mapping proposal need to demonstrate to be competitive against this round's stated priorities. Everything else is speculation until those three answers come back.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 03 — TERMINAL -->
+<section class="story s-term" id="s03">
+  <div class="story-inner">
+    <span class="numeral">03</span>
+    <div class="eyebrow">Funding &amp; Innovation</div>
+    <h2 class="headline">Forty Thousand Dollars, One Catch</h2>
+    <p class="lede">A fully selected cohort still tells you exactly what UNDP is willing to fund at small scale, and that is worth mapping against a SHORE pilot before the next call opens.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="notes">
+      <p class="prompt">UNDP's Ocean Innovation Challenge, backed by Sweden and Norway, has announced its latest cohort: 13 new innovators across Small Island Developing States and Least Developed Countries, each receiving up to US$40,000 in financial support plus six months of structured mentorship.</p>
+      <p class="prompt">This round's 13 places are already filled. That makes the programme a benchmark to study now, not an open call to apply to this week.</p>
+      <p class="prompt">The award architecture, a capped grant plus mentorship rather than open-ended funding, is designed for a discrete, scoped pilot, not for financing standing infrastructure like a mapping hub.</p>
+    </div>
+
+    <div class="eyebrow article">Story Article</div>
+    <div class="article">
+      <p>Every funding programme teaches you something about what a funder is actually willing to back, and the useful lesson from UNDP's Ocean Innovation Challenge is not this cohort's list of thirteen names, most of which will not be public in useful detail. It is the shape of the award itself: up to US$40,000, paired with six months of mentorship, backed jointly by Sweden and Norway, aimed at SIDS and LDC innovators. That is a small-pilot instrument, not an infrastructure instrument, and treating it as the latter would be a scoping mistake before a single application is drafted.</p>
+      <p>The honest starting point is that this specific round is closed. Thirteen innovators have already been selected. There is no value in framing this as an open call, and doing so would be exactly the kind of scaffolded, false urgency worth naming and dropping rather than dressing up as news. What has value is the programme's recurrence: a Sweden-and-Norway-backed cohort mechanism with a defined award size does not run once and disappear, and the realistic task is finding out when the next call opens, not treating this one as live.</p>
+      <p>What the award size actually tells you matters more than the deadline. US$40,000 plus mentorship is enough to fund a tightly scoped pilot: validating one satellite-derived bathymetry workflow against a specific Seychelles reef flat, for instance, or running a single GeoAI coral classification model against a discrete, already-collected imagery set. It is not enough to fund a mapping hub's core operating costs, nor should a proposal try to stretch it that far. The applicants who get funded through instruments like this are usually the ones who scoped a single, demonstrable outcome rather than a slice of a larger programme.</p>
+      <p>The six months of mentorship is arguably worth more than the cash for an institute at SHORE's stage. Structured mentorship from a UNDP-run innovation programme, with Nordic donor backing, is a channel into a network of SIDS and LDC innovators working the same problem from different geographies, which is exactly the kind of peer comparison that produced the Comoros blue economy policy story worth reading last week. That network value does not show up in the grant ledger, but it compounds.</p>
+      <p>The realistic next step is not an application. It is two enquiries: first, to UNDP's Ocean Innovation Challenge team directly, asking when the next cohort's call opens and what its eligibility and scoping expectations look like; second, internally, identifying one specific, demonstrable pilot, sized to a US$40,000 budget and a six-month mentorship window, that SHORE could credibly propose the moment that call does open. Having the pilot scoped before the call opens is the difference between a strong application written in a week and a weak one assembled after a deadline is already visible.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 04 — BIG STAT -->
+<section class="story s-stat" id="s04">
+  <span class="numeral" style="color:var(--teal-bold);position:absolute;top:2rem;left:2rem;">04</span>
+  <div class="story-inner">
+    <div class="eyebrow">GeoAI &amp; Spatial Data</div>
+    <h2 class="headline">A Sixty-Billion-Dollar Sector</h2>
+    <div class="bignum">$62.88B<small>projected global geospatial intelligence market, 2030</small></div>
+    <div class="stat-row">
+      <div class="stat-item"><div class="n">$37.13B</div><div class="l">2025 baseline</div></div>
+      <div class="stat-item"><div class="n">~11%</div><div class="l">implied annual growth</div></div>
+      <div class="stat-item"><div class="n">5 yrs</div><div class="l">to projected figure</div></div>
+    </div>
+    <p class="lede">$62.88 billion is what the market believes GeoAI-driven mapping will be worth by 2030, and that scale of capital is exactly what will decide whose data standards and platforms the Ocean Mapping Hub ends up having to interoperate with.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="notes">
+      <p>The global geospatial intelligence market is projected to grow from US$37.13 billion in 2025 to US$62.88 billion by 2030, driven largely by GeoAI platforms that automate image interpretation and predictive spatial analytics. High-resolution satellites, AI, and digital infrastructure are converging into what industry commentary is now calling a real-time environmental tracking layer for the planet.</p>
+      <p>This growth sits alongside, not apart from, the Open Geospatial Consortium's Marine Domain Working Group, still developing its Federated Marine Spatial Data Infrastructure standard, and the 2026 AAG Symposium on GeoAI and Deep Learning, held in San Francisco in March, where vision foundation models and multimodal spatial architectures were a central theme. Money and standards are moving in the same direction at the same time, which is the combination worth watching closely rather than separately.</p>
+    </div>
+
+    <div class="eyebrow article">Story Article</div>
+    <div class="article">
+      <p>A market forecast is not a fact, and it is worth naming that before leaning on this figure for anything. Geospatial intelligence market sizing reports are produced by research firms with a commercial interest in the sector looking large and growing, and a projected near-doubling from US$37.13 billion to US$62.88 billion over five years should be read as an industry's confident story about itself, not a verified outcome. That caveat stated, the direction of travel, more capital, more GeoAI platforms, more automated spatial analytics tooling reaching commercial maturity, is consistent across every source covering this space, not just the ones with a stake in the number.</p>
+      <p>What that direction means for an institute the scale of SHORE is a genuine two-sided proposition. On one side, a fast-growing commercial GeoAI sector means cheaper, more capable off-the-shelf tools: automated classification models, satellite tasking services, and analysis platforms that would have required custom development a few years ago are increasingly available as commercial products, lowering the technical floor for what a small hub can build without a large engineering team. On the other side, a sector this size moves fast enough that the platforms and data formats a handful of well-capitalised vendors settle on can become de facto standards well before a body like the OGC's Marine Domain Working Group finishes its own federated, open standard.</p>
+      <p>That is the real stake in watching the Federated Marine Spatial Data Infrastructure work continue in parallel with this market growth. A federated standard, built to let independently governed nodes like the Ocean Mapping Hub interoperate without conforming to one dominant platform's proprietary schema, only stays relevant if it reaches usable maturity before commercial GeoAI vendors' proprietary formats become the path of least resistance for everyone integrating marine spatial data. Money moving faster than standards bodies is not a new problem, but it is worth naming plainly here rather than assuming the open, federated version wins by default.</p>
+      <p>The practical implication for SHORE is procurement discipline as much as technology strategy. Every commercial GeoAI tool or platform adopted now, while the market is still consolidating, is a small vote for whichever data format and licensing model that vendor uses. Choosing tools that can export to and ingest from open, FAIR-and-CARE-compatible formats, rather than tools that lock survey data into a single vendor's proprietary pipeline, costs little now and avoids a costly migration later, once the sector's growth curve has picked its winners.</p>
+      <p>The concrete move is not urgent in the way a funding deadline is, but it is worth doing before the next significant tool purchase or partnership decision: check any GeoAI platform under consideration for the Ocean Mapping Hub against whether it can export data in formats compatible with the OGC's emerging federated standard, rather than assuming compatibility can be sorted out later.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 05 — ACADEMIC DROP CAP -->
+<section class="story s-academic" id="s05">
+  <div class="story-inner dropcap">
+    <span class="numeral">05</span>
+    <div class="eyebrow">Blue Economy Finance</div>
+    <h2 class="headline">Africa's Blue Economy Gets a Report Card</h2>
+    <p class="lede">This is the first continent-wide statistical baseline Africa's blue economy has had, and where Seychelles lands in it will frame how the next regional funder reads your government's proposals, whatever that placement turns out to be.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="notes">
+      <p>UNDP published its "State of the Africa Blue Economy" Strategic Synthesis in July 2026, a continent-wide report consolidating data on Africa's blue economy sector, including its Small Island Developing States. Seychelles sits within the same UNDP-GEF African SIDS transformation cohort the report draws on, alongside Cabo Verde, Comoros, Guinea-Bissau, Mauritius, and São Tomé and Príncipe.</p>
+      <p>The report's specific findings on where Seychelles ranks against its African SIDS peers, and what benchmarks it sets for blue economy investment, governance capacity, or climate resilience, are not summarised in what is available here. That detail needs a direct read of the document itself before it gets cited or used in any proposal or Shorelines piece.</p>
+    </div>
+
+    <div class="eyebrow article">Story Article</div>
+    <div class="article">
+      <p>A continent-wide synthesis report is a different kind of document from a single-country policy announcement, and it is worth being precise about what makes it useful before assuming what it says. UNDP's "State of the Africa Blue Economy" Strategic Synthesis, published in July 2026, is the first attempt at a consolidated statistical baseline across Africa's blue economy sector, built to let governments, funders, and researchers compare countries against a common set of measures rather than relying on each nation's own self-reported figures.</p>
+      <p>The reason this belongs in this edition rather than being filed as generic regional news is the cohort structure underneath it. Seychelles sits inside the same UNDP-GEF African SIDS transformation project as Cabo Verde, Comoros, Guinea-Bissau, Mauritius, and São Tomé and Príncipe, the identical grouping this newsletter has tracked before through the lens of Comoros's own blue economy policy. A synthesis report drawing on data from that same cohort is very likely to include comparative figures across exactly those six states, which would make it the first place any of them can see, in one document, how their own blue economy indicators stack up against their direct peers rather than against a generic global average.</p>
+      <p>What this piece cannot responsibly do is tell you what that comparison actually shows. The available material confirms the report exists, its publication date, and its continental scope; it does not summarise Seychelles' specific position, ranking, or the report's headline findings for African SIDS in particular. Writing as though those details were known would be inventing content that looks authoritative and is not, which is exactly the failure mode worth avoiding here. The honest state of this story is: a significant reference document has landed, and its content is not yet in hand.</p>
+      <p>That makes the value of this story almost entirely procedural rather than analytical. A comparative baseline report covering your direct peer cohort is worth reading before, not after, it gets cited by a funder, a journalist, or a peer institution in a context where you would rather have read it first. Reports like this also tend to set the reference figures that grant applications and diplomatic briefings quietly assume readers already know, and being caught not having read the baseline everyone else is working from is a worse position than the ten minutes it takes to request and skim it.</p>
+      <p>The concrete step is straightforward: request the full "State of the Africa Blue Economy" Strategic Synthesis document directly, read the sections covering Seychelles and its African SIDS cohort specifically, and flag anything in it worth a follow-up Shorelines piece or a correction to how Seychelles' own blue economy narrative gets presented externally. This is a case where the honest move is doing the reading before drawing the conclusion, not the other way round.</p>
+    </div>
+    <div class="footnote">Sources: UNDP, "State of the Africa Blue Economy" Strategic Synthesis, July 2026; UNDP-GEF African SIDS transformation project documentation.</div>
+  </div>
+</section>
+
+<!-- STORY 06 — COASTAL -->
+<section class="story s-coastal" id="s06">
+  <div class="story-inner">
+    <span class="numeral">06</span>
+    <div class="eyebrow" style="margin-top:0;">Data Sovereignty</div>
+    <h2 class="headline">Data Sovereignty Becomes Law</h2>
+    <p class="lede">Western Australia has just turned data sovereignty from an academic principle into a mandatory government policy, and that is the first hard legislative precedent worth citing when SHORE's own data-sharing agreements need an authority clause, not just an access clause.</p>
+
+    <div class="cols">
+      <div>
+        <div class="eyebrow">Story Notes</div>
+        <div class="notes">
+          <p>The Government of Western Australia implemented a mandatory Aboriginal Data Governance Policy in May 2025, formally recognising Aboriginal rights to govern the collection, ownership, and use of data about Aboriginal people, communities, and country. It is one of the first instances of CARE-style data sovereignty principles, Collective benefit, Authority to control, Responsibility, and Ethics, being written into binding government policy rather than left as voluntary best practice.</p>
+          <p>Parallel research on co-producing ocean plans with Indigenous and traditional knowledge holders, published in npj Ocean Sustainability, finds that even well-intentioned marine governance processes often reproduce power inequities and colonial legacies unless authority over data and decision-making, not just consultation, is built into the process design from the start.</p>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow article">Story Article</div>
+        <div class="article">
+          <p>Principles are cheap to cite and expensive to enforce, which is why a government actually legislating one is worth more attention than another paper describing it. CARE, Collective benefit, Authority to control, Responsibility, and Ethics, has circulated in ocean science and Indigenous data governance literature for years as the necessary complement to the more familiar FAIR standard, Findable, Accessible, Interoperable, Reusable. FAIR tells you a dataset can be found and used. CARE tells you who gets to decide how. Western Australia's Aboriginal Data Governance Policy, made mandatory across government in May 2025, is the first clear case of that distinction being written into binding law rather than left as a framework researchers are encouraged to adopt voluntarily.</p>
+          <p>The direct transferability is limited, and it is worth naming that plainly rather than overselling the parallel. Western Australia's policy governs data about Aboriginal people, communities, and country within an Australian domestic legal and constitutional context that has no equivalent structure in Seychelles. It cannot simply be copied. What transfers is something narrower and still useful: proof that a government, not just a research consortium or an NGO, has judged CARE-style authority requirements important enough to make mandatory rather than optional, and a working example of what the policy language actually looks like once it moves from principle to statute.</p>
+          <p>That precedent matters directly for how HARMONiSE and SHORE structure external data-sharing agreements. Every agreement that shares Seychelles-collected marine or spatial data with an international partner, a university, a UN body, or a commercial platform, currently has to argue for an authority clause on principle alone, against a partner's likely default of FAIR-only terms that grant access without granting continuing control. Being able to point to a real government, not a research paper, that has already made authority-over-data a legal requirement changes that negotiation from an abstract ask to a documented, adoptable model.</p>
+          <p>The npj Ocean Sustainability research on co-producing ocean plans adds the harder-edged caveat underneath all of this: policy adoption does not automatically fix power imbalances in practice. Even processes explicitly designed to include Indigenous and traditional knowledge holders can end up reproducing the same colonial-era power structures if consultation is treated as sufficient and genuine decision-making authority is not actually transferred. That is a warning worth taking seriously for SHORE's own community and stakeholder engagement, not just for how it negotiates with outside partners: a data governance clause that looks correct on paper still needs to be tested against whether the people it is meant to protect actually hold the authority it claims to give them.</p>
+          <p>The concrete step is to pull the actual text of Western Australia's Aboriginal Data Governance Policy, not just its summary, and use its operative language as a working template when SHORE next drafts or renegotiates a data-sharing agreement with an international partner. It is also worth checking whether any Seychelles government digital or data protection legislation currently in development includes an equivalent authority clause, since this is the moment to propose one, before that legislation, like BBNJ's technical annexes, gets finalised without it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 07 — PULL QUOTE -->
+<section class="story s-quote" id="s07">
+  <div class="story-inner">
+    <span class="numeral">07</span>
+    <div class="eyebrow" style="color:var(--forest);">Science-to-Policy Pipeline</div>
+    <h2 class="headline" style="color:var(--forest);">Ocean Science Needs a Different Shape</h2>
+
+    <blockquote>"The ocean crisis demands a new kind of science."</blockquote>
+
+    <p class="lede" style="color:var(--forest);">This is the argument for the science-to-policy pipeline you have been making about Shorelines, now appearing in peer-reviewed form, with a citation you can actually use.</p>
+
+    <div class="eyebrow" style="color:var(--forest);">Story Notes</div>
+    <div class="notes">
+      <p>npj Ocean Sustainability has published a piece under the title "The ocean crisis demands a new kind of science," arguing that conventional academic ocean science, structured around publication and peer review as the end goal, is poorly matched to the pace and format decision-makers actually need. A companion piece in the same space of literature, on global ocean indicators marking pathways at the science-policy nexus, makes a parallel case: that ocean indicators should be designed to serve governance decisions directly, incorporating CARE principles alongside FAIR, rather than being optimised primarily for academic publication.</p>
+      <p>Both pieces are conceptual and argumentative rather than empirical studies. They support a framing, they do not prove a causal claim, and should be cited accordingly.</p>
+    </div>
+
+    <div class="eyebrow article">Story Article</div>
+    <div class="article">
+      <p>There is a specific kind of relief in finding your own argument already published somewhere with a peer-review stamp on it, and that is roughly what npj Ocean Sustainability's "The ocean crisis demands a new kind of science" offers here. The underlying claim, that the traditional academic science pipeline, built around publication timelines and peer-review cycles as its measure of success, is structurally mismatched to the speed and format that ocean governance decisions actually require, is close to the working thesis behind treating Shorelines as a science-to-policy translation project rather than a commentary blog.</p>
+      <p>The companion literature on global ocean indicators pushes the same argument into more technical territory. Ocean indicators, the standardised metrics used to track things like coral cover, fish stock health, or coastal water quality over time, have historically been designed by and for the research community that produces them, optimised for statistical rigor and publishability. The argument for building indicators around CARE principles alongside the more familiar FAIR standard is, in effect, an argument for designing indicators for the people who will act on them, a fisheries ministry, a marine spatial planning authority, a BBNJ delegation, before designing them for the reviewers who will grade the paper that introduces them.</p>
+      <p>It is worth being precise about what these two pieces actually are, because citing them as more than they claim to be would undercut their usefulness rather than strengthen it. Both are conceptual and argumentative contributions to a live debate in the ocean science literature, not empirical studies with a dataset and a result. They articulate a position well and give it academic standing; they do not, by themselves, demonstrate that redesigning ocean science around governance needs actually produces better policy outcomes. That distinction matters if either piece ends up cited in a grant proposal or a graduate research statement: they support the framing of a research agenda, they are not evidence that the agenda already works.</p>
+      <p>What makes this genuinely useful, rather than just validating, is the specific vocabulary these pieces put around an argument that has so far mostly lived in this newsletter's own framing. Having a named, citable academic position, ocean indicators designed for governance use rather than publication metrics, gives HARMONiSE's science-to-policy pipeline work a literature to sit inside rather than presenting it as an original, unanchored claim every time it comes up in a funding conversation or a graduate programme application.</p>
+      <p>The practical use is direct: pull the full citations for both pieces, read past the abstracts to check what specific mechanisms they propose for governance-oriented indicator design, and keep them in reserve for the next Shorelines piece or academic proposal that needs to ground the science-to-policy framing in something beyond assertion. This is a citation to bank, not a finding to act on operationally.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 08 — BROADSHEET -->
+<section class="story s-broad" id="s08">
+  <div class="story-inner">
+    <span class="numeral">08</span>
+    <hr class="rule">
+    <div class="eyebrow">Ocean Governance</div>
+    <h2 class="headline">Australia Writes the Law First</h2>
+    <p class="lede">Australia is drafting the first detailed national implementing law for BBNJ anywhere in the world, and whatever its public consultation resolves in the next three weeks becomes the default template a much smaller state eventually copies from, not invents independently.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="notes cols3">
+      <p>Australia is running public consultation on its implementation of the BBNJ Agreement through a proposed High Seas Biodiversity Act 2026, with the consultation period closing 28 September 2026. This is a national-level legislative process, not something Seychelles or SHORE can submit to directly, but it is the most detailed working example so far of what a domestic BBNJ implementing law actually needs to specify.</p>
+      <p>A parallel Frontiers in Marine Science paper on high seas marine protected areas under BBNJ names the structural implementation gap directly: the Agreement does not establish a unified international body with direct enforcement or supervisory authority over high seas MPAs, leaving implementation dependent on individual Parties and existing sectoral frameworks acting within their own separate mandates.</p>
+    </div>
+
+    <div class="eyebrow article">
+      Story Article</div>
+    <div class="article">
+      <p>A framework treaty is only as strong as the domestic law each Party writes to give it teeth, and BBNJ, having entered into force in January 2026 with 61 Parties now on board, is entering the phase where that gap between treaty text and enforceable national law becomes visible. Australia's proposed High Seas Biodiversity Act 2026, currently in public consultation until 28 September, is the most substantial national implementing legislation attempt to surface so far, and it is worth close attention precisely because Seychelles will eventually need to write its own equivalent.</p>
+      <p>What a national implementing act has to specify that the treaty text alone does not is the practical machinery: which domestic agency holds authority to review and endorse environmental impact assessments before they reach BBNJ's own processes, what enforcement powers apply to a state's own flagged vessels operating in areas beyond national jurisdiction, and how domestic penalties or compliance mechanisms attach to obligations that BBNJ itself has no unified enforcement body to police. That last point is not incidental. A Frontiers in Marine Science paper on BBNJ's high seas MPA implementation gaps states it directly: the Agreement creates no single international enforcement authority, which means every substantive protection BBNJ promises ultimately depends on individual Parties' own domestic legal architecture actually delivering it.</p>
+      <p>That structural fact reframes what Australia's consultation is really deciding. It is not a bureaucratic formality closing on 28 September; it is one of the first live tests of how a resourced, administratively capable state chooses to fill the enforcement vacuum BBNJ leaves open by design. Whatever choices Australia's Act makes on agency mandate, EIA screening thresholds, and flag-state enforcement will be studied, copied from, and adapted by other Parties drafting their own implementing legislation over the next several years, simply because so few detailed working examples will exist this early.</p>
+      <p>The caveat that matters most for direct relevance is capacity, not principle. Australia is drafting this Act with a large environment department, an established maritime enforcement apparatus, and a legal drafting capacity that has no equivalent in a state the size of Seychelles. A domestic BBNJ implementing law for Seychelles cannot simply adopt Australia's institutional design, since Seychelles has neither the standing agency structure nor the enforcement fleet Australia's Act assumes. What is transferable is the checklist of decisions a workable Act has to make, not the specific answers Australia gives to each one.</p>
+      <p>The MPA proposal pathway BBNJ itself specifies, running from a proposal through Secretariat circulation to stakeholders, review by the Scientific and Technical Body, and a final establishment decision at the Conference of the Parties, is the international-level process every Party's domestic law eventually has to interface with. Understanding how Australia's Act proposes to plug its own domestic EIA and enforcement processes into that international pathway is the most useful single thing to extract from this consultation, once its outcome and final text become public.</p>
+      <p>The concrete step is to track the consultation's outcome after 28 September and request or source the finalised Act's text once available, treating it explicitly as a reference document for whenever Seychelles' own BBNJ implementing legislation moves from policy conversation to actual drafting. That drafting moment will arrive faster than it currently feels likely to, given how quickly the Preparatory Commission and now individual Parties are moving from treaty text to operational detail.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 09 — COLOUR FIELD -->
+<section class="story s-field" id="s09">
+  <div class="story-inner">
+    <span class="numeral">09</span>
+    <div class="eyebrow">Hydrospatial Science</div>
+    <h2 class="headline">The Algorithm Reads the Reef</h2>
+    <p class="lede">These are the accuracy numbers that decide whether satellite-derived bathymetry can actually substitute for a multibeam survey on Seychelles' reef flats, and right now the answer is conditional, not yes.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="notes">
+      <p>A 2026 USGS comparative study tested three satellite-derived bathymetry methods, stereo photogrammetry, physics-based radiative transfer, and a modified Sentinel-2 band-ratio approach, across Cabo Rojo in Puerto Rico, Key West in Florida, and Cocos Lagoon and Achang Flat Reef Preserve in Guam. Accuracy improved across all three methods when calibrated against ICESat-2 ATL24 track bathymetry data using an iterative closest point technique, a free, globally available satellite altimetry dataset.</p>
+      <p>A separate April 2026 study developed a satellite-derived bathymetry workflow for nearshore Greenland using five Sentinel-2 scenes and five modelling approaches, calibrated against multibeam echo-sounder soundings. After scene-specific calibration and depth-binned bias correction, its best-performing Random Forest models achieved a Root Mean Square Error of 0.7 to 1.2 metres and a Linear Error at 90 percent confidence of 2 to 3 metres, in water depths of 0 to 10 metres. <a class="linkline" href="https://doi.org/10.3390/rs18020195">doi.org/10.3390/rs18020195</a></p>
+    </div>
+
+    <div class="eyebrow article">Story Article</div>
+    <div class="article">
+      <p>Accuracy figures are where satellite-derived bathymetry stops being a promising idea and becomes a decision about what it can and cannot replace, and 2026 has produced two studies precise enough to make that call. A Random Forest bathymetry model, built on five Sentinel-2 scenes and calibrated against real multibeam soundings in nearshore Greenland, achieved a Root Mean Square Error of 0.7 to 1.2 metres and a Linear Error at 90 percent confidence of 2 to 3 metres, in the 0 to 10 metre depth band. Put in plain terms: in shallow water, on a well-calibrated model, satellite-derived bathymetry is now accurate to roughly a metre.</p>
+      <p>A metre of vertical error is genuinely good enough for a meaningful set of uses in Seychelles' own reef flats: coastal zone planning, habitat mapping, marine spatial planning inputs, and a first-pass baseline survey ahead of any more resourced fieldwork. It is not good enough for navigational charting, where the accuracy tolerances a hydrographic office needs are tighter than what any of these SDB methods currently deliver, and it is worth being precise about that boundary rather than overselling SDB as a full substitute for shipborne multibeam surveying. It is a substitute for some purposes and a complement for others, not a universal replacement.</p>
+      <p>The USGS comparative study across Puerto Rico, Florida, and Guam adds a second, practically important finding: all three SDB methods tested, stereo photogrammetry, physics-based radiative transfer, and a Sentinel-2 band-ratio approach, improved in accuracy when calibrated against ICESat-2 ATL24 track bathymetry data. ICESat-2 is a NASA satellite altimetry mission with freely available global data, and ATL24 is its bathymetry-specific data product. That matters enormously for a hub without its own multibeam vessel: ICESat-2 ATL24 tracks are a free, globally available source of ground-truth-quality calibration data, meaning a well-chosen SDB workflow can be locally validated without first commissioning an expensive dedicated survey.</p>
+      <p>A separate multi-source comparison found that Sentinel-2 imagery produced more stable results in empirical model fitting, while WorldView-2 imagery achieved higher raw accuracy when paired with machine learning approaches, a genuine trade-off between a freely available data source and a commercial, higher-resolution one. For an institute working within a constrained budget, that trade-off is worth treating as a real decision rather than defaulting to whichever imagery source is easiest to access.</p>
+      <p>The caveat that carried over from last week's coverage of GeoAI reef classification applies here with equal force: every one of these validated SDB models was trained and tested against Caribbean, US, or Greenlandic coastal environments, none of which share Seychelles' granitic and coralline reef mix, water clarity profile, or seafloor composition. A model achieving 0.7 to 1.2 metre RMSE in Guam's lagoon systems is not guaranteed to hold that accuracy over a Seychelles reef flat without local recalibration, and treating a published accuracy figure as transferable without testing it locally first is the specific mistake this caveat exists to prevent.</p>
+      <p>The concrete, low-cost next step is to pull ICESat-2 ATL24 tracks over a Seychelles reef flat the Ocean Mapping Hub already has some existing data for, and run one of the published, open SDB workflows, ideally a Random Forest or band-ratio approach given the accuracy figures above, against that free calibration source. That produces a real, local accuracy number before committing to a funded multibeam campaign or a larger GeoAI investment, and it costs nothing beyond staff time and existing satellite imagery access.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 10 — LETTERPRESS -->
+<section class="story s-press" id="s10">
+  <div class="story-inner">
+    <span class="numeral">10</span>
+    <div class="eyebrow">Ocean Governance</div>
+    <h2 class="headline">Sixty-One Parties, One Pathway</h2>
+    <p class="lede">Sixty-one Parties is a big enough bloc that BBNJ's first Conference of the Parties is no longer a hypothetical, and the procedural pathway it will use to approve or reject high seas marine protected areas is now specific enough to actually plan a submission against.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="notes">
+      <p>The BBNJ Agreement currently counts 145 signatories and 61 Parties, several months after entering into force on 17 January 2026. The procedural pathway for establishing an area-based management tool, including a high seas marine protected area, is now specified in enough detail to describe: a proposal is submitted, the Secretariat circulates it to stakeholders for consultation, the Scientific and Technical Body reviews the proposal and sends its recommendations forward, and the Conference of the Parties makes the final decision to establish the tool and adopt its management plan.</p>
+      <p>As the Frontiers in Marine Science paper referenced elsewhere in this edition notes, no single body enforces or supervises high seas MPAs once established; implementation still runs through individual Parties and existing sectoral frameworks. The pathway to get an MPA established is now clear. What happens to it afterward still depends on who shows up to make it work.</p>
+    </div>
+
+    <div class="eyebrow article">Story Article</div>
+    <div class="article">
+      <p>A treaty pathway stops being an abstraction the moment you can draw it as a sequence of concrete steps, and BBNJ's route to establishing a high seas marine protected area has reached that point. A proposal for an area-based management tool goes first to the Secretariat, which circulates it to stakeholders for consultation. The Scientific and Technical Body then reviews the proposal on its scientific merits and sends recommendations forward. The Conference of the Parties makes the final call, establishing the tool and adopting its management plan. That is now a specific enough sequence to plan against, not just a general commitment to eventually create high seas MPAs somewhere.</p>
+      <p>The number worth sitting with is 61. That is how many states have ratified BBNJ as of this edition, up from the 60 that triggered entry into force in January. Sixty-one Parties is enough for the Conference of the Parties to function as a real decision-making body with a genuine quorum of interests represented, rather than a symbolic gathering of early adopters. That threshold matters because it means the first substantive MPA proposals brought to a Conference of the Parties will be tested against an actual, functioning multilateral process, not a placeholder one still waiting for enough states to bother showing up.</p>
+      <p>The stage that matters most, and the one easiest to overlook, is the Secretariat's stakeholder circulation step, which happens before the Scientific and Technical Body ever reviews anything. Being on the list of stakeholders a proposal gets circulated to is not automatic; it depends on visibility with the Secretariat and a track record of engagement with BBNJ processes going back to the Preparatory Commission sessions. A state or institute that only engages once a proposal reaches public Conference of the Parties debate has already missed the point in the process where informal influence over scope and framing was actually possible.</p>
+      <p>This is where the earlier point about data submission standards, raised in previous coverage of the Preparatory Commission, converges with the procedural pathway itself. The Scientific and Technical Body's review is explicitly a scientific merits review, which means whatever bathymetric, ecological, or biodiversity data underpins a proposal is the substance the Body is actually evaluating. A well-resourced distant-water state proposing an MPA nomination backed by extensive survey data will clear that review more easily than a thinly evidenced one, regardless of which state is nominally sponsoring the proposal. That is the practical argument for building HARMONiSE's data holdings toward BBNJ-relevant evidentiary standards now, well before any specific Seychelles-adjacent high seas nomination becomes a live proposal.</p>
+      <p>The honest limit on all of this, repeated because it does not go away with more ratifications, is that BBNJ creates no unified enforcement body. An MPA established through this exact pathway still depends on individual Parties and existing sectoral bodies, fisheries organisations, shipping regulators, to actually respect and enforce its boundaries afterward. Getting a proposal through the Secretariat, the Scientific and Technical Body, and the Conference of the Parties is a real and difficult achievement. It is also only the first half of whether a high seas MPA means anything in practice.</p>
+      <p>The concrete step is to track who currently sits on BBNJ's stakeholder circulation lists and how an institute the scale of SHORE gets added to them, since that list, not the eventual Conference of the Parties vote, is the earliest point of entry into shaping how any future high seas proposal touching the western Indian Ocean actually gets framed.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="sig">Shorelines</div>
+  <div>Morning Edition, compiled for Francesca Adrienne &middot; 7 September 2026</div>
+</footer>
+
+</body>
+</html>
