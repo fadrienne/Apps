@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Edition — 18 September 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0c2d52;
+    --sky:#bfe4f5;
+    --sky-pale:#e5f4fb;
+    --teal:#0f7a86;
+    --teal-deep:#0a5b66;
+    --yellow:#ffd84d;
+    --yellow-pale:#fff3cc;
+    --gold:#c99a1e;
+    --forest:#1f4d3a;
+    --sage:#a9c9a4;
+    --mint:#dff2e8;
+    --cream:#faf5e8;
+    --offwhite:#fbfaf6;
+    --slate:#5b6470;
+    --charcoal:#2a2e33;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Inter',sans-serif;
+    background:var(--offwhite);
+    color:var(--charcoal);
+    font-size:2rem;
+    line-height:1.5;
+  }
+  h1,h2,h3,h4,.display{font-family:'Fraunces',serif;}
+  a{color:var(--teal-deep);}
+  .eyebrow{
+    font-family:'Inter',sans-serif;
+    font-size:1.05rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    font-weight:700;
+    color:var(--teal-deep);
+  }
+  .why-line{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:700;
+    font-size:2.3rem;
+    color:var(--forest);
+    line-height:1.35;
+    margin:1.5rem 0;
+  }
+  .story-notes p, .story-article p{
+    font-size:2rem;
+    line-height:1.55;
+    margin:0 0 1.2rem 0;
+  }
+  .story-article{max-width:38em;}
+  .flag{
+    display:inline-block;
+    background:var(--yellow);
+    color:var(--navy);
+    font-weight:800;
+    font-size:1.4rem;
+    letter-spacing:0.08em;
+    padding:0.4em 0.9em;
+    border-radius:0.3em;
+    margin-bottom:1rem;
+  }
+  .flag::before{content:"⚡ ";}
+  .link-out{
+    display:inline-block;
+    margin-top:0.5rem;
+    font-weight:700;
+    word-break:break-all;
+  }
+
+  /* MASTHEAD */
+  .masthead{
+    background:var(--sky);
+    padding:4rem 2rem 3rem;
+    text-align:center;
+    border-bottom:6px solid var(--navy);
+  }
+  .masthead h1{
+    font-size:5.5rem;
+    color:var(--navy);
+    margin:0;
+    font-weight:900;
+  }
+  .masthead .date{
+    font-size:1.6rem;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    color:var(--teal-deep);
+    font-weight:700;
+    margin-top:0.8rem;
+  }
+  .masthead .tag{
+    font-size:1.4rem;
+    color:var(--charcoal);
+    margin-top:1.2rem;
+    font-style:italic;
+  }
+
+  /* NAV */
+  nav.jumpto{
+    position:sticky;
+    top:0;
+    background:var(--navy);
+    padding:1rem 1.5rem;
+    z-index:50;
+  }
+  nav.jumpto ul{
+    list-style:none;
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.6rem 1rem;
+    margin:0;
+    padding:0;
+    max-width:1100px;
+    margin:0 auto;
+  }
+  nav.jumpto a{
+    color:var(--yellow-pale);
+    text-decoration:none;
+    font-size:1.15rem;
+    font-weight:600;
+    padding:0.3rem 0.7rem;
+    border:1px solid rgba(255,216,77,0.4);
+    border-radius:1.5em;
+    white-space:nowrap;
+  }
+  nav.jumpto a:hover{background:rgba(255,216,77,0.15);}
+
+  .wrap{max-width:1100px;margin:0 auto;padding:0 2rem;}
+
+  section.story{
+    padding:5rem 0 4rem;
+    position:relative;
+  }
+  section.story .wrap-inner{max-width:1100px;margin:0 auto;padding:0 2rem;}
+
+  h2.headline{
+    font-size:3.4rem;
+    line-height:1.1;
+    margin:0.5rem 0 1rem;
+  }
+
+  /* Numeral treatments */
+  .num-bg{
+    position:absolute;
+    top:0.5rem;
+    right:2rem;
+    font-family:'Fraunces',serif;
+    font-weight:900;
+    font-size:12rem;
+    opacity:0.15;
+    line-height:1;
+    z-index:0;
+    color:var(--navy);
+  }
+  .num-circle{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:3.2rem;
+    height:3.2rem;
+    border-radius:50%;
+    border:3px solid var(--navy);
+    font-weight:800;
+    font-size:1.4rem;
+    color:var(--navy);
+    margin-bottom:1rem;
+  }
+  .num-box{
+    display:inline-block;
+    border:3px solid var(--teal-deep);
+    padding:0.3rem 0.8rem;
+    font-weight:800;
+    font-size:1.4rem;
+    color:var(--teal-deep);
+    margin-bottom:1rem;
+  }
+  .num-hairline{
+    font-size:1.3rem;
+    letter-spacing:0.3em;
+    font-weight:600;
+    color:var(--slate);
+    border-top:1px solid var(--slate);
+    padding-top:0.5rem;
+    display:inline-block;
+    margin-bottom:1rem;
+  }
+  .num-stamp{
+    display:inline-block;
+    background:var(--navy);
+    color:var(--yellow);
+    font-weight:900;
+    padding:0.5rem 1rem;
+    transform:rotate(-4deg);
+    font-size:1.3rem;
+    letter-spacing:0.1em;
+    margin-bottom:1rem;
+    border:2px dashed var(--navy);
+  }
+
+  /* 1 HERO */
+  .layout-hero{background:var(--sky);}
+  .layout-hero .headline{color:var(--navy);font-weight:900;font-size:4.4rem;}
+  .layout-hero .body-content{position:relative;z-index:1;}
+
+  /* 2 SUNBEAM ALERT */
+  .layout-sunbeam{background:var(--yellow);}
+  .layout-sunbeam .headline{color:var(--navy);font-style:italic;font-weight:800;}
+
+  /* 3 COASTAL */
+  .layout-coastal{background:var(--sky-pale);border-left:14px solid var(--forest);}
+  .layout-coastal .grid2{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:3rem;
+  }
+  @media (max-width:700px){.layout-coastal .grid2{grid-template-columns:1fr;}}
+
+  /* 4 BIG STAT */
+  .layout-bigstat{background:var(--mint);}
+  .bigstat-number{
+    font-family:'Fraunces',serif;
+    font-weight:900;
+    font-size:9rem;
+    color:var(--teal-deep);
+    line-height:1;
+    margin:1rem 0;
+  }
+  .bigstat-label{
+    font-size:1.6rem;
+    color:var(--forest);
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+  }
+
+  /* 5 BROADSHEET */
+  .layout-broadsheet{background:var(--cream);}
+  .broadsheet-rule{border-top:3px solid var(--teal-deep);width:100%;margin:1.5rem 0;}
+  .broadsheet-cols{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2.5rem;
+    column-gap:2.5rem;
+  }
+  @media (max-width:700px){.broadsheet-cols{grid-template-columns:1fr;}}
+
+  /* 6 TERMINAL */
+  .layout-terminal{background:var(--mint);font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;}
+  .layout-terminal, .layout-terminal p, .layout-terminal .headline{color:var(--forest);}
+  .layout-terminal .headline{font-family:'SFMono-Regular',Consolas,monospace;font-size:2.6rem;}
+  .terminal-box{
+    background:var(--offwhite);
+    border:2px solid var(--forest);
+    padding:2rem;
+    margin:1.5rem 0;
+  }
+  .terminal-prompt::before{content:"$ ";color:var(--teal-deep);}
+
+  /* 7 ACADEMIC DROP CAP */
+  .layout-academic{background:var(--offwhite);}
+  .dropcap::first-letter{
+    font-family:'Fraunces',serif;
+    font-size:6.5rem;
+    font-weight:800;
+    color:var(--navy);
+    float:left;
+    line-height:0.8;
+    margin-right:0.15em;
+    margin-top:0.1em;
+  }
+  .footnote{
+    font-size:1.4rem;
+    color:var(--slate);
+    border-top:1px solid var(--slate);
+    padding-top:0.8rem;
+    margin-top:2rem;
+  }
+
+  /* 8 PULL QUOTE */
+  .layout-pullquote{background:var(--sky-pale);}
+  .pullquote-text{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:700;
+    font-size:3.4rem;
+    color:var(--navy);
+    line-height:1.25;
+    padding:2rem 0;
+    border-top:4px solid var(--forest);
+    border-bottom:4px solid var(--forest);
+    margin:2rem 0;
+  }
+
+  /* 9 COLOUR FIELD */
+  .layout-colourfield{background:var(--teal-deep);}
+  .layout-colourfield .headline, .layout-colourfield p, .layout-colourfield .eyebrow{color:var(--white);}
+  .layout-colourfield .why-line{color:var(--yellow);}
+  .layout-colourfield a{color:var(--yellow);}
+  .layout-colourfield .num-hairline, .layout-colourfield .num-box, .layout-colourfield .num-circle{
+    color:var(--white);border-color:var(--white);
+  }
+
+  /* 10 LETTERPRESS */
+  .layout-letterpress{
+    background:var(--cream);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(0,0,0,0.015) 0px, rgba(0,0,0,0.015) 1px, transparent 1px, transparent 3px);
+  }
+  .layout-letterpress .headline{
+    font-weight:400;
+    letter-spacing:0.01em;
+    text-shadow:0.5px 0.5px 0 rgba(12,45,82,0.15);
+  }
+
+  footer{
+    background:var(--navy);
+    color:var(--sky-pale);
+    text-align:center;
+    padding:3rem 2rem;
+    font-size:1.3rem;
+  }
+  footer a{color:var(--yellow);}
+
+  @media (max-width:700px){
+    body{font-size:1.5rem;}
+    .masthead h1{font-size:3rem;}
+    h2.headline, .layout-hero .headline{font-size:2.4rem;}
+    .num-bg{font-size:6rem;right:1rem;}
+    .story-notes p, .story-article p{font-size:1.5rem;}
+    .why-line{font-size:1.8rem;}
+    .bigstat-number{font-size:5rem;}
+    .pullquote-text{font-size:2.2rem;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <h1>Morning Edition</h1>
+  <div class="date">Friday, 18 September 2026</div>
+  <div class="tag">Ten stories, filtered through SHORE Institute, ocean governance, and Shorelines.</div>
+</header>
+
+<nav class="jumpto">
+  <ul>
+    <li><a href="#s1">01 · Three Cities, One Treaty Body</a></li>
+    <li><a href="#s2">02 · The Sea Level Data Was Wrong</a></li>
+    <li><a href="#s3">03 · Montserrat's Pause, Seychelles's Precedent</a></li>
+    <li><a href="#s4">04 · Finance Forum, Three Days Out</a></li>
+    <li><a href="#s5">05 · Who Sees Your Water First</a></li>
+    <li><a href="#s6">06 · The Model Learned to Read a Reef</a></li>
+    <li><a href="#s7">07 · Seychelles, Named in Its Own Region's Report</a></li>
+    <li><a href="#s8">08 · NZD 4.4 Million and a Missing Playbook</a></li>
+    <li><a href="#s9">09 · One Journal Closes the Door on Preprints</a></li>
+    <li><a href="#s10">10 · Panama, 2027, and the Clock Already Running</a></li>
+  </ul>
+</nav>
+
+<!-- STORY 1 — HERO -->
+<section class="story layout-hero" id="s1">
+  <div class="wrap-inner body-content">
+    <span class="num-stamp">STORY 01</span>
+    <h2 class="headline">Three Cities, One Treaty Body, and a $70 Million Pitch</h2>
+    <p class="why-line">You have spent years arguing that where an institution sits decides who gets heard inside it, and the fight over the BBNJ Secretariat's host city is that argument playing out with three governments and real money on the table.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="story-notes">
+      <p>Three cities are competing to host the BBNJ Agreement's secretariat: Valparaíso, Chile; Brussels, Belgium; and Xiamen, China. Valparaíso filed first, launching its campaign in March 2023. Brussels followed in January 2025. Xiamen deposited its bid with the UN on 16 January 2026, the last entrant and by far the most heavily resourced.</p>
+      <p>China is offering free office premises and accommodation in Xiamen, five years of covered utility costs (an estimated $70 million in savings for the secretariat), and a $3 million first pledge to the BBNJ trust fund earmarked for developing-country delegates' participation. Chile is running an equity argument: no universal-membership environmental secretariat has ever been hosted in Latin America. Belgium is leaning on Brussels's existing diplomatic density, more than 300 missions already resident in the city.</p>
+      <p>The decision lands at COP1 in January 2027. Given how hard Seychelles pushed on BBNJ's access and benefit-sharing provisions during negotiation, whichever government ends up controlling the secretariat's day-to-day agenda-setting is not a side issue.</p>
+      <p class="link-out">https://thediplomat.com/2026/04/why-china-wants-to-host-the-new-bbnj-secretariat/</p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="story-article">
+      <p>A treaty secretariat sounds like plumbing, the office that books rooms and circulates documents. It is not neutral plumbing. The secretariat sets provisional agendas, controls which supporting studies get commissioned and circulated ahead of sessions, and decides who gets invited to the informal consultations where treaty language actually gets negotiated before it reaches the floor. Host government influence over a secretariat is real and well documented across other multilateral bodies, from the effect of Bonn's hosting of the UNFCCC secretariat on German climate diplomacy to Nairobi's hosting of UNEP shaping African representation in environmental governance debates. BBNJ's secretariat host decision, due at COP1 in January 2027, is not a logistics footnote. It is a structural choice about whose access gets built into the treaty's operating system from day one.</p>
+      <p>The three bids read as three different theories of what should determine that choice. Chile's case for Valparaíso is explicitly about representation: despite decades of multilateral environmental governance, no universal-membership environmental secretariat has ever sat in Latin America, and Chile is arguing that geographic and political balance in where these bodies are hosted matters as much as operational convenience. Belgium's case for Brussels is about efficiency and existing infrastructure: more than 300 diplomatic missions are already resident there, alongside the EU institutions and NATO, so marginal cost for any delegation already running a Brussels mission is close to zero. China's case for Xiamen is the most aggressive by far, and the most contested. Free premises, five years of covered utilities worth an estimated $70 million, and a $3 million trust fund pledge specifically for developing-country delegate participation is not an efficiency argument. It is a subsidy large enough that coverage in The Diplomat, SeafoodSource, and The Conversation has all raised the same question directly: is this generosity or influence-gathering, and can BBNJ's institutional design tell the difference before the vote happens.</p>
+      <p>The honest answer is that BBNJ's institutional design was not built to answer that question, because no multilateral secretariat host process has ever had to. The counterargument to reading China's bid as a red flag is straightforward: developing countries chronically underfund delegate travel to intersessional meetings, and a $3 million pledge aimed directly at that gap addresses a real and recurring failure of the current system, one that has kept small island delegations thin or absent at exactly the sessions where language gets locked in. That argument has force. It does not, however, answer the second-order question of what a secretariat funded this heavily by a single state government ends up prioritising when interpretive or contested questions about the treaty's marine genetic resource provisions come before it years from now, after the initial pledge has been spent and the host relationship has settled into something more durable.</p>
+      <p>For Seychelles specifically, the practical stakes sit below the geopolitics. Whichever city wins becomes the default venue for years of BBNJ intersessional work: scientific and technical body meetings, capacity-building and technology transfer committee sessions, clearing-house mechanism consultations. Travel cost, visa regimes, and time zone all shape which small delegations can actually show up to the meetings between COPs where technical language gets shaped, as distinct from the COP itself where it gets ratified. A Xiamen-hosted secretariat with a developing-country participation fund attached changes that calculus differently than a Brussels-hosted one embedded in Europe's existing diplomatic infrastructure, and differently again from a Valparaíso-hosted one explicitly pitched as correcting for Global South underrepresentation. None of the three is neutral on this point, whatever their formal even-handedness.</p>
+      <p>Watch whether Chile or Belgium counter the Xiamen trust fund pledge before COP1. A matching commitment from either competitor would tell you the field understands the subsidy is now the price of admission, not a one-off Chinese gambit, and would be the clearest signal yet of how seriously the secretariat host race is being taken as a capacity-building lever for exactly the delegations Seychelles's own BBNJ negotiating position was built to represent.</p>
+      <p class="link-out">https://theconversation.com/what-does-chinas-host-bid-mean-for-the-high-seas-treaty-279317</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 2 — BIG STAT -->
+<section class="story layout-bigstat" id="s2">
+  <div class="wrap-inner">
+    <div class="num-hairline">STORY · 02</div>
+    <h2 class="headline">The Sea Level Data Underneath Your Coastal Maps Was Wrong</h2>
+    <p class="why-line">A study auditing 385 coastal hazard papers found that the sea level numbers underneath almost all of them came from a model, not a measurement, which is precisely the methodological shortcut the Ocean Mapping Hub's evidence base cannot afford to inherit uncritically.</p>
+
+    <div class="bigstat-number">7.6m</div>
+    <div class="bigstat-label">largest discrepancy found between modelled and measured coastal sea level in the same audit that found over 90% of 385 studies relied on the modelled figure</div>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="story-notes">
+      <p>Researchers Katharina Seeger and Philip Minderhoud reviewed 385 peer-reviewed coastal exposure and hazard studies published between 2009 and 2025. More than 90% used sea level values derived from gravitational geoid models rather than direct, measured local sea level data.</p>
+      <p>The gap between the two approaches is not trivial. Typical underestimation ran 0.24 to 0.27 metres depending on which geoid model a study used as its baseline. In some locations, the discrepancy between the modelled and the measured figure reached 5.5 to 7.6 metres.</p>
+      <p>Every one of those 385 studies fed a coastal exposure or hazard assessment somewhere, the exact category of output that ends up cited in national adaptation plans and infrastructure siting decisions. A 7.6 metre error in that chain is not a rounding issue. It is a different flood line.</p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="story-article">
+      <p>Every geospatial analyst learns early that a vertical datum is a choice, not a fact, and that the choice is usually invisible in the final map. Katharina Seeger and Philip Minderhoud just published the audit that shows how expensive that invisibility has become in coastal science specifically. They reviewed 385 peer-reviewed studies on coastal exposure and hazard impact published between 2009 and 2025 and found that more than 90% of them derived their sea level baseline from a gravitational geoid model rather than from measured local sea level data. The two are not interchangeable. A geoid model estimates where sea level would sit under an idealised gravitational surface. Measured data records where it actually sits, tide gauge by tide gauge, accounting for local ocean dynamics, currents, and regional gravitational anomalies that a global model smooths over by design.</p>
+      <p>The size of the resulting error is what makes this more than a methodological nitpick. Typical underestimation across the reviewed studies ran 0.24 to 0.27 metres, depending on which geoid model was used as the baseline. That alone would matter for any coastal infrastructure planned to a supposedly conservative margin. But the audit also found specific locations where the discrepancy between modelled and measured sea level reached 5.5 to 7.6 metres. A study built on the smaller end of that range still produces a materially wrong flood exposure map. A study built on the larger end produces one that is not wrong at the margin, it is wrong about which buildings are in the flood zone at all.</p>
+      <p>This is not an abstract critique of a discipline you observe from outside. It is a direct audit of the exact evidentiary chain HARMONiSE and the Ocean Mapping Hub sit inside: bathymetric and coastal elevation data feeding hazard and exposure assessments that then feed national adaptation planning, infrastructure siting, and, eventually, the kind of climate finance proposals the High-Income SIDS Paradox argument depends on being taken seriously. If more than 90% of the published literature in this space has been quietly running on modelled rather than measured sea level, the baseline assumption behind a large share of existing coastal hazard maps, including ones informing decisions in small island states with the least capacity to absorb a wrong flood line, needs re-checking rather than inheriting by citation.</p>
+      <p>The corrective is not exotic. It is tide gauge density and local geodetic ground-truthing, the unglamorous, capital-intensive infrastructure that gravitational modelling exists to substitute for in places that cannot afford enough gauges. That substitution was always a compromise, made explicit or not, and this audit is the first systematic accounting of what that compromise has cost in accuracy across a large body of published hazard science. For a small island state, the case for investing in local tide gauge infrastructure and geodetic surveys, rather than accepting the geoid-modelled default, just got a specific, citable number behind it: up to 7.6 metres of difference is not a margin any coastal adaptation budget can plan around blind.</p>
+      <p>Before citing any existing coastal exposure study for Seychelles or comparable Western Indian Ocean geography in a Shorelines piece or a funding proposal, this audit is now the first question to ask of it: modelled sea level baseline, or measured. The paper gives you the language and the citation to ask that question credibly rather than rhetorically.</p>
+      <p class="link-out">https://www.natureasia.com/en/info/press-releases/detail/9256</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 3 — COASTAL -->
+<section class="story layout-coastal" id="s3">
+  <div class="wrap-inner">
+    <div class="num-circle">03</div>
+    <h2 class="headline">Montserrat's Graduation Gets Paused. Seychelles's Never Did.</h2>
+
+    <div class="grid2">
+      <div>
+        <p class="why-line">Montserrat crossing the high-income threshold and getting an exception is the live counter-example that shows the High-Income SIDS Paradox is not a fixed rule, it is a negotiated one, and Seychelles never got the negotiation.</p>
+        <div class="eyebrow">Story Notes</div>
+        <div class="story-notes">
+          <p>Montserrat has held high-income status for more than three consecutive years, the OECD Development Assistance Committee threshold that normally triggers graduation off the list of countries eligible for official development assistance. The UK lobbied successfully, if controversially, for a pause on that graduation.</p>
+          <p>Roughly a dozen more small island developing states are projected to cross the same income threshold by 2030. Proposed reforms include a "GNI-plus" framework that would weight eligibility by a multidimensional vulnerability index alongside income, rather than income per capita alone.</p>
+          <p>Seychelles graduated to high-income classification in 2015 and lost concessional finance eligibility on schedule, with no comparable government lobbying for an exception. The ODA rulebook, in other words, already has an exception mechanism. It was applied for Montserrat. It was not applied for Seychelles.</p>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow">Story Article</div>
+        <div class="story-article">
+          <p>The High-Income SIDS Paradox has always had a structural version and a political version, and Montserrat's pause makes the political version impossible to ignore. The structural version is the one you have made in Shorelines: GNI per capita, the sole gate for ODA eligibility, does not measure the thing that actually determines a small island's resilience, which is exposure, narrow economic base, and the fiscal shock a single climate event can deliver to a GDP too small to absorb it. Seychelles cleared the high-income threshold in 2015 and graduated out of concessional finance access on the rulebook's normal schedule, carrying the exact structural vulnerabilities the rulebook does not price.</p>
+          <p>Montserrat is now the case that shows the rulebook was never actually rigid. It has held high-income status for more than three consecutive years, the standard trigger for DAC graduation. The UK lobbied for, and got, a pause on that graduation rather than letting the automatic mechanism run. That is not a new eligibility category being invented. It is the existing system being flexed for one territory with an advocate willing to spend political capital on the exception.</p>
+          <p>The comparison this invites is not subtle. Seychelles had no equivalent government spending that capital on its behalf when its own graduation came due, and no comparable pause was granted. This is not an argument that Montserrat's exception was wrong. It is an argument that the mechanism for getting an exception has, in practice, depended on which capital has an interest in lobbying for you, which is precisely the kind of arbitrary, non-vulnerability-based sorting the High-Income SIDS Paradox argument exists to name.</p>
+          <p>The reform proposals now circulating, a "GNI-plus" framework weighting eligibility by a multidimensional vulnerability index rather than income alone, or a standing climate finance exception carved out specifically for SIDS regardless of income classification, are the two live alternatives to the current ad hoc lobbying model. Roughly a dozen more small island states are projected to cross the high-income threshold by 2030, which means the current case-by-case exception approach is about to face a dozen more Montserrats, most without a former colonial power motivated to intervene on their behalf.</p>
+          <p>The predictable objection to any blanket vulnerability-based exception is donor fatigue and rule erosion: if income thresholds stop functioning as a hard gate, the argument goes, ODA discipline collapses into case-by-case politics for every borderline country, not just small islands. That objection has some force in the abstract. It has less force applied specifically to SIDS, where the vulnerability profile, small population, narrow economic base, disproportionate exposure to compound climate and fiscal shocks, is structurally different in kind from a mid-sized economy nearing the same income line for ordinary development reasons. A vulnerability index scoped narrowly to SIDS characteristics is a bounded exception, not an open door.</p>
+          <p>Seychelles's own graduation, now a decade behind it, is the concrete case study this argument needed and previously lacked a live comparator for. Montserrat gives Shorelines a present-tense parallel to cite directly: same threshold, same triggering mechanism, different outcome, and no obvious explanation for the difference beyond who had a government willing to make the call.</p>
+          <p class="link-out">https://odi.org/en/publications/making-an-exception-maintaining-oda-eligibility-for-small-island-developing-states/</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 4 — TERMINAL -->
+<section class="story layout-terminal" id="s4">
+  <div class="wrap-inner">
+    <div class="num-box">STORY 04</div>
+    <span class="flag">URGENT — THREE DAYS OUT</span>
+    <h2 class="headline">// ocean_finance_forum --starts 2026-09-21</h2>
+    <p class="why-line">The UNFCCC's Standing Committee on Finance holds its dedicated ocean and water finance forum on 21 and 22 September, three days from today, and it is the direct follow-through on the exact ocean finance mechanics the June Dialogue in Bonn left unresolved.</p>
+
+    <div class="terminal-box">
+      <div class="eyebrow">Story Notes</div>
+      <div class="story-notes">
+        <p class="terminal-prompt">The UNFCCC Standing Committee on Finance is holding a forum dedicated to finance action for water systems and ocean on 21 and 22 September 2026, in three days. It follows directly from the June 2026 Ocean and Climate Change Dialogue in Bonn, where AOSIS pressed specifically for capacity-building support and practical pathways to unlock ocean-related climate finance.</p>
+        <p class="terminal-prompt">SIDS currently receive a disproportionately small share of global funding against SDG 14, the ocean sustainability goal, despite carrying the earliest and hardest climate exposure of any country grouping. Ocean-based climate action remains underfunded relative to the conditional ocean commitments states have already written into their own national climate plans.</p>
+        <p class="terminal-prompt">This forum is where the Bonn Dialogue's finance-mechanics questions either get concrete instrument proposals or get deferred again toward COP31. Seychelles's Blue Bond and debt-for-conservation swap through the Conservation and Climate Adaptation Trust are exactly the kind of working precedent worth having cited into this specific conversation while it is live.</p>
+      </div>
+
+      <div class="eyebrow">Story Article</div>
+      <div class="story-article">
+        <p>Ocean finance has had no shortage of dialogues stating the problem. What it has lacked is a forum built specifically to work the instrument design, and the Standing Committee on Finance's dedicated water and ocean forum, running 21 and 22 September, three days from today, is explicitly built as that kind of session rather than another general climate finance convening with an ocean panel bolted on.</p>
+        <p>The forum did not appear from nowhere. The June 2026 Ocean and Climate Change Dialogue in Bonn addressed ocean-based priorities in nationally determined contributions, means of implementation, and, in AOSIS's specific framing, capacity-building support for small island states trying to access finance instruments built without their institutional capacity in mind. That Dialogue produced a summary report and a clear diagnosis. It did not, by its own account, produce instrument-level solutions. The September SCF forum is the venue where that unfinished work either advances into something concrete, proposed finance mechanisms, blended finance structures, capacity-building windows scoped specifically to SIDS institutional realities, or gets summarised again and pushed toward COP31 preparation, which is the less useful outcome.</p>
+        <p>The underlying numbers explain why AOSIS keeps returning to this specific ask. SIDS receive a share of SDG 14 funding disproportionately small relative to their ocean dependence and exposure, and ocean-based climate action broadly remains underfunded against the conditional ocean commitments countries have already written into their own NDCs. That gap between stated national ambition and actual disbursed finance is precisely the mechanics problem a forum like this exists to address, as distinct from the advocacy problem a general dialogue addresses.</p>
+        <p>Seychelles has a concrete asset to bring into this specific conversation, not as an abstract case study but as functioning, multi-year evidence: the debt-for-nature conversion that established the Conservation and Climate Adaptation Trust, structured with the blue bond, is one of the small number of working examples anywhere of a small island state converting sovereign debt directly into standing ocean conservation finance. Most ocean finance dialogues discuss innovative instruments hypothetically. Seychelles is one of the few delegations that can discuss one that has been running for years and generating measurable outcomes. That is a stronger contribution to an instrument-design forum than a policy position paper, and it is underused as a talking point outside Commonwealth-specific venues.</p>
+        <p>The practical action here is narrow and time-bound. This is not a submission window or an open call, it is a two-day forum happening in three days, so there is nothing to draft and file. What is worth doing before Monday is identifying who is representing Seychelles or the wider Indian Ocean SIDS grouping at the forum, if anyone, and, failing direct representation, tracking the SCF's published outputs the moment they land rather than waiting for secondary coverage to summarise them weeks later. The instrument-design conversation that determines whether ocean finance mechanics actually change happens in this room, not in the eventual press release about it.</p>
+        <p class="link-out">https://unfccc.int/sites/default/files/resource/Ocean_Dialogue_2026_Information_Note.pdf</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 5 — ACADEMIC DROP CAP -->
+<section class="story layout-academic" id="s5">
+  <div class="wrap-inner">
+    <div class="num-circle">05</div>
+    <h2 class="headline">Who Sees Your Water First</h2>
+    <p class="why-line">A new Quad-backed satellite surveillance network now watches the Indian Ocean in real time, and not one Indian Ocean island state helped design the data-sharing terms it runs on.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="story-notes dropcap">
+      <p>Australia, India, Japan, and the United States announced the Indo-Pacific Maritime Surveillance Collaboration on 26 May 2026 at the Quad Foreign Ministers' Meeting in New Delhi. India proposed it. The initiative focuses first on the Indian Ocean, using satellite tracking to provide real-time data on vessel activity across the region.</p>
+      <p>Analysts covering the launch flagged the same structural weakness directly: the initiative needs a "democratic information-sharing culture" to attract participation from the wider region, an acknowledgment that its current design was built by four states without that culture built in from the start.</p>
+      <p>No Western Indian Ocean island state, Seychelles included, sits inside the founding Quad grouping or its surveillance architecture, despite the initiative's stated first focus being exactly the waters those states hold sovereignty over.</p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="story-article dropcap">
+      <p>Data sovereignty in ocean governance usually gets discussed as a future risk: a hypothetical where someone else's satellite ends up knowing more about your waters than your own government does. The Indo-Pacific Maritime Surveillance Collaboration removes the hypothetical. Australia, India, Japan, and the United States announced it on 26 May 2026 at the Quad Foreign Ministers' Meeting in New Delhi, proposed by India, with an explicit first focus on the Indian Ocean and a stated purpose of using the latest satellite tracking technology to deliver real-time data on vessel activity across the region.</p>
+      <p>The framing matters as much as the technology. This is being built and discussed as a security and maritime domain awareness initiative, not a civilian ocean science or fisheries management programme, even though the underlying satellite data, vessel tracking, activity patterns, likely associated environmental sensing layers, is the same category of spatial data that feeds hydrospatial science and marine spatial planning work directly. A security framing determines who gets consulted on data governance terms and who does not. Civilian marine science initiatives typically build in some form of regional stakeholder consultation on data access and sharing protocols from the design stage. Security-framed surveillance initiatives typically do not, because the founding members treat data control as inseparable from the security purpose itself.</p>
+      <p>The gap this creates for Indian Ocean island states is not abstract. Seychelles holds one of the largest exclusive economic zone to landmass ratios on the planet, and much of the surveillance network's first-focus area sits inside or adjacent to that EEZ and comparable Western Indian Ocean SIDS waters. None of those states are Quad members. None had a seat in the room where the initiative's data-sharing architecture was designed. Coverage of the launch itself acknowledged this gap without resolving it, noting that the initiative will need to build a genuinely democratic information-sharing culture if it wants regional buy-in beyond the four founding states, which is analyst language for admitting the current design does not yet have one.</p>
+      <p>The named counterargument deserves a direct answer rather than a dismissal. Illegal, unreported, and unregulated fishing is a real and costly problem for small island states that cannot afford their own satellite surveillance capacity, and a functioning Quad surveillance network genuinely could help enforce against IUU activity in waters Seychelles and its neighbours cannot monitor unassisted. That benefit is real. It does not answer the harder question underneath it: enforcement assistance built on data infrastructure a small island state does not control, cannot audit, and was not consulted on the terms of, is a different proposition than enforcement assistance built through a data-sharing agreement negotiated with that state as a party rather than a beneficiary. The first arrangement solves an enforcement problem while creating a sovereignty one. The second solves the enforcement problem without creating the second problem, and the difference is entirely about who sits at the table when the data governance terms get set.</p>
+      <p>This is the concrete case for the data sovereignty argument that HARMONiSE has been building toward on principle. A live surveillance network is now operating over Western Indian Ocean waters, run by four states none of which are Indian Ocean island nations, with an acknowledged consultation gap that has not yet been closed. Naming that gap now, while the initiative is still young enough that its data governance architecture has not fully calcified, is a stronger position than raising the same argument once the terms are already fixed.</p>
+      <p class="footnote">Sources: Quad Foreign Ministers' Meeting announcement, 26 May 2026; The Diplomat, "What Does Quad's New Surveillance Initiative Mean for Indian Ocean Security?"</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 6 — BROADSHEET -->
+<section class="story layout-broadsheet" id="s6">
+  <div class="wrap-inner">
+    <div class="num-box">STORY 06</div>
+    <h2 class="headline">The Model Learned to Read a Reef</h2>
+    <div class="broadsheet-rule"></div>
+    <p class="why-line">Validated GeoAI workflows for coral segmentation and species classification are the direct toolkit upgrade path for a monitoring layer SHORE could run without the large remote sensing team a project like this used to require.</p>
+
+    <div class="broadsheet-cols">
+      <div>
+        <div class="eyebrow">Story Notes</div>
+        <div class="story-notes">
+          <p>GeoAI workflows for marine ecosystem monitoring have moved from experimental to validated in three specific applications: coral segmentation on drone and underwater orthomosaics, automated detection and classification of fishing vessels on satellite imagery, and segmentation of marine species and habitats on underwater images.</p>
+          <p>The Copernicus Marine Service continues to expand free, science-based ocean data, sea temperature trends, sea level, acidification, marine heatwave monitoring, that feeds directly into these workflows and into marine spatial planning more broadly.</p>
+          <p>The practical shift is barrier reduction. A validated segmentation model turns coral reef monitoring from a task requiring a dedicated remote sensing team into one a small institute can run against a standard orthomosaic pipeline, provided the underlying training data actually fits the reef type being monitored.</p>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow">Story Article</div>
+        <div class="story-article">
+          <p>The gap between GeoAI as a research direction and GeoAI as an operational tool has been the honest caveat behind every hydrospatial pitch that mentions machine learning. That gap has narrowed enough to name specifically now. Validated GeoAI workflows exist for three marine ecosystem monitoring applications: segmentation of corals on drone and underwater orthomosaics, automated detection and classification of fishing vessels on satellite imagery, and segmentation of marine species and habitats on underwater images. Validated here means tested against ground-truth data with documented accuracy, not merely proposed in a methods paper, which is the distinction that matters for anyone deciding whether to build a monitoring programme around one of these workflows now or wait another funding cycle.</p>
+          <p>Coral segmentation is the most directly useful of the three for SHORE's positioning. A trained segmentation model takes an orthomosaic, a stitched, georeferenced image built from overlapping drone or towed-camera photographs of a reef, and automatically classifies coral cover, bleaching extent, and substrate type across the full image rather than requiring a human annotator to work through it frame by frame. That is the labour bottleneck that has kept reef monitoring programmes small and infrequent in exactly the places, small island states without a standing marine science department, that need frequent monitoring the most. A validated model does not eliminate the need for a monitoring programme's design and ground-truthing. It eliminates the requirement that a full remote sensing team sit behind every survey.</p>
+          <p>The caveat that matters before adopting any of this for Seychelles's reefs is training data provenance, and it is worth naming directly rather than glossing over. Published GeoAI coral segmentation models have generally been trained and validated on Caribbean and Pacific reef imagery, reef types with different coral genera composition, different substrate colour and texture, and different bleaching presentation than Western Indian Ocean reefs. A model performing well on Caribbean orthomosaics is not guaranteed to transfer cleanly to a Seychelles reef without local re-training or at minimum substantial local validation against ground-truth surveys. Treating an off-the-shelf model as plug-and-play for the Western Indian Ocean without that step risks a monitoring output that looks precise and is quietly wrong in ways a non-specialist reviewer would not catch.</p>
+          <p>That caveat is also the opportunity. Building a Seychelles-specific, or Western Indian Ocean-specific, coral training dataset, correctly ground-truthed against local reef surveys, is a concrete, fundable HARMONiSE work package with a clear technical justification: the existing validated models do not cover this reef type, and closing that gap is what makes GeoAI-assisted monitoring usable here rather than borrowed uncritically from elsewhere. It is also a stronger and more specific pitch to a technology or research funder than a general reef monitoring proposal, because it names a documented gap in the existing literature rather than proposing to duplicate work already validated elsewhere.</p>
+          <p>Copernicus Marine Service's continued expansion of free oceanographic data, sea surface temperature trends, marine heatwave monitoring, acidification indicators, is the complementary layer worth pairing with any coral segmentation pipeline, since bleaching risk and observed bleaching extent are read together, not separately, in any credible monitoring output.</p>
+          <p class="link-out">https://maritime-spatial-planning.ec.europa.eu/practices/remote-sensing-marine-spatial-planning-and-integrated-coastal-areas-management</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 7 — PULL QUOTE -->
+<section class="story layout-pullquote" id="s7">
+  <div class="wrap-inner">
+    <div class="num-stamp">STORY 07</div>
+    <h2 class="headline">Seychelles Is One of Six Case Studies in Its Own Region's Report</h2>
+    <p class="why-line">UNDP named Seychelles as one of six African SIDS in a strategic synthesis on the continent's blue economy, which means the argument you make about Seychelles now has an institutional document making the regional version of it alongside you.</p>
+
+    <blockquote class="pullquote-text">Six African SIDS. One transformation project. Governance and finance gaps named as the impediment, not capacity or ambition.</blockquote>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="story-notes">
+      <p>UNDP published the State of the Africa Blue Economy Strategic Synthesis in July 2026, covering an African SIDS transformation project spanning Cabo Verde, Comoros, Guinea-Bissau, Mauritius, São Tomé and Príncipe, and Seychelles.</p>
+      <p>The report frames the region's blue economy constraints in three categories: environmental pressures, governance and institutional gaps, and structural constraints on finance, skills, and inclusion. Notably, the constraint named first in two of three categories is institutional and financial, not technical or environmental.</p>
+      <p>This gives Shorelines a citable regional companion document, one where Seychelles's own constraints are framed by an outside institutional voice as structural and shared, rather than country-specific.</p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="story-article">
+      <p>Most of the argument work in Shorelines involves making the case that Seychelles's blue economy constraints are structural rather than a failure of ambition or execution. UNDP's State of the Africa Blue Economy Strategic Synthesis, published in July 2026, does a version of that argument work at regional scale, and does it while naming Seychelles directly as one of six countries inside its African SIDS transformation project, alongside Cabo Verde, Comoros, Guinea-Bissau, Mauritius, and São Tomé and Príncipe.</p>
+      <p>The report's own framing is the useful part to extract. It sorts the obstacles to a prospering, sustainable blue economy across the region into three categories: environmental pressures, governance and institutional gaps, and structural constraints on finance, skills, and inclusion. Two of the three are institutional and financial rather than environmental or technical. That ordering matters for how the argument gets made going forward. A narrative built around ocean literacy or environmental awareness gaps is answering a problem this report does not identify as primary. A narrative built around governance capacity and finance access gaps is answering the one it does.</p>
+      <p>Grouping Seychelles alongside Cabo Verde, Comoros, Guinea-Bissau, Mauritius, and São Tomé and Príncipe also does useful comparative work. These six states share more structurally with each other, small population, narrow economic base, high climate exposure relative to GDP, than any of them shares with a large continental African economy, and UNDP's own transformation project treats them as a coherent regional cohort rather than six unrelated country cases. That is an institutional validation of the comparative framing the High-Income SIDS Paradox argument already uses, extended here across the wider African SIDS set rather than Seychelles alone.</p>
+      <p>The practical use of this report is as a companion citation rather than a replacement for country-specific argument. Where a Shorelines piece makes a Seychelles-specific claim about governance or finance constraints, this synthesis is now the document to cite alongside it to show the claim is not a special pleading case, it is the pattern UNDP itself documents across six comparable states in the same region. That shifts the rhetorical weight of the argument from "Seychelles needs more support" to "Seychelles exhibits the same documented regional pattern UNDP has already named," which is a harder claim to wave off in a funding conversation or a policy room.</p>
+      <p>Worth reading in full before the next major Shorelines piece touching blue economy finance: the report's own case studies on the other five states are a source of concrete comparative detail, funding mechanisms attempted, governance reforms tried, that have not yet made it into wider circulation outside this synthesis.</p>
+      <p class="link-out">https://www.undp.org/sites/g/files/zskgke326/files/2026-07/final_copyed_kg_20_july_state_of_abe_report_22_july_2026_compressed.pdf</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 8 — LETTERPRESS -->
+<section class="story layout-letterpress" id="s8">
+  <div class="wrap-inner">
+    <div class="num-bg">08</div>
+    <h2 class="headline">NZD 4.4 Million and a Playbook the Western Indian Ocean Doesn't Have</h2>
+    <p class="why-line">The Pacific just ran a fully funded regional nature-based solutions programme with a name, a budget, and three years of delivery, and nothing structurally equivalent exists yet for the Western Indian Ocean SIDS SHORE works alongside.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="story-notes">
+      <p>The Promoting Pacific Island Nature-based Solutions project, PPIN, is coordinated by IUCN with the Secretariat of the Pacific Regional Environment Programme, the Pacific Community, and the Global Green Growth Institute, funded by New Zealand's aid programme at NZD 4,446,920.</p>
+      <p>PPIN runs three concrete objectives: developing nature-based solutions policy and legislation across Pacific Island Countries, building regional awareness and capacity, and fostering cooperation, with direct delivery focused on Fiji, Tonga, and Vanuatu.</p>
+      <p>No equivalent named, funded, multi-partner nature-based solutions programme currently operates across Western Indian Ocean SIDS on the same explicit finance-and-legislation-and-capacity structure PPIN uses.</p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="story-article">
+      <p>The Promoting Pacific Island Nature-based Solutions project is worth reading closely for its structure rather than its Pacific-specific content, because the structure is exactly the gap Western Indian Ocean SIDS work currently lacks a filled version of. PPIN is coordinated by IUCN, working with the Secretariat of the Pacific Regional Environment Programme, the Pacific Community, and the Global Green Growth Institute, and funded through New Zealand's aid programme at a specific, published figure of NZD 4,446,920. That is not a large sum by global development finance standards. It is, however, a real, multi-year, multi-partner commitment with a named budget line, which already puts it ahead of most nature-based solutions initiatives that exist as concept papers rather than funded programmes.</p>
+      <p>The project's three stated objectives read as a template rather than a Pacific-specific design choice: developing nature-based solutions policy and legislation across participating countries, so the work outlives any single funded phase; building regional awareness and technical capacity, so implementation does not depend permanently on external technical assistance; and fostering cooperation across the participating states, so lessons and capacity transfer between Fiji, Tonga, and Vanuatu rather than each country rebuilding the same institutional knowledge independently. That three-part structure, policy embedding, capacity building, and regional cooperation, is a directly transferable design for any Western Indian Ocean equivalent, not something specific to Pacific geography or governance.</p>
+      <p>What does not currently exist is the Western Indian Ocean version of this same structure. Seychelles, Comoros, Mauritius, and Madagascar share enough of the small-state, high-exposure, narrow-institutional-capacity profile that Fiji, Tonga, and Vanuatu share with each other to make a comparable regional nature-based solutions programme a reasonable proposition, and SHORE's positioning, spatial science plus governance plus a Seychelles base, is a plausible technical anchor for such a programme in a way few other regional institutions can claim.</p>
+      <p>The honest gap in this comparison is capacity to convene and fund at PPIN's scale, which SHORE does not currently have alone. What SHORE can do without that scale is document the PPIN model precisely enough, funder, budget, partner structure, three-part objective design, to use as a direct, named precedent in approaching IUCN, SPREP's Western Indian Ocean counterpart bodies, or a bilateral aid programme with an existing Indian Ocean footprint about scoping an equivalent. A funder evaluating a proposed Western Indian Ocean nature-based solutions programme responds differently to "here is a working, funded, three-partner precedent from the Pacific, structured this specific way, and here is the equivalent gap in our region" than to a proposal built from first principles with no comparator cited.</p>
+      <p>The near-term action is modest: pull PPIN's own published documentation and interim reporting once available from SPC and IUCN, since a programme now several years into delivery will have lessons on what worked and what did not that are more useful than the original project design documents alone.</p>
+      <p class="link-out">https://www.spc.int/cces/ppin</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 9 — COLOUR FIELD -->
+<section class="story layout-colourfield" id="s9">
+  <div class="wrap-inner">
+    <div class="num-hairline">STORY · 09</div>
+    <h2 class="headline">One Journal Closes the Door on Preprints as Washington Forces It Open</h2>
+    <p class="why-line">Ocean science publishing is moving in two contradictory directions at once, and which direction your target journal is moving in now decides whether posting a preprint helps or disqualifies your next submission.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="story-notes">
+      <p>ICES Journal of Marine Science's revised policy, effective for manuscripts submitted from 30 March 2026, will not consider for publication any manuscript that has been posted on a preprint server, and prohibits posting to a preprint platform during submission or review.</p>
+      <p>In the opposite direction: a US federal open access mandate took effect in January 2026 requiring federally funded research be freely and immediately available on publication, and the Journal of Ocean Engineering and Science converted fully to gold open access on 1 January 2026, joining Elsevier's roster of more than 890 fully open access titles.</p>
+      <p>These are not competing predictions about where publishing is heading. They are three concrete, already-implemented policies pulling in different directions inside the same discipline, active right now.</p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="story-article">
+      <p>Three ocean science publishing policies took effect within months of each other in 2026, and they do not agree with one another about what open, timely access to research should look like. ICES Journal of Marine Science tightened its preprint policy for manuscripts submitted from 30 March 2026 onward: no manuscript that has appeared on a preprint server will be considered for publication, and posting to a preprint platform during submission or peer review is prohibited outright. In the same window, a US federal open access mandate took effect from January 2026 requiring that federally funded research be made freely and immediately available on publication, no embargo period permitted. And the Journal of Ocean Engineering and Science converted fully to gold open access on 1 January 2026, joining Elsevier's growing roster of more than 890 fully open access titles.</p>
+      <p>These three policies are not describing the same underlying trend from different angles. They are contradictory in practical effect. A federally funded US researcher targeting ICES now has to navigate a mandate requiring immediate free access to their funded output colliding with a submission ban on the exact preprint posting behaviour many researchers use to satisfy that kind of mandate ahead of formal publication. A researcher at an under-resourced institution relying on preprint posting for early visibility, precisely because article processing charges and paywalls are the barrier gold open access is meant to solve, loses that route entirely if their target venue is ICES rather than a gold open access journal like the newly converted Journal of Ocean Engineering and Science.</p>
+      <p>The stated rationale for preprint restrictions, protecting the scientific record from unvetted claims circulating and getting cited or reported on before peer review has caught errors, is not a fringe concern. Ocean policy processes, BBNJ negotiations among them, have real exposure to premature or flawed science entering a negotiating room via early, unreviewed circulation, and a journal's caution about that risk is defensible on its own terms.</p>
+      <p>That rationale does not survive contact with who actually relies on preprints and why. Capacity-constrained researchers, disproportionately based in the Global South and in small island states without institutional subscriptions or funding to cover article processing charges, use preprint servers precisely because they are excluded from paywalled and even some open-access-but-fee-charging publication routes until a preprint gives them early visibility and a citable record. A preprint ban protects the peer-review gate. It also closes one of the few channels capacity-constrained researchers have used to participate in a live scientific conversation before formal publication timelines, which can run a year or more, catch up. The two effects are both real, and a journal choosing to prioritise the first is making a choice with a distributive cost the policy language does not name.</p>
+      <p>The concrete implication for any submission from here is procedural but consequential: check a target journal's current preprint policy before submitting or posting anything, not after. The direction of travel across ocean science publishing is not settled in one direction, and assuming last year's norms still hold for this year's target journal is now a live risk rather than a formality.</p>
+      <p class="link-out">https://academic.oup.com/icesjms/article/83/4/fsag052/8651474</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 10 — SUNBEAM ALERT -->
+<section class="story layout-sunbeam" id="s10">
+  <div class="wrap-inner">
+    <div class="num-bg">10</div>
+    <h2 class="headline">Panama, 2027, and the Clock SIDS Should Already Be Running</h2>
+    <p class="why-line">Seychelles already exceeds the 30x30 marine protection target the rest of the world is still negotiating toward, and the year-out countdown to the next global protected areas congress is exactly when that fact should start becoming a case study, not a footnote.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="story-notes">
+      <p>IUCN confirmed on 4 September 2026 the one-year countdown to the World Protected and Conserved Areas Congress, which runs 4 to 10 September 2027 in Panama City, Panama. Held once a decade, it is the leading global forum for area-based conservation action and investment.</p>
+      <p>Seychelles's 2018 debt-for-nature swap and the resulting marine spatial plan already committed 30% of its exclusive economic zone to protection, ahead of the Kunming-Montreal Global Biodiversity Framework's 30x30 target that most states are still working toward for 2030.</p>
+      <p>A year out is early enough to shape a Panama 2027 submission deliberately rather than assembling one in the final quarter before the congress, when submission slots and side-event space are already largely allocated.</p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="story-article">
+      <p>IUCN's confirmation that the World Protected and Conserved Areas Congress is exactly one year out, running 4 to 10 September 2027 in Panama City, is the kind of announcement that is easy to file away as distant. It is not distant for the argument Seychelles is unusually well positioned to make there. This congress happens once a decade, functions as the leading global forum for shaping area-based conservation investment and policy for the years that follow it, and will convene governments, private sector, civil society, Indigenous peoples, and local communities around the shared 30x30 target set under the Kunming-Montreal Global Biodiversity Framework.</p>
+      <p>Most states attending will be presenting plans, projections, and partial progress toward that 30% marine protection target, due by 2030. Seychelles will not be presenting a plan. It will be presenting a result. The 2018 debt-for-nature conversion, structured through what became the Conservation and Climate Adaptation Trust, converted a portion of Seychelles's sovereign debt directly into a marine spatial plan committing 30% of its exclusive economic zone, one of the largest EEZs relative to landmass anywhere, to formal protection. That is not a target under negotiation. It is delivered, multi-year, operating protection, years ahead of the deadline most of the room will still be working toward.</p>
+      <p>That gap between "target" and "delivered" is the case study opportunity, and it is underused outside Commonwealth-specific and blue bond finance circles. A congress convened specifically to catalyse investment and action toward area-based conservation targets is the exact venue where a working, financed, multi-year example of hitting that target early carries more weight than another government's forward-looking commitment. Positioning Seychelles's experience as a template, the debt conversion mechanism, the marine spatial planning process that followed it, the institutional structure of the Trust that manages it, rather than as a small-country success anecdote, is the difference between a good side-event story and a session other delegations actually take structural lessons from.</p>
+      <p>A year out is exactly the right amount of runway to do this deliberately rather than under deadline pressure. Congress submission calls, side-event proposals, and partner session slots for an event of this scale typically open well over a year ahead and fill substantially before the final quarter before the event itself. Waiting until mid-2027 to start shaping a Panama submission means competing for whatever slots remain rather than shaping the congress's own framing of what a 30x30 success case looks like.</p>
+      <p>The concrete first step is establishing contact with IUCN's congress secretariat now to understand submission timelines and case-study session formats for 2027, while the field is still open rather than already structured around other governments' narratives.</p>
+      <p class="link-out">https://iucn.org/press-release/202510/panama-host-next-world-protected-and-conserved-areas-congress-2027</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Morning Edition — compiled 18 September 2026 for Francesca Adrienne, SHORE Institute · Shorelines<br>
+  Sources: The Diplomat, The Conversation, SeafoodSource, Nature Asia / Nature Geoscience, ODI, UNFCCC / IISD SDG Knowledge Hub, The Diplomat (Quad), European MSP Platform, UNDP, IUCN / SPC, ICES Journal of Marine Science, Elsevier.
+</footer>
+
+</body>
+</html>
