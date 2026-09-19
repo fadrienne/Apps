@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Edition — 19 September 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,600;1,9..144,700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sky-pale:#eaf4fb;
+    --sky-mid:#bfe3f7;
+    --sky-bright:#6cc0ea;
+    --navy:#0b2545;
+    --teal:#1a6b74;
+    --teal-pale:#dbeff0;
+    --forest:#1f4d36;
+    --sage:#c9dcc4;
+    --mint:#dff4ea;
+    --sunshine:#ffd447;
+    --sunshine-deep:#f5b800;
+    --gold:#e8b93a;
+    --cream:#faf3e3;
+    --offwhite:#fbfaf7;
+    --slate:#5b6472;
+    --charcoal:#2a2e34;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--offwhite);
+    color:var(--charcoal);
+    font-family:'Inter',sans-serif;
+    font-size:2rem;
+    line-height:1.55;
+  }
+  h1,h2,h3,h4{font-family:'Fraunces',serif;margin:0;}
+  p{margin:0 0 1.2em 0;}
+  a{color:var(--teal);}
+  .container{max-width:1100px;margin:0 auto;padding:0 2rem;}
+
+  /* MASTHEAD */
+  .masthead{
+    background:var(--sky-pale);
+    border-bottom:4px solid var(--navy);
+    padding:4rem 2rem 3rem;
+    text-align:center;
+  }
+  .masthead .kicker{
+    font-family:'Inter',sans-serif;
+    letter-spacing:0.35em;
+    text-transform:uppercase;
+    font-size:1rem;
+    font-weight:700;
+    color:var(--teal);
+    margin-bottom:1rem;
+  }
+  .masthead h1{
+    font-size:6rem;
+    font-weight:900;
+    color:var(--navy);
+    letter-spacing:-0.02em;
+    line-height:0.95;
+  }
+  .masthead .date{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:1.8rem;
+    color:var(--charcoal);
+    margin-top:1rem;
+  }
+  .masthead .strap{
+    max-width:640px;
+    margin:1.5rem auto 0;
+    font-size:1.15rem;
+    color:var(--slate);
+  }
+
+  /* NAV */
+  .jumpnav{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:var(--teal);
+    padding:1rem 0;
+    box-shadow:0 4px 14px rgba(11,37,69,0.18);
+  }
+  .jumpnav .container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.6rem 1rem;
+    justify-content:center;
+  }
+  .jumpnav a{
+    font-family:'Inter',sans-serif;
+    font-size:0.95rem;
+    font-weight:600;
+    color:var(--offwhite);
+    text-decoration:none;
+    padding:0.5rem 0.9rem;
+    border:1px solid rgba(255,255,255,0.35);
+    border-radius:999px;
+    white-space:nowrap;
+  }
+  .jumpnav a:hover{background:var(--forest);border-color:var(--forest);}
+  .jumpnav a .bolt{color:var(--sunshine);margin-right:0.3em;}
+
+  /* STORY SHARED */
+  .story{padding:5rem 0;scroll-margin-top:5.5rem;}
+  .story-inner{max-width:1100px;margin:0 auto;padding:0 2rem;}
+  .eyebrow{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    letter-spacing:0.28em;
+    text-transform:uppercase;
+    font-size:0.95rem;
+    margin:2.4rem 0 0.8rem;
+  }
+  .why-matters{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:700;
+    font-size:1.9rem;
+    line-height:1.4;
+    margin:1.6rem 0 2.2rem;
+    padding:1.6rem 2rem;
+    border-left:6px solid var(--teal);
+  }
+  .story-notes p, .story-article p{font-size:1.15rem;}
+  .story-article{max-width:760px;}
+  .flag{
+    display:inline-flex;
+    align-items:center;
+    gap:0.4rem;
+    background:var(--sunshine);
+    color:var(--navy);
+    font-family:'Inter',sans-serif;
+    font-weight:800;
+    font-size:1rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:0.5rem 1.1rem;
+    border-radius:999px;
+    margin-bottom:1.5rem;
+  }
+  .headline{
+    font-family:'Fraunces',serif;
+    font-weight:800;
+    line-height:1.02;
+    margin:0.6rem 0 1.4rem;
+  }
+  .dek{font-size:1.25rem;color:var(--slate);max-width:700px;}
+  hr.rule{border:none;border-top:2px solid var(--teal);width:70px;margin:1.5rem 0;}
+
+  /* 01 HERO */
+  .story-01{background:var(--sky-bright);color:var(--navy);}
+  .story-01 .numeral{
+    font-family:'Fraunces',serif;
+    font-size:9rem;
+    font-weight:300;
+    opacity:0.35;
+    line-height:1;
+  }
+  .story-01 .headline{font-size:4.4rem;max-width:900px;}
+  .story-01 .why-matters{border-left-color:var(--forest);background:rgba(255,255,255,0.35);color:var(--navy);}
+  .story-01 .eyebrow{color:var(--forest);}
+
+  /* 02 SUNBEAM ALERT */
+  .story-02{background:var(--sunshine);color:var(--navy);}
+  .story-02 .stamp{
+    display:inline-block;
+    border:4px solid var(--navy);
+    border-radius:50%;
+    width:110px;height:110px;
+    text-align:center;
+    line-height:110px;
+    font-family:'Fraunces',serif;
+    font-weight:900;
+    font-size:2.6rem;
+    transform:rotate(-8deg);
+    margin-bottom:1.5rem;
+  }
+  .story-02 .headline{font-style:italic;font-weight:900;font-size:3.6rem;}
+  .story-02 .why-matters{border-left-color:var(--navy);background:rgba(255,255,255,0.4);}
+  .story-02 .eyebrow{color:var(--teal);}
+
+  /* 03 COASTAL */
+  .story-03{background:var(--sky-pale);}
+  .story-03 .story-inner{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:3rem;
+    align-items:start;
+  }
+  .story-03 .col-full{grid-column:1/-1;}
+  .story-03 .numeral{
+    font-family:'Fraunces',serif;
+    font-size:2.5rem;
+    color:var(--forest);
+    border-bottom:5px solid var(--forest);
+    display:inline-block;
+    padding-bottom:0.3rem;
+    margin-bottom:1rem;
+  }
+  .story-03 .headline{font-size:3.4rem;color:var(--navy);}
+  .story-03 .why-matters{border-left-color:var(--forest);background:var(--white);}
+  .story-03 .eyebrow{color:var(--forest);}
+  @media(max-width:820px){.story-03 .story-inner{grid-template-columns:1fr;}}
+
+  /* 04 ACADEMIC DROP CAP */
+  .story-04{background:var(--offwhite);}
+  .story-04 .numeral{
+    font-family:'Inter',sans-serif;
+    font-size:1rem;
+    letter-spacing:0.3em;
+    color:var(--slate);
+    text-transform:uppercase;
+  }
+  .story-04 .headline{font-size:3.3rem;color:var(--navy);max-width:760px;}
+  .story-04 .drop p:first-of-type::first-letter{
+    font-family:'Fraunces',serif;
+    font-weight:800;
+    font-size:5.5rem;
+    float:left;
+    line-height:0.8;
+    padding-right:0.15em;
+    color:var(--teal);
+  }
+  .story-04 .why-matters{border-left-color:var(--teal);}
+  .story-04 .eyebrow{color:var(--teal);}
+  .story-04 .footnote{
+    font-size:0.95rem;
+    color:var(--slate);
+    border-top:1px solid var(--slate);
+    padding-top:1rem;
+    margin-top:2rem;
+  }
+
+  /* 05 BIG STAT */
+  .story-05{background:var(--mint);}
+  .story-05 .bigstat{
+    font-family:'Fraunces',serif;
+    font-weight:900;
+    font-size:11rem;
+    line-height:0.9;
+    color:var(--teal);
+    letter-spacing:-0.03em;
+  }
+  .story-05 .bigstat-label{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:var(--forest);
+    margin-bottom:1rem;
+  }
+  .story-05 .headline{font-size:3rem;color:var(--navy);}
+  .story-05 .why-matters{border-left-color:var(--forest);background:var(--white);}
+  .story-05 .eyebrow{color:var(--forest);}
+
+  /* 06 TERMINAL */
+  .story-06{background:var(--charcoal-none,#eef6f1);color:var(--forest);font-family:'JetBrains Mono',monospace;}
+  .story-06 .story-inner{background:#f1f9f4;border:2px solid var(--forest);border-radius:8px;padding:3rem;}
+  .story-06 .numeral{font-family:'JetBrains Mono',monospace;color:var(--teal);font-size:1.1rem;}
+  .story-06 .headline{font-family:'JetBrains Mono',monospace;font-size:2.4rem;color:var(--forest);font-weight:700;}
+  .story-06 .why-matters{font-family:'Fraunces',serif;border-left-color:var(--forest);background:var(--white);color:var(--forest);}
+  .story-06 .eyebrow{font-family:'JetBrains Mono',monospace;color:var(--teal);}
+  .story-06 .story-notes p, .story-06 .story-article p{font-family:'Inter',sans-serif;}
+  .story-06 .prompt{color:var(--teal);}
+
+  /* 07 LETTERPRESS */
+  .story-07{
+    background:var(--cream);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(43,47,52,0.02) 0px, rgba(43,47,52,0.02) 1px, transparent 1px, transparent 3px);
+  }
+  .story-07 .numeral{
+    font-family:'Fraunces',serif;
+    font-size:4rem;
+    font-weight:300;
+    color:var(--slate);
+    border:2px solid var(--slate);
+    padding:0.5rem 1.2rem;
+    display:inline-block;
+    margin-bottom:1.5rem;
+  }
+  .story-07 .headline{font-size:3.4rem;color:var(--navy);font-weight:600;}
+  .story-07 .why-matters{border-left-color:var(--forest);}
+  .story-07 .eyebrow{color:var(--forest);}
+  .story-07 .story-article, .story-07 .story-notes{font-family:'Fraunces',serif;}
+
+  /* 08 BROADSHEET */
+  .story-08{background:var(--offwhite);border-top:3px solid var(--teal);border-bottom:3px solid var(--teal);}
+  .story-08 .masthead-row{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--navy);padding-bottom:0.8rem;margin-bottom:2rem;}
+  .story-08 .numeral{font-family:'Fraunces',serif;font-size:2rem;color:var(--navy);}
+  .story-08 .headline{font-size:3.2rem;color:var(--navy);column-span:all;}
+  .story-08 .cols{columns:2;column-gap:3rem;}
+  .story-08 .cols p{font-size:1.05rem;}
+  .story-08 .why-matters{column-span:all;border-left-color:var(--teal);}
+  .story-08 .eyebrow{color:var(--teal);column-span:all;}
+  .story-08 .story-article{columns:2;column-gap:3rem;max-width:100%;}
+  @media(max-width:820px){.story-08 .cols,.story-08 .story-article{columns:1;}}
+
+  /* 09 PULL QUOTE */
+  .story-09{background:var(--sky-pale);}
+  .story-09 .numeral{font-family:'Fraunces',serif;font-size:2rem;color:var(--teal);}
+  .story-09 .headline{font-size:3rem;color:var(--navy);}
+  .story-09 .pullquote{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:2.8rem;
+    line-height:1.25;
+    color:var(--navy);
+    padding:3rem;
+    background:var(--sage);
+    border-radius:6px;
+    margin:2rem 0;
+  }
+  .story-09 .why-matters{border-left-color:var(--forest);background:var(--white);}
+  .story-09 .eyebrow{color:var(--forest);}
+
+  /* 10 COLOUR FIELD */
+  .story-10{background:var(--teal);color:var(--white);}
+  .story-10 .numeral{font-family:'Fraunces',serif;font-size:3rem;color:var(--sunshine);}
+  .story-10 .headline{font-size:3.4rem;color:var(--white);font-family:'Inter',sans-serif;font-weight:800;}
+  .story-10 .why-matters{border-left-color:var(--sunshine);background:rgba(255,255,255,0.12);color:var(--white);}
+  .story-10 .eyebrow{color:var(--sunshine);}
+  .story-10 a{color:var(--sunshine);}
+
+  footer{
+    background:var(--forest);
+    color:var(--mint);
+    text-align:center;
+    padding:4rem 2rem;
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:1.3rem;
+  }
+
+  @media(max-width:820px){
+    body{font-size:1.7rem;}
+    .masthead h1{font-size:3.6rem;}
+    .story{padding:3rem 0;}
+    .headline{font-size:2.4rem !important;}
+    .story-05 .bigstat{font-size:6rem;}
+    .story-09 .pullquote{font-size:1.9rem;padding:1.8rem;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="kicker">SHORE Institute · Shorelines</div>
+  <h1>Morning Edition</h1>
+  <div class="date">Saturday, 19 September 2026</div>
+  <p class="strap">Ten stories from your desk this morning, filtered for ocean governance, hydrospatial science, and SIDS equity.</p>
+</header>
+
+<nav class="jumpnav">
+  <div class="container">
+    <a href="#story-01">01 · The Boundary You Used to Draw</a>
+    <a href="#story-02"><span class="bolt">⚡</span>Ocean Finance Comes to Sydney</a>
+    <a href="#story-03">03 · Fifteen Months to COP1</a>
+    <a href="#story-04">04 · The Index That Might Fix the Paradox</a>
+    <a href="#story-05">05 · 28.7%</a>
+    <a href="#story-06">06 · Autonomous Systems Join the Mapping Race</a>
+    <a href="#story-07">07 · Recognition Is Not Sovereignty</a>
+    <a href="#story-08">08 · Ten Percent Protected, Two Percent Recovering</a>
+    <a href="#story-09">09 · Governing Ocean Nobody Owns</a>
+    <a href="#story-10">10 · Racing to Engineer What We Haven't Finished Measuring</a>
+  </div>
+</nav>
+
+<!-- ================= STORY 01 : HERO ================= -->
+<section class="story story-01" id="story-01">
+  <div class="story-inner">
+    <div class="numeral">01</div>
+    <h2 class="headline">The Boundary You Used to Draw</h2>
+    <p class="dek">Mauritius secures an extended continental shelf on the Mascarene Plateau, the same seabed Seychelles co-manages, and the same process you once ran.</p>
+    <div class="why-matters">The Commission on the Limits of the Continental Shelf adopted Mauritius's extended shelf recommendation for Rodrigues on 30 July, the same technical and legal process you ran as Director General for Maritime Boundary Delimitation, and it lands directly inside the Mascarene Plateau joint zone Seychelles still co-manages.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="story-notes">
+      <p>On 30 July, the CLCS adopted recommendations recognising Mauritius's entitlement to an extended continental shelf beyond 200 nautical miles around Rodrigues, following a final technical presentation the Mauritian delegation made to the sub-commission in February. That claim sits on the Mascarene Plateau, the same plateau where Seychelles and Mauritius jointly secured close to 400,000 square kilometres of extended shelf back in 2012, still the largest jointly managed offshore zone in the world.</p>
+      <p>The Rodrigues claim is Mauritius's alone, but the CLCS machinery behind it, the bathymetric surveys, the foot-of-slope determinations, the legal submissions, is exactly what your Department of Blue Economy career was built on. Every extended shelf claim that clears CLCS narrows the unmapped, ungoverned seabed in your part of the Indian Ocean by another few hundred thousand square kilometres.</p>
+      <p>Watch how Mauritius and Seychelles coordinate survey data and management going forward, given the joint commission already running the 2012 zone sits right next door. Background: <a href="https://www.statehouse.gov.sc/news/1656/seychelles-and-mauritius-jointly-secure-extended-continental-shelf-in-the-mascarene-region">statehouse.gov.sc/news/1656</a></p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="story-article">
+      <p>On 30 July, the Commission on the Limits of the Continental Shelf adopted its recommendation recognising Mauritius's entitlement to an extended continental shelf beyond 200 nautical miles around Rodrigues. The Mauritian delegation delivered its final technical presentation to the CLCS sub-commission in February. Five months later, the seabed became legally theirs to manage, not just claim.</p>
+      <p>You know this process from the inside. As Director General for Maritime Boundary Delimitation in the Department of Blue Economy, you ran the version of this that Seychelles and Mauritius completed jointly in 2012: a claim covering nearly 400,000 square kilometres of the Mascarene Plateau, still the largest jointly managed extended continental shelf zone in the world. Rodrigues sits on the same plateau system. The geology does not change with the flag. What changes is which government gets to license exploration, regulate fishing, and set environmental conditions on that seabed.</p>
+      <p>This is the part of ocean governance that gets the least attention and does the most work. BBNJ dominates headlines because it is new law for two thirds of the ocean that nobody owns. CLCS claims are the opposite: old law, applied patiently, over seabed that specific states already have a legal path to control, if they can prove it with data. Mauritius spent close to a decade assembling the bathymetric, seismic and geological submissions the sub-commission needed before it would even schedule that February presentation. That is not a policy timeline. That is a survey and modelling timeline, the kind you spent twelve years running for Queensland Fire and Rescue's spatial teams before you ever touched a maritime boundary.</p>
+      <p>For Seychelles, the practical question now is coordination. The 2012 joint zone already has a management commission. Mauritius's new Rodrigues shelf does not automatically fold into that arrangement, it is a separate CLCS recommendation, but it borders the same plateau and will need the same kind of joint data infrastructure if the two governments want to avoid duplicating survey effort or producing conflicting bathymetric baselines in adjacent zones.</p>
+      <p>That is a SHORE Institute problem as much as a government one. Extended shelf claims live or die on the quality of the hydrospatial data behind them: multibeam coverage, sediment thickness, the foot-of-slope determination the whole CLCS submission turns on. A regional hydrospatial observatory sitting in Seychelles, with the technical credibility to support both governments' data pipelines rather than compete with them, has an obvious role here. It is also, frankly, a funding argument: technical assistance for extended shelf data management is a line multilateral ocean finance already funds, and you have the CV to lead it.</p>
+      <p>The wider signal is that CLCS work has not slowed even as BBNJ absorbs the diplomatic oxygen. Coastal states are still filing, still getting recommendations adopted, still expanding the area of ocean under national jurisdiction one submission at a time. For a Large Ocean State like Seychelles, whose entire governance identity rests on managing far more sea than land, every adjacent claim that clears the CLCS process is worth tracking, not just for the boundary line it draws, but for what it says about the state of the science needed to draw it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STORY 02 : SUNBEAM ALERT ================= -->
+<section class="story story-02" id="story-02">
+  <div class="story-inner">
+    <div class="stamp">02</div>
+    <div class="flag">⚡ Actionable this week</div>
+    <h2 class="headline">Ocean Finance Comes to Sydney, Monday</h2>
+    <p class="dek">The UNFCCC's Standing Committee on Finance dedicates its entire 2026 Forum to ocean and water finance, starting in two days.</p>
+    <div class="why-matters">The UNFCCC's Standing Committee on Finance is holding its entire 2026 Forum on ocean and water finance in Sydney this Monday and Tuesday, the exact SIDS access gap you write about, discussed by the institutions that control the money, on the other side of the Indian Ocean from you.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="story-notes">
+      <p>The 2026 Forum of the Standing Committee on Finance runs 21 to 22 September at the Sofitel Sydney Darling Harbour, two days from now, under the theme "Financing Climate Action for Water Systems and the Ocean." It is the first time the SCF has dedicated an entire annual forum to ocean finance specifically, rather than folding it into a broader climate agenda.</p>
+      <p>The Forum brings governments, climate funds, financial institutions, civil society and the private sector into the same room to work on mobilisation and delivery of ocean-related climate finance, the exact gap SIDS keep flagging: SDG 14 gets one of the smallest shares of climate finance of any goal, and most SIDS frame their ocean commitments in their national climate plans as conditional on external support that has not shown up.</p>
+      <p>The call for inputs closed earlier in the cycle, so there is no submission window left, but the Forum's outcomes and background papers will set the finance conversation heading into COP31. Event page: <a href="https://unfccc.int/event/2026-forum-of-the-standing-committee-on-finance">unfccc.int/event/2026-forum-of-the-standing-committee-on-finance</a></p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="story-article">
+      <p>On Monday, the UNFCCC's Standing Committee on Finance opens its 2026 Forum in Sydney under a theme it has never given its own dedicated event before: "Financing Climate Action for Water Systems and the Ocean." Two days, one hotel ballroom, and the people who actually move climate finance money deciding how the ocean fits into it.</p>
+      <p>This matters because the ocean has spent a decade losing the finance argument. SDG 14, life below water, receives one of the smallest shares of climate and development finance of any Sustainable Development Goal, consistently. Most SIDS built their national climate plans around ocean commitments they explicitly flagged as conditional on external support, not because they lacked ambition, but because they lacked the fiscal space to fund adaptation and mitigation for marine systems out of domestic budgets. That support has been slow to materialise. The SCF's own background papers going into this Forum say so plainly: ocean-based climate action is significantly underfunded relative to country needs, rising loss and damage, and the commitments countries have already made on paper.</p>
+      <p>The call for inputs closed before this Forum convened, so there is no submission window left to catch. What is worth your attention now is what comes out of it. Two structural fixes have circulated in the finance-access literature for years, and this Forum is a plausible venue for either to gain real traction: predictable, programmatic ocean finance windows rather than one-off project grants, and the Multidimensional Vulnerability Index as a genuine complement to GNI per capita in eligibility screening. Neither fix is new. What is new is a dedicated ocean forum putting both in front of the institutions that would have to implement them.</p>
+      <p>For Seychelles specifically, and for the wider case you keep making about high-income SIDS locked out of concessional finance, this Forum is a stress test. If the outcomes lean toward programmatic, needs-based ocean finance mechanisms, that is direct ammunition for the argument you have been building. If the Forum produces another round of pledges without structural reform, that is worth naming too, because it confirms the pattern rather than breaking it.</p>
+      <p>Read the Forum summary when the SCF secretariat publishes it, not the press release. The background paper already sketches where the disagreements sit: between funds that want measurable, bankable ocean projects and SIDS negotiators who want access reform before they trust another financing window to reach them. That tension is the actual story, more than whatever headline figure gets announced in Sydney this week.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STORY 03 : COASTAL ================= -->
+<section class="story story-03" id="story-03">
+  <div class="story-inner">
+    <div class="col-full">
+      <div class="numeral">03</div>
+      <h2 class="headline">Fifteen Months to COP1</h2>
+      <p class="dek">BBNJ's Preparatory Commission has finished its work. The high seas treaty is now a countdown, not a negotiation.</p>
+      <div class="why-matters">BBNJ entered into force in January and its Preparatory Commission has already finished its work, which means the marine protected area and benefit-sharing rules for two thirds of the ocean are now a fifteen month countdown to COP1, not a hypothetical treaty anymore.</div>
+    </div>
+    <div>
+      <div class="eyebrow">Story Notes</div>
+      <div class="story-notes">
+        <p>The BBNJ Agreement, the High Seas Treaty, crossed its sixtieth ratification a year ago this week and entered into force on 17 January. It now carries 145 signatures and 61 ratifications. The Preparatory Commission held three sessions, April 2025, August 2025, and 23 March to 2 April 2026, and has forwarded its recommendations to the first Conference of the Parties, scheduled for 11 to 22 January 2027 in New York.</p>
+        <p>The treaty covers four operational areas: fair and equitable sharing of benefits from marine genetic resources, area-based management tools including high seas marine protected areas, environmental impact assessments for activities beyond national jurisdiction, and capacity building with marine technology transfer, the clause that determines whether a country like Seychelles gets real tools or just a seat at the table.</p>
+      </div>
+    </div>
+    <div>
+      <div class="eyebrow">Story Article</div>
+      <div class="story-article">
+        <p>The High Seas Treaty is no longer a negotiation. It is a fifteen month countdown. BBNJ entered into force on 17 January, five months after crossing the sixty-ratification threshold it needed, and its Preparatory Commission has already run through all three of its planned sessions. The third, held over two weeks from 23 March to 2 April this year, forwarded its recommendations to the first Conference of the Parties, set for 11 to 22 January 2027 in New York.</p>
+        <p>That timeline compresses everything. States, observers and civil society now have roughly fifteen months to shape how COP1 handles the four pillars the treaty runs on: benefit sharing from marine genetic resources, area-based management tools including high seas MPAs, environmental impact assessments in areas beyond national jurisdiction, and capacity building with technology transfer. The IDDRI policy brief on PrepCom3 asked the right question in its title: smooth sailing to COP1? The honest answer from the negotiating room is not yet. Benefit-sharing mechanics and the institutional architecture for EIAs both remain contested enough that COP1 could either lock in workable rules or produce another round of deferred annexes.</p>
+        <p>For a country like Seychelles, the capacity building and technology transfer pillar is the one to watch closest, not because it is the most politically fraught, but because it is the one that determines whether high seas governance actually reaches SIDS institutions or stays a conversation among distant-water fishing nations and conservation NGOs. The treaty text commits to a capacity building and marine technology transfer committee. What that committee funds, and how accessible its mechanism is to a government the size of Seychelles's, will say more about whether BBNJ delivers equity than any MPA designation will.</p>
+        <p>There is also a hydrospatial angle that gets less attention than it should. Area-based management tools require baseline biodiversity and bathymetric data to designate defensibly, and that data gap in areas beyond national jurisdiction is severe. The treaty's environmental impact assessment provisions will lean hard on exactly the kind of mapping and spatial science infrastructure that Seabed 2030 and national hydrospatial programmes are trying to build. A high seas MPA proposal without decent seafloor data behind it is a political gesture, not a management tool.</p>
+        <p>Fifteen months is not a long runway for institutions that move at UN speed. If you have a Shorelines piece in you on BBNJ, now is the window: write it before COP1 decisions freeze the framing, while the capacity building and data questions are still open enough to argue about.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STORY 04 : ACADEMIC DROP CAP ================= -->
+<section class="story story-04" id="story-04">
+  <div class="story-inner">
+    <div class="numeral">Field Note 04</div>
+    <h2 class="headline">The Index That Might Fix the Paradox</h2>
+    <p class="dek">The Multidimensional Vulnerability Index moves from proposal to live negotiation, and 2026 is the window researchers say matters.</p>
+    <div class="why-matters">The Multidimensional Vulnerability Index you have been tracking as the fix for the High-Income SIDS Paradox is now formally under negotiation, and 2026 is the window multiple finance bodies are calling critical for locking it into eligibility criteria.</div>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="story-notes">
+      <p>Of the world's 57 small island developing states, seven countries and twenty overseas territories are currently classified as non-ODA eligible, locked out of concessional climate finance because their gross national income per capita, the metric the World Bank and most donors use for eligibility, reads as middle or high income. Seychelles sits inside that group.</p>
+      <p>The proposed fix, a Multidimensional Vulnerability Index, is meant to sit alongside GNI per capita rather than replace it, adding exposure, resilience and structural vulnerability factors a pure income measure cannot capture. Finance-access researchers are naming 2026 specifically as the window to embed the MVI into real eligibility criteria before the next multilateral funding cycles lock their rules in.</p>
+      <p>This is the argument at the centre of the High-Income SIDS Paradox work, not an abstract policy debate. Every year the MVI stays theoretical is another funding cycle where a country's income statistics override its actual climate exposure.</p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="story-article drop">
+      <p>Seven small island states and twenty overseas territories, out of 57 SIDS worldwide, currently fail the income test most concessional climate finance runs on. Their gross national income per capita, calculated by the World Bank, reads too high for ODA eligibility. Seychelles is one of them. The paradox you have spent years naming now has an acronym attached to its proposed solution: the Multidimensional Vulnerability Index, MVI, currently under formal negotiation as a complement to GNI per capita in development and climate finance eligibility.</p>
+      <p>The mechanics of the problem are straightforward, which is what makes them frustrating. GNI per capita measures average income across a population. It says nothing about a country's exposure to sea level rise, cyclone frequency, the narrowness of its economic base, or the fiscal reality of running full state infrastructure, ports, hospitals, disaster response, across scattered islands with no economies of scale. Seychelles clears the income bar and fails every vulnerability measure that should matter more. That combination pushes a state out of ODA eligibility while leaving it exposed to the same physical risks as lower-income SIDS neighbours who remain eligible.</p>
+      <p>The MVI is not a new idea. It has circulated in UN development finance discussions for years, always a good idea whose implementation kept slipping. What is different in 2026 is the volume of institutions calling this year specifically the critical window: negotiators need the index embedded into real eligibility criteria before the next round of multilateral funds sets its rules for the coming cycle, not after. Miss that window and the MVI becomes another well-documented reform that took another decade to land.</p>
+      <p>For your own work, this is the empirical backbone the High-Income SIDS Paradox argument needs. It is one thing to say Seychelles gets penalised for being classified wealthy. It is another to point at a specific index, under live negotiation, designed to fix exactly that classification error, and to name the year negotiators themselves are calling decisive. That specificity turns a grievance into a policy proposal a funder or a peer at a conference can actually engage with.</p>
+      <p>The honest complication, worth naming rather than glossing over, is that an MVI only helps if funds actually adjust allocations once it exists. Indices without binding weight in allocation formulas become reporting exercises, not funding levers. Track whether the multilateral funds engaging with MVI proposals this year commit to using it in allocation decisions, or just in eligibility screening. Screening without allocation weight changes nothing for a country like Seychelles that already technically qualifies to apply and still loses out on the numbers that decide who gets funded.</p>
+      <p class="footnote">Sources: E3G, "Dismantling barriers to climate finance access for SIDS and LDCs"; CCAP, "Reassessing Climate Finance for Non-ODA Eligible Islands."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STORY 05 : BIG STAT ================= -->
+<section class="story story-05" id="story-05">
+  <div class="story-inner">
+    <div class="bigstat-label">Story 05 · The number</div>
+    <div class="bigstat">28.7%</div>
+    <h2 class="headline">Of the Ocean Floor, Finally Mapped</h2>
+    <p class="dek">The GEBCO_2026 Grid adds nearly five million square kilometres in a single year.</p>
+    <div class="why-matters">Seabed 2030 just published the GEBCO_2026 Grid showing 28.7 percent of the ocean floor mapped to modern standards, up from roughly 26 percent, and every percentage point closed is a percentage point of baseline data your hydrospatial and BBNJ work depends on existing.</div>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="story-notes">
+      <p>The Nippon Foundation-GEBCO Seabed 2030 Project released the GEBCO_2026 Grid in April, its eighth edition, showing 28.7 percent of the world's ocean floor mapped to modern standards. Almost five million square kilometres were added over the past year alone, bringing the total mapped area to roughly 104 million square kilometres, more than two thirds of the entire land surface of Earth.</p>
+      <p>The gains are not evenly distributed. The ROPME Sea Area, the Gulf region, more than tripled its coverage in this update, from 6.4 percent to 20.5 percent, largely through the four Seabed 2030 Regional Centers integrating multibeam survey data into the SRTM15+ base grid. The Indian Ocean centre, the one covering Seychelles's own waters, is worth checking against this release specifically.</p>
+      <p>Every dataset behind GEBCO_2026 is free and public. Grid access: <a href="https://www.gebco.net/data-products-gridded-bathymetry-data/gebco2026-grid">gebco.net/gebco2026-grid</a></p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="story-article">
+      <p>Twenty-eight point seven percent. That is how much of the world's ocean floor is now mapped to modern bathymetric standards, according to the GEBCO_2026 Grid the Nippon Foundation-GEBCO Seabed 2030 Project released in April. It sounds like a small number against the stated 2030 target of full coverage. It is not small in absolute terms: almost five million square kilometres were added in a single year, pushing total mapped seabed to roughly 104 million square kilometres, an area bigger than two thirds of all the land on Earth.</p>
+      <p>The GEBCO_2026 Grid is the eighth edition of this dataset, built by layering multibeam survey data from four Regional Centers onto the SRTM15+ satellite-derived base grid. The unevenness of the gains is the more interesting story than the headline percentage. The ROPME Sea Area, the Gulf, more than tripled its coverage this year, from 6.4 percent to 20.5 percent, a jump driven almost entirely by one region's Regional Center getting sustained survey access. That is the pattern behind every Seabed 2030 milestone: global percentages move because specific regional programmes get specific ships, specific funding, and specific political access to survey specific waters. Nothing about ocean mapping progresses uniformly.</p>
+      <p>This is where your own hydrospatial work sits. The Indian Ocean, Seychelles's own water column and continental shelf, has its own Regional Center feeding into this same grid. Whether that centre's contribution to GEBCO_2026 matches the ambition of SHORE Institute's own hydrospatial agenda is worth checking directly against the release rather than assuming. A regional observatory with credible multibeam and satellite-derived bathymetry capacity is exactly the kind of institution that either accelerates a Regional Center's contribution or exposes how thin its current survey coverage actually is.</p>
+      <p>The free, public nature of every GEBCO dataset matters more than it gets credit for. Unlike commercial bathymetric surveys, which get locked behind licensing for oil, gas and defence clients, GEBCO data feeds directly into BBNJ's environmental impact assessments, national marine spatial planning, and academic ocean science without a paywall in the way. That is not incidental. It is the entire argument for public seabed mapping infrastructure over commercial: the treaty regime being built right now runs on data that has to be available to states with no commercial survey budget of their own.</p>
+      <p>Track the next Seabed 2030 release against your own read of Seychelles's coverage. If the gap between the global percentage and the Indian Ocean regional percentage is wide, that is both a research finding and a funding argument.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STORY 06 : TERMINAL ================= -->
+<section class="story story-06" id="story-06">
+  <div class="story-inner">
+    <div class="numeral">// story_06.log</div>
+    <h2 class="headline">$ autonomous_systems --join mapping_race</h2>
+    <p class="dek prompt">Seabed 2030 partners with autonomous survey company Ulysses to close the coverage gap faster.</p>
+    <div class="why-matters">Seabed 2030 just partnered with an autonomous survey company to close the mapping gap faster, which is the exact GeoAI and remote-sensing shift your own technical toolkit needs to keep pace with.</div>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="story-notes">
+      <p>On 27 July, the Nippon Foundation-GEBCO Seabed 2030 Project announced a partnership with ocean technology company Ulysses to explore how autonomous surface and underwater systems can collect and share bathymetric data at scale. This sits alongside the project's existing crowdsourced bathymetry programme, which already pulls depth soundings from commercial and recreational vessels transiting unmapped waters.</p>
+      <p>Autonomous systems solve a specific bottleneck: survey ship time is expensive and scarce, and traditional multibeam campaigns cannot realistically cover the remaining 71 percent of unmapped seabed on current budgets and vessel availability. Uncrewed surface vessels and autonomous underwater vehicles cut cost per square kilometre significantly, exactly the constraint keeping regional coverage, including the Indian Ocean's, behind the global average.</p>
+      <p>Worth tracking whether this partnership model, a mapping NGO plus a private autonomous systems company, becomes the template other regions replicate, Seychelles included.</p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="story-article">
+      <p>On 27 July, Seabed 2030 announced a new partnership with ocean technology company Ulysses to test how autonomous surface and underwater systems can help close the seabed mapping gap. The partnership is small in scope so far, an exploratory arrangement rather than a funded survey campaign, but it points at the mechanism that will actually determine whether Seabed 2030 hits anything close to its 2030 target.</p>
+      <p>The constraint is not ambition or political will. It is vessel time. Traditional multibeam bathymetric survey requires a crewed ship, a trained hydrographic team, and weeks or months on station, all of which costs money most coastal states, particularly SIDS, do not have. Seabed 2030's existing crowdsourced bathymetry programme, which pulls depth soundings from any vessel willing to run a logger, was one answer to that cost problem. Autonomous systems are the next one: uncrewed surface vessels and autonomous underwater vehicles that can run survey lines for days at a fraction of the crewed cost, without putting a hydrographic team at sea the entire time.</p>
+      <p>This is squarely inside the GeoAI and remote sensing shift you have been tracking across your own technical work. Satellite-derived bathymetry using Sentinel-2 multispectral imagery already lets researchers estimate depth in shallow, clear water without a survey vessel at all, blending physics-based models with machine learning to extract usable bathymetry from ten to sixty metre resolution imagery. Autonomous platforms extend that logic into deeper water and turbid conditions satellites cannot read. Between the two, the toolkit for closing the mapping gap without a traditional survey fleet is maturing faster than most national hydrographic offices, including Seychelles's, have adapted their procurement or training around.</p>
+      <p>That is the practical opening for SHORE Institute. A regional hydrospatial observatory does not need to own an autonomous survey fleet to matter here. It needs to be the technical body that can validate, standardise, and integrate whatever mix of crowdsourced, satellite-derived, and autonomous data comes into the Indian Ocean Regional Center's pipeline, and make the case to funders and partners like Seabed 2030 or Ulysses that Seychelles is a credible node for testing this in Western Indian Ocean conditions specifically, not just a recipient of finished grids.</p>
+      <p>Watch whether this partnership model spreads. If Seabed 2030 starts signing similar arrangements with autonomous systems companies region by region, that is a funding and partnership conversation worth having proactively rather than waiting for an invitation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STORY 07 : LETTERPRESS ================= -->
+<section class="story story-07" id="story-07">
+  <div class="story-inner">
+    <div class="numeral">VII</div>
+    <h2 class="headline">Recognition Is Not Sovereignty</h2>
+    <p class="dek">The UN's Third World Ocean Assessment calls for Indigenous knowledge in ocean governance. It does not say who controls the data.</p>
+    <div class="why-matters">The UN's Third World Ocean Assessment just told 86 countries' worth of ocean governance institutions to take Indigenous knowledge seriously, and data sovereignty, not just knowledge inclusion, is the unresolved mechanism underneath that call.</div>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="story-notes">
+      <p>The UN's Third World Ocean Assessment, released on World Oceans Day in June and drawing on nearly 600 experts across 86 countries, calls explicitly for greater recognition of Indigenous knowledge in ocean governance. That is a significant shift in an assessment process that has historically treated scientific and Indigenous knowledge as separate, unequal tracks.</p>
+      <p>The assessment does not solve the harder problem underneath the recognition call: there is still no established mechanism to protect Indigenous data sovereignty in ocean governance, and the different ways Indigenous and traditional knowledge holders know, value and relate to ocean and coastal environments do not map cleanly onto the data structures ocean governance institutions already use. Western Australia's mandatory Aboriginal Data Governance Policy, adopted last year, is one of the only concrete regional precedents anywhere.</p>
+      <p>For science-to-policy pipeline work specifically, this is the gap worth naming: recognition without a sovereignty mechanism behind it risks becoming another consultation requirement rather than genuine shared authority over data.</p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="story-article">
+      <p>Nearly 600 experts across 86 countries produced the UN's Third World Ocean Assessment, released on World Oceans Day this June, and it calls explicitly for greater recognition of Indigenous knowledge in ocean governance. That is worth pausing on. Global ocean assessments of this scale have historically treated scientific data and Indigenous knowledge as parallel tracks, the first authoritative and the second consultative. A call for recognition inside the flagship UN assessment document is a real shift in framing.</p>
+      <p>It is also, on its own, insufficient. Recognition is not sovereignty. The assessment names the problem without solving the mechanism underneath it: there is still no established framework across most ocean governance institutions for protecting Indigenous data sovereignty, the right of Indigenous and traditional knowledge holders to control how their observations, place names, seasonal knowledge and stewardship practices get collected, stored, shared and used once they enter a government or scientific dataset. Recent research comparing Native Hawaiian, Orang Laut and Sama-Bajau ocean stewardship traditions, presented in Singapore in July, makes the same point from a different angle: these are not simply alternative data sources to fold into conventional marine spatial planning. They carry different relationships to place and different assumptions about who has the right to know what, and a data pipeline that ignores that difference extracts knowledge without extending authority.</p>
+      <p>Western Australia's mandatory Aboriginal Data Governance Policy, in force since May last year, is one of the few concrete precedents anywhere for what an actual sovereignty mechanism looks like in practice: not a consultation requirement bolted onto an existing process, but a governance structure that gives Aboriginal groups real control over collection and ownership of data concerning them. Most ocean governance bodies, including the ones now citing the Third World Ocean Assessment's call for recognition, have nothing equivalent.</p>
+      <p>This lands directly on the science-to-policy pipeline work you have been building. A hydrospatial observatory that gathers Seychellois or wider Western Indian Ocean traditional ecological knowledge alongside its bathymetric and remote sensing data has to answer the sovereignty question explicitly, not as an ethics appendix, but as an operating structure: who owns the data once SHORE collects it, who can access it, and what happens if a community wants it withdrawn. Get that structure right early and it becomes a credibility asset with funders who are increasingly asking the same question. Get it wrong, or leave it implicit, and the institute repeats exactly the extraction pattern the Third World Ocean Assessment is now naming as a problem at the global level.</p>
+      <p>The honest gap is that no ocean governance body, global or regional, has a fully worked example to copy yet. That is not a reason to wait. It is a reason SHORE could become one of the examples other Indian Ocean institutions look to.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STORY 08 : BROADSHEET ================= -->
+<section class="story story-08" id="story-08">
+  <div class="story-inner">
+    <div class="masthead-row">
+      <div class="numeral">No. 08</div>
+      <div class="numeral">Ocean Policy Desk</div>
+    </div>
+    <h2 class="headline">Ten Percent Protected, Two Percent Recovering</h2>
+    <div class="why-matters">Ocean protection just crossed the symbolic ten percent mark, but a September study says less than two percent of the protected ocean is actually where ecosystems are recovering, and that effectiveness gap is the argument against counting MPA area as a proxy for outcomes.</div>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="cols">
+      <p>In April, IUCN and UNEP-WCMC confirmed that 10.01 percent of the global ocean now sits within officially designated protected and conserved areas, based on an update to the World Database on Protected and Conserved Areas. Roughly five million square kilometres, an area larger than the European Union, was added over the preceding two years.</p>
+      <p>A study published this September complicates the milestone considerably: less than two percent of the ocean falls inside marine protected areas where ecosystems are actually recovering, meaning the vast majority of designated MPA area is not delivering the ecological outcome the designation implies. The 30x30 target under the Kunming-Montreal Global Biodiversity Framework still needs an area roughly the size of the Indian Ocean protected by 2030 to be met.</p>
+      <p>The gap between area designated and area actually functioning is the number worth citing over the headline ten percent, especially in any framing work on Seychelles's own MPA commitments.</p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="story-article">
+      <p>Ten point zero one percent. That is the share of the global ocean now sitting inside officially protected or conserved areas, confirmed by IUCN and UNEP-WCMC in April through an update to the World Database on Protected and Conserved Areas. Roughly five million square kilometres, larger than the entire European Union, was added over the two years leading up to that milestone. It is the kind of number that gets a press release and a round of congratulatory statements, and on its own terms it should: this is real area, legally designated, that was not protected before.</p>
+      <p>But a study published this September puts a harder number next to it: less than two percent of the ocean falls inside marine protected areas where ecosystems are actually recovering. Read those two figures together and the story changes completely. Ten percent of the ocean carries a protection designation. Roughly a fifth of that protected area, at most, is delivering the ecological recovery the designation is supposed to produce. The rest is what researchers increasingly call paper parks: boundaries on a map with insufficient enforcement, insufficient funding, or protection rules too weak to change fishing and extraction pressure on the water.</p>
+      <p>This distinction matters enormously for how Seychelles frames its own marine protected area achievements. Seychelles has been internationally recognised for expanding its MPA coverage, partly through the debt-for-nature swap that funded the Seychelles Conservation and Climate Adaptation Trust. That is genuine, well-documented progress. But the international conversation is visibly shifting from area designated to area delivering, and any government or institute still leading with percentage-of-EEZ-protected as the headline metric is arguing from a framework the research community is actively moving past.</p>
+      <p>The 30x30 target itself has not moved: an area roughly the size of the Indian Ocean still needs formal protection by 2030 under the Kunming-Montreal Global Biodiversity Framework's Target 3. Getting there on paper is achievable at the current pace. Getting there with enforcement, funding and ecological outcomes attached to each new designation is a different, much harder target, and it is the one that should anchor any Shorelines piece on MPA progress from here.</p>
+      <p>For SHORE Institute specifically, this is a research opening rather than just a critique. Effectiveness assessment, not just spatial designation, is where hydrospatial monitoring capacity earns its keep: tracking whether an MPA's enforcement and ecological indicators actually match its map boundary is a measurement problem, and measurement problems are exactly what a spatial science institute is built to solve.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STORY 09 : PULL QUOTE ================= -->
+<section class="story story-09" id="story-09">
+  <div class="story-inner">
+    <div class="numeral">Story 09</div>
+    <h2 class="headline">Governing Ocean Nobody Owns</h2>
+    <div class="why-matters">A new academic paper on marine spatial planning in the Southwest Atlantic high seas names the exact obstacle your BBNJ and hydrospatial work runs into everywhere: not enough baseline data to plan responsibly beyond national jurisdiction.</div>
+
+    <div class="pullquote">"Two conflicting trends will shape the ocean in 2026: its growing recognition as essential for the climate and biodiversity, and the geopolitical tensions now unfolding at sea."</div>
+    <p class="dek">Stockholm Environment Institute, on the state of ocean governance heading into this year.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="story-notes">
+      <p>A paper published this year in Sustainability Science examines how marine spatial planning tools are being applied, or attempted, in areas beyond national jurisdiction, using the Southwest Atlantic as its case study. It lands alongside a broader Stockholm Environment Institute analysis describing 2026 as shaped by two conflicting trends: growing recognition of the ocean's role in climate regulation and biodiversity, against expanding geopolitical tension at sea.</p>
+      <p>Both pieces converge on the same practical obstacle: MSP in the high seas is technically and politically harder than MSP within national waters, not because the planning methodology differs, but because the baseline data, biodiversity mapping, human activity tracking, bathymetry, is thinner or absent entirely in areas no single state is responsible for surveying.</p>
+      <p>BBNJ's entry into force raises the stakes on this data gap directly, since its area-based management tools depend on exactly the spatial data MSP in ABNJ currently lacks.</p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="story-article">
+      <p>A paper in Sustainability Science this year takes the Southwest Atlantic as a case study for a question that BBNJ has made urgent everywhere: how do you actually apply marine spatial planning tools to ocean nobody governs alone? The answer, across that case study and the broader literature it draws on, keeps landing on the same obstacle. It is not a legal gap. BBNJ now provides the legal framework for area-based management tools, including marine protected areas, in areas beyond national jurisdiction. It is a data gap: insufficient baseline biodiversity mapping, limited access to in-situ and remote monitoring, and incomplete bathymetry in exactly the waters where no single state has ever had a mandate, or a budget, to survey.</p>
+      <p>The Stockholm Environment Institute's read on where 2026 sits captures the same tension from the geopolitics side. Two trends are pulling against each other: growing international recognition that ocean health regulates the climate and holds most of the planet's biodiversity, running straight into expanding geopolitical tension over who controls which waters, fishing grounds, seabed minerals, shipping lanes. Marine spatial planning in areas beyond national jurisdiction sits precisely at the collision point of those two trends. You cannot plan spatially for conservation or sustainable use in contested, thinly mapped ocean without both the data and the diplomatic cooperation to act on it.</p>
+      <p>This is the argument for hydrospatial science as core BBNJ infrastructure, not an adjacent technical discipline. Environmental impact assessments and area-based management tools, the treaty's operative mechanisms, cannot function credibly without the spatial baseline data MSP research keeps flagging as missing. Seabed 2030's incremental progress toward full seabed coverage, the satellite-derived bathymetry techniques maturing in parallel, and any regional hydrospatial observatory capacity that can contribute mapping and monitoring data to areas beyond national jurisdiction, all of that becomes directly load-bearing for whether BBNJ's area-based tools actually work or stay aspirational.</p>
+      <p>For SHORE Institute, and for the Ocean Mapping Hub and HARMONiSE framework specifically, this is a case for positioning the institute's technical contribution explicitly around BBNJ implementation rather than treating hydrospatial mapping and high seas governance as separate workstreams. The Southwest Atlantic case study is not really about the Southwest Atlantic. It is a template for the exact data problem the Western Indian Ocean will face the moment anyone proposes a high seas MPA in your part of the ocean, and the institutions that can supply credible baseline data before that proposal lands will have far more influence over how it gets drawn than the ones reacting to it afterward.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STORY 10 : COLOUR FIELD ================= -->
+<section class="story story-10" id="story-10">
+  <div class="story-inner">
+    <div class="numeral">10</div>
+    <h2 class="headline">Racing to Engineer What We Haven't Finished Measuring</h2>
+    <div class="why-matters">Marine carbon removal is moving from research to field testing faster than its governance is catching up, and the same September research says the Southern Ocean, the sink absorbing nearly a third of the world's carbon emissions, could flip to a source under some mitigation pathways.</div>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="story-notes">
+      <p>A digital report published this September, tied to Woods Hole Oceanographic Institution, finds that marine carbon dioxide removal has advanced substantially through growing research activity, private sector investment, and early movement toward field testing, while major questions remain unresolved: whether these approaches can remove carbon at meaningful scale, how removal gets measured and verified, what the environmental effects are, and who governs it.</p>
+      <p>Separately, climate simulations published around the same time suggest the Southern Ocean, which currently absorbs roughly 31 percent of global CO2 emissions and is the ocean's single largest carbon sink, could switch to being a carbon source under certain mitigation scenarios, particularly those involving AMOC weakening.</p>
+      <p>Read together, these two stories describe the same underlying risk from opposite ends: humanity racing to engineer new ocean carbon removal before it has finished verifying the natural carbon sink already doing most of the work.</p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="story-article">
+      <p>Two ocean carbon stories broke within days of each other this September, and they only make sense read together. The first: a digital report tied to Woods Hole Oceanographic Institution finds marine carbon dioxide removal has moved decisively from concept to early field testing, with real research momentum and private sector investment behind it, but with the governance questions still wide open. How do you measure and verify removal at sea reliably? What are the ecological effects of large-scale intervention in ocean chemistry? Who has jurisdiction to approve or block a project, particularly one that crosses into areas beyond national jurisdiction where BBNJ's environmental impact assessment provisions would presumably apply?</p>
+      <p>The second: climate simulations suggest the Southern Ocean, which currently absorbs around 31 percent of all global CO2 emissions and functions as the ocean's largest natural carbon sink, could flip to becoming a carbon source under certain mitigation pathways, particularly those involving significant weakening of the Atlantic Meridional Overturning Circulation. That is not a small caveat buried in a model. It is a finding that the ocean's most important existing climate service is less stable than the climate models most policy planning still assumes.</p>
+      <p>Put side by side, these stories describe the same institutional failure mode from opposite directions. On one side, engineered marine carbon removal is accelerating toward deployment faster than its measurement, verification and governance frameworks can keep pace. On the other, the natural carbon sink doing the overwhelming majority of ocean carbon work right now is showing signs of instability that current governance frameworks are not built to detect early, let alone respond to. Neither the deployment of new intervention nor the monitoring of existing natural capacity currently has the spatial and oceanographic data infrastructure it actually needs.</p>
+      <p>This is squarely inside the science-to-policy pipeline problem you work on, not adjacent to it. Marine CDR governance, when it eventually gets built out properly, will need exactly the kind of environmental impact assessment and spatial monitoring capacity BBNJ is establishing for other high seas activities. Southern Ocean sink monitoring needs sustained, high-resolution oceanographic observation at a scale most national programmes cannot fund alone. Both point toward the same institutional answer: regional and multilateral ocean observation infrastructure that can supply verified data fast enough to keep pace with either accelerating intervention or destabilising natural systems.</p>
+      <p>Neither of these stories has an obvious Seychelles angle yet, and that absence is itself worth naming rather than forcing a connection that is not there. But marine CDR governance is a live regulatory space with almost no SIDS voice in it so far, and a Shorelines piece staking out that gap early, before the governance frameworks harden, would be occupying genuinely open ground.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Morning Edition · 19 September 2026 · SHORE Institute<br>
+  Ten stories, one flagged. Back tomorrow.
+</footer>
+
+</body>
+</html>
