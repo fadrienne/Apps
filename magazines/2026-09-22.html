@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Edition — 22 September 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0c2d52;
+    --sky:#bfe4f5;
+    --sky-pale:#e5f4fb;
+    --teal:#0f7a86;
+    --teal-deep:#0a5b66;
+    --yellow:#ffd84d;
+    --yellow-pale:#fff3cc;
+    --gold:#c99a1e;
+    --forest:#1f4d3a;
+    --sage:#a9c9a4;
+    --mint:#dff2e8;
+    --cream:#faf5e8;
+    --offwhite:#fbfaf6;
+    --slate:#5b6470;
+    --charcoal:#2a2e33;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Inter',sans-serif;
+    background:var(--offwhite);
+    color:var(--charcoal);
+    font-size:2rem;
+    line-height:1.5;
+  }
+  h1,h2,h3,h4,.display{font-family:'Fraunces',serif;}
+  a{color:var(--teal-deep);}
+  .wrap-inner{max-width:1100px;margin:0 auto;padding:5rem 2rem;}
+  .eyebrow{
+    font-family:'Inter',sans-serif;
+    font-size:1.05rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    font-weight:700;
+    color:var(--teal-deep);
+    margin-top:2rem;
+  }
+  .headline{font-size:3.4rem;line-height:1.1;margin:0.8rem 0 1.2rem;}
+  .why-line{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:700;
+    font-size:2.3rem;
+    color:var(--forest);
+    line-height:1.35;
+    margin:1.5rem 0;
+  }
+  .story-notes p, .story-article p{
+    font-size:2rem;
+    line-height:1.55;
+    margin:0 0 1.2rem 0;
+  }
+  .story-article{max-width:38em;}
+  .flag{
+    display:inline-block;
+    background:var(--yellow);
+    color:var(--navy);
+    font-weight:800;
+    font-size:1.4rem;
+    letter-spacing:0.08em;
+    padding:0.4em 0.9em;
+    border-radius:0.3em;
+    margin-bottom:1rem;
+  }
+  .flag::before{content:"⚡ ";}
+  .link-out{
+    display:inline-block;
+    margin-top:0.5rem;
+    font-weight:700;
+    word-break:break-all;
+  }
+
+  /* NUMERALS */
+  .num-stamp{
+    display:inline-block;
+    background:var(--navy);
+    color:var(--yellow);
+    font-weight:900;
+    padding:0.5rem 1rem;
+    transform:rotate(-4deg);
+    font-size:1.3rem;
+    letter-spacing:0.1em;
+    margin-bottom:1rem;
+    border:2px dashed var(--navy);
+  }
+  .num-circle{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:4.5rem;height:4.5rem;
+    border-radius:50%;
+    border:3px solid var(--navy);
+    color:var(--navy);
+    font-weight:900;
+    font-size:1.6rem;
+    margin-bottom:1rem;
+  }
+  .num-box{
+    display:inline-block;
+    border:3px solid var(--teal-deep);
+    color:var(--teal-deep);
+    font-weight:800;
+    padding:0.3em 0.7em;
+    font-size:1.3rem;
+    letter-spacing:0.08em;
+    margin-bottom:1rem;
+  }
+  .num-hairline{
+    font-weight:300;
+    font-size:1.4rem;
+    letter-spacing:0.3em;
+    color:var(--slate);
+    margin-bottom:1rem;
+  }
+
+  /* MASTHEAD */
+  .masthead{
+    background:var(--sky);
+    padding:4rem 2rem 3rem;
+    text-align:center;
+    border-bottom:6px solid var(--navy);
+  }
+  .masthead h1{
+    font-size:5.5rem;
+    color:var(--navy);
+    margin:0;
+    font-weight:900;
+  }
+  .masthead .date{
+    font-size:1.6rem;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    color:var(--teal-deep);
+    font-weight:700;
+    margin-top:0.8rem;
+  }
+  .masthead .tag{
+    font-size:1.4rem;
+    color:var(--charcoal);
+    margin-top:1.2rem;
+    font-style:italic;
+  }
+
+  /* NAV */
+  nav.jumpto{
+    position:sticky;
+    top:0;
+    background:var(--navy);
+    padding:1rem 1.5rem;
+    z-index:50;
+  }
+  nav.jumpto ul{
+    list-style:none;
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.6rem 1rem;
+    margin:0;
+    padding:0;
+    max-width:1100px;
+    margin:0 auto;
+  }
+  nav.jumpto a{
+    color:var(--yellow-pale);
+    text-decoration:none;
+    font-size:1.15rem;
+    font-weight:600;
+    padding:0.3rem 0.6rem;
+    border:1px solid transparent;
+  }
+  nav.jumpto a:hover{border-color:var(--yellow);}
+
+  /* 1 HERO */
+  .layout-hero{background:var(--sky);}
+  .layout-hero .headline{color:var(--navy);font-weight:900;font-size:4.4rem;}
+  .layout-hero .body-content{position:relative;z-index:1;}
+
+  /* 2 SUNBEAM ALERT */
+  .layout-sunbeam{background:var(--yellow);}
+  .layout-sunbeam .headline{color:var(--navy);font-style:italic;font-weight:800;}
+
+  /* 3 COASTAL */
+  .layout-coastal{background:var(--sky-pale);border-left:14px solid var(--forest);}
+  .layout-coastal .grid2{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:3rem;
+  }
+  @media (max-width:700px){.layout-coastal .grid2{grid-template-columns:1fr;}}
+
+  /* 4 BIG STAT */
+  .layout-bigstat{background:var(--mint);}
+  .bigstat-number{
+    font-family:'Fraunces',serif;
+    font-weight:900;
+    font-size:9rem;
+    color:var(--teal-deep);
+    line-height:1;
+    margin:1rem 0;
+  }
+  .bigstat-label{
+    font-size:1.6rem;
+    color:var(--forest);
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+  }
+
+  /* 5 BROADSHEET */
+  .layout-broadsheet{background:var(--cream);}
+  .broadsheet-rule{border-top:3px solid var(--teal-deep);width:100%;margin:1.5rem 0;}
+  .broadsheet-cols{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2.5rem;
+    column-gap:2.5rem;
+  }
+  @media (max-width:700px){.broadsheet-cols{grid-template-columns:1fr;}}
+
+  /* 6 TERMINAL */
+  .layout-terminal{background:var(--mint);font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;}
+  .layout-terminal, .layout-terminal p, .layout-terminal .headline{color:var(--forest);}
+  .layout-terminal .headline{font-family:'SFMono-Regular',Consolas,monospace;font-size:2.6rem;}
+  .terminal-box{
+    background:var(--offwhite);
+    border:2px solid var(--forest);
+    padding:2rem;
+    margin:1.5rem 0;
+  }
+  .terminal-prompt::before{content:"$ ";color:var(--teal-deep);}
+
+  /* 7 ACADEMIC DROP CAP */
+  .layout-academic{background:var(--offwhite);}
+  .dropcap::first-letter{
+    font-family:'Fraunces',serif;
+    font-size:6.5rem;
+    font-weight:800;
+    color:var(--navy);
+    float:left;
+    line-height:0.8;
+    margin-right:0.15em;
+    margin-top:0.1em;
+  }
+  .footnote{
+    font-size:1.4rem;
+    color:var(--slate);
+    border-top:1px solid var(--slate);
+    padding-top:0.8rem;
+    margin-top:2rem;
+  }
+
+  /* 8 PULL QUOTE */
+  .layout-pullquote{background:var(--sky-pale);}
+  .pullquote-text{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:700;
+    font-size:3.4rem;
+    color:var(--navy);
+    line-height:1.25;
+    padding:2rem 0;
+    border-top:4px solid var(--forest);
+    border-bottom:4px solid var(--forest);
+    margin:2rem 0;
+  }
+
+  /* 9 COLOUR FIELD */
+  .layout-colourfield{background:var(--teal-deep);}
+  .layout-colourfield .headline, .layout-colourfield p, .layout-colourfield .eyebrow{color:var(--white);}
+  .layout-colourfield .why-line{color:var(--yellow);}
+  .layout-colourfield a{color:var(--yellow);}
+  .layout-colourfield .num-hairline, .layout-colourfield .num-box, .layout-colourfield .num-circle{
+    color:var(--white);border-color:var(--white);
+  }
+
+  /* 10 LETTERPRESS */
+  .layout-letterpress{
+    background:var(--cream);
+    background-image:
+      repeating-linear-gradient(0deg, rgba(0,0,0,0.015) 0px, rgba(0,0,0,0.015) 1px, transparent 1px, transparent 3px);
+  }
+  .layout-letterpress .headline{
+    font-weight:400;
+    letter-spacing:0.01em;
+    text-shadow:0.5px 0.5px 0 rgba(12,45,82,0.15);
+  }
+
+  footer{
+    background:var(--navy);
+    color:var(--sky-pale);
+    text-align:center;
+    padding:3rem 2rem;
+    font-size:1.3rem;
+  }
+  footer a{color:var(--yellow);}
+
+  @media (max-width:700px){
+    body{font-size:1.5rem;}
+    .masthead h1{font-size:3rem;}
+    h2.headline, .layout-hero .headline{font-size:2.4rem;}
+    .num-bg{font-size:6rem;right:1rem;}
+    .story-notes p, .story-article p{font-size:1.5rem;}
+    .why-line{font-size:1.8rem;}
+    .bigstat-number{font-size:5rem;}
+    .pullquote-text{font-size:2.2rem;}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <h1>Morning Edition</h1>
+  <div class="date">Tuesday, 22 September 2026</div>
+  <div class="tag">Ten stories, filtered through SHORE Institute, ocean governance, and Shorelines.</div>
+</header>
+
+<nav class="jumpto">
+  <ul>
+    <li><a href="#s1">01 · 28.7% and a Name Attached</a></li>
+    <li><a href="#s2">02 · The Finance Forum Is Today</a></li>
+    <li><a href="#s3">03 · The Order That Skips the Treaty</a></li>
+    <li><a href="#s4">04 · The Regulator That Waited</a></li>
+    <li><a href="#s5">05 · Ulysses Joins the Fleet</a></li>
+    <li><a href="#s6">06 · The Data Embassy Idea</a></li>
+    <li><a href="#s7">07 · Vietnam's Second Act</a></li>
+    <li><a href="#s8">08 · The Fellowship You'd Have Taught</a></li>
+    <li><a href="#s9">09 · The Swap Everyone Cites, Nobody Copies</a></li>
+    <li><a href="#s10">10 · Depth Without a Boat</a></li>
+  </ul>
+</nav>
+
+<!-- STORY 1 — HERO -->
+<section class="story layout-hero" id="s1">
+  <div class="wrap-inner body-content">
+    <span class="num-stamp">STORY 01</span>
+    <h2 class="headline">28.7% of the Ocean Floor Is Mapped. The Announcement Had a Name and a Room Attached.</h2>
+    <p class="why-line">Seabed 2030 just put a fresh figure on the exact gap HARMONiSE and the Ocean Mapping Hub exist to close, and it was read out this week in the room that sets the standards every hydrographic office in the world works to.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="story-notes">
+      <p>The Nippon Foundation-GEBCO Seabed 2030 project has now mapped 28.7% of the world's ocean floor to modern standards, roughly 104 million square kilometres, more than two-thirds of the planet's entire land surface. Almost 5 million square kilometres were added in the past year alone. Mitsuyuki Unno, Executive Director of The Nippon Foundation, gave the figure at the Assembly of the International Hydrographic Organization, under way this week in Monaco.</p>
+      <p>The number sits inside the GEBCO_2026 grid, the eighth edition of the project's global bathymetric model, published in April. It is built on the SRTM15+ base grid, augmented with multibeam-based datasets compiled by the four Seabed 2030 Regional Centers, each responsible for its own patch of ocean.</p>
+      <p class="link-out">https://www.gebco.net/news/release-gebco2026-grid</p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="story-article">
+      <p>Twenty-eight point seven percent. That is where global seafloor mapping stands this week, and the venue where the figure was announced matters as much as the figure itself. Mitsuyuki Unno did not release it through a press statement alone. He read it out at the Assembly of the International Hydrographic Organization in Monaco, the body that sets the technical standards every national hydrographic office, Seychelles's included, works to when it charts its own waters. Putting a coverage number in that room is a different act from putting it in a science journal. It is aimed at the officials who decide what gets surveyed next.</p>
+      <p>Run the arithmetic and the pace problem is obvious. Five million square kilometres added this year against roughly 175 million still unmapped means the current rate does not reach full coverage by 2030 on its own. Everyone in that Monaco room knows it. The project has been transparent about the shortfall for several cycles now, which is itself useful: a funder or partner reading Seabed 2030's own numbers does not need SHORE to make the acceleration case from scratch.</p>
+      <p>The regional picture is where this gets specific to your work. Seychelles's exclusive economic zone runs to roughly 1.4 million square kilometres, one of the largest EEZ-to-landmass ratios on the planet, sitting inside a Western Indian Ocean region that has nowhere near the coverage momentum other basins have shown in recent cycles. The GEBCO_2026 grid is the annual scorecard against which HARMONiSE and the Ocean Mapping Hub's own progress should be read. A funding case that cites this week's global figure without a matching regional figure is only half the argument.</p>
+      <p>There is a second reason the IHO Assembly venue is worth noting directly. Hydrographic offices are the institutions that actually hold survey capacity, vessels, multibeam equipment, trained personnel, and they are the partners most likely to close a coverage gap through data-sharing rather than new expedition funding, the same mechanism that tripled coverage in the Gulf's ROPME Sea Area in a single cycle last year. An announcement made to that specific audience, in that specific room, is a cue to approach Seychelles's own hydrographic authority and its regional counterparts with the same pitch, direct data-sharing, before waiting for a dedicated survey budget that may never arrive.</p>
+      <p class="link-out">https://www.gebco.net/news/release-gebco2026-grid</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 2 — SUNBEAM ALERT -->
+<section class="story layout-sunbeam" id="s2">
+  <div class="wrap-inner">
+    <span class="flag">URGENT</span>
+    <div class="num-stamp">STORY 02</div>
+    <h2 class="headline">The Ocean Finance Forum You Could Still Be Watching Happens This Week</h2>
+    <p class="why-line">The UNFCCC's Standing Committee on Finance is holding its forum on ocean and water finance this week, and it is the exact room where the High-Income SIDS Paradox argument either gets a hearing or gets talked past again.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="story-notes">
+      <p>The UNFCCC Standing Committee on Finance is convening a forum this week dedicated specifically to finance action for water systems and ocean, one of a small number of SCF forums each year built around a single sector rather than climate finance in general.</p>
+      <p>The backdrop is a familiar one to you: ocean-based climate action remains significantly underfunded relative to actual country need, rising loss and damage exposure, and the conditional ocean commitments many parties, SIDS and LDCs especially, have already written into their national climate plans. SIDS as a group receive a disproportionately small share of finance directed at SDG 14, life below water, relative to their exposure.</p>
+      <p>Outputs from SCF sector forums typically feed into the Committee's recommendations to the UNFCCC Conference of the Parties. Watching for the forum's summary and any recommendations it forwards is worth doing this week rather than after the fact, since the window to reference it while still live, in a Shorelines piece or a LinkedIn post, closes fast once the forum itself has passed.</p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="story-article">
+      <p>Most UNFCCC finance forums run broad, covering the entire climate finance landscape in one sitting. This week's Standing Committee on Finance forum does not. It is built around one sector: ocean and water finance specifically, the exact narrow scope that produces usable output rather than another round of general advocacy. That specificity is worth taking seriously, because it means the forum's summary, once published, will say something concrete about where ocean finance instruments are failing, rather than restating the broad case for more climate money that every SIDS delegation has already made a dozen times over.</p>
+      <p>The underlying numbers are not new to you, but they are worth having current. Ocean-based climate action remains underfunded against what countries actually need, against the loss and damage they are already recording, and against the conditional ocean commitments, mostly reliant on external finance, that SIDS and least-developed countries have written into their nationally determined contributions. SDG 14 specifically, life below water, continues to draw a smaller share of climate and development finance than its role in food security, coastal protection, and blue carbon sequestration would justify. That mismatch is the structural argument behind the High-Income SIDS Paradox, just applied at the level of an entire funding target rather than a single country's classification problem.</p>
+      <p>What makes this forum worth tracking in real time rather than reading about afterward is how SCF recommendations move. Forum outputs typically feed directly into the Committee's formal recommendations to the UNFCCC Conference of the Parties, which means language agreed this week has a plausible path into COP decision text later in the cycle. A citation or an argument that lands while the forum is still fresh in the policy conversation carries more weight than the identical point made once the news cycle has moved on.</p>
+      <p>There is a concrete task here, not just a reading assignment. Pull the forum's summary and any recommendations it forwards to the Committee as soon as they are published, and check specifically whether the language on SIDS classification and vulnerability-based eligibility, rather than income-based eligibility, made it into the text. If it did, that is a citation worth using immediately. If it did not, that is itself the story: a sector-specific ocean finance forum that still could not move past income classification is evidence for exactly the argument Shorelines has been making, and evidence is stronger when it is dated to the same week it happened.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 3 — BIG STAT -->
+<section class="story layout-bigstat" id="s3">
+  <div class="wrap-inner">
+    <span class="flag">URGENT</span>
+    <div class="num-hairline">STORY · 03</div>
+    <h2 class="headline">Washington Just Cut Deep-Sea Mining Review Time in Half</h2>
+    <p class="why-line">The United States is fast-tracking seabed mining permits outside any multilateral framework at the same moment BBNJ is still building the institutions meant to govern exactly this kind of high seas activity, and the gap between the two is opening right now, not on some future timeline.</p>
+
+    <div class="bigstat-number">50%</div>
+    <div class="bigstat-label">cut to environmental review and public comment periods under NOAA's consolidated deep seabed mining rule</div>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="story-notes">
+      <p>President Trump has directed the US government to begin issuing deep-sea mining licenses, and Interior Secretary Doug Burgum says federal approvals could advance within months, targeting nickel, cobalt, copper, and manganese as the US works to cut reliance on China-dominated mineral supply chains.</p>
+      <p>NOAA finalized revisions to its deep seabed mining regulations in January, consolidating exploration and commercial recovery applications into a single streamlined process and cutting environmental assessment and public comment periods roughly in half. Deep Sea Minerals Corp, a company that rebranded and set up a US subsidiary, has applied for a federal license to prospect the Clarion-Clipperton Zone in the Pacific, and the government deemed the application in "substantial compliance" with licensing requirements in June.</p>
+      <p class="link-out">https://www.noaa.gov/news-release/noaa-accelerates-permitting-timeline-for-deep-seabed-mining-applications</p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="story-article">
+      <p>Fifty percent is the number to sit with. That is roughly how much NOAA cut from environmental assessment and public comment periods when it consolidated exploration and commercial recovery applications into a single streamlined licensing process for deep seabed mining, finalized in January. The stated goal is speed: Interior Secretary Doug Burgum has said federal approvals for deep-sea mineral development could arrive within months, part of a presidential directive to secure nickel, cobalt, copper, and manganese supply outside China-dominated mineral chains.</p>
+      <p>This is not a hypothetical process. Deep Sea Minerals Corp, a company that rebranded, incorporated a US subsidiary, and applied for a federal license to prospect polymetallic nodules in the Clarion-Clipperton Zone, a Pacific seabed region also targeted by International Seabed Authority exploration contracts, had its application deemed in "substantial compliance" with US licensing requirements in June. That is a live application moving through a halved-length review process right now, not a policy proposal awaiting debate.</p>
+      <p>The governance collision here is direct, and it is the one you have been tracking since BBNJ entered into force. The United States is not a party to UNCLOS and has never ratified BBNJ, so it is pursuing a unilateral domestic licensing route for seabed areas that most of the rest of the world treats as governed, or meant to be governed, through the International Seabed Authority under the common heritage of mankind principle written into UNCLOS. Whatever comes out of NOAA's process will not carry ISA authorization, and other states are not obliged to recognise it. That does not stop mining from happening. It creates a parallel, contested claim sitting alongside the multilateral one, exactly the kind of fragmentation BBNJ's architecture was designed to prevent in areas beyond national jurisdiction more broadly.</p>
+      <p>For Seychelles, and for any state that argued hard during BBNJ negotiations for a strong multilateral seabed regime, this is worth naming plainly rather than treating as a distant US domestic policy story. A halved review timeline moving toward approval within months sets a precedent other states with seabed ambitions and weaker environmental review traditions than the US will notice. If a major economy can license Pacific seabed mining outside the multilateral system and face no binding consequence, the multilateral system's authority over the rest of the high seas, including the marine protected area nominations BBNJ's Conference of the Parties will take up, gets weaker by association, not because the legal text changed but because the credible-enforcement assumption underneath it just took a visible hit.</p>
+      <p class="link-out">https://www.bloomberg.com/news/articles/2026-09-11/trump-order-for-deep-sea-mining-licenses-sparks-entrepreneur-seabed-gold-rush</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 4 — ACADEMIC DROP CAP -->
+<section class="story layout-academic" id="s4">
+  <div class="wrap-inner">
+    <div class="num-circle">04</div>
+    <h2 class="headline">While Washington Sped Up, the UN's Own Regulator Slowed Down</h2>
+    <p class="why-line">The International Seabed Authority delayed the mining rules it has been drafting for years, and in the same move extended a contract critics say should not have been renewed at all, which is the multilateral counterpoint to the US story above and it is not a flattering one.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="story-notes dropcap">
+      <p>The International Seabed Authority, the UN body with treaty authority over mineral resources in the international seabed area, has again delayed finalising the mining code, the regulatory framework meant to govern commercial deep-sea mining before any contractor can legally extract minerals from the area it oversees.</p>
+      <p>In the same session, the ISA extended an exploration contract that observers and environmental groups have criticized, a move read by many as a sign the regulator is under pressure to keep contractors moving even without finished rules.</p>
+      <p>Set beside the NOAA story, this is the multilateral track failing to move at the pace the unilateral track just demonstrated is possible when a state decides speed matters more than consensus.</p>
+      <p class="link-out">https://news.mongabay.com/2026/07/un-regulator-delays-deep-sea-mining-rules-but-extends-criticized-exploration-contract/</p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="story-article dropcap">
+      <p>Years into drafting a mining code that was originally meant to be finished long before any contractor got near commercial-scale extraction, the International Seabed Authority delayed it again this year. The mining code is the rulebook: environmental thresholds, royalty structures, liability provisions, the entire regulatory architecture standing between an exploration contract and an actual extraction permit. Without it, the ISA has spent years in an odd position, holding authority over seabed mineral resources it has no finished rules for actually approving commercial mining of.</p>
+      <p>What makes this year's delay sharper than previous ones is what happened alongside it. The same session extended an exploration contract that environmental groups and independent observers had already flagged as controversial, effectively giving a contractor more time to keep operating under exploration terms while the rules that would eventually govern its move to commercial extraction remain unfinished. Critics read that combination, rules delayed, contract extended, as evidence the regulator is under pressure from contractor states and companies to keep the pipeline moving regardless of whether the governance framework around it is ready.</p>
+      <p>Read next to the NOAA story, the contrast is not subtle. The United States, outside the ISA framework entirely, just demonstrated that a state willing to act unilaterally can move from policy directive to a license in "substantial compliance" within months. The ISA, holding the actual multilateral mandate over the same class of resource, cannot finish a rulebook years into the process, and its response to that gap has been to extend contractor timelines rather than tighten them. Whichever governance model actually behaves more responsibly on paper, the one moving faster is the one setting the operational precedent right now.</p>
+      <p>This matters directly for how BBNJ's institutions get built over the next ten months, the process covered in earlier editions leading up to COP1. BBNJ's drafters were explicit that its area-based management tools and environmental impact assessment provisions needed to avoid the ISA's slow-consensus trap, where every rule requires near-unanimous agreement among states with sharply divergent interests in extraction versus conservation. The ISA's latest delay is the cautionary case study BBNJ negotiators, Seychelles's delegation among them, can point to directly when arguing for streamlined decision procedures in the treaty's own institutional design. A slow multilateral regulator sitting next to a fast unilateral one is not an argument for abandoning multilateralism. It is an argument for building the next multilateral institution so it does not repeat the ISA's specific failure mode.</p>
+      <p class="link-out">https://news.mongabay.com/2026/07/un-regulator-delays-deep-sea-mining-rules-but-extends-criticized-exploration-contract/</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 5 — TERMINAL -->
+<section class="story layout-terminal" id="s5">
+  <div class="wrap-inner">
+    <div class="num-hairline">STORY · 05</div>
+    <h2 class="headline">// seabed2030 + ulysses: autonomous systems join the mapping fleet</h2>
+    <p class="why-line">Seabed 2030 just partnered with an autonomous systems company to collect and share bathymetric data, which is the funding and methodology precedent to cite the next time someone asks how the Ocean Mapping Hub plans to survey water nobody has a budget to send a crewed vessel into.</p>
+
+    <div class="terminal-box">
+      <div class="eyebrow">Story Notes</div>
+      <div class="story-notes">
+        <p class="terminal-prompt">The Nippon Foundation-GEBCO Seabed 2030 project announced a partnership with Ulysses, an ocean technology company, on 27 July. The partnership will explore how Ulysses's autonomous surface and underwater systems can support the collection and sharing of bathymetric data toward the project's global coverage target.</p>
+        <p class="terminal-prompt">Autonomous platforms solve a specific cost problem crewed survey vessels do not: they can operate for extended periods in remote or difficult water without a full crew's daily running cost, which is exactly the constraint that keeps large stretches of the Western Indian Ocean unmapped.</p>
+        <p class="terminal-prompt">This is a direct model for a Seabed 2030 Regional Center conversation: a partnership pitch built around autonomous survey capacity for Western Indian Ocean coverage, with Ulysses's own July announcement as the precedent to cite when making the case that this financing model already has institutional buy-in.</p>
+      </div>
+
+      <div class="eyebrow">Story Article</div>
+      <div class="story-article">
+        <p>Crewed survey vessels are expensive to run, expensive to deploy far from port, and structurally unsuited to the slow, patient, repetitive work of filling in bathymetric coverage gaps in remote water nobody has prioritised. That cost structure is a large part of why 71.3% of the ocean floor remains unmapped to modern standards four years out from Seabed 2030's 2030 target. The partnership announced on 27 July between Seabed 2030 and Ulysses, an ocean technology company building autonomous surface and underwater systems, is a direct response to that cost problem, not a technology showcase for its own sake.</p>
+        <p>The mechanics are straightforward. Autonomous systems can operate for extended periods without the daily running cost of a crewed vessel, holding station or transiting slowly through water that would otherwise sit at the bottom of every survey budget's priority list. Seabed 2030 and Ulysses are exploring how that capacity supports both the collection of new bathymetric data and, just as importantly, the sharing of data already collected by autonomous platforms operating for other purposes, environmental monitoring, offshore energy surveys, defence-adjacent oceanographic missions, none of which currently feed systematically into the global grid.</p>
+        <p>This is the funding and methodology template the Ocean Mapping Hub should be citing directly. A pitch built around dedicated survey vessel time for Western Indian Ocean coverage competes for a scarce, expensive resource against every other region making the same request. A pitch built around autonomous survey capacity, explicitly modelled on the Seabed 2030-Ulysses structure and citing it as precedent, is a cheaper ask with an existing institutional partner already committed to the model. That is a materially different funding conversation to walk into.</p>
+        <p>There is a second angle worth pulling forward from this partnership: the data-sharing half of it, not just the collection half. If autonomous platforms already operating in the Western Indian Ocean for unrelated purposes, shipping company route-planning surveys, naval hydrographic missions, offshore wind or fisheries research platforms, could be brought into a data-sharing arrangement modelled on what Seabed 2030 and Ulysses are building, that closes coverage gaps at close to zero marginal survey cost. Identifying which autonomous platforms are already operating in the region, and approaching their operators about a data-sharing arrangement rather than commissioning new surveys from scratch, is the concrete next step this partnership makes worth pursuing now rather than waiting for its outputs to publish.</p>
+        <p class="link-out">https://seabed2030.org/</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 6 — COASTAL -->
+<section class="story layout-coastal" id="s6">
+  <div class="wrap-inner">
+    <div class="num-circle">06</div>
+    <h2 class="headline">Pacific SIDS Are Building "Data Embassies." The Indian Ocean Isn't Yet.</h2>
+    <p class="why-line">Pacific SIDS just spent a forum working through data embassies and submarine cable protection as sovereignty infrastructure, and it is the data sovereignty framing Shorelines has been circling without yet having a name for it this concrete.</p>
+
+    <div class="grid2">
+      <div>
+        <div class="eyebrow">Story Notes</div>
+        <div class="story-notes">
+          <p>The third Small Island Developing States Internet Governance Forum convened Pacific states to work through data sovereignty and localization, regional data hubs described as "data embassies" hosted for neighbouring states, cloud governance, and the protection of submarine cables as critical national infrastructure, not just commercial telecoms plumbing.</p>
+          <p>A "data embassy" model lets a small state store its government and scientific data on infrastructure physically located in another jurisdiction while retaining full sovereign legal control over it, the same legal logic Estonia pioneered for its own government data. For an ocean data holder with limited server infrastructure of its own, that model solves a real problem: where sovereign-controlled ocean and governance data actually lives.</p>
+          <p class="link-out">https://isoclive.substack.com/p/sidsigf2026</p>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow">Story Article</div>
+        <div class="story-article">
+          <p>Data sovereignty gets discussed in most ocean governance conversations as a principle, who should own the data, rather than as an infrastructure question, where does sovereign-controlled data actually live and how is it kept legally distinct from the host jurisdiction's own claims on it. The third SIDS Internet Governance Forum worked the infrastructure question directly, and the concept that came out of it sharpest is the "data embassy."</p>
+          <p>A data embassy, the model Estonia built first for its own government records, lets a state store data on servers physically located in another country while that data remains legally the sovereign territory of the originating state, immune from the host jurisdiction's own laws and courts. For a small island state without the population or budget to justify large domestic server infrastructure, that solves a genuine problem: sovereign ocean, governance, and scientific data currently has to live somewhere, and "somewhere" usually means a foreign cloud provider's terms of service rather than a sovereignty-preserving legal arrangement.</p>
+          <p>The forum's second thread, submarine cable protection as critical national infrastructure, is not a separate topic from data sovereignty. It is the physical layer underneath it. Every dataset stored abroad under a data embassy arrangement still has to travel through submarine cables to be accessed, and Indian Ocean states, Seychelles included, sit on cable routes that carry traffic for a large share of the region without necessarily having formal protection frameworks treating those cables as protected infrastructure rather than ordinary commercial assets.</p>
+          <p>No equivalent forum currently exists for the Western Indian Ocean working this same agenda, data embassies, cloud governance, cable protection, as one connected sovereignty infrastructure question rather than three separate technical topics. That is a specific, nameable gap, and it is one SHORE is positioned to propose closing, citing the Pacific forum's own framing directly: data sovereignty is not a policy statement, it is a choice about server location, legal jurisdiction, and cable protection that has to be made deliberately or it gets made by default, usually in favour of whichever foreign provider offered the cheapest hosting.</p>
+          <p class="link-out">https://isoclive.substack.com/p/sidsigf2026</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 7 — BROADSHEET -->
+<section class="story layout-broadsheet" id="s7">
+  <div class="wrap-inner">
+    <div class="num-box">STORY 07</div>
+    <h2 class="headline">Vietnam Just Started Phase Two of Its Marine Spatial Plan</h2>
+    <div class="broadsheet-rule"></div>
+    <p class="why-line">Vietnam just moved its marine spatial planning programme into a second, implementation-focused phase, and the sequencing it used, legal foundation first, then a multi-year rollout with a named finance mechanism, is a governance model worth comparing directly against Seychelles's own.</p>
+
+    <div class="broadsheet-cols">
+      <div>
+        <div class="eyebrow">Story Notes</div>
+        <div class="story-notes">
+          <p>Vietnam officially launched Phase II, 2026 to 2029, of its Marine Spatial Planning Programme, building on Phase I and the country's 2024 regulatory milestone, Decree 139/2024/QH15, which established the legal basis for resolving transboundary maritime conflicts and zoning marine areas for development.</p>
+          <p>Phase II's stated goals are cross-sectoral coordination, investment-ready marine area designation, and mobilizing green finance specifically for blue economy sectors, a deliberate sequencing from legal foundation to implementation to finance.</p>
+          <p class="link-out">https://www.undp.org/vietnam/press-releases/review-2022-2026-marine-spatial-planning-programme-and-advancing-blue-economy-viet-nam</p>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow">Story Article</div>
+        <div class="story-article">
+          <p>A marine spatial plan is only as useful as the sequencing behind it, and Vietnam's rollout is worth studying for the sequencing alone. Phase I of its Marine Spatial Planning Programme built toward a legal foundation, culminating in Decree 139/2024/QH15 in mid-2024, which gave the country statutory authority to resolve transboundary maritime conflicts and zone marine areas for specific uses. Phase II, launched this year and running through 2029, is the implementation stage: cross-sectoral coordination among the ministries and provinces with competing claims on the same water, designation of investment-ready marine areas that developers can act on with legal certainty, and a specific push to mobilize green finance for blue economy sectors rather than leaving finance as an afterthought.</p>
+          <p>That ordering, legal basis before zoning before finance mobilization, is not the only way to sequence a marine spatial planning process, but it is a defensible one, and it avoids a failure mode common elsewhere: designating marine use zones before the legal authority to enforce them exists, which produces a plan with no teeth the first time a competing claim gets tested in court or at the ministry level.</p>
+          <p>Seychelles ran its own marine spatial planning process earlier and is often cited internationally, including by Seychelles's own government, as a global reference case for MSP done well, covering the full EEZ with a science-based zoning framework balancing conservation and development. What Vietnam's Phase II adds to that comparison is a live, current example of what happens after the initial plan: how a state moves from an adopted spatial plan to sustained implementation and dedicated green finance mobilization years later, which is the exact phase Seychelles's own MSP process is now in.</p>
+          <p>A direct comparison piece, Seychelles's MSP as the widely cited reference case, set against Vietnam's Phase II as a live implementation-and-finance case study running in parallel, is a stronger Shorelines argument than either case alone. It lets you make a structural point, that MSP's hardest phase is not the initial zoning exercise everyone cites, but the multi-year implementation and finance mobilization work that gets far less attention, using Vietnam's own stated Phase II priorities as the evidence for what that harder phase actually requires.</p>
+          <p class="link-out">https://www.undp.org/vietnam/press-releases/review-2022-2026-marine-spatial-planning-programme-and-advancing-blue-economy-viet-nam</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 8 — PULL QUOTE -->
+<section class="story layout-pullquote" id="s8">
+  <div class="wrap-inner">
+    <div class="num-box">STORY 08</div>
+    <h2 class="headline">The UN Is Running the Fellowship You Would Have Been a Natural Fit For</h2>
+    <p class="why-line">DOALOS is running a four-month ocean governance fellowship built for exactly the kind of SIDS official you used to be, and its existence is a direct argument for what a Western Indian Ocean version, run through SHORE, would look like next.</p>
+
+    <blockquote class="pullquote-text">A fellowship to increase the capacity of SIDS government officials to implement ocean governance and international legal frameworks, and to address the special circumstances of SIDS.</blockquote>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="story-notes">
+      <p>The 2026 UNNF Ocean Governance Fellowship for SIDS, run by the UN Division for Ocean Affairs and the Law of the Sea, is under way from early September to early December, built specifically to increase the capacity of SIDS government officials to implement ocean governance and international legal frameworks and to address the special circumstances of SIDS.</p>
+      <p>This year's cohort is already selected and the fellowship is already running, so there is nothing to apply for this week. What is worth doing now is tracking who was selected, what the curriculum covers, and when DOALOS opens the next call, so a future round is on the radar early rather than discovered after the deadline.</p>
+      <p class="link-out">https://www.un.org/oceancapacity/content/unnf-ocean-governance-fellowship-sids</p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="story-article">
+      <p>You spent years as a UNDP regional project manager and national focal point for IOC-UNESCO, exactly the kind of role the UN's own capacity-building programmes are designed to strengthen. The 2026 UNNF Ocean Governance Fellowship for SIDS, run through the UN Division for Ocean Affairs and the Law of the Sea and currently under way from early September to early December, is built for that same profile: government officials from small island states who need working fluency in ocean governance and international legal frameworks, delivered with explicit attention to the special circumstances, limited capacity, outsized EEZs, structural vulnerability, that generic capacity-building programmes tend to flatten out.</p>
+      <p>This year's cohort is already selected. There is no live application to chase. What is worth doing instead is treating this fellowship as a model rather than a missed opportunity, because DOALOS-run programmes like this one are exactly the kind of institutional precedent that makes a follow-on proposal easier to pitch, not harder.</p>
+      <p>Here is the concrete angle: DOALOS built a fellowship model that works at the level of the individual official, four months, one cohort, general ocean governance and legal capacity. There is no equivalent instrument currently built at the level of a regional institution, a standing programme that keeps Western Indian Ocean SIDS officials connected to ocean governance and legal capacity-building between DOALOS fellowship cycles rather than only during them. SHORE sits in exactly the right position to design that connective layer: not a competitor to DOALOS's fellowship, but the regional infrastructure that keeps its graduates active and networked in the gaps between cohorts, and that identifies the next round of candidates from the Western Indian Ocean before DOALOS's own call goes out.</p>
+      <p>The immediate task is small and specific. Track down this year's fellowship cohort list and curriculum once DOALOS publishes it, and note whether any Western Indian Ocean states, Seychelles included, are represented. If the region is under-represented relative to the Pacific or Caribbean, that gap itself is the opening line for a proposal to DOALOS about targeted regional outreach for the next call, with SHORE positioned as the regional partner that identifies and prepares candidates ahead of time rather than leaving that entirely to DOALOS's own outreach capacity.</p>
+      <p class="link-out">https://www.un.org/oceancapacity/content/unnf-ocean-governance-fellowship-sids</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 9 — COLOUR FIELD -->
+<section class="story layout-colourfield" id="s9">
+  <div class="wrap-inner">
+    <div class="num-hairline">STORY · 09</div>
+    <h2 class="headline">Everyone Cites Seychelles's Blue Bond. Almost Nobody Has Copied It.</h2>
+    <p class="why-line">Seychelles's debt-for-nature swap is the case study every blue finance conversation reaches for, and the gap between how often it gets cited and how rarely it gets replicated is itself the argument for why SHORE should be packaging it as a transferable template, not just a national success story.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="story-notes">
+      <p>Seychelles's debt-for-nature swap, delivered with The Nature Conservancy, reduced national debt by 21.6 million US dollars and redirected the freed repayments toward marine conservation, financed and governed through SeyCCAT, the Seychelles Conservation and Climate Adaptation Trust, and the Development Bank of Seychelles.</p>
+      <p>Proceeds were allocated toward expanding marine protected areas to 30% of Seychelles's exclusive economic zone, improving fisheries governance, and building sustainable blue economy sectors including eco-tourism and seafood value chains. The Commonwealth Secretariat continues to hold the model up as a reference case for other member states pursuing similar innovative financing.</p>
+      <p class="link-out">https://www.ipsnews.net/2026/04/seychelles-blue-bond-turning-ocean-vision-into-action/</p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="story-article">
+      <p>Seychelles's debt-for-nature swap is, by now, a stock reference in almost every blue finance panel, Commonwealth publication, and multilateral case-study library that touches ocean conservation financing. The structure is well known to you already: a swap with The Nature Conservancy that reduced national debt by 21.6 million US dollars, with the freed-up repayments redirected into marine conservation, governed through a dedicated trust, SeyCCAT, and channelled in part through the Development Bank of Seychelles rather than sitting inside general government revenue.</p>
+      <p>The outcomes are concrete and countable, which is exactly why the case study travels so well. Proceeds went toward expanding marine protected areas to cover 30% of Seychelles's exclusive economic zone, improving fisheries governance, and building out blue economy sectors, eco-tourism and seafood value chains among them, that generate ongoing revenue rather than depending on continued donor funding. That is a genuinely rare combination in conservation finance: a one-time transaction producing a self-sustaining governance and revenue structure afterward, and the Commonwealth Secretariat has kept using it as exhibit one for what innovative financing can achieve.</p>
+      <p>Here is the uncomfortable part worth naming directly. Despite years of citation, very few other Commonwealth or SIDS states have actually replicated the model at comparable scale. Debt-for-nature swaps require a specific set of conditions, a debt profile a conservation-finance partner is willing to buy into, a trust structure capable of absorbing and governing the proceeds credibly, and enough institutional capacity to run something like SeyCCAT well. Most small states citing Seychelles as inspiration do not yet have that institutional layer built, and citation without a transferable how-to guide does not close that gap on its own.</p>
+      <p>That is precisely the piece SHORE is positioned to write and nobody else has: not another retelling of the Seychelles outcome, which has been told many times, but a structural breakdown of what made SeyCCAT and the Development Bank of Seychelles capable of absorbing and governing the swap proceeds well, written as a transferable checklist for a state considering the same instrument. Turning the most-cited blue finance case study in the Commonwealth into the most-used one is a different, harder, and more useful piece of work than restating why it succeeded.</p>
+      <p class="link-out">https://www.ipsnews.net/2026/04/seychelles-blue-bond-turning-ocean-vision-into-action/</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY 10 — LETTERPRESS -->
+<section class="story layout-letterpress" id="s10">
+  <div class="wrap-inner">
+    <div class="num-box">STORY 10</div>
+    <h2 class="headline">A New Paper Says You Don't Need a Boat to Map Depth Anymore</h2>
+    <p class="why-line">A new study blending physics-based models with a neural network hit accuracy good enough to predict bathymetry in new areas without any in-situ survey data at all, which is the direct technical answer to the cost problem that keeps the Western Indian Ocean under-mapped.</p>
+
+    <div class="eyebrow">Story Notes</div>
+    <div class="story-notes">
+      <p>A study published this year evaluated two approaches to satellite-derived bathymetry in the Western Mediterranean using Sentinel-2 imagery: a physics-driven model and an Artificial Neural Network, then tested how well a blend of the two performs. Results held to an R² of 0.8 or better and RMSE of 1.5 metres or less across all tested sections, including scenarios built specifically to test whether the model still works away from its original survey location.</p>
+      <p>The finding that matters most operationally: bathymetry can be predicted in new areas without needing in-situ survey data from that specific location first, because the blended model transfers what it learned from surveyed areas to unsurveyed ones.</p>
+      <p class="link-out">https://www.sciencedirect.com/science/article/pii/S1574954125003371</p>
+    </div>
+
+    <div class="eyebrow">Story Article</div>
+    <div class="story-article">
+      <p>The single most expensive input in any bathymetric mapping programme is usually the in-situ survey data, the actual depth soundings a vessel or instrument collects on site, because they require getting equipment into the water in the specific place you want to map. A study published this year on satellite-derived bathymetry in the Western Mediterranean tested how far you can get without that step, and the answer is further than most people assumed.</p>
+      <p>The team compared two approaches applied to Sentinel-2 satellite imagery: a physics-driven model, which estimates depth from how light attenuates through water using known optical physics, and an Artificial Neural Network trained on existing depth data. Neither approach alone is new. What the study tested is what happens when you blend them, letting the physics model handle what physics reliably predicts and the neural network correct for the local variation physics alone misses, sediment type, water clarity, seasonal variation.</p>
+      <p>The accuracy numbers are strong by the standard of any remote depth-estimation method: an R² of 0.8 or better and root-mean-square error of 1.5 metres or less, held consistently across every tested section of coastline, including validation scenarios deliberately built to test both temporal independence, does it still work on imagery from a different season, and spatial independence, does it still work in a location the model was not trained on directly.</p>
+      <p>That last result is the one worth underlining for the Western Indian Ocean specifically. A model that only performs well where it was trained is not much more useful than the in-situ survey it is meant to replace. A model demonstrated to transfer accurately to new, unsurveyed locations is a genuinely different proposition: it means bathymetric coverage for large stretches of Seychelles's EEZ, most of which has no recent in-situ survey data at all, could plausibly be estimated from Sentinel-2 imagery alone, validated against whatever limited in-situ data does already exist, rather than waiting on a full survey campaign that has never been funded and likely will not be soon.</p>
+      <p>This is the technical argument to pair directly with the funding and partnership arguments running through the rest of this edition, the GEBCO coverage gap, the Ulysses autonomous-systems partnership, the case for a Western Indian Ocean Seabed 2030 push. A blended physics-and-AI approach validated against Sentinel-2 imagery is a low-cost, near-immediate way to generate a first-pass bathymetric layer for HARMONiSE while the slower, harder work of building out in-situ and autonomous survey capacity proceeds in parallel. It does not replace a proper survey. It gives the Ocean Mapping Hub something to show funders before one exists.</p>
+      <p class="link-out">https://www.sciencedirect.com/science/article/pii/S1574954125003371</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Morning Edition — compiled 22 September 2026 for Francesca Adrienne, SHORE Institute · Shorelines<br>
+  Sources: GEBCO / Seabed 2030, IHO, UNFCCC Standing Committee on Finance, NOAA, Bloomberg, Mongabay, Ulysses / Seabed 2030, SIDS Internet Governance Forum, UNDP Vietnam, UN DOALOS, Commonwealth Secretariat / IPS News, ScienceDirect.
+</footer>
+
+</body>
+</html>
