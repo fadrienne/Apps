@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morning Edition — 30 September 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,700&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0d2b4e;
+    --sky:#cfeaf9;
+    --sky-deep:#9fd6f0;
+    --teal:#0f6e77;
+    --teal-deep:#0a4f57;
+    --forest:#1e4d3b;
+    --forest-deep:#153826;
+    --sage:#bcd7ae;
+    --mint:#e1f4ec;
+    --sun:#ffd83d;
+    --sun-deep:#f2b705;
+    --gold:#e3a91b;
+    --offwhite:#faf7f0;
+    --cream:#f4ead2;
+    --slate:#4d5b63;
+    --charcoal:#2a2a28;
+    --hairline: rgba(13,43,78,0.35);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--offwhite);
+    color:var(--charcoal);
+    font-family:'Inter',sans-serif;
+    font-size:2rem;
+    line-height:1.55;
+  }
+  h1,h2,h3,.display{font-family:'Fraunces',serif;}
+  a{color:var(--teal-deep);}
+  .measure{max-width:38em;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 2rem;}
+
+  /* ---------- Masthead ---------- */
+  .masthead{
+    background:linear-gradient(180deg, var(--sky) 0%, var(--offwhite) 100%);
+    color:var(--navy);
+    padding:3.5rem 2rem 3rem;
+    text-align:center;
+    border-bottom:6px solid var(--sun);
+  }
+  .masthead .kicker{
+    font-family:'Inter',sans-serif;
+    letter-spacing:0.35em;
+    text-transform:uppercase;
+    font-size:1.1rem;
+    font-weight:800;
+    color:var(--teal-deep);
+    margin:0 0 1rem;
+  }
+  .masthead h1{
+    font-size:5.5rem;
+    margin:0;
+    font-weight:900;
+    line-height:1;
+    color:var(--navy);
+  }
+  .masthead .date{
+    margin-top:1rem;
+    font-size:1.7rem;
+    font-style:italic;
+    color:var(--forest);
+  }
+  .masthead .sub{
+    margin-top:1.5rem;
+    font-size:1.3rem;
+    color:var(--slate);
+    max-width:44em;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  /* ---------- Jump nav ---------- */
+  nav.jumpnav{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:var(--offwhite);
+    border-bottom:3px solid var(--navy);
+    padding:1rem 2rem;
+  }
+  nav.jumpnav .label{
+    font-size:1rem;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    font-weight:800;
+    color:var(--teal-deep);
+    margin-right:1rem;
+  }
+  nav.jumpnav ol{
+    list-style:none;
+    margin:0.6rem 0 0;
+    padding:0;
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.6rem 1rem;
+  }
+  nav.jumpnav li a{
+    display:inline-block;
+    font-size:1rem;
+    font-weight:600;
+    text-decoration:none;
+    color:var(--navy);
+    background:var(--sky);
+    border-radius:999px;
+    padding:0.5rem 1.1rem;
+    border:1px solid var(--hairline);
+  }
+  nav.jumpnav li a .n{color:var(--teal-deep);font-weight:800;margin-right:0.3em;}
+  nav.jumpnav li a.flagged{background:var(--sun);}
+
+  /* ---------- Story shell ---------- */
+  .story{
+    position:relative;
+    padding:5rem 0 4rem;
+    overflow:hidden;
+    border-bottom:1px solid var(--hairline);
+  }
+  .story-inner{max-width:980px;margin:0 auto;padding:0 2rem;position:relative;z-index:2;}
+  .story-head{margin-bottom:2.5rem;}
+  .headline{font-size:3.6rem;font-weight:700;line-height:1.08;margin:0.4rem 0 0;}
+  .flag-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:0.5rem;
+    background:var(--navy);
+    color:var(--sun);
+    font-weight:800;
+    font-size:1.2rem;
+    letter-spacing:0.08em;
+    padding:0.6rem 1.2rem;
+    border-radius:0.4rem;
+    margin-bottom:1.2rem;
+  }
+  .why-matters{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-weight:700;
+    font-size:2.1rem;
+    color:var(--teal-deep);
+    margin:2rem 0;
+    line-height:1.4;
+  }
+  .eyebrow{
+    font-family:'Inter',sans-serif;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    font-weight:800;
+    font-size:1.4rem;
+    color:var(--forest);
+    margin:2.5rem 0 1rem;
+  }
+  .notes p, .article p{margin:0 0 1.2rem;}
+  .article{max-width:38em;}
+  .link-line{font-weight:600;color:var(--teal-deep);word-break:break-word;}
+
+  @media print{
+    nav.jumpnav{position:static;}
+    .story{break-before:page;}
+    .story:first-of-type{break-before:avoid;}
+  }
+
+  /* ---------- 1. HERO ---------- */
+  .layout-hero{background:linear-gradient(180deg,var(--sky) 0%, var(--sky-deep) 100%);}
+  .layout-hero .bg-numeral{
+    position:absolute;top:-2rem;right:1rem;
+    font-family:'Fraunces',serif;font-weight:900;
+    font-size:22rem;color:rgba(13,43,78,0.10);
+    z-index:1;line-height:1;
+    pointer-events:none;
+  }
+  .layout-hero .headline{color:var(--navy);font-size:4.4rem;}
+
+  /* ---------- 2. COASTAL ---------- */
+  .layout-coastal{background:var(--sky);}
+  .layout-coastal .numeral{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:5rem;height:5rem;border-radius:50%;
+    border:4px solid var(--forest);
+    font-weight:800;font-size:1.8rem;color:var(--forest);
+    margin-bottom:1.5rem;background:var(--mint);
+  }
+  .layout-coastal .headline{color:var(--navy);}
+  .layout-coastal .cols{display:grid;grid-template-columns:1fr 1fr;gap:3rem;border-top:5px solid var(--forest);padding-top:2rem;}
+  .layout-coastal .article{max-width:none;}
+  @media (max-width:800px){.layout-coastal .cols{grid-template-columns:1fr;}}
+
+  /* ---------- 3. SUNBEAM ALERT ---------- */
+  .layout-sunbeam{background:var(--sun);}
+  .layout-sunbeam .stamp{
+    display:inline-block;
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:800;font-size:1.6rem;
+    color:var(--navy);
+    border:4px solid var(--navy);
+    padding:0.6rem 1.4rem;
+    transform:rotate(-4deg);
+    margin-bottom:1.5rem;
+    background:var(--offwhite);
+  }
+  .layout-sunbeam .headline{
+    color:var(--navy);font-style:italic;font-weight:700;
+  }
+  .layout-sunbeam .why-matters{color:var(--forest-deep);}
+
+  /* ---------- 4. TERMINAL ---------- */
+  .layout-terminal{background:var(--mint);}
+  .layout-terminal, .layout-terminal .headline, .layout-terminal p, .layout-terminal .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+  }
+  .layout-terminal{color:var(--forest-deep);}
+  .layout-terminal .headline{color:var(--forest-deep);font-weight:700;font-size:2.8rem;}
+  .layout-terminal .numeral{color:var(--teal-deep);font-size:1.4rem;letter-spacing:0.2em;margin-bottom:1rem;}
+  .layout-terminal .why-matters{font-family:'Fraunces',serif;color:var(--teal-deep);}
+  .layout-terminal .story-inner{
+    border:2px solid var(--forest-deep);
+    border-radius:8px;
+    padding:2.5rem;
+    background:var(--offwhite);
+  }
+
+  /* ---------- 5. ACADEMIC DROP CAP ---------- */
+  .layout-dropcap{background:var(--offwhite);}
+  .layout-dropcap .numeral{
+    display:inline-block;border:2px solid var(--navy);
+    padding:0.3rem 1rem;font-weight:800;font-size:1.4rem;color:var(--navy);
+    margin-bottom:1.5rem;
+  }
+  .layout-dropcap .headline{color:var(--navy);}
+  .layout-dropcap .notes p:first-of-type::first-letter{
+    font-family:'Fraunces',serif;
+    font-weight:900;
+    font-size:6.5rem;
+    float:left;
+    line-height:0.8;
+    padding-right:0.15em;
+    color:var(--teal-deep);
+  }
+  .layout-dropcap .footnote{
+    font-size:1.3rem;color:var(--slate);border-top:1px solid var(--hairline);
+    padding-top:1rem;margin-top:2rem;
+  }
+
+  /* ---------- 6. BIG STAT ---------- */
+  .layout-bigstat{background:var(--sky);}
+  .layout-bigstat .numeral{
+    position:absolute;top:2rem;right:2rem;font-size:1.6rem;
+    color:var(--navy);font-weight:800;
+  }
+  .layout-bigstat .headline{color:var(--navy);}
+  .layout-bigstat .stat{
+    font-family:'Fraunces',serif;font-weight:900;
+    font-size:11rem;color:var(--teal-deep);
+    line-height:0.9;margin:1.5rem 0;
+  }
+  .layout-bigstat .stat-label{
+    font-size:1.5rem;color:var(--navy);font-weight:600;margin-bottom:2rem;
+  }
+
+  /* ---------- 7. PULL QUOTE ---------- */
+  .layout-pullquote{background:var(--mint);}
+  .layout-pullquote .numeral{
+    color:var(--forest);
+    font-size:1.6rem;font-weight:800;
+    border:2px solid var(--forest);
+    display:inline-block;padding:0.2rem 0.9rem;border-radius:999px;
+    margin-bottom:1.5rem;
+  }
+  .layout-pullquote .headline{color:var(--forest-deep);}
+  .layout-pullquote .pull{
+    font-family:'Fraunces',serif;font-style:italic;font-weight:600;
+    font-size:3.2rem;color:var(--forest-deep);
+    border-left:6px solid var(--teal-deep);
+    padding-left:2rem;margin:2.5rem 0;line-height:1.25;
+  }
+
+  /* ---------- 8. BROADSHEET ---------- */
+  .layout-broadsheet{background:var(--offwhite);}
+  .layout-broadsheet .numeral{
+    display:inline-block;border:3px double var(--navy);
+    padding:0.3rem 1.1rem;font-family:'Fraunces',serif;font-weight:700;
+    font-size:1.5rem;color:var(--navy);margin-bottom:1rem;
+  }
+  .layout-broadsheet .headline{color:var(--navy);border-top:4px solid var(--teal-deep);border-bottom:4px solid var(--teal-deep);padding:1rem 0;}
+  .layout-broadsheet .cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.2rem;}
+  .layout-broadsheet .cols .why-matters{grid-column:1 / -1;}
+  @media (max-width:900px){.layout-broadsheet .cols{grid-template-columns:1fr;}}
+  .layout-broadsheet .rule{height:3px;background:var(--teal-deep);width:6rem;margin:0.5rem 0 2rem;}
+
+  /* ---------- 9. COLOUR FIELD ---------- */
+  .layout-colorfield{background:var(--teal-deep);color:var(--offwhite);}
+  .layout-colorfield .headline{color:var(--sun);}
+  .layout-colorfield .why-matters{color:var(--sun);}
+  .layout-colorfield .eyebrow{color:var(--sky);}
+  .layout-colorfield a{color:var(--sun);}
+  .layout-colorfield .numeral{
+    font-family:'Fraunces',serif;font-weight:900;font-size:4rem;
+    color:var(--sun);margin-bottom:1rem;
+  }
+
+  /* ---------- 10. LETTERPRESS ---------- */
+  .layout-letterpress{
+    background:
+      radial-gradient(circle at 15% 20%, rgba(13,43,78,0.035) 0, transparent 45%),
+      radial-gradient(circle at 85% 60%, rgba(13,43,78,0.035) 0, transparent 45%),
+      radial-gradient(circle at 50% 90%, rgba(13,43,78,0.03) 0, transparent 40%),
+      var(--cream);
+  }
+  .layout-letterpress .numeral{
+    font-family:'Fraunces',serif;font-weight:400;font-size:1.6rem;
+    letter-spacing:0.3em;color:var(--slate);margin-bottom:1rem;
+  }
+  .layout-letterpress .headline{
+    color:var(--navy);
+    text-shadow:0.5px 0.5px 0 rgba(13,43,78,0.15);
+  }
+  .layout-letterpress .story-inner{border:1px solid rgba(13,43,78,0.2);padding:3rem;}
+
+  footer.colophon{
+    text-align:center;padding:3rem 2rem 5rem;color:var(--slate);font-size:1.2rem;
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <p class="kicker">Shorelines · Morning Edition</p>
+  <h1>Morning Edition</h1>
+  <p class="date">Wednesday, 30 September 2026</p>
+  <p class="sub">Ten stories from ocean governance, hydrospatial science, and SIDS finance, filtered for SHORE Institute, Shorelines, and the work in front of you today.</p>
+</header>
+
+<nav class="jumpnav">
+  <span class="label">Jump to story</span>
+  <ol>
+    <li><a href="#story-1"><span class="n">01</span>Seabed 2030's new 5M km²</a></li>
+    <li><a class="flagged" href="#story-2"><span class="n">02</span>⚡ £30k grant window</a></li>
+    <li><a href="#story-3"><span class="n">03</span>BBNJ ratification gap</a></li>
+    <li><a href="#story-4"><span class="n">04</span>Sydney SCF Forum</a></li>
+    <li><a href="#story-5"><span class="n">05</span>ISA31 mining code</a></li>
+    <li><a href="#story-6"><span class="n">06</span>Ocean heat record</a></li>
+    <li><a href="#story-7"><span class="n">07</span>IMPAC6 countdown</a></li>
+    <li><a href="#story-8"><span class="n">08</span>French Polynesia MPA</a></li>
+    <li><a href="#story-9"><span class="n">09</span>Satellites &amp; carbon</a></li>
+    <li><a href="#story-10"><span class="n">10</span>Currents from orbit</a></li>
+  </ol>
+</nav>
+
+<!-- ============ STORY 1 — HERO ============ -->
+<section class="story layout-hero" id="story-1">
+  <span class="bg-numeral">01</span>
+  <div class="story-inner">
+    <div class="story-head">
+      <h2 class="headline">Seabed 2030 Just Mapped Another Five Million Square Kilometres of the Seafloor You Study</h2>
+    </div>
+    <p class="why-matters">Every square kilometre Seabed 2030 adds to the grid is one you no longer have to justify surveying yourself, and Seychelles' gaps are still sitting in the unmapped third.</p>
+
+    <p class="eyebrow">Story Notes</p>
+    <div class="notes">
+      <p>The Nippon Foundation-GEBCO Seabed 2030 project told the IHO Assembly in Monaco this month that 28.7% of the ocean floor is now mapped to modern bathymetric standard, up from 27.3% a year ago. Almost five million square kilometres of new data went into the grid over the past twelve months, bringing total coverage to roughly 104 million square kilometres.</p>
+      <p>The GEBCO_2026 Grid carrying that new coverage was released on 27 April 2026 and is free to download. Seabed 2030 also confirmed a new partnership with the UK Hydrographic Office and Teledyne CARIS, the data-handling infrastructure that decides whether national survey data actually reaches the global grid.</p>
+      <p>At the current rate of roughly 1.4 percentage points a year, the project's 2030 full-coverage target is not on track, and the unmapped third is disproportionately the water around small island states. Grid and coverage maps: <a class="link-line" href="https://seabed2030.org">seabed2030.org</a>.</p>
+    </div>
+
+    <p class="eyebrow">Story Article</p>
+    <div class="article">
+      <p>A single number carries most of what you need from this year's Seabed 2030 update: 28.7%. That is the share of the global seafloor now mapped to modern standard, against 27.3% twelve months ago. Behind the 1.4-point shift sits almost five million square kilometres of new survey data, folded into the GEBCO_2026 Grid and released on 27 April 2026.</p>
+      <p>Mitsuyuki Unno, executive director of the Nippon Foundation, announced the figure at the IHO Assembly in Monaco, alongside a coverage total of roughly 104 million square kilometres, an area equivalent to more than two-thirds of the planet's land surface. Seabed 2030 also confirmed a new data partnership with the UK Hydrographic Office and Teledyne CARIS. That detail matters more than the headline number. A global mapping target lives or dies on whether national hydrographic offices and private survey operators actually hand their data to the grid, and this is the plumbing that makes that routine rather than exceptional.</p>
+      <p>Run the arithmetic and the harder story shows. At 1.4 points a year, closing the remaining 71.3% by the project's 2030 deadline would need a rate more than three times faster than what was just delivered. Seabed 2030 will not hit full coverage on schedule, and pretending otherwise does not serve you or anyone building policy on top of this data.</p>
+      <p>What the aggregate number hides is where the gaps sit. Deep ocean basins account for a lot of the unmapped third, but so does the near-shore water around small island states, where multibeam survey capacity is thin and the commercial shipping traffic that generates crowdsourced depth soundings is lighter. Seychelles' EEZ still carries unsurveyed stretches outside its charted shelf, and that is a gap SHORE Institute is positioned to help close, not just describe.</p>
+      <p>This is the concrete version of the data-sovereignty argument you make in Shorelines: whoever collects and controls the bathymetric baseline shapes every downstream decision, from shipping-lane safety to seabed tenure to marine spatial planning boundaries. A national contribution pathway into Seabed 2030, through the Nippon Foundation-GEBCO crowdsourced bathymetry programme, is a concrete mechanism, not a slogan.</p>
+      <p>The framing for a Shorelines piece here is not "the ocean floor is being mapped." It is who gets left off the grid when funding, vessels, and survey priority default to routes that already carry the most traffic, and what a Seychelles-led contribution would take to change that. Full data and coverage maps: <a class="link-line" href="https://seabed2030.org">seabed2030.org</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY 2 — SUNBEAM ALERT (flagged) ============ -->
+<section class="story layout-sunbeam" id="story-2">
+  <div class="story-inner">
+    <div class="story-head">
+      <span class="flag-badge">⚡ DEADLINE 26 OCTOBER</span>
+      <div class="stamp">No. 02</div>
+      <h2 class="headline">£30,000 Is Sitting on the Table for Your Work, and the Window Closes 26 October</h2>
+    </div>
+    <p class="why-matters">The Commonwealth Foundation's 2026 Annual Grants Call is open to exactly the kind of not-for-profit work SHORE Institute does, and the application window closes on 26 October.</p>
+
+    <p class="eyebrow">Story Notes</p>
+    <div class="notes">
+      <p>The Commonwealth Foundation's 2026 Annual Grants Call is open, offering Individual Organisation Grants of £15,000 to £30,000 a year for up to two years, and Collective Action Grants of £15,000 to £20,000 a year for up to two years for networks and coalitions. Deadline: 26 October 2026.</p>
+      <p>Projects must sit under at least one of three priorities: climate and environmental justice, economic inclusion, or freedom of expression. Applicants must be registered not-for-profit civil society or creative organisations in an eligible Commonwealth Foundation member country, with at least three years of operating history and average annual income under £2.5 million.</p>
+      <p>Seychelles is a Commonwealth Foundation member state, and SHORE Institute's climate and environmental justice work through hydrospatial research fits the first priority directly. Apply: <a class="link-line" href="https://grants.commonwealthfoundation.com">grants.commonwealthfoundation.com</a>.</p>
+    </div>
+
+    <p class="eyebrow">Story Article</p>
+    <div class="article">
+      <p>You have three weeks. The Commonwealth Foundation's 2026 Annual Grants Call closes on 26 October, and the funding on offer sits squarely inside SHORE Institute's mandate: climate and environmental justice is one of exactly three priorities the Foundation will fund this cycle, alongside economic inclusion and freedom of expression.</p>
+      <p>The money itself is not enormous by multilateral standards, and that is precisely the point. Individual Organisation Grants run £15,000 to £30,000 a year for up to two years. Collective Action Grants, for networks and coalitions rather than single organisations, run £15,000 to £20,000 a year on the same timeline. Both are sized for exactly the kind of institute-scale, grant-shaped operation you have built SHORE around, not for organisations that need eight-figure multilateral facilities to move.</p>
+      <p>Eligibility has three tests worth checking against SHORE's paperwork now, not the week before the deadline. The organisation must be a registered not-for-profit civil society or creative body in a Commonwealth Foundation member country. It must have at least three years of operating history. Average annual income over the past two years must sit below £2.5 million. Seychelles clears the first hurdle immediately.</p>
+      <p>The harder question is framing, not eligibility. A hydrospatial research institute pitching into a "climate and environmental justice" priority needs to make the justice case explicit rather than assumed. The mapping and data-sovereignty work SHORE does is not automatically legible as justice work to a grants panel unless you name who is currently locked out of ocean data access and decision-making, and show the mechanism by which SHORE's work changes that. The High-Income SIDS Paradox is a natural anchor: Seychelles' income classification cuts it off from concessional climate finance that lower-income states can access, even though its exposure and capacity gaps are comparable. That is an environmental justice argument with numbers attached, and it is what a funding panel wants to see rather than infer.</p>
+      <p>Collective Action Grants are worth a second look too. If the Ocean Mapping Hub's work touches other regional hydrospatial or ocean-governance networks, a joint application under that stream could unlock the £15,000 to £20,000 collective band on top of, or instead of, an individual application, depending on how the two interact under Foundation rules.</p>
+      <p>Three weeks is enough time to write a strong application and not enough time to write a weak one twice. Apply here: <a class="link-line" href="https://grants.commonwealthfoundation.com">grants.commonwealthfoundation.com</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY 3 — COASTAL ============ -->
+<section class="story layout-coastal" id="story-3">
+  <div class="story-inner">
+    <div class="story-head">
+      <span class="numeral">03</span>
+      <h2 class="headline">The High Seas Treaty Is Live. Your Ratification Question Isn't Answered Yet.</h2>
+    </div>
+    <p class="why-matters">BBNJ entering into force in January was the easy part; whether Seychelles' own ratification and implementation legislation keeps pace with the Preparatory Commission's timeline is the part that determines whether you get a seat at the table.</p>
+
+    <div class="cols">
+      <div>
+        <p class="eyebrow">Story Notes</p>
+        <div class="notes">
+          <p>The BBNJ Agreement, the high seas biodiversity treaty, entered into force on 17 January 2026, 120 days after its 60th ratification the previous September. As of April 2026, 87 countries had ratified or signed. The treaty's Preparatory Commission has already held three sessions, the third running 23 March to 2 April 2026.</p>
+          <p>The Commonwealth Secretariat has published guidance specifically on signature, ratification, and implementation of BBNJ at the national level, aimed at member states navigating the domestic legislative steps required to move from signature to full ratification.</p>
+          <p>The treaty's four pillars, marine genetic resources and benefit-sharing, area-based management tools including MPAs, environmental impact assessments, and capacity building and technology transfer, all require domestic legal frameworks before a state can participate fully rather than observe. Commonwealth guidance: <a class="link-line" href="https://thecommonwealth.org/publications">thecommonwealth.org/publications</a>.</p>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow">Story Article</p>
+        <div class="article">
+          <p>Entry into force is the part of a treaty's life cycle that gets the headline. The Preparatory Commission sessions that follow are the part that decides who actually shows up with standing once implementation starts, and that is where BBNJ sits right now. The treaty came into force on 17 January 2026. Its third PrepCom session ran 23 March to 2 April 2026. Neither event tells you whether Seychelles' own ratification and enabling legislation are keeping pace.</p>
+          <p>That gap is not hypothetical. A state can sign BBNJ, express political intent, and still lack the domestic legal architecture to exercise the rights the treaty grants, particularly around marine genetic resource benefit-sharing and the environmental impact assessment obligations that apply once a state's vessels or nationals operate in areas beyond national jurisdiction. The Commonwealth Secretariat's new guidance on national-level ratification exists because this exact gap has already tripped up other small states with capacity-constrained legal drafting offices, and Seychelles fits that profile as closely as any Commonwealth member.</p>
+          <p>The four substantive pillars are not equally urgent for Seychelles. Area-based management tools, the MPA-designation machinery, connect directly to work already underway domestically. Environmental impact assessment obligations matter most where high seas activity intersects waters Seychelles has an interest in monitoring, including seabed and fisheries traffic near its own EEZ boundary. Marine genetic resource benefit-sharing is the pillar with the least domestic legal precedent to build from, and therefore the one most likely to stall in drafting if left for later.</p>
+          <p>The practical test is not whether Seychelles has signed, but whether it has the enabling legislation, the designated national focal point, and the institutional capacity to send technically credible delegates to PrepCom sessions and, eventually, the Conference of the Parties. Your own background as national focal point for IOC-UNESCO and the International Seabed Authority is directly relevant experience here, and worth surfacing if this becomes a Shorelines piece or a conversation with the Department of Blue Economy.</p>
+          <p>Ratification announcements read as progress regardless of what sits behind them. A signature without implementing legislation is a state that can be outvoted in decisions on its own EEZ-adjacent high seas areas, by parties who did the legislative work. That is the argument for treating this as a live capacity question now, not a box already ticked in January. Full Commonwealth guidance: <a class="link-line" href="https://thecommonwealth.org/publications/signature-ratification-implementation-bbnj-agreement-national-level">thecommonwealth.org</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY 4 — LETTERPRESS ============ -->
+<section class="story layout-letterpress" id="story-4">
+  <div class="story-inner">
+    <div class="story-head">
+      <span class="numeral">— 04 —</span>
+      <h2 class="headline">Sydney Just Hosted the Finance Fight You've Been Tracking for SIDS Oceans</h2>
+    </div>
+    <p class="why-matters">The barriers this Forum named, complex approval procedures, fragmented funding windows, high transaction costs, are the same ones that keep Seychelles locked out of concessional ocean finance despite its exposure, and now they sit on the UNFCCC record.</p>
+
+    <p class="eyebrow">Story Notes</p>
+    <div class="notes">
+      <p>The 2026 Forum of the UNFCCC Standing Committee on Finance ran 21–22 September in Sydney, hosted by Australia with Pacific Island countries and the Philippines, under the theme "Financing Climate Action for Water Systems and the Ocean."</p>
+      <p>The Forum's own framing named the barriers directly: complex approval procedures, restrictive eligibility criteria, high transaction costs, fragmented funding windows, and limited institutional capacity in SIDS and LDCs. AOSIS submitted a formal climate-ocean finance position to the UNFCCC ahead of the Forum.</p>
+      <p>A significant share of SIDS have already framed their ocean-based climate actions in their NDCs as conditional on external finance materialising, meaning the barrier list above is not academic. It determines whether existing national commitments are funded or shelved. Forum documentation: <a class="link-line" href="https://unfccc.int">unfccc.int</a>.</p>
+    </div>
+
+    <p class="eyebrow">Story Article</p>
+    <div class="article">
+      <p>Every SCF Forum produces a barrier list, and most of them read the same regardless of year or venue. What makes this year's list worth your attention is where it landed: a formal UNFCCC record, hosted by Australia with Pacific SIDS and the Philippines at the table, under a theme that named the ocean specifically rather than folding it into general adaptation finance.</p>
+      <p>The barriers named are the ones you already argue informally when Seychelles' finance access comes up: complex approval procedures that assume institutional capacity SIDS finance ministries don't have, restrictive eligibility criteria that screen out exactly the small-scale, high-need projects SIDS need funded, high transaction costs that eat a disproportionate share of small grant sizes, and fragmented funding windows that force applicants to chase multiple facilities for one coherent programme.</p>
+      <p>AOSIS's submission ahead of the Forum puts these barriers on the formal negotiating record rather than leaving them as conference-corridor complaints, which matters for how much weight they carry going into future Standing Committee on Finance cycles. That is the mechanism by which an argument becomes a negotiating position: submitted, timestamped, attributable to a bloc rather than a single state.</p>
+      <p>The Forum's own analysis noted that a significant share of SIDS have already written ocean-based climate actions into their NDCs as conditional on external support materialising. That is worth sitting with. It means the barrier list is not a future risk. It is the reason existing national commitments, ones Seychelles and its neighbours have already put on paper, may not get funded on the timeline the NDCs assume.</p>
+      <p>The High-Income SIDS Paradox sharpens this further for Seychelles specifically. Income classification, not need or exposure, screens Seychelles out of a meaningful share of the concessional finance windows this Forum is discussing, even where the barriers named apply to Seychelles as directly as to a lower-income Pacific state. That distinction rarely makes it into Forum-level barrier lists, which tend to treat "SIDS" as a single risk category rather than splitting it by finance eligibility.</p>
+      <p>This is close to a ready-made Shorelines argument: the Forum named the mechanism, but the mechanism has a blind spot specific to income-classified SIDS that the Forum's own framing doesn't capture. Full Forum documentation and the AOSIS submission: <a class="link-line" href="https://unfccc.int">unfccc.int</a>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY 5 — ACADEMIC DROP CAP ============ -->
+<section class="story layout-dropcap" id="story-5">
+  <div class="story-inner">
+    <div class="story-head">
+      <span class="numeral">05</span>
+      <h2 class="headline">The Seabed Authority Wrapped Its Summer Session Without Settling What You Need Answered</h2>
+    </div>
+    <p class="why-matters">The International Seabed Authority's July session on deep-sea mining oversight moved forward without resolving the regulatory gap that determines what protection, if any, extends to seabed areas adjacent to SIDS EEZs.</p>
+
+    <p class="eyebrow">Story Notes</p>
+    <div class="notes">
+      <p>The International Seabed Authority held the second part of its 31st annual session in July 2026, with observers including Oceans North present through the closing days.</p>
+      <p>The ISA's mining code negotiations remain the central unresolved item: the regulatory framework governing commercial deep-sea mineral exploitation in the international seabed area, the zone beyond national jurisdiction that the ISA administers under UNCLOS.</p>
+      <p>For coastal and island states, the practical question is not abstract deep-sea policy but transboundary impact: sediment plumes, noise, and species disruption from seabed mining activity that can extend into waters adjacent to national EEZs regardless of where the mining licence itself sits.</p>
+    </div>
+
+    <p class="eyebrow">Story Article</p>
+    <div class="article">
+      <p>The International Seabed Authority does not generate headlines the way a treaty signing does, and that is exactly why its sessions deserve closer reading rather than less. The second part of ISA's 31st session ran through July 2026, with observer organisations including Oceans North present. The core item on the table, again, was the mining code: the regulatory framework for commercial exploitation of minerals in the seabed area beyond national jurisdiction.</p>
+      <p>The mining code has been under negotiation for years without landing, and that stalemate is not neutral. Exploration contracts continue to be issued and exploration activity continues under existing rules while the exploitation-phase regulations that would govern environmental thresholds, liability, and benefit-sharing remain unfinished. Every month the code stays unresolved is a month of exploration activity proceeding under a lighter regulatory standard than the one eventually intended to apply.</p>
+      <p>For a state like Seychelles, the relevant question is not whether the ISA administers deep-sea mining, which is well understood, but what happens when mining activity in the area beyond national jurisdiction produces transboundary impact. Sediment plumes, noise pollution, and disruption to migratory or connected species do not respect the legal boundary between the international seabed area and a national EEZ. Current mining code drafts have been criticised, including by Pacific and other SIDS delegations, for underspecifying transboundary environmental impact assessment obligations relative to the direct-impact provisions that get most drafting attention.</p>
+      <p>This connects directly to BBNJ. The high seas treaty's environmental impact assessment pillar and the ISA's own EIA requirements for seabed mining were negotiated in different forums, on different timelines, and there is no settled mechanism ensuring the two regimes' EIA standards are consistent where seabed mining activity might affect an area also covered by a BBNJ area-based management tool. That is a live science-to-policy gap, not a resolved one.</p>
+      <p>The practical takeaway for Seychelles and for SHORE Institute's work: monitoring capacity for transboundary seabed impact, sediment dispersion modelling in particular, is a hydrospatial science question with a direct governance payoff. A state that can independently model and evidence transboundary seabed mining impact has a stronger negotiating position at the ISA than one relying entirely on contractor-supplied environmental data.</p>
+      <p class="footnote">Session records and mining code drafts are published through the ISA's own site; the negotiating detail is worth tracking directly rather than through secondary summaries, given how much turns on specific EIA threshold language.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY 6 — BIG STAT ============ -->
+<section class="story layout-bigstat" id="story-6">
+  <span class="numeral">06</span>
+  <div class="story-inner">
+    <div class="story-head">
+      <h2 class="headline">The Ocean Just Set a Heat Record Twice. Here's What It Means for Your Coastline</h2>
+    </div>
+    <div class="stat">21.1°C</div>
+    <p class="stat-label">Global average sea surface temperature, 22 August 2026 — a new record, breaking the previous mark of 21.09°C set in March 2024.</p>
+    <p class="why-matters">Global sea surface temperature broke its previous record twice within eighteen months, and the marine heatwave-acidification overlap driving it is exactly the compound risk Seychelles' reef and fisheries systems are least equipped to absorb.</p>
+
+    <p class="eyebrow">Story Notes</p>
+    <div class="notes">
+      <p>Global average sea surface temperature hit a new record of 21.1°C on 22 August 2026, surpassing the previous record of 21.09°C set in March 2024. The margin is small; the fact that the record has now been broken twice in eighteen months is the signal that matters more than the decimal.</p>
+      <p>A study published in AGU Advances found that "compound extremes," marine heatwaves and ocean acidification extremes occurring simultaneously rather than separately, are happening more often than models expected, concentrated in low- to mid-latitude ocean regions, exactly the band Seychelles sits in.</p>
+      <p>Compound events are harder for reef and fisheries systems to recover from than either stressor alone, because thermal stress and acidification degrade different parts of the same calcification and recovery process at the same time.</p>
+    </div>
+
+    <p class="eyebrow">Story Article</p>
+    <div class="article">
+      <p>A 0.01°C margin between two records set eighteen months apart is not, on its own, a dramatic number. What makes it worth a full story rather than a footnote is what it represents: the global sea surface temperature record has now been broken twice in under two years, on 22 August 2026 at 21.1°C, after the previous mark of 21.09°C set in March 2024. Records that used to fall once a decade are now falling on an eighteen-month cycle.</p>
+      <p>The more consequential finding sits underneath the headline number. Research published in AGU Advances identifies a pattern of compound extremes, marine heatwaves and ocean acidification extremes occurring at the same time and place rather than as separate, sequential stresses, happening more frequently than climate models projected. The overlap is concentrated in low- to mid-latitude ocean regions. Seychelles' waters sit inside that band.</p>
+      <p>The reason compound events matter more than additive risk is biological, not just statistical. Coral calcification and reef recovery depend on a chemical and thermal envelope that both marine heatwaves and ocean acidification independently push outside safe range. When both stressors hit simultaneously rather than in sequence, reef systems lose the recovery window between events that has historically allowed partial regeneration. A reef that can absorb a heatwave, given a few years of calmer conditions afterward, has a materially worse outcome when the calmer years are also increasingly acidified.</p>
+      <p>For Seychelles specifically, this is not an abstract climate-science finding, it is a direct input into blue economy planning. Reef health underpins both fisheries productivity and the tourism infrastructure that reef-adjacent coastlines depend on. A compound-extreme regime that arrives more often than models assumed means the planning horizon for reef-dependent blue economy sectors needs revising downward, not held at whatever assumption underpinned prior blue bond or blue economy roadmap modelling.</p>
+      <p>This is also a data-sovereignty question in the same register as the Seabed 2030 story this week. Compound extreme detection depends on continuous, high-resolution local monitoring of both temperature and carbonate chemistry, not just global satellite SST averages. A national monitoring capacity that can detect a compound event forming locally, rather than reading the global average after the fact, is the difference between anticipatory reef management and reactive damage assessment.</p>
+      <p>The AGU Advances study and the record SST data are the kind of concrete, numbers-anchored evidence base that strengthens a Shorelines argument about reef and blue economy planning assumptions needing revision, rather than a general climate-urgency framing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY 7 — BROADSHEET ============ -->
+<section class="story layout-broadsheet" id="story-7">
+  <div class="story-inner">
+    <div class="story-head">
+      <span class="numeral">No. VII</span>
+      <h2 class="headline">Dakar's Marine Protected Area Congress Has a Year on the Clock, and So Do You</h2>
+      <div class="rule"></div>
+    </div>
+    <p class="why-matters">Senegal's one-year countdown to IMPAC6 is also your countdown: the Congress is where MPA financing models and Green List standards get set for the next cycle, and Seychelles' MPA network needs to be represented in that conversation, not just subject to it.</p>
+
+    <div class="cols">
+      <div>
+        <p class="eyebrow">Story Notes</p>
+        <div class="notes">
+          <p>Senegal launched the formal one-year countdown to the 6th International Marine Protected Areas Congress on 26 March 2026, confirming Dakar as host in March 2027, run in partnership with IUCN.</p>
+        </div>
+      </div>
+      <div>
+        <div class="notes">
+          <p>Separately in March 2026, the IUCN Green List of Protected and Conserved Areas added Saudi Arabia's Farasan Islands Reserve and renewed Colombia's Malpelo Fauna and Flora Sanctuary, signals of which MPA governance standards IUCN is currently rewarding.</p>
+        </div>
+      </div>
+      <div>
+        <div class="notes">
+          <p>IMPAC congresses set the reference agenda for MPA financing, management effectiveness standards, and Green List criteria for the following several years, which makes the one-year preparatory window the point where smaller delegations either get their priorities onto the agenda or don't.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="eyebrow">Story Article</p>
+    <div class="article">
+      <p>A one-year countdown sounds like a marketing device, and in part it is, but it also marks something functionally important: IMPAC congresses are where MPA financing models, management effectiveness standards, and IUCN Green List criteria get set for roughly the following five-year cycle. Senegal's 26 March 2026 launch of the countdown to IMPAC6, hosted in Dakar in March 2027 with IUCN, starts the clock on that agenda-setting window now, not in 2027.</p>
+      <p>The Green List signals from March 2026 give you an early read on where IUCN standards are heading before the Congress itself convenes. Farasan Islands Reserve, Saudi Arabia, joined the Green List; Malpelo Fauna and Flora Sanctuary, Colombia, had its status renewed. Both are large, state-resourced MPAs with substantial monitoring infrastructure behind their listing. That pattern is worth noting, because Green List criteria calibrated against well-resourced MPAs can set effectiveness thresholds that under-resourced SIDS-scale MPAs struggle to meet on paper even where on-the-ground outcomes are comparable.</p>
+      <p>Seychelles has its own MPA network and its own blue-bond-financed marine spatial planning commitments to bring into this conversation, and a one-year preparatory window is exactly the point at which regional and national positions either get built into the Congress agenda or arrive at Dakar as commentary on an agenda already fixed by larger delegations. The African regional preparatory process around IMPAC6, given Senegal's hosting role, is a more accessible entry point for that than trying to influence the Congress programme directly once it is set.</p>
+      <p>This connects to the BBNJ area-based management tools pillar directly. IMPAC6's financing and effectiveness standards will likely shape how BBNJ area-based management tools get operationalised in practice, since much of the practitioner community and standard-setting apparatus overlaps between the two processes. A Green List effectiveness standard calibrated without SIDS-scale MPA capacity in mind risks becoming, in effect, the informal bar BBNJ area-based management tools get measured against too.</p>
+      <p>The concrete near-term action is finding out whether Seychelles or a regional African or Indian Ocean SIDS bloc has a formal channel into the IMPAC6 preparatory process now, twelve months out, rather than waiting for a Dakar delegation list to be announced closer to the Congress date.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY 8 — COLOUR FIELD ============ -->
+<section class="story layout-colorfield" id="story-8">
+  <div class="story-inner">
+    <div class="story-head">
+      <span class="numeral">08</span>
+      <h2 class="headline">French Polynesia Just Modelled the Next Move for Your MPA Playbook</h2>
+    </div>
+    <p class="why-matters">French Polynesia's pledge to add half a million square kilometres of high protection by mid-2026, backed by a stepped-up monitoring programme, is the kind of phased, monitoring-first MPA expansion model worth citing directly against Seychelles' own network plans.</p>
+
+    <p class="eyebrow">Story Notes</p>
+    <div class="notes">
+      <p>French Polynesia unveiled the world's largest marine protected area, close to five million square kilometres, in June 2025. Through 2026 the territory has been stepping up scientific observation and monitoring of that area.</p>
+      <p>President Moetai Brotherson pledged to elevate an additional 500,000 square kilometres within the MPA to high or full protection status by World Ocean Day, 8 June 2026.</p>
+      <p>The sequencing, designate first at a lower protection tier, then monitor, then step up specific zones to high protection based on what the monitoring shows, is a phased model distinct from designating full high-protection status across an entire MPA area at once.</p>
+    </div>
+
+    <p class="eyebrow">Story Article</p>
+    <div class="article">
+      <p>Scale gets the attention when a Pacific Island territory announces a five-million-square-kilometre MPA, but the sequencing decision that followed is the more transferable part of the story. French Polynesia designated its MPA, the largest in the world, in June 2025, and rather than declaring the entire area under uniform high protection immediately, spent 2026 building out scientific observation and monitoring capacity before committing to elevate specific zones.</p>
+      <p>President Moetai Brotherson's pledge, made ahead of World Ocean Day on 8 June 2026, to elevate 500,000 square kilometres to high or full protection status is the concrete output of that sequencing. The zones chosen for elevation are presumably the ones the year of monitoring identified as highest ecological value or highest threat exposure, rather than an administratively convenient even split of the total area.</p>
+      <p>This is worth citing directly against how Seychelles' own MPA network expansion gets planned and discussed. A designate-then-monitor-then-elevate model requires monitoring infrastructure to be built and funded ahead of the protection decision, not as a follow-on activity once a designation announcement has already been made. That is a different budget sequencing question than the one usually asked, which tends to be framed as how much area can be designated, rather than how much monitoring capacity is needed in place before a designation decision is credible.</p>
+      <p>French Polynesia's territorial government has resources Seychelles does not, being funded through France, and the scale comparison, five million square kilometres against Seychelles' own EEZ of roughly 1.3 million square kilometres, is not the useful comparison to draw. The useful comparison is the sequencing logic itself: build monitoring capacity as a precondition for protection-tier decisions, not as an afterthought, and treat the elevation-to-high-protection step as evidence-triggered rather than calendar-triggered.</p>
+      <p>For a Shorelines piece, the sharper argument is not "look at this big MPA" but here is a small-government-resourced sequencing model that a SIDS could actually replicate at its own scale, phase by phase, without needing France's budget to do it. That is a usable governance model, not just an impressive number.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY 9 — TERMINAL ============ -->
+<section class="story layout-terminal" id="story-9">
+  <div class="story-inner">
+    <div class="numeral">// story_09 :: remote-sensing.log</div>
+    <div class="story-head">
+      <h2 class="headline">Satellites Can Now Watch the Southern Ocean Breathe. Your Data Toolkit Just Grew.</h2>
+    </div>
+    <p class="why-matters">A new geostationary-satellite method for observing the Southern Ocean carbon cycle from orbit is the kind of remote-sensing capability that, adapted to Seychelles' scale, could close the in-situ monitoring gap the region has never had the vessel time to fill.</p>
+
+    <p class="eyebrow">Story Notes</p>
+    <div class="notes">
+      <p>Nature Geoscience published research in April 2026 demonstrating that the Southern Ocean's carbon cycle can be observed from geostationary satellites, alongside a companion paper on atmospheric oxygen constraints on Southern Ocean productivity and carbon uptake drivers.</p>
+      <p>Geostationary observation, unlike the polar-orbiting satellites typically used for ocean colour and temperature, allows continuous monitoring of the same ocean region through the day rather than a single daily pass, which matters for tracking a carbon cycle that varies on sub-daily timescales.</p>
+      <p>The method was developed and demonstrated for the Southern Ocean specifically, a data-sparse region for exactly the reasons Indian Ocean SIDS waters are also data-sparse: too remote and too expensive to service with regular research-vessel time.</p>
+    </div>
+
+    <p class="eyebrow">Story Article</p>
+    <div class="article">
+      <p>The Southern Ocean and Seychelles' waters have almost nothing in common climatically, but they share the same practical monitoring problem: both are too remote and too expensive to service with the research-vessel time that continuous in-situ carbon and productivity monitoring would require. That is why an April 2026 Nature Geoscience paper demonstrating Southern Ocean carbon cycle observation from geostationary satellites is worth reading past its immediate geography.</p>
+      <p>Geostationary satellites hold position over one point on the globe rather than orbiting pole to pole, which means they can observe the same patch of ocean continuously through daylight hours instead of catching it once a day on a single pass. For a carbon cycle that shifts on sub-daily timescales, driven by light availability, mixing, and biological uptake all changing hour to hour, that continuous view captures dynamics a once-a-day polar-orbiting pass simply misses.</p>
+      <p>A companion paper in the same Nature Geoscience issue examined atmospheric oxygen constraints on Southern Ocean productivity and what drives its carbon uptake, giving the geostationary observation method an immediate scientific application rather than leaving it as a standalone instrumentation result. That pairing, a new observation method plus a research question it is immediately used to answer, is the sign of a technique that is past proof-of-concept.</p>
+      <p>The transferability question for SHORE and the Ocean Mapping Hub is direct. Indian Ocean SIDS waters are data-sparse for the same underlying reason as the Southern Ocean: distance from research infrastructure and the cost of vessel time. A geostationary method proven on one data-sparse ocean region is a candidate method for another, subject to which geostationary satellites actually have suitable coverage and sensor specification over the Indian Ocean basin, a detail that determines whether this is adoptable or just analogous.</p>
+      <p>This is a genuine research and partnership lead rather than a general interesting-science note. If a comparable geostationary capability exists or could be tasked over the Western Indian Ocean, that is a concrete collaboration ask to put to the paper's authors or their institution, framed around the same data-sovereignty argument running through the rest of this week: a regionally owned continuous monitoring capability, rather than dependence on someone else's satellite tasking priorities.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY 10 — PULL QUOTE ============ -->
+<section class="story layout-pullquote" id="story-10">
+  <div class="story-inner">
+    <div class="story-head">
+      <span class="numeral">10</span>
+      <h2 class="headline">A New View From Orbit Is Rewriting the Currents Map You Rely On</h2>
+    </div>
+    <p class="why-matters">The same geostationary approach that is now tracking Southern Ocean carbon is also delivering an unprecedented view of ocean currents, and current-mapping accuracy feeds directly into the bathymetric and marine spatial planning models your own hydrospatial work depends on.</p>
+
+    <blockquote class="pull">"An unprecedented view of ocean currents" — the resolution ceiling for every larval-dispersal and sediment-transport model your MPA network design depends on just moved.</blockquote>
+
+    <p class="eyebrow">Story Notes</p>
+    <div class="notes">
+      <p>A separate Nature Geoscience paper, published 13 April 2026, presents what its authors describe as an unprecedented view of ocean currents derived from geostationary satellite observation.</p>
+      <p>Ocean current data quality directly affects the accuracy of derived products used in marine spatial planning and hydrospatial modelling, including sediment transport prediction, larval dispersal modelling for MPA network design, and satellite-derived bathymetry correction.</p>
+      <p>Improved current-mapping resolution from geostationary sources is a methods paper with direct downstream relevance for SIDS-scale marine spatial planning work, not solely a physical oceanography result.</p>
+    </div>
+
+    <p class="eyebrow">Story Article</p>
+    <div class="article">
+      <p>Ocean currents are the input variable that quietly underwrites a lot of the modelling work in hydrospatial science without getting much attention themselves. Sediment transport predictions, larval dispersal models used to design MPA networks so that protected areas actually connect ecologically, and even corrections applied to satellite-derived bathymetry all depend on current data whose resolution and accuracy set a ceiling on how good the downstream product can be. A 13 April 2026 Nature Geoscience paper describing an unprecedented view of ocean currents from geostationary satellites is worth reading against that dependency chain, not just as an oceanography headline.</p>
+      <p>The geostationary approach is the same underlying method behind the Southern Ocean carbon cycle paper from the same period: continuous same-spot observation through the day rather than a single polar-orbiting pass. Applied to currents, that continuity should, in principle, resolve current dynamics that shift within a day, tidal and wind-driven surface current variability in particular, in a way that once-daily passes cannot capture.</p>
+      <p>For marine spatial planning specifically, current resolution quality is not a background detail. An MPA network designed around larval dispersal connectivity is only as good as the current model feeding the dispersal simulation. If a coarser current dataset misses short-timescale variability, the connectivity assumptions baked into an MPA network's spacing and zone boundaries inherit that error, and nobody discovers the mistake until post-designation monitoring shows the network isn't functioning as the connectivity model predicted.</p>
+      <p>The direct question worth chasing for the Ocean Mapping Hub is whether this improved-resolution current data, or the geostationary method behind it, has coverage or applicability over the Western Indian Ocean specifically, and if not, what it would take to get it there. That is the same regional-adaptation question raised by the companion carbon-cycle paper this week, and worth pursuing as a single combined inquiry to the paper's authors rather than two separate ones, given the methodological overlap.</p>
+      <p>Read together, this week's two Nature Geoscience papers are less two ocean science stories than one methodological shift, geostationary continuous observation displacing polar-orbiting single-pass observation as the reference standard, with direct consequences for the data quality every SIDS-scale marine spatial planning exercise depends on.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="colophon">
+  <p>Morning Edition · 30 September 2026 · Compiled for Francesca Adrienne, SHORE Institute &amp; Shorelines</p>
+</footer>
+
+</body>
+</html>
